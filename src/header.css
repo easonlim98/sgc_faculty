@@ -1,0 +1,47 @@
+.carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.img {
+  width: 180px;
+}
+
+.navbar {
+background: rgba(35, 32, 34, 0.5);
+}
+
+.alignBack {
+flex-grow: 0 !important;
+}
+
+.borderNone {
+border: none !important;
+background: transparent !important;
+}
+
+.headerIconSpacing {
+padding-left: 10px;
+}
+
+.headerContainerSpacing {
+width: 650px !important;
+justify-content: space-between !important;
+}
+
+.containerPaddingTop {
+padding-top: 5px !important;
+}
+
+.colorWhite {
+color:white !important;
+}
+
+.burgerButtonColor {
+background-color: rgba(229, 211, 220, 0.64) !important;
+}
