@@ -86,12 +86,16 @@ const navigate = useNavigate();
             </div>
 
             <div className="col">
-                <div className="card" style={{ border: 'none' }}>
+                <button className="card" style={{ border: 'none' }}
+                    onClick={()=>
+                        navigate('/IT_Intro')
+                    }
+                >
                     <div className="card-body">
                     <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Information_Technology.png")} alt=""/>
                     <p className="card-text Textstyle">Information Technology</p>
                 </div>
-            </div>
+            </button>
             </div>
 
             <div className="col">
