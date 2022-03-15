@@ -1,0 +1,408 @@
+
+#home::before{
+    content:"";
+    position: absolute;
+    background: url(../../assets/images/nursingimage_1.jpg);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0%;
+}
+#home h1{
+    color: white;
+    text-align: left;
+    position: absolute;
+    bottom: 250px;
+    right: 16px;
+    font-family:Poppins;
+    
+
+}
+
+
+.p-primary{
+    color: white;
+    
+    font-size: 1.5rem;
+    position: absolute;
+    top:390px;
+    left:974px;
+    font-family:'Poppins'; 
+    font-size: 13px; 
+    line-height: 25px; 
+
+}
+.p-secondary{
+    color: white;
+    
+    font-size: 1.5rem;
+    position: absolute;
+    top: 410px;
+    left: 975px;
+    
+  
+    
+    font-family:'Poppins'; 
+    font-size: 13px; 
+    line-height: 25px; 
+}
+.h-primary{
+    font-size: 20px;
+    padding: 12px;
+    left: 963px;
+    top: 300px;
+    font-family: 'Poppins';
+    font-weight: 800;
+    text-align: left;
+}
+.h-secondary{
+    font-size: 40px;
+    padding: 12px;
+    font-weight: 800;
+    text-align: left;
+    left: 963px;
+    font-family: 'Poppins';
+    
+}
+#home{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    
+   
+    background-color: #A41F36;
+    color: white;
+    margin: 17px;
+    position: absolute;
+    font-size: 12px;
+    border-radius: 9px;
+    right: 30px;
+    bottom: 150px;
+   width:124px;
+   height: 32px;
+   left: 960px;
+    cursor: pointer;
+    
+
+}
+.container-fluid{
+    position: absolute;
+    top: 650px;
+    background-color:#C4D5ED;
+    height:485px;
+    
+}
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color:#C4D5ED;
+  }
+  
+  .flex-container .box {
+    background-color:#C4D5ED;
+    width: 50%;
+    margin: 110px;
+    flex-wrap: wrap;
+    line-height: 75px;
+    font-size: 12px;
+    text-align: left;
+    
+
+  }
+  .nursingheader {
+    position: absolute;
+      right: 100px;
+    
+    padding: 10px;
+    width: 600px;
+    height:200px;
+    bottom: 190px;
+    text-indent: 0px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: bold;
+    
+  }
+  
+  .pnursing {
+      position: absolute;
+      right: 100px;
+    
+    padding: 10px;
+    width: 600px;
+    height:200px;
+    bottom: 140px;
+    text-indent: 0px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 16px;
+    
+    
+  }
+
+.body1{
+    margin: 0;
+    padding: 0;
+
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+.slider{
+    position: absolute;
+    top:1200px;
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+overflow: hidden;
+left: 280px;
+
+
+}
+
+.slides{
+    width:500%;
+    height:500px;
+    display: flex;
+
+}
+.slides input{
+    display: none;
+}
+.slide{
+    width:20%;
+    transition:2s;
+
+}
+.slide img{
+    width:800px;
+    height: 500px;
+   
+}
+.navigation-manual{
+position: absolute;
+width:800px;
+margin-top: -40px;
+display: flex;
+justify-content: center;
+}
+.manual-button{
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+
+}
+.manual-button:not(:last-child){
+    margin-right: 40px;
+
+}
+.manual-button:hover{
+background:black;
+}
+
+#radio1:checked~ .first{
+margin-left: 0;
+
+}
+#radio2:checked~ .first{
+    margin-left: -20%;
+    
+    }
+    #radio3:checked~ .first{
+        margin-left: -40%;
+        
+        }
+        #radio4:checked~ .first{
+            margin-left: -60%;
+            
+            }
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width:800px;
+    justify-content: center;
+    margin-top: 460px;
+}
+.navigation-auto div{
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+
+}
+.navigation-auto div:not(:last-child)
+{
+    margin-right:40px;
+}
+#radio1:checked~.navigation-auto .auto-btn1{
+    background: black;
+}
+#radio2:checked~.navigation-auto .auto-btn2{
+    background: black;
+}
+#radio3:checked~.navigation-auto .auto-btn3{
+    background: black;
+}
+#radio4:checked~.navigation-auto .auto-btn4{
+    background: black;
+}
+.gallerytext{
+    font-size: 60px;
+    font-family:Poppins;
+    text-align: center;
+}
+.container-fluid1{
+    position: absolute;
+    top: 1750px;
+    width: 1348px;
+    background-color: #C4D5ED;
+    height:414px;
+    
+    
+}
+.ladypicture{
+    position: absolute;
+    width: 200px;
+height: 150px;
+left: 850px;
+    top: 10px;}
+
+.alumni-header{
+    position: absolute;
+    width: 550px;
+    height: 359px;
+    left: -700px;
+    top: 55px;
+}
+.alumni-body{
+    position: absolute;
+    width: 550px;
+    height: 359px;
+    left: -700px;
+    top: 120px;
+}
+.container-fluid2{
+    position: absolute;
+    
+    top: 2200px;
+    width: 1000px;
+    background-color:white;
+    height:414px;
+    left: 200px;
+    
+}
+.button-morecourse{
+    position: absolute;
+  width: 190px;
+  height: 55px;
+  left: 800px;
+  top: 420px;
+  
+  background: #A41F36;
+  border-radius: 7px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.10em;
+
+color: #FFFFFF;
+
+}
+.container-fluid3{
+    position: absolute;
+    vertical-align: middle;
+    top: 2180px;
+    width: 1348px;
+    background-color:#B4D0F1;
+    height:289px;
+    left:0px;
+   
+    
+}
+.textknowmore{
+    display: inline; 
+}
+
+.box1{
+    position: absolute;
+    top:50%;
+    left:505px;
+    width: 1000px;
+    transform: translate(-50%, -50%);
+    padding: 0px;
+    display: flex;
+}
+.box1 .imgbox{
+    width: 150px;
+    flex:0 0 150px;
+    
+
+}
+.box1 .imgbox img{
+    width: 500px;
+    height: 285px
+   
+
+
+}
+.box1 .contentknowmore{
+    padding-left: 400px;
+    
+}
+.box1 .contentknowmore h1{
+    margin: 0;
+    padding-left: 0;
+    color: black;
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 100px;
+}
+.box1 .contentknowmore p{
+    margin: 0;
+    padding: 10px 0 0 ;
+    text-align: justify;
+    font-size: 16px;
+    font-family: Poppins;
+    line-height: 24px;
+    
+
+}
+.button-facilities{
+    position: absolute;
+  width: 190px;
+  height: 55px;
+  left: 995px;
+  top: 230px;
+  
+  background: #A41F36;
+  border-radius: 7px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.10em;
+
+color: #FFFFFF;
+
+}
