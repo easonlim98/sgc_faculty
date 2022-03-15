@@ -12,6 +12,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Hospitality from './components/Hospitality';
 import AdminLogin from './components/AdminLogin';
 import { getDataEvent } from './util/commonDB';
+import Lawintro from './components/Lawintro';
+import ASHintro from './components/ASHintro';
 import Nursing from './components/Nursing';
 import OSHintro from './components/OSHintro';
 
@@ -34,6 +36,8 @@ const App = () => {
             <Route exact path="/AmericanDegree" element={<AmericanDegree/>} />
             <Route exact path="/Foundation" element={<Foundation/>} />
             <Route exact path="/AdminLogin" element={<AdminLogin/>} />
+            <Route exact path="/Lawintro" element={<Lawintro/>} />
+            <Route exact path="/ASHintro" element={<ASHintro/>} />
             <Route exact path="/nursing" element={<Nursing/>} />
             <Route exact path="/Hospitality" element={<Hospitality/>} />
             <Route exact path="/OSHintro" element={<OSHintro/>} />
