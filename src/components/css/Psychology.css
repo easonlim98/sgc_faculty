@@ -1,0 +1,105 @@
+.PSY-backgroundBanner { 
+    background: rgba(54, 54, 54, 0.3) url('../../assets/images/Psychology/Psychology\ mainheader.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    top: 0;
+}
+
+
+@media only screen and (max-width: 1400px) {
+        .PSY-banner-detail{
+                font-size: 16px; 
+                color: white; 
+                width: 30%; 
+                margin-top: 10px;
+            }
+        .PSY-Content{
+            width: 90%;
+        }
+    }
+
+@media only screen and (max-width: 800px) {
+        .PSY-banner-detail{
+                font-size: 16px; 
+                color: white; 
+                width: 60%; 
+                margin-top: 10px;
+            }
+        .PSY-Content{
+            width: 95%;
+        }
+    }
+
+@media only screen and (max-width: 600px) {
+        .PSY-banner-detail{
+                font-size: 16px; 
+                color: white; 
+                width: 100%; 
+                margin-top: 10px;
+            }
+        .PSY-Content{
+            width: 100%;
+        }
+    }
+
+.PSY-Container1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 3rem;
+}
+.PSY-Container2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 3rem;
+}
+.PSY-Container3{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 3rem;
+}
+.PSY-Container4{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 3rem;
+}
+.PSY-Container5{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 3rem;
+}
+.PSY-Container6{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 3rem;
+}
+.PSY-picture{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+}
+.PSY-word{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.PSY-image {
+    width: 100%; 
+    height: 100%;
+}
+
+
+
+
+
+
+
+

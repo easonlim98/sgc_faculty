@@ -2,7 +2,8 @@ import React from 'react'
 import './css/nursing.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/standard.css'
-const nursing = () => {
+
+const Nursing = () => {
   return (
      <>
     <div id="home">
@@ -93,7 +94,7 @@ const nursing = () => {
             },5000);
         </script> */}
 
-        
+
 
         {/* Javascript in React can't use function like this */}
         {/* Later u change all the img src, remember put alt="" also, refer to EarlyChildhod */}
@@ -152,4 +153,4 @@ const nursing = () => {
   )
 }
 
-export default nursing;
+export default Nursing;
