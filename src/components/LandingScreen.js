@@ -1,16 +1,14 @@
 import React from 'react';
-import './css/landing_screen.css'
+import './css/LandingScreen.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useNavigate } from "react-router-dom";
 
-const Landing_Screen = () => {
+const LandingScreen = () => {
 
 const navigate = useNavigate();
 
-
   return (
     <div>
-
         <div className="landingBanner">
             <img className="bannerImg" src={require('../assets/images/Landing_Page/banner_img_1.jpg')} alt=""/>
         </div>
@@ -69,9 +67,9 @@ const navigate = useNavigate();
 
             <div className="col">
                 <button className="card" style={{ border: 'none' }}
-                    onClick={() => 
-                        navigate('/Early_Childhood_Education')
-                    }
+                    onClick={() => {
+                        navigate('/EarlyChildhoodEducation');
+                    }}
                 >
                 <div className="card-body">
                     <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Early_Childhood_Care_Education.png")} alt=""/>
@@ -218,4 +216,4 @@ const navigate = useNavigate();
   )
 }
 
-export default Landing_Screen
+export default LandingScreen;
