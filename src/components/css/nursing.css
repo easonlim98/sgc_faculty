@@ -2,7 +2,7 @@
 #home::before{
     content:"";
     position: absolute;
-    background: url(../assets/images/nursingimage_1.jpg);
+   /* background-image: url("../assets/images/nursingimage_1.jpg");*/
     height: 100%;
     width: 100%;
     z-index: -1;
