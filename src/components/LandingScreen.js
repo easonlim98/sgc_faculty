@@ -129,16 +129,12 @@ const navigate = useNavigate();
             </div>
 
             <div className="col">
-            <button className="card" style={{ border: 'none' }}
-                    onClick={() => {
-                        navigate('/nursing');
-                    }}
->
+                
+                <div className="card" style={{ border: 'none' }}>
                     <div className="card-body">
                     <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Nursing_and_Caring.png")} alt=""/>
                     <p className="card-text Textstyle">Nursing and Caring</p>
                 </div>
-                </button>
             </div>
             </div>
 

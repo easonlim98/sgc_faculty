@@ -93,6 +93,8 @@ const nursing = () => {
             },5000);
         </script> */}
 
+        
+
         {/* Javascript in React can't use function like this */}
         {/* Later u change all the img src, remember put alt="" also, refer to EarlyChildhod */}
         {/* did u need to accept or click anything i need to delete the folder */}
