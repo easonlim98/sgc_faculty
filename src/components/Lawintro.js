@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/Law_intro.css'
+import './css/Lawintro.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/standard.css'
 
@@ -123,7 +123,7 @@ const Lawintro = () => {
     
     <div className="Container3">
             <div className="image4">
-                <img src={require("../../../assets/images/LastLawPic.png")} className ="headpone"></img>
+                <img src={require("../assets/images/LastLawPic.png")} className ="headpone"></img>
                 
                 <div className="Description2">
                 <p className="TitleText4">Want to Know more about our  facilities</p>

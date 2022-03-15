@@ -1,9 +1,12 @@
 import React from 'react'
-import './css/Early_Childhood_Education.css'
+import './css/EarlyChildhoodEducation.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/standard.css'
 
-const Early_Childhood_Education = () => {
+
+const EarlyChildhoodEducation = () => {
+
+
   return (
     <div>
     <div className="backgroundBanner">
@@ -20,6 +23,7 @@ const Early_Childhood_Education = () => {
                     </div>
                   </div>
             </div>
+
         </div>
 
         <div className="container ECE-Section-1">
@@ -138,4 +142,4 @@ const Early_Childhood_Education = () => {
   )
 }
 
-export default Early_Childhood_Education;
+export default EarlyChildhoodEducation;
