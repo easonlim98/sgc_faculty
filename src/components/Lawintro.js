@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/Lawintro.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/standard.css'
+import './css/Standard.css'
 
 const Lawintro = () => {
   return (
@@ -10,7 +10,7 @@ const Lawintro = () => {
 
 <div className="card-border text-center">
         <h5 className="card-title">Law In Malaysia</h5>
-        <p className="card-text">As a commonwealth country, Malaysia adopts the common law system as practised in the United Kingdom. As such, SEGi collaborates with the University of London (UK) to offer the Bachelor of Laws (LLB) programme, as well as offering the SEGi homegrown Diploma in Law.</p>
+        <p className="card-text-Law">As a commonwealth country, Malaysia adopts the common law system as practised in the United Kingdom. As such, SEGi collaborates with the University of London (UK) to offer the Bachelor of Laws (LLB) programme, as well as offering the SEGi homegrown Diploma in Law.</p>
       </div>
 
     

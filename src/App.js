@@ -16,6 +16,8 @@ import Lawintro from './components/Lawintro';
 import ASHintro from './components/ASHintro';
 import Nursing from './components/Nursing';
 import OSHintro from './components/OSHintro';
+import Communication_Studies from './components/Communication_Studies';
+import Business_And_Accounting from './components/Business_And_Accounting';
 
 const App = () => {
 
@@ -38,9 +40,11 @@ const App = () => {
             <Route exact path="/AdminLogin" element={<AdminLogin/>} />
             <Route exact path="/Lawintro" element={<Lawintro/>} />
             <Route exact path="/ASHintro" element={<ASHintro/>} />
-            <Route exact path="/nursing" element={<Nursing/>} />
+            <Route exact path="/Nursing" element={<Nursing/>} />
             <Route exact path="/Hospitality" element={<Hospitality/>} />
             <Route exact path="/OSHintro" element={<OSHintro/>} />
+            <Route exact path="/Business_And_Accounting" element={<Business_And_Accounting/>} />
+            <Route exact path="/Communication_Studies" element={<Communication_Studies/>} />
           </Routes>
           </div>
           {/* { window.location.pathname !== "/AdminLogin" ? <Footer/> : <></>} */}

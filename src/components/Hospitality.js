@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/hospitality.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/standard.css'
+import './css/Standard.css'
 
 
 const Hospitality = () => {
@@ -28,7 +28,7 @@ const Hospitality = () => {
                         </p>
 
 
-                        <button type="button" classNameName="General-Button">Programme</button>
+                        <button type="button" className="General-Button">Programme</button>
                     </div>
 
                 </div>

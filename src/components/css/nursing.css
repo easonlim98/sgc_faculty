@@ -1,13 +1,12 @@
-
 #home::before{
     content:"";
     position: absolute;
-   /* background-image: url("../assets/images/nursingimage_1.jpg");*/
     height: 100%;
     width: 100%;
     z-index: -1;
     top: 0%;
 }
+
 #home h1{
     color: white;
     text-align: left;
@@ -15,7 +14,6 @@
     bottom: 250px;
     right: 16px;
     font-family:Poppins;
-    
 
 }
 
@@ -46,6 +44,7 @@
     font-size: 13px; 
     line-height: 25px; 
 }
+
 .h-primary{
     font-size: 20px;
     padding: 12px;
@@ -375,6 +374,7 @@ color: #FFFFFF;
     font-weight: 700;
     line-height: 100px;
 }
+
 .box1 .contentknowmore p{
     margin: 0;
     padding: 10px 0 0 ;
@@ -382,9 +382,8 @@ color: #FFFFFF;
     font-size: 16px;
     font-family: Poppins;
     line-height: 24px;
-    
-
 }
+
 .button-facilities{
     position: absolute;
   width: 190px;

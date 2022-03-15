@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/nursing.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/standard.css'
+import './css/Standard.css'
 
 const Nursing = () => {
   return (
@@ -45,7 +45,6 @@ const Nursing = () => {
        <div className="slider">
         <h1 className="gallerytext">GALLERY</h1>
            <div className="slides">
-               {/* need to put closing tag / */} {/* html no need, but here is javascript need to close everything otherwise will be messy Javascript can't read */}
                <input type="radio" name="radio-button" id="radio1"/>
                <input type="radio" name="radio-button" id="radio2"/>
                <input type="radio" name="radio-button" id="radio3"/>
@@ -81,24 +80,6 @@ const Nursing = () => {
        </div>
       
     </div> 
-    
-       
-        {/* <script type="text/javascript">
-            var counter= 1;
-            setInterval(function(){
-                document.getElementById('radio'+ counter).checked=true; // Here is lnk to html from javascirpt, javascript React gt its own package to do this
-                counter++;
-                if(counter>4){
-                    counter=1;
-                }
-            },5000);
-        </script> */}
-
-
-
-        {/* Javascript in React can't use function like this */}
-        {/* Later u change all the img src, remember put alt="" also, refer to EarlyChildhod */}
-        {/* did u need to accept or click anything i need to delete the folder */}
         <section>
             <div className="container-fluid1">
                 <img src="./assets/images/Rectangle 429.png"></img>
@@ -129,25 +110,25 @@ const Nursing = () => {
         </section>
 
             <div className="container-fluid3">
-                <div className="facilities">
-                    <div className="box1">
-                        <div className="imgbox">
-                            <img src="./assets/images/nursingimage3.jpg"></img>
-                            <button type="button" className="button-facilities" href="#"> Facilities</button>
-                        </div>
-                        <div className="contentknowmore">
-                            <h1>
-                                Want To Know More About Our Facilities
-                            </h1>
-                            <p> 
-                                If you are interested in our program and want to check out more about our art and deisgn related facilities, please click on the facilities button.
-                            </p>
-                            
-                        </div>
+            <div className="facilities">
+                <div className="box1">
+                    <div className="imgbox">
+                        <img src="./assets/images/nursingimage3.jpg"></img>
+                        <button type="button" className="button-facilities" href="#"> Facilities</button>
                     </div>
-            
-                      </div>
+                    <div className="contentknowmore">
+                        <h1>
+                            Want To Know More About Our Facilities
+                        </h1>
+                        <p> 
+                            If you are interested in our program and want to check out more about our art and deisgn related facilities, please click on the facilities button.
+                        </p>
+                        
                     </div>
+                </div>
+        
+                    </div>
+                </div>
         </>
                     
   )

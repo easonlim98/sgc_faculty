@@ -7,8 +7,7 @@
     top: 0;
 }
 
-
-.a{
+/* .a{
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
     top: 30%;
@@ -16,7 +15,7 @@
     padding-right: 10%;
     width: 100%;
     color: black;
-}
+} */
 
 .programmusic{
     position: relative;
@@ -91,10 +90,10 @@
 .orange{
     height: auto;
     width: auto;
-    background-color: black;
+    background-color: black !important;
     margin-top: 5%;
     margin-bottom: 5%;
-    color: black;
+    color: black !important;
 }
 
 .Fou-Container5{

@@ -1,18 +1,14 @@
-
+import React from 'react';
 import './css/LandingScreen.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useNavigate } from "react-router-dom";
-import { Button } from 'bootstrap';
 
 const LandingScreen = () => {
 
-    
 const navigate = useNavigate();
-
 
   return (
     <div>
-       
         <div className="landingBanner">
             <img className="bannerImg" src={require('../assets/images/Landing_Page/banner_img_1.jpg')} alt=""/>
         </div>
@@ -30,16 +26,12 @@ const navigate = useNavigate();
             </div>
 
             <div className="col">
-                <button className="card" style={{ border: 'none' }}
-                    onClick={() => 
-                        navigate('/AmericanDegree')
-                    }
-                >
+              <div className="card" style={{ border: 'none' }} >
                 <div className="card-body">
                   <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/American_Degree_Program.png")} alt=""/>
                   <p className="card-text Textstyle">American Degree Program</p>
                 </div>
-              </button>
+              </div>
             </div>
 
             <div className="col">
@@ -70,29 +62,21 @@ const navigate = useNavigate();
             </div>
 
             <div className="col">
-                <button className="card" style={{ border: 'none' }}
-                    onClick={() => {
-                        navigate('/EarlyChildhoodEducation');
-                    }}
-                >
+                <div className="card" style={{ border: 'none' }}>
                 <div className="card-body">
                     <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Early_Childhood_Care_Education.png")} alt=""/>
                     <p className="card-text Textstyle">Early Childhood Care & Education</p>
                 </div>
-                </button>
+                </div>
             </div>
 
             <div className="col">
-                <button className="card" style={{ border: 'none' }}
-                    onClick={() => 
-                        navigate('/Hospitality')
-                    }
-                >
-                <div className="card-body">
+                <div className="card" style={{ border: 'none' }}>
+                    <div className="card-body">
                     <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Hospitality_Tourism.png")} alt=""/>
                     <p className="card-text Textstyle">Hospitality & Tourism</p>
                 </div>
-            </button>
+            </div>
             </div>
 
             <div className="col">
@@ -105,41 +89,30 @@ const navigate = useNavigate();
             </div>
 
             <div className="col">
-            <button className="card" style={{ border: 'none' }}
-                    onClick={() => 
-                        navigate('/Foundation')
-                    }
-                >
+                <div className="card" style={{ border: 'none' }}>
                     <div className="card-body">
                     <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Pre_U_Foundation.png")} alt=""/>
                     <p className="card-text Textstyle">Pre U / Foundation</p>
                 </div>
-            </button>
+            </div>
             </div>
 
             <div className="col">
-                <button className="card" style={{ border: 'none' }}
-                    onClick={() => 
-                        navigate('/Psychology')
-                    }
-                >
-                <div className="card-body">
+                <div className="card" style={{ border: 'none' }}>
+                    <div className="card-body">
                     <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Psychology.png")} alt=""/>
                     <p className="card-text Textstyle">Psychology</p>
                 </div>
-                </button>
+            </div>
             </div>
 
             <div className="col">
-                <button className="card" style={{ border: 'none' }}
-                onClick={() => 
-                        navigate('/MusicIntro')}
-                        >
+                <div className="card" style={{ border: 'none' }}>
                     <div className="card-body">
                     <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Music_Studies.png")} alt=""/>
                     <p className="card-text Textstyle">Music Studies</p>
                 </div>
-            </button>
+            </div>
             </div>
 
             <div className="col">
@@ -152,7 +125,6 @@ const navigate = useNavigate();
             </div>
 
             <div className="col">
-                
                 <div className="card" style={{ border: 'none' }}>
                     <div className="card-body">
                     <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Nursing_and_Caring.png")} alt=""/>
@@ -162,16 +134,12 @@ const navigate = useNavigate();
             </div>
 
             <div className="col">
-                <button className="card" style={{ border: 'none' }}
-                onClick={()=>{
-                    navigate('/OSHintro');
-                }}
-                >
+                <div className="card" style={{ border: 'none' }}>
                     <div className="card-body">
                     <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Occupational_Health_and_Safety.png")} alt=""/>
                     <p className="card-text Textstyle">Occupational Health and Safety</p>
                 </div>
-            </button>
+            </div>
             </div>
             </div>
 
