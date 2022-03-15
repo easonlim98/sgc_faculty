@@ -4,6 +4,8 @@ import Header from './Header';
 import Footer from './Footer';
 import LandingScreen from './components/LandingScreen';
 import EarlyChildhoodEducation from './components/EarlyChildhoodEducation';
+import AmericanDegree from './components/AmericanDegree';
+import Foundation from './components/Foundation';
 import 'bootstrap/dist/css/bootstrap.css';
 import AdminLogin from './components/AdminLogin';
 import { getDataEvent } from './util/commonDB';
@@ -20,8 +22,10 @@ const App = () => {
         <Header/>
           <div>
           <Routes>
-            <Route exact path="/" element={<LandingScreen/>} />
+            <Route path="/" element={<LandingScreen/>} />
             <Route exact path="/EarlyChildhoodEducation" element={<EarlyChildhoodEducation/>} />
+            <Route exact path="/AmericanDegree" element={<AmericanDegree/>} />
+            <Route exact path="/Foundation" element={<Foundation/>} />
             <Route exact path="/AdminLogin" element={<AdminLogin/>} />
           </Routes>
           </div>
