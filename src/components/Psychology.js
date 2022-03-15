@@ -2,7 +2,6 @@ import React from 'react'
 import './css/Psychology.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/Standard.css'
-
 const Psychology = () => {
   return (
     <div>
