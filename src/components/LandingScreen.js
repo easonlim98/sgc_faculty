@@ -29,12 +29,16 @@ const navigate = useNavigate();
             </div>
 
             <div className="col">
-              <div className="card" style={{ border: 'none' }} >
+                <button className="card" style={{ border: 'none' }}
+                    onClick={() => 
+                        navigate('/AmericanDegree')
+                    }
+                >
                 <div className="card-body">
                   <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/American_Degree_Program.png")} alt=""/>
                   <p className="card-text Textstyle">American Degree Program</p>
                 </div>
-              </div>
+              </button>
             </div>
 
             <div className="col">
@@ -96,12 +100,16 @@ const navigate = useNavigate();
             </div>
 
             <div className="col">
-                <div className="card" style={{ border: 'none' }}>
+            <button className="card" style={{ border: 'none' }}
+                    onClick={() => 
+                        navigate('/Foundation')
+                    }
+                >
                     <div className="card-body">
                     <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Pre_U_Foundation.png")} alt=""/>
                     <p className="card-text Textstyle">Pre U / Foundation</p>
                 </div>
-            </div>
+            </button>
             </div>
 
             <div className="col">
