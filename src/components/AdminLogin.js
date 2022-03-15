@@ -20,11 +20,13 @@ const AdminLogin = () => {
         },[]);
 
         const createUser = () => {
+                
                 var body = {
                         id: uuidv4(),
                         user_email: userEmail,
                         user_name: userName
                 };
+
                 ApiClient.POST(API.createUser, body).then((result) => {
                         //console.log(result)
 
