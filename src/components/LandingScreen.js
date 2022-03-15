@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const LandingScreen = () => {
 
+
 const navigate = useNavigate();
 
   return (
