@@ -1,4 +1,7 @@
 import React from 'react'
+import './css/OSH_intro.css'
+import 'bootstrap/dist/css/bootstrap.css';
+import './css/standard.css'
 
 const OSHintro = () => {
   return (
@@ -11,29 +14,29 @@ const OSHintro = () => {
   <p>The goal of an occupational safety and health program is to foster a safe and healthy occupational environment. OSH also protects all the general public who may be affected by the occupational environment.</p>
   <button type="button" className="btnbody" href="#">PROGRAMME</button>
   <div className="img1">
-    <img src="../../../assets/images/Picture1.jpg" className="picture1"></img>
+    <img src={require("../assets/images/Picture1.jpg")} className="picture1"></img>
   </div>
   </div>
 
   <section>
     <div className="card-deck">
-      <img className="card-img-top" src="../../../assets/images/Frame 126.png" alt="Card image cap"></img>
+      <img className="card-img-top" src={require("../assets/images/Frame 126.png")} alt="Card image cap"></img>
       <div className="card1">
-        <img className="card-img-top" src="../../../assets/images/Picture2.jpg" alt="Card image cap"></img>
+        <img className="card-img-top" src={require("../assets/images/Picture2.jpg")} alt="Card image cap"></img>
         <div className="card-body">
           <h5 className="card-title">Service sector</h5>
           <p className="card-text">Presenting a different array of health problems than those associated with manufacturing and the primary sector</p>
         </div>
       </div>
       <div className="card2">
-        <img className="card-img-top" src="../../../assets/images/osh.jpg" alt="Card image cap"></img>
+        <img className="card-img-top" src={require("../assets/images/osh.jpg")} alt="Card image cap"></img>
         <div className="card-body">
           <h5 className="card-title">Healthcare and social assistance</h5>
           <p className="card-text">Healthcare workers are exposed to many hazards that can adversely affect their health and well-being.</p>
           </div>
       </div>
       <div className="card3">
-        <img className="card-img-top" src="../../../assets/images/image2.jpg" alt="Card image cap"></img>
+        <img className="card-img-top" src={require("../assets/images/image2.jpg")} alt="Card image cap"></img>
         <div className="card-body">
           <h5 className="card-title">Construction</h5>
           <p className="card-text">Construction is one of the most dangerous occupations in the world.</p>
@@ -47,28 +50,28 @@ const OSHintro = () => {
     <p></p>
     <h5>WHY CHOOSE US</h5>
     <div className="card4">
-      <img className="card-img-top" src="../../../assets/images/p4.png" alt="Card image cap"></img>
+      <img className="card-img-top" src={require("../assets/images/p4.png")} alt="Card image cap"></img>
       <div className="card-body">
         <h5 className="card-title">Operation Theatre</h5>
         <p className="card-text">OPERATING THEATRES as an operating room (OR), operating suite, or operation suite) is a facility within a hospital where surgical operations.</p>
       </div>
     </div>
     <div className="card5">
-      <img className="card-img-top" src="../../../assets/images/p3.png" alt="Card image cap"></img>
+      <img className="card-img-top" src={require("../assets/images/p3.png")} alt="Card image cap"></img>
       <div className="card-body">
         <h5 className="card-title">Emergency Care</h5>
         <p className="card-text">Emergency Care is an essential part of the health system and serves as the first point of contact for many around the world. </p>
       </div>
     </div>
     <div className="card6">
-      <img className="card-img-top" src="../../../assets/images/p2.png" alt="Card image cap"></img>
+      <img className="card-img-top" src={require("../assets/images/p2.png")} alt="Card image cap"></img>
       <div className="card-body">
         <h5 className="card-title">24 Hours Service</h5>
         <p className="card-text">If you need medical care which is an emergency but cannot wait until we re-open, you can call our out-of-hours service.</p>
       </div>
     </div>
     <div className="card7">
-      <img className="card-img-top" src="../../../assets/images/p1.png" alt="Card image cap"></img>
+      <img className="card-img-top" src={require("../assets/images/p1.png")} alt="Card image cap"></img>
       <div className="card-body">
         <h5 className="card-title">Qualified Doctors</h5>
         <p className="card-text">Qualified Doctors person who holds a degree recognised by the Medical Council of India and is registered by the Medical Council of any State.</p>
@@ -79,9 +82,9 @@ const OSHintro = () => {
 
 <section>
   <div className="line4">
-    <img className="card-img-top" src="../../../assets/images/Rectangle 429.png" alt="Card image cap"></img>
+    <img className="card-img-top" src={require("../assets/images/Rectangle 429.png")} alt="Card image cap"></img>
     <div className="man">
-      <img className="card-img-top" src="../../../assets/images/man.png" alt="Card image cap"></img>
+      <img className="card-img-top" src={require("../assets/images/man.png")} alt="Card image cap"></img>
    
       <div className="card-header">
         <ul className="nav nav-tabs card-header-tabs">
@@ -108,7 +111,7 @@ const OSHintro = () => {
        <p></p>
        <p>Student of 2021 Occupational Health and Safety</p>
        <div className="icon">
-        <img className="card-img-top" src="../../../assets/images/Icon.jpg" alt="Card image cap"></img>
+        <img className="card-img-top" src={require("../assets/images/Icon.jpg")} alt="Card image cap"></img>
       </div>
     </div>
 </div>
@@ -117,7 +120,7 @@ const OSHintro = () => {
 <section>
   <div className="othercourse">
     <div className="others">
-      <img className="card-img-top" src="../../../assets/images/Other Program Part.png" alt="Card image cap"></img>
+      <img className="card-img-top" src={require("../assets/images/Other Program Part.png")} alt="Card image cap"></img>
       <button type="button" className="btnbody1" href="#">More Courses</button>
    </div>
 </div>
@@ -126,7 +129,7 @@ const OSHintro = () => {
 
 <section>
 <div className="last">
-  <img className="card-img-top" src="../../../assets/images/About Facilities Part.png" alt="Card image cap"></img>
+  <img className="card-img-top" src={require("../assets/images/About Facilities Part.png")} alt="Card image cap"></img>
   <button type="button" className="btnbody2" href="#">Facilities</button>
 
 </div>
