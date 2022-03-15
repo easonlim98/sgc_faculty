@@ -7,7 +7,7 @@ const IT_Intro = () => {
   return (
       <div>
     <div className="IT-Intro-banner">
-            <img src={require("../assets/images/IT_Intro/")} alt=""/>
+            <img src={require("../assets/images/IT_Intro/IT_banner.jpg")} alt=""/>
             <div className="IT-Intro-caption">
               <h4>Know more about </h4>
               <h2>our program</h2>
@@ -17,13 +17,13 @@ const IT_Intro = () => {
     </div>
         <div className="IT-Intro-successproject">
             <div className="row" style={{flex:1}}> 
-              <div className="column" style={{display: flex}}>
-                <img className="IT-Intro-projectimg" src={require("../../assets/images/IT_Intro/alibaba.png")} />
-                <img className="IT-Intro-projectimg" src={require("../../assets/images/IT_Intro/lazada.png")} />  
+              <div className="column" style={{display: 'flex'}}>
+                <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/alibaba.png")} />
+                <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/lazada.png")} />  
               </div>
-              <div className="column" style={{display: flex}}>
-                <img classNameName="IT-Intro-projectimg" src={require("../../assets/images/IT_Intro/shopee.png")} />
-                <img className="IT-Intro-projectimg" src={require("../../assets/images/IT_Intro/taobao.png")}/>
+              <div className="column" style={{display: 'flex'}}>
+                <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/shopee.png")} />
+                <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/taobao.png")}/>
               </div>
             </div> 
             <div className="IT-Intro-Projecttext">
@@ -48,7 +48,7 @@ const IT_Intro = () => {
                       and computer sciences could provide you with the background needed to achieve your goals.</p2>
               </div>
               <div className="IT-Intro-DivWhyITimg">
-                  <img className="IT-Intro-WhyITimg" src={require("../../assets/gif/IT_Intro/IT_content2.gif")} alt=""/>
+                  {/* <img className="IT-Intro-WhyITimg" src={require("../assets/gif/Early_Childhood_Care_Education/IT_Intro/IT_content2")} alt=""/> */}
               </div>
             </div>
           
@@ -56,14 +56,14 @@ const IT_Intro = () => {
 
               <div className="IT-Intro-Container">
                     <div className="IT-Intro-DivContainerimg">
-                       <img className="IT-Intro-Containerimg" src={require("../../assets/images/IT_Intro/IT_Intro_Con1.png")} alt=""/>
-                        <img className="IT-Intro-Containerimg" src={require("../../assets/images/IT_Intro/IT_Intro_Con2.png")} alt=""/>
-                        <img className="IT-Intro-Containerimg" src={require("../../assets/images/IT_Intro/IT_Intro_Con3.png")} alt=""/>
+                       <img className="IT-Intro-Containerimg" src={require("../assets/images/IT_Intro/IT_Intro_Con1.png")} alt=""/>
+                        <img className="IT-Intro-Containerimg" src={require("../assets/images/IT_Intro/IT_Intro_Con2.png")} alt=""/>
+                        <img className="IT-Intro-Containerimg" src={require("../assets/images/IT_Intro/IT_Intro_Con3.png")} alt=""/>
                     </div>
                 
                   
                     <div className="IT-Intro-DivContainercenterimg">
-                        <img style={{width: '60%',height:' 80%'}} src="../../assets/images/IT_Intro/IT_Intro_Con4.png" alt=""/>
+                        <img style={{width: '60%',height:' 80%'}} src={require("../assets/images/IT_Intro/IT_Intro_Con4.png")} alt=""/>
                     </div>
 
                     <div className="IT-Intro-Containertext">
@@ -89,12 +89,12 @@ const IT_Intro = () => {
               </div>
               <p2>Industry and Software Partnerships</p2>
               <div className="IT-Intro-DivContainerpartnerimg" style={{display: 'flex',flex: 1,marginBottom: '1vw'}} >
-                <img style={{width: '100%'}} src={require("../../assets/images/IT_Intro/IT_Intro_Con5.png")} />
+                <img style={{width: '100%'}} src={require("../assets/images/IT_Intro/IT_Intro_Con5.png")} />
               </div>
         </div>
         <div className="IT-Intro-bottomcontent">
           <div className="IT-Intro-bottomimg">
-            <img style={{width: '100%'}} src={require("../../assets/images/IT_Intro/IT_Intro_Con6.png")} />
+            <img style={{width: '100%'}} src={require("../assets/images/IT_Intro/IT_Intro_Con6.png")} />
           </div>
         <div className="IT-Intro-bottomtext">
             <p>Want to Know more about our  facilities</p>

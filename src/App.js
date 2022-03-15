@@ -7,6 +7,7 @@ import Early_Childhood_Education from './components/Early_Childhood_Education';
 import 'bootstrap/dist/css/bootstrap.css';
 import Admin_Login from './components/Admin_Login';
 import IT_Intro from './components/IT_Intro';
+import Search_Page from './components/Search_Page';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/Early_Childhood_Education" element={<Early_Childhood_Education/>} />
             <Route exact path="/Admin_Login" element={<Admin_Login/>} />
             <Route exact path="/IT_Intro" element={<IT_Intro/>} />
+            <Route exact path="/Search_Page" element={<Search_Page/>} />
           </Routes>
           </div>
         <Footer />
