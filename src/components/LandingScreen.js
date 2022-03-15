@@ -1,14 +1,17 @@
-import React from 'react';
+
 import './css/LandingScreen.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useNavigate } from "react-router-dom";
 
 const LandingScreen = () => {
 
+    
 const navigate = useNavigate();
+
 
   return (
     <div>
+       
         <div className="landingBanner">
             <img className="bannerImg" src={require('../assets/images/Landing_Page/banner_img_1.jpg')} alt=""/>
         </div>
