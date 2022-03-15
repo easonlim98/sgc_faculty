@@ -1,14 +1,20 @@
-import React from 'react';
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
 import Header from './Header';
 import Footer from './Footer';
 import Landing_Screen from './components/Landing_Screen';
 import Early_Childhood_Education from './components/Early_Childhood_Education';
 import MusicIntro from './components/MusicIntro';
 import 'bootstrap/dist/css/bootstrap.css';
-import Admin_Login from './components/Admin_Login';
+import AdminLogin from './components/AdminLogin';
+import { getDataEvent } from './util/commonDB';
 
-function App() {
+const App = () => {
+
+  useEffect(() => {
+    getDataEvent();
+  },[]);
+
   return (
     <Router>
       <Header />
