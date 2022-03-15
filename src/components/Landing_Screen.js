@@ -113,12 +113,15 @@ const navigate = useNavigate();
             </div>
 
             <div className="col">
-                <div className="card" style={{ border: 'none' }}>
+                <button className="card" style={{ border: 'none' }}
+                onClick={() => 
+                        navigate('/MusicIntro')}
+                        >
                     <div className="card-body">
                     <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Music_Studies.png")} alt=""/>
                     <p className="card-text Textstyle">Music Studies</p>
                 </div>
-            </div>
+            </button>
             </div>
 
             <div className="col">
