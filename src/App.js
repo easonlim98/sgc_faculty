@@ -16,7 +16,8 @@ const App = () => {
 
   return (
       <Router>
-        { window.location.pathname !== "/AdminLogin" ? <Header/> : <></>}
+        {/* { window.location.pathname !== "/AdminLogin" ? <Header/> : <></>} */}
+        <Header/>
           <div>
           <Routes>
             <Route exact path="/" element={<LandingScreen/>} />
@@ -24,7 +25,8 @@ const App = () => {
             <Route exact path="/AdminLogin" element={<AdminLogin/>} />
           </Routes>
           </div>
-          { window.location.pathname !== "/AdminLogin" ? <Footer/> : <></>}
+          {/* { window.location.pathname !== "/AdminLogin" ? <Footer/> : <></>} */}
+          <Footer/>
       </Router>
   );
 }
