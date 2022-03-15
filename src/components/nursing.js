@@ -26,7 +26,7 @@ const nursing = () => {
             <div className="flex-container">
                 <div className="box"> 
                
-                    <img className src={require("../assets/images/nursingimage3.jpg")} alt="" ></img> 
+                    <img src={require("../assets/images/nursingimage3.jpg")} alt="" ></img> 
                 </div>
                 <h1 className="nursingheader">What is Nursing and Caring</h1>
                 <p className="pnursing">
@@ -51,17 +51,17 @@ const nursing = () => {
                <input type="radio" name="radio-button" id="radio4"/>
 
                <div className="slide first">
-                   <img src="./assets/images/nursingimage6.jpg"></img>
+               <img src={require("../assets/images/nursingimage6.jpg")} alt="" ></img> 
                    
                </div>
                <div className="slide">
-                   <img src="../assets/images/nursingimage4.jpg"></img>
+               <img src={require("../assets/images/nursingimage4.jpg")} alt="" ></img> 
                </div>
                <div className="slide">
-                <img src="../assets/images/nursingimage5.jpg"></img>
+               <img src={require("../assets/images/nursingimage5.jpg")} alt="" ></img> 
             </div>
             <div className="slide">
-                <img src="../assets/images/nursingimage1.jpg"></img>
+            <img src={require("../assets/images/nursingimage1.jpg")} alt="" ></img> 
             </div>
     
             <div className="navigation-auto">
@@ -85,13 +85,17 @@ const nursing = () => {
         {/* <script type="text/javascript">
             var counter= 1;
             setInterval(function(){
-                document.getElementById('radio'+ counter).checked=true;
+                document.getElementById('radio'+ counter).checked=true; // Here is lnk to html from javascirpt, javascript React gt its own package to do this
                 counter++;
                 if(counter>4){
                     counter=1;
                 }
             },5000);
         </script> */}
+
+        {/* Javascript in React can't use function like this */}
+        {/* Later u change all the img src, remember put alt="" also, refer to EarlyChildhod */}
+        {/* did u need to accept or click anything i need to delete the folder */}
         <section>
             <div className="container-fluid1">
                 <img src="./assets/images/Rectangle 429.png"></img>

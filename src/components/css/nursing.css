@@ -2,7 +2,7 @@
 #home::before{
     content:"";
     position: absolute;
-    background: url(../../assets/images/nursingimage_1.jpg);
+    background: url(../assets/images/nursingimage_1.jpg);
     height: 100%;
     width: 100%;
     z-index: -1;
@@ -262,6 +262,7 @@ margin-left: 0;
     font-family:Poppins;
     text-align: center;
 }
+
 .container-fluid1{
     position: absolute;
     top: 1750px;
