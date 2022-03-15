@@ -2,6 +2,7 @@ import React from 'react';
 import './css/landing_screen.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useNavigate } from "react-router-dom";
+import { Button } from 'bootstrap';
 
 const Landing_Screen = () => {
 
@@ -77,12 +78,16 @@ const navigate = useNavigate();
             </div>
 
             <div className="col">
-                <div className="card" style={{ border: 'none' }}>
-                    <div className="card-body">
+                <button className="card" style={{ border: 'none' }}
+                    onClick={() => 
+                        navigate('/Hospitality')
+                    }
+                >
+                <div className="card-body">
                     <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Hospitality_Tourism.png")} alt=""/>
                     <p className="card-text Textstyle">Hospitality & Tourism</p>
                 </div>
-            </div>
+            </button>
             </div>
 
             <div className="col">
