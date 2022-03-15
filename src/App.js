@@ -4,8 +4,10 @@ import Header from './Header';
 import Footer from './Footer';
 import Landing_Screen from './components/Landing_Screen';
 import Early_Childhood_Education from './components/Early_Childhood_Education';
+import Psychology from './components/Psychology';
 import 'bootstrap/dist/css/bootstrap.css';
 import Admin_Login from './components/Admin_Login';
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing_Screen/>} />
             <Route exact path="/Early_Childhood_Education" element={<Early_Childhood_Education/>} />
+            <Route exact path="/Psychology" element={<Psychology/>} />
             <Route exact path="/Admin_Login" element={<Admin_Login/>} />
           </Routes>
           </div>
