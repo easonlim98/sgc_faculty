@@ -1,0 +1,933 @@
+.carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .img {
+      width: 150px;
+  }
+
+  .alignBack {
+    flex-grow: 0 !important;
+  }
+
+
+.Banner {
+    margin: 0 auto;
+    background-position: center;
+    background-size: 100% 100%;
+    width: 1510px;
+    height: 482px;
+    left: 0px;
+    top: 0px;
+  
+    background-image:url("../assets/images/LawBanner.png");
+  
+    }
+.card-border{
+  position: absolute;
+ width: 550px;
+height: 150px;
+left: 500px;
+ top: 552px;
+      
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 10px;
+}
+.card-text{
+  width: 520px;
+  height: 83px;
+  left: 401px;
+  top: 581px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #302f2f;
+    }
+
+  .content1{
+      position: absolute;
+      width: 400px;
+      height: 56px;
+      left: 500px;
+      top: 754px;
+      
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 22px;
+      
+      align-items: center;
+      text-align: justify;      
+      color: #000000;
+    }
+  .text1{
+  
+      width: 359px;
+      height: 100px;
+      left: 346px;
+      top: 800px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  
+  color: #000000;
+    }
+  .btnReadMore{
+  
+  width: 101px;
+  height: 32px;
+  left: 347px;
+  top: 905px;
+  
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 5px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  }
+  .image1{
+    position: absolute;
+    width: 215px;
+    height: 179px;
+    left: 880px;
+    top: 756px;
+  }
+  .TitleContent{
+  position: absolute;
+  width: 302px;
+  height: 41px;
+  left: 123px;
+  top: 192px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  align-items: center;
+  text-align: left;
+  font-size: 25px;
+  font-weight: 700;
+  
+  text-transform: uppercase;
+  
+  color: #ffffff;
+  }
+  .TitleText1{
+  width: 302px;
+  height: 100px;
+  left: 123px;
+  top: 277px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: #ffffff;
+  }
+  .btnProgramme{
+    width: 124px;
+    height: 32px;
+    left: 123px;
+    top: 346px;
+    
+    background: #A41F36;
+    border-radius: 5px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  
+  color: #FFFFFF;
+  
+  }
+  .AchieveMap{
+  position: absolute;
+  width: 254px;
+  height: 59px;
+  left: 600px;
+  top: 1087px;
+  align-items: center;
+    text-align: center;
+    justify-content: center;
+  
+  }
+  .textbox1{
+    width: 254px;
+    height: 59px;
+    left: 345px;
+    top: 1087px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  
+  color: #FFFFFF;
+  
+    background: #384051;
+    border-radius: 36px;
+  }
+  .textbox2{
+  width: 254px;
+  height: 59px;
+  left: 800px;
+  top: 1087px;
+  
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  
+  color: #FFFFFF;
+  
+    background: #384051;
+    border-radius: 36px;
+  
+    
+  }
+  .textbox3{
+    width: 254px;
+  height: 59px;
+  left: 695.01px;
+  top: 1169px;
+  
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  
+  color: #FFFFFF;
+  
+    background: #384051;
+    border-radius: 36px;
+    
+  }
+  .textbox4{
+    width: 254px;
+    height: 59px;
+    left: 695.01px;
+    top: 1251px;
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  
+  color: #FFFFFF;
+  
+    background: #384051;
+    border-radius: 36px;
+    
+  }
+  .textbox5{
+  
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  
+  color: #FFFFFF;
+   width: 254px;
+   height: 59px;
+   left: 695px;
+   top: 1338px; 
+    background: #384051;
+    border-radius: 36px;
+    
+  }
+  .Container1{
+  position: absolute;
+  width: 1510px;
+  height: 477px;
+  left: 2px;
+  top: 1546px;
+  
+  
+  
+  background: #C4C4C4;
+  
+  }
+  .image2{
+    width: 800px;
+  height: 477px;
+  left: -1px;
+  top: 1446px;
+  display: flex;
+  
+  }
+  .TitleText2{
+  
+  width: 309px;
+  height: 33px;
+  left: 150px;
+  top: 1554px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 26px;
+  align-items: center;
+  
+  
+  
+  color: #000000;
+  }
+  .Description1{
+  position: absolute;
+  width: 423px;
+  height: 164px;
+  left: 738px;
+  top: 100px;
+  
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  align-items: center;
+  text-align: justify;
+  justify-content: center ;
+
+  
+  color: #000000;
+  
+  }
+.btnReads{
+  position: absolute;
+  width: 423px;
+  height: 164px;
+  left: 365px;
+  top: 220px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 18px;
+display: flex;
+align-items: center;
+text-align: right;
+
+color: #000000;
+}
+  .card-deck{
+    
+    position: absolute;
+    width: 331px;
+    height: 33px;
+    left: 175px;
+    top: 2150px;
+    display: flex;
+    
+  
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  align-items: center;
+  text-align: center;
+  
+  color: #000000;
+  }
+  .card-deck2{
+    
+    position: absolute;
+    width: 331px;
+    height: 33px;
+    left: 630px;
+    top: 2291px;
+    display: flex;
+    
+  
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  align-items: center;
+  text-align: center;
+  
+  color: #000000;
+  }
+  .card-deck3{
+    
+    position: absolute;
+    width: 331px;
+    height: 33px;
+    left: 1100px;
+    top: 2291px;
+    display: flex;
+    
+  
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  align-items: center;
+  text-align: center;
+  
+  color: #000000;
+  }
+  .Container2{
+  
+  position: absolute;
+  width: 1510px;
+  height: 433px;
+  left: 2px;
+  top: 2555px;
+    
+    
+  background: rgba(196, 196, 196, 0.92);;
+    
+  }
+  .image3{
+  width: 485px;
+  height: 432px;
+  left: 200px;
+  top: 2326px;
+  display: flex;
+  }
+  .InsideContainer2{
+  
+  width: 617px;
+  height: 358px;
+  left: 567px;
+  top: 2378px;
+  
+  background: rgba(247, 44, 44, 0.92);;
+  }
+  .btnOutStandingStudent{
+  position: absolute;
+  width: 160px;
+  height: 30px;
+  left: 50px;
+  top: 13px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 30px;
+  /* identical to box height, or 200% */
+  
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #000000;
+  }
+  .btnOutSucessStory{
+    position: absolute;
+  width: 160px;
+  height: 30px;
+  left: 300px;
+  top: 13px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 30px;
+  /* identical to box height, or 200% */
+  
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #000000;
+  
+  
+  }
+  .btnWorkLife{
+    position: absolute;
+  width: 160px;
+  height: 30px;
+  left: 500px;
+  top: 13px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 30px;
+  /* identical to box height, or 200% */
+  
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #000000;
+  
+  }
+  .btnOutStandingStudent:after{
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  height: 3px;
+  width: 0%;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+  }
+  .btnOutStandingStudent:hover:after{
+    width: 85%;
+  }
+  
+  .btnOutSucessStory:after{
+    content: "";
+    position: absolute;
+    background-color: #000000;
+    height: 3px;
+    width: 0%;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+    }
+  .btnOutSucessStory:hover:after{
+      width: 50%;
+  }
+  
+  .btnWorkLife:after{
+    content: "";
+    position: absolute;
+    background-color: #000000;
+    height: 3px;
+    width: 0%;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+    }
+  .btnWorkLife:hover:after{
+      width: 43%;
+  }
+  .carousel_slide{
+    position: absolute;
+    width: 400px;
+    height: 470px;
+    left: 550px;
+    top: 3070px;
+  }
+  .textbox6{
+    
+    width: 384px;
+    height: 67px;
+    left: 886px;
+    top: 20px;
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    
+    color: #000000;
+  }
+  .Container3{
+  
+    position: absolute;
+    width: 1510px;
+    height: 290px;
+    left: 2px;
+    top: 3600px;
+
+    display: flex;
+    text-align: justify;
+   
+    background: rgba(196, 196, 196, 0.92);;
+      
+  }
+
+.Description2{
+position: absolute;
+width: 640px;
+height: 67px;
+left: 611px;
+top: 63px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+text-align: justify;
+justify-content: center ;
+align-items: center;
+
+color: #000000;
+}
+.btnMoreCourse{
+  position:absolute;
+  width: 124px;
+  height: 32px;
+  left: 650px;
+  top: 400px;
+  
+  background: #A41F36;
+  border-radius: 2px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 18px;
+display: flex;
+align-items: center;
+text-align: center;
+justify-content: center;
+
+color: #FFFFFF;
+}
+.btnFacilities{
+  position:absolute;
+    width: 124px;
+    height: 32px;
+    left: 1200px;
+    top: 230px;
+    
+    background: #A41F36;
+    border-radius: 2px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  
+  color: #FFFFFF;
+}
+.containtabs{
+  position: absolute;
+  width: 900px;
+  height: 350px;
+  left: 500px;
+  top: 50px;
+  background: rgba(196, 196, 196, 0.92);
+
+}
+
+@media screen and (max-width: 576px) { 
+
+.Banner {
+   width: 576px;
+}
+
+.card-border{
+  position: absolute;
+  width: 550px;
+  height: 150px;
+  left: 5px;
+  top: 552px;     
+}
+.content1{
+position: absolute;
+width: 200px;
+height: 56px;
+left: 10px;
+top: 754px;
+      
+  
+    }
+.text1{
+width: 300px;
+height: 100px;
+left: 346px;
+top: 800px;
+  
+}
+.btnReadMore{
+  
+width: 101px;
+height: 32px;
+left: 347px;
+top: 850px;
+}
+.image1{
+position: absolute;
+width: 215px;
+height: 179px;
+left: 340px;
+top: 756px;
+}
+.AchieveMap{
+position: absolute;
+width: 254px;
+height: 59px;
+left: 160px;
+top: 1050px;
+align-items: center;
+text-align: center;
+justify-content: center;
+  
+}
+.Container1{
+  position: absolute;
+  width: 576px;
+  height: 700px;
+  left: 2px;
+  top: 1546px;
+  
+  background: #C4C4C4;
+  
+  }
+  .opis{
+  width: 575px;
+  height: 377px;
+  left: 2px;
+  top: 1446px;
+  display: flex;
+  
+  }
+  .TitleText2{
+  width: 200px;
+  height: 33px;
+  left: 200px;
+  top: 200px;
+
+  text-align: center;  
+}
+  .Description1{
+  position: absolute;
+  width: 423px;
+  height: 164px;
+  left: 70px;
+  top: 400px;
+  
+  
+
+  
+  color: #000000;
+  
+  }
+.btnReads{
+  position: absolute;
+  width: 423px;
+  height: 164px;
+  left: 365px;
+  top: 170px;
+
+
+color: #000000;
+}
+
+.card-deck{
+    
+  position: absolute;
+  width: 331px;
+  height: 33px;
+  left: 135px;
+  top: 2450px;
+  display: flex;
+
+}
+.card-deck2{
+  
+  position: absolute;
+  width: 331px;
+  height: 33px;
+  left: 135px;
+  top: 2791px;
+  display: flex;
+  
+}
+.card-deck3{
+  
+  position: absolute;
+  width: 331px;
+  height: 33px;
+  left: 135px;
+  top: 3150px;
+  display: flex;
+  
+}
+.Container2{
+
+position: absolute;
+width: 576px;
+height: 1200px;
+left: 2px;
+top: 3400px; 
+}
+
+.image3{
+width: 485px;
+height: 432px;
+left: 200px;
+top: 2326px;
+display: flex;
+}
+.containtabs{
+position: absolute;
+width: 17px;
+height: 358px;
+left: 5px;
+top: 478px;
+  
+}
+.btnOutStandingStudent{
+position: absolute;
+width: 160px;
+height: 30px;
+left: 50px;
+top: 13px;
+  
+}
+.btnOutSucessStory{
+position: absolute;
+width: 160px;
+height: 30px;
+left: 300px;
+top: 13px;
+ 
+}
+.btnWorkLife{
+position: absolute;
+width: 160px;
+height: 30px;
+left: 500px;
+top: 13px;
+   
+}
+
+.Container3{
+  
+position: absolute;
+width: 576px;
+height: 550px;
+left: 2px;
+top: 5200px;
+
+display: flex;
+text-align: justify;
+ 
+background: rgba(196, 196, 196, 0.92);;
+    
+}
+
+.Description2{
+position: absolute;
+width: 550px;
+height: 67px;
+left: 10px;
+top: 350px;
+
+}
+.btnFacilities{
+position:absolute;
+width: 124px;
+height: 32px;
+left: 400px;
+top: 500px;
+    
+}
+.carousel_slide{
+
+position: absolute;
+width: 400px;
+height: 470px;
+left: 80px;
+top: 4670px;
+
+}
+.textbox6{
+  
+width: 384px;
+height: 67px;
+left: 886px;
+top: 20px;
+  
+}
+.btnMoreCourse{
+  position:absolute;
+  width: 124px;
+  height: 32px;
+  left: 330px;
+  top: 450px;
+  
+}
+
+}
+
+@media (min-width: 768px) { 
+
+ }
+
+@media (min-width: 992px) { 
+
+ }
+
+@media (min-width: 1200px) { 
+
+}
+
+
+
