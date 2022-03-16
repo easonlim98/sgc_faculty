@@ -48,7 +48,7 @@ const IT_Intro = () => {
                       and computer sciences could provide you with the background needed to achieve your goals.</p2>
               </div>
               <div className="IT-Intro-DivWhyITimg">
-                  {/* <img className="IT-Intro-WhyITimg" src={require("../assets/gif/Early_Childhood_Care_Education/IT_Intro/IT_content2")} alt=""/> */}
+                  <img className="IT-Intro-WhyITimg" src={require("../assets/gif/Early_Childhood_Education/IT_Intro/IT_content2.gif")} alt=""/>
               </div>
             </div>
           
