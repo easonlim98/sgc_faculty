@@ -14,7 +14,7 @@ import AdminLogin from './components/AdminLogin';
 import { getDataEvent } from './util/commonDB';
 import Lawintro from './components/Lawintro';
 import ASHintro from './components/ASHintro';
-import Nursing from './components/Nursing';
+import Nursing from './components/nursing';
 import OSHintro from './components/OSHintro';
 import Communication_Studies from './components/Communication_Studies';
 import Business_And_Accounting from './components/Business_And_Accounting';
