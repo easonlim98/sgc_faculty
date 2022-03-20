@@ -26,6 +26,7 @@ const App = () => {
 
   useEffect(() => {
     getDataEvent();
+<<<<<<< HEAD
   }, []);
   return (
     <Router>
@@ -57,6 +58,24 @@ const App = () => {
       {/* { window.location.pathname !== "/AdminLogin" ? <Footer/> : <></>} */}
       <Footer />
     </Router>
+=======
+  },[]);
+  return (
+      <Router>
+        { window.location.pathname !== "/AdminLogin" ? <Header/> : <></>}
+          <div>
+          <Routes>
+
+            <Route path="/" element={<LandingScreen/>} />
+            <Route exact path="/EarlyChildhoodEducation" element={<EarlyChildhoodEducation/>} />
+            <Route exact path="/AdminLogin" element={<AdminLogin/>} />
+            <Route exact path="/IT_Intro" element={<IT_Intro/>} />
+            <Route exact path="/Search_Page" element={<Search_Page/>} />
+          </Routes>
+          </div>
+          { window.location.pathname !== "/AdminLogin" ? <Footer/> : <></>}
+      </Router>
+>>>>>>> munkit
   );
 }
 

@@ -143,6 +143,7 @@ const LandingScreen = () => {
 
                 </div>
 
+<<<<<<< HEAD
                 <div className="row">
 
                     <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
@@ -164,6 +165,20 @@ const LandingScreen = () => {
                     </button>
 
                 </div>
+=======
+            <div className="col">
+                <button className="card" style={{ border: 'none' }}
+                    onClick={()=>
+                        navigate('/IT_Intro')
+                    }
+                >
+                    <div className="card-body">
+                    <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Information_Technology.png")} alt=""/>
+                    <p className="card-text Textstyle">Information Technology</p>
+                </div>
+            </button>
+            </div>
+>>>>>>> munkit
 
                 <div className="University">
                     <h5>Earn a foreign qualification with SEGi</h5>
