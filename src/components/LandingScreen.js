@@ -143,30 +143,7 @@ const LandingScreen = () => {
 
                 </div>
 
-<<<<<<< HEAD
-                <div className="row">
-
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
-                        <div style={{ border: 'none' }}>
-                            <div>
-                                <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Nursing_and_Caring.png")} alt="" />
-                                <p className="Landing_Textstyle">Nursing and Caring</p>
-                            </div>
-                        </div>
-                    </button>
-
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
-                        <div style={{ border: 'none' }}>
-                            <div>
-                                <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Occupational_Health_and_Safety.png")} alt="" />
-                                <p className="Landing_Textstyle">Occupational Health and Safety</p>
-                            </div>
-                        </div>
-                    </button>
-
-                </div>
-=======
-            <div className="col">
+            {/* <div className="col">
                 <button className="card" style={{ border: 'none' }}
                     onClick={()=>
                         navigate('/IT_Intro')
@@ -177,8 +154,7 @@ const LandingScreen = () => {
                     <p className="card-text Textstyle">Information Technology</p>
                 </div>
             </button>
-            </div>
->>>>>>> munkit
+            </div> */}
 
                 <div className="University">
                     <h5>Earn a foreign qualification with SEGi</h5>

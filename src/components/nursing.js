@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/nursing.css'
+import './css/Nursing.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/Standard.css'
 
