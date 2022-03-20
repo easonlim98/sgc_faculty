@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/Business_And_Accounting.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/Standard.css'
+import './css/standard.css'
 
 const Business_And_Accounting = () => {
     return (
