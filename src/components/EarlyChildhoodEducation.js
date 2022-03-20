@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/EarlyChildhoodEducation.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/Standard.css'
+import './css/standard.css'
 
 
 const EarlyChildhoodEducation = () => {
