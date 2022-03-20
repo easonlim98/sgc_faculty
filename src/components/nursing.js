@@ -21,7 +21,7 @@ const Nursing = () => {
            <button className="button">Programme</button>
        </div>
            
-          <div className="nursing-container-fluid">
+          <div className="nursing-container-fluid container-fluid">
         
           
             <div className="flex-container">
@@ -81,7 +81,7 @@ const Nursing = () => {
       
     </div> 
         <section>
-            <div className="nursing-container-fluid1">
+            <div className="nursing-container-fluid container-fluid1">
                 <img src="./assets/images/Rectangle 429.png"></img>
                 <div className="ladypicture">
                 <img src="./assets/images/alumninursing.png"></img>
@@ -109,7 +109,7 @@ const Nursing = () => {
             </div>
         </section>
 
-            <div className="nursing-container-fluid3">
+            <div className="nursing-container-fluid container-fluid3">
             <div className="facilities">
                 <div className="box1">
                     <div className="imgbox">
