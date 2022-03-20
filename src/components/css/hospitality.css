@@ -1,33 +1,20 @@
-.hospitalitybanner{
-  position: relative;
-  background-color: #62A6A1;
-  
-}
-
-.set1{
-    position: absolute;
-    top: 40%;
-    text-align: left;
-    padding-left: 45%;
-    width: 100%;
-    color: white;
-}
-
-.banner{
-  position: relative;
+.Hsp-banner1{
+  background: #62A6A1 url('../../assets/images/Hospitality/Introback.png');
   background-position: center;
-  width: 100%;
-  height: 600px;
-  opacity: 0.4;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  top: 0;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: white;
-  }
+.Hsp-header{
+  font-size: 16px; 
+  color: white; 
+  width: 30%; 
+  margin-top: 10px;
+}
 
-.imgborder{
+.Hsp-imgborder{
   border: 1px black;
   border-style: solid ;
   border-radius: 8px;
@@ -35,37 +22,40 @@
   
 }
 
-.iconimg{
+.Hsp-iconimg{
   text-align: center;
   margin: 25px 25px 25px 25px;
     
 }
 
-.ehancesskillsimg{
-  min-width: 350px;
-  min-height: 350px;
-  width: 80%;
-  height: 80%;
+.Hsp-SEGI-content{
+  text-align: justify;
+}
+
+.Hsp-ehancesskillsimg{
+  max-width: 1200px;
+  max-height: 600px;
+  width: 100%;
+  height: 65%;
   text-align: center;
 }
 
+.Hsp-partnershipshotel{
+  background-color: #E3F4EE;
+  width: 100%;
+}
   
-.hospitalityp1{
-    color: black;
-    text-align: justify;
+.Hsp-style-header{
+  padding: 60px 0px;
+
 }
 
-.partner1{
+.Hsp-partner{
   position: relative;
   text-align: center;
 }
 
-.partnershipshotel{
-  background-color: #E3F4EE;
-  width: 100%;
-}
-
-.partnerhotel{ 
+.Hsp-partnerhotel{ 
   height: 150px;
   width: 150px;
   text-align: center;
@@ -73,17 +63,18 @@
   position: relative;
 }
 
-.hotelstyleheader{
-  padding: 60px 0px;
+.Hsp-bodytxt{
+    color: black;
+    text-align: center;
 
 }
 
-.hotelstyleimage{
+.Hsp-style-image2{
   padding: 100px 0px;
 
 } 
 
-.backimg{
+.Hsp-backimg{
 min-width: 200px;
 min-height: 200px;
 width: 70%;
@@ -97,7 +88,7 @@ border: 6px solid rgba(255, 255, 255, 0.8);
 border-radius: 30px;
 }
 
-.frontimg{
+.Hsp-frontimg{
   min-width: 200px;
   min-height: 200px;
   width: 55%;
@@ -110,7 +101,7 @@ border-radius: 30px;
   border-radius: 30px;
 }
 
-.Faculties {
+.Hsp-faculties {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,11 +109,11 @@ border-radius: 30px;
   background: #D7E3EE;
 }
 
-.Faculties-img {
+.Hsp-faculties-img {
   width: 100%;
-}
+} 
 
-.Faculties-right {
+.Hsp-faculties-img-right {
   display: flex;
   flex-direction: column;
   height: 100%;
