@@ -1,16 +1,19 @@
-.CA-backgroundBanner {
+.banner-container {
     background: rgba(54, 54, 54, 0.3) url("../../assets/gif/Creative\ Art/CA.gif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: darken;
     top: 0;
+    display: flex;
+    height: 38rem;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.CA-bannerContent-res {
+.first-content1 {
     font-size: 16px;
     color: white;
-    width: 30%;
     margin-top: 10px;
 }
 
@@ -79,7 +82,7 @@
 }
 
 @media only screen and (max-width: 1400px) {
-    .CA-bannerContent-res {
+    .first-content1 {
         font-size: 16px;
         color: white;
         width: 30%;
@@ -99,7 +102,7 @@
 }
 
 @media only screen and (max-width: 1100px) {
-    .CA-bannerContent-res {
+    .first-content1 {
         font-size: 16px;
         color: white;
         width: 30%;
@@ -121,7 +124,7 @@
 }
 
 @media only screen and (max-width: 930px) {
-    .CA-bannerContent-res {
+    .first-content1 {
         font-size: 16px;
         color: white;
         width: 60%;
@@ -145,7 +148,7 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .CA-bannerContent-res {
+    .first-content1 {
         font-size: 16px;
         color: white;
         width: 60%;
@@ -164,7 +167,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .CA-bannerContent-res {
+    .first-content1 {
         font-size: 16px;
         color: white;
         width: 100%;
