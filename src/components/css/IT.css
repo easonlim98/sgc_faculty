@@ -7,11 +7,12 @@ body{
 /* Top banner */
 .IT-Intro-banner {
     position: relative;
+    flex: 1;
   }
   
   .IT-Intro-banner img {
     display: block;
-    width: 100%;
+    max-width: 100%;
     max-height:auto;
   }
   
@@ -23,74 +24,89 @@ body{
     height: 100%;
     background: #000000;
     opacity: 0.9;
-    padding: 28vw 4vw 4vw 4vw;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .IT-Intro-banner>.IT-Intro-caption>h2,
   .IT-Intro-banner>.IT-Intro-caption>h4,
   .IT-Intro-banner>.IT-Intro-caption>h5 {
-    text-align:justify;
+    
     color:#FFF;
     padding: 0.3vw;  
   }
   
   .IT-Intro-banner>.IT-Intro-caption>h2 {
-    font-size: 2.3vw;
+    font-size: 2.3rem;
     font-weight: bold;
   }
   
   .IT-Intro-banner>.IT-Intro-caption>h4 {
-    font-size: 1.7vw;
+    font-size: 1.6rem;
     font-weight: bold;
   }
 
   .IT-Intro-banner>.IT-Intro-caption>h5 {
-    font-size: 1vw;
+    font-size: 1rem;
   }
 
   .IT-Intro-banner>.IT-Intro-caption>button{
     border: none;
     outline: 0;
     display: block;
-    padding: 0.7vw;
+    padding: 0.5rem;
     color: #FFF;
     background-color: #A41F36;
     text-align: center;
     cursor: pointer;
-    border-radius: 0.4vw;
+    border-radius: 0.3rem;
     width: 40%;
     max-height:auto;
-    font-size: 1vw;
+    font-size: 0.8rem;
   }
   .IT-Intro-banner>.IT-Intro-caption>button:hover{
     opacity: 0.8;
   }
 
   /* Previois Success Project */
-  .IT-Intro-successproject{
-    display: flex;
-    position: relative;
-    width: 100%;
-    background-color: #D2D2D2;
-    flex-direction: row;
-    padding: 5vw;
-  }
-
-  .IT-Intro-projectimg{
-    width: 50%;
-    max-height:auto;
-    padding: 1vw;
-    border-radius: 1.5vw;
-    opacity: 0.9;
-  }
-
-  .IT-Intro-Projecttext{
+  .IT-Intro-container-sec1{
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    padding: 3vw 7vw 3vw 4vw;
-    text-align: justify;
+    align-items: center;
+    background-color: #D2D2D2;
+  }
+
+  .IT-Intro-successproject{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 80%;
+    padding: 1.5rem;
+  }
+
+  .IT-Intro-projectimg{
+    margin: 0.5rem;
+    /* padding: 0; */
+    border-radius: 1vw;
+    opacity: 0.9;
+    max-width: 50%;
+    box-shadow: 0 16px 20px 0 rgb(0 0 0 / 20%), 0 1px 30px 0 rgb(0 0 0 / 10%);
+}
+  
+
+  .IT-Intro-Projecttext{
+    display: flex;
+    /* max-width: 50%; */
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    
+    padding: 2rem;
   }
 
   .IT-Intro-Projecttext>button{
@@ -100,7 +116,7 @@ body{
     color: #FFF;
     text-align: center;
     max-height: auto;
-    font-size: 1vw;
+    font-size: 0.8rem;
     border: none;
     padding: 0.6vw;
   }
@@ -113,46 +129,58 @@ body{
   /* Middle Content */
   .IT-Intro_content{
     display: flex;
-    flex: 1;
-    padding: 1vw 15vw 1vw 15vw;
+    /* flex: 1 1; */
+    /* max-width: 80%; */
+    /* padding: 1vw 15vw 1vw
+vw
+ 15vw; */
     align-items: center;
     flex-direction: column;
-  }
+    background-color: #FFF;
+    justify-content: center;
+}
+  
 
   .IT-Intro-WhyIT{
     display: flex;
     flex-direction: row;
-    flex: 1;
+    /* flex: 1 1; */
     align-items: center;
     margin-bottom: 2vw;
-  }
+    max-width: 80%;
+    padding: 1rem;
+}
+  
 
   .IT-Intro-WhyIT-Text{
     display: flex;
     flex-direction: column;
-    flex: 1;
-  }
+    flex: 1 1;
+    
+}
+  
 
   .IT-Intro-DivWhyITimg{
-    display: inherit;
+    display: flex;
     flex: 1;
     justify-content: center;
     
   }
   .IT-Intro-WhyITimg{
-    display: inherit;
+    display: flex;
     width: 80%;
     border-radius: 1vw;
+    box-shadow: 0 16px 20px 0 rgb(0 0 0 / 20%), 0 1px 30px 0 rgb(0 0 0 / 10%);
   }
 
   .IT-Intro-WhyIT-Text>p{
-    font-size: 2vw;
+    font-size: 1.7rem;
     color: #2065C0;
     font-weight: bold;
   }
 
  .IT-Intro-WhyIT-Text>p2{
-    font-size: 1vw;
+    font-size: 1rem;
     font-weight: 640;
   }
 
@@ -175,10 +203,67 @@ body{
   /* Container */
   .IT-Intro-Container{
     display: flex;
-    flex-direction: row;
-    flex: 1;
+    /* flex: 1; */
+    max-width: 80%;
+    /* align-items: flex-end; */
+    /* justify-content: flex-start; */
+    flex-direction: column;
   }
-  .IT-Intro-DivContainerimg{
+  .IT-Intro_ReasonText{
+    display: flex;
+    /* flex: 1; */
+    /* max-width: 80%; */
+    /* flex-direction: row; */
+    /* justify-content: space-evenly; */
+    margin-bottom: 2rem;
+
+  }
+  .IT-Intro_ReasonText>p{
+    color: #2065C0;
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+  .IT-Intro-Resource{
+    display: flex;
+    /* flex: 1; */
+    /* max-width: 80%; */
+    justify-content: space-evenly;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .IT-Intro-Resource-Text{
+    max-width: 50%;
+    /* flex: 2; */
+    display: flex;
+    flex-direction: column;
+    padding: 1.3rem 0;
+  }
+  .IT-Intro-Resource-Text>p{
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .IT-Intro-Resource-Text>p2{
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .IT-Intro-Resource-Img-Row1{
+    display: flex;
+    flex: 1;
+    padding: 1rem 0;
+    justify-content: center;
+  }
+  .IT-Intro-Resource-Img-Row2{
+    display: flex;
+    flex: 1 1;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+  }
+  .IT_Intro-VerticalLine{
+    border-left: 0.2rem solid #1CB3E8;
+    height: 12rem;
+  }
+  /* .IT-Intro-DivContainerimg{
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -186,10 +271,10 @@ body{
     align-items: center;
     padding-top: 7vw;
     padding-bottom: 16vw;
-  }
+  } */
 
-  .IT-Intro-Containerimg{
-    width: 40%;
+  .IT-Intro-Resourceimg{
+    max-height: 6rem;
     
   }
   .IT-Intro-DivContainercenterimg{
@@ -232,16 +317,16 @@ body{
     flex-direction: column;
     flex: 1.5;
     background-color: #F0F0F0;
-    padding: 2.4vw 1vw 2vw 3vw;
+    padding: 2rem;
     justify-content: space-between;
   }
   .IT-Intro-bottomtext>p{
-    font-size: 1.5vw;
+    font-size: 1.2rem;
     font-weight: bold
   }
 
   .IT-Intro-bottomtext>p2{
-    font-size:1.2vw;
+    font-size:1rem;
     font-weight: 640;
   }
 
@@ -250,7 +335,7 @@ body{
     width: 20%;
     background-color: #A71337;
     color: #FFF;
-    font-size: 1.3vw;
+    font-size: 1rem;
     border: none;
   }
 
@@ -258,3 +343,9 @@ body{
     opacity: 0.5;
     background: #000000;
   }
+  
+@media only screen and (max-width: 977px) {
+  .IT-Intro-WhyIT-Text>p {
+    font-size: 1.7rem;
+  }
+}
