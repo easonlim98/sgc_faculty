@@ -18,6 +18,8 @@ import Nursing from './components/Nursing';
 import OSHintro from './components/OSHintro';
 import Communication_Studies from './components/Communication_Studies';
 import Business_And_Accounting from './components/Business_And_Accounting';
+import CourseDetail from './components/CourseDetail';
+import NewCourse from './components/NewCourse';
 
 const App = () => {
 
@@ -45,6 +47,8 @@ const App = () => {
             <Route exact path="/OSHintro" element={<OSHintro/>} />
             <Route exact path="/Business_And_Accounting" element={<Business_And_Accounting/>} />
             <Route exact path="/Communication_Studies" element={<Communication_Studies/>} />
+            <Route exact path="/CourseDetail" element={<CourseDetail/>} />
+            <Route exact path="/NewCourse" element={<NewCourse/>} />
           </Routes>
           </div>
           {/* { window.location.pathname !== "/AdminLogin" ? <Footer/> : <></>} */}
