@@ -25,8 +25,7 @@ const Header = () => {
 
     const MenuItems = ({ items }) => {
         return (
-            <li className="menu-items"
-            >
+            <li className="menu-items">
                 {items.submenu ? (
                 <>
                     <button className="colorWhite dropdownButtonTitle" type="button" 
@@ -109,8 +108,7 @@ const Header = () => {
                     onClick={() => {
                         setSidebarVisible(false);
                         setSidebarDropdown(false);
-                    }}
-                    >
+                    }}>
                     <span className="navbar-toggler-icon backgroundImageBurger"></span>
             </button>
             </div>
@@ -178,7 +176,6 @@ const Header = () => {
                     :
                     null
                 }
-
 
                 <button className="nav-item"
                     style={{
