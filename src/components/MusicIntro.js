@@ -10,6 +10,7 @@ import './css/standard.css'
 const MusicIntro = () => {
     return (
         <div>
+
             {/* <audio controls autoPlay>
                     <source style={{ display: 'flex' }} src={require("../assets/musicmp3/Study_Music_01.mp3")}type="audio/mpeg"></source>
                     <source style={{ display: 'flex' }} src={require("../assets/musicmp3/Study_Music_01.ogg")}type="audio/mpeg"></source>
@@ -23,10 +24,10 @@ const MusicIntro = () => {
             /> */}
 
             <div className="musicintro-backgroundBanner">
-                <div className="row">
-                    <div className="col-sm-6">
+                <div className="row musicintro">
+                    <div className="col-sm-6 musicintro">
                     </div>
-                    <div className="col-sm-6">
+                    <div className="col-sm-6 musicintro">
                         <div style={{ display: "flex", height: "80vh", alignItems: "center", justifyContent: "center" }}>
                             <div style={{ background: "none", width: "85%", display: "flex", flexDirection: "column" }}>
                                 <div style={{ background: "none", display: "flex", flexDirection: "column" }}>
@@ -45,17 +46,19 @@ const MusicIntro = () => {
 
 
             <div className="container musicintrosection02">
-                <div className="row">
+                <div className="row musicintro">
                     <div className="col-sm-6 musicintrotextsection02">
-                        <p className="font-weight-bold">What is Music Studies</p>
-                        <p>The programme designed to lay a solid</p>
-                        <p>foundation of musical studies which focuses</p>
-                        <p>on the development of musical skills and</p>
-                        <p>theoretical knowledge.</p>
+                        <p className="musicintrotitle02">What is Music Studies</p>
+                        <p>The programme designed to lay a solid
+                            foundation of musical studies which focuses
+                            on the development of musical skills and
+                            theoretical knowledge.</p>
                     </div>
 
-                    <div className="col-sm-6">
-                        <img className="musicintrobannergif01" src={require("../assets/gif/musicgif/musicgif.gif")} alt="" />
+                    <div className="col-sm-6 musicintro">
+                        <div className='musicintrogifbg'>
+                            <img className="musicintrobannergif01" src={require("../assets/gif/musicgif/musicgif.gif")} alt="" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -78,7 +81,7 @@ const MusicIntro = () => {
                 <button type="button" className="btn btn-danger">Check More</button>
             </div>
 
-            <div className="row" style={{ backgroundColor: "black" }}>
+            <div className="row musicintro" style={{ backgroundColor: "black" }}>
 
                 {/* <div classNameName="col-sm-6">
                     <img classNameName="bannerimg03" src={require("../assets/images/Music/image 220.png")} />
@@ -89,35 +92,35 @@ const MusicIntro = () => {
             <div className="musicintroback04">
                 <div className="musicintro-Container5">
 
-                    <div className="row">
-                        <div className="col-sm-6">
+                    <div className="row musicintro">
+                        <div className="col-sm-6 musicintro">
 
                             <img className="musicintro-bannerimg01" src={require("../assets/images/Music/image 220.png")} />
                         </div>
-                        <div className="col-sm-6">
+                        <div className="col-sm-6 musicintro">
 
 
                             <div className="musicintro-navtab">
                                 <a href="javascript:void(0)" onclick="openFounTapp(event, 'Outstanding Student');">
-                                    <div className="musicintro-tabeach musicintro-tabeach-line">Outstanding Student</div><br/>
+                                    <div className="musicintro-tabeach musicintro-tabeach-line">Outstanding Student</div><br />
                                 </a>
                                 <a href="javascript:void(0)" onclick="openFounTapp(event, 'Success Story');">
-                                    <div className="musicintro-tabeach">Success Story</div><br/>
+                                    <div className="musicintro-tabeach">Success Story</div><br />
                                 </a>
                                 <a href="javascript:void(0)" onclick="openFounTapp(event, 'Worklife');">
-                                    <div className="musicintro-tabeach">Worklife</div><br/>
+                                    <div className="musicintro-tabeach">Worklife</div><br />
                                 </a>
                             </div>
                             <div id="Outstanding Student" className="musicintro-tabcontent">
                                 <p className="musicintro-tabcontent-p">""Your imagination is your preview of life's coming attractions."</p>
-                                <h5 style={{Color:"white"}}>Albert Einstein</h5>
+                                <h5 style={{ Color: "white" }}>Albert Einstein</h5>
                                 <hr className="blacklineformusicintro-tabcontent" />
                                 <p>Student of 2021 Music Studies</p>
                                 <img className="musicintro-Container5-ico" src={require("../assets/images/Music/founsection5-1.png")} />
                                 <img className="musicintro-Container5-ico" src={require("../assets/images/Music/founsection5-2.png")} />
                                 <img className="musicintro-Container5-ico" src={require("../assets/images/Music/founsection5-3.png")} />
                                 <div className="btnseemore">
-                                <button type="button" className="btn btn-danger">See More</button>
+                                    <button type="button" className="btn btn-danger">See More</button>
                                 </div>
                             </div>
 
@@ -182,11 +185,11 @@ const MusicIntro = () => {
 
 
 
-            <div className="row" style={{ backgroundColor: "black" }}>
-                <div className="col-sm-5">
+            <div className="row musicintro" style={{ backgroundColor: "black" }}>
+                <div className="col-sm-5 musicintro">
                     <img className="musicintrobannerimg04" src={require("../assets/images/Music/pexels-photo-3760529 1.png")} />
                 </div>
-                <div className="col-sm-7">
+                <div className="col-sm-7 musicintro">
                     <div>
                         <div className="musicintrosection04">
                             <h3>Want to Know more about our facilities</h3>
