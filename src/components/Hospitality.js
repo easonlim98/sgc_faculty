@@ -27,7 +27,7 @@ const Hospitality = () => {
 
 
             <div className="Hsp-container">
-                <div className="row sp1">
+                <div className="row Hsp-r1">
                     <div className="col Hsp-imgborder">
                         <div className="Hsp-iconimg">
                             <img className="Hsp-first-section-img" src={require("../assets/images/Hospitality/icon1.png")} />
@@ -56,9 +56,9 @@ const Hospitality = () => {
 
                 <br />
                 <br />
-                
-                <div className='row'>
-                <div className='col-sm-6'>
+
+                <div className='row Hsp-r2'>
+                    <div className='col-sm-6'>
                         <h2 className="Hsp-content-header">Hospitality in SEGi</h2>
                         <p className="Hsp-SEGI-content">
                             The Hospitality & Tourism programmes in SEGi are designed to equip you
@@ -67,8 +67,8 @@ const Hospitality = () => {
                             resources, information management, planning and research, among others.
                         </p>
                     </div>
-                    <div className="col-sm-6">
-                        <img src={require("../assets/images/Hospitality/Gif2.gif")} style={{ width: '100%', height: '100%' }} alt="" />
+                    <div className="col-sm-6" style={{ display: 'flex', justifyContent: 'center', padding: '0' }}>
+                        <img src={require("../assets/images/Hospitality/Gif2.gif")} className="Hsp-gif" alt=""/>
                     </div>
                 </div>
                 <h2 className="Hsp-content-header">Why Choose Us ?</h2>

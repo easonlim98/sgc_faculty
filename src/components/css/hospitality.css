@@ -27,8 +27,22 @@
   top: -4rem;
 }
 
+.Hsp-r1{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.Hsp-r2{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+
+
 .Hsp-iconimg {
-  width: 20rem;
+  width: 19rem;
   height: 13.5rem;
   padding: 2rem 3rem;
   box-shadow: 1px 3px 1px #9e9e9e;
@@ -61,6 +75,13 @@
 
 .Hsp-SEGI-content {
   text-align: justify;
+}
+
+.Hsp-gif{
+  width: 90%;
+    height: 100%;
+    box-shadow: 0px 15px 20px rgba(32, 195, 130, 0.4);
+    border-radius: 10px;
 }
 
 .Hsp-ehancesskillsimg {
