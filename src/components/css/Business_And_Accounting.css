@@ -1,5 +1,5 @@
 .BA-Banner { 
-  background: rgba(89, 109, 116, 0.65) url('../../assets/images/Business_And_Accounting/B_A_Banner.png');
+  background: rgba(89, 109, 116, 0.65) url('../../assets/images/Business_And_Accounting/BA-Banner.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7,73 +7,56 @@
   top: 0;
 }
 
-@media only screen and (max-width: 1400px) {
-  .BA-bannerContent-res{
-          font-size: 16px; 
-          color: white; 
-          width: 30%; 
-          margin-top: 10px;
-      }
-  .BA-Section-1-Content{
-      width: 90%;
-  }
+.BA-container {
+  padding: 0 20rem;
 }
 
-@media only screen and (max-width: 800px) {
-  .BA-bannerContent-res{
-          font-size: 16px; 
-          color: white; 
-          width: 60%; 
-          margin-top: 10px;
-      }
-  .BA-Section-1-Content{
-      width: 95%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .BA-bannerContent-res{
-          font-size: 16px; 
-          color: white; 
-          width: 100%; 
-          margin-top: 10px;
-      }
-  .BA-Section-1-Content{
-      width: 100%;
-  }
-}
-
-.BA-Section-Text-Left {
+.BA-image1{
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 3rem;
+  justify-content: space-around;
+  margin: 1rem;
 }
 
-.BA-Section-1-img {
-  display: flex;
-  justify-content: flex-end;
+.BA-container2 {
+  padding: 5rem;
+}
+
+.BA-Section-Content{
   width: 90%;
-  height: 90%;
-}
-
-.BA-Section-1-text {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
   text-align: justify;
 }
 
-.BA-Section-1-gif {
-  width: 100%; 
-  height: 100%;
+.BA-Section-Text-Left {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  padding: 1rem 2rem;
+}
+
+.BA-Section-Btn {
+  justify-content: left;
+  align-items: left;
+  display: flex;
+  padding: 0rem 2rem;
+}
+
+.BA-Section-text1 {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.BA-Section-group1{
+  padding: 2rem;
 }
 
 .BA-Section-2 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .BA-Section-2-text {
@@ -83,52 +66,266 @@
   text-align: justify;
 }
 
-.BA-gifImg {
-  max-width: 350px;
-  max-height: 350px;
-  width: 100%;
-  height: 100%;
+.BA-gif1 {
   border-radius: 8px;
+  margin: 1rem;
+  width: 15rem;
+  height: 15rem;
 }
 
-.BA-gifImg1 {
-  max-width: 200px;
-  max-height: 200px;
-  width: 100%;
-  height: 100%;
+.BA-section-img {
+  display: flex;
+  justify-content: center;
+}
+
+.BA-gif2 {
+  width: 180px;
+  height: 180px;
   border-radius: 8px;
   position: absolute;
-  bottom: 20%;
+  bottom: 23%;
   right: 40%;
 }
 
+.BA-image1-spacing{
+  display: flex;
+  justify-content: space-between;
+}
+
 .BA-image1 {
-  max-width: 300px;
-  max-height: 300px;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
+object-fit: cover;
+width: 100%;
+height: 100%;
+border-radius: 12px;
 }
 
 .BA-image2 {
-  min-width: 300px;
-  min-height: 300px;
-  width: 80%;
+  /* width: 300px;
+  height: 300px;
+  margin: 1rem; */
+  padding: 0px 0px;
+}
+
+.BA-backimg{
+  min-width: 200px;
+  min-height: 200px;
+  width: 70%;
   height: 80%;
-  text-align: center;
+  position: relative;
+  display: inline;
+  text-align: right;
+  top: 5%;
+  left: 20%;
+  border-radius: 30px;
+}
+
+.BA-frontgif2{
+  min-width: 100px;
+  min-height: 100px;
+  width: 60%;
+  height: 50%;
+  position: absolute;
+  top: 20%;
+  right: 30%;
+  text-align: left;
+  border-radius: 30px;
 }
 
 .BA-image3 {
-  width: 50px;
-  height: 50px;
+  width: 80%;
+  height: 80%;
 }
 
 .BA-image4 {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
 }
 
 .BA-bgColor{
   background-color: rgb(131, 143, 151);
+}
+
+.BA-icon{
+  width: 40px;
+  height: 40px;
+  padding-right: 20px;
+}
+
+.BnA-icon{
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.BA-text-hd{
+padding: 1rem 0rem 1rem 0rem;
+font-size: 30px;
+}
+
+.BA-text-font{
+  text-align: justify;
+}
+
+@media only screen and (max-width: 1400px) {
+  .BA-bannerContent-res{
+          font-size: 16px; 
+          color: white; 
+          width: 30%; 
+          margin-top: 10px;
+  }
+  .BA-container {
+    padding: 0 14rem;
+  }
+ 
+}
+
+@media only screen and (max-width: 1200px) {
+  .BA-bannerContent-res{
+          font-size: 16px; 
+          color: white; 
+          width: 30%; 
+          margin-top: 10px;
+  }
+  .BA-container {
+    padding: 0 8rem;
+  }
+ 
+}
+
+@media only screen and (max-width: 992px) {
+  .BA-bannerContent-res{
+          font-size: 16px; 
+          color: white; 
+          width: 30%; 
+          margin-top: 10px;
+  } 
+  .BA-container {
+    padding: 0 6rem;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .BA-bannerContent-res{
+          font-size: 16px; 
+          color: white; 
+          width: 30%; 
+          margin-top: 10px;
+      }
+  .BA-container {
+    padding: 0 6rem;
+  }
+  .BA-Section-1-row{
+    flex-direction: column;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .BA-bannerContent-res{
+          font-size: 16px; 
+          color: white; 
+          width: 30%; 
+          margin-top: 10px;
+      }
+  .BA-container {
+    padding: 0 6rem;
+  }
+  .BA-text-hd{
+    margin: 1rem;
+    font-size: 20px;
+  }
+  .BA-text-font{
+    margin: 1rem;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .BA-bannerContent-res{
+          font-size: 16px; 
+          color: white; 
+          width: 50%; 
+          margin-top: 10px;
+      }
+  .BA-container {
+    padding: 0 0.5rem;
+  }
+  .BA-text-hd{
+    margin: 0 0.5rem;
+    font-size: 18px;
+  }
+  .BA-text-font{
+    margin: 1rem;
+    font-size: 13px;
+  }  
+}
+
+@media only screen and (max-width: 360px) {
+  .BA-bannerContent-res{
+          font-size: 16px; 
+          color: white; 
+          width: 80%; 
+          margin-top: 10px;
+      }
+  .BA-container {
+    padding: 1rem;
+  }
+  .BA-text-hd{
+    margin: 0 0.5rem;
+    font-size: 16px;
+  }
+  .BA-text-font{
+    margin: 0 0.5rem;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .BA-bannerContent-res{
+          font-size: 16px; 
+          color: white; 
+          width: 100%; 
+          margin-top: 10px;
+      }
+  .BA-container {
+    padding: 1rem;
+  }
+  .BA-text-hd{
+    font-size: 16px;
+  }
+  .BA-text-font{
+    margin: 1rem 0.5rem;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .BA-bannerContent-res{
+          font-size: 16px; 
+          color: white; 
+          width: 100%; 
+          margin-top: 10px;
+      }
+  .BA-container {
+    padding: 0.5rem;
+  }
+  .BA-image2 {
+    width: 290px;
+    height: 300px;
+    margin: 0.3rem;
+  }
+  .BA-image3 {
+    width: 290px;
+    height: 150px;
+    margin: 0.5rem;
+  }
+  .BA-text-hd{
+    margin: 1rem 0.5rem 0 1rem;
+    font-size: 14px;
+  }
+  .BA-text-font{
+    margin: 0 0 1rem 1rem;
+    font-size: 10px;
+  }
 }
 
