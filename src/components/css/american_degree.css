@@ -51,16 +51,32 @@
     padding-top: 5%;
 }
 
+.amedegre-secondpart-sub {
+    display: flex;
+    align-items: center;
+}
+
+.amedegre-secondpart-first{
+    left: 40px;
+    position: relative;
+}
+
 .amedegre-secondpartwwo{
     font-weight: bold;
 }
 
 .amedegre-secondpartsup{
     text-align: center;
+    font-weight: 700;
 }
 
 .amedegre-secondpartgse {
     color: #CFC2C2;
+}
+
+.amedegre-secondpart-p {
+    text-align: justify;
+    font-weight: 600;
 }
 
 .amedegre-blacklineforamerica {
@@ -69,14 +85,24 @@
     margin-bottom: 10%;
 }
 
+.amedegre-squareinsecondpar-section {
+    padding-top: 60px;
+}
+
 .amedegre-squareinsecondpart {
     height: auto;
     width: auto;
-    border: 2px solid black;
+    border: 1px solid black;
     text-align: center;
     padding: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
+    left: 90px;
+    z-index: 100;
+    position: relative;
+    background-color: white;
+    box-shadow: 2px 2px 1px black;
+    border-radius: 10px;
 }
 
 .amedegre-squareinsecondpart-title{
@@ -95,6 +121,10 @@
 .amedegre-readmorebutton {
     border: 2px solid black;
     color: black;
+}
+
+.amedegre-secondpartwwwo {
+    font-weight: 600;
 }
 
 .amedegre-secondpartpictureright {
@@ -142,7 +172,7 @@
 }
 
  
-@media only screen and (min-width: 300px) and (max-width: 599px) {
+@media only screen and (min-width: 280px) and (max-width: 599px) {
 
     .amedegrebannerwords {
         top: 40%;
@@ -151,8 +181,32 @@
     }
 }
 
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+
+    .amedegre-secpartprofilepicture {
+        width: 30%;
+    }
+
+    .amedegre-secondpart-p {
+        font-size: 18px;
+    }
+
+    .amedegre-secondpartsup {
+        font-size: 23px;
+        padding-bottom: 23px;
+    }
+
+    .amedegre-readmorebutton {
+        font-size: 25px;
+    }
+    
+    .amedegre-squareinsecondpart-title {
+        font-size: 23px;
+    }
+}
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 300px) and (max-width: 768px) {
+@media only screen and (min-width: 280px) and (max-width: 991px) {
 
     .amedegrebannerpicture-pic {
         height: 530px;
@@ -171,18 +225,20 @@
         top: 40%;
     }
 
-    .amedegre-blacklineforamerica {
-        margin-top: 7%;
-        margin-bottom: 10%;
-        border: 1px white;
-    }
-
     .amedegre-readmorebutton {
         margin-bottom: 50px;
     }
 
     .amedegre-readmorebutton-con{
         text-align: center;
+    }
+
+    .amedegre-secondpart-first {
+        left: 0px;
+    }
+
+    .amedegre-squareinsecondpar-section {
+        padding-top: 0px;
     }
 
     .america-pic-showornot {
@@ -201,9 +257,18 @@
         display: none;
     }
 
+    .amedegre-squareinsecondpart {
+        left: 0px;
+    }
+
+    .amedegre-blacklineforamerica {
+        margin-top: 7%;
+        margin-bottom: 10%;
+        border: 1px white;
+    }
+
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 769px) and (max-width: 991px) {
 
     .amedegrebannerwordsh2 {
@@ -212,6 +277,39 @@
 
     .amedegrebannerwordsh1 {
         font-size: 30px;
+    }
+
+    .amedegre-readmorebutton-con {
+        text-align: center;
+    }
+
+    .amedegre-secpartprofilepicture {
+        width: 25%;
+    }
+
+    .amedegre-secondpartsup {
+        font-size: 30px;
+        padding-bottom: 31px;
+    }
+
+    .amedegre-secondpart-p {
+        font-size: 20px;
+    }
+
+    .amedegre-readmorebutton {
+        font-size: 30px;
+    }
+
+    .amedegre-squareinsecondpart-title {
+        font-size: 25px;
+    }
+
+    .amedegre-squareinsecondpart-para {
+        font-size: 20px;
+    }
+
+    .american-degree-providing {
+        font-size: 20px;
     }
 }
 
@@ -225,6 +323,14 @@
         text-align: right;
         padding-right: 10%;
         width: 100%;
+    }
+
+    .amedegre-squareinsecondpar-section {
+        padding-top: 0px;
+    }
+
+    .amedegre-squareinsecondpart-para {
+        font-size: 14px;
     }
 
     .amedegre-secondpartsup {

@@ -23,7 +23,7 @@ const AmericanDegree = () => {
         </div>
         <div className="container amedegre-secondpart">
             <div className="row">
-                <div className="col-lg">
+                <div className="col-lg-4 amedegre-secondpart-first">
                     <h4 className="amedegre-secondpartwwo amedegre-secondpartsup">What We offer</h4>
                     <p className="amedegre-secondpartgse amedegre-secondpartsup">GREAT STUDENT EXPERIENCE</p>
                     <img className="img-fluid amedegre-secpartprofilepicture" href="#" src={require("../assets/images/American_Degree/american_degree_profilepic.png")} alt=""/>
@@ -37,7 +37,7 @@ const AmericanDegree = () => {
                         <button type="button" className="btn btn-outline-dark amedegre-readmorebutton">Read More</button>
                     </div>
                 </div>
-                <div className="col-lg">
+                <div className="col-lg-3 amedegre-squareinsecondpar-section">
                     <div className="amedegre-squareinsecondpart">
                         <img className="img-fluid amedegre-threeicon-secondpart" href="#" src={require("../assets/images/American_Degree/secondpart1.png")} alt=""/>
                         <p className="amedegre-squareinsecondpart-title">What is ADP</p>
@@ -49,7 +49,7 @@ const AmericanDegree = () => {
                         <p className="amedegre-squareinsecondpart-para">The American Degree Program provides students a direct entry into a university degree course</p>
                     </div>
                     <div className="amedegre-squareinsecondpart">
-                        <img className="img-fluid threeicon-secondpart" href="#" src={require("../assets/images/American_Degree/secondpart3.png")} alt=""/>
+                        <img className="img-fluid amedegre-threeicon-secondpart" href="#" src={require("../assets/images/American_Degree/secondpart3.png")} alt=""/>
                         <p className="amedegre-squareinsecondpart-title">What is ADP</p>
                         <p className="amedegre-squareinsecondpart-para">The American Degree Program provides students a direct entry into a university degree course</p>
                     </div>
@@ -60,7 +60,7 @@ const AmericanDegree = () => {
               </div>
         </div>
         <div className="container amedegre-secondpart">
-            <div className="row">
+            <div className="row amedegre-secondpart-sub">
                 <div className="col-lg-4">                    
                     <img className="img-fluid america-pic-showornot" href="#" src={require("../assets/images/American_Degree/american_degree_picture2.png")} alt=""/>
                 </div>
@@ -72,7 +72,7 @@ const AmericanDegree = () => {
                     <br/><br/>Students can customise their American education pathway with exible transfer
                     arrangements or take the option to complete their American education in Malaysia.
                     </p>
-                    <p>• Degrees awarded by reputable public university<br/>
+                    <p className="amedegre-secondpartwwwo">• Degrees awarded by reputable public university<br/>
                         • Obtain an American degree at local cost<br/>
                         • Continuous learning through courseworks<br/>
                         • Conducive learning environment<br/>
@@ -92,7 +92,7 @@ const AmericanDegree = () => {
                     </div>
                     <div className="col-lg amedegre-greyrectenglerightside">
                         <h5>CHAMPIONING 3H TRANSFORMATIVE LEARNING</h5>
-                        <p>At SEGi, we champion the 3H Transformative Learning
+                        <p className="american-degree-providing">At SEGi, we champion the 3H Transformative Learning
                             to cultivate future-proof graduates. The education of the
                             Head, the Heart and the Hands is a holistic learning
                             approach in transforming future leaders:</p>
@@ -109,7 +109,7 @@ const AmericanDegree = () => {
                                     (Knowledge)</p>
                             </div>
                             <div className="col-lg">
-                                <p>Providing the latest curriculum co-designed with
+                                <p className="american-degree-providing">Providing the latest curriculum co-designed with
                             international partner universities, local industry
                             practitioners and experts. Our proven teaching and
                             learning process has seen over 130,000 graduates

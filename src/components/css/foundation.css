@@ -218,7 +218,7 @@
     font-weight: bold;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 599px) {
+@media only screen and (min-width: 280px) and (max-width: 599px) {
 
     .founbannerwords {
         top: 40%;
@@ -232,7 +232,7 @@
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 300px) and (max-width: 768px) {
+@media only screen and (min-width: 280px) and (max-width: 768px) {
 
     .founbannerpicture-pic {
         height: 630px;
@@ -300,16 +300,54 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 769px) and (max-width: 991px) {
 
-    .founbannerwordsh2 {
+    .founbannerpicture-pic {
+        height: 630px;
+        width: auto;
+        object-fit: cover;
+    }
+
+    .founbannerwords {
+        top: 40%;
+        padding-left: 0;
+        text-align: center;
         font-size: 20px;
     }
 
-    .founbannerwordsh1 {
+    .founbannerwordsh2 {
         font-size: 30px;
+    }
+
+    .founbannerwordsh1 {
+        font-size: 40px;
     }
 
     .Fou-Content{
         width: 95%;
+    }
+
+    .foun-whatwelearn-words {
+        font-size: 40px;
+    }
+
+    .Fou-picture{
+        text-align: center;
+    }
+
+    .Fou-image {
+        width: 82%;
+    }
+
+    .Fou-word3 {
+        padding: 30px 0;
+        font-size: 35px;
+    }
+    
+    .foun-picsection4 {
+        padding-top: 3rem;
+    }
+
+    .foun-bannerimg02 {
+        display: none;
     }
 }
 
@@ -331,7 +369,7 @@
     }
 
     .foun-bannerimg01 {
-        width: 500px;
+        width: 480px;
         padding-top: 100px;
     }
 
