@@ -46,15 +46,15 @@ const CreativeArt = () => {
             </div>
 
             <div className="container CA-Section-2">
-                <div className="col-sm-4">
+                <div className="">
                     <p className="CA-section-2_STUDENT">S T U D E N T S</p>
                     <p className="CA-section-2_ARTWORKS">A R T W O R K S</p>
                     <img className="CA-Section-2-pic1" src={require('../assets/images/Creative_Art/section2_part2.png')} />
                 </div>
-                <div className="col-sm-4" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div className="" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <img className="CA-Section-2-pic2" src={require('../assets/images/Creative_Art/test.jpg')} />
                 </div>
-                <div className="col-sm-4" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                <div className="" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
                     <div id="line2" className="CA-horizontal"></div>
                     <p className='all-text CA-Next' style={{ color: '#A71337' }}>Next</p>
                     <p className='all-text CA-name' style={{ color: '#ACACAC', fontWeight: '500', marginTop: '5rem' }}>KELVIN LIM</p>

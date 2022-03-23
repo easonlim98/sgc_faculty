@@ -18,7 +18,7 @@ body {
 .tabs {
     display: flex;
     align-self: center;
-    width: 60%;
+    width: 62%;
 }
 
 .tabitem {
@@ -75,7 +75,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 5rem;
+    padding: 1rem 5rem;
 }
 
 .tab-underline {
@@ -247,7 +247,7 @@ body {
     }
 
     .tabimage {
-        bottom: 33rem;
+        bottom: 27.5rem;
     }
 
     .wrapper {
@@ -264,6 +264,9 @@ body {
         font-size: 1rem;
     }
 
+    .tabimage {
+        bottom: 31rem;
+    }
     .tab-first-section {
         padding: 0;
         padding: 2rem 0.5rem;
@@ -290,7 +293,7 @@ body {
 
 @media only screen and (max-width: 373px) {
     .tabimage {
-        bottom: 32rem;
+        bottom: 30rem;
     }
 
     .student-name {
