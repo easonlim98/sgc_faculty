@@ -33,11 +33,27 @@
     max-height: 500px;
     width: 100%;
     height: 100%;
+    border-radius: 13px;
 }
 
+.musicintrogifbg {
+    border-radius: 13px;
+    width: 500px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+  }
+
 .musicintrosection02{
-    margin-top: 80px;
-    margin-bottom: 80px;
+    font-weight: 600;
+    max-width: 50%;
+    min-width: none;
+    padding: 3rem 0;
+    justify-content: center;
+}
+
+.musicintrotitle02{
+    font-weight: 700;
+    
 }
 
 .musicintrosection03{
@@ -57,8 +73,9 @@
 }
 
 .musicintrobannerimg02{
-    
     width: 100%;
+    
+    /* max-width: 50%; */
     
 }
 
@@ -266,9 +283,6 @@ bottom:70px; */
 
 .musicgroup01{
     text-align: center;
-    min-width: 350px;
-    min-height: 350px;
-    width: 80%;
     height: 80%;
 
 }
@@ -277,10 +291,27 @@ bottom:70px; */
     text-align: center;
 }
  
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
    .musicintrosection04{
        font-size :0.8rem;
        color:white;
+}
+} */
 
+@media only screen and (max-width: 419px){
+    .musicintrogifbg {
+        border-radius: 13px;
+        box-shadow: 0 4px 4px 0 rgb(0 0 0 / 20%), 0 6px 5px 0 rgb(0 0 0 / 19%);
+        text-align: center;
+    } 
 }
+
+@media only screen and (max-width: 838px){
+    .musicintrogifbg{
+        width: unset;
+    }
+    .musicgroup01{
+        width: 100%;
+    }
 }
+

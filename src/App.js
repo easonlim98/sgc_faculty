@@ -46,6 +46,7 @@ const App = () => {
           <Route exact path="/Foundation" element={<Foundation />} />
           <Route exact path="/MusicIntro" element={<MusicIntro />} />
           <Route exact path="/Psychology" element={<Psychology />} />
+          <Route exact path="/Nursing" element={<Nursing />} />
         </Routes>
       </div>
       {window.location.pathname !== "/AdminLogin" ? <Footer /> : <></>}
