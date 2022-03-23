@@ -28,8 +28,8 @@ const AmericanDegree = () => {
                     <p className="amedegre-secondpartgse amedegre-secondpartsup">GREAT STUDENT EXPERIENCE</p>
                     <img className="img-fluid amedegre-secpartprofilepicture" href="#" src={require("../assets/images/American_Degree/american_degree_profilepic.png")} alt=""/>
                     <h6 className="amedegre-secondpartsup amedegre-secondpartsup2">SUCCESSFUL UNIVERSITY PLACEMENTS</h6>
-                    <p className="amedegre-secondpart-p">We are proud to be among the few higher educational institutions in Malaysia who have consistently churned out ADP graduates who meet the stringent requirements and application procedures of some of the most elite universities in the U.S. and in the world.
-                    <br/><br/>Our students’ continued success in securing placements in these high-ranking institutions not only reflects the effectiveness of our teaching practice, but also speaks volumes about the level of care, support and guidance that we provide to them as part of their journey here at ADP.</p>
+                    <p className="amedegre-secondpart-p">We are proud to be among the few higher education institutions in Malaysia that have consistently churned out ADP graduates who meet the stringent requirements and application procedures of some of the most elite universities in the U.S. and the world.
+                    <br/><br/>Our students’ continued success in securing placements in these high-ranking institutions reflects the effectiveness of our teaching practice and speaks volumes about the level of care, support, and guidance that we provide to them as part of their journey here at ADP.</p>
                     <div>
                         <hr className="amedegre-blacklineforamerica"></hr>
                     </div>
