@@ -6,6 +6,7 @@
 
 .facilitesimage {
     width: 40%;
+    max-height: 28rem;
 }
 
 .facilities {
@@ -183,5 +184,20 @@
     .facilities-content {
         margin: 0.5rem 0;
         font-size: 0.65rem;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .facilities-title {
+        font-size: 0.8rem;
+    }
+
+    .facilities-content {
+        margin: 0.5rem 0;
+        font-size: 0.65rem;
+    }
+
+    .facilities-content {
+        font-size: 0.6rem;
     }
 }

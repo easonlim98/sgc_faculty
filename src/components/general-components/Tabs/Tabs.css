@@ -67,7 +67,9 @@ body {
     margin-right: 1.3rem;
 }
 
-.tab-bagicon {}
+.tabimage {
+    max-width: 24rem;
+}
 
 .tab-first-section {
     display: flex;
