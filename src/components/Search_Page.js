@@ -47,8 +47,12 @@ const Search_Page = () => {
       Campus: ["KL,", "SJ"]
     },
   ];
-
-{/* <div style={{ display: 'flex', flexDirection: 'row' }}>
+  // const Campus = ProgramArr.map((program)=>{
+  //   return program.Campus
+  // }  
+  // )
+  // console.log(Campus)
+  {/* <div style={{ display: 'flex', flexDirection: 'row' }}>
     <div style = {{backgroundColor:(data.Campus == "KL")?:}}>
       <p>
         {Program.Campus[1]}
@@ -57,25 +61,25 @@ const Search_Page = () => {
 
 
   </div> */}
-  
+
   // const campus = SegiProgram.Campus.map((campus)=> {
   //   return campus.Campus.length;
-  
+
   // })
-  
+
   const [SearchText, setSearchText] = useState('');
   const SegiProgram = ProgramArr.filter((Program) => {
-   
+
     if (SearchText === "") {
       return Program
     } else if (Program.Title.toLocaleLowerCase().includes(SearchText.toLocaleLowerCase())) {
       return Program
     }
-  }).map((Program, index) => 
-     
-  
+  }).map((Program, index) =>
+
+
     <>
-      <div style={{ marginBottom: '1rem' }}>
+      <div style={{ marginBottom: '1rem',display:'flex',flexDirection:'column' }}>
         <div class="card">
           <div class="card-body">
             <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
@@ -97,12 +101,15 @@ const Search_Page = () => {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
-              <div style={{ display: 'flex', flex: 1 }}>
+              <div style={{ display: 'flex', flex: 2 }}>
                 <p class="card-text Search-Page-Attribute" >Level of Study:</p>
               </div>
               <div style={{ display: 'flex', flex: 1 }}>
                 <p className="Search-Page-Value">{Program.Level_of_Study}</p>
               </div>
+              <div class="Search-Page-Cotent-Button2" >
+            <button>Visit</button>
+          </div>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
@@ -112,32 +119,36 @@ const Search_Page = () => {
               <div style={{ display: 'flex', flex: 1 }}>
                 <p className="Search-Page-Value">{Program.Awarding}</p>
               </div>
+              
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'row', flex:1 }}>
+            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
               <div style={{ display: 'flex', flex: 2 }}>
                 <p class="card-text Search-Page-Attribute" >Campus:</p>
               </div>
               <div style={{ display: 'flex', flex: 1 }}>
                 <p className="Search-Page-Value">{Program.Campus}</p>
               </div>
-              <div style={{ display: 'flex', flex: 1,justifyContent:'flex-end' }}>
-              <a href="#" style={{ color: '#A71337', fontWeight: 'bold',justifyContent:'flex-end' }} class="btn">More Details</a>
-              </div>
+              <div class="Search-Page-Cotent-Button" >
+            <button>Details</button>
+          </div>
+          
             </div>
             {/* {Campus} */}
 
           </div>
+          
         </div>
+        
       </div>
-      
+
     </>
-    
+
   )
- 
-  const result=SegiProgram.length;
+
+  const result = SegiProgram.length;
   console.log(result)
- 
+
   return (
     <div>
       <div className="Search-Page-Banner" style={{ position: 'relative' }}>
