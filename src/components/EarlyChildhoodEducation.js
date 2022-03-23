@@ -36,7 +36,7 @@ const EarlyChildhoodEducation = () => {
                     <div className="col-sm-7">
                         <div className="ECE-Section-1-right">
                             <p style={{ fontWeight: '700', }}>What is Early Childhood Education ?</p>
-                            <p style={{ fontWeight: '500', }} className="ECE-Section-1-Content">Early childhood education covers the education of infants, toddlers as well as young children. The early years of a child's life are very important as children develop cognitive and learning skills, motor skills as well as social and emotional skills during this period.</p>
+                            <p style={{ fontWeight: '500', }} className="ECE-Section-1-Content">Early childhood education covers the education of infants, toddlers, and young children. The early years of a child's life are significant as children develop cognitive and learning skills, motor skills, and social and emotional skills during this period.</p>
                             <ul>
                                 <li style={{ fontWeight: '400', }}>Child Development</li>
                                 <li style={{ fontWeight: '400', }}>Learning and Play</li>
@@ -53,8 +53,8 @@ const EarlyChildhoodEducation = () => {
                         <div className="ECE-Section-2-left">
                             <p style={{ fontWeight: '700', fontSize: '14px' }}>Today’s GRADUATES</p>
                             <p style={{ fontWeight: '700', fontSize: '17px' }}>TOMORROW’S EDUCATORS</p>
-                            <p style={{ fontWeight: '700', fontSize: '14px' }}>A pioneer and trusted provider of early childhood education programmes, producing thousands of highly qualied early childhood practitioners since 1999, SEGi was appointed the champion for Early Childhood teacher training by PEMANDU in 2010 for the National Key Economic Area (NKEA) Entry Point Project (EPP) 2.</p>
-                            <p style={{ fontWeight: '700', fontSize: '14px' }}>Our students are exposed to a myriad of key issues that are relevant to the future planning of Early Childhood Education in the country. Therefore, they are high in demand locally and abroad, including Singapore. Our strong links with more than 100 local and international Early Childhood Education agencies provide students and graduates ready access to internship and employment opportunities. Apart from Early Childhood Education, we also offer other specialisation fields that are linked to the teaching profession, such as TESL, Special Needs Education and Counselling. Students also have the opportunity to further their studies in this field at the post-graduate level.</p>
+                            <p style={{ fontWeight: '700', fontSize: '14px' }}>A pioneer and trusted provider of early childhood education programmes, producing thousands of highly qualified early childhood practitioners since 1999, SEGi was appointed the champion for Early Childhood teacher training by PEMANDU in 2010 for the National Key Economic Area (NKEA) Entry Point Project (EPP) 2.</p>
+                            <p style={{ fontWeight: '700', fontSize: '14px' }}>Our students are exposed to a myriad of critical issues relevant to the future planning of Early Childhood Education in the country. Therefore, they are high in demand locally and abroad, including in Singapore. Our strong links with more than 100 local and international Early Childhood Education agencies provide students and graduates with ready access to internship and employment opportunities. Apart from Early Childhood Education, we also offer other specialisation fields linked to the teaching profession, such as TESL, Special Needs Education and Counselling. Students also can further their studies in this field at the post-graduate level.</p>
                         </div>
                     </div>
                     <div className="col-sm-4">
