@@ -1,11 +1,11 @@
-.BA-Banner { 
+/* .BA-Banner { 
   background: rgba(89, 109, 116, 0.65) url('../../assets/images/Business_And_Accounting/BA-Banner.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: darken;
   top: 0;
-}
+} */
 
 .BA-container {
   padding: 0 20rem;

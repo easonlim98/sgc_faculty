@@ -2,25 +2,23 @@ import React from 'react'
 import './css/Business_And_Accounting.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/standard.css'
+import Banner from './general-components/Banner/Banner.js'
+import Facilities from './general-components/Facilities/Facilities.js'
+import TabsComponent from './general-components/Tabs/TabsComponent'
 
 const Business_And_Accounting = () => {
     return (
         <div>
-            <div class="BA-Banner">
-                <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
-                    <div style={{ background: 'none', width: '85%', display: 'flex', flexDirection: 'column' }}>
-                        <div style={{ background: 'none', display: 'flex', flexDirection: 'column' }}>
-                            <a style={{ fontSize: '20px', color: '#FFFFFF' }}>Know more about</a>
-                            <a style={{ fontSize: '35px', color: '#FFFFFF', fontWeight: 'bold' }}>Our Program</a>
-                            <p style={{ color: '#FFFFFF' }} class="BA-bannerContent-res">If you are interested and want to know more
-                                about Business & Accounting.</p>
-                            <div>
-                                <button type="button" class="General-Button">Programme</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+            <div className='BA banner-container'
+                style={{
+                    backgroundImage: "url(" + require('../assets/images/Business_And_Accounting/BA-Banner.png') + ")"
+                }}>
+                <Banner
+                    navigatepath={"/Search_Page"}
+                    bannercontent={"If you are interested and want to know more about Business & Accounting."} />
             </div>
+
             <div className="BA-container">
                 <div class="row">
                     <div class="col-sm-5 BA-section-img">
@@ -84,60 +82,19 @@ const Business_And_Accounting = () => {
                     </ul>
                 </div>
             </div>
-            <div className="row BA-bgColor">
-                <div className="col-sm-7">
-                    <div className="BA-container2">
-                        <h4>CHAMPIONING 3H TRANSFORMATIVE LEARNING</h4>
-                        <p style={{ textAlign: 'justify' }}>At SEGi, we champion the 3H Transformative Learning to cultivate
-                            future-proof graduates. The education of the Head, the Heart and the Hands is a holistic learning
-                            approach in transforming future leaders:</p>
-                        <div class="container">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="Outstanding-Student-tab" data-toggle="tab"
-                                        href="#Outstanding-Student" role="tab" aria-controls="Outstanding-Student"
-                                        aria-selected="true">Outstanding Student</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="Success-Story-tab" data-toggle="tab" href="#Success-Story" role="tab"
-                                        aria-controls="Success-Story" aria-selected="false">Success Story</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="Worklife-tab" data-toggle="tab" href="#Worklife" role="tab"
-                                        aria-controls="Worklife" aria-selected="false">Worklife</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="Outstanding-Student" role="tabpanel"
-                                    aria-labelledby="Outstanding-Student-tab">
-                                    <div style={{ boxShadow: '0px 1px #5F84AD' }}>
-                                        <p style={{ color: '#FFF' }}>"There is no passion to be found in playing small — in settling
-                                            for a life that is less than the one you are capable of living."</p>
-                                        <p style={{ color: '#FFF' }}>Nelson Mandela</p>
-                                    </div>
-                                    <p style={{ color: '#FFF' }}>Student of 2021 Bachelor of Communication Studies</p>
-                                    <div>
-                                        <img class="BA-icon" src={require("../assets/images/Communication_Studies/profile-icon.png")} alt="" />
-                                        <img class="BA-icon" src={require("../assets/images/Communication_Studies/contact-icon.png")} alt="" />
-                                        <img class="BA-icon" src={require("../assets/images/Communication_Studies/work-icon.png")} alt="" />
-                                    </div>
-                                    <a style={{ color: '#A71337' }} href="#">See More</a>
-                                </div>
-                                <div class="tab-pane fade" id="Success-Story" role="tabpanel" aria-labelledby="Success-Story-tab">
-                                    <p style={{ color: '#FFF' }}>Content for Success Story</p>
-                                </div>
-                                <div class="tab-pane fade" id="Worklife" role="tabpanel" aria-labelledby="Worklife-tab">
-                                    <p style={{ color: '#FFF' }}>Content for Worklife</p>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-                <div className="col-sm-5">
-                    <img className="BA-image4" src={require("../assets/images/Business_And_Accounting/BA-img8.png")} alt="" />
-                </div>
-            </div>
+            <TabsComponent
+                StudentName={"Edward Maya"}
+                StudentJob={"Graphic Designer"}
+                Studentimage={require('../assets/images/Creative_Art/college_student_creativeart.png')}
+                StudentWords={"“My high school art education constructed invaluable foundations for me as a creative professional.”"}
+                navigationpath={""}
+                textcolor={"#A71337"}
+                backgroundcolor={"#E3E4E3"}
+            />
+            <Facilities
+                facilitiesimage={require('../assets/images/Business_And_Accounting/BA-img10.png')}
+                content={"If you are interested in our programme and want to check out more about our Business & Accounting-related facilities, please click on the facilities button."} />
         </div>
     )
 }
