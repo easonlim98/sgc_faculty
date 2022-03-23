@@ -16,7 +16,7 @@ const Foundation = () => {
                         <h4 className="founbannerwordsh2">Know more about</h4>
                         <h1 className="founbannerwordsh1">our program</h1>
                         <p>If you are interested and want to know more <br/> about American Degree Program. </p>
-                        <button type="button" className="btn btn-primary buttonforprogramme">Programme</button>
+                        <button type="button" className="btn btn-primary Fou-buttonforprogramme">Programme</button>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@ const Foundation = () => {
             </div>
         </div>
 
-    <div className="orange">
+    <div className="foun-orange">
         <div className="container Fou-Container3">
             <div className="foun-whatwelearn">
                 <h3 className="foun-whatwelearn-words">What We Learn</h3>
@@ -110,7 +110,7 @@ const Foundation = () => {
                 <p>If you are planning to pursue a bachelor’s degree, you would most likely need a pre-university qualification to gain admission to a university or col-lglege. Besides Form Six, students can now choose from a wide range of pre-university programmes offered by both public and private higher education institutions (HEIs) in Malaysia.
 
                     <br/><br/>Many students are at a loss when it comes to choosing a suitable pre-university programme. Some may decide on a programme simply because the majority of their friends are enrolling in the same programme. Then there are those who end up with a particular programme simply because they never knew that other types of programmes existed.</p>
-                <button type="button" className="btn btn-primary buttonforprogramme buttonreadmore">Read more</button>
+                <button type="button" className="btn btn-primary Fou-buttonforprogramme Fou-buttonreadmore">Read more</button>
             </div>
             <div className="col-lg-5">
                 <img className="foun-picsection4" src={require("../assets/images/Foundation/founsection4.png")}  alt=""/>
@@ -118,7 +118,7 @@ const Foundation = () => {
         </div>
     </div>
 
-    <div className="orange">
+    <div className="foun-orange">
         <div className="container Fou-Container5">    
             <div className="row">
                 <div className="col-lg-6">
@@ -136,7 +136,7 @@ const Foundation = () => {
                     <div id="Outstanding Student" className="foun-tabcontent">
                         <p className="foun-tabcontent-p">"Ignore the naysayers. Really the only option is: head down and focus on the job.</p>
                         <h5>Chris Pane</h5>
-                        <div><hr className="blacklineforfoun-tabcontent"></hr></div>                        
+                        <div><hr className="Fou-blacklineforfoun-tabcontent"></hr></div>                        
                         <p>Student of 2021 Business and Accounting</p>
                         <img className="Fou-Container5-ico" src={require("../assets/images/Foundation/founsection5-1.png")}  alt=""/>
                         <img className="Fou-Container5-ico" src={require("../assets/images/Foundation/founsection5-2.png")}  alt=""/>
@@ -170,8 +170,8 @@ const Foundation = () => {
                     <div className="Founsec7-2">
                         <h3 className="Founsec7-2-h3">Want to Know more about our  facilities</h3>
                         <p className="Founsec7-2-p">If you are interested in our program and want to check out more about our art and deisgn related facilities, please click on the facilities button.</p>
-                        <div className="buttonFacility">
-                            <button type="button" className="btn btn-primary buttonforprogramme btn-faci">Facilities</button>
+                        <div className="Fou-buttonFacility">
+                            <button type="button" className="btn btn-primary Fou-buttonforprogramme Fou-btn-faci">Facilities</button>
                         </div>
                     </div>
                 </div>

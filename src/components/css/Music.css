@@ -1,4 +1,4 @@
-.music-backgroundBanner { 
+.musicintro-backgroundBanner { 
     background: rgba(54, 54, 54, 0.3) url('../../assets/images/Music/image_200.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -17,46 +17,46 @@
     color: black;
 } */
 
-.programmusic{
+/* .programmusic{
     position: relative;
     color: black;
-}
+} */
 
-.bannerimg01{
+.musicintrobannerimg01{
     
     width: 100%;
     height: 700px;
 }
 
-.bannergif01{
+.musicintrobannergif01{
     max-width: 500px;
     max-height: 500px;
     width: 100%;
     height: 100%;
 }
 
-.musicsection02{
+.musicintrosection02{
     margin-top: 80px;
     margin-bottom: 80px;
 }
 
-.musicsection03{
+.musicintrosection03{
     margin-top: 80px;
     margin-bottom: 80px;
 }
 
-.musictextsection02{
+.musicintrotextsection02{
     margin-top: 40px;
     margin-bottom: 40px;
     padding-left: 10%;
 }
 
-.musicsection04{
+.musicintrosection04{
     margin-top: 80px;
     margin-bottom: 80px;
 }
 
-.bannerimg02{
+.musicintrobannerimg02{
     
     width: 100%;
     
@@ -71,7 +71,7 @@
     height: 200px;
 }
 
-.musicsectionbutton{
+.musicintrosectionbutton{
     margin-top: 40px;
     margin-bottom: 40px;
     text-align: center;
@@ -82,12 +82,12 @@
     
 }
 
-.bannerimg04{
+.musicintrobannerimg04{
     width: 100%;
     
 }
 
-.orange{
+.musicintroback04{
     height: auto;
     width: auto;
     background-color: black !important;
@@ -96,13 +96,13 @@
     color: black !important;
 }
 
-.Fou-Container5{
+.musicintro-Container5{
     padding-top: 30px;
     padding-bottom: 30px;
     width: auto;
 }
 
-.foun-navtab{
+.musicintro-navtab{
     overflow: hidden;
     margin-top: 90px;
     margin-bottom: 40px;
@@ -110,18 +110,18 @@
     display: flex;
 }
 
-.Fou-Container5-ico {
+.musicintro-Container5-ico {
     padding-right: 20px;
 }
 
 
-.foun-navtab {
+.musicintro-navtab {
     overflow: hidden;
     margin-top: 0px;
     margin-bottom: 00px;
 }
 
-.foun-tabeach {
+.musicintro-tabeach {
     font-size: 16px;
     color: white;
     padding-right: 40px;
@@ -129,28 +129,29 @@
     font-weight: bold;
 }
 
-.blacklineforfoun-tabcontent {
+.blacklineformusicintro-tabcontent {
     border: 1px solid white;
   }
 
-.foun-tabcontent {
+.musicintro-tabcontent {
     padding-top: 15px;
     margin-bottom: 50px;
     color: white;
   }
 
-.foun-tabcontent-p{
+.musicintro-tabcontent-p{
     font-size: 18px;
     font-weight: bold;
     color: white;
     padding-bottom: 15px;
 }
 
-.foun-bannerimg01 {
+.musicintro-bannerimg01 {
     width: 100%;
+    
 }
 
-.foun-tabeach-line {
+.musicintro-tabeach-line {
     text-decoration: underline 3px;
     color: white;
 }
@@ -259,7 +260,7 @@ bottom:70px; */
      background-color: #0080FF;
  } */
 
-.musicsection04{
+.musicintrosection04{
     color: white;
 }
 
@@ -272,12 +273,12 @@ bottom:70px; */
 
 }
 
-.container01{
+.musicintrocontainer01{
     text-align: center;
 }
  
 @media only screen and (max-width: 600px) {
-   .musicsection04{
+   .musicintrosection04{
        font-size :0.8rem;
        color:white;
 

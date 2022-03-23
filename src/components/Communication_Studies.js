@@ -2,7 +2,7 @@ import React from 'react'
 import './css/Communication_Studies.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/standard.css'
-import Carousel from 'react-bootstrap/Carousel'
+import Carousel, { consts } from 'react-elastic-carousel';
 
 const Communication_Studies = () => {
     return (
