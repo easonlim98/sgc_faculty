@@ -59,13 +59,21 @@
 
 .CA-Section-2-pic2 {
     box-shadow: 0px 0.5px 5px black;
-    width: 54%;
+    width: 68%;
 }
 
 .CA-horizontal {
     width: 9rem;
     height: 3px;
     background-color: #DBD0E3;
+}
+
+.CA-goldaward {
+    padding: 1rem 0;
+}
+
+.CA-viewmore {
+    margin-top: 1rem;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -146,6 +154,22 @@
         width: 95%;
         font-size: 14px;
         margin-bottom: 1rem;
+    }
+
+    .CA-Next {
+        font-size: 1rem;
+    }
+
+    .CA-name {
+        margin-top: 2rem;
+    }
+
+    .CA-goldaward {
+        padding: 0.5rem 0;
+    }
+
+    .CA-viewmore {
+        font-size: 0.9rem;
     }
 }
 
