@@ -1,15 +1,3 @@
-.banner-container {
-    background: rgba(54, 54, 54, 0.3) url("../../assets/gif/Creative\ Art/CA.gif");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: darken;
-    top: 0;
-    display: flex;
-    height: 38rem;
-    align-items: center;
-    justify-content: flex-start;
-}
 
 .first-content1 {
     font-size: 16px;
