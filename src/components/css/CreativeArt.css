@@ -1,4 +1,3 @@
-
 .first-content1 {
     font-size: 16px;
     color: white;
@@ -60,7 +59,7 @@
 
 .CA-Section-2-pic2 {
     box-shadow: 0px 0.5px 5px black;
-    width: 59%;
+    width: 54%;
 }
 
 .CA-horizontal {
@@ -107,7 +106,22 @@
         width: 90%;
         font-size: 14px;
         margin-bottom: 1.4rem;
+    }
 
+    .CA-section-2_STUDENT {
+        font-size: 22px;
+    }
+
+    .CA-section-2_ARTWORKS {
+        font-size: 27px;
+    }
+
+    .CA-Section-2-pic1 {
+        width: 90%;
+    }
+
+    .CA-Section-2-pic2 {
+        width: 76%;
     }
 }
 
