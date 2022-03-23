@@ -3,10 +3,11 @@ import ApiClient from './ApiClient';
 import API from '../constant/API';
 
 export const getDataEvent = async () => {
-      
-    const userList = await ApiClient.GET(API.getUser)
-        userStore.update(s => {
-            s.userDetails = userList.data;
-        });
+
+        await ApiClient.GET(API.getFaculty).then(function (response){
+            userStore.update(s => {
+                s.userDetails = response;
+            });
+        })
 
 }

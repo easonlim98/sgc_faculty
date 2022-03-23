@@ -35,8 +35,6 @@ const App = () => {
         <Routes>
           <Route exact path="/Psychology" element={<Psychology />} />
           <Route exact path="/" element={<LandingScreen />} />
-
-          <Route path="/" element={<LandingScreen />} />
           <Route exact path="/EarlyChildhoodEducation" element={<EarlyChildhoodEducation />} />
           <Route exact path="/CreativeArt" element={<CreativeArt />} />
           <Route exact path="/MusicIntro" element={<MusicIntro />} />
