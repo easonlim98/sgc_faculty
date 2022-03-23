@@ -2,30 +2,20 @@ import React, { useState, useEffect } from 'react'
 import './css/CreativeArt.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/standard.css';
-import HeaderBanner from './general-components/Banner/Banner.js'
-
+import Banner from './general-components/Banner/Banner.js'
+import Facilities from './general-components/Facilities/Facilities.js'
+import TabsComponent from './general-components/Tabs/TabsComponent'
 const CreativeArt = () => {
     return (
         <>
-            <HeaderBanner
-                backgroundsrc={"../../assets/gif/Creative Art/CA.gif"}
-                navigatepath={"/Search_Page"}
-                bannercontent={"If you are interested and want to know more about Creative Art & Design."} />
-            {/* <div className='CA banner-container'>
-                <div className='CA programme-container' style={{ background: 'none', display: 'flex', flexDirection: 'column', left: '10rem', position: 'relative' }}>
-                    <p className='text first-title1' style={{ fontSize: '20px', color: '#FFFFFF', }}>{"Know more about"}</p>
-                    <p className='text first-title2' style={{ fontSize: '35px', color: '#FFFFFF', fontWeight: 'bold' }}>{"Our Programme"}</p>
-                    <p className='text first-content1' style={{ fontSize: '16px', color: 'white', marginTop: '10px' }}>
-                        If you are interested and want to know more about Creative Art &
-                        Design.
-                    </p>
-                    <div>
-                        <button style={{ color: 'white', backgroundColor: '#A41F36', marginTop: '0.6rem', fontSize: '16px', padding: '0.5rem 2rem', fontWeight: 500, borderRadius: 5, borderWidth: 0, boxShadow: 'rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset' }}>
-                            {"Programme"}
-                        </button>
-                    </div>
-                </div>
-            </div> */}
+            <div className='CA banner-container'
+                style={{
+                    backgroundImage: "url(" + require('../assets/gif/Creative Art/CA.gif') + ")"
+                }}>
+                <Banner
+                    navigatepath={"/Search_Page"}
+                    bannercontent={"If you are interested and want to know more about Creative Art & Design."} />
+            </div>
 
             <div className="container CA-Section-1">
                 <div className="row" style={{ alignItems: 'center' }}>
@@ -73,14 +63,27 @@ const CreativeArt = () => {
                     <p style={{ color: '#A71337', fontWeight: '500' }}>View more on our Virtual Gallery</p>
                 </div>
             </div>
-            <div className="container CA-Section-3">
+            {/* <div className="container CA-Section-3">
                 <div style={{ display: 'flex', flex: 2 }}>
                     <img className="CA-Section-3-pic1" style={{ display: 'flex', flex: 1 }} src={require('../assets/images/Creative_Art/color_example.png')} />
                 </div>
                 <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
                     <img className="CA-Section-3-pic2" src={require('../assets/images/Creative_Art/bnwexample.png')} />
                 </div>
-            </div>
+            </div> */}
+            <TabsComponent
+                StudentName={"Edward Maya"}
+                StudentJob={"Graphic Designer"}
+                Studentimage={require('../assets/images/Creative_Art/college_student_creativeart.png')}
+                StudentWords={"“My high school art education constructed invaluable foundations for me as a creative professional.”"}
+                navigationpath={""}
+                textcolor={"#A71337"}
+                backgroundcolor={"#E3E4E3"}
+            />
+            <Facilities
+                facilitiesimage={require('../assets/images/Creative_Art/Facilities.png')}
+                content={"If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button."} />
+
         </>
     )
 }
