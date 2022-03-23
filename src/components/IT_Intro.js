@@ -2,11 +2,18 @@ import React from 'react'
 import './css/IT.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/standard.css'
+import HeaderBanner from './general-components/Banner/Banner.js'
+import Image from '../assets/images/IT_Intro/IT_banner.jpg'
 
 const IT_Intro = () => {
   return (
+    
     <div>
-      <div className="IT-Intro-banner">
+      <HeaderBanner
+                backgroundsrc={"../assets/images/IT_Intro/IT_banner.jpg"}
+                navigatepath={"/Search_Page"}
+                bannercontent={"If you are interested and want to know more about Information Technology."} />
+      {/* <div className="IT-Intro-banner">
         <img src={require("../assets/images/IT_Intro/IT_banner.jpg")} alt="" />
         <div className="IT-Intro-caption">
 
@@ -16,26 +23,26 @@ const IT_Intro = () => {
           <button>Programme</button>
 
         </div>
-      </div>
+      </div> */}
       <div className="IT-Intro-container-sec1">
         <div className="IT-Intro-successproject">
-          <div className="row" style={{ flex: 1, padding: '2rem' }}>
-            <div className="column" style={{ display: 'flex', justifyContent: 'center' }}>
+          <div className="row IT-Intro-Img-container" style={{ flex: 1, padding: '2rem' }}>
+            <div className="column IT-Intro-Img" style={{ display: 'flex', justifyContent: 'center' }}>
               <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/alibaba.png")} />
               <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/lazada.png")} />
             </div>
-            <div className="column" style={{ display: 'flex', justifyContent: 'center' }}>
+            <div className="column IT-Intro-Img" style={{ display: 'flex', justifyContent: 'center' }}>
               <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/shopee.png")} />
               <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/taobao.png")} />
             </div>
           </div>
           <div className="IT-Intro-Projecttext">
-            <p style={{ fontWeight: 'bold', color: '#A71337', fontSize: '1.4rem' }}>Previous successful Project</p>
-            <p style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>We dont make the better website, we only make the best website</p>
-            <p style={{ fontSize: '0.8rem', fontWeight: 500 }}>Inspiration is the most important part of our digital strategy. Innovation needs
+            <p className="IT-Intro-Projecttext-p" >Previous successful Project</p>
+            <p2 className="IT-Intro-Projecttext-p2" >We dont make the better website, we only make the best website</p2>
+            <p3 className="IT-Intro-Projecttext-p3" >Inspiration is the most important part of our digital strategy. Innovation needs
               to be part of your culture. Success is a journey, not a destination. The doing
               is often more important than the outcome.
-            </p>
+            </p3>
             <button>View more project</button>
           </div>
         </div>
@@ -116,7 +123,7 @@ const IT_Intro = () => {
           
           <p2>Industry and Software Partnerships</p2>
           <div className="IT-Intro-DivContainerpartnerimg" style={{ display: 'flex', flex: 1, marginBottom: '1vw' }} >
-            <img style={{ width: '100%' }} src={require("../assets/images/IT_Intro/IT_Intro_Con5.png")} />
+            <img src={require("../assets/images/IT_Intro/IT_Intro_Con5.png")} />
           </div>
         </div>
         
