@@ -143,7 +143,7 @@ const LandingScreen = () => {
 
                 </div>
 
-            {/* <div className="col">
+                {/* <div className="col">
                 <button className="card" style={{ border: 'none' }}
                     onClick={()=>
                         navigate('/IT_Intro')
