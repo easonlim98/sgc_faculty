@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './css/LandingScreen.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useNavigate } from "react-router-dom";
+import { getDataEvent } from '../util/commonDB';
 
 const LandingScreen = () => {
+
+    useEffect(() => {
+        getDataEvent();
+      }, []);
 
     const navigate = useNavigate();
 
@@ -143,18 +148,27 @@ const LandingScreen = () => {
 
                 </div>
 
-                {/* <div className="col">
-                <button className="card" style={{ border: 'none' }}
-                    onClick={()=>
-                        navigate('/IT_Intro')
-                    }
-                >
-                    <div className="card-body">
-                    <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Information_Technology.png")} alt=""/>
-                    <p className="card-text Textstyle">Information Technology</p>
+                <div className="row">
+
+                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
+                        <div style={{ border: 'none' }}>
+                            <div>
+                                <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Nursing_and_Caring.png")} alt="" />
+                                <p className="Landing_Textstyle">Nursing and Caring</p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
+                        <div style={{ border: 'none' }}>
+                            <div>
+                                <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Occupational_Health_and_Safety.png")} alt="" />
+                                <p className="Landing_Textstyle">Occupational Health and Safety</p>
+                            </div>
+                        </div>
+                    </button>
+
                 </div>
-            </button>
-            </div> */}
 
                 <div className="University">
                     <h5>Earn a foreign qualification with SEGi</h5>

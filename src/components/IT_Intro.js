@@ -1,18 +1,23 @@
 import React from 'react'
 import './css/IT.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/standard.css'
+import './css/Standard.css'
 import HeaderBanner from './general-components/Banner/Banner.js'
 import Image from '../assets/images/IT_Intro/IT_banner.jpg'
+import { useNavigate } from "react-router-dom";
 
 const IT_Intro = () => {
   return (
-    
+
     <div>
-      <HeaderBanner
-                backgroundsrc={"../assets/images/IT_Intro/IT_banner.jpg"}
-                navigatepath={"/Search_Page"}
-                bannercontent={"If you are interested and want to know more about Information Technology."} />
+      <div className='CA banner-container' style={{
+        backgroundImage: "url(" + require('../assets/images/IT_Intro/IT_banner.jpg') + ")"
+      }}>
+        <HeaderBanner
+          backgroundsrc={"../assets/images/IT_Intro/IT_banner.jpg"}
+          navigatepath={"/Search_Page"}
+          bannercontent={"If you are interested and want to know more about Information Technology."} />
+      </div>
       {/* <div className="IT-Intro-banner">
         <img src={require("../assets/images/IT_Intro/IT_banner.jpg")} alt="" />
         <div className="IT-Intro-caption">
@@ -74,7 +79,7 @@ const IT_Intro = () => {
               </div>
               <div className="IT-Intro-Resource-Img-Row2">
                 <img className="IT-Intro-Resourceimg" src={require("../assets/images/IT_Intro/IT_Intro_Num1.png")} alt="" />
-              <div className="IT_Intro-VerticalLine"></div>
+                <div className="IT_Intro-VerticalLine"></div>
               </div>
               <div className="IT-Intro-Resource-Text">
                 <p>Raising need for cloud computing and outsourcing services</p>
@@ -95,11 +100,11 @@ const IT_Intro = () => {
                 <div className="IT_Intro-VerticalLine"></div>
               </div>
               <div className="IT-Intro-Resource-Text">
-              <p>Asia towards Industrial Automation and AI</p>
-              <p2>Deloitte consulting China believes that industrial automation and industrial Ai are entering a fast
-                development period in Asia. Companies have begun adopting Ai and big data to generate fast, adaptive,
-                and long-term strategies to maximise competitiveness.
-              </p2>
+                <p>Asia towards Industrial Automation and AI</p>
+                <p2>Deloitte consulting China believes that industrial automation and industrial Ai are entering a fast
+                  development period in Asia. Companies have begun adopting Ai and big data to generate fast, adaptive,
+                  and long-term strategies to maximise competitiveness.
+                </p2>
               </div>
             </div>
             <div className="IT-Intro-Resource">
@@ -108,25 +113,25 @@ const IT_Intro = () => {
               </div>
               <div className="IT-Intro-Resource-Img-Row2">
                 <img className="IT-Intro-Resourceimg" src={require("../assets/images/IT_Intro/IT_Intro_Num3.png")} alt="" />
-                
+
               </div>
               <div className="IT-Intro-Resource-Text">
-              <p>Change the world</p>
-              <p2>IT and Computing drive innovation in the sciences
-                (human genome project, AIDS vaccine research, environmental monitoring, and protection just to mention
-                a few), and also in engineering, business, entertainment, and education. Who knows one day, you’ll be
-                a part of the team that changes the world.
-              </p2>
+                <p>Change the world</p>
+                <p2>IT and Computing drive innovation in the sciences
+                  (human genome project, AIDS vaccine research, environmental monitoring, and protection just to mention
+                  a few), and also in engineering, business, entertainment, and education. Who knows one day, you’ll be
+                  a part of the team that changes the world.
+                </p2>
               </div>
             </div>
           </div>
-          
+
           <p2>Industry and Software Partnerships</p2>
           <div className="IT-Intro-DivContainerpartnerimg" style={{ display: 'flex', flex: 1, marginBottom: '1vw' }} >
             <img src={require("../assets/images/IT_Intro/IT_Intro_Con5.png")} />
           </div>
         </div>
-        
+
         <div className="IT-Intro-bottomcontent">
           <div className="IT-Intro-bottomimg">
             <img style={{ width: '100%' }} src={require("../assets/images/IT_Intro/IT_Intro_Con6.png")} />
@@ -140,7 +145,6 @@ const IT_Intro = () => {
         </div>
       </div>
     </div>
-
   )
 }
 

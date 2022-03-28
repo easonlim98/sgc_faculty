@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/Psychology.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/standard.css'
+import './css/Standard.css'
 import { hide } from 'react-modal/lib/helpers/ariaAppHider';
 
 const Psychology = () => {

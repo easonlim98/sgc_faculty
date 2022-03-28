@@ -1,11 +1,12 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react'
+// import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/standard.css';
+import './css/Standard.css';
 import { FaFilter } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { createRoutesFromChildren } from 'react-router-dom';
 import './css/Search_Page.css'
+
 
 const Search_Page = () => {
   const ProgramArr = [
@@ -79,7 +80,7 @@ const Search_Page = () => {
 
 
     <>
-      <div style={{ marginBottom: '1rem',display:'flex',flexDirection:'column' }}>
+      <div style={{ marginBottom: '1rem', display: 'flex', flexDirection: 'column' }}>
         <div class="card">
           <div class="card-body">
             <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
@@ -90,56 +91,68 @@ const Search_Page = () => {
                 <p className="Search-Page-Value">{Program.Title_code}</p>
               </div> */}
             </div>
+            <div className="Search-Page-Attribute-Container">
+              <div className="Search-Page-Attribute-LeftContent">
+                <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p class="card-text Search-Page-Attribute" >Field of Interest:</p>
+                  </div>
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p className="Search-Page-Value">{Program.Field_of_Interest}</p>
+                  </div>
+                </div>
 
-            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
-              <div style={{ display: 'flex', flex: 1 }}>
-                <p class="card-text Search-Page-Attribute" >Field of Interest:</p>
+                <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p class="card-text Search-Page-Attribute" >Level of Study:</p>
+                  </div>
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p className="Search-Page-Value">{Program.Level_of_Study}</p>
+                  </div>
+
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p class="card-text Search-Page-Attribute">Awarding:</p>
+                  </div>
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p className="Search-Page-Value">{Program.Awarding}</p>
+                  </div>
+
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p class="card-text Search-Page-Attribute" >Campus:</p>
+                  </div>
+                  <div style={{ display: 'flex', flex: 1 }}>
+                   {Program.Campus.map((campus)=>
+                   
+                        <div style={{color:(campus==="KL") ? '#7FFFD4' : '#00FFFF'}}>{campus}</div>
+                        // {color:(campus==="KL") ? '#7FFFD4' : '#00FFFF'}
+                        
+                    )}
+                    
+                  </div>
+
+                </div>
               </div>
-              <div style={{ display: 'flex', flex: 1 }}>
-                <p className="Search-Page-Value">{Program.Field_of_Interest}</p>
+              {/* {Campus} */}
+
+              <div className="Search-Page-Attribute-ButtonSide">
+                <div class="Search-Page-Cotent-Button2" >
+                  <button>Visit</button>
+                </div>
+                <div class="Search-Page-Cotent-Button" >
+                  <button>Details</button>
+                </div>
               </div>
             </div>
-
-            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
-              <div style={{ display: 'flex', flex: 2 }}>
-                <p class="card-text Search-Page-Attribute" >Level of Study:</p>
-              </div>
-              <div style={{ display: 'flex', flex: 1 }}>
-                <p className="Search-Page-Value">{Program.Level_of_Study}</p>
-              </div>
-              <div class="Search-Page-Cotent-Button2" >
-            <button>Visit</button>
           </div>
-            </div>
 
-            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
-              <div style={{ display: 'flex', flex: 1 }}>
-                <p class="card-text Search-Page-Attribute">Awarding:</p>
-              </div>
-              <div style={{ display: 'flex', flex: 1 }}>
-                <p className="Search-Page-Value">{Program.Awarding}</p>
-              </div>
-              
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
-              <div style={{ display: 'flex', flex: 2 }}>
-                <p class="card-text Search-Page-Attribute" >Campus:</p>
-              </div>
-              <div style={{ display: 'flex', flex: 1 }}>
-                <p className="Search-Page-Value">{Program.Campus}</p>
-              </div>
-              <div class="Search-Page-Cotent-Button" >
-            <button>Details</button>
-          </div>
-          
-            </div>
-            {/* {Campus} */}
-
-          </div>
-          
         </div>
-        
+
       </div>
 
     </>
@@ -147,7 +160,7 @@ const Search_Page = () => {
   )
 
   const result = SegiProgram.length;
-  console.log(result)
+
 
   return (
     <div>

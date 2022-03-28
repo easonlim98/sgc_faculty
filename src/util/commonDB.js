@@ -1,12 +1,16 @@
 import { userStore } from '../store/userStore';
 import ApiClient from './ApiClient';
 import API from '../constant/API';
+import axios from 'axios';
 
 export const getDataEvent = async () => {
-      
-    const userList = await ApiClient.GET(API.getUser)
-        userStore.update(s => {
-            s.userDetails = userList.data;
-        });
 
-}
+        ApiClient.GET(API.getFaculty).then(response => {
+
+            userStore.update(s => {
+                s.userDetails = response;
+            });
+            console.log(response)
+        })
+    
+};

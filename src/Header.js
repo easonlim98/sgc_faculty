@@ -25,8 +25,7 @@ const Header = () => {
 
     const MenuItems = ({ items }) => {
         return (
-            <li className="menu-items"
-            >
+            <li className="menu-items">
                 {items.submenu ? (
                 <>
                     <button className="colorWhite dropdownButtonTitle" type="button" 
@@ -109,16 +108,27 @@ const Header = () => {
                     onClick={() => {
                         setSidebarVisible(false);
                         setSidebarDropdown(false);
-                    }}
-                    >
+                    }}>
                     <span className="navbar-toggler-icon backgroundImageBurger"></span>
             </button>
+            </div>
+            <div style={{ display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', paddingTop: 20, paddingBottom: 20 }}>
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                <button style={{ border: 'none', color: 'white', background: 'none' }}
+                ><BiSearchAlt2 size={20}/></button>
+
+                <button style={{ border: 'none', color: 'white', background: 'none' }}
+                    onClick={() => {
+                        navigate('./AdminLogin')
+                    }}
+                ><BiUser size={20}/></button>
+            </div>
             </div>
             <div style={{
                 display: 'flex',
                 flexDirection: 'column',
                 minHeight: '50%',
-                justifyContent: 'space-around'
+                justifyContent: 'space-between'
             }}>
                 <button className="nav-item active"
                     style={{
@@ -178,7 +188,6 @@ const Header = () => {
                     :
                     null
                 }
-
 
                 <button className="nav-item"
                     style={{

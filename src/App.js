@@ -24,16 +24,17 @@ import Business_And_Accounting from './components/Business_And_Accounting';
 
 const App = () => {
 
-  useEffect(() => {
-    getDataEvent();
-  }, []);
+
+
+
+  
   return (
     <Router>
       {window.location.pathname !== "/AdminLogin" ? <Header /> : <></>}
       <div>
         <Routes>
-
-          <Route path="/" element={<LandingScreen />} />
+          <Route exact path="/Psychology" element={<Psychology />} />
+          <Route exact path="/" element={<LandingScreen />} />
           <Route exact path="/EarlyChildhoodEducation" element={<EarlyChildhoodEducation />} />
           <Route exact path="/AdminLogin" element={<AdminLogin />} />
           <Route exact path="/IT_Intro" element={<IT_Intro />} />
