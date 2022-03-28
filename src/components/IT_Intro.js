@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/IT.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/Standard.css'
+import './css/standard.css'
 import { useNavigate } from "react-router-dom";
 
 const IT_Intro = () => {

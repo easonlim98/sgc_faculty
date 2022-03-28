@@ -52,6 +52,8 @@ const App = () => {
           <Route exact path="/Communication_Studies" element={<Communication_Studies />} />
           <Route exact path="/IT_Intro" element={<IT_Intro />} />
           <Route exact path="/Search_Page" element={<Search_Page />} />
+          <Route exact path="/CourseDetail" element={<CourseDetail />} />
+          <Route exact path="/NewCourse" element={<NewCourse />} />
         </Routes>
       </div>
       {/* { window.location.pathname !== "/AdminLogin" ? <Footer/> : <></>} */}
