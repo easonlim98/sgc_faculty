@@ -25,10 +25,7 @@ import CourseDetail from './components/CourseDetail';
 import NewCourse from './components/NewCourse';
 
 const App = () => {
-
-  useEffect(() => {
-    getDataEvent();
-  }, []);
+  
   return (
     <Router>
       {/* { window.location.pathname !== "/AdminLogin" ? <Header/> : <></>} */}
