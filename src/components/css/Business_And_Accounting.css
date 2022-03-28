@@ -1,0 +1,63 @@
+.BA-banner{
+  position: relative;
+  background-position: center;
+  width: 100%;
+  height: 600px;
+}
+
+.BA-textOnImg {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: white;
+  text-align: justify;
+}
+
+.BA-gifImg {
+  max-width: 350px;
+  max-height: 350px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.BA-gifImg1 {
+  max-width: 200px;
+  max-height: 200px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 20%;
+  right: 40%;
+}
+
+.BA-image1 {
+  max-width: 300px;
+  max-height: 300px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.BA-image2 {
+  min-width: 300px;
+  min-height: 300px;
+  width: 80%;
+  height: 80%;
+  text-align: center;
+}
+
+.BA-image3 {
+  width: 50px;
+  height: 50px;
+}
+
+.BA-image4 {
+  width: 150px;
+  height: 150px;
+}
+
+.BA-bgColor{
+  background-color: rgb(131, 143, 151);
+}

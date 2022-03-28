@@ -1,24 +1,20 @@
-body {
-    padding: 5;
-    margin: 0;
-    background: #fff;
-}
-
 .LandingBackgroud{
     padding: 3em;
 }
-.container-e{
-    width: 100%;
-    justify-content: center;
-}
+
 figcaption{
     font-size: 0.7rem;
 }
-.Textstyle{
+.Landing_Textstyle{
     font-size: 16;
     color: #9E8D8D;
     text-align:center; 
     padding-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 
 .Imglayout{
@@ -76,7 +72,7 @@ figcaption{
     height: 550px;
 }
 
-.bannerImg {
+.bannerImg_Landing {
     height: 100%;
     width: 100%;
     object-fit: cover;

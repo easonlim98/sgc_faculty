@@ -17,7 +17,7 @@ background: rgba(35, 32, 34, 0.5);
 }
 
 .alignBack {
-flex-grow: 0 !important;
+  flex-grow: 0 !important;
 }
 
 .borderNone {
@@ -32,6 +32,7 @@ padding-left: 10px;
 .headerContainerSpacing {
 width: 650px !important;
 justify-content: space-between !important;
+align-items: center !important;
 }
 
 .containerPaddingTop {
@@ -44,4 +45,76 @@ color:white !important;
 
 .burgerButtonColor {
 background-color: rgba(229, 211, 220, 0.64) !important;
+}
+
+.dropdown {
+  position: absolute;
+  box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
+    0 4px 6px -2px rgba(71, 63, 79, 0.16);
+  font-size: 14px;
+  z-index: 9999;
+  padding: 0.5rem;
+  list-style: none;
+  background-color:rgba(35, 32, 34, 0.8);
+  line-height: 2rem;
+  border-radius: 0.5rem;
+  display: none;
+ }
+
+ .dropdown.show {
+  display: block;
+}
+
+.dropdownButtonTitle {
+  border: none;
+  background: transparent;
+}
+
+.dropdown-menu-items {
+  list-style: none;
+}
+
+.dropdownTitle {
+  margin-right: 30px;
+  font-size: 14px;
+}
+
+.ModalStyleOpen {
+    position: fixed;
+    background-color: rgba(35, 32, 34, 1);
+    border: none;
+    width: 30%;
+    height: 100vh;
+    right: 0;
+    padding: 12px;
+    z-index: 10;
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 0%;
+  }
+
+  to {
+    margin-right: 0%;
+    width: 30%;
+  }
+}
+
+/* .ModalStyleClose {
+  position: fixed;
+  background-color: rgba(35, 32, 34, 1);
+  border: none;
+  width: 40%;
+  height: 100vh;
+  right: 0;
+  padding: 12px;
+  z-index: 10;
+} */
+
+.backgroundImageBurger {
+ background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2730%27 height=%2730%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%280, 0, 0, 0.5%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e') !important;
 }
