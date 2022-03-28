@@ -19,8 +19,10 @@ const AdminLogin = () => {
         const userDetails = userStore.useState((s) => s.userDetails);
 
         useEffect(() => {
+
                 console.log(userDetails)
-        },[]);
+
+        },[userDetails]);
 
         const LoginUser = () => {
                 

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './css/LandingScreen.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useNavigate } from "react-router-dom";
+import { getDataEvent } from '../util/commonDB';
 
 const LandingScreen = () => {
+
+    useEffect(() => {
+        getDataEvent();
+      }, []);
 
     const navigate = useNavigate();
 

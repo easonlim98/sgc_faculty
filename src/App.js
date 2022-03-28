@@ -23,10 +23,7 @@ import Communication_Studies from './components/Communication_Studies';
 import Business_And_Accounting from './components/Business_And_Accounting';
 
 const App = () => {
-
-  useEffect(() => {
-    getDataEvent();
-  }, []);
+  
   return (
     <Router>
       {/* { window.location.pathname !== "/AdminLogin" ? <Header/> : <></>} */}
