@@ -23,10 +23,15 @@
 
 .founbannerwordsh1 {
     text-transform: uppercase;
+    font-size: 48px;
 }
 
 .founbannerwordsh2 {
     text-transform: uppercase;
+}
+
+.founbannerwordsh3 {
+    font-size: 20px;
 }
 
 .Fou-buttonforprogramme {
@@ -229,6 +234,10 @@
     .Fou-Content{
         width: 100%;
     }
+
+    .founbannerwordsh1 {
+        font-size: 40px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -251,6 +260,10 @@
         top: 40%;
         padding-left: 0;
         text-align: center;
+    }
+
+    .founbannerwordsh3 {
+        font-size: 18px;
     }
 
     .Fou-Container {

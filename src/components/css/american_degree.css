@@ -22,10 +22,15 @@
 
 .amedegrebannerwordsh1 {
     text-transform: uppercase;
+    font-size: 48px;
 }
 
 .amedegrebannerwordsh2 {
     text-transform: uppercase;
+}
+
+.amedegrebannerwordsh3 {
+    font-size: 20px;
 }
 
 .amedegre-secpartprofilepicture {
@@ -179,6 +184,10 @@
         text-align: center;
         padding-right: 0px;
     }
+
+    .amedegrebannerwordsh1 {
+        font-size: 40px;
+    }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
@@ -223,6 +232,10 @@
 
     .amedegrebannerwords {
         top: 40%;
+    }
+
+    .amedegrebannerwordsh3 {
+        font-size: 16px;
     }
 
     .amedegre-readmorebutton {
@@ -323,6 +336,10 @@
         text-align: right;
         padding-right: 10%;
         width: 100%;
+    }
+
+    .amedegrebannerwordsh3 {
+        font-size: 18px;
     }
 
     .amedegre-squareinsecondpar-section {

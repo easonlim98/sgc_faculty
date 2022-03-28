@@ -13,10 +13,10 @@ const Foundation = () => {
                         <img className="img-fluid founbannerpicture-pic" src={require("../assets/images/Foundation/banner.png")}  alt=""/>
                     </div>
                     <div className="founbannerwords">
-                        <h4 className="founbannerwordsh2">Know more about</h4>
+                        <h3 className="founbannerwordsh2">Know more about</h3>
                         <h1 className="founbannerwordsh1">our program</h1>
-                        <p>If you are interested and want to know more <br/> about American Degree Program. </p>
-                        <button type="button" className="btn btn-primary Fou-buttonforprogramme">Programme</button>
+                        <p className="founbannerwordsh3">If you are interested and want to know more <br/> about Engineering. </p>
+                        <button type="button" className="btn btn-primary Fou-buttonforprogramme founbannerwordsh3">Programme</button>
                     </div>
                 </div>
             </div>
@@ -31,10 +31,9 @@ const Foundation = () => {
                         <img className="Fou-img-2" src={require("../assets/images/Foundation/founsection2-1.png")}  alt=""/>
                     </div>
                     <div className="Fou-word">
-                        <p style={{fontWeight: '700'}}>Certified Educators</p>
+                        <p style={{fontWeight: '700'}}>Knowledge</p>
                         <p className="Fou-Content">
-                        Hospitality means extending a welcome to travelers or offering a home away form home,
-                        and the word is derived from the Latin word "hospes" meaning visitor or stranger.
+                        Providing the latest curriculum co-designed with international partner universities, local industry practitioners and experts, our proven teaching and learning process has seen over 130,000 graduates working in over 90 countries - ranging from successful entrepreneurs to high level executives and policymakers.
                         </p>
                         <br/>
                     </div>
@@ -44,11 +43,9 @@ const Foundation = () => {
                         <img className="Fou-img-2" src={require("../assets/images/Foundation/founsection2-2.png")}  alt=""/>
                     </div>
                     <div className="Fou-word">
-                        <p style={{fontWeight: '700'}}>Global Level Language Education</p>
+                        <p style={{fontWeight: '700'}}>Attitude</p>
                         <p className="Fou-Content">
-                        Hospitality means extending a welcome to travelers or offering a home away form home,
-                        and the word is derived from the Latin word "hospes" meaning visitor or stranger.
-                        </p>
+                        Being civic-minded and nurturing our students’ heart have always been a big part of our curriculum. Throughout the programme, students are encouraged to organise and participate in Corporate Social Responsibility (CSR) projects to use what they have learnt to give back to the community.</p>
                         <br/>
                     </div>
                 </div>
@@ -58,10 +55,9 @@ const Foundation = () => {
                         <img className="Fou-img-2 Fou-img-2-3" src={require("../assets/images/Foundation/founsection2-3.png")}  alt=""/>
                     </div>
                     <div className="Fou-word">
-                        <p style={{fontWeight: '700'}}>Scholarships</p>
+                        <p style={{fontWeight: '700'}}>Skills</p>
                         <p className="Fou-Content">
-                        Hospitality means extending a welcome to travelers or offering a home away form home,
-                        and the word is derived from the Latin word "hospes" meaning visitor or stranger.
+                        Having the right technical skills will give our students an advantageous   edge   over   their   peers.      We   work   hand-in-hand    with    industry    partners    to    offer                      professional certifications so that our students have the right  academic  knowhow,  and  the  relevant  technical  abilities to put what they have learnt into practice.
                         </p>
                         <br/>
                     </div>
@@ -106,10 +102,9 @@ const Foundation = () => {
     <div className="container Fou-Container4">
         <div className="row">
             <div className="col-lg-7">
-                <h4 className="foun-whatwelearn-words">What is Pre U / Foundation</h4>
-                <p>If you are planning to pursue a bachelor’s degree, you would most likely need a pre-university qualification to gain admission to a university or col-lglege. Besides Form Six, students can now choose from a wide range of pre-university programmes offered by both public and private higher education institutions (HEIs) in Malaysia.
-
-                    <br/><br/>Many students are at a loss when it comes to choosing a suitable pre-university programme. Some may decide on a programme simply because the majority of their friends are enrolling in the same programme. Then there are those who end up with a particular programme simply because they never knew that other types of programmes existed.</p>
+                <h4 className="foun-whatwelearn-words">What is Engineering</h4>
+                <p>The  manufacturing  industry  has  broken  away  from  its  dependence  on  traditional  manpower  and  has  since  advanced  into  mechanisation, digitalisation  and  articial intelligence (AI) to increase efciency.  
+                    <br/><br/>he Faculty of Engineering focuses on Research of Innovation, Professional Recognition and Industry Certication to ensure that students are stay relevant and in line with IR 4.0. </p>
                 <button type="button" className="btn btn-primary Fou-buttonforprogramme Fou-buttonreadmore">Read more</button>
             </div>
             <div className="col-lg-5">

@@ -13,10 +13,10 @@ const AmericanDegree = () => {
                         <img className="img-fluid amedegrebannerpicture-pic" src={require("../assets/images/American_Degree/american_degree_banner.png")} alt=""/>
                     </div>
                     <div className="amedegrebannerwords">
-                        <h4 className="amedegrebannerwordsh2">Know more about</h4>
+                        <h3 className="amedegrebannerwordsh2">Know more about</h3>
                         <h1 className="amedegrebannerwordsh1">our program</h1>
-                        <p>If you are interested and want to know more <br/> about American Degree Program. </p>
-                        <button type="button" className="btn btn-primary amedegre-buttonforprogramme">Programme</button>
+                        <p className="amedegrebannerwordsh3">If you are interested and want to know more <br/> about American Degree Program. </p>
+                        <button type="button" className="btn btn-primary amedegre-buttonforprogramme amedegrebannerwordsh3">Programme</button>
                     </div>
                 </div>
             </div>
