@@ -25,7 +25,7 @@ echo "Hi ",$CDEditor['user_name'],", you can edit [",$CDEditor['user_faculty'],"
 				  'user_name' =>  $row_users['user_name'],
 				);
 			}
-			echo json_encode(["success"=>true,"data"=>$json_array]);
+			echo json_encode([$json_array]);
 			return;
 		}
 		else{

@@ -53,7 +53,7 @@ element.style {
 .container-md,
 .container-sm,
 .container-xl {
-    max-width: 90%;
+    min-width: 100%;
 }
 
 .social_media_icons {
