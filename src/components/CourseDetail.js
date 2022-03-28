@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/js/bootstrap.bundle'
@@ -6,6 +6,8 @@ import './css/standard.css'
 import './css/CourseDetail.css'
 
 const CourseDetail = () => {
+    const getUser = 'getUser.php'
+    useEffect(() => { console.log(getUser) })
     const [DymBackgroundImg1, setDymBackgroundImg1] = useState(require('../assets/images/CoursePage/IT1.png')),
         [DymTitle1, setDymTitle1] = useState('BSC (HONS) COMPUTING'),
         [DymYear1, setDymYear1] = useState('(3+0)'),
