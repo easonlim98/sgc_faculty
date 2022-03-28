@@ -1,16 +1,6 @@
-.CA-backgroundBanner {
-    background: rgba(54, 54, 54, 0.3) url("../../assets/gif/Creative\ Art/CA.gif");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: darken;
-    top: 0;
-}
-
-.CA-bannerContent-res {
+.first-content1 {
     font-size: 16px;
     color: white;
-    width: 30%;
     margin-top: 10px;
 }
 
@@ -69,7 +59,7 @@
 
 .CA-Section-2-pic2 {
     box-shadow: 0px 0.5px 5px black;
-    width: 59%;
+    width: 68%;
 }
 
 .CA-horizontal {
@@ -78,8 +68,16 @@
     background-color: #DBD0E3;
 }
 
+.CA-goldaward {
+    padding: 1rem 0;
+}
+
+.CA-viewmore {
+    margin-top: 1rem;
+}
+
 @media only screen and (max-width: 1400px) {
-    .CA-bannerContent-res {
+    .first-content1 {
         font-size: 16px;
         color: white;
         width: 30%;
@@ -99,7 +97,7 @@
 }
 
 @media only screen and (max-width: 1100px) {
-    .CA-bannerContent-res {
+    .first-content1 {
         font-size: 16px;
         color: white;
         width: 30%;
@@ -116,12 +114,27 @@
         width: 90%;
         font-size: 14px;
         margin-bottom: 1.4rem;
+    }
 
+    .CA-section-2_STUDENT {
+        font-size: 22px;
+    }
+
+    .CA-section-2_ARTWORKS {
+        font-size: 27px;
+    }
+
+    .CA-Section-2-pic1 {
+        width: 90%;
+    }
+
+    .CA-Section-2-pic2 {
+        width: 76%;
     }
 }
 
 @media only screen and (max-width: 930px) {
-    .CA-bannerContent-res {
+    .first-content1 {
         font-size: 16px;
         color: white;
         width: 60%;
@@ -142,10 +155,26 @@
         font-size: 14px;
         margin-bottom: 1rem;
     }
+
+    .CA-Next {
+        font-size: 1rem;
+    }
+
+    .CA-name {
+        margin-top: 2rem;
+    }
+
+    .CA-goldaward {
+        padding: 0.5rem 0;
+    }
+
+    .CA-viewmore {
+        font-size: 0.8rem;
+    }
 }
 
 @media only screen and (max-width: 800px) {
-    .CA-bannerContent-res {
+    .first-content1 {
         font-size: 16px;
         color: white;
         width: 60%;
@@ -164,7 +193,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .CA-bannerContent-res {
+    .first-content1 {
         font-size: 16px;
         color: white;
         width: 100%;

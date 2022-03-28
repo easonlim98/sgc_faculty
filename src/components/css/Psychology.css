@@ -1,5 +1,5 @@
-.PSY-backgroundBanner { 
-    background: rgba(54, 54, 54, 0.3) url('../../assets/images/Psychology/Psychology\ mainheader.png');
+.PSYintro-backgroundBanner { 
+    background: rgba(54, 54, 54, 0.3) url('../../assets/images/Psychology/Psychology mainheader.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -7,95 +7,669 @@
     top: 0;
 }
 
-
-@media only screen and (max-width: 1400px) {
-        .PSY-banner-detail{
-                font-size: 16px; 
-                color: white; 
-                width: 30%; 
-                margin-top: 10px;
-            }
-        .PSY-Content{
-            width: 90%;
-        }
-    }
-
-@media only screen and (max-width: 800px) {
-        .PSY-banner-detail{
-                font-size: 16px; 
-                color: white; 
-                width: 60%; 
-                margin-top: 10px;
-            }
-        .PSY-Content{
-            width: 95%;
-        }
-    }
-
-@media only screen and (max-width: 600px) {
-        .PSY-banner-detail{
-                font-size: 16px; 
-                color: white; 
-                width: 100%; 
-                margin-top: 10px;
-            }
-        .PSY-Content{
-            width: 100%;
-        }
-    }
-
-.PSY-Container1{
+.PSYintro-Container1{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #E5E8EF;
+}
+.PSYintro-Container2{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 3rem;
 }
-.PSY-Container2{
+.PSYintro-Container3{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 3rem;
+    background-color: #E5E8EF;
 }
-.PSY-Container3{
+.PSY-previoustalk{
+    margin: 0;
+    font-weight: 600;
+    align-self: flex-start;
+    font-size: 27px;
+    font-style: italic;
+}
+.PSYintro-Container4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E5E8EF;
+    padding: 0 4rem;
+}
+.PSYintro-Container5{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 3rem;
+    background-color: #E5E8EF;
 }
-.PSY-Container4{
+.PSYintro-Container6{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 3rem;
+    background-color: #E5E8EF;
 }
-.PSY-Container5{
+.PSYintro-rowBanner{
+    margin: 0;
+}
+.PSYrow-Container1{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    margin-top: 3rem;
 }
-.PSY-Container6{
+.PSYrow-Container2{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    margin-top: 3rem;
 }
-.PSY-picture{
+.PSYrow-Container3{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.PSYrow-Container4{
+    display: flex;
+    width: 100%;
+    padding: 1rem 0;
+    justify-content: center;
+}
+.PSYrow-Container5{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.PSYrow-Container6{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.PSYContainer1colsm2{
+    padding: 0;
+}
+.PSYContainer2colsm1{
+    padding: 0;
+}
+.PSYContainer3colsm1{
+    left: 10rem;
+}
+.PSYContainer3colsm2{
+    padding: 0 15rem;
+    right: 13rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.PSYContainer4colsm1{
+    padding: 0;
+    width: 46.3%;
+}
+.PSYContainer4colsm2{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0 2rem;
+}
+.PSYContainer4colsm3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.PSYContainer5colsm1{
+    padding-right: 4rem;
+    display: flex;
+    flex: 1;
+}
+.PSYContainer5colsm2{
+    display: flex;
+    flex:1;
+}
+.PSYintro-wordContainer1number1{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0 15rem;
+    text-align: justify;
+}
+.PSYintro-wordContainer2number1{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0 15rem;
+    text-align: justify;
+}
+.PSYintro-wordContainer3number1{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0 15rem;
+    text-align: justify;
+}
+.PSYintro-wordContainer5number1{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: justify;
+}
+.PSYintro-wordContainer5number2{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.PSYintro-wordContainer5number3{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.PSYintro-wordContainer6number1{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.PSYintro-picture{
     display: flex;
     justify-content: flex-end;
     width: 100%;
     height: 100%;
 }
-.PSY-word{
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-}
-.PSY-image {
+.PSYintro-image {
     width: 100%; 
     height: 100%;
 }
+.PSYintro-picture1container4{
+    display: flex;
+    width: 100%;
+}
+.PSYintro-image1container4{
+    width: 100%;
+    border-radius: 5px;
+}
+.PSYintro-picture2container4{
+    display: flex;
+    width: 100%;
+}
+.PSYintro-image2container4{
+    height: 350px;
+    width: 100%;
+    border-radius: 5px;
+}
+.PSYintro-picture3container4{
+    height: 350px;
+    display: flex;
+    width: 100%;
+}
+.PSYintro-image3container4{
+    width: 100%;
+    border-radius: 5px;
+}
+.PSYownbutton{
+    color: #A41F36; 
+    background-color: #E5E8EF; 
+    margin-top: 20px;
+    font-size: 16px;
+    width: 150px;
+    height: 32px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 5px;
+    border-width: 0ch;
+}
+.PSYintro-gothoughprogramme{
+    font-weight: 700;
+    font-size: 15px;
+    padding: 2rem 0rem 0rem 0rem;
+}
+@media only screen and (max-width: 1857px){
+    .PSYContainer4colsm1{
+        padding: 0;
+        width:45%;
+    }
+}
+@media only screen and (max-width: 1402px){
+    .PSYintro-wordContainer1number1{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 0 5rem;
+        text-align: justify;
+    }
+    .PSYintro-wordContainer2number1{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 0 5rem;
+        text-align: justify;
+    }
+    .PSYintro-wordContainer3number1{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 0 5rem;
+        text-align: justify;
+    }
+    .PSYContainer4colsm1{
+        padding: 0;
+        width:44%;
+    }
+}
 
+@media only screen and (max-width: 1400px) {
+        .PSYintro-banner-detail{
+                font-size: 16px; 
+                color: white; 
+                width: 30%; 
+                margin-top: 10px;
+            }
+        .PSYintro-Content{
+            width: 90%;
+        }
+    }
+@media only screen and (max-width: 1304px){
+    .PSYContainer3colsm2 {
+        padding: 0 10rem;
+        right: 5rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+@media only screen and (max-width: 1194px) {
+    .PSYContainer4colsm1 {
+        padding: 0;
+        width: 43%;
+    }
+    .PSYContainer4colsm2 {
+        align-items: start;
+        justify-content: center;
+        display: flex;
+        margin: 0 2rem;
+    }
+    .PSYintro-image2container4 {
+        height: 295px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .PSYintro-picture3container4 {
+        height: 295px;
+        display: flex;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 1188px) {
+    .PSYContainer4colsm1{
+        padding: 0;
+        width:42%;
+    }
+    .PSYContainer4colsm2 {
+        align-items: start;
+        justify-content: center;
+        display: flex;
+        margin: 0 2rem;
+    }
+    .PSYintro-image2container4 {
+        height: 295px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .PSYintro-picture3container4 {
+        height: 295px;
+        display: flex;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 1046px) {
+    .PSYintro-image2container4 {
+        height: 260px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .PSYintro-picture3container4 {
+        height: 260px;
+        display: flex;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 922px) {
+    .PSYContainer4colsm1{
+        padding: 0;
+        width:40%;
+    }
+    .PSYintro-image2container4 {
+        height: 260px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .PSYintro-picture3container4 {
+        height: 260px;
+        display: flex;
+        width: 100%;
+    }
+    .PSYContainer3colsm2 {
+        padding: 0 7rem;
+        right: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+@media only screen and (max-width:818px){
+    .PSYintro-wordContainer1number1 {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 0 2rem;
+        text-align: justify;
+    }
+    .PSYintro-wordContainer2number1 {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 0 2rem;
+        text-align: justify;
+    }
+    .PSYintro-image2container4 {
+        height: 190px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .PSYintro-picture3container4 {
+        height: 190px;
+        display: flex;
+        width: 100%;
+    }
+    .PSYintro-wordContainer5number1 {
+        display: flex;
+        font-size: 15px;
+        justify-content: flex-start;
+        flex-direction: column;
+        text-align: justify;
+    }
+    .PSYContainer3colsm1 {
+        left: 5rem;
+    }
+    .PSYintro-wordContainer3number1 {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 0 3rem;
+        text-align: justify;
+    }
+}
+@media only screen and (max-width: 800px) {
+        .PSYintro-banner-detail{
+                font-size: 16px; 
+                color: white; 
+                width: 60%; 
+                margin-top: 10px;
+            }
+        .PSYintro-Content{
+            width: 95%;
+        }
+    }
+
+@media only screen and (max-width:767px){
+    .PSYContainer4colsm1 {
+        padding: 0;
+        width: 39%;
+    }
+    .PSYintro-image2container4 {
+        height: 170px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .PSYintro-picture3container4 {
+        height: 170px;
+        display: flex;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:711px){
+    .PSYContainer4colsm1 {
+        padding: 0;
+        width: 39%;
+    }
+    .PSYintro-image2container4 {
+        height: 160px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .PSYintro-picture3container4 {
+        height: 160px;
+        display: flex;
+        width: 100%;
+    }
+    .PSYintro-wordContainer2number1 {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 2rem;
+        text-align: justify;
+    }
+    .PSYintro-wordContainer1number1 {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 2rem;
+        text-align: justify;
+    }
+    .PSYContainer3colsm2 {
+        padding: 0 4rem;
+        right: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (max-width:709px){
+    .PSYContainer4colsm1 {
+        padding: 0;
+        width: 25%;
+    }
+    .PSYintro-image2container4 {
+        height: 100px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .PSYintro-picture3container4 {
+        height: 100px;
+        display: flex;
+        width: 100%;
+    }    
+}
+@media only screen and (max-width: 626px){
+    .PSYContainer3colsm1{
+        left: 0;
+    }
+    .PSYContainer4colsm1{
+        width:unset;
+    }
+    .PSYContainer4colsm2{
+        margin: 0;
+        padding: 0;
+        display: none;
+    }
+    .PSYContainer4colsm3{
+        display: none;
+    }
+    .PSYintro-picture3container4{
+        height: auto;
+    }
+    .PSYContainer5colsm1{
+        padding: 0;
+    }
+    .PSYContainer5colsm2{
+        display: none;
+    }
+    .PSYContainer5colsm3{
+        display: none;
+    }
+}
+@media only screen and (max-width: 600px) {
+        .PSYintro-banner-detail{
+                font-size: 16px; 
+                color: white; 
+                width: 100%; 
+                margin-top: 10px;
+            }
+        .PSYintro-Content{
+            width: 100%;
+        }
+        .PSYContainer5colsm2{
+            display: none;
+        }
+        .PSYContainer5colsm3{
+            display: none;
+        }
+    }
+
+
+@media only screen and (max-width: 569px) {
+        .PSYintro-banner-detail{
+                font-size: 16px; 
+                color: white; 
+                width: 100%; 
+                margin-top: 10px;
+            }
+        .PSYintro-Content{
+            width: 100%;
+        }
+        .PSYintro-wordContainer3number1 {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            text-align: justify;
+        }
+        .PSYContainer4colsm2 {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            padding-left: 8rem;
+        }
+        .PSYintro-image2container4 {
+            height: 80px;
+            width: 50%;
+            border-radius: 5px;
+        }
+        .PSYintro-picture3container4 {
+            height: 80px;
+            display: flex;
+            width: 30%;
+        }
+        .PSYContainer5colsm2{
+            display: none;
+        }
+        .PSYContainer5colsm3{
+            display: none;
+        }
+        .PSYintro-image2container4{
+            display: none;
+        }
+        .PSYContainer3colsm2{
+            padding: 0;
+            right: 0;
+        }
+    }
+@media only screen and (max-width: 541px) {
+        .PSYintro-wordContainer3number1 {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            text-align: justify;
+            padding: 7rem;
+            }
+            .PSYContainer5colsm2{
+                display: none;
+            }
+            .PSYContainer5colsm3{
+                display: none;
+            }
+    }
+@media only screen and (max-width: 544px) {
+    .PSYintro-wordContainer5number1{
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width:537px){
+    .PSYintro-wordContainer3number1{
+        padding: 2rem;
+    }
+    .PSYContainer3colsm2{
+        right: 0rem;
+    }
+    .PSYintro-wordContainer5number1{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width:377px){
+    .PSYintro-wordContainer3number1 {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        text-align: justify;
+    }
+}
+@media only screen and (max-width: 280px) {
+    .PSYContainer3colsm1 {
+        left: 0rem;
+    }
+    .PSYintro-wordContainer3number1 {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        text-align: justify;
+        padding: 0;
+    }
+    .PSYContainer5colsm2{
+        display: none;
+    }
+    .PSYContainer5colsm3{
+        display: none;
+    }
+    .PSYintro-picture1container4 {
+        display: none;
+        width: 100%;
+    }
+    .PSYContainer4colsm2 {
+        align-items: center;
+        justify-content: center;
+        display: none;
+        padding-left: 8rem;
+    }
+    .PSYintro-picture3container4 {
+        height: 80px;
+        display: none;
+        width: 30%;
+    }
+    .PSYintro-wordContainer5number1 {
+        display: flex;
+        font-size: 15px;
+        justify-content: flex-start;
+        flex-direction: column;
+        text-align: start;
+    }
+    .PSYContainer3colsm2 {
+        right: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        display: none;
+    }
+    .PSYContainer6colsm2{
+        padding: 2rem;
+    }
+    .PSYContainer5colsm2 {
+        display: flex;
+        flex: 1 1;
+        right: 4rem;
+    }
+    .PSYintro-Container4{
+        padding: 1rem;
+    }
+}
 
 
 
