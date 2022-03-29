@@ -30,35 +30,32 @@ const App = () => {
     getDataEvent();
   }, []);
   return (
-      <Router>
-        {/* { window.location.pathname !== "/AdminLogin" ? <Header/> : <></>} */}
-        <Header/>
-          <div>
-          <Routes>
-            <Route exact path="/Psychology" element={<Psychology/>} />
-            <Route exact path="/" element={<LandingScreen/>} />
-            <Route exact path="/EarlyChildhoodEducation" element={<EarlyChildhoodEducation/>} />
-            <Route exact path="/MusicIntro" element={<MusicIntro />} />
-            <Route exact path="/CreativeArt" element={<CreativeArt />} />
-            <Route exact path="/AmericanDegree" element={<AmericanDegree/>} />
-            <Route exact path="/Foundation" element={<Foundation/>} />
-            <Route exact path="/IT_Intro" element={<IT_Intro/>} />
-            <Route exact path="/Search_Page" element={<Search_Page/>} />
-            <Route exact path="/AdminLogin" element={<AdminLogin/>} />
-            <Route exact path="/Lawintro" element={<Lawintro/>} />
-            <Route exact path="/ASHintro" element={<ASHintro/>} />
-            <Route exact path="/Nursing" element={<Nursing/>} />
-            <Route exact path="/Hospitality" element={<Hospitality/>} />
-            <Route exact path="/OSHintro" element={<OSHintro/>} />
-            <Route exact path="/Business_And_Accounting" element={<Business_And_Accounting/>} />
-            <Route exact path="/Communication_Studies" element={<Communication_Studies/>} />
-            <Route exact path="/CourseDetail" element={<CourseDetail/>} />
-            <Route exact path="/NewCourse" element={<NewCourse/>} />
-          </Routes>
-          </div>
-          {/* { window.location.pathname !== "/AdminLogin" ? <Footer/> : <></>} */}
-          <Footer/>
-      </Router>
+    <Router>
+      {window.location.pathname !== "/AdminLogin" ? <Header /> : <></>}
+      <div>
+        <Routes>
+
+          <Route path="/" element={<LandingScreen />} />
+          <Route exact path="/EarlyChildhoodEducation" element={<EarlyChildhoodEducation />} />
+          <Route exact path="/AdminLogin" element={<AdminLogin />} />
+          <Route exact path="/IT_Intro" element={<IT_Intro />} />
+          <Route exact path="/Search_Page" element={<Search_Page />} />
+          <Route exact path="/Nursing" element={<Nursing />} />
+          <Route exact path="/OSHintro" element={<OSHintro />} />
+          <Route exact path="/Hospitality" element={<Hospitality />} />
+          <Route exact path="/CreativeArt" element={<CreativeArt />} />
+          <Route exact path="/Business_And_Accounting" element={<Business_And_Accounting />} />
+          <Route exact path="/Communication_Studies" element={<Communication_Studies />} />
+          <Route exact path="/AmericanDegree" element={<AmericanDegree />} />
+          <Route exact path="/Foundation" element={<Foundation />} />
+          <Route exact path="/MusicIntro" element={<MusicIntro />} />
+          <Route exact path="/Psychology" element={<Psychology />} />
+          <Route exact path="/Lawintro" element={<Lawintro />} />
+          <Route exact path="/ASHintro" element={<ASHintro />} />
+        </Routes>
+      </div>
+      {window.location.pathname !== "/AdminLogin" ? <Footer /> : <></>}
+    </Router>
   );
 }
 

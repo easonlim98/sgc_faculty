@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/Nursing.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/standard.css'
+import './css/Standard.css'
 
 const Nursing = () => {
   return (
@@ -66,7 +66,7 @@ const Nursing = () => {
 
         
          <h1 className='nursinggalleryname'>Gallery</h1>
-        <Carousel className='main-nursingslide'>
+        {/* <Carousel className='main-nursingslide'>
                 <div>
                 <img className='galleryimagenursing' src={require("../assets/images/nursingimage3.jpg")} style={{height:"400px",width:"500px"}}  alt="" ></img> 
                     
@@ -83,7 +83,7 @@ const Nursing = () => {
                 <img className='galleryimagenursing' src={require("../assets/images/nursingimage8.jpg")}style={{height:"400px",width:"500px"}}  alt="" ></img> 
                     
                 </div>
-            </Carousel>
+            </Carousel> */}
     
         <div className="Nursing-LastPart">
             <div className="row">

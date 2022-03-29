@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/standard.css';
+import './css/Standard.css';
 import { FaFilter } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { createRoutesFromChildren } from 'react-router-dom';

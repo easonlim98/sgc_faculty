@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/Music.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/standard.css'
+import './css/Standard.css'
 
 
 // import ReactAudioPlayer from 'react-audio-player';
