@@ -2,12 +2,24 @@ import React from 'react'
 import './css/hospitality.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/Standard.css'
+import Banner from './general-components/Banner/Banner.js'
+import Facilities from './general-components/Facilities/Facilities.js'
+import TabsComponent from './general-components/Tabs/TabsComponent'
 
 
 const Hospitality = () => {
     return (
         <div>
-            <div className="Hsp-banner1">
+            <div className='Hsp banner-container'
+                style={{
+                    backgroundImage: "url(" + require('../assets/images/Hospitality/Introback.png') + ")"
+                }}>
+                <Banner
+                    navigatepath={"/Search_Page"}
+                    bannercontent={"If you are interested and want to know more about Hospitality."} />
+            </div>
+
+            {/* <div className="Hsp-banner1">
 
                 <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
                     <div style={{ background: 'none', width: '85%', display: 'flex', flexDirection: 'column', }}>
@@ -22,12 +34,11 @@ const Hospitality = () => {
                     </div>
                 </div>
 
-
-            </div>
+            </div> */}
 
 
             <div className="Hsp-container">
-                <div className="row sp1">
+                <div className="row Hsp-r1">
                     <div className="col Hsp-imgborder">
                         <div className="Hsp-iconimg">
                             <img className="Hsp-first-section-img" src={require("../assets/images/Hospitality/icon1.png")} />
@@ -56,52 +67,59 @@ const Hospitality = () => {
 
                 <br />
                 <br />
-                
-                <div className='row'>
-                <div className='col-sm-6'>
-                        <h2 className="Hsp-content-header">Hospitality in SEGi</h2>
-                        <p className="Hsp-SEGI-content">
-                            The Hospitality & Tourism programmes in SEGi are designed to equip you
-                            with skills and knowledge that are increasingly in demand and relevant
-                            through modules that cover marketing, destination management, human
-                            resources, information management, planning and research, among others.
-                        </p>
+                <div className='Hsp-ctnbody'>
+                    <div className='row Hsp-r2'>
+                        <div className='col-sm-6'>
+                            <h2 className="Hsp-content-header">Hospitality in SEGi</h2>
+                            <p className="Hsp-SEGI-content">
+                                The Hospitality & Tourism programmes in SEGi are designed to equip you with skills and
+                                knowledge that are increasingly in demand and relevant through modules that cover
+                                marketing, destination management, human resources, information management,
+                                planning and research, among others. The programmes are developed to enhance your
+                                core skills, which includes communications, team work, problem solving, use of
+                                information technology, and application of numbers. These skills are essential to launch
+                                your career in the Hospitality and Tourism sectors, as well as provide a framework for
+                                life-long learning.
+                            </p>
+                        </div>
+                        <div className="col-sm-6" style={{ display: 'flex', justifyContent: 'center', padding: '0rem' }}>
+                            <img src={require("../assets/images/Hospitality/Gif2.gif")} className="Hsp-gif" alt="" />
+                        </div>
                     </div>
-                    <div className="col-sm-6">
-                        <img src={require("../assets/images/Hospitality/Gif2.gif")} style={{ width: '100%', height: '100%' }} alt="" />
-                    </div>
+
                 </div>
-                <h2 className="Hsp-content-header">Why Choose Us ?</h2>
+                <div className="Hsp-set2">
+                    <h2 className="Hsp-content-header">Why Choose Us ?</h2>
 
-                <br />
+                    <br />
 
-                <p className="Hsp-SEGI-content">
-                    SEGi offer programmes in the areas of Hospitality & Hotel Management, Tourism Management and
-                    Culinary
-                    Arts.
-                </p>
+                    <p className="Hsp-SEGI-content">
+                        SEGi offer programmes in the areas of Hospitality & Hotel Management, Tourism Management and
+                        Culinary
+                        Arts.
+                    </p>
 
 
-                <img className="Hsp-ehancesskillsimg" src={require("../assets/images/Hospitality/EnhanceSkills.JPG")} aboutlt="" />
+                    <img className="Hsp-ehancesskillsimg" src={require("../assets/images/Hospitality/EnhanceSkills.JPG")} aboutlt="" />
 
-                <br />
-                <br />
-                <br />
+                    <br />
+                    <br />
+                    <br />
 
-                <ul>
-                    <li className="Hsp-SEGI-content">There is tremendous growth in the hotel and tourism industry as businesses and people spend more
-                        money on leisure than ever before, making this sector of the industry one of the largest and
-                        fastest
-                        creators of employment.</li>
-                    <br></br>
+                    <ul>
+                        <li className="Hsp-SEGI-content">The hotel and tourist industry is booming, as businesses and individuals 
+                        spend more money on leisure than ever before, making it one of the industry's largest and fastest-growing 
+                        job producers.</li>
+                        <br></br>
 
-                    <li className="Hsp-SEGI-content">
-                        There is a need for educated and trained individuals who can deliver first className services.
-                    </li>
-                </ul>
+                        <li className="Hsp-SEGI-content">
+                        There is a demand for well-educated and well-trained personnel who can provide excellent service.
+                        </li>
+                    </ul>
 
-                <br />
-                <br />
+                    <br />
+                    <br />
+                </div>
             </div>
 
 
@@ -152,19 +170,23 @@ const Hospitality = () => {
                     </div>
 
 
-                    <div className="row">
-                        <div className="col-sm-6">
+                    <div className="row Hsp-r1">
+                        <div className="col-sm-6 Hsp-extraclass">
                             <h2 className="Hsp-content-header">Hotel Style</h2>
 
-                            <p className="Hsp-SEGI-content">Hospitality is the key to new ideas, new friends, new possibilities. What we take into our
-                                lives
-                                changes us. Without new people and new ideas, we are imprisoned inside ourselves.
+                            <p className="Hsp-SEGI-content">The key to fresh ideas, new relationships, and new opportunities is 
+                            hospitality. What we bring into our life has an effect on us. We are trapped inside ourselves without 
+                            fresh people and new ideas.
                             </p>
 
                             <ul>
                                 <li className="Hsp-SEGI-content">Fitness center</li>
                                 <li className="Hsp-SEGI-content">Outdoor pool</li>
                             </ul>
+
+                            <div className="Hsp-divseemore">
+                                <a className="Hsp-seemorecolor" href=''>See More</a>
+                            </div>
 
                         </div>
                         <div className="col-sm-6 Hsp-style-image2">
@@ -174,9 +196,12 @@ const Hospitality = () => {
                     </div>
                 </div>
 
+                <Facilities
+                facilitiesimage={require('../assets/images/Hospitality/btmimg.png')}
+                content={"If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button."} />
 
 
-                <div className="Hsp-faculties">
+                {/* <div className="Hsp-faculties">
                     <div className="row">
                         <div className="col-sm-5">
                             <img className="Hsp-faculties-img" src={require("../assets/images/Hospitality/btmimg.png")} alt="" />
@@ -196,13 +221,11 @@ const Hospitality = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
+
+
 
             </div>
-
-
-
-
 
         </div >
     )
