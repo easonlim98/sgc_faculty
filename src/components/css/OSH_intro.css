@@ -2,480 +2,153 @@
 
 
 
-.OSH-carousel-item {
-  height: 65vh;
-  min-height: 350px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.OSH-Intro.img {
-    width: 150%;
-}
-
-.OSH-alignBack {
-  flex-grow: 0 !important;
-}
-.OSH-PIC-banner { 
+.OSH-backgroundBanner { 
+  background: rgba(54, 54, 54, 0.3) url('../../assets/images/osh.jpg');
   background-position: center;
-  background-size:100% 100%;
-  width: 100%;
-  height: 70vh;
-  background-image:url(../../assets/images/osh.jpg);
-  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  top: 0;
 }
 
-.OSH-firstpart{
-  position: relative;
-  width: 99vw;
-height: 60vh;
-top: 0vh;
-
+.containerUS{
+  width: 99.3%;
 }
 
-.OSH-body1{
-
- position: relative;
-  width: 35%;
-  height: 10vh;
- margin-left: 10%;
- top: 10vh;
-  
+.osh-bannerContent-res{
+font-size: 16px; 
+color: white; 
+width: 30%; 
+margin-top: 10px;
 }
-
-.OSH-picture1{
-  position: relative;
-  width: 100%;
-height: 45vh;
-margin-left: 120%;
-top: -35vh;
-  
+.OSH-Section-1-Content{
+width: 90%;
 }
 
 .OSH-card-deck{
-  position: relative;
-  width: 99vw;
-height: 80vh;
-top: 0vh;
-background-color: gold;
-
-}
-
-.OSH-card1{
- 
-  width: 217px;
-height: 346px;
-left: 300px;
-top: 140px;
-background: #FFFFFF;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 8px;
-}
-
-.OSH-card2{
-  
-  width: 217px;
-height: 346px;
-left: 650px;
-top: 140px;
-background: #FFFFFF;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 8px;
-}
-
-.OSH-card3{
-  
-  width: 217px;
-  height: 346px;
-left: 1000px;
-top: 140px;
-background: #FFFFFF;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 8px;
-}
-
-.OSH-card-deck2{
-  position: relative;
-  width: 99vw;
-height: 60vh;
-top: 0vh;
-
-}
-
-.OSH-line4{
-  position: relative;
-  width: 99vw;
-height: 60vh;
-top: 0vh;
-background-color: gold;
-
-}
-
-.OSH-last{
-  position: relative;
-  width: 99vw;
-height: 50vh;
-top: 0vh;
-background-color: rgba(255, 217, 0, 0.541);
-
-}
-
-.OSH-paper-img{
-  position: relative;
-  width: 40vw;
-height: 50vh;
-margin-left: 0%;
-top: 0vh;
- }
-
- .OSH-man{
-  position: relative;
-  width: 30vw;
-height: 62vh;
-margin-left: 60%;
-top: -3vh;
- }
-
- .OSH-man-card-header{
-  position: relative;
- width: 60vw;
-height: 40vh;
-margin-left: 10%;
-top: -60vh; 
-
- }
-
-.OSH-alumni-body{
- position: relative;
-  width: 30vw;
-  height: 10vh;
-  margin-left: 15%;
-  top: -97vh; 
-}
-
-.OSH-card-title-alumni{
- position: relative;
-  width: 50vw;
-  height: 20vh;
-  margin-left: 15%;
-  top: -90vh; 
-}
-
-.OSH-blackline{
-  position: relative;
-  width: 70vw;
-  height: 20vh;
-  margin-left: -30%;
-  top: -8vh; 
-}
-
-.OSH-Student2021{
-  position: relative;
-  width: 50vw;
-  height: 20vh;
-  margin-left: 50%;
-  top: -15vh; 
-}
-
- .OSH-card4{
-  position: relative;
-  width: 11vw;
-height: 40vh;
-margin-left: 75%;
-top: 5vh;
-
-
- }
-
- .OSH-card5{
-  position: relative;
-  width: 11vw;
-height: 40vh;
-margin-left: 55%;
-top: -35vh;
-
-
- }
-
- .OSH-card6{
-  position: relative;
-  width: 11vw;
-height: 40vh;
-margin-left: 35%;
-top: -75vh;
-
-
- }
-
- .OSH-card7{
-  position: relative;
-  width: 11vw;
-height: 40vh;
-margin-left: 15%;
-top: -115vh;
-
-
- }
-
- .OSH-1{
-  position: relative;
-  width: 7vw;
-height: 12vh;
-margin-left: 10%;
-}
-
-.OSH-2{
-  position: relative;
-  width: 7vw;
-height: 12vh;
-margin-left: 10%;
-}
-
-.OSH-3{
-  position: relative;
-  width: 7vw;
-height: 12vh;
-margin-left: 10%;
-}
-
-.OSH-4{
-  position: relative;
-  width: 7vw;
-height: 12vh;
-margin-left: 10%;
-}
-
-.OSH-card1{
-  position: relative;
-  width: 23vw;
-height: 60vh;
-margin-left: 0%;
-top: 10vh;
-}
-
-.OSH-card2{
-  position: relative;
-  width: 23vw;
-  height: 60vh;
-margin-left: 7%;
-top: -50vh;
-}
-
-.OSH-card3{
-  position: relative;
-  width: 23vw;
-height: 60vh;
-margin-left: 14%;
-top: -110vh;
+  padding: 3rem 0;
+  background-color: yellow;
 }
 
 .OSH-card-img-top1{
-  position: relative;
-  width: 20vw;
-height: 60vh;
-margin-left: 20%;
-top: 10vh;
+  margin-left: 13%;
 }
 
-.OSH-card-img-top2{
-  position: relative;
-  width: 20vw;
-height: 60vh;
-margin-left: 1%;
-top: 10vh;
-}
-.OSH-card-img-top3{
-  position: relative;
-  width: 20vw;
-height: 60vh;
-margin-left: 62.5%;
-top: -50vh;
+.OSH-imgborder{
+  border: 1px black;
+  border-style: solid ;
+  border-radius: 5px;
+  box-shadow: 0px 5px #888888;
 }
 
-.OSH1-card-body{
-  position: relative;
-  width: 7vw;
-height: 12vh;
-margin-left: 10%;
+.OSH-iconimg{
+  text-align: center;
+  margin: 65px 25px 25px 25px;
+    
 }
 
-.OSH2-card-body{
-  position: relative;
-  width: 7vw;
-height: 12vh;
-margin-left: 10%;
+.OSH-bgColor{
+  background-color:yellow;
 }
 
-.OSH3-card-body{
-  position: relative;
-  width: 10vw;
-height: 12vh;
-margin-left: 10%;
+.OSH-image2 {
+  min-width: 300px;
+  min-height: 300px;
+  width: 50%;
+  height: 100%;
+  text-align: center;
 }
 
-.OSH1-card-title{
-  position: relative;
-  width: 7vw;
-height: 12vh;
-margin-left: 80%;
-top: 3vh;
+@media only screen and (max-width: 900px) {
+  .OSH-card-img-top1{
+    margin-left: 30%;
+  }
 }
 
-.OSH1-card-text{
-  position: relative;
-  width: 19vw;
-height: 12vh;
-margin-left: 0%;
-top: -5vh;
-}
-.OSH2-card-title{
-  position: relative;
-  width: 15vw;
-height: 12vh;
-margin-left: 20%;
-top: 3vh;
-}
-
-.OSH2-card-text{
-  position: relative;
-  width: 19vw;
-height: 12vh;
-margin-left: 10%;
-top: -5vh;
-}
-.OSH3-card-title{
-  position: relative;
-  width: 7vw;
-height: 12vh;
-margin-left: 60%;
-top: 3vh;
-}
-
-.OSH3-card-text{
-  position: relative;
-  width: 19vw;
-height: 12vh;
-margin-left: 0%;
-top: -5vh;
-}
-
-.OSH-container-banner{
-position: relative;
-font-size: 3vh;
-  width: 40%;
-  height: 22vw;
-margin-left: 10%;
-color:#FFFFFF;
-top: 12vh;
-}
-
-.OSH-intro1{
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 5vh;
-  line-height: 5vh;
-  display: flex;
-  align-items: center;
-  text-align: right;
-  text-transform: uppercase;
-  
-  color: #FFFFFF;
-position: relative;
-  width: 30vw;
-  height: 10vh;
-  top: 20%;
-margin-left: 10%;
-}
-
-.OSH-intro2{
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 5vh;
-  line-height: 5vh;
-  display: flex;
-  align-items: center;
-  text-align: right;
-  text-transform: uppercase;
-  
-  color:#FFFFFF;
-position: relative;
-  width: 60%;
-  height: 10vh;
-  top: 19%;
-margin-left: 10%;
-}
-
-.OSH-btnintro{
-  font-size: 2vh;
-  position: relative;
-  width: 20%;
-height: 5vh;
-top: 10%;
-margin-left:0%;
-color:#FFFFFF;
-background: #A41F36;
-border-radius: 5px;
-}
-
-.OSH-btnbody-part2{
- 
-position: relative;
-font-style: normal;
-font-weight: 400;
-font-size: 2vh;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #FFFFFF;
-  width: 16%;
-height: 5vh;
-
-background: #FCB600;
-border-radius: 5px;
-}
-
-.OSH-operationtheatre{
-  margin-left: 1vh;
-  
-}
-
-.OSH-emergencycare{
-  margin-left: 3vh;
-}
-
-.OSH-24hrsservice{
-margin-left: 2.5vh;
-}
-
-.OSH-qualifeddoc{
-margin-left: 2.3vh;
-}
-
-.OSH-card-text-operationtheatre{
-  margin-left: 0.5vh;
-}
-
-.OSH-card-text-emergencycare{
-  margin-left: 1vh;
-}
-
-.OSH-card-text-24hrsservice{
-}
-
-.OSH-card-text-qualifeddoc{
+@media only screen and (max-width: 800px) {
+      .bannerContent-res{
+              font-size: 16px; 
+              color: white; 
+              width: 60%; 
+              margin-top: 10px;
+          }
+      .OSH-Section-1-Content{
+          width: 95%;
+      }
   }
 
-.OSH-seemore{
-  font-size: 2vh;
-  position: relative;
-  width: 20%;
-height: 5vh;
-top: -25vh;
-margin-left: 140%;
-}  
+@media only screen and (max-width: 600px) {
+      .osh-bannerContent-res{
+              font-size: 16px; 
+              color: white; 
+              width: 100%; 
+              margin-top: 10px;
+          }
+      .OSH-Section-1-Content{
+          width: 100%;
+      }
+
+      .OSH-card-img-top1{
+        margin-left: 20%;
+      }
+  }
+
+.OSH-Section-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.OSH-Section-1-left {
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  height: 90%;
+}
+
+.OSH-Section-1-right {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.OSH-Section-1-gif {
+  width: 100%; 
+  height: 100%;
+}
+
+.OSH-Section-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFF1CC;
+}
+
+.OSH-Section-6-right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.OSH-Section-6-img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+  .OSH-card-img-top1{
+    margin-left: 13%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .OSH-card-img-top1{
+    margin-left: 15%;
+    width: 70%;
+  }
+}
+
+
+
