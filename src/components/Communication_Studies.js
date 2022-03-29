@@ -2,7 +2,6 @@ import React from 'react'
 import './css/Communication_Studies.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/standard.css'
-import Carousel, { consts } from 'react-elastic-carousel';
 import Banner from './general-components/Banner/Banner.js'
 import Facilities from './general-components/Facilities/Facilities.js'
 import TabsComponent from './general-components/Tabs/TabsComponent'
@@ -10,116 +9,108 @@ import TabsComponent from './general-components/Tabs/TabsComponent'
 const Communication_Studies = () => {
     return (
         <div>
-            <div class="CS-Banner">
-                <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
-                    <div style={{ background: 'none', width: '85%', display: 'flex', flexDirection: 'column' }}>
-                        <div style={{ background: 'none', display: 'flex', flexDirection: 'column' }}>
-                            <a style={{ fontSize: '20px', color: '#FFFFFF' }}>Know more about</a>
-                            <a style={{ fontSize: '35px', color: '#FFFFFF', fontWeight: 'bold' }}>Our Program</a>
-                            <p style={{ color: '#FFFFFF' }} class="CS-bannerContent-res">If you are interested and want to know more
-                                about Communication Studies.</p>
-                            <div>
-                                <button type="button" class="General-Button">Programme</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div className='BA banner-container'
+                style={{
+                    backgroundImage: "url(" + require('../assets/gif/Communication_Studies/CS-gif-1.gif') + ")"
+                }}>
+                <Banner
+                    navigatepath={"/Search_Page"}
+                    bannercontent={"If you are interested and want to know more about Business & Accounting."} />
             </div>
-            <div class="CS-container">
-                <div class="CS-Section-1-Header" style={{ textAlign: 'center' }}>
+            <div className="CS-container">
+                <div className="CS-Section-1-Header" style={{ textAlign: 'center' }}>
                     <h4 className='CS-text-title1' style={{ color: '#717274' }}><b>What is</b></h4>
                     <h1 className='CS-text-title2'><b>Communication Studies</b></h1>
                 </div>
-                <div class="CS-Section-Content">
-                    <div class="row CS-group-content">
-                        <div class="col-sm-6 CS-group-img">
-                            <div class="CS-Section-2-img">
-                                <img class="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-1.png")} alt="" />
+                <div className="CS-Section-Content">
+                    <div className="row CS-group-content">
+                        <div className="col-sm-6 CS-group-img">
+                            <div className="CS-Section-2-img">
+                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-1.png")} alt="" />
                             </div>
                         </div>
-                        <div class="col-sm-6 CS-text-area">
+                        <div className="col-sm-6 CS-text-area">
                             <p className='CS-text-hd' style={{ fontWeight: '700' }}>Significant of Communication Studies</p>
-                            <p className='CS-text-font' style={{ fontWeight: '500' }} class="CS-Section-1-Content">In this new digital age, communications
-                                has changed significantly as technology and social media sites have brought the world
-                                closer. It is essential to have good communication skills in diverse fields from advertising
-                                to public relations, marketing, political and public affairs and other advanced platforms
-                                including, but not limited to, law and professional schools.</p>
-                            <button class="btn btn-outline-dark button-style">Read more</button>
+                            <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>The communications industry in Malaysia and around the world has evolved so much that contemporary professional communicators now have to stand up to face the current challenges with sophistication and respond through the various media channels. Modern communicators have to utilise all media available, from verbal communication to print media, from broadcasting to digital platforms. Effective communication requires communicators to speak clearly to each individual audience.</p>
+                            <button className="btn btn-outline-dark button-style">Read more</button>
                         </div>
                     </div>
                 </div>
-                <div class="CS-Section-Content">
-                    <div class="row CS-group-content1">
-                        <div class="col-sm-6 CS-text-area">
-                            <div class="CS-Section-2-text">
+                <div className="CS-Section-Content">
+                    <div className="row CS-group-content1">
+                        <div className="col-sm-6 CS-text-area">
+                            <div className="CS-Section-2-text">
                                 <p className='CS-text-hd' style={{ fontWeight: '700' }}>Communication Studies in SEGi</p>
-                                <p className='CS-text-font' style={{ fontWeight: '500' }} class="CS-Section-1-Content">Our dedicated faculty members are
-                                    committed to helping students in understanding communication in various contexts. The
-                                    programmes developed are industry-relevant to enable the application of theoretical
-                                    perspectives in their chosen fields upon graduation. Students are guaranteed an in-depth
-                                    knowledge of communication techniques and how the technologies shape and govern the society.
-                                </p>
+                                <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>At SEGi Group of Colleges, we are equipped with sophisticated technology and state-of-art technology, including broadcast studios, radio studios, editing rooms, voice-over studios, photography studios, and modern computer labs with the latest software and equipment. We also have internship placement programmes that will spur our students towards excellence in their careers.</p>
+                                
                             </div>
-                            <button class="btn btn-outline-dark button-style">Read more</button>
+                            <button className="btn btn-outline-dark button-style">Read more</button>
                         </div>
-                        <div class="col-sm-6">
+                        <div className="col-sm-6">
 
-                            <div class="CS-Section-2-img">
-                                <img class="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-2.png")} alt="" />
+                            <div className="CS-Section-2-img">
+                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-2.png")} alt="" />
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="CS-Section-Content">
-                    <div class="row CS-group-content">
-                        <div class="col-sm-6 CS-group-img">
-                            <div class="CS-Section-2-img">
-                                <img class="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-3.png")} alt="" />
+                <div className="CS-Section-Content">
+                    <div className="row CS-group-content">
+                        <div className="col-sm-6 CS-group-img">
+                            <div className="CS-Section-2-img">
+                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-3.png")} alt="" />
                             </div>
                         </div>
-                        <div class="col-sm-6 CS-text-area">
+                        <div className="col-sm-6 CS-text-area">
                             <p className='CS-text-hd' style={{ fontWeight: '700' }}>SEGi offer you</p>
-                            <p className='CS-text-font' style={{ fontWeight: '500' }} class="CS-Section-1-Content">At SEGi, students will be propelled and
-                                challenged to be excellent communicators and pushed to succeed in their choosen careers</p>
-                            <button class="btn btn-outline-dark button-style">Read more</button>
+                            <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>Responding to these high expectations, SEGi Group of Colleges offers dynamic courses focusing on creative content creation, media studies, broadcasting, public relations, journalism, advertising and digital marketing.</p>
+                            <button className="btn btn-outline-dark button-style">Read more</button>
                         </div>
                     </div>
                 </div>
-                {/* <div className='CS-carousel-group'>
+                <div className='CS-carousel-group'>
                     <div style={{ textAlign: 'center' }}>
                         <p style={{ display: 'flex', justifyContent: 'center', fontWeight: '700', fontSize: 'large' }}>Previous Successful
                             Events</p>
                     </div>
-
-                    <Carousel className='CS-carousel'>
-                        <Carousel.Item className="CS-carousel-img">
-                            <div className='CS-carousel-overlay'></div>
-                            <img className="d-block w-100" src={require("../assets/images/Communication_Studies/CS-img-4.png")} alt="" />
-                            <Carousel.Caption className="CS-carousel-label">
-                                <h3 className="CS-carousel-label1 CS-carousel-label-font">First slide label</h3>
-                                <p className="CS-carousel-text1 CS-carousel-text-font">First slide content text.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item className="CS-carousel-img">
-                            <div className='CS-carousel-overlay'></div>
-                            <img className="d-block w-100" src={require("../assets/images/Communication_Studies/CS-img-5.png")} alt="" />
-
-                            <Carousel.Caption className="CS-carousel-label">
-                                <h3 className="CS-carousel-label1 CS-carousel-label-font">Second slide label</h3>
-                                <p className="CS-carousel-text1 CS-carousel-text-font">Second slide content text.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item className="CS-carousel-img">
-                            <img className="d-block w-100" src={require("../assets/images/Communication_Studies/CS-img-6.png")} alt="" />
-                            <div className='CS-carousel-overlay'></div>
-                            <Carousel.Caption className="CS-carousel-label">
-                                <h3 className="CS-carousel-label1 CS-carousel-label-font">Third slide label</h3>
-                                <p className="CS-carousel-text1 CS-carousel-text-font">Third slide content text.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                    </Carousel>
-                </div> */}
+                    <div id="CS-carousel" className="CS-carousel carousel slide" data-ride="carousel">
+                        <div className="carousel-inner">
+                            <div className="carousel-item CS-carousel-img active">
+                                <div className='CS-carousel-overlay'></div>
+                                <img className="d-block w-100" src={require("../assets/images/Communication_Studies/CS-img-4.png")} alt="" />
+                                <div class="carousel-caption d-none d-md-block CS-carousel-label">
+                                    <h3 className="CS-carousel-label1 CS-carousel-label-font">First slide label</h3>
+                                    <p className="CS-carousel-text1 CS-carousel-text-font">First slide content text.</p>
+                                </div>
+                            </div>
+                            <div className="carousel-item CS-carousel-img">
+                                <div className='CS-carousel-overlay'></div>
+                                <img className="d-block w-100" src={require("../assets/images/Communication_Studies/CS-img-5.png")} alt="" />
+                                <div class="carousel-caption d-none d-md-block CS-carousel-label">
+                                    <h3 className="CS-carousel-label1 CS-carousel-label-font">Second slide label</h3>
+                                    <p className="CS-carousel-text1 CS-carousel-text-font">Second slide content text.</p>
+                                </div>
+                            </div>
+                            <div className="carousel-item CS-carousel-img">
+                                <div className='CS-carousel-overlay'></div>
+                                <img className="d-block w-100" src={require("../assets/images/Communication_Studies/CS-img-6.png")} alt="" />
+                                <div class="carousel-caption d-none d-md-block CS-carousel-label">
+                                    <h3 className="CS-carousel-label1 CS-carousel-label-font">Third slide label</h3>
+                                    <p className="CS-carousel-text1 CS-carousel-text-font">Third slide content text.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a className="carousel-control-prev" href="#CS-carousel" role="button" data-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span className="sr-only">Previous</span>
+                        </a>
+                        <a className="carousel-control-next" href="#CS-carousel" role="button" data-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span className="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <TabsComponent

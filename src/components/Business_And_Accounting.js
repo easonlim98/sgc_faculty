@@ -20,18 +20,13 @@ const Business_And_Accounting = () => {
             </div>
 
             <div className="BA-container">
-                <div class="row">
-                    <div class="col-sm-5 BA-section-img">
-                        <img class="BA-gif1" src={require("../assets/gif/Business_And_Accounting/gif2.gif")} alt="" />
+                <div className="row BA-Section-group1">
+                    <div className="col-sm-6 BA-section-img">
+                        <img className="BA-Section1-img" src={require("../assets/images/Business_And_Accounting/BA-Image1.jpg")} alt="" />
                     </div>
-                    <div class="col-sm-7  BA-Section-group1">
-
+                    <div className="col-sm-6 BA-Section-1">
                         <h4 className="BA-text-hd">What is Business & Accounting?</h4>
-                        <p className="BA-text-font">Accounting is the process of recording financial transactions pertaining
-                            to a business. The accounting process includes summarizing, analyzing, and reporting these
-                            transactions to oversight agencies, regulators, and tax collection entities. The financial
-                            statements used in accounting are a concise summary of financial transactions over an accounting
-                            period, summarizing a company's operations, financial position, and cash flows.</p>
+                        <p className="BA-text-font">For the aspiring entrepreneurs and business leaders, a business management degree is consistently a popular choice. It provides the academic knowledge and skills to pursue global career opportunities and helps you develop a broad understanding of businesses and specific areas such as finance and human resources.</p>
 
                     </div>
                 </div>
@@ -49,21 +44,20 @@ const Business_And_Accounting = () => {
                         <img className="BA-image1" src={require("../assets/images/Business_And_Accounting/BA-img4.png")} alt="" />
                     </div>
                 </div>
-                <div class="BA-Section-2">
-                    <div class="row">
-                        <div class="col-sm-6 BA-Section-group1">
-                            <div class="BA-Section-text1">
+                <div className="BA-Section-2">
+                    <div className="row BA-Section-group1">
+                        <div className="col-sm-6 BA-section-group2">
+                            <div className="BA-Section-text1">
                                 <h3 className="BA-text-hd">What We Learn</h3>
                                 <p className="BA-text-font">This programme prepares students to become professional accountants. It covers theoretical and
                                     conceptual accounting matters combined with the basic accounting skills needed to make graduates
                                     employable.
                                 </p>
                             </div>
-                            <button class="btn btn-outline-dark">Read more</button>
+                            <button className="btn btn-outline-dark">Read more</button>
                         </div>
                         <div className="col-sm-6 BA-image2" >
-                            <img className="BA-backimg" src={require("../assets/images/Business_And_Accounting/BA-img5.png")} alt="" />
-                            <img className="BA-frontgif2" src={require("../assets/gif/Business_And_Accounting/gif2.gif")} alt="" />
+                            <img className="BA-Section2-img" src={require("../assets/images/Business_And_Accounting/BA-img5.jpg")} alt="" />
                         </div>
                     </div>
                 </div>
@@ -73,7 +67,7 @@ const Business_And_Accounting = () => {
                         <img className="BA-image3" src={require("../assets/images/Business_And_Accounting/BA-img6.png")} alt="" />
                     </div>
                 </div>
-                <div>
+                <div className='BA-Section-3'>
                     <ul>
                         <li className="BA-text-font">Accounting is the way a business keeps track of its operations.</li>
                         <li className="BA-text-font">Accountants analyse the business finances so the owner can make better decisions.</li>
@@ -84,17 +78,18 @@ const Business_And_Accounting = () => {
             </div>
 
             <TabsComponent
-                StudentName={"Edward Maya"}
-                StudentJob={"Graphic Designer"}
-                Studentimage={require('../assets/images/Creative_Art/college_student_creativeart.png')}
-                StudentWords={"“My high school art education constructed invaluable foundations for me as a creative professional.”"}
+                StudentName={"Tariana Anak Tara"}
+                StudentJob={"Currently working at Sarawak Energy Berhad"}
+                Studentimage={require('../assets/images/Business_And_Accounting/BA-img8.jpeg')}
+                StudentWords={"“LIFE IS LIKE ACCOUNTING EVERYTHING MUST BE BALANCE.”"}
+                // StudentWords={"“SEGi College Sarawak in Collaboration with University of Sunderland for the programme of Bachelor (Hons) Business and Management (3+0) turned out to be a blessing in disguise. It has been a great experience being a part of such an Institution which not only provided me with quality education but also has helped me to groom my overall personality. The renowned faculty of Business & Accounting combined with the pedagogic learning has moulded me into a smarter professional with the ability to analyse my entrepreneurial ventures, also enhancing my personal psychographic in the process.”"}
                 navigationpath={""}
                 textcolor={"#A71337"}
-                backgroundcolor={"#E3E4E3"}
+                backgroundcolor={"#949494"}
             />
             <Facilities
-                facilitiesimage={require('../assets/images/Business_And_Accounting/BA-img10.png')}
-                content={"If you are interested in our programme and want to check out more about our Business & Accounting-related facilities, please click on the facilities button."} />
+                facilitiesimage={require('../assets/images/Business_And_Accounting/BA-Facilities1-Computer-Lab.jpg')}
+                content={"Here at SEGi, the Faculty of Business and Accounting provides facilities to benefits students for their studies and student life. Our computer lab, library and student lounge facilities are readily available for students to facilitate their whole journey at SEGi."} />
         </div>
     )
 }
