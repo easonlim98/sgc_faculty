@@ -2,11 +2,14 @@ import React from 'react'
 import './css/foundation.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/standard.css'
+import Banner from './general-components/Banner/Banner.js'
+import Facilities from './general-components/Facilities/Facilities.js'
+import TabsComponent from './general-components/Tabs/TabsComponent'
 
 const Foundation = () => {
   return (
     <div>
-        <div className="container-fluid">
+        {/* <div className="container-fluid">
             <div className="row">
                 <div className="founbannersection founbannersection-container">
                     <div className="founbannerpicture">
@@ -20,6 +23,14 @@ const Foundation = () => {
                     </div>
                 </div>
             </div>
+        </div> */}
+        <div className='FF banner-container'
+            style={{
+                backgroundImage: "url(" + require('../assets/images/Foundation/banner.png') + ")"
+            }}>
+            <Banner
+                navigatepath={"/Search_Page"}
+                bannercontent={"If you are interested and want to know more about Engineering."} />
         </div>
         <div className="container">
             <div className="foun-whatwelearn">
@@ -71,7 +82,7 @@ const Foundation = () => {
                 <h3 className="foun-whatwelearn-words">What We Learn</h3>
             </div>
             <div className="row Fou-picturegrp">
-                <div className="col-lg-4">
+                <div className="col-lg-4 Fou-picture-x">
                     <div className="Fou-picture">
                         <img className="Fou-image" src={require("../assets/images/Foundation/founsection3-1.png")}  alt=""/>
                         <div className="Fou-word3">
@@ -79,7 +90,7 @@ const Foundation = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4">
+                <div className="col-lg-4 Fou-picture-x">
                     <div className="Fou-picture">
                         <img className="Fou-image" src={require("../assets/images/Foundation/founsection3-2.png")}  alt=""/>
                     </div>
@@ -87,7 +98,7 @@ const Foundation = () => {
                         <p style={{fontWeight: '700'}}>Rewarding Profession</p>
                     </div>
                 </div>
-                <div className="col-lg-4">
+                <div className="col-lg-4 Fou-picture-x">
                     <div className="Fou-picture">
                         <img className="Fou-image" src={require("../assets/images/Foundation/founsection3-3.png")}  alt=""/>
                     </div>
@@ -102,8 +113,8 @@ const Foundation = () => {
     <div className="container Fou-Container4">
         <div className="row">
             <div className="col-lg-7">
-                <h4 className="foun-whatwelearn-words">What is Engineering</h4>
-                <p>The  manufacturing  industry  has  broken  away  from  its  dependence  on  traditional  manpower  and  has  since  advanced  into  mechanisation, digitalisation  and  articial intelligence (AI) to increase efciency.  
+                <h3 className="foun-whatwelearn-words">What is Engineering</h3>
+                <p className="foun-whatwelearn-words-p">The  manufacturing  industry  has  broken  away  from  its  dependence  on  traditional  manpower  and  has  since  advanced  into  mechanisation, digitalisation  and  articial intelligence (AI) to increase efciency.  
                     <br/><br/>he Faculty of Engineering focuses on Research of Innovation, Professional Recognition and Industry Certication to ensure that students are stay relevant and in line with IR 4.0. </p>
                 <button type="button" className="btn btn-primary Fou-buttonforprogramme Fou-buttonreadmore">Read more</button>
             </div>
@@ -113,7 +124,17 @@ const Foundation = () => {
         </div>
     </div>
 
-    <div className="foun-orange">
+    <TabsComponent
+                StudentName={"Edward Maya"}
+                StudentJob={"Engineering"}
+                Studentimage={require('../assets/images/Foundation/founsection5.png')}
+                StudentWords={"“My high school art education constructed invaluable foundations for me as a creative professional.”"}
+                navigationpath={""}
+                textcolor={"#000000"}
+                backgroundcolor={"#F3EBDF"}
+    />
+
+    {/* <div className="foun-orange">
         <div className="container Fou-Container5">    
             <div className="row">
                 <div className="col-lg-6">
@@ -154,8 +175,8 @@ const Foundation = () => {
                 </div>
             </div>
         </div>
-    </div>
-    <div className="Founsec7">
+    </div> */}
+    {/* <div className="Founsec7">
         <div className="container-fluid">
             <div className="row">
                 <div className="col-lg-5">
@@ -172,7 +193,10 @@ const Foundation = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
+    <Facilities
+            facilitiesimage={require('../assets/images/Foundation/founsection6.png')}
+            content={"If you are interested in our programme and want to check out more about our Engeneering related facilities, please click on the facilities button."} />
     </div>
   )
 }

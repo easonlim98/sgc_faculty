@@ -65,6 +65,7 @@
 
 .Fou-Content{
     text-align: justify;
+    font-size: 18px;
 }
 
 .Fou-img-2-3 {
@@ -102,6 +103,7 @@
 .Fou-word3 {
     text-align: center;
     padding-top: 20px;
+    font-size: 20px;
 }
 
 .foun-picsection4 {
@@ -223,6 +225,10 @@
     font-weight: bold;
 }
 
+.foun-whatwelearn-words-p {
+    font-size: 20px;
+}
+
 @media only screen and (min-width: 280px) and (max-width: 599px) {
 
     .founbannerwords {
@@ -308,6 +314,20 @@
         display: none;
     }
 
+    .Fou-picture-x {
+        max-width: 80%;
+    }
+
+}
+
+@media only screen and (min-width: 280px) and (max-width: 991px) {
+
+    .Fou-picturegrp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -339,7 +359,7 @@
     }
 
     .foun-whatwelearn-words {
-        font-size: 40px;
+        font-size: 35px;
     }
 
     .Fou-picture{
@@ -352,7 +372,7 @@
 
     .Fou-word3 {
         padding: 30px 0;
-        font-size: 35px;
+        font-size: 25px;
     }
     
     .foun-picsection4 {
@@ -361,6 +381,14 @@
 
     .foun-bannerimg02 {
         display: none;
+    }
+
+    .Fou-picture-x {
+        max-width: 85%;
+    }
+
+    .foun-whatwelearn-words-p {
+        font-size: 18px;
     }
 }
 
