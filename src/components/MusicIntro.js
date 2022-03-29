@@ -2,7 +2,9 @@ import React from 'react'
 import './css/Music.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/Standard.css'
-
+import Banner from './general-components/Banner/Banner.js'
+import Facilities from './general-components/Facilities/Facilities.js'
+import TabsComponent from './general-components/Tabs/TabsComponent'
 
 // import ReactAudioPlayer from 'react-audio-player';
 
@@ -23,9 +25,9 @@ const MusicIntro = () => {
                 controls
             /> */}
 
-            <div className="musicintro-backgroundBanner">
-                <div className="row musicintro">
-                    <div className="col-sm-6 musicintro">
+            {/* <div className="musicintro-backgroundBanner">
+                <div className="row">
+                    <div className="col-sm-6">
                     </div>
                     <div className="col-sm-6 musicintro">
                         <div style={{ display: "flex", height: "80vh", alignItems: "center", justifyContent: "center" }}>
@@ -42,13 +44,21 @@ const MusicIntro = () => {
                         </div>
                     </div>
                 </div>
+            </div> */}
+
+            <div className='MSCintro banner-container'
+                style={{
+                    backgroundImage: "url(" + require('../assets/images/Music/Musicbnr01.jpg') + ")"
+                }}>
+                <Banner
+                    navigatepath={"/Search_Page"}
+                    bannercontent={"If you are interested and want to know more about Music."} />
             </div>
 
-
-            <div className="container musicintrosection02">
-                <div className="row musicintro">
-                    <div className="col-sm-6 musicintrotextsection02">
-                        <p className="musicintrotitle02">What is Music Studies</p>
+            <div className="container musicintrosection02 d-flex justify-content-center align-items-center">
+                <div className="row musicintro d-flex justify-content-center align-items-center flex-row">
+                    <div className="d-flex justify-content-center align-items-center flex-column musicintrotextsection02">
+                        <p className="musicintrotitle02 fw-bold">What is Music Studies</p>
                         <p>The programme designed to lay a solid
                             foundation of musical studies which focuses
                             on the development of musical skills and
@@ -112,7 +122,7 @@ const MusicIntro = () => {
                                 </a>
                             </div>
                             <div id="Outstanding Student" className="musicintro-tabcontent">
-                                <p className="musicintro-tabcontent-p">""Your imagination is your preview of life's coming attractions."</p>
+                                <p className="musicintro-tabcontent-p">"Your imagination is your preview of life's coming attractions."</p>
                                 <h5 style={{ Color: "white" }}>Albert Einstein</h5>
                                 <hr className="blacklineformusicintro-tabcontent" />
                                 <p>Student of 2021 Music Studies</p>
@@ -139,54 +149,8 @@ const MusicIntro = () => {
                 </div>
             </div>
 
-
-            {/* <div className="col-sm-6">
-                    <div>
-                        <div className="navtab">
-                            <button className="tablinks" onclick="opentab(event,'Outstanding Student')">Outstanding Student</button>
-                            <button className="tablinks" onclick="opentab(event,'Success Story')">Success Story</button>
-                            <button className="tablinks" onclick="opentab(event,'Worklife')">Worklife</button>
-                        </div>
-
-                        <div id="Outstanding Student" className="tabcontent">
-                            <h3><i>"Your imagination is your preview of life's coming attractions.</i></h3>
-                            <h4>Albert Einstein</h4>
-                        </div>
-                        <button type="button" className="btn btn-danger">See More</button>
-
-
-                        <div id="Success Story" className="tabcontent">
-                            <h3>"Content for Success Story."</h3>
-                            <button type="button" className="btn btn-danger">See More</button>
-                        </div>
-
-                        <div id="Worklife" className="tabcontent">
-                            <h3>"Content for Worklife."</h3>
-                            <button type="button" className="btn btn-danger">See More</button>
-                        </div>
-                    </div>
-
-                    {/* <script>
-                function opentab(event, Content) {
-                    var i, tabcontent, tablinks;
-                    tabcontent = document.getElementsByclassNameName("tabcontent");
-                    for (i = 0; i < tabcontent.length; i++) {
-                        tabcontent[i].style.display = "none";
-                    }
-                    tablinks = document.getElementsByclassNameName("tablinks");
-                    for (i = 0; i < tablinks.length; i++) {
-                        tablinks[i].classNameName = tablinks[i].classNameName.replace(" active", "");
-                    }
-                    document.getElementById(Content).style.display = "block";
-                    evt.currentTarget.classNameName += " active";
-                }
-            </script> 
-                </div> */}
-
-
-
-            <div className="row musicintro" style={{ backgroundColor: "black" }}>
-                <div className="col-sm-5 musicintro">
+            {/* <div className="row" style={{ backgroundColor: "black" }}>
+                <div className="col-sm-5">
                     <img className="musicintrobannerimg04" src={require("../assets/images/Music/pexels-photo-3760529 1.png")} />
                 </div>
                 <div className="col-sm-7 musicintro">
@@ -199,8 +163,13 @@ const MusicIntro = () => {
                     </div>
                     <p className="text-right"><button type="button" className="btn btn-danger">Facilities</button></p>
                 </div>
+            </div> */}
 
-            </div>
+            <Facilities
+                facilitiesimage={require('../assets/images/Music/pexels-photo-3760529 1.png')}
+                content={"If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button."} />
+
+
             <div class="fab-container">
                 <div class="button iconbutton">
                     {/* <i>+</i> */}
