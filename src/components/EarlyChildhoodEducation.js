@@ -12,7 +12,7 @@ const EarlyChildhoodEducation = () => {
     <div className="backgroundBanner">
 
             <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ background:'none', width: '85%', display: 'flex', flexDirection: 'column',}}>
+                <div style={{ background:'none', width: '85%', display: 'flex', flexDirection: 'column'}}>
                     <div style={{background:'none', display: 'flex', flexDirection: 'column'}}>
                         <a style={{fontSize: '20px', color: '#FFFFFF'}}>Know more about</a>
                         <a style={{fontSize: '35px', color: '#FFFFFF', fontWeight: 'bold'}}>Our Program</a>

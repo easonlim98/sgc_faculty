@@ -11,7 +11,7 @@ const Psychology = () => {
                 <div className="col-sm-6">
                 </div>
             <div className="col-sm-6">
-            <div style={{display: "flex", height: "80vh", alignItems: "center", justifyContent: "center"}}>
+            <div style={{display: "flex", height: "80", alignItems: "center", justifyContent: "center"}}>
                 <div style={{background: "none", width: "85%", display: "flex", flexDirection: "column"}}>
                     <div style={{background:"none", display: "flex", flexDirection: "column"}}>
                         <a style={{fontSize: "20px", color: "#FFFFFF"}}>KNOW MORE ABOUT</a>
