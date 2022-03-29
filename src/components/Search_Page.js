@@ -1,11 +1,12 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react'
+// import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/standard.css';
+import './css/Standard.css';
 import { FaFilter } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { createRoutesFromChildren } from 'react-router-dom';
 import './css/Search_Page.css'
+
 
 const Search_Page = () => {
   const ProgramArr = [
@@ -16,7 +17,7 @@ const Search_Page = () => {
       Field_of_Interest: "Information Technology",
       Level_of_Study: "Diploma",
       Awarding: "SEGi",
-      Campus: ["KL,", "SJ,", "PE"]
+      Campus: ["KL", "SJ", "PE"]
     },
     {
       id: 2,
@@ -25,7 +26,7 @@ const Search_Page = () => {
       Field_of_Interest: "Information Technology",
       Level_of_Study: "Certificate",
       Awarding: "SEGi",
-      Campus: ["KL,", "SJ,", "PE"]
+      Campus: ["KL", "SJ", "PE"]
     },
     {
       id: 3,
@@ -34,7 +35,7 @@ const Search_Page = () => {
       Field_of_Interest: "Information Technology",
       Level_of_Study: "Diploma",
       Awarding: "SEGi",
-      Campus: ["KL,", "PE"]
+      Campus: ["KL", "PE"]
     },
 
     {
@@ -44,7 +45,7 @@ const Search_Page = () => {
       Field_of_Interest: "Information Technology",
       Level_of_Study: "Bachelor Degree",
       Awarding: "SEGi",
-      Campus: ["KL,", "SJ"]
+      Campus: ["KL", "SJ"]
     },
   ];
   // const Campus = ProgramArr.map((program)=>{
@@ -79,67 +80,89 @@ const Search_Page = () => {
 
 
     <>
-      <div style={{ marginBottom: '1rem',display:'flex',flexDirection:'column' }}>
+      <div className="Search-Page-Content-Container">
         <div class="card">
           <div class="card-body">
-            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
-              <div style={{ display: 'flex', flex: 1 }}>
+            <div className="Search-Page-Card-Container">
+              <div className="Search-Page-Card-Title">
                 <h5 class="card-title Search-Page-Title">{Program.Title}</h5>
               </div>
               {/* <div style={{ display: 'flex', flex: 1 }}>
                 <p className="Search-Page-Value">{Program.Title_code}</p>
               </div> */}
             </div>
+            <div className="Search-Page-Attribute-Container">
+              <div className="Search-Page-Attribute-LeftContent">
+                <div className="Search-Page-Content-Text-Cover">
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p class="card-text Search-Page-Attribute" >Field of Interest:</p>
+                  </div>
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p className="Search-Page-Value">{Program.Field_of_Interest}</p>
+                  </div>
+                </div>
 
-            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
-              <div style={{ display: 'flex', flex: 1 }}>
-                <p class="card-text Search-Page-Attribute" >Field of Interest:</p>
+                <div className="Search-Page-Content-Text-Cover">
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p class="card-text Search-Page-Attribute" >Level of Study:</p>
+                  </div>
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p className="Search-Page-Value">{Program.Level_of_Study}</p>
+                  </div>
+
+                </div>
+
+                <div className="Search-Page-Content-Text-Cover">
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p class="card-text Search-Page-Attribute">Awarding:</p>
+                  </div>
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p className="Search-Page-Value">{Program.Awarding}</p>
+                  </div>
+
+                </div>
+
+                <div className="Search-Page-Content-Text-Cover">
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    <p class="card-text Search-Page-Attribute" >Campus:</p>
+                  </div>
+                  <div style={{ display: 'flex', flex: 1 }}>
+                    {Program.Campus.map((campus) =>
+
+                      <div style={{
+                        height: '2.5rem',
+                        width: '2.5rem',
+                        borderRadius: '2.5rem',
+                        fontSize: '1.4rem',
+                        textAlign: 'center',
+                        marginRight: '0.5rem',
+                        backgroundColor: (campus == "KL") ? ('#A71337') :
+                          (campus == "SJ") ? ('#ACACAC') :
+                            ('#ACACAC'),
+                        color: 'white'
+                      }}>{campus}</div>
+
+                    )}
+
+                  </div>
+
+                </div>
               </div>
-              <div style={{ display: 'flex', flex: 1 }}>
-                <p className="Search-Page-Value">{Program.Field_of_Interest}</p>
+              {/* {Campus} */}
+
+              <div className="Search-Page-Attribute-ButtonSide">
+                <div class="Search-Page-Cotent-Button2" >
+                  <button>Visit</button>
+                </div>
+                <div class="Search-Page-Cotent-Button" >
+                  <button>Details</button>
+                </div>
               </div>
             </div>
-
-            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
-              <div style={{ display: 'flex', flex: 2 }}>
-                <p class="card-text Search-Page-Attribute" >Level of Study:</p>
-              </div>
-              <div style={{ display: 'flex', flex: 1 }}>
-                <p className="Search-Page-Value">{Program.Level_of_Study}</p>
-              </div>
-              <div class="Search-Page-Cotent-Button2" >
-            <button>Visit</button>
           </div>
-            </div>
 
-            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
-              <div style={{ display: 'flex', flex: 1 }}>
-                <p class="card-text Search-Page-Attribute">Awarding:</p>
-              </div>
-              <div style={{ display: 'flex', flex: 1 }}>
-                <p className="Search-Page-Value">{Program.Awarding}</p>
-              </div>
-              
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
-              <div style={{ display: 'flex', flex: 2 }}>
-                <p class="card-text Search-Page-Attribute" >Campus:</p>
-              </div>
-              <div style={{ display: 'flex', flex: 1 }}>
-                <p className="Search-Page-Value">{Program.Campus}</p>
-              </div>
-              <div class="Search-Page-Cotent-Button" >
-            <button>Details</button>
-          </div>
-          
-            </div>
-            {/* {Campus} */}
-
-          </div>
-          
         </div>
-        
+
       </div>
 
     </>
@@ -147,27 +170,27 @@ const Search_Page = () => {
   )
 
   const result = SegiProgram.length;
-  console.log(result)
+
 
   return (
     <div>
       <div className="Search-Page-Banner" style={{ position: 'relative' }}>
         <img style={{ display: 'block', width: '100%', maxHeight: 'auto' }} src={require("../assets/images/Search_Page/Search_banner2.png")} alt="" />
-        <div class="Search-Page-Searchbar" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
+        <div class="Search-Page-Searchbar">
 
           <FaSearch style={{ color: '#000000', position: 'absolute', bottom: '0.5rem', left: '0.5rem' }} />
-          <input style={{ borderRadius: '0.3rem', border: 'none', padding: '0.2rem', textAlign: 'center' }} onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Type to search" />
+          <input onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Type to search" />
         </div>
       </div>
 
-      <div class="IT_intro_search">
-        <div style={{ display: 'flex', flex: 1, backgroundColor: '#ECFAFF', flexDirection: 'column', padding: '3rem' }}>
-          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+      <div className="IT_intro_search">
+        <div className="Search-Page-Container">
+          <div className="Search-Page-Top-Content" >
             <p className="Search-Page-TotalResult" >Total Search Result: {result}</p>
             <FaFilter />
 
           </div>
-          <div className='Container' style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
+          <div className="Search-Page-Container" style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
             {SegiProgram}
           </div>
 

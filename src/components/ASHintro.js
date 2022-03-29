@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/AHS_Intro.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/standard.css'
+import './css/Standard.css'
 
 const ASHintro = () => {
   return (

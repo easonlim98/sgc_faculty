@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './css/CreativeArt.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/standard.css';
+import './css/Standard.css';
 import Banner from './general-components/Banner/Banner.js'
 import Facilities from './general-components/Facilities/Facilities.js'
 import TabsComponent from './general-components/Tabs/TabsComponent'

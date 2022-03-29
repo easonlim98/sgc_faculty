@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/IT.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/standard.css'
+import './css/Standard.css'
 import Banner from './general-components/Banner/Banner.js'
 import Facilities from './general-components/Facilities/Facilities.js'
 import TabsComponent from './general-components/Tabs/TabsComponent'
