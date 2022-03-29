@@ -1,11 +1,11 @@
-.musicintro-backgroundBanner { 
+/* .musicintro-backgroundBanner { 
     background: rgba(54, 54, 54, 0.3) url('../../assets/images/Music/image_200.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: darken;
     top: 0;
-}
+} */
 
 /* .a{
     font-family: Arial, Helvetica, sans-serif;
@@ -33,6 +33,8 @@
     max-height: 500px;
     width: 100%;
     height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
 }
 
 .musicintrosection02{
@@ -82,10 +84,9 @@
     
 }
 
-.musicintrobannerimg04{
-    width: 100%;
-    
-}
+/* .musicintrobannerimg04{
+    width: 100%;  
+} */
 
 .musicintroback04{
     height: auto;
@@ -124,8 +125,8 @@
 .musicintro-tabeach {
     font-size: 16px;
     color: white;
-    padding-right: 40px;
-    font-size: 18px;
+    padding-right: 30px;
+    /* font-size: 18px; */
     font-weight: bold;
 }
 
@@ -140,7 +141,7 @@
   }
 
 .musicintro-tabcontent-p{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: white;
     padding-bottom: 15px;
@@ -260,14 +261,14 @@ bottom:70px; */
      background-color: #0080FF;
  } */
 
-.musicintrosection04{
+/* .musicintrosection04{
     color: white;
-}
+} */
 
 .musicgroup01{
     text-align: center;
-    min-width: 350px;
-    min-height: 350px;
+    /* min-width: 350px;
+    min-height: 350px; */
     width: 80%;
     height: 80%;
 
@@ -284,3 +285,24 @@ bottom:70px; */
 
 }
 }
+
+@media only screen and (max-width: 726px) {
+    .musicgroup01{
+        width: 80%;
+        
+ }
+ }
+
+ /* @media only screen and (max-width: 560px) {
+    .musicintro-tabeach{
+        font-size: 17px;
+        padding-right: 40px;
+        
+ }
+ }
+
+ @media only screen and (max-width: 280px) {
+    .musicintro-tabeach{
+        font-size: 17px;    
+ }
+ } */
