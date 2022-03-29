@@ -21,7 +21,9 @@ const LandingScreen = () => {
 
                         }}
                     >
-                        <div style={{ border: 'none' }} >
+                        <div onClick={() => {
+                            navigate('/ASHintro');
+                        }} style={{ border: 'none' }} >
                             <div>
                                 <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Allied_Health_Science.png")} alt="" />
                                 <p className="Landing_Textstyle">Allied health Science</p>
@@ -29,7 +31,9 @@ const LandingScreen = () => {
                         </div>
                     </button>
 
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
+                    <button onClick={() => {
+                        navigate('/AmericanDegree');
+                    }} className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
                         <div style={{ border: 'none' }} >
                             <div>
                                 <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/American_Degree_Program.png")} alt="" />
@@ -38,7 +42,9 @@ const LandingScreen = () => {
                         </div>
                     </button>
 
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
+                    <button onClick={() => {
+                        navigate('/Business_And_Accounting');
+                    }} className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
                         <div style={{ border: 'none' }} >
                             <div>
                                 <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Business_And_Accounting.png")} alt="" />
@@ -47,7 +53,9 @@ const LandingScreen = () => {
                         </div>
                     </button>
 
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
+                    <button onClick={() => {
+                        navigate('/Communication_Studies');
+                    }} className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
                         <div style={{ border: 'none' }}>
                             <div>
                                 <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Communication_Studies.png")} alt="" />
@@ -60,7 +68,9 @@ const LandingScreen = () => {
 
                 <div className="row">
 
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
+                    <button onClick={() => {
+                        navigate('/CreativeArt');
+                    }} className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
                         <div style={{ border: 'none' }}>
                             <div>
                                 <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Creative_Art_Design.png")} alt="" />
@@ -81,7 +91,9 @@ const LandingScreen = () => {
                         </div>
                     </button>
 
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
+                    <button onClick={() => {
+                        navigate('/Hospitality');
+                    }} className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
                         <div style={{ border: 'none' }}>
                             <div>
                                 <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Hospitality_Tourism.png")} alt="" />
@@ -105,7 +117,9 @@ const LandingScreen = () => {
 
                 <div className="row">
 
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
+                    <button onClick={() => {
+                        navigate('/Foundation');
+                    }} className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
                         <div style={{ border: 'none' }}>
                             <div>
                                 <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Pre_U_Foundation.png")} alt="" />
@@ -114,7 +128,9 @@ const LandingScreen = () => {
                         </div>
                     </button>
 
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
+                    <button onClick={() => {
+                        navigate('/Psychology');
+                    }} className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
                         <div style={{ border: 'none' }}>
                             <div>
                                 <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Psychology.png")} alt="" />
@@ -123,7 +139,9 @@ const LandingScreen = () => {
                         </div>
                     </button>
 
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
+                    <button onClick={() => {
+                        navigate('/MusicIntro');
+                    }} className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
                         <div style={{ border: 'none' }}>
                             <div>
                                 <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Music_Studies.png")} alt="" />
@@ -132,7 +150,9 @@ const LandingScreen = () => {
                         </div>
                     </button>
 
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
+                    <button onClick={() => {
+                        navigate('/Lawintro');
+                    }} className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
                         <div style={{ border: 'none' }}>
                             <div>
                                 <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Law.png")} alt="" />
