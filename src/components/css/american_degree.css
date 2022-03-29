@@ -28,7 +28,7 @@
     text-transform: uppercase;
 }
 
-.secpartprofilepicture {
+.amedegre-secpartprofilepicture {
     margin-top: 3%;
     margin-bottom: 6%;
     display: block;
@@ -37,39 +37,39 @@
     width: 40%;
 }
 
-.buttonforprogramme {
+.amedegre-buttonforprogramme {
     background-color: #A41F36;
     border: 2px solid #A41F36
 }
 
-.buttonforprogramme:hover {
+.amedegre-buttonforprogramme:hover {
     background-color: #A41F36;
     border: 2px solid red
 }
 
-.secondpart {
+.amedegre-secondpart {
     padding-top: 5%;
 }
 
-.secondpartwwo{
+.amedegre-secondpartwwo{
     font-weight: bold;
 }
 
-.secondpartsup{
+.amedegre-secondpartsup{
     text-align: center;
 }
 
-.secondpartgse {
+.amedegre-secondpartgse {
     color: #CFC2C2;
 }
 
-.blacklineforamerica {
+.amedegre-blacklineforamerica {
     border: 1px solid black;
     margin-top: 15%;
     margin-bottom: 10%;
 }
 
-.squareinsecondpart {
+.amedegre-squareinsecondpart {
     height: auto;
     width: auto;
     border: 2px solid black;
@@ -79,29 +79,29 @@
     margin-top: 10px;
 }
 
-.squareinsecondpart-title{
+.amedegre-squareinsecondpart-title{
     font-weight: bold;
     font-size: 15px;
 }
 
-.squareinsecondpart-para{
+.amedegre-squareinsecondpart-para{
     color: #9B9191;
 }
 
-.threeicon-secondpart{
+.amedegre-threeicon-secondpart{
     width: 25%
 }
   
-.readmorebutton {
+.amedegre-readmorebutton {
     border: 2px solid black;
     color: black;
 }
 
-.secondpartpictureright {
+.amedegre-secondpartpictureright {
     padding-right: 0px;
 }
 
-.greyrectengle {
+.amedegre-greyrectengle {
     height: auto;
     width: auto;
     background-color: #949494;
@@ -110,32 +110,32 @@
     color: white;
 }
 
-.greyrectenglerightside {
+.amedegre-greyrectenglerightside {
     padding-top: 5%;
     padding-bottom: 5%;
 }
 
-.heartsec{
+.amedegre-heartsec{
     text-align: center;
 }
 
-.heartpic {
+.amedegre-heartpic {
     margin-left: auto;
     margin-right: auto;
     width: 25%;
 }
 
-.knowlege{
+.amedegre-knowlege{
     text-align: center;
 }
 
-.number1 {
+.amedegre-number1 {
     margin-left: auto;
     margin-right: auto;
     width: 75%;
 }
 
-.aguy {
+.amedegre-aguy {
     margin-left: auto;
     margin-right: auto;
     width: 67%;
@@ -171,17 +171,17 @@
         top: 40%;
     }
 
-    .blacklineforamerica {
+    .amedegre-blacklineforamerica {
         margin-top: 7%;
         margin-bottom: 10%;
         border: 1px white;
     }
 
-    .readmorebutton {
+    .amedegre-readmorebutton {
         margin-bottom: 50px;
     }
 
-    .readmorebutton-con{
+    .amedegre-readmorebutton-con{
         text-align: center;
     }
 
@@ -189,15 +189,15 @@
         display: none;
     }
 
-    .greyrectengle {
+    .amedegre-greyrectengle {
         padding-top: 30px;
     }
 
-    .number1 {
+    .amedegre-number1 {
         width: 50%;
     }
 
-    .aguy{
+    .amedegre-aguy{
         display: none;
     }
 
@@ -227,28 +227,28 @@
         width: 100%;
     }
 
-    .secondpartsup {
+    .amedegre-secondpartsup {
         font-size: 20px;
     }
 
-    .secondpartgse {
+    .amedegre-secondpartgse {
         font-size: 12px;
     }
 
-    .secondpartsup2 {
+    .amedegre-secondpartsup2 {
         font-size: 15px;
     }
 
-    .secondpart-p {
+    .amedegre-secondpart-p {
         font-size: 12px;
         text-align: center;
     }
 
-    .aguy {
+    .amedegre-aguy {
         width: 86%;
     }
 
-    .number1 {
+    .amedegre-number1 {
         width: 60%;
     }
 
@@ -257,16 +257,16 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
     
-    .squareinsecondpart-para {
+    .amedegre-squareinsecondpart-para {
         color: #9B9191;
         font-size: 12px;
     }
 
-    .aguy {
+    .amedegre-aguy {
         width: 73%;
     }
 
-    .blacklineforamerica {
+    .amedegre-blacklineforamerica {
         border: 1px solid black;
         margin-top: 30px;
         margin-bottom: 30px;

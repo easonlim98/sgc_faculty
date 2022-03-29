@@ -2,13 +2,29 @@ import React from 'react'
 import './css/Lawintro.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/Standard.css'
+import Banner from './general-components/Banner/Banner.js'
+import Facilities from './general-components/Facilities/Facilities.js'
+import TabsComponent from './general-components/Tabs/TabsComponent'
 
 const Lawintro = () => {
   return (
 
    <div>
 
-   <div className="LawBanner">
+
+       <div className='Law banner-container'
+                style={{
+                    backgroundImage: "url(" + require('../assets/images/Law/LawBanner.png') + ")"
+                }}>
+                <Banner
+                    navigatepath={"/Search_Page"}
+                    bannercontent={"If you are interested and want to know more about Law."} />
+            </div>
+
+
+
+
+   {/* <div className="LawBanner">
    <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{background:'none', width: '85%', display: 'flex', flexDirection: 'column'}}>
             <div style={{background:'none', display: 'flex', flexDirection: 'column'}}>
@@ -22,7 +38,7 @@ const Lawintro = () => {
             </div>
         </div>
     </div>
-   </div>
+   </div> */}
 
    <div class="col-sm-7">
             <div class="Law-Section-1">
@@ -32,11 +48,11 @@ const Lawintro = () => {
     </div>
 
   
-    <div class="container Law-Section-2">
+    <div class="containers Law-Section-2">
         <div class="row">
         <div class="col-sm-8">
             <div class="Law-Section-2-left">
-                <p style={{fontWeight: '700', fontSize: '14px'}}>What SEGi Offer to you</p>
+                <p style={{fontWeight: '700', fontSize: '18px'}}>What SEGi Offer to you</p>
                 
                 <p style={{fontWeight: '500', fontSize: '14px'}}>The Law programmes available at SEGi are ideal for students who wish to obtain a qualification of international standing en route to a successful career as a practising lawyer.</p>
               </div>
@@ -51,7 +67,7 @@ const Lawintro = () => {
      </div>
     
     <div className="LawOfachievement">
-      <h5>What you Will Achieve</h5>
+      <h5 style={{fontWeight: '700'}}>What you Will Achieve</h5>
       <img className="Mapsoflaw" src={require("../assets/images/Law/MapLaw.PNG")}></img>
     </div>
     
@@ -110,7 +126,17 @@ const Lawintro = () => {
 
   </div>
 
-  <div className="LawCarousel">
+  <TabsComponent
+                StudentName={"Edward Maya"}
+                StudentJob={"Graphic Designer"}
+                Studentimage={require('../assets/images/Law/studentlaw.png')}
+                StudentWords={"“My high school art education constructed invaluable foundations for me as a creative professional.”"}
+                navigationpath={""}
+                textcolor={"#A71337"}
+                backgroundcolor={"#C4C4C4"}
+            />
+
+  {/* <div className="LawCarousel">
     <div className="container Law-Container5">    
         <div className="row">
           <div className="col-6">
@@ -152,10 +178,14 @@ const Lawintro = () => {
             </div>
         </div>
     </div>
-</div>
+</div> */}
             
-    
-    <div className="Law-Section-6">
+
+  <Facilities
+  facilitiesimage={require('../assets/images/Law/LastLawPic.png')}
+  content={"If you are interested in our programme and want to check out more about our Law related facilities, please click on the facilities button."} />
+
+    {/* <div className="Law-Section-6">
       <div className="row">
           <div className="col-sm-5">
               <img className="Law-Section-6-img" src={require("../assets/images/Law/LastLawPic.png")}/>
@@ -175,7 +205,7 @@ const Lawintro = () => {
               </div>
           </div>
       </div>
-  </div>
+  </div> */}
   
 </div>
 

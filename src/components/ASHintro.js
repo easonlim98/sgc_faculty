@@ -2,12 +2,25 @@ import React from 'react'
 import './css/AHS_Intro.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/Standard.css'
+import Banner from './general-components/Banner/Banner.js'
+import Facilities from './general-components/Facilities/Facilities.js'
+import TabsComponent from './general-components/Tabs/TabsComponent'
 
 const ASHintro = () => {
   return (
   <div>
 
- <div class="BannerAHS">
+<div className='Law banner-container'
+                style={{
+                    backgroundImage: "url(" + require('../assets/images/AHS/AHSBanner.PNG') + ")"
+                }}>
+                <Banner
+                    navigatepath={"/Search_Page"}
+                    bannercontent={"If you are interested and want to know more about Allied Health Science."} />
+            </div>
+
+
+ {/* <div class="BannerAHS">
  <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{background:'none', width: '85%', display: 'flex', flexDirection: 'column'}}>
             <div style={{background:'none', display: 'flex', flexDirection: 'column'}}>
@@ -21,7 +34,7 @@ const ASHintro = () => {
             </div>
         </div>
     </div>
- </div>
+ </div> */}
 
  <div className="AHScardtitle">
   <p>Our Professions</p>
@@ -112,8 +125,8 @@ const ASHintro = () => {
   </div>
   
     <p className="AHSdescription5">
-      If you need medical care which is an emergency but cannot wait 
-      until we re-open, you can call our out-of-hours service
+     Identifying the physical and health hazards that could harm people,
+     procedures to prevent accidents, and steps to take when accidents occur
      </p>
   </div>
 
@@ -124,16 +137,26 @@ const ASHintro = () => {
   </div>
   
     <p className="AHSdescription6">
-      OPERATING THEATRES as an operating room (OR), operating suite, or operation suite)
-       is a facility within a hospital where surgical operations.
+    The practices, procedures and resources for developing and implementing, 
+    reviewing and maintaining the occupational safety and health policy.
      </p>
   </div>
        
 </div>
 
-    <div className="con4">
+<TabsComponent
+StudentName={"Chew Shi Ling"}
+StudentJob={"Dean List and High Achiever Graduation Award in 2016"}
+Studentimage={require('../assets/images/AHS/Outstanding_student.PNG')}
+StudentWords={"“Thanks to the SEGi College for giving me the support, I eventually got the offer from the top university. I feel blessed and have no regrets to complete my diploma study in SEGi College KL. This program is absolutely recognized by local government universities like UM.”"}
+navigationpath={""}
+textcolor={"#A71337"}
+backgroundcolor={"#4780a45e"}
+            />
+
+    {/* <div className="con4">
       <img  src={require("../assets/images/AHS/container4.png")}/>
-    </div>
+    </div> */}
 
         <div className="carousel">
           <h4 style={{marginTop: '5%', textAlign: 'center' }}>Previous Events</h4>
@@ -179,8 +202,14 @@ const ASHintro = () => {
                 </a>
             </div>
         </div>
+<br/>
+<br/>
+<Facilities
+ facilitiesimage={require('../assets/images/AHS/LastPic.png')}
+ content={"If you are interested in our programme and want to check out more about our Allied Health Science related facilities, please click on the facilities button."} />
 
-        <div className="AHS-Section-6">
+
+        {/* <div className="AHS-Section-6">
           <div className="row">
               <div className="col-sm-5">
                   <img className="AHS-Section-6-img" src={require("../assets/images/AHS/LastPic.png")}/>
@@ -200,7 +229,7 @@ const ASHintro = () => {
                   </div>
               </div>
           </div>
-      </div>
+      </div> */}
         
       </div>
     

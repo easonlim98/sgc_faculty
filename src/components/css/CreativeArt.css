@@ -1,0 +1,331 @@
+.first-content1 {
+    font-size: 16px;
+    color: white;
+    margin-top: 10px;
+}
+
+.CA-Section-1-Title {
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
+
+.CA-Section-1-Content {
+    font-size: 18px;
+    text-align: justify;
+    margin-bottom: 2.2rem;
+}
+
+.CA-Section-1-left {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    height: 90%;
+}
+
+.container.CA-Section-2 {
+    background-color: #E3E4E3;
+    max-width: 100%;
+    padding: 2rem 5rem;
+    justify-content: center;
+}
+
+.container.CA-Section-3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    max-width: unset;
+}
+
+.CA-section-2_STUDENT {
+    color: #b3b4b3;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+.CA-section-2_ARTWORKS {
+    color: black;
+    font-size: 33px;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+.CA-Section-2-pic1 {
+    margin-top: 2rem;
+    box-shadow: 0px 0.5px 5px black;
+    width: 80%;
+}
+
+.CA-Section-2-pic2 {
+    box-shadow: 0px 0.5px 5px black;
+    width: 68%;
+}
+
+.CA-horizontal {
+    width: 9rem;
+    height: 3px;
+    background-color: #DBD0E3;
+}
+
+.CA-goldaward {
+    padding: 1rem 0;
+}
+
+.CA-viewmore {
+    margin-top: 1rem;
+}
+
+@media only screen and (max-width: 1400px) {
+    .first-content1 {
+        font-size: 16px;
+        color: white;
+        width: 30%;
+        margin-top: 10px;
+    }
+
+    .CA-Section-1-Title {
+        font-size: 18px;
+    }
+
+    .CA-Section-1-Content {
+        width: 90%;
+        font-size: 16px;
+        margin-bottom: 1.4rem;
+
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .first-content1 {
+        font-size: 16px;
+        color: white;
+        width: 30%;
+        margin-top: 10px;
+    }
+
+    .CA-Section-1-Title {
+        font-size: 16px;
+        margin-bottom: 0.8rem;
+
+    }
+
+    .CA-Section-1-Content {
+        width: 90%;
+        font-size: 14px;
+        margin-bottom: 1.4rem;
+    }
+
+    .CA-section-2_STUDENT {
+        font-size: 22px;
+    }
+
+    .CA-section-2_ARTWORKS {
+        font-size: 27px;
+    }
+
+    .CA-Section-2-pic1 {
+        width: 90%;
+    }
+
+    .CA-Section-2-pic2 {
+        width: 76%;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .first-content1 {
+        font-size: 16px;
+        color: white;
+        width: 60%;
+        margin-top: 10px;
+    }
+
+    .CA-Section-1-Title {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .CA-Section-1-left {
+        width: 100%;
+    }
+
+    .CA-Section-1-Content {
+        width: 95%;
+        font-size: 14px;
+        margin-bottom: 1rem;
+    }
+
+    .CA-Next {
+        font-size: 1rem;
+    }
+
+    .CA-name {
+        margin-top: 2rem;
+    }
+
+    .CA-goldaward {
+        padding: 0.5rem 0;
+    }
+
+    .CA-viewmore {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .first-content1 {
+        font-size: 16px;
+        color: white;
+        width: 60%;
+        margin-top: 10px;
+    }
+
+    .CA-Section-1-Title {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .CA-Section-1-Content {
+        width: 95%;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .first-content1 {
+        font-size: 16px;
+        color: white;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .CA-Section-1-Content {
+        width: 100%;
+    }
+
+    .CA-Section-1-right {
+        padding-top: 1.2rem;
+    }
+}
+
+.CA-Section-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 3rem;
+    min-width: 90%;
+}
+
+.CA-Section-1-right {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.CA-Section-1-pic {
+    width: 100%;
+    height: 100%;
+}
+
+.CA-Section-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.CA-Section-2-left {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.CA-Section-2-right {
+    display: flex;
+}
+
+.CA-Section-2-img {
+    width: 70%;
+    height: 70%;
+}
+
+
+
+.CA-Section-3-left {
+    display: flex;
+}
+
+.CA-Section-3-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.CA-Section-3-img {
+    width: 80%;
+    height: 100%;
+}
+
+.CA-Section-4 {
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.CA-Section-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.CA-Section-5-left {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.CA-Section-5-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.CA-Section-5-img {
+    width: 100%;
+    height: 100%;
+}
+
+.CA-Section-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    background: #fff1cc;
+}
+
+.CA-Section-6-left {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.CA-Section-6-right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* .CA-Section-6-img { 
+      background: url('../../../assets/images/Early_Childhood_Education/normalpic.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  } */
+
+.CA-Section-6-img {
+    width: 100%;
+}

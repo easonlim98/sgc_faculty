@@ -16,57 +16,57 @@ const AmericanDegree = () => {
                         <h4 className="amedegrebannerwordsh2">Know more about</h4>
                         <h1 className="amedegrebannerwordsh1">our program</h1>
                         <p>If you are interested and want to know more <br/> about American Degree Program. </p>
-                        <button type="button" className="btn btn-primary buttonforprogramme">Programme</button>
+                        <button type="button" className="btn btn-primary amedegre-buttonforprogramme">Programme</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div className="container secondpart">
+        <div className="container amedegre-secondpart">
             <div className="row">
                 <div className="col-lg">
-                    <h4 className="secondpartwwo secondpartsup">What We offer</h4>
-                    <p className="secondpartgse secondpartsup">GREAT STUDENT EXPERIENCE</p>
-                    <img className="img-fluid secpartprofilepicture" href="#" src={require("../assets/images/American_Degree/american_degree_profilepic.png")} alt=""/>
-                    <h6 className="secondpartsup secondpartsup2">SUCCESSFUL UNIVERSITY PLACEMENTS</h6>
-                    <p className="secondpart-p">We are proud to be among the few higher educational institutions in Malaysia who have consistently churned out ADP graduates who meet the stringent requirements and application procedures of some of the most elite universities in the U.S. and in the world.
+                    <h4 className="amedegre-secondpartwwo amedegre-secondpartsup">What We offer</h4>
+                    <p className="amedegre-secondpartgse amedegre-secondpartsup">GREAT STUDENT EXPERIENCE</p>
+                    <img className="img-fluid amedegre-secpartprofilepicture" href="#" src={require("../assets/images/American_Degree/american_degree_profilepic.png")} alt=""/>
+                    <h6 className="amedegre-secondpartsup amedegre-secondpartsup2">SUCCESSFUL UNIVERSITY PLACEMENTS</h6>
+                    <p className="amedegre-secondpart-p">We are proud to be among the few higher educational institutions in Malaysia who have consistently churned out ADP graduates who meet the stringent requirements and application procedures of some of the most elite universities in the U.S. and in the world.
                     <br/><br/>Our students’ continued success in securing placements in these high-ranking institutions not only reflects the effectiveness of our teaching practice, but also speaks volumes about the level of care, support and guidance that we provide to them as part of their journey here at ADP.</p>
                     <div>
-                        <hr className="blacklineforamerica"></hr>
+                        <hr className="amedegre-blacklineforamerica"></hr>
                     </div>
-                    <div className="readmorebutton-con">
-                        <button type="button" className="btn btn-outline-dark readmorebutton">Read More</button>
+                    <div className="amedegre-readmorebutton-con">
+                        <button type="button" className="btn btn-outline-dark amedegre-readmorebutton">Read More</button>
                     </div>
                 </div>
                 <div className="col-lg">
-                    <div className="squareinsecondpart">
-                        <img className="img-fluid threeicon-secondpart" href="#" src={require("../assets/images/American_Degree/secondpart1.png")} alt=""/>
-                        <p className="squareinsecondpart-title">What is ADP</p>
-                        <p className="squareinsecondpart-para">The American Degree Program provides students a direct entry into a university degree course</p>
+                    <div className="amedegre-squareinsecondpart">
+                        <img className="img-fluid amedegre-threeicon-secondpart" href="#" src={require("../assets/images/American_Degree/secondpart1.png")} alt=""/>
+                        <p className="amedegre-squareinsecondpart-title">What is ADP</p>
+                        <p className="amedegre-squareinsecondpart-para">The American Degree Program provides students a direct entry into a university degree course</p>
                     </div>
-                    <div className="squareinsecondpart">
-                        <img className="img-fluid threeicon-secondpart" href="#" src={require("../assets/images/American_Degree/secondpart2.png")} alt=""/>
-                        <p className="squareinsecondpart-title">What is ADP</p>
-                        <p className="squareinsecondpart-para">The American Degree Program provides students a direct entry into a university degree course</p>
+                    <div className="amedegre-squareinsecondpart">
+                        <img className="img-fluid amedegre-threeicon-secondpart" href="#" src={require("../assets/images/American_Degree/secondpart2.png")} alt=""/>
+                        <p className="amedegre-squareinsecondpart-title">What is ADP</p>
+                        <p className="amedegre-squareinsecondpart-para">The American Degree Program provides students a direct entry into a university degree course</p>
                     </div>
-                    <div className="squareinsecondpart">
+                    <div className="amedegre-squareinsecondpart">
                         <img className="img-fluid threeicon-secondpart" href="#" src={require("../assets/images/American_Degree/secondpart3.png")} alt=""/>
-                        <p className="squareinsecondpart-title">What is ADP</p>
-                        <p className="squareinsecondpart-para">The American Degree Program provides students a direct entry into a university degree course</p>
+                        <p className="amedegre-squareinsecondpart-title">What is ADP</p>
+                        <p className="amedegre-squareinsecondpart-para">The American Degree Program provides students a direct entry into a university degree course</p>
                     </div>
                 </div>
-                <div className="col-lg secondpartpictureright">
+                <div className="col-lg amedegre-secondpartpictureright">
                     <img className="img-fluid america-pic-showornot" href="#" src={require("../assets/images/American_Degree/american_degree_picture1.png")} alt=""/>
                 </div>
               </div>
         </div>
-        <div className="container secondpart">
+        <div className="container amedegre-secondpart">
             <div className="row">
                 <div className="col-lg-4">                    
                     <img className="img-fluid america-pic-showornot" href="#" src={require("../assets/images/American_Degree/american_degree_picture2.png")} alt=""/>
                 </div>
                 <div className="col-lg-8">
-                    <h4 className="secondpartwwo">Why choose ADP at SEGi?</h4>
-                    <p className="secondpartwwo">SEGi has teamed up with some of the powerhouses of education to provide opportunities
+                    <h4 className="amedegre-secondpartwwo">Why choose ADP at SEGi?</h4>
+                    <p className="amedegre-secondpartwwo">SEGi has teamed up with some of the powerhouses of education to provide opportunities
                         for students to experience American style learning through its American Degree Program
                         (ADP).                        
                     <br/><br/>Students can customise their American education pathway with exible transfer
@@ -78,33 +78,33 @@ const AmericanDegree = () => {
                         • Conducive learning environment<br/>
                         • Education partially delivered by visiting professors from the USA
                     </p>
-                    <p className="secondpartwwo">*SEGi Group of Col-lgleges has the highest number of paper exemptions among recognised
+                    <p className="amedegre-secondpartwwo">*SEGi Group of Col-lgleges has the highest number of paper exemptions among recognised
                         accounting professional certications
                     </p>
                 </div>
               </div>
         </div>
-        <div className="greyrectengle">
+        <div className="amedegre-greyrectengle">
             <div className="container">
                 <div className="row">
                     <div className="col-lg">
-                        <img className="img-fluid aguy" href="#" src={require("../assets/images/American_Degree/american_degree_apeople1.png")} alt=""/>
+                        <img className="img-fluid amedegre-aguy" href="#" src={require("../assets/images/American_Degree/american_degree_apeople1.png")} alt=""/>
                     </div>
-                    <div className="col-lg greyrectenglerightside">
+                    <div className="col-lg amedegre-greyrectenglerightside">
                         <h5>CHAMPIONING 3H TRANSFORMATIVE LEARNING</h5>
                         <p>At SEGi, we champion the 3H Transformative Learning
                             to cultivate future-proof graduates. The education of the
                             Head, the Heart and the Hands is a holistic learning
                             approach in transforming future leaders:</p>
-                            <div className="heartsec">
-                                <img className="img-fluid heartpic" href="#" src={require("../assets/images/American_Degree/american_degree_heart.png")} alt=""/>
-                                <img className="img-fluid heartpic" href="#" src={require("../assets/images/American_Degree/american_degree_heart.png")} alt=""/>
-                                <img className="img-fluid heartpic" href="#" src={require("../assets/images/American_Degree/american_degree_heart.png")} alt=""/>
+                            <div className="amedegre-heartsec">
+                                <img className="img-fluid amedegre-heartpic" href="#" src={require("../assets/images/American_Degree/american_degree_heart.png")} alt=""/>
+                                <img className="img-fluid amedegre-heartpic" href="#" src={require("../assets/images/American_Degree/american_degree_heart.png")} alt=""/>
+                                <img className="img-fluid amedegre-heartpic" href="#" src={require("../assets/images/American_Degree/american_degree_heart.png")} alt=""/>
                             </div>
 
                         <div className="row">
-                            <div className="col-lg knowlege">
-                                <img className="img-fluid number1" href="#" src={require("../assets/images/American_Degree/american_degree_number1.png")} alt=""/>
+                            <div className="col-lg amedegre-knowlege">
+                                <img className="img-fluid amedegre-number1" href="#" src={require("../assets/images/American_Degree/american_degree_number1.png")} alt=""/>
                                 <p>HEAD <br/>
                                     (Knowledge)</p>
                             </div>
