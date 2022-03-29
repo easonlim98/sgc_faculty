@@ -2,12 +2,14 @@ import React from 'react'
 import './css/OSH_intro.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/standard.css'
-
+import Banner from './general-components/Banner/Banner.js'
+import Facilities from './general-components/Facilities/Facilities.js'
+import TabsComponent from './general-components/Tabs/TabsComponent'
 const OSHintro = () => {
   return (
     
     <div>
-    <div className="OSH-backgroundBanner">
+    {/* <div className="OSH-backgroundBanner">
 
         <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ background: 'none', width: '85%', display: 'flex', flexDirection: 'column', }}>
@@ -21,7 +23,15 @@ const OSHintro = () => {
                 </div>
             </div>
         </div>
- </div>
+ </div> */}
+ <div className='CA banner-container'
+                style={{
+                    backgroundImage: "url(" + require('../assets/images/osh.jpg') + ")"
+                }}>
+                <Banner
+                    navigatepath={"/Search_Page"}
+                    bannercontent={"If you are interested and want to know more about Occupational and Safety."} />
+            </div>
 
  <div className="container OSH-Section-1">
                 <div className="OSH row">
@@ -55,6 +65,7 @@ const OSHintro = () => {
       
      </div>
      <div className="containerUS">
+         <br></br>
      <h5 class= "text-center"> WHY CHOOSE US</h5>
      <div className="OSH row sp1">
                     <div className="col OSH-imgborder">
@@ -90,8 +101,20 @@ const OSHintro = () => {
                     </div>
                 </div>
 </div>
-
-                <div className="row OSH-bgColor">
+<TabsComponent
+                StudentName={"Oprah"}
+                StudentJob={"Student of 2021 Occupational Health and Safety"}
+                Studentimage={require('../assets/images/man.png')}
+                StudentWords={"“You must have some vision for your life. Even if you don't know the plan, you have to have a direction in which you choose to go.”"}
+                navigationpath={""}
+                textcolor={"#A71337"}
+                backgroundcolor={"#FCB600"}
+            />
+            <Facilities
+                facilitiesimage={require('../assets/images/image2.jpg')}
+                content={"If you are interested in our programme and want to check out more about our OSH-related facilities, please click on the facilities button."} />
+            
+                {/* <div className="row OSH-bgColor">
                 <div className="OSH col-sm-6">
                     <div className="OSH container">
                     </div>
@@ -163,7 +186,7 @@ const OSHintro = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
 </div>
   )
 }

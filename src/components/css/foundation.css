@@ -29,12 +29,12 @@
     text-transform: uppercase;
 }
 
-.buttonforprogramme {
+.Fou-buttonforprogramme {
     background-color: #A41F36;
     border: 2px solid #A41F36
 }
 
-.buttonforprogramme:hover {
+.Fou-buttonforprogramme:hover {
     background-color: #A41F36;
     border: 2px solid red
 }
@@ -72,7 +72,7 @@
     height: 100%;
 }
 
-.orange{
+.foun-orange{
     height: auto;
     width: auto;
     background-color: #F3EBDF;
@@ -103,7 +103,7 @@
     width: 100%;
 }
 
-.buttonreadmore {
+.Fou-buttonreadmore {
     background-color: #E7E0D5;
     border-color: #E7E0D5;
     color: black;
@@ -133,7 +133,7 @@
       padding-bottom: 15px;
   }
 
-  .blacklineforfoun-tabcontent {
+  .Fou-blacklineforfoun-tabcontent {
     border: 1px solid black;
   }
 
@@ -207,11 +207,11 @@
     font-weight: 500;
 }
 
-.buttonFacility{
+.Fou-buttonFacility{
     text-align: right;
 }
 
-.btn-faci {
+.Fou-btn-faci {
     border-radius: 0px;
     padding-right: 40px;
     padding-left: 40px;
@@ -282,7 +282,7 @@
         display: none;
     }
 
-    .orange {
+    .foun-orange {
         margin-top: 0%; 
         margin-bottom: 10%; 
     }

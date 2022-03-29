@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e6e6e6;
+}
+
+.wrapper {
+    padding-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabs {
+    display: flex;
+    align-self: center;
+    width: 62%;
+}
+
+.tabitem {
+    border-bottom: 4px solid #AF2949;
+    cursor: pointer;
+    display: flex;
+    font-size: 1.5rem;
+    margin-right: 6rem;
+}
+
+.tab-container {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+}
+
+.student-word {
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.student-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.student-job {
+    font-size: 1.1rem
+}
+
+.tab-contact-row {
+    padding: 2rem 0;
+}
+
+.seemore {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.tab-usericon {
+    margin-right: 1.3rem;
+}
+
+.tab-phoneicon {
+    margin-right: 1.3rem;
+}
+
+.tabimage {
+    max-width: 24rem;
+}
+
+.tab-first-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 5rem;
+}
+
+.tab-underline {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 1.5em 0;
+    padding: 0;
+    border-top: 1px solid
+}
+
+.tabitem--inactive {
+    opacity: 0.3;
+    filter: grayscale(100%);
+    border: 0;
+    font-size: 1.3rem;
+}
+
+.tabitem:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #AF2949;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.tabitem:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.tabitem__icon {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 22px;
+}
+
+.tabitem__title {
+    color: #AF2949;
+    margin: 0.8rem 0;
+    font-weight: 700;
+}
+
+.content {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+@media only screen and (max-width: 1794px) {
+    .tabs {
+        width: 70%;
+    }
+
+    .tab-container {
+        width: 79%;
+    }
+}
+
+@media only screen and (max-width: 1556px) {
+    .tabs {
+        width: 80%;
+    }
+
+    .tab-container {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 1245px) {
+    .tabs {
+        width: 85%;
+    }
+
+    .tab-first-section {
+        padding: 0 2rem;
+    }
+
+    .student-word {
+        font-size: 1.3rem;
+    }
+
+    .student-name {
+        font-size: 1.3rem;
+    }
+
+    .tabitem {
+        font-size: 1.4rem;
+    }
+
+    .tabitem--inactive {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 792px) {
+    .tab-first-section {
+        padding: 2rem 1rem;
+    }
+
+    .tabimage {
+        width: 55%;
+        position: absolute;
+        bottom: 35rem;
+    }
+
+    .tab-container {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .wrapper {
+        padding-top: 30rem;
+    }
+
+    .tabs {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tabitem__title {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 654px) {
+    .tabitem {
+        margin-right: 3rem;
+        font-size: 1.3rem;
+    }
+
+    .tabitem--inactive {
+        font-size: 1.1rem;
+    }
+
+    .tab-first-section {
+        padding: 2rem;
+        padding-bottom: 0;
+    }
+
+    .student-word {
+        font-size: 1.2rem;
+    }
+
+    .student-name {
+        font-size: 1.1rem;
+    }
+
+    .student-job {
+        font-size: 1rem;
+    }
+
+    .tab-underline {
+        margin: 1.3rem 0
+    }
+
+    .seemore {
+        color: rgb(167, 19, 55);
+        position: absolute;
+        right: 0;
+        right: 2rem;
+        bottom: 2rem;
+        font-size: 1.2rem;
+    }
+
+    .tabimage {
+        bottom: 27.5rem;
+    }
+
+    .wrapper {
+        padding-top: 24rem;
+    }
+}
+
+@media only screen and (max-width: 654px) {
+    .tabitem {
+        font-size: 1.2rem;
+    }
+
+    .tabitem--inactive {
+        font-size: 1rem;
+    }
+
+    .tabimage {
+        bottom: 31rem;
+    }
+    .tab-first-section {
+        padding: 0;
+        padding: 2rem 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 427px) {
+    .tabitem {
+        margin-right: 0rem;
+    }
+
+    .tabimage {
+        bottom: 31.5rem;
+    }
+
+    .wrapper {
+        padding-top: 18rem;
+    }
+
+    .tabitem--inactive {
+        padding: 0 1rem;
+    }
+}
+
+@media only screen and (max-width: 373px) {
+    .tabimage {
+        bottom: 30rem;
+    }
+
+    .student-name {
+        text-align: center;
+    }
+
+    .student-job {
+        text-align: center;
+    }
+
+    .tab-contact-row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .seemore {
+        position: unset;
+        text-align: center;
+    }
+
+    .tabitem {
+        font-size: 1rem;
+    }
+
+    .tabitem--inactive {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 324px) {
+    .wrapper {
+        padding-top: 14rem;
+    }
+
+    .student-word {
+        font-size: 1rem;
+    }
+
+    .student-name {
+        font-size: 0.9rem;
+    }
+
+    .student-job {
+        font-size: 0.8rem;
+    }
+
+    .seemore {
+        font-size: 1.1rem;
+    }
+}

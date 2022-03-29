@@ -2,32 +2,30 @@
 
 
 
-.OSH-backgroundBanner { 
+/* .OSH-backgroundBanner { 
   background: rgba(54, 54, 54, 0.3) url('../../assets/images/osh.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: darken;
   top: 0;
-}
+} */
 
-.containerUS{
-  width: 99.3%;
-}
-
-.osh-bannerContent-res{
+/* .osh-bannerContent-res{
 font-size: 16px; 
 color: white; 
 width: 30%; 
 margin-top: 10px;
-}
+} */
+
+
 .OSH-Section-1-Content{
 width: 90%;
 }
 
 .OSH-card-deck{
   padding: 3rem 0;
-  background-color: yellow;
+  background-color:#FCB600;
 }
 
 .OSH-card-img-top1{
@@ -43,20 +41,31 @@ width: 90%;
 
 .OSH-iconimg{
   text-align: center;
-  margin: 65px 25px 25px 25px;
+  margin: 105px 25px 25px 25px;
     
 }
 
-.OSH-bgColor{
-  background-color:yellow;
+.containerUS{
+ margin-left: 1.9%;
 }
 
-.OSH-image2 {
+
+/* .OSH-bgColor{
+  background-color:yellow;
+} */
+
+/* .OSH-image2 {
   min-width: 300px;
   min-height: 300px;
   width: 50%;
   height: 100%;
   text-align: center;
+} */
+
+@media only screen and (max-width: 1000px) {
+  .OSH-card-img-top1{
+    margin-left: 33%;
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -118,29 +127,36 @@ width: 90%;
   height: 100%;
 }
 
-.OSH-Section-6 {
+.containerUS{
+  width: 96%;
+}
+
+/* .OSH-Section-6 {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #FFF1CC;
-}
+} */
 
-.OSH-Section-6-right {
+/* .OSH-Section-6-right {
   display: flex;
   flex-direction: column;
   height: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
-}
+} */
 
-.OSH-Section-6-img {
+/* .OSH-Section-6-img {
   width: 100%;
-}
+} */
 
 @media only screen and (max-width: 500px) {
   .OSH-card-img-top1{
-    margin-left: 13%;
+    margin-left: 10%;
   }
+.containerUS{
+  width: 95%;
+}
 }
 
 @media only screen and (max-width: 400px) {
@@ -148,7 +164,16 @@ width: 90%;
     margin-left: 15%;
     width: 70%;
   }
+
+  .containerUS{
+    width: 95%;
+  }
 }
 
+@media only screen and (max-width: 300px) {
+  .containerUS{
+    width: 94%;
+  }
+}
 
 
