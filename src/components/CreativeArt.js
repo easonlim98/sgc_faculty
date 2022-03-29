@@ -74,7 +74,7 @@ const CreativeArt = () => {
             <TabsComponent
                 StudentName={"Edward Maya"}
                 StudentJob={"Graphic Designer"}
-                Studentimage={require('../assets/images/Creative_Art/college_student_creativeart.png')}
+                Studentimage={require('../assets/images/Creative_Art/student1.jpg')}
                 StudentWords={"“My high school art education constructed invaluable foundations for me as a creative professional.”"}
                 navigationpath={""}
                 textcolor={"#A71337"}

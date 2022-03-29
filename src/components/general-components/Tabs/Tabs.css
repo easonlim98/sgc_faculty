@@ -8,55 +8,64 @@ body {
 }
 
 .wrapper {
-    padding-top: 3.5rem;
+    padding: 3.5rem 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
 }
 
 .tabs {
-    display: flex;
-    align-self: center;
-    width: 62%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .tabitem {
-    border-bottom: 4px solid #AF2949;
+    border-right: 2.5px solid #AF2949;
     cursor: pointer;
     display: flex;
-    font-size: 1.5rem;
-    margin-right: 6rem;
+    font-size: 1.2rem;
+    margin: 0 3rem;
 }
 
 .tab-container {
     display: flex;
     width: 70%;
     justify-content: center;
+    position: relative;
 }
 
 .student-word {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding-bottom: 2rem;
+}
+
+.tabitem--inactive {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
 }
 
 .student-name {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .student-job {
-    font-size: 1.1rem
+    font-size: 0.9rem
 }
 
 .tab-contact-row {
-    padding: 2rem 0;
+    padding-top: 2rem;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
 }
 
 .seemore {
-    font-weight: 700;
-    font-size: 1.3rem;
+    flex: 1;
+    text-align: end;
 }
 
 .tab-usericon {
@@ -67,15 +76,13 @@ body {
     margin-right: 1.3rem;
 }
 
-.tabimage {
-    max-width: 24rem;
-}
-
 .tab-first-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem 5rem;
+    padding: 0 4rem;
+    padding-bottom: 0;
+    position: relative;
 }
 
 .tab-underline {
@@ -91,7 +98,7 @@ body {
     opacity: 0.3;
     filter: grayscale(100%);
     border: 0;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .tabitem:after {
@@ -118,9 +125,10 @@ body {
 }
 
 .tabitem__title {
-    color: #AF2949;
-    margin: 0.8rem 0;
     font-weight: 700;
+    margin: 0;
+    padding: 1rem 2rem;
+    padding-left: 0;
 }
 
 .content {
@@ -130,19 +138,12 @@ body {
 }
 
 @media only screen and (max-width: 1794px) {
-    .tabs {
-        width: 70%;
-    }
-
     .tab-container {
         width: 79%;
     }
 }
 
 @media only screen and (max-width: 1556px) {
-    .tabs {
-        width: 80%;
-    }
 
     .tab-container {
         width: 90%;
@@ -150,9 +151,6 @@ body {
 }
 
 @media only screen and (max-width: 1245px) {
-    .tabs {
-        width: 85%;
-    }
 
     .tab-first-section {
         padding: 0 2rem;
@@ -168,6 +166,7 @@ body {
 
     .tabitem {
         font-size: 1.4rem;
+        margin: 0 2rem;
     }
 
     .tabitem--inactive {
@@ -267,6 +266,7 @@ body {
     .tabimage {
         bottom: 31rem;
     }
+
     .tab-first-section {
         padding: 0;
         padding: 2rem 0.5rem;

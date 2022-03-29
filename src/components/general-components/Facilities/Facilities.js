@@ -10,7 +10,7 @@ const Facilities = (props) => {
     const navigate = useNavigate();
 
     return (
-        <div className="container facilitesbanner">
+        <div className="facilieites-container facilitesbanner">
             <img className="facilitesimage" src={props.facilitiesimage} />
             <div className="facilities">
                 <div className="facilities-maxwidth">

@@ -47,7 +47,7 @@ const TabsComponent = (props) => {
                 onClick={onItemClicked}
             >
                 <i className={icon}></i>
-                <p className="tabitem__title">{title}</p>
+                <p className="tabitem__title" style={{ color: props.textcolor }}>{title}</p>
             </div>
         );
     };
@@ -66,6 +66,7 @@ const TabsComponent = (props) => {
             {tabItems.map(({ id, Name, content, Job, image, }) => {
                 return (active === id && id === 1) ?
                     <div className='tab-container'>
+                        <img className="tabimage" src={image} />
                         <div className='tab-first-section'>
                             <p className='all-text student-word' style={{ color: props.textcolor }}>{content}</p>
                             <p className='all-text student-name' style={{ color: props.textcolor }}>{Name}</p>
@@ -75,13 +76,12 @@ const TabsComponent = (props) => {
                                 }}></div>
                             <p className='all-text student-job' style={{ color: props.textcolor }}>{Job}</p>
                             <div className='tab-contact-row'>
-                                <BiUser className='tab-usericon' size={45} />
-                                <BiPhoneCall className='tab-phoneicon' size={45} />
-                                <BiShoppingBag className='tab-bagicon' size={45} />
+                                <BiUser className='tab-usericon' size={39} />
+                                <BiPhoneCall className='tab-phoneicon' size={39} />
+                                <BiShoppingBag className='tab-bagicon' size={39} />
+                                <p className='all-text seemore' style={{ color: props.textcolor }}>See More</p>
                             </div>
-                            <p className='all-text seemore' style={{ color: props.textcolor }}>See More</p>
                         </div>
-                        <img className="tabimage" src={image} />
                     </div>
                     :
                     (active === id && id === 2) ?

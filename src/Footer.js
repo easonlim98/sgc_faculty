@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="container text-center text-md-left">
             <div className="row text-center text-md-left mt-3 pb-3">
                 <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h6 className="text-uppercase mb-4 font-weight-bold">Our Vibrant Campuses</h6>
+                    <h6 className="text-uppercase FooterTitle font-weight-bold">Our Vibrant Campuses</h6>
                     <p id="footer_p1"><a id="footer_a1" href="#!">SEGi College Kuala Lumpur</a></p>
                     <p id="footer_p1"><a id="footer_a1" href="#!">SEGi College Subang Jaya</a></p>
                     <p id="footer_p1"><a id="footer_a1" href="#!">SEGi College Penang</a></p>
@@ -18,7 +18,7 @@ const Footer = () => {
                 </div>
                 <hr className="w-100 clearfix d-md-none"/>
                 <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h6 className="text-uppercase mb-4 font-weight-bold">Explore</h6>
+                    <h6 className="text-uppercase FooterTitle font-weight-bold">Explore</h6>
                     <p id="footer_p1"><a id="footer_a1" href="#!">Virtual Tour</a></p>
                     <p id="footer_p1"><a id="footer_a1" href="#!">IR 4.0</a></p>
                     <p id="footer_p1"><a id="footer_a1" href="#!">News</a></p>
@@ -27,7 +27,7 @@ const Footer = () => {
                 </div>
                 <hr className="w-100 clearfix d-md-none"/>
                 <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h6 className="text-uppercase mb-4 font-weight-bold">Contact Us</h6>
+                    <h6 className="text-uppercase FooterTitle font-weight-bold">Contact Us</h6>
                     <p id="footer_p1">1800 88 8028 (Toll Free)</p>
                     <p id="footer_p1">+603 2070 2078 (Local Students)</p>
                     <p id="footer_p1">+60 12 988 7482</p>
@@ -35,7 +35,7 @@ const Footer = () => {
                 </div>
                 <hr className="w-100 clearfix d-md-none"/>
                 <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h6 className="text-uppercase mb-4 font-weight-bold">CMCO Channel</h6>
+                    <h6 className="text-uppercase FooterTitle font-weight-bold">CMCO Channel</h6>
                     <p id="footer_p1">+60 10 310 0101 (WhatsApp/Call)</p>
                     <p id="footer_p1">logeswariramadas@segi.edu.my (Blackboard Matters)</p>
                     <p id="footer_p1">sckl-student.affairs@segi.edu.my</p>

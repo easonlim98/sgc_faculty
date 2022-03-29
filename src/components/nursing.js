@@ -2,9 +2,6 @@ import React from 'react'
 import './css/Nursing.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/standard.css'
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
-
 
 const Nursing = () => {
   return (
