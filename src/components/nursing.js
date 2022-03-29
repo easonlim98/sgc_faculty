@@ -3,6 +3,9 @@ import './css/Nursing.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/standard.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Banner from './general-components/Banner/Banner.js'
+import Facilities from './general-components/Facilities/Facilities.js'
+import TabsComponent from './general-components/Tabs/TabsComponent'
 import { Carousel } from 'react-responsive-carousel';
 
 
@@ -10,33 +13,25 @@ const Nursing = () => {
   return (
      
      <div>
-    <div className="backgroundNursingBanner">
-
-            <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ background:'none', width: '85%', display: 'flex', flexDirection: 'column',}}>
-                    <div style={{background:'none', display: 'flex', flexDirection: 'column'}}>
-                        <a style={{fontSize: '20px', color: '#FFFFFF'}}>Know more about</a>
-                        <a style={{fontSize: '35px', color: '#FFFFFF', fontWeight: 'bold'}}>Our Program</a>
-                        <p className="bannerNursingContent-res">If you are interested and want to know more about Early Childhood Care & Education</p>
-                        <div>
-                        <button type="button" className="General-Button">Programme</button>
-                        </div>
-                    </div>
-                  </div>
+         <div className='CA banner-container'
+                style={{
+                    backgroundImage: "url(" + require('../../src/assets/images/nursing_banner.jpg') + ")"
+                }}>
+                <Banner
+                    navigatepath={"/Search_Page"}
+                    bannercontent={"If you are interested and want to know more about Nursing & Caring."} />
             </div>
 
-        </div>
-  
         <div className="Nursing-FirstPart">
             <div className="row">
                 <div className="col-sm-5 nursing">
-                    <img className="Nursing-FirstPart-img" src={require("../assets/images/nursingimage3.jpg")} alt=""/>
+                    <img className="Nursing-FirstPart-img" src={require("../assets/images/nursingimage6.jpg")} alt=""/>
                 </div>
                 <div className="col-sm-7 nursing">
                     <div className="Nursing-FirstPart-right">
                         <br/>
                         <br/>
-                        <p style={{fontWeight: '700'}}>What is Nursing and Caring</p>
+                        <p className="Nursing-Heading">What is Nursing and Caring</p>
                         <br/>
                         <p  className="Nursing-first-content-word" style={{fontWeight: '500'}}>Nursing relates to the act of providing care to those who are ill, both physically and mentally.
                 
@@ -69,6 +64,7 @@ const Nursing = () => {
 
         
          <h1 className='nursinggalleryname'>Gallery</h1>
+         <div className='nursing-carousel-container'>
         <Carousel className='main-nursingslide'>
                 <div>
                 <img className='galleryimagenursing' src={require("../assets/images/nursingimage3.jpg")} style={{height:"400px",width:"500px"}}  alt="" ></img> 
@@ -87,28 +83,24 @@ const Nursing = () => {
                     
                 </div>
             </Carousel>
-    
-        <div className="Nursing-LastPart">
-            <div className="row">
-                <div className="col-sm-5 lastpartnursing">
-                    <img className="Nursing-LastPart-img" src={require("../assets/images/nursingimage6.jpg")} alt=""/>
-                </div>
-                <div className="col-sm-7">
-                    <div className="Nursing-LastPart-right">
-                        <br/>
-                        <br/>
-                        <p style={{fontWeight: '700'}}>Want to Know more about our  facilities</p>
-                        <br/>
-                        <p style={{fontWeight: '500'}}>If you are interested in our program and want to check out more about our art and deisgn related facilities, please click on the facilities button.</p>
-                        <br/>
-                        <br/>
-                        <div style={{display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem', marginRight: '2rem'}}>
-                            <button type="button" className="General-Button">Facilities</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+
+        <TabsComponent
+                StudentName={"Carlos Tan Kok Liang"}
+                StudentJob={"Nurse"}
+                Studentimage={require('../assets/images/alumninursing.png')}
+                StudentWords={"“There are no regret in life - just lessons.”"}
+                navigationpath={""}
+                textcolor={"#A71337"}
+                backgroundcolor={"#B4D0F1"}
+            />
+            <Facilities
+                facilitiesimage={require('../assets/images/nursingfacility.jpg')}
+                content={"If you are interested in our programme and want to check out more about our Nursing and Caring-related facilities, please click on the facilities button."} />
+
+      
+    
+        
         </div>
                 
   )
