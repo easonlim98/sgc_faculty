@@ -24,11 +24,15 @@ margin-top: 10px;
 
 
 }
+.Nursing-Heading{
+    font-weight: 800;
+    
+}
 .nursing-container-fluid{
     position: absolute;
     top: 650px;
     background-color:#C4D5ED;
-    height:485px;
+    height:400px;
     
 }
 .Nursing-WhySegiParagraph{
@@ -39,29 +43,6 @@ margin-top: 10px;
     font-size: 18px;
     text-align: justify;
     
-}
-.Nursing-LastPart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 3rem;
-    background: #B4D0F1;
-}
-
-.Nursing-LastPart-left {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.Nursing-LastPart-right {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-.Nursing-LastPart-img {
-    width: 100%;
 }
 
 .Nursing-first-content-word{
@@ -96,10 +77,20 @@ margin-top: 10px;
     width: 100%;
 }
 /* slide-show*/
+.nursing-carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .main-nursingslide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding-top: 25px;
-    
-    
+    width: 70%;
 }
 
 .carousel .slider-wrapper{
@@ -130,45 +121,7 @@ margin-top: 10px;
     display: flex;
     justify-content: center;
 }
- @media only screen and (min-width:763px) {
-.col-sm-5 nursing {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.col-sm-7 nursing{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Nursing-FirstPart-right{
-    padding: 2rem;
-}
-.Nursing-first-content-word{
+.Nursing-Heading{
     font-weight: 500;
-    text-align: justify;
 }
-
- }
-@media only screen and (min-width:567px){
-    .col-sm-5 nursing {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    }
-    .Nursing-first-content-word{
-        font-weight: 500;
-        text-align: justify;
-        font-size: 0.9rem;
-    }
-    
-}
-@media only screen and (min-width:530px){
-.bannerNursingContent-res{
-    font-size: 16px;
-    color: white;
-    width: 50%;
-    margin-top: 10px;
-}
-}
+ 
