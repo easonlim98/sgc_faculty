@@ -2,12 +2,24 @@ import React from 'react'
 import './css/hospitality.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/standard.css'
+import Banner from './general-components/Banner/Banner.js'
+import Facilities from './general-components/Facilities/Facilities.js'
+import TabsComponent from './general-components/Tabs/TabsComponent'
 
 
 const Hospitality = () => {
     return (
         <div>
-            <div className="Hsp-banner1">
+            <div className='Hsp banner-container'
+                style={{
+                    backgroundImage: "url(" + require('../assets/images/Hospitality/Introback.png') + ")"
+                }}>
+                <Banner
+                    navigatepath={"/Search_Page"}
+                    bannercontent={"If you are interested and want to know more about Hospitality."} />
+            </div>
+
+            {/* <div className="Hsp-banner1">
 
                 <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
                     <div style={{ background: 'none', width: '85%', display: 'flex', flexDirection: 'column', }}>
@@ -22,8 +34,7 @@ const Hospitality = () => {
                     </div>
                 </div>
 
-
-            </div>
+            </div> */}
 
 
             <div className="Hsp-container">
@@ -185,9 +196,12 @@ const Hospitality = () => {
                     </div>
                 </div>
 
+                <Facilities
+                facilitiesimage={require('../assets/images/Hospitality/btmimg.png')}
+                content={"If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button."} />
 
 
-                <div className="Hsp-faculties">
+                {/* <div className="Hsp-faculties">
                     <div className="row">
                         <div className="col-sm-5">
                             <img className="Hsp-faculties-img" src={require("../assets/images/Hospitality/btmimg.png")} alt="" />
@@ -207,7 +221,7 @@ const Hospitality = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
 
 
