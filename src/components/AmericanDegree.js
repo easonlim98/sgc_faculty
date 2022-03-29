@@ -2,24 +2,35 @@ import React from 'react'
 import './css/american_degree.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/Standard.css'
+import Banner from './general-components/Banner/Banner.js'
+import Facilities from './general-components/Facilities/Facilities.js'
+import TabsComponent from './general-components/Tabs/TabsComponent'
 
 const AmericanDegree = () => {
   return (
     <div>
-        <div className="container-fluid">
+        {/* <div className="container-fluid">
             <div className="row">
                 <div className="amedegrebannersection amedegrebannersection-container">
                     <div className="amedegrebannerpicture">
                         <img className="img-fluid amedegrebannerpicture-pic" src={require("../assets/images/American_Degree/american_degree_banner.png")} alt=""/>
                     </div>
                     <div className="amedegrebannerwords">
-                        <h4 className="amedegrebannerwordsh2">Know more about</h4>
+                        <h3 className="amedegrebannerwordsh2">Know more about</h3>
                         <h1 className="amedegrebannerwordsh1">our program</h1>
-                        <p>If you are interested and want to know more <br/> about American Degree Program. </p>
-                        <button type="button" className="btn btn-primary amedegre-buttonforprogramme">Programme</button>
+                        <p className="amedegrebannerwordsh3">If you are interested and want to know more <br/> about American Degree Program. </p>
+                        <button type="button" className="btn btn-primary amedegre-buttonforprogramme amedegrebannerwordsh3">Programme</button>
                     </div>
                 </div>
             </div>
+        </div> */}
+        <div className='AD banner-container'
+            style={{
+                backgroundImage: "url(" + require('../assets/images/American_Degree/american_degree_banner.png') + ")"
+            }}>
+            <Banner
+                navigatepath={"/Search_Page"}
+                bannercontent={"If you are interested and want to know more about American Degree Program."} />
         </div>
         <div className="container amedegre-secondpart">
             <div className="row">
@@ -64,7 +75,7 @@ const AmericanDegree = () => {
                 <div className="col-lg-4">                    
                     <img className="img-fluid america-pic-showornot" href="#" src={require("../assets/images/American_Degree/american_degree_picture2.png")} alt=""/>
                 </div>
-                <div className="col-lg-8">
+                <div className="col-lg-8 amedegre-secondpartwwo-sec">
                     <h4 className="amedegre-secondpartwwo">Why choose ADP at SEGi?</h4>
                     <p className="amedegre-secondpartwwo">SEGi has teamed up with some of the powerhouses of education to provide opportunities
                         for students to experience American style learning through its American Degree Program
@@ -84,7 +95,16 @@ const AmericanDegree = () => {
                 </div>
               </div>
         </div>
-        <div className="amedegre-greyrectengle">
+        <TabsComponent
+                StudentName={"Edward Maya"}
+                StudentJob={"American Degree"}
+                Studentimage={require('../assets/images/American_Degree/american_degree_apeople1.png')}
+                StudentWords={"“My high school art education constructed invaluable foundations for me as a creative professional.”"}
+                navigationpath={""}
+                textcolor={"#FFFFFF"}
+                backgroundcolor={"#949494"}
+            />
+        {/* <div className="amedegre-greyrectengle">
             <div className="container">
                 <div className="row">
                     <div className="col-lg">
@@ -121,7 +141,10 @@ const AmericanDegree = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */}
+        <Facilities
+            facilitiesimage={require('../assets/images/American_Degree/Facilities.png')}
+            content={"If you are interested in our programme and want to check out more about our American Degree related facilities, please click on the facilities button."} />
     </div>
   )
 }
