@@ -4,6 +4,52 @@
   padding: 5rem;
 }
 
+.Search-Page-Container {
+  display: flex;
+  flex: 1 1 0%;
+  background-color: rgb(236, 250, 255);
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.Search-Page-Top-Content {
+  display: flex;
+  flex-Direction: row;
+  justify-Content: space-between;
+}
+
+.Search-Page-Content-Container {
+  margin-Bottom: 1rem;
+  display: flex;
+  flex-Direction: column;
+}
+.Search-Page-Searchbar{
+  position: absolute;
+   top: 50%;
+    left: 50%;
+     transform: translate(-50%,-50%)
+}
+.Search-Page-Searchbar>input{
+  border-Radius: 0.3rem;
+   border: none;
+    padding: 0.2rem;
+     text-Align: center
+}
+.Search-Page-Card-Container {
+  display: flex;
+  flex-Direction: row;
+  flex: 1
+}
+
+.Search-Page-Card-Title {
+  display: flex;
+  flex: 1
+}
+.Search-Page-Content-Text-Cover{
+  display: flex;
+   flex-Direction: row;
+    flex: 1 
+}
 .IT_INTRO_SEARCH_CAMPUS_BUTTON {
   width: 2.5rem;
   background-color: #ACACAC;
@@ -48,12 +94,13 @@
 
 .Search-Page-Cotent-Button>button {
   background-color: #A71337;
-  width: 50%;
+  width: 60%;
   height: 40%;
   color: #FFF;
-  font-size: 1.2rem;
+  font-size: 1rem;
   box-shadow: 2px 3px 5px #9e9e9e;
   border: none;
+  font-weight: 500;
 }
 
 .Search-Page-Cotent-Button2 {
@@ -65,12 +112,13 @@
 
 .Search-Page-Cotent-Button2>button {
   background-color: #010637;
-  width: 50%;
+  width: 60%;
   height: 40%;
   color: #FFF;
-  font-size: 1.2rem;
+  font-size: 1rem;
   box-shadow: 2px 3px 5px #9e9e9e;
   border: none;
+  font-weight: 500;
 }
 
 .Search-Page-Attribute-Container {
@@ -89,4 +137,149 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 1000px) {
+  .Search-Page-Attribute-Container {
+    flex-direction: column;
+  }
+  .Search-Page-Attribute{
+    font-size: 1.3rem;
+  }
+  .Search-Page-Value{
+    font-size: 1.1rem;
+  }
+  .Search-Page-TotalResult {
+    font-size: 1.5rem;
+  }
+
+  .Search-Page-Title {
+    font-size: 1.5rem;
+  }
+
+  .Search-Page-Cotent-Button2 {
+    justify-Content: unset;
+    align-items: unset;
+  }
+
+  .Search-Page-Cotent-Button {
+    justify-Content: unset;
+    align-items: unset;
+  }
+
+  .Search-Page-Cotent-Button2>button {
+    width: unset;
+    height: unset;
+    padding: 0.5rem 2.5rem;
+  }
+
+  .Search-Page-Cotent-Button>button {
+    width: unset;
+    height: unset;
+    padding: 0.5rem 2rem;
+  }
+
+  .Search-Page-Attribute-ButtonSide {
+    flex-direction: row;
+    padding: 1rem 0;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .Search-Page-Content-Text-Cover{
+    flex-direction: column
+  }
+  .Search-Page-Searchbar{
+top: 70%;
+  }
+  .Search-Page-Container{
+    padding: 2.5rem;
+  }
+}
+@media only screen and (max-width: 668px) {
+  .IT_intro_search{
+    padding: 4rem;
+  }
+  .Search-Page-Container{
+    padding: 2.5rem;
+  }
+  .Search-Page-Searchbar{
+    top: 110%;
+      }
+      .Search-Page-Searchbar>input{
+        border: groove;
+      }
+}
+@media only screen and (max-width: 586px) {
+  .Search-Page-Container{
+    padding: 2rem;
+  }
+  .IT_intro_search{
+    padding: 3rem;
+  }
+}
+@media only screen and (max-width: 528px) {
+  .Search-Page-Container{
+    padding: 1rem;
+  }
+  .IT_intro_search{
+    padding: 1.5rem;
+  }
+  .Search-Page-Searchbar{
+    top: 170%;
+  }
+}
+@media only screen and (max-width: 490px) {
+  .IT_intro_search{
+    padding: 0;
+  }
+  .Search-Page-Searchbar{
+    top: 155%;
+  }
+  
+}
+@media only screen and (max-width: 457px) {
+  .IT_intro_search{
+    padding: 0;
+  }
+  .Search-Page-Searchbar{
+    top: 155%;
+  }
+  .Search-Page-Container{
+    padding: 0.5rem;
+  }
+  .Search-Page-Top-Content{
+    margin-bottom: 1rem;
+  }
+}
+@media only screen and (max-width: 457px) {
+  .Search-Page-Searchbar{
+    top: 160%;
+  }
+  .Search-Page-Top-Content{
+    margin-bottom: 1rem;
+  }
+}
+@media only screen and (max-width: 367px) {
+  .Search-Page-Searchbar{
+    top: 175%;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .Search-Page-Searchbar{
+    top: 185%;
+  }
+  .Search-Page-Title{
+    font-size: 1.4rem;
+  }
+  .Search-Page-Attribute-ButtonSide{
+    flex-direction: column;
+  }
+  .Search-Page-Cotent-Button2{
+    justify-content: center;
+    padding-bottom: 1.5rem;
+  }
+  .Search-Page-Cotent-Button{
+    justify-content: center;
+  }
 }
