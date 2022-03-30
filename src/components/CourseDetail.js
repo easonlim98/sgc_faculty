@@ -9,12 +9,9 @@ const CourseDetail = () => {
     const [DymBackgroundImg1, setDymBackgroundImg1] = useState(require('../assets/images/CoursePage/IT1.png')),
         [DymTitle1, setDymTitle1] = useState('BSC (HONS) COMPUTING'),
         [DymYear1, setDymYear1] = useState('(3+0)'),
-        [DymCourseID1, setDymCourseID1] = useState('Course ID'),
         [DymCourseID2, setDymCourseID2] = useState('(R2/481/6/0500)'),
         [DymCourseID3, setDymCourseID3] = useState('(05/24) (A10000)'),
-        [DymLevelOfStudy1, setDymLevelOfStudy1] = useState('Level Of Study'),
         [DymLevelOfStudy2, setDymLevelOfStudy2] = useState('Degree'),
-        [DymCampus1, setDymCampus1] = useState('Campus'),
         [DymCampus2, setDymCampus2] = useState('Kuala Lumpur'),
         [DymCampus3, setDymCampus3] = useState('Subang Jaya'),
         [DymImg1, setDymImg1] = useState(require('../assets/images/CoursePage/IT2.png')),
@@ -97,7 +94,81 @@ const CourseDetail = () => {
     const [Course_Detail_Content_Editable_2, setCourse_Detail_Content_Editable_2] = useState(false)
     if (Course_Detail_Content_Editable_2) {
         return (
-            <div>
+            <div onChange={() => {
+                /* Here to save the edited content */
+                setDymBackgroundImg1(DymBackgroundImg1)
+                setDymTitle1(DymTitle1)
+                setDymYear1(DymYear1)
+                setDymCourseID2(DymCourseID2)
+                setDymCourseID3(DymCourseID3)
+                setDymLevelOfStudy2(DymLevelOfStudy2)
+                setDymCampus2(DymCampus2)
+                setDymCampus3(DymCampus3)
+                //setDymImg1(DymImg1)
+                setDymP1(DymP1)
+                setDymP2(DymP2)
+                setDymP3(DymP3)
+                setDymP4(DymP4)
+                setDymP5(DymP5)
+                setDymP6(DymP6)
+                setDymP7(DymP7)
+                setDymP8(DymP8)
+                setDymP9(DymP9)
+                setDymP10(DymP10)
+                setDymP11(DymP11)
+                setDymP12(DymP12)
+                setDymP13(DymP13)
+                setDymP14(DymP14)
+                setAccordion_TableA1(Accordion_TableA1)
+                setAccordion_TableA2(Accordion_TableA2)
+                setAccordion_TableA3(Accordion_TableA3)
+                setAccordion_TableA4(Accordion_TableA4)
+                setAccordion_TableA5(Accordion_TableA5)
+                setAccordion_TableA6(Accordion_TableA6)
+                setAccordion_TableB1(Accordion_TableB1)
+                setAccordion_TableB2(Accordion_TableB2)
+                setAccordion_TableB3(Accordion_TableB3)
+                setAccordion_TableB4(Accordion_TableB4)
+                setAccordion_TableB5(Accordion_TableB5)
+                setAccordion_TableB6(Accordion_TableB6)
+                setAccordion_TableB7(Accordion_TableB7)
+                setAccordion_TableB8(Accordion_TableB8)
+                setAccordion_TableB9(Accordion_TableB9)
+                setAccordion_TableB10(Accordion_TableB10)
+                setAccordion_TableB11(Accordion_TableB11)
+                setAccordion_TableB12(Accordion_TableB12)
+                setAccordion_TableB13(Accordion_TableB13)
+                setAccordion_TableB14(Accordion_TableB14)
+                setAccordion_TableB15(Accordion_TableB15)
+                setAccordion_TableB16(Accordion_TableB16)
+                setAccordion_TableB17(Accordion_TableB17)
+                setAccordion_TableB18(Accordion_TableB18)
+                setAccordion_TableB19(Accordion_TableB19)
+                setAccordion_TableB20(Accordion_TableB20)
+                setAccordion_TableB21(Accordion_TableB21)
+                setAccordion_TableB22(Accordion_TableB22)
+                setAccordion_TableB23(Accordion_TableB23)
+                setAccordion_TableB24(Accordion_TableB24)
+                setAccordion_TableB25(Accordion_TableB25)
+                setAccordion_TableB26(Accordion_TableB26)
+                setAccordion_TableB27(Accordion_TableB27)
+                setAccordion_TableB28(Accordion_TableB28)
+                setAccordion_TableB29(Accordion_TableB29)
+                setAccordion_TableB30(Accordion_TableB30)
+                setAccordion_TableB31(Accordion_TableB31)
+                setAccordion_TableB32(Accordion_TableB32)
+                setAccordion_TableB33(Accordion_TableB33)
+                setAccordion_TableC1(Accordion_TableC1)
+                setAccordion_TableC2(Accordion_TableC2)
+                setAccordion_TableC3(Accordion_TableC3)
+                setAccordion_TableC4(Accordion_TableC4)
+                setAccordion_TableC5(Accordion_TableC5)
+                setAccordion_TableD1(Accordion_TableD1)
+                setAccordion_TableD2(Accordion_TableD2)
+                setAccordion_TableD3(Accordion_TableD3)
+                setAccordion_TableD4(Accordion_TableD4)
+                setAccordion_TableD5(Accordion_TableD5)
+            }}>
                 {Course_Detail_Course_Name_Slide_Pop_Menu_4 ?
                     <div
                         id="Course_Detail_Page_Editor_1"
@@ -107,7 +178,7 @@ const CourseDetail = () => {
                     </div>
                     : null}
                 <div className="Course_Detail_Course_Name_Slide_Pop_Menu_1">
-                    <a href="https://www.google.com/">
+                    <a href="https://click.segi.edu.my/onlineregistration/">
                         <div
                             onMouseEnter={() => { setCourse_Detail_Course_Name_Slide_Pop_Menu_3(true); setCourse_Detail_Course_Name_Slide_Pop_Menu_5(true) }}
                             style={{
@@ -117,11 +188,11 @@ const CourseDetail = () => {
                             className="Course_Detail_Course_Name_Slide_Pop_Menu_2"
                         >
                             <img
-                                className="Course_Detail_Content_Editable_1 Course_Detail_Course_Name_Slide_Pop_Menu_Img_1"
+                                className="Course_Detail_Course_Name_Slide_Pop_Menu_Img_1"
                                 src={require("../assets/images/CoursePage/ApplyNow.png")}
                             />
                             <div className="Course_Detail_Course_Name_P_1">
-                                <p className="Course_Detail_Content_Editable_1">APPLY NOW</p>
+                                <p>APPLY NOW</p>
                             </div>
                         </div>
                     </a>
@@ -135,11 +206,11 @@ const CourseDetail = () => {
                             className="Course_Detail_Course_Name_Slide_Pop_Menu_2"
                         >
                             <img
-                                className="Course_Detail_Content_Editable_1 Course_Detail_Course_Name_Slide_Pop_Menu_Img_1"
+                                className="Course_Detail_Course_Name_Slide_Pop_Menu_Img_1"
                                 src={require("../assets/images/CoursePage/VisitUs.png")}
                             />
                             <div className="Course_Detail_Course_Name_P_1">
-                                <p className="Course_Detail_Content_Editable_1">VISIT US</p>
+                                <p>VISIT US</p>
                             </div>
                         </div>
                     </a>
@@ -153,11 +224,11 @@ const CourseDetail = () => {
                             className="Course_Detail_Course_Name_Slide_Pop_Menu_2"
                         >
                             <img
-                                className="Course_Detail_Content_Editable_1 Course_Detail_Course_Name_Slide_Pop_Menu_Img_1"
+                                className=" Course_Detail_Course_Name_Slide_Pop_Menu_Img_1"
                                 src={require("../assets/images/CoursePage/Broucher.png")}
                             />
                             <div className="Course_Detail_Course_Name_P_1">
-                                <p className="Course_Detail_Content_Editable_1">BROCHURE</p>
+                                <p>BROCHURE</p>
                             </div>
                         </div>
                     </a>
@@ -210,86 +281,7 @@ const CourseDetail = () => {
                         : null
                 }
 
-                <div contentEditable style={{ border: "5px solid #ffb005" }}
-                    onChange={() => {
-                        /* Here to save the edited content */
-                        setDymBackgroundImg1(DymBackgroundImg1)
-                        setDymTitle1(DymTitle1)
-                        setDymYear1(DymYear1)
-                        setDymCourseID1(DymCourseID1)
-                        setDymCourseID2(DymCourseID2)
-                        setDymCourseID3(DymCourseID3)
-                        setDymLevelOfStudy1(DymLevelOfStudy1)
-                        setDymLevelOfStudy2(DymLevelOfStudy2)
-                        setDymCampus1(DymCampus1)
-                        setDymCampus2(DymCampus2)
-                        setDymCampus3(DymCampus3)
-                        //setDymImg1(DymImg1)
-                        setDymP1(DymP1)
-                        setDymP2(DymP2)
-                        setDymP3(DymP3)
-                        setDymP4(DymP4)
-                        setDymP5(DymP5)
-                        setDymP6(DymP6)
-                        setDymP7(DymP7)
-                        setDymP8(DymP8)
-                        setDymP9(DymP9)
-                        setDymP10(DymP10)
-                        setDymP11(DymP11)
-                        setDymP12(DymP12)
-                        setDymP13(DymP13)
-                        setDymP14(DymP14)
-                        setAccordion_TableA1(Accordion_TableA1)
-                        setAccordion_TableA2(Accordion_TableA2)
-                        setAccordion_TableA3(Accordion_TableA3)
-                        setAccordion_TableA4(Accordion_TableA4)
-                        setAccordion_TableA5(Accordion_TableA5)
-                        setAccordion_TableA6(Accordion_TableA6)
-                        setAccordion_TableB1(Accordion_TableB1)
-                        setAccordion_TableB2(Accordion_TableB2)
-                        setAccordion_TableB3(Accordion_TableB3)
-                        setAccordion_TableB4(Accordion_TableB4)
-                        setAccordion_TableB5(Accordion_TableB5)
-                        setAccordion_TableB6(Accordion_TableB6)
-                        setAccordion_TableB7(Accordion_TableB7)
-                        setAccordion_TableB8(Accordion_TableB8)
-                        setAccordion_TableB9(Accordion_TableB9)
-                        setAccordion_TableB10(Accordion_TableB10)
-                        setAccordion_TableB11(Accordion_TableB11)
-                        setAccordion_TableB12(Accordion_TableB12)
-                        setAccordion_TableB13(Accordion_TableB13)
-                        setAccordion_TableB14(Accordion_TableB14)
-                        setAccordion_TableB15(Accordion_TableB15)
-                        setAccordion_TableB16(Accordion_TableB16)
-                        setAccordion_TableB17(Accordion_TableB17)
-                        setAccordion_TableB18(Accordion_TableB18)
-                        setAccordion_TableB19(Accordion_TableB19)
-                        setAccordion_TableB20(Accordion_TableB20)
-                        setAccordion_TableB21(Accordion_TableB21)
-                        setAccordion_TableB22(Accordion_TableB22)
-                        setAccordion_TableB23(Accordion_TableB23)
-                        setAccordion_TableB24(Accordion_TableB24)
-                        setAccordion_TableB25(Accordion_TableB25)
-                        setAccordion_TableB26(Accordion_TableB26)
-                        setAccordion_TableB27(Accordion_TableB27)
-                        setAccordion_TableB28(Accordion_TableB28)
-                        setAccordion_TableB29(Accordion_TableB29)
-                        setAccordion_TableB30(Accordion_TableB30)
-                        setAccordion_TableB31(Accordion_TableB31)
-                        setAccordion_TableB32(Accordion_TableB32)
-                        setAccordion_TableB33(Accordion_TableB33)
-                        setAccordion_TableC1(Accordion_TableC1)
-                        setAccordion_TableC2(Accordion_TableC2)
-                        setAccordion_TableC3(Accordion_TableC3)
-                        setAccordion_TableC4(Accordion_TableC4)
-                        setAccordion_TableC5(Accordion_TableC5)
-                        setAccordion_TableD1(Accordion_TableD1)
-                        setAccordion_TableD2(Accordion_TableD2)
-                        setAccordion_TableD3(Accordion_TableD3)
-                        setAccordion_TableD4(Accordion_TableD4)
-                        setAccordion_TableD5(Accordion_TableD5)
-                    }}
-                >
+                <div style={{ border: "5px solid #ffb005" }}>
                     {/* Title */}
                     <div className="Course_Detail_Course_Name_Font_Color_1 Course_Detail_Course_Name_Background_Image_1"
                         style={{
@@ -306,32 +298,26 @@ const CourseDetail = () => {
                             {/*Section: Content*/}
                             <section className="text-center dark-grey-text" style={{ width: "100%" }}>
                                 {/* Section heading */}
-                                {(Course_Detail_Content_Editable_2) ?
-                                    <h2
-                                        className="font-weight-bold mb-4 pb-2 Course_Detail_Content_Editable_1"
-                                        style={{ fontSize: "5vw" }}
-                                    >{DymTitle1}
-                                    </h2> :
-                                    <h2 className="font-weight-bold mb-4 pb-2 Course_Detail_Content_Editable_1"
-                                        style={{ fontSize: "5vw" }}
-                                    >{DymTitle1}
-                                    </h2>}
-                                {(Course_Detail_Content_Editable_2) ?
-                                    <h2 className="font-weight-bold mb-4 pb-2 Course_Detail_Content_Editable_1" style={{ fontSize: "5vw" }}>{DymYear1}</h2>
-                                    :
-                                    <h2 className="font-weight-bold mb-4 pb-2 Course_Detail_Content_Editable_1" style={{ fontSize: "5vw" }} >{DymYear1}</h2>}
+                                <h2 contentEditable
+                                    className="font-weight-bold mb-4 pb-2 Course_Detail_Content_Editable_1"
+                                    style={{ fontSize: "5vw" }}
+                                >{DymTitle1}
+                                </h2>
+                                <h2 contentEditable
+                                    className="font-weight-bold mb-4 pb-2 Course_Detail_Content_Editable_1"
+                                    style={{ fontSize: "5vw" }}>{DymYear1}</h2>
                                 {/* Grid row */}
                                 <div className="Course_Detail_Course_Name_Font_Size_1 row">
                                     {/* Grid column */}
                                     <div className="col-md-4 mb-4">
                                         <i className="fas fa-chart-area fa-3x red-text" />
-                                        <h5 className="font-weight-bold my-4 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
-                                            {DymCourseID1}
+                                        <h5 className="font-weight-bold my-4 " style={{ color: "#fff" }}>
+                                            Course ID
                                         </h5>
-                                        <p className="grey-text mb-md-0 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
+                                        <p contentEditable className="grey-text mb-md-0 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
                                             {DymCourseID2}
                                         </p>
-                                        <p className="grey-text mb-md-0 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
+                                        <p contentEditable className="grey-text mb-md-0 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
                                             {DymCourseID3}
                                         </p>
                                     </div>
@@ -339,10 +325,12 @@ const CourseDetail = () => {
                                     {/* Grid column */}
                                     <div className="Course_Detail_Course_Name_VL_1 col-md-4 mb-4">
                                         <i className="fas fa-book fa-3x cyan-text" />
-                                        <h5 className="font-weight-bold my-4 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
-                                            {DymLevelOfStudy1}
+                                        <h5 className="font-weight-bold my-4 "
+                                            style={{ color: "#fff" }}>
+                                            Level Of Study
                                         </h5>
-                                        <p className="grey-text mb-md-0 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
+                                        <p contentEditable className="grey-text mb-md-0 Course_Detail_Content_Editable_1"
+                                            style={{ color: "#fff" }}>
                                             {DymLevelOfStudy2}
                                         </p>
                                     </div>
@@ -350,13 +338,16 @@ const CourseDetail = () => {
                                     {/* Grid column */}
                                     <div className="col-md-4 mb-4">
                                         <i className="far fa-comments fa-3x orange-text" />
-                                        <h5 className="font-weight-bold my-4 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
-                                            {DymCampus1}
+                                        <h5 className="font-weight-bold my-4"
+                                            style={{ color: "#fff" }}>
+                                            Campus
                                         </h5>
-                                        <p className="grey-text mb-0 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
+                                        <p contentEditable className="grey-text mb-0  Course_Detail_Content_Editable_1"
+                                            style={{ color: "#fff" }}>
                                             {DymCampus2}
                                         </p>
-                                        <p className="grey-text mb-0 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
+                                        <p contentEditable className="grey-text mb-0  Course_Detail_Content_Editable_1"
+                                            style={{ color: "#fff" }}>
                                             {DymCampus3}
                                         </p>
                                     </div>
@@ -373,35 +364,35 @@ const CourseDetail = () => {
                             {/*Section: Content*/}
                             <section className="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
                                 {/*Grid row*/}
-                                <div className="row">
+                                <div contentEditable className="row Course_Detail_Content_Editable_1">
                                     {/*Grid column*/}
                                     <div className="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
                                         <img
                                             src={DymImg1}
-                                            className="Course_Detail_Content_Editable_1 img-fluid"
+                                            className=" img-fluid"
                                         />
                                     </div>
                                     {/*Grid column*/}
                                     {/*Grid column*/}
                                     <div className="Course_Detail_Course_Name_Font_Color_1 col-lg-5 mt-4 mb-4 mb-lg-0">
-                                        <p className="Course_Detail_Content_Editable_1">
+                                        <p>
                                             <b>
                                                 {DymP1}
                                             </b>
                                         </p>
-                                        <p className="Course_Detail_Content_Editable_1">
+                                        <p>
                                             {DymP2}
                                         </p>
                                         <br />
                                         <div className="Course_Detail_Course_Name_Font_Color_2">
-                                            <p className="Course_Detail_Content_Editable_1">
+                                            <p>
                                                 <b>{DymP3}</b>
                                             </p>
-                                            <p className="Course_Detail_Content_Editable_1">{DymP4}</p>
-                                            <p className="Course_Detail_Content_Editable_1">
+                                            <p>{DymP4}</p>
+                                            <p>
                                                 {DymP5}
                                             </p>
-                                            <p className="Course_Detail_Content_Editable_1">
+                                            <p>
                                                 {DymP6}
                                             </p>
                                         </div>
@@ -416,7 +407,7 @@ const CourseDetail = () => {
                     {/* What We Should Know about this course */}
                     <div className="Course_Detail_Course_Name_Div_2 my-5 p-5 z-depth-1 page1">
                         {/*Section: Content*/}
-                        <section className="dark-grey-text">
+                        <section contentEditable className="dark-grey-text Course_Detail_Content_Editable_1">
                             {/* Grid row */}
                             <div className="row mb-3">
                                 {/* Grid column */}
@@ -426,11 +417,11 @@ const CourseDetail = () => {
                                 {/* Grid column */}
                                 {/* Grid column */}
                                 <div className="col-xl-10 col-md-11 col-10">
-                                    <h4 className="font-weight-bold mb-3 Course_Detail_Content_Editable_1">
+                                    <h4 className="font-weight-bold mb-3 ">
                                         {DymP7}
                                     </h4>
                                     <p className="grey-text"></p>
-                                    <li className="Course_Detail_Content_Editable_1">
+                                    <li>
                                         {DymP8}
                                     </li>
                                     <p />
@@ -448,7 +439,7 @@ const CourseDetail = () => {
                                 {/* Grid column */}
                                 <div className="col-xl-10 col-md-11 col-10">
                                     <p className="grey-text"></p>
-                                    <li className="Course_Detail_Content_Editable_1">
+                                    <li>
                                         {DymP9}
                                     </li>
                                     <p />
@@ -466,7 +457,7 @@ const CourseDetail = () => {
                                 {/* Grid column */}
                                 <div className="col-xl-10 col-md-11 col-10">
                                     <p className="grey-text"></p>
-                                    <li className="Course_Detail_Content_Editable_1">
+                                    <li>
                                         {DymP10}
                                     </li>
                                     <p />
@@ -484,7 +475,7 @@ const CourseDetail = () => {
                                 {/* Grid column */}
                                 <div className="col-xl-10 col-md-11 col-10">
                                     <p className="grey-text"></p>
-                                    <li className="Course_Detail_Content_Editable_1">
+                                    <li>
                                         {DymP11}
                                     </li>
                                     <p />
@@ -502,15 +493,15 @@ const CourseDetail = () => {
                                 {/* Grid column */}
                                 <div className="col-xl-10 col-md-11 col-10">
                                     <br />
-                                    <h4 className="font-weight-bold mb-3 Course_Detail_Content_Editable_1">
+                                    <h4 className="font-weight-bold mb-3 ">
                                         {DymP12}
                                     </h4>
                                     <br />
-                                    <p className="grey-text mb-0 Course_Detail_Content_Editable_1">
+                                    <p className="grey-text mb-0 ">
                                         {DymP13}
                                     </p>
                                     <br />
-                                    <p className="grey-text mb-0 Course_Detail_Content_Editable_1">
+                                    <p className="grey-text mb-0 ">
                                         {DymP14}
                                     </p>
                                 </div>
@@ -553,23 +544,22 @@ const CourseDetail = () => {
                                 {/*Grid column*/}
 
                                 {showSection === Accordion_LIST.Accordion_1 ?
-                                    <div className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0">
+                                    <div contentEditable className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0 Course_Detail_Content_Editable_1">
                                         <br />
-                                        <p className="Course_Detail_Content_Editable_1 Course_Detail_Entry_Requirement_P_1"> <b>Entry Requirement</b> </p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableA1}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableA2}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableA3}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableA4}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableA5}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableA6}</p>
+                                        <p className=" Course_Detail_Entry_Requirement_P_1"> <b>Entry Requirement</b> </p>
+                                        <p>{Accordion_TableA1}</p>
+                                        <p>{Accordion_TableA2}</p>
+                                        <p>{Accordion_TableA3}</p>
+                                        <p>{Accordion_TableA4}</p>
+                                        <p>{Accordion_TableA5}</p>
+                                        <p>{Accordion_TableA6}</p>
                                     </div>
                                     : null}
 
                                 {showSection === Accordion_LIST.Accordion_2 ?
-                                    <div className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0"
-                                    >
+                                    <div contentEditable className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0 Course_Detail_Content_Editable_1">
                                         <br />
-                                        <p className="Course_Detail_Content_Editable_1 Course_Detail_Entry_Requirement_P_1">
+                                        <p className=" Course_Detail_Entry_Requirement_P_1">
                                             <b>Programme Structure and Module</b>
                                         </p>
                                         {/*Accordion wrapper*/}
@@ -604,16 +594,16 @@ const CourseDetail = () => {
                                                     data-parent="#accordionEx"
                                                 >
                                                     <div className="card-body">
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB1}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB2}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB3}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB4}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB5}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB6}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB7}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB8}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB9}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB10}</li>
+                                                        <li>{Accordion_TableB1}</li>
+                                                        <li>{Accordion_TableB2}</li>
+                                                        <li>{Accordion_TableB3}</li>
+                                                        <li>{Accordion_TableB4}</li>
+                                                        <li>{Accordion_TableB5}</li>
+                                                        <li>{Accordion_TableB6}</li>
+                                                        <li>{Accordion_TableB7}</li>
+                                                        <li>{Accordion_TableB8}</li>
+                                                        <li>{Accordion_TableB9}</li>
+                                                        <li>{Accordion_TableB10}</li>
                                                     </div>
                                                 </div>
                                             </div>
@@ -644,16 +634,16 @@ const CourseDetail = () => {
                                                     data-parent="#accordionEx"
                                                 >
                                                     <div className="card-body">
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB11}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB12}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB13}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB14}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB15}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB16}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB17}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB18}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB19}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB20}</li>
+                                                        <li>{Accordion_TableB11}</li>
+                                                        <li>{Accordion_TableB12}</li>
+                                                        <li>{Accordion_TableB13}</li>
+                                                        <li>{Accordion_TableB14}</li>
+                                                        <li>{Accordion_TableB15}</li>
+                                                        <li>{Accordion_TableB16}</li>
+                                                        <li>{Accordion_TableB17}</li>
+                                                        <li>{Accordion_TableB18}</li>
+                                                        <li>{Accordion_TableB19}</li>
+                                                        <li>{Accordion_TableB20}</li>
                                                     </div>
                                                 </div>
                                             </div>
@@ -684,16 +674,16 @@ const CourseDetail = () => {
                                                     data-parent="#accordionEx"
                                                 >
                                                     <div className="card-body">
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB21}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB22}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB23}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB24}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB25}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB26}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB27}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB28}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB29}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB30}</li>
+                                                        <li>{Accordion_TableB21}</li>
+                                                        <li>{Accordion_TableB22}</li>
+                                                        <li>{Accordion_TableB23}</li>
+                                                        <li>{Accordion_TableB24}</li>
+                                                        <li>{Accordion_TableB25}</li>
+                                                        <li>{Accordion_TableB26}</li>
+                                                        <li>{Accordion_TableB27}</li>
+                                                        <li>{Accordion_TableB28}</li>
+                                                        <li>{Accordion_TableB29}</li>
+                                                        <li>{Accordion_TableB30}</li>
                                                     </div>
                                                 </div>
                                             </div>
@@ -706,34 +696,34 @@ const CourseDetail = () => {
 
                                 {showSection === Accordion_LIST.Accordion_3 ?
                                     <div
-                                        className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0 "
+                                        contentEditable className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0  Course_Detail_Content_Editable_1"
                                     >
                                         <br />
-                                        <p className="Course_Detail_Content_Editable_1 Course_Detail_Entry_Requirement_P_1">
+                                        <p className=" Course_Detail_Entry_Requirement_P_1">
                                             <b>Financial Aid / Funding</b>
                                         </p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableC1}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableC2}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableC3}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableC4}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableC5}</p>
+                                        <p>{Accordion_TableC1}</p>
+                                        <p>{Accordion_TableC2}</p>
+                                        <p>{Accordion_TableC3}</p>
+                                        <p>{Accordion_TableC4}</p>
+                                        <p>{Accordion_TableC5}</p>
 
                                     </div>
                                     : null}
 
                                 {showSection === Accordion_LIST.Accordion_4 ?
                                     <div
-                                        className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0 "
+                                        contentEditable className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0  Course_Detail_Content_Editable_1"
                                     >
                                         <br />
-                                        <p className="Course_Detail_Content_Editable_1 Course_Detail_Entry_Requirement_P_1">
+                                        <p className=" Course_Detail_Entry_Requirement_P_1">
                                             <b>Career Opportunities</b>
                                         </p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableD1}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableD2}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableD3}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableD4}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableD5}</p>
+                                        <p>{Accordion_TableD1}</p>
+                                        <p>{Accordion_TableD2}</p>
+                                        <p>{Accordion_TableD3}</p>
+                                        <p>{Accordion_TableD4}</p>
+                                        <p>{Accordion_TableD5}</p>
 
                                     </div>
                                     : null}
@@ -760,7 +750,7 @@ const CourseDetail = () => {
                     </div>
                     : null}
                 <div className="Course_Detail_Course_Name_Slide_Pop_Menu_1">
-                    <a href="https://www.google.com/">
+                    <a href="https://click.segi.edu.my/onlineregistration/">
                         <div
                             onMouseEnter={() => { setCourse_Detail_Course_Name_Slide_Pop_Menu_3(true); setCourse_Detail_Course_Name_Slide_Pop_Menu_5(true) }}
                             style={{
@@ -770,11 +760,11 @@ const CourseDetail = () => {
                             className="Course_Detail_Course_Name_Slide_Pop_Menu_2"
                         >
                             <img
-                                className="Course_Detail_Content_Editable_1 Course_Detail_Course_Name_Slide_Pop_Menu_Img_1"
+                                className=" Course_Detail_Course_Name_Slide_Pop_Menu_Img_1"
                                 src={require("../assets/images/CoursePage/ApplyNow.png")}
                             />
                             <div className="Course_Detail_Course_Name_P_1">
-                                <p className="Course_Detail_Content_Editable_1">APPLY NOW</p>
+                                <p>APPLY NOW</p>
                             </div>
                         </div>
                     </a>
@@ -788,11 +778,11 @@ const CourseDetail = () => {
                             className="Course_Detail_Course_Name_Slide_Pop_Menu_2"
                         >
                             <img
-                                className="Course_Detail_Content_Editable_1 Course_Detail_Course_Name_Slide_Pop_Menu_Img_1"
+                                className=" Course_Detail_Course_Name_Slide_Pop_Menu_Img_1"
                                 src={require("../assets/images/CoursePage/VisitUs.png")}
                             />
                             <div className="Course_Detail_Course_Name_P_1">
-                                <p className="Course_Detail_Content_Editable_1">VISIT US</p>
+                                <p>VISIT US</p>
                             </div>
                         </div>
                     </a>
@@ -806,11 +796,11 @@ const CourseDetail = () => {
                             className="Course_Detail_Course_Name_Slide_Pop_Menu_2"
                         >
                             <img
-                                className="Course_Detail_Content_Editable_1 Course_Detail_Course_Name_Slide_Pop_Menu_Img_1"
+                                className=" Course_Detail_Course_Name_Slide_Pop_Menu_Img_1"
                                 src={require("../assets/images/CoursePage/Broucher.png")}
                             />
                             <div className="Course_Detail_Course_Name_P_1">
-                                <p className="Course_Detail_Content_Editable_1">BROCHURE</p>
+                                <p>BROCHURE</p>
                             </div>
                         </div>
                     </a>
@@ -882,30 +872,30 @@ const CourseDetail = () => {
                                 {/* Section heading */}
                                 {(Course_Detail_Content_Editable_2) ?
                                     <h2
-                                        className="font-weight-bold mb-4 pb-2 Course_Detail_Content_Editable_1"
+                                        className="font-weight-bold mb-4 pb-2 "
                                         style={{ fontSize: "5vw" }}
                                     >{DymTitle1}
                                     </h2> :
-                                    <h2 className="font-weight-bold mb-4 pb-2 Course_Detail_Content_Editable_1"
+                                    <h2 className="font-weight-bold mb-4 pb-2 "
                                         style={{ fontSize: "5vw" }}
                                     >{DymTitle1}
                                     </h2>}
                                 {(Course_Detail_Content_Editable_2) ?
-                                    <h2 className="font-weight-bold mb-4 pb-2 Course_Detail_Content_Editable_1" style={{ fontSize: "5vw" }}>{DymYear1}</h2>
+                                    <h2 className="font-weight-bold mb-4 pb-2 " style={{ fontSize: "5vw" }}>{DymYear1}</h2>
                                     :
-                                    <h2 className="font-weight-bold mb-4 pb-2 Course_Detail_Content_Editable_1" style={{ fontSize: "5vw" }} >{DymYear1}</h2>}
+                                    <h2 className="font-weight-bold mb-4 pb-2 " style={{ fontSize: "5vw" }} >{DymYear1}</h2>}
                                 {/* Grid row */}
                                 <div className="Course_Detail_Course_Name_Font_Size_1 row">
                                     {/* Grid column */}
                                     <div className="col-md-4 mb-4">
                                         <i className="fas fa-chart-area fa-3x red-text" />
-                                        <h5 className="font-weight-bold my-4 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
-                                            {DymCourseID1}
+                                        <h5 className="font-weight-bold my-4 " style={{ color: "#fff" }}>
+                                            Course ID
                                         </h5>
-                                        <p className="grey-text mb-md-0 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
+                                        <p className="grey-text mb-md-0 " style={{ color: "#fff" }}>
                                             {DymCourseID2}
                                         </p>
-                                        <p className="grey-text mb-md-0 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
+                                        <p className="grey-text mb-md-0 " style={{ color: "#fff" }}>
                                             {DymCourseID3}
                                         </p>
                                     </div>
@@ -913,10 +903,10 @@ const CourseDetail = () => {
                                     {/* Grid column */}
                                     <div className="Course_Detail_Course_Name_VL_1 col-md-4 mb-4">
                                         <i className="fas fa-book fa-3x cyan-text" />
-                                        <h5 className="font-weight-bold my-4 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
-                                            {DymLevelOfStudy1}
+                                        <h5 className="font-weight-bold my-4 " style={{ color: "#fff" }}>
+                                            Level Of Study
                                         </h5>
-                                        <p className="grey-text mb-md-0 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
+                                        <p className="grey-text mb-md-0 " style={{ color: "#fff" }}>
                                             {DymLevelOfStudy2}
                                         </p>
                                     </div>
@@ -924,13 +914,13 @@ const CourseDetail = () => {
                                     {/* Grid column */}
                                     <div className="col-md-4 mb-4">
                                         <i className="far fa-comments fa-3x orange-text" />
-                                        <h5 className="font-weight-bold my-4 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
-                                            {DymCampus1}
+                                        <h5 className="font-weight-bold my-4 " style={{ color: "#fff" }}>
+                                            Campus
                                         </h5>
-                                        <p className="grey-text mb-0 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
+                                        <p className="grey-text mb-0 " style={{ color: "#fff" }}>
                                             {DymCampus2}
                                         </p>
-                                        <p className="grey-text mb-0 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
+                                        <p className="grey-text mb-0 " style={{ color: "#fff" }}>
                                             {DymCampus3}
                                         </p>
                                     </div>
@@ -952,30 +942,30 @@ const CourseDetail = () => {
                                     <div className="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
                                         <img
                                             src={DymImg1}
-                                            className="Course_Detail_Content_Editable_1 img-fluid"
+                                            className=" img-fluid"
                                         />
                                     </div>
                                     {/*Grid column*/}
                                     {/*Grid column*/}
                                     <div className="Course_Detail_Course_Name_Font_Color_1 col-lg-5 mt-4 mb-4 mb-lg-0">
-                                        <p className="Course_Detail_Content_Editable_1">
+                                        <p>
                                             <b>
                                                 {DymP1}
                                             </b>
                                         </p>
-                                        <p className="Course_Detail_Content_Editable_1">
+                                        <p>
                                             {DymP2}
                                         </p>
                                         <br />
                                         <div className="Course_Detail_Course_Name_Font_Color_2">
-                                            <p className="Course_Detail_Content_Editable_1">
+                                            <p>
                                                 <b>{DymP3}</b>
                                             </p>
-                                            <p className="Course_Detail_Content_Editable_1">{DymP4}</p>
-                                            <p className="Course_Detail_Content_Editable_1">
+                                            <p>{DymP4}</p>
+                                            <p>
                                                 {DymP5}
                                             </p>
-                                            <p className="Course_Detail_Content_Editable_1">
+                                            <p>
                                                 {DymP6}
                                             </p>
                                         </div>
@@ -1000,11 +990,11 @@ const CourseDetail = () => {
                                 {/* Grid column */}
                                 {/* Grid column */}
                                 <div className="col-xl-10 col-md-11 col-10">
-                                    <h4 className="font-weight-bold mb-3 Course_Detail_Content_Editable_1">
+                                    <h4 className="font-weight-bold mb-3 ">
                                         {DymP7}
                                     </h4>
                                     <p className="grey-text"></p>
-                                    <li className="Course_Detail_Content_Editable_1">
+                                    <li>
                                         {DymP8}
                                     </li>
                                     <p />
@@ -1022,7 +1012,7 @@ const CourseDetail = () => {
                                 {/* Grid column */}
                                 <div className="col-xl-10 col-md-11 col-10">
                                     <p className="grey-text"></p>
-                                    <li className="Course_Detail_Content_Editable_1">
+                                    <li>
                                         {DymP9}
                                     </li>
                                     <p />
@@ -1040,7 +1030,7 @@ const CourseDetail = () => {
                                 {/* Grid column */}
                                 <div className="col-xl-10 col-md-11 col-10">
                                     <p className="grey-text"></p>
-                                    <li className="Course_Detail_Content_Editable_1">
+                                    <li>
                                         {DymP10}
                                     </li>
                                     <p />
@@ -1058,7 +1048,7 @@ const CourseDetail = () => {
                                 {/* Grid column */}
                                 <div className="col-xl-10 col-md-11 col-10">
                                     <p className="grey-text"></p>
-                                    <li className="Course_Detail_Content_Editable_1">
+                                    <li>
                                         {DymP11}
                                     </li>
                                     <p />
@@ -1076,15 +1066,15 @@ const CourseDetail = () => {
                                 {/* Grid column */}
                                 <div className="col-xl-10 col-md-11 col-10">
                                     <br />
-                                    <h4 className="font-weight-bold mb-3 Course_Detail_Content_Editable_1">
+                                    <h4 className="font-weight-bold mb-3 ">
                                         {DymP12}
                                     </h4>
                                     <br />
-                                    <p className="grey-text mb-0 Course_Detail_Content_Editable_1">
+                                    <p className="grey-text mb-0 ">
                                         {DymP13}
                                     </p>
                                     <br />
-                                    <p className="grey-text mb-0 Course_Detail_Content_Editable_1">
+                                    <p className="grey-text mb-0 ">
                                         {DymP14}
                                     </p>
                                 </div>
@@ -1137,13 +1127,13 @@ const CourseDetail = () => {
                                 {showSection === Accordion_LIST.Accordion_1 ?
                                     <div className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0">
                                         <br />
-                                        <p className="Course_Detail_Content_Editable_1 Course_Detail_Entry_Requirement_P_1"> <b>Entry Requirement</b> </p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableA1}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableA2}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableA3}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableA4}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableA5}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableA6}</p>
+                                        <p className=" Course_Detail_Entry_Requirement_P_1"> <b>Entry Requirement</b> </p>
+                                        <p>{Accordion_TableA1}</p>
+                                        <p>{Accordion_TableA2}</p>
+                                        <p>{Accordion_TableA3}</p>
+                                        <p>{Accordion_TableA4}</p>
+                                        <p>{Accordion_TableA5}</p>
+                                        <p>{Accordion_TableA6}</p>
                                     </div>
                                     : null}
 
@@ -1151,7 +1141,7 @@ const CourseDetail = () => {
                                     <div className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0"
                                     >
                                         <br />
-                                        <p className="Course_Detail_Content_Editable_1 Course_Detail_Entry_Requirement_P_1">
+                                        <p className=" Course_Detail_Entry_Requirement_P_1">
                                             <b>Programme Structure and Module</b>
                                         </p>
                                         {/*Accordion wrapper*/}
@@ -1186,16 +1176,16 @@ const CourseDetail = () => {
                                                     data-parent="#accordionEx"
                                                 >
                                                     <div className="card-body">
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB1}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB2}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB3}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB4}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB5}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB6}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB7}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB8}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB9}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB10}</li>
+                                                        <li>{Accordion_TableB1}</li>
+                                                        <li>{Accordion_TableB2}</li>
+                                                        <li>{Accordion_TableB3}</li>
+                                                        <li>{Accordion_TableB4}</li>
+                                                        <li>{Accordion_TableB5}</li>
+                                                        <li>{Accordion_TableB6}</li>
+                                                        <li>{Accordion_TableB7}</li>
+                                                        <li>{Accordion_TableB8}</li>
+                                                        <li>{Accordion_TableB9}</li>
+                                                        <li>{Accordion_TableB10}</li>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1226,16 +1216,16 @@ const CourseDetail = () => {
                                                     data-parent="#accordionEx"
                                                 >
                                                     <div className="card-body">
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB11}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB12}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB13}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB14}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB15}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB16}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB17}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB18}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB19}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB20}</li>
+                                                        <li>{Accordion_TableB11}</li>
+                                                        <li>{Accordion_TableB12}</li>
+                                                        <li>{Accordion_TableB13}</li>
+                                                        <li>{Accordion_TableB14}</li>
+                                                        <li>{Accordion_TableB15}</li>
+                                                        <li>{Accordion_TableB16}</li>
+                                                        <li>{Accordion_TableB17}</li>
+                                                        <li>{Accordion_TableB18}</li>
+                                                        <li>{Accordion_TableB19}</li>
+                                                        <li>{Accordion_TableB20}</li>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1266,16 +1256,16 @@ const CourseDetail = () => {
                                                     data-parent="#accordionEx"
                                                 >
                                                     <div className="card-body">
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB21}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB22}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB23}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB24}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB25}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB26}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB27}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB28}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB29}</li>
-                                                        <li className="Course_Detail_Content_Editable_1">{Accordion_TableB30}</li>
+                                                        <li>{Accordion_TableB21}</li>
+                                                        <li>{Accordion_TableB22}</li>
+                                                        <li>{Accordion_TableB23}</li>
+                                                        <li>{Accordion_TableB24}</li>
+                                                        <li>{Accordion_TableB25}</li>
+                                                        <li>{Accordion_TableB26}</li>
+                                                        <li>{Accordion_TableB27}</li>
+                                                        <li>{Accordion_TableB28}</li>
+                                                        <li>{Accordion_TableB29}</li>
+                                                        <li>{Accordion_TableB30}</li>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1291,14 +1281,14 @@ const CourseDetail = () => {
                                         className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0 "
                                     >
                                         <br />
-                                        <p className="Course_Detail_Content_Editable_1 Course_Detail_Entry_Requirement_P_1">
+                                        <p className=" Course_Detail_Entry_Requirement_P_1">
                                             <b>Financial Aid / Funding</b>
                                         </p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableC1}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableC2}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableC3}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableC4}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableC5}</p>
+                                        <p>{Accordion_TableC1}</p>
+                                        <p>{Accordion_TableC2}</p>
+                                        <p>{Accordion_TableC3}</p>
+                                        <p>{Accordion_TableC4}</p>
+                                        <p>{Accordion_TableC5}</p>
 
                                     </div>
                                     : null}
@@ -1308,14 +1298,14 @@ const CourseDetail = () => {
                                         className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0 "
                                     >
                                         <br />
-                                        <p className="Course_Detail_Content_Editable_1 Course_Detail_Entry_Requirement_P_1">
+                                        <p className=" Course_Detail_Entry_Requirement_P_1">
                                             <b>Career Opportunities</b>
                                         </p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableD1}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableD2}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableD3}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableD4}</p>
-                                        <p className="Course_Detail_Content_Editable_1">{Accordion_TableD5}</p>
+                                        <p>{Accordion_TableD1}</p>
+                                        <p>{Accordion_TableD2}</p>
+                                        <p>{Accordion_TableD3}</p>
+                                        <p>{Accordion_TableD4}</p>
+                                        <p>{Accordion_TableD5}</p>
 
                                     </div>
                                     : null}
