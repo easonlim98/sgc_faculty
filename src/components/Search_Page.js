@@ -80,11 +80,11 @@ const Search_Page = () => {
 
     <>
       <div style={{ marginBottom: '1rem',display:'flex',flexDirection:'column' }}>
-        <div class="card">
-          <div class="card-body">
+        <div className="card">
+          <div className="card-body">
             <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
               <div style={{ display: 'flex', flex: 1 }}>
-                <h5 class="card-title Search-Page-Title">{Program.Title}</h5>
+                <h5 className="card-title Search-Page-Title">{Program.Title}</h5>
               </div>
               {/* <div style={{ display: 'flex', flex: 1 }}>
                 <p className="Search-Page-Value">{Program.Title_code}</p>
@@ -93,7 +93,7 @@ const Search_Page = () => {
 
             <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
               <div style={{ display: 'flex', flex: 1 }}>
-                <p class="card-text Search-Page-Attribute" >Field of Interest:</p>
+                <p className="card-text Search-Page-Attribute" >Field of Interest:</p>
               </div>
               <div style={{ display: 'flex', flex: 1 }}>
                 <p className="Search-Page-Value">{Program.Field_of_Interest}</p>
@@ -102,19 +102,19 @@ const Search_Page = () => {
 
             <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
               <div style={{ display: 'flex', flex: 2 }}>
-                <p class="card-text Search-Page-Attribute" >Level of Study:</p>
+                <p className="card-text Search-Page-Attribute" >Level of Study:</p>
               </div>
               <div style={{ display: 'flex', flex: 1 }}>
                 <p className="Search-Page-Value">{Program.Level_of_Study}</p>
               </div>
-              <div class="Search-Page-Cotent-Button2" >
+              <div className="Search-Page-Cotent-Button2" >
             <button>Visit</button>
           </div>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
               <div style={{ display: 'flex', flex: 1 }}>
-                <p class="card-text Search-Page-Attribute">Awarding:</p>
+                <p className="card-text Search-Page-Attribute">Awarding:</p>
               </div>
               <div style={{ display: 'flex', flex: 1 }}>
                 <p className="Search-Page-Value">{Program.Awarding}</p>
@@ -124,12 +124,12 @@ const Search_Page = () => {
 
             <div style={{ display: 'flex', flexDirection: 'row', flex: 1 }}>
               <div style={{ display: 'flex', flex: 2 }}>
-                <p class="card-text Search-Page-Attribute" >Campus:</p>
+                <p className="card-text Search-Page-Attribute" >Campus:</p>
               </div>
               <div style={{ display: 'flex', flex: 1 }}>
                 <p className="Search-Page-Value">{Program.Campus}</p>
               </div>
-              <div class="Search-Page-Cotent-Button" >
+              <div className="Search-Page-Cotent-Button" >
             <button>Details</button>
           </div>
           
@@ -153,14 +153,14 @@ const Search_Page = () => {
     <div>
       <div className="Search-Page-Banner" style={{ position: 'relative' }}>
         <img style={{ display: 'block', width: '100%', maxHeight: 'auto' }} src={require("../assets/images/Search_Page/Search_banner2.png")} alt="" />
-        <div class="Search-Page-Searchbar" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
+        <div className="Search-Page-Searchbar" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
 
           <FaSearch style={{ color: '#000000', position: 'absolute', bottom: '0.5rem', left: '0.5rem' }} />
           <input style={{ borderRadius: '0.3rem', border: 'none', padding: '0.2rem', textAlign: 'center' }} onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Type to search" />
         </div>
       </div>
 
-      <div class="IT_intro_search">
+      <div className="IT_intro_search">
         <div style={{ display: 'flex', flex: 1, backgroundColor: '#ECFAFF', flexDirection: 'column', padding: '3rem' }}>
           <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
             <p className="Search-Page-TotalResult" >Total Search Result: {result}</p>

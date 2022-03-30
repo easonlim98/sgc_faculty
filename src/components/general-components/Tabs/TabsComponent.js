@@ -12,7 +12,7 @@ const TabsComponent = (props) => {
     const tabItems = [
         {
             id: 1,
-            title: "Outstanding Student",
+            title: "Student Testimonials",
             content: props.StudentWords,
             Name: props.StudentName,
             Job: props.StudentJob,
@@ -23,15 +23,14 @@ const TabsComponent = (props) => {
         },
         {
             id: 2,
-            title: "Success Story",
-            icon: "tabitem__icon fas fa-users",
-            content: "step 2 content"
-        },
-        {
-            id: 3,
-            title: "Worklife",
-            icon: "tabitem__icon fas fa-network-wired",
-            content: "step 3 content"
+            title: "Student Achievement",
+            content: props.achievementcontent,
+            Name: props.achievementname,
+            Job: props.achievementjob,
+            image: props.achievementsample,
+            navigationpath: props.navigationpath,
+            textcolor: props.textcolor,
+            backgroundcolor: props.bcolor
         },
     ];
     const [active, setActive] = useState(1);
@@ -85,14 +84,39 @@ const TabsComponent = (props) => {
                     </div>
                     :
                     (active === id && id === 2) ?
-                        <p>{"Second Tab"}</p>
+                        (props.achievementcontent == undefined ||
+                            props.achievementname == undefined ||
+                            props.achievementjob == undefined ||
+                            props.achievementsample == undefined) ?
+                            <div className='tab-container'>
+                                <p style={{ margin: 0, color: props.textcolor, fontSize: '1.6rem', fontWeight: 'bold' }}>Please ask the developer to put all the data to open the achievement page</p>
+                            </div>
+                            :
+                            < div className='tab-container' >
+                                <img className="tabimage" src={image} />
+                                <div className='tab-first-section'>
+                                    <p className='all-text student-word' style={{ color: props.textcolor }}>{content}</p>
+                                    <p className='all-text student-name' style={{ color: props.textcolor }}>{Name}</p>
+                                    <div className='tab-underline'
+                                        style={{
+                                            borderColor: props.textcolor,
+                                        }}></div>
+                                    <p className='all-text student-job' style={{ color: props.textcolor }}>{Job}</p>
+                                    <div className='tab-contact-row'>
+                                        <BiUser className='tab-usericon' size={39} />
+                                        <BiPhoneCall className='tab-phoneicon' size={39} />
+                                        <BiShoppingBag className='tab-bagicon' size={39} />
+                                        <p className='all-text seemore' style={{ color: props.textcolor }}>See More</p>
+                                    </div>
+                                </div>
+                            </div>
                         :
                         (active === id && id === 3) ?
                             <p>{"Third Tab"}</p>
                             :
                             <></>;
             })}
-        </div>
+        </div >
     );
 };
 

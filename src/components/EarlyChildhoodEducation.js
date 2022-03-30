@@ -2,32 +2,25 @@ import React from 'react'
 import './css/EarlyChildhoodEducation.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/Standard.css'
-
+import Banner from './general-components/Banner/Banner.js'
+import Facilities from './general-components/Facilities/Facilities.js'
 
 const EarlyChildhoodEducation = () => {
 
 
     return (
         <div>
-            <div className="backgroundBanner">
-
-                <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
-                    <div style={{ background: 'none', width: '85%', display: 'flex', flexDirection: 'column', }}>
-                        <div style={{ background: 'none', display: 'flex', flexDirection: 'column' }}>
-                            <a style={{ fontSize: '20px', color: '#FFFFFF' }}>Know more about</a>
-                            <a style={{ fontSize: '35px', color: '#FFFFFF', fontWeight: 'bold' }}>Our Program</a>
-                            <p className="bannerContent-res">If you are interested and want to know more about Early Childhood Care & Education.</p>
-                            <div>
-                                <button type="button" className="General-Button">Programme</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div className='CA banner-container'
+                style={{
+                    backgroundImage: "url(" + require('../assets/images/Early_Childhood_Education/introduction.jpg') + ")"
+                }}>
+                <Banner
+                    navigatepath={"/Search_Page"}
+                    bannercontent={"If you are interested and want to know more about Early Childhood & Education."} />
             </div>
 
             <div className="container ECE-Section-1">
-                <div className="row">
+                <div className="row d-flex justify-content-center align-items-center">
                     <div className="col-sm-5">
                         <div className="ECE-Section-1-left">
                             <img className="ECE-Section-1-gif" src={require("../assets/gif/Early_Childhood_Education/ECEG.gif")} alt="" />
@@ -49,7 +42,7 @@ const EarlyChildhoodEducation = () => {
 
             <div className="container ECE-Section-2">
                 <div className="row">
-                    <div className="col-sm-8">
+                    <div className="col-sm-8 d-flex justify-content-center">
                         <div className="ECE-Section-2-left">
                             <p style={{ fontWeight: '700', fontSize: '14px' }}>Today’s GRADUATES</p>
                             <p style={{ fontWeight: '700', fontSize: '17px' }}>TOMORROW’S EDUCATORS</p>
@@ -66,13 +59,13 @@ const EarlyChildhoodEducation = () => {
             </div>
 
             <div className="container ECE-Section-3">
-                <div className="row">
+                <div className="row d-flex justify-content-center">
                     <div className="col-sm-3">
                         <div className="ECE-Section-3-left">
                             <img className="ECE-Section-3-img" src={require("../assets/images/Early_Childhood_Education/successQuotes.png")} alt="" />
                         </div>
                     </div>
-                    <div className="col-sm-9">
+                    <div className="col-sm-3 d-flex justify-content-center">
                         <div className="ECE-Section-3-right">
                             <p style={{ fontWeight: '700' }}>What our student favourite quote from the history</p>
                             <p style={{ fontWeight: '500' }}>“Education is the most powerful weapon to change the world.” (Nelson Mandela, 2003)</p>
@@ -82,9 +75,9 @@ const EarlyChildhoodEducation = () => {
             </div>
 
             <div className="container ECE-Section-4">
-                <div className="col-sm-12">
+                <div className="col-sm-12 d-flex align-items-center flex-column">
                     <p style={{ display: 'flex', justifyContent: 'center', fontWeight: '700', fontSize: 'large' }}>OUR STRATEGIC INDUSTRY PARTNERS</p>
-                    <img style={{ width: '100%', marginTop: '2rem' }} src={require("../assets/images/Early_Childhood_Education/industries.png")} alt="" />
+                    <img style={{  marginTop: '2rem' }} src={require("../assets/images/Early_Childhood_Education/industries.png")} alt="" />
                 </div>
             </div>
 
@@ -117,27 +110,11 @@ const EarlyChildhoodEducation = () => {
                 </div>
             </div>
 
-            <div className="ECE-Section-6">
-                <div className="row">
-                    <div className="col-sm-5">
-                        <img className="ECE-Section-6-img" src={require("../assets/images/Early_Childhood_Education/normalpic.png")} alt="" />
-                    </div>
-                    <div className="col-sm-7">
-                        <div className="ECE-Section-6-right">
-                            <br />
-                            <br />
-                            <p style={{ fontWeight: '700' }}>Want to Know more about our facilities</p>
-                            <br />
-                            <p style={{ fontWeight: '500' }}>If you are interested in our program and want to check out more about our art and deisgn related facilities, please click on the facilities button.</p>
-                            <br />
-                            <br />
-                            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem', marginRight: '2rem' }}>
-                                <button type="button" className="General-Button">Facilities</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Facilities
+                facilitiesimage={require('../assets/images/Early_Childhood_Education/facilities.jpg')}
+                content={"If you are interested in our programme and want to check out more about our Early Childhood & Education-related facilities, please click on the facilities button."}
+                navigationpath={""}
+            />
         </div>
     )
 }

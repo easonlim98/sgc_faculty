@@ -98,7 +98,16 @@ const MusicIntro = () => {
                 </div> */}
 
             </div>
-
+            <TabsComponent
+                StudentName={"Albert Einstein"}
+                StudentJob={"Student of 2021 Music Studies"}
+                Studentimage={require('../assets/images/Music/image 220.png')}
+                StudentWords={"“Your imagination is your preview of life's coming attractions.”"}
+                navigationpath={""}
+                textcolor={"white"}
+                backgroundcolor={"black"}
+            />
+            {/* 
             <div className="musicintroback04">
                 <div className="musicintro-Container5">
 
@@ -147,7 +156,7 @@ const MusicIntro = () => {
 
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* <div className="row" style={{ backgroundColor: "black" }}>
                 <div className="col-sm-5">
@@ -170,34 +179,34 @@ const MusicIntro = () => {
                 content={"If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button."} />
 
 
-            <div class="fab-container">
-                <div class="button iconbutton">
+            <div className="fab-container">
+                <div className="button iconbutton">
                     {/* <i>+</i> */}
-                    <i class="fa fa-music" aria-hidden="true"></i>
-                    {/* <i class="AiOutlinePlus"></i> */}
-                    {/* <ul class="options">
+                    <i className="fa fa-music" aria-hidden="true"></i>
+                    {/* <i className="AiOutlinePlus"></i> */}
+                    {/* <ul className="options">
                         <li>
-                            <span class="btn-label">telegram</span>
-                            <div class="iconbutton">
-                                <i class="fa-brands fa-telegram"></i>
+                            <span className="btn-label">telegram</span>
+                            <div className="iconbutton">
+                                <i className="fa-brands fa-telegram"></i>
                             </div>
                         </li>
                         <li>
-                            <span class="btn-label">instagram</span>
-                            <div class="iconbutton">
-                                <i class="fa-brands fa-instagram"></i>
+                            <span className="btn-label">instagram</span>
+                            <div className="iconbutton">
+                                <i className="fa-brands fa-instagram"></i>
                             </div>
                         </li>
                         <li>
-                            <span class="btn-label">twitter</span>
-                            <div class="iconbutton">
-                                <i class="fab fa-twitter"></i>
+                            <span className="btn-label">twitter</span>
+                            <div className="iconbutton">
+                                <i className="fab fa-twitter"></i>
                             </div>
                         </li>
                         <li>
-                            <span class="btn-label">facebook</span>
-                            <div class="iconbutton">
-                                <i class="fab fa-facebook"></i>
+                            <span className="btn-label">facebook</span>
+                            <div className="iconbutton">
+                                <i className="fab fa-facebook"></i>
                             </div>
                         </li>
                     </ul>      */}

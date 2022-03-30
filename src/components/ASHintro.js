@@ -20,16 +20,16 @@ const ASHintro = () => {
             </div>
 
 
- {/* <div class="BannerAHS">
+ {/* <div className="BannerAHS">
  <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{background:'none', width: '85%', display: 'flex', flexDirection: 'column'}}>
             <div style={{background:'none', display: 'flex', flexDirection: 'column'}}>
                 <a style={{fontSize: '20px', color: '#000000'}}>Know more about</a>
                 <a style={{fontSize: '35px', color: '#000000', fontWeight: 'bold'}}>Our Program</a>
-                <p style={{color: '#000000'}} class="bannerContent-res">If you are interested and want to know more
+                <p style={{color: '#000000'}} className="bannerContent-res">If you are interested and want to know more
                     about Communication Studies.</p>
                 <div>
-                    <button type="button" class="General-Button">Programme</button>
+                    <button type="button" className="General-Button">Programme</button>
                 </div>
             </div>
         </div>
@@ -49,8 +49,8 @@ const ASHintro = () => {
         <p className="AHStext1">Allied health’s duties may include but not limited to the identication, evaluation
             and prevention of injuries, disease and disorders.</p>
           </div>
-          <div class="image1">
-              <img src={require("../assets/images/AHS/health1.png")} class="floatingship"/>
+          <div className="image1">
+              <img src={require("../assets/images/AHS/health1.png")} className="floatingship"/>
             </div>
          
     </div>

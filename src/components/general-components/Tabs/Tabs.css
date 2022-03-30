@@ -8,7 +8,8 @@ body {
 }
 
 .wrapper {
-    padding: 3.5rem 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -18,6 +19,10 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+}
+
+.tabimage {
+    width: 30rem;
 }
 
 .tabitem {
@@ -33,6 +38,7 @@ body {
     width: 70%;
     justify-content: center;
     position: relative;
+    align-items: center;
 }
 
 .student-word {
@@ -148,6 +154,33 @@ body {
     .tab-container {
         width: 90%;
     }
+
+    .tabimage {
+        width: 20rem;
+        height: 15rem;
+    }
+
+    .student-word {
+        font-size: 1.2rem;
+        padding-bottom: 1rem;
+    }
+
+    .student-name {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .tab-underline {
+        margin: 1rem 0
+    }
+
+    .student-job {
+        font-size: 0.9rem;
+    }
+
+    .tabitem__title {
+        font-size: 1.1rem;
+    }
 }
 
 @media only screen and (max-width: 1245px) {
@@ -156,12 +189,25 @@ body {
         padding: 0 2rem;
     }
 
+    .tabitem__title {
+        font-size: 1rem;
+    }
+
     .student-word {
         font-size: 1.3rem;
     }
 
+    .tabimage {
+        width: 18rem;
+        height: 13rem;
+    }
+
     .student-name {
-        font-size: 1.3rem;
+        font-size: 1rem;
+    }
+
+    .student-word {
+        font-size: 1.1rem;
     }
 
     .tabitem {
@@ -174,67 +220,59 @@ body {
     }
 }
 
-@media only screen and (max-width: 792px) {
+@media only screen and (max-width: 824px) {
+    .tabimage {
+        width: 16rem;
+        height: 11rem
+    }
+
     .tab-first-section {
         padding: 2rem 1rem;
     }
 
+    .student-word {
+        font-size: 1rem;
+    }
+
+    .student-name {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 758px) {
     .tabimage {
-        width: 55%;
-        position: absolute;
-        bottom: 35rem;
+        width: 16rem;
+        height: 13rem
+    }
+
+    .tab-first-section {
+        padding: 1.5rem 4rem;
+    }
+
+    .student-word {
+        font-size: 1rem;
+    }
+
+    .student-name {
+        font-size: 0.8rem;
+    }
+
+    .tab-contact-row {
+        padding-top: 1rem
     }
 
     .tab-container {
         flex-direction: column;
-        align-items: center;
-        position: relative;
     }
 
-    .wrapper {
-        padding-top: 30rem;
-    }
-
-    .tabs {
-        justify-content: center;
-        align-items: center;
-    }
-
-    .tabitem__title {
-        text-align: center;
+    .student-word {
+        font-size: 0.9rem;
     }
 }
 
 @media only screen and (max-width: 654px) {
-    .tabitem {
-        margin-right: 3rem;
-        font-size: 1.3rem;
-    }
 
-    .tabitem--inactive {
-        font-size: 1.1rem;
-    }
 
-    .tab-first-section {
-        padding: 2rem;
-        padding-bottom: 0;
-    }
-
-    .student-word {
-        font-size: 1.2rem;
-    }
-
-    .student-name {
-        font-size: 1.1rem;
-    }
-
-    .student-job {
-        font-size: 1rem;
-    }
-
-    .tab-underline {
-        margin: 1.3rem 0
-    }
 
     .seemore {
         color: rgb(167, 19, 55);
@@ -242,16 +280,9 @@ body {
         right: 0;
         right: 2rem;
         bottom: 2rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
-    .tabimage {
-        bottom: 27.5rem;
-    }
-
-    .wrapper {
-        padding-top: 24rem;
-    }
 }
 
 @media only screen and (max-width: 654px) {
@@ -261,10 +292,6 @@ body {
 
     .tabitem--inactive {
         font-size: 1rem;
-    }
-
-    .tabimage {
-        bottom: 31rem;
     }
 
     .tab-first-section {
@@ -273,74 +300,79 @@ body {
     }
 }
 
-@media only screen and (max-width: 427px) {
-    .tabitem {
-        margin-right: 0rem;
-    }
-
-    .tabimage {
-        bottom: 31.5rem;
-    }
-
+@media only screen and (max-width: 494px) {
     .wrapper {
-        padding-top: 18rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tabs {
+        flex-direction: row;
+        display: flex
+    }
+
+    .tabitem {
+        border-right: 0;
+        border-bottom: 2.5px solid #AF2949;
+        padding: 0;
+        margin: 0;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tabitem__title {
+        padding: 1rem 0
     }
 
     .tabitem--inactive {
-        padding: 0 1rem;
-    }
-}
-
-@media only screen and (max-width: 373px) {
-    .tabimage {
-        bottom: 30rem;
+        border-bottom: 0;
+        flex: 1
     }
 
     .student-name {
         text-align: center;
     }
 
+    .student-word {
+        text-align: justify;
+    }
+
     .student-job {
         text-align: center;
+
     }
 
     .tab-contact-row {
-        display: flex;
+        position: relative;
         justify-content: center;
     }
 
     .seemore {
-        position: unset;
-        text-align: center;
+        position: absolute;
+        bottom: -80%;
+        right: 39%;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .tabitem {
+        margin: 0 0.5rem;
     }
 
-    .tabitem {
-        font-size: 1rem;
+    .tabitem__title {
+        padding: 0.5rem
     }
 
     .tabitem--inactive {
-        font-size: 0.9rem;
+        margin: 0 0.5rem;
+    }
+
+    .tabimage {
+        width: 13rem;
+        height: 10rem;
     }
 }
 
-@media only screen and (max-width: 324px) {
-    .wrapper {
-        padding-top: 14rem;
-    }
-
-    .student-word {
-        font-size: 1rem;
-    }
-
-    .student-name {
-        font-size: 0.9rem;
-    }
-
-    .student-job {
-        font-size: 0.8rem;
-    }
-
-    .seemore {
-        font-size: 1.1rem;
-    }
-}
+@media only screen and (max-width: 324px) {}

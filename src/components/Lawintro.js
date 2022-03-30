@@ -30,37 +30,37 @@ const Lawintro = () => {
             <div style={{background:'none', display: 'flex', flexDirection: 'column'}}>
                 <a style={{fontSize: '20px', color: '#000000'}}>Know more about</a>
                 <a style={{fontSize: '35px', color: '#000000', fontWeight: 'bold'}}>Our Program</a>
-                <p style={{color: '#000000'}} class="bannerContent-res">If you are interested and want to know more
+                <p style={{color: '#000000'}} className="bannerContent-res">If you are interested and want to know more
                     about Communication Studies.</p>
                 <div>
-                    <button type="button" class="General-Button">Programme</button>
+                    <button type="button" className="General-Button">Programme</button>
                 </div>
             </div>
         </div>
     </div>
    </div> */}
 
-   <div class="col-sm-7">
-            <div class="Law-Section-1">
+   <div className="col-sm-7">
+            <div className="Law-Section-1">
                 <p style={{fontWeight: '700',fontSize: '22px', textAlign: 'center'}}>Law In Malaysia</p>
-                <p style={{fontWeight: '500'}} class="Law-Section-1-Content">As a commonwealth country, Malaysia adopts the common law system as practised in the United Kingdom. As such, SEGi collaborates with the University of London (UK) to offer the Bachelor of Laws (LLB) programme, as well as offering the SEGi homegrown Diploma in Law.</p>
+                <p style={{fontWeight: '500'}} className="Law-Section-1-Content">As a commonwealth country, Malaysia adopts the common law system as practised in the United Kingdom. As such, SEGi collaborates with the University of London (UK) to offer the Bachelor of Laws (LLB) programme, as well as offering the SEGi homegrown Diploma in Law.</p>
             </div>
     </div>
 
   
-    <div class="containers Law-Section-2">
-        <div class="row">
-        <div class="col-sm-8">
-            <div class="Law-Section-2-left">
+    <div className="containers Law-Section-2">
+        <div className="row">
+        <div className="col-sm-8">
+            <div className="Law-Section-2-left">
                 <p style={{fontWeight: '700', fontSize: '18px'}}>What SEGi Offer to you</p>
                 
                 <p style={{fontWeight: '500', fontSize: '14px'}}>The Law programmes available at SEGi are ideal for students who wish to obtain a qualification of international standing en route to a successful career as a practising lawyer.</p>
               </div>
-                    <button type="button" class="btn btn-outline-dark">Read more</button>
+                    <button type="button" className="btn btn-outline-dark">Read more</button>
         </div>
-        <div class="col-sm-4">
-            <div class="Law-Section-2-right">
-                <img class="Law-Section-2-img" src={require("../assets/images/Law/TextImage1.png")}/>
+        <div className="col-sm-4">
+            <div className="Law-Section-2-right">
+                <img className="Law-Section-2-img" src={require("../assets/images/Law/TextImage1.png")}/>
             </div>
         </div>
         </div>
@@ -132,7 +132,7 @@ const Lawintro = () => {
                 Studentimage={require('../assets/images/Law/studentlaw.png')}
                 StudentWords={"“My high school art education constructed invaluable foundations for me as a creative professional.”"}
                 navigationpath={""}
-                textcolor={"#A71337"}
+                textcolor={"black"}
                 backgroundcolor={"#C4C4C4"}
             />
 

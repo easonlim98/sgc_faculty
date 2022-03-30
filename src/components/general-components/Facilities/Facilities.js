@@ -17,7 +17,7 @@ const Facilities = (props) => {
                     <p className="all-text facilities-title">{"Want know more about our facilities"}</p>
                     <p className="all-text facilities-content">{props.content}</p>
                     <div className='facilities-button-container'>
-                        <button className='all-button facilities-button' type="button" >{"Facilities"}</button>
+                        <button onClick={() => window.open(props.navigationpath, "_blank")} className='all-button facilities-button' type="button" >{"Facilities"}</button>
                     </div>
                 </div>
             </div>
