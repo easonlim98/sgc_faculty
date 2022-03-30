@@ -22,13 +22,18 @@
 
 .amedegrebannerwordsh1 {
     text-transform: uppercase;
+    font-size: 48px;
 }
 
 .amedegrebannerwordsh2 {
     text-transform: uppercase;
 }
 
-.secpartprofilepicture {
+.amedegrebannerwordsh3 {
+    font-size: 20px;
+}
+
+.amedegre-secpartprofilepicture {
     margin-top: 3%;
     margin-bottom: 6%;
     display: block;
@@ -37,71 +42,101 @@
     width: 40%;
 }
 
-.buttonforprogramme {
+.amedegre-buttonforprogramme {
     background-color: #A41F36;
     border: 2px solid #A41F36
 }
 
-.buttonforprogramme:hover {
+.amedegre-buttonforprogramme:hover {
     background-color: #A41F36;
     border: 2px solid red
 }
 
-.secondpart {
+.amedegre-secondpart {
     padding-top: 5%;
 }
 
-.secondpartwwo{
+.amedegre-secondpart-sub {
+    display: flex;
+    align-items: center;
+}
+
+.amedegre-secondpart-first{
+    left: 40px;
+    position: relative;
+}
+
+.amedegre-secondpartwwo{
     font-weight: bold;
 }
 
-.secondpartsup{
+.amedegre-secondpartsup{
     text-align: center;
+    font-weight: 700;
 }
 
-.secondpartgse {
+.amedegre-secondpartgse {
     color: #CFC2C2;
 }
 
-.blacklineforamerica {
+.amedegre-secondpart-p {
+    text-align: justify;
+    font-weight: 600;
+}
+
+.amedegre-blacklineforamerica {
     border: 1px solid black;
-    margin-top: 15%;
+    margin-top: 2rem;
     margin-bottom: 10%;
 }
 
-.squareinsecondpart {
+.amedegre-squareinsecondpar-section {
+    padding-top: 60px;
+}
+
+.amedegre-squareinsecondpart {
     height: auto;
     width: auto;
-    border: 2px solid black;
+    border: 1px solid black;
     text-align: center;
     padding: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
+    left: 90px;
+    z-index: 100;
+    position: relative;
+    background-color: white;
+    box-shadow: 2px 2px 1px black;
+    border-radius: 10px;
 }
 
-.squareinsecondpart-title{
+.amedegre-squareinsecondpart-title{
     font-weight: bold;
     font-size: 15px;
 }
 
-.squareinsecondpart-para{
+.amedegre-squareinsecondpart-para{
     color: #9B9191;
 }
 
-.threeicon-secondpart{
+.amedegre-threeicon-secondpart{
     width: 25%
 }
   
-.readmorebutton {
+.amedegre-readmorebutton {
     border: 2px solid black;
     color: black;
 }
 
-.secondpartpictureright {
+.amedegre-secondpartwwwo {
+    font-weight: 600;
+}
+
+.amedegre-secondpartpictureright {
     padding-right: 0px;
 }
 
-.greyrectengle {
+.amedegre-greyrectengle {
     height: auto;
     width: auto;
     background-color: #949494;
@@ -110,49 +145,89 @@
     color: white;
 }
 
-.greyrectenglerightside {
+.amedegre-greyrectenglerightside {
     padding-top: 5%;
     padding-bottom: 5%;
 }
 
-.heartsec{
+.amedegre-heartsec{
     text-align: center;
 }
 
-.heartpic {
+.amedegre-heartpic {
     margin-left: auto;
     margin-right: auto;
     width: 25%;
 }
 
-.knowlege{
+.amedegre-knowlege{
     text-align: center;
 }
 
-.number1 {
+.amedegre-number1 {
     margin-left: auto;
     margin-right: auto;
     width: 75%;
 }
 
-.aguy {
+.amedegre-aguy {
     margin-left: auto;
     margin-right: auto;
     width: 67%;
 }
 
  
-@media only screen and (min-width: 300px) and (max-width: 599px) {
+@media only screen and (min-width: 280px) and (max-width: 599px) {
 
     .amedegrebannerwords {
         top: 40%;
         text-align: center;
         padding-right: 0px;
     }
+
+    .amedegrebannerwordsh1 {
+        font-size: 40px;
+    }
+
+    .amedegre-squareinsecondpart {
+        width: 100%;
+    }
+
+    .amedegre-squareinsecondpar-section {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+
+    .amedegre-secpartprofilepicture {
+        width: 30%;
+    }
+
+    .amedegre-secondpart-p {
+        font-size: 18px;
+    }
+
+    .amedegre-secondpartsup {
+        font-size: 23px;
+        padding-bottom: 23px;
+    }
+
+    .amedegre-squareinsecondpart {
+        width: 75%;
+    }
+
+    .amedegre-readmorebutton {
+        font-size: 25px;
+    }
+    
+    .amedegre-squareinsecondpart-title {
+        font-size: 23px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 300px) and (max-width: 768px) {
+@media only screen and (min-width: 280px) and (max-width: 991px) {
 
     .amedegrebannerpicture-pic {
         height: 530px;
@@ -171,39 +246,66 @@
         top: 40%;
     }
 
-    .blacklineforamerica {
-        margin-top: 7%;
-        margin-bottom: 10%;
-        border: 1px white;
+    .amedegrebannerwordsh3 {
+        font-size: 16px;
     }
 
-    .readmorebutton {
+    .amedegre-secondpart-p {
+        padding: 1rem 1rem;
+    }
+
+    .amedegre-readmorebutton {
         margin-bottom: 50px;
     }
 
-    .readmorebutton-con{
+    .amedegre-readmorebutton-con{
         text-align: center;
+    }
+
+    .amedegre-secondpart-first {
+        left: 0px;
+    }
+
+    .amedegre-squareinsecondpar-section {
+        padding-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .america-pic-showornot {
         display: none;
     }
 
-    .greyrectengle {
+    .amedegre-greyrectengle {
         padding-top: 30px;
     }
 
-    .number1 {
+    .amedegre-number1 {
         width: 50%;
     }
 
-    .aguy{
+    .amedegre-aguy{
         display: none;
+    }
+
+    .amedegre-squareinsecondpart {
+        left: 0px;
+    }
+
+    .amedegre-blacklineforamerica {
+        margin-top: 7%;
+        margin-bottom: 10%;
+        border: 1px white;
+    }
+
+    .amedegre-secondpartwwo-sec {
+        padding: 0 2rem;
+        padding-bottom: 2rem;
     }
 
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 769px) and (max-width: 991px) {
 
     .amedegrebannerwordsh2 {
@@ -212,6 +314,43 @@
 
     .amedegrebannerwordsh1 {
         font-size: 30px;
+    }
+
+    .amedegre-readmorebutton-con {
+        text-align: center;
+    }
+
+    .amedegre-secpartprofilepicture {
+        width: 25%;
+    }
+
+    .amedegre-secondpartsup {
+        font-size: 30px;
+        padding-bottom: 31px;
+    }
+
+    .amedegre-secondpart-p {
+        font-size: 20px;
+    }
+
+    .amedegre-readmorebutton {
+        font-size: 30px;
+    }
+    
+    .amedegre-squareinsecondpart {
+        max-width: 50%;
+    }
+
+    .amedegre-squareinsecondpart-title {
+        font-size: 25px;
+    }
+
+    .amedegre-squareinsecondpart-para {
+        font-size: 20px;
+    }
+
+    .american-degree-providing {
+        font-size: 20px;
     }
 }
 
@@ -227,28 +366,40 @@
         width: 100%;
     }
 
-    .secondpartsup {
+    .amedegrebannerwordsh3 {
+        font-size: 18px;
+    }
+
+    .amedegre-squareinsecondpar-section {
+        padding-top: 0px;
+    }
+
+    .amedegre-squareinsecondpart-para {
+        font-size: 14px;
+    }
+
+    .amedegre-secondpartsup {
         font-size: 20px;
     }
 
-    .secondpartgse {
+    .amedegre-secondpartgse {
         font-size: 12px;
     }
 
-    .secondpartsup2 {
+    .amedegre-secondpartsup2 {
         font-size: 15px;
     }
 
-    .secondpart-p {
+    .amedegre-secondpart-p {
         font-size: 12px;
         text-align: center;
     }
 
-    .aguy {
+    .amedegre-aguy {
         width: 86%;
     }
 
-    .number1 {
+    .amedegre-number1 {
         width: 60%;
     }
 
@@ -257,16 +408,16 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
     
-    .squareinsecondpart-para {
+    .amedegre-squareinsecondpart-para {
         color: #9B9191;
         font-size: 12px;
     }
 
-    .aguy {
+    .amedegre-aguy {
         width: 73%;
     }
 
-    .blacklineforamerica {
+    .amedegre-blacklineforamerica {
         border: 1px solid black;
         margin-top: 30px;
         margin-bottom: 30px;
