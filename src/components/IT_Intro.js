@@ -3,6 +3,9 @@ import './css/IT.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/Standard.css'
 import HeaderBanner from './general-components/Banner/Banner.js'
+import Banner from './general-components/Banner/Banner.js'
+import Facilities from './general-components/Facilities/Facilities.js'
+import TabsComponent from './general-components/Tabs/TabsComponent'
 import Image from '../assets/images/IT_Intro/IT_banner.jpg'
 import { useNavigate } from "react-router-dom";
 
@@ -10,14 +13,15 @@ const IT_Intro = () => {
   return (
 
     <div>
-      <div className='CA banner-container' style={{
-        backgroundImage: "url(" + require('../assets/images/IT_Intro/IT_banner.jpg') + ")"
-      }}>
-        <HeaderBanner
-          backgroundsrc={"../assets/images/IT_Intro/IT_banner.jpg"}
+      <div className='CA banner-container'
+        style={{
+          backgroundImage: "url(" + require('../assets/images/IT_Intro/IT_banner.jpg') + ")"
+        }}>
+        <Banner
           navigatepath={"/Search_Page"}
           bannercontent={"If you are interested and want to know more about Information Technology."} />
       </div>
+
       {/* <div className="IT-Intro-banner">
         <img src={require("../assets/images/IT_Intro/IT_banner.jpg")} alt="" />
         <div className="IT-Intro-caption">
@@ -132,7 +136,7 @@ const IT_Intro = () => {
           </div>
         </div>
 
-        <div className="IT-Intro-bottomcontent">
+        {/* <div className="IT-Intro-bottomcontent">
           <div className="IT-Intro-bottomimg">
             <img style={{ width: '100%' }} src={require("../assets/images/IT_Intro/IT_Intro_Con6.png")} />
           </div>
@@ -142,7 +146,10 @@ const IT_Intro = () => {
 
             <button>Facilities</button>
           </div>
-        </div>
+        </div> */}
+        <Facilities
+          facilitiesimage={require('../assets/images/IT_Intro/IT_Intro_Con6.png')}
+          content={"If you are interested in our programme and want to check out more about our Information Technology-related facilities, please click on the facilities button."} />
       </div>
     </div>
   )

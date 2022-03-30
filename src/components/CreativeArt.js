@@ -56,11 +56,11 @@ const CreativeArt = () => {
                 </div>
                 <div className="col-sm-4" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
                     <div id="line2" className="CA-horizontal"></div>
-                    <p style={{ color: '#A71337' }}>Next</p>
-                    <p style={{ color: '#ACACAC', fontWeight: '500', marginTop: '5rem' }}>KELVIN LIM</p>
-                    <p style={{ fontSize: '25px', fontWeight: '800' }}>GOLD AWARD</p>
-                    <p style={{ color: '#9E8D8D' }}>AWARDED ON 09/20/2020</p>
-                    <p style={{ color: '#A71337', fontWeight: '500' }}>View more on our Virtual Gallery</p>
+                    <p className='all-text CA-Next' style={{ color: '#A71337' }}>Next</p>
+                    <p className='all-text CA-name' style={{ color: '#ACACAC', fontWeight: '500', marginTop: '5rem' }}>KELVIN LIM</p>
+                    <p className='all-text CA-goldaward' style={{ fontSize: '25px', color: 'black', fontWeight: '800' }}>GOLD AWARD</p>
+                    <p className='all-text CA-award' style={{ color: '#9E8D8D' }}>AWARDED ON 09/20/2020</p>
+                    <p className='all-text CA-viewmore' style={{ color: '#A71337', fontWeight: '500' }}>View more on our Virtual Gallery</p>
                 </div>
             </div>
             {/* <div className="container CA-Section-3">
