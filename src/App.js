@@ -25,13 +25,16 @@ import CourseDetail from './components/CourseDetail';
 import NewCourse from './components/NewCourse';
 
 const App = () => {
+
+
+
+
   
   return (
     <Router>
       {window.location.pathname !== "/AdminLogin" ? <Header /> : <></>}
       <div>
         <Routes>
-
           <Route path="/" element={<LandingScreen />} />
           <Route exact path="/Psychology" element={<Psychology />} />
           <Route exact path="/" element={<LandingScreen />} />

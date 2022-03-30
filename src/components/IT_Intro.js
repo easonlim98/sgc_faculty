@@ -2,10 +2,12 @@ import React from 'react'
 import './css/IT.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/Standard.css'
+import HeaderBanner from './general-components/Banner/Banner.js'
 import Banner from './general-components/Banner/Banner.js'
 import Facilities from './general-components/Facilities/Facilities.js'
 import TabsComponent from './general-components/Tabs/TabsComponent'
 import Image from '../assets/images/IT_Intro/IT_banner.jpg'
+import { useNavigate } from "react-router-dom";
 
 const IT_Intro = () => {
   return (
@@ -150,7 +152,6 @@ const IT_Intro = () => {
           content={"If you are interested in our programme and want to check out more about our Information Technology-related facilities, please click on the facilities button."} />
       </div>
     </div>
-
   )
 }
 
