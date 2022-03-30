@@ -13,7 +13,7 @@ header("Access-Control-Allow-Headers: *");
 				  'user_name' =>  $row_users['user_name'],
 				);
 			}
-			echo json_encode(["success"=>true,"data"=>$json_array]);
+			echo json_encode([$json_array]);
 			return;
 		}
 		else{

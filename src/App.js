@@ -25,10 +25,7 @@ import CourseDetail from './components/CourseDetail';
 import NewCourse from './components/NewCourse';
 
 const App = () => {
-
-  useEffect(() => {
-    getDataEvent();
-  }, []);
+  
   return (
     <Router>
       {window.location.pathname !== "/AdminLogin" ? <Header /> : <></>}
@@ -36,6 +33,8 @@ const App = () => {
         <Routes>
 
           <Route path="/" element={<LandingScreen />} />
+          <Route exact path="/Psychology" element={<Psychology />} />
+          <Route exact path="/" element={<LandingScreen />} />
           <Route exact path="/EarlyChildhoodEducation" element={<EarlyChildhoodEducation />} />
           <Route exact path="/AdminLogin" element={<AdminLogin />} />
           <Route exact path="/IT_Intro" element={<IT_Intro />} />
