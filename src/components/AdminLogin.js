@@ -55,7 +55,7 @@ const AdminLogin = () => {
                 <h1 style={{
                         color: 'white',
 
-                }}>Sign In.</h1>
+                }}>{}</h1>
 
                 <input type="text" placeholder="Email"
                 onChange={text =>
