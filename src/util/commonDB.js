@@ -12,5 +12,12 @@ export const getDataEvent = async () => {
             });
             console.log(response)
         })
+        ApiClient.GET(API.getCourse).then(response => {
+
+            userStore.update(s => {
+                s.courseDetails = response;
+            });
+            console.log(response)
+        })
     
 };
