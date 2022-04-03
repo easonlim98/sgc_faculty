@@ -39,7 +39,7 @@ const ASHintro = () => {
  <div className="AHScardtitle">
   <p>Our Professions</p>
   
-  <img src={require("../assets/images/AHS/Professions.png")}/>
+  <img src={require("../assets/images/AHS/Professions2.png")}/>
 
  </div>
 
@@ -158,8 +158,8 @@ backgroundcolor={"#4780a45e"}
       <img  src={require("../assets/images/AHS/container4.png")}/>
     </div> */}
 
-        <div className="carousel">
-          <h4 style={{marginTop: '5%', textAlign: 'center' }}>Previous Events</h4>
+        <div className="carouselAHS">
+          <h4 style={{marginTop: '2%', textAlign: 'center' }}>Previous Events</h4>
             <div id="carouselCaptions" className="carousel slide" data-ride="carousel">
                 <ol className="carousel-indicators">
                     <li data-target="#carouselCaptions" data-slide-to="0" className="active"></li>
@@ -176,19 +176,19 @@ backgroundcolor={"#4780a45e"}
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img src={require("../assets/images/AHS/Rightimage.png")}
+                        <img src={require("../assets/images/AHS/Health_Screening.jpeg")}
                             className="d-block w-100 carousel-image" alt=""/>
                         <div className="carousel-caption ">
-                            <h5>Second slide label</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h5>Health Screening</h5>
+                            <p>Students of Allied Health Science are conducting health screening</p>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img src={require("../assets/images/AHS/Leftimage.png")}
+                        <img src={require("../assets/images/AHS/Cytology_Assignment.jpeg")}
                             className="d-block w-100 carousel-image" alt=""/>
                         <div className="carousel-caption ">
-                            <h5>Third slide label</h5>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            <h5>Cytology Assignment</h5>
+                            <p>Students are presenting their research findings in a public booth</p>
                         </div>
                     </div>
                 </div>
@@ -203,7 +203,7 @@ backgroundcolor={"#4780a45e"}
             </div>
         </div>
 <br/>
-<br/>
+
 <Facilities
  facilitiesimage={require('../assets/images/AHS/LastPic.png')}
  content={"If you are interested in our programme and want to check out more about our Allied Health Science related facilities, please click on the facilities button."} />

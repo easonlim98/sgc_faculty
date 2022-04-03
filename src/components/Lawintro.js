@@ -127,10 +127,10 @@ const Lawintro = () => {
   </div>
 
   <TabsComponent
-                StudentName={"Edward Maya"}
-                StudentJob={"Graphic Designer"}
-                Studentimage={require('../assets/images/Law/studentlaw.png')}
-                StudentWords={"“My high school art education constructed invaluable foundations for me as a creative professional.”"}
+                StudentName={"Claudine Tang"}
+                StudentJob={"Diploma in Law"}
+                Studentimage={require('../assets/images/Law/LawAlumni.PNG')}
+                StudentWords={"“My experiences as a law student at segi has been a great one. Mostly due to the fact, I got to work & learn from the best lecturers and students. The academic challenges of studying law has prepared me for future career path”"}
                 navigationpath={""}
                 textcolor={"black"}
                 backgroundcolor={"#C4C4C4"}
