@@ -29,22 +29,23 @@ const Communication_Studies = () => {
                                 <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-1.png")} alt="" />
                             </div>
                         </div>
-                        <div className="col-sm-6 CS-text-area">
-                            <p className='CS-text-hd' style={{ fontWeight: '700' }}>Significant of Communication Studies</p>
-                            <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>The communications industry in Malaysia and around the world has evolved so much that contemporary professional communicators now have to stand up to face the current challenges with sophistication and respond through the various media channels. Modern communicators have to utilise all media available, from verbal communication to print media, from broadcasting to digital platforms. Effective communication requires communicators to speak clearly to each individual audience.</p>
-                            <button className="btn btn-outline-dark button-style">Read more</button>
+                        <div className="col-sm-6 CS-text-col">
+                            <div className='CS-text-area'>
+                                <p className='CS-text-hd' style={{ fontWeight: '700' }}>Significant of Communication Studies</p>
+                                <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>The communications industry in Malaysia and around the world has evolved so much that contemporary professional communicators now have to stand up to face the current challenges with sophistication and respond through the various media channels. Modern communicators have to utilise all media available, from verbal communication to print media, from broadcasting to digital platforms. Effective communication requires communicators to speak clearly to each individual audience.</p>
+                            </div> 
+                            <button className="btn btn-outline-dark CS-button">Read more</button>
                         </div>
                     </div>
                 </div>
                 <div className="CS-Section-Content">
                     <div className="row CS-group-content1">
-                        <div className="col-sm-6 CS-text-area">
-                            <div className="CS-Section-2-text">
+                        <div className="col-sm-6 CS-text-col">
+                            <div className="CS-Section-2-text CS-text-area">
                                 <p className='CS-text-hd' style={{ fontWeight: '700' }}>Communication Studies in SEGi</p>
                                 <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>At SEGi Group of Colleges, we are equipped with sophisticated technology and state-of-art technology, including broadcast studios, radio studios, editing rooms, voice-over studios, photography studios, and modern computer labs with the latest software and equipment. We also have internship placement programmes that will spur our students towards excellence in their careers.</p>
-
                             </div>
-                            <button className="btn btn-outline-dark button-style">Read more</button>
+                            <button className="btn btn-outline-dark CS-button">Read more</button>
                         </div>
                         <div className="col-sm-6">
 
@@ -62,65 +63,30 @@ const Communication_Studies = () => {
                                 <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-3.png")} alt="" />
                             </div>
                         </div>
-                        <div className="col-sm-6 CS-text-area">
-                            <p className='CS-text-hd' style={{ fontWeight: '700' }}>SEGi offer you</p>
-                            <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>Responding to these high expectations, SEGi Group of Colleges offers dynamic courses focusing on creative content creation, media studies, broadcasting, public relations, journalism, advertising and digital marketing.</p>
-                            <button className="btn btn-outline-dark button-style">Read more</button>
+                        <div className="col-sm-6 CS-text-col">
+                            <div className='CS-text-area'>
+                                <p className='CS-text-hd' style={{ fontWeight: '700' }}>SEGi offer you</p>
+                                <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>Responding to these high expectations, SEGi Group of Colleges offers dynamic courses focusing on creative content creation, media studies, broadcasting, public relations, journalism, advertising and digital marketing.</p>
+                            </div>
+                            <button className="btn btn-outline-dark CS-button">Read more</button>
                         </div>
-                    </div>
-                </div>
-                <div className='CS-carousel-group'>
-                    <div style={{ textAlign: 'center' }}>
-                        <p style={{ display: 'flex', justifyContent: 'center', fontWeight: '700', fontSize: 'large' }}>Previous Successful
-                            Events</p>
-                    </div>
-                    <div id="CS-carousel" className="CS-carousel carousel slide" data-ride="carousel">
-                        <div className="carousel-inner">
-                            <div className="carousel-item CS-carousel-img active">
-                                <div className='CS-carousel-overlay'></div>
-                                <img className="d-block w-100" src={require("../assets/images/Communication_Studies/CS-img-4.png")} alt="" />
-                                <div className="carousel-caption d-none d-md-block CS-carousel-label">
-                                    <h3 className="CS-carousel-label1 CS-carousel-label-font">First slide label</h3>
-                                    <p className="CS-carousel-text1 CS-carousel-text-font">First slide content text.</p>
-                                </div>
-                            </div>
-                            <div className="carousel-item CS-carousel-img">
-                                <div className='CS-carousel-overlay'></div>
-                                <img className="d-block w-100" src={require("../assets/images/Communication_Studies/CS-img-5.png")} alt="" />
-                                <div className="carousel-caption d-none d-md-block CS-carousel-label">
-                                    <h3 className="CS-carousel-label1 CS-carousel-label-font">Second slide label</h3>
-                                    <p className="CS-carousel-text1 CS-carousel-text-font">Second slide content text.</p>
-                                </div>
-                            </div>
-                            <div className="carousel-item CS-carousel-img">
-                                <div className='CS-carousel-overlay'></div>
-                                <img className="d-block w-100" src={require("../assets/images/Communication_Studies/CS-img-6.png")} alt="" />
-                                <div className="carousel-caption d-none d-md-block CS-carousel-label">
-                                    <h3 className="CS-carousel-label1 CS-carousel-label-font">Third slide label</h3>
-                                    <p className="CS-carousel-text1 CS-carousel-text-font">Third slide content text.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a className="carousel-control-prev" href="#CS-carousel" role="button" data-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Previous</span>
-                        </a>
-                        <a className="carousel-control-next" href="#CS-carousel" role="button" data-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Next</span>
-                        </a>
                     </div>
                 </div>
             </div>
 
             <TabsComponent
-                StudentName={"Edward Maya"}
-                StudentJob={"Graphic Designer"}
+                StudentName={"Munirah Binti Haji Mashod"}
+                StudentJob={"Research, Development and International Affairs Officer, Ministry of Culture, Youth and Sports in Brunei Darussalam."}
                 Studentimage={require('../assets/images/Communication_Studies/CS-img-7.png')}
-                StudentWords={"“My high school art education constructed invaluable foundations for me as a creative professional.”"}
+                StudentWords={"“Hailing from Brunei Darussalam, I had dreams and eagerness to pursue my studies in Communication when I joined SEGi College Subang Jaya. I have not just trained with communication, writing and broadcasting skills, the 3 years has taught me to think critically and creatively, should the situation require me to do so.”"}
+                achievementcontent={"Young PR Professional of the Year Award, Malaysia Public Relations Award Night"}
+                achievementname={"Siti Azlyana Binti Azmi"} 
+                achievementjob={"Diploma in Mass Communication (Alumni)"}
+                achievementsample={require("../assets/images/Communication_Studies/CS-student1.png")}
                 navigationpath={""}
                 textcolor={"#215082"}
                 backgroundcolor={"#9AB8D366"}
+                
             />
             <Facilities
                 facilitiesimage={require('../assets/images/Communication_Studies/CS-img-8.png')}

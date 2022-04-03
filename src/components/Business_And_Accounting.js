@@ -54,7 +54,7 @@ const Business_And_Accounting = () => {
                                     employable.
                                 </p>
                             </div>
-                            <button className="btn btn-outline-dark">Read more</button>
+                            <button className="btn btn-outline-dark BA-button">Read more</button>
                         </div>
                         <div className="col-sm-6 BA-image2" >
                             <img className="BA-Section2-img" src={require("../assets/images/Business_And_Accounting/BA-img5.jpg")} alt="" />

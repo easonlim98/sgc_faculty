@@ -1,5 +1,5 @@
 .CS-container {
-    padding: 0 20rem;
+    padding: 2rem 20rem;
 }
 
 .CS-container2 {
@@ -14,6 +14,10 @@
   padding: 0rem 2rem;
 }
 
+.CS-button {
+  margin: 0 2rem;
+}
+
 .CS-group-img{
   justify-content: center;
   align-items: center;
@@ -22,7 +26,7 @@
 }
 
 .CS-Section-1-Header{
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 .CS-Section-Content {
@@ -139,12 +143,6 @@
 }
 
 @media only screen and (max-width: 1400px) {
-    .CS-bannerContent-res{
-            font-size: 16px; 
-            color: white; 
-            width: 30%; 
-            margin-top: 10px;
-    }
     .CS-container {
       padding: 0 14rem;
     }
@@ -152,12 +150,6 @@
   }
   
   @media only screen and (max-width: 1200px) {
-    .CS-bannerContent-res{
-            font-size: 16px; 
-            color: white; 
-            width: 30%; 
-            margin-top: 10px;
-    }
     .CS-container {
       padding: 0 8rem;
     }
@@ -165,12 +157,6 @@
   }
   
   @media only screen and (max-width: 992px) {
-    .CS-bannerContent-res{
-            font-size: 16px; 
-            color: white; 
-            width: 30%; 
-            margin-top: 10px;
-    } 
     .CS-container {
       padding: 0 6rem;
     }
@@ -181,12 +167,6 @@
   }
   
   @media only screen and (max-width: 810px) {
-    .CS-bannerContent-res{
-            font-size: 16px; 
-            color: white; 
-            width: 30%; 
-            margin-top: 10px;
-        }
     .CS-container {
       padding: 0 6rem;
     }
@@ -203,12 +183,15 @@
       width: 21rem;
       height: 13rem;
     }
+    .CS-text-col{
+      max-width: 80% !important;
+    }
     .CS-text-area {
+      margin-top: 1rem;
       padding: 0;
       display: flex;
       flex: 1;
       flex-direction: column;
-
       align-items: center;
     }
     
@@ -229,10 +212,9 @@
     }
     .CS-Section-1-Content {
       font-weight: 500;
-      padding: 1.5rem 1rem;
     }
-    .button-style{
-      width: 50%;
+    .CS-button{
+      margin: 0;
     }
     .CS-carousel-label-font {
       font-size: 1.2rem;
@@ -244,21 +226,13 @@
   }
   
   @media only screen and (max-width: 768px) {
-    .CS-bannerContent-res{
-            font-size: 16px; 
-            color: white; 
-            width: 30%; 
-            margin-top: 10px;
-        }
     .CS-container {
       padding: 0 6rem;
     }
     .CS-text-hd{
-      margin: 1rem;
-      font-size: 20px;
+      font-size: 16px;
     }
     .CS-text-font{
-      margin: 1rem;
       font-size: 15px;
     }
     .CS-text-title1{
@@ -271,6 +245,9 @@
       width: 21rem;
       height: 12rem;
     }
+    .CS-carousel-group{
+      margin: 1rem;
+    }
     .CS-carousel-label-font {
       font-size: 1.1rem;
     }
@@ -278,15 +255,14 @@
     .CS-carousel-text-font {
       font-size: 0.9rem;
     }
+    .CS-button {
+      margin: 0 !important;
+      padding: 0.3rem 1rem !important;
+      font-size: 0.9rem !important;
+    }
   }
   
   @media only screen and (max-width: 576px) {
-    .CS-bannerContent-res{
-            font-size: 16px; 
-            color: white; 
-            width: 50%; 
-            margin-top: 10px;
-        }
     .CS-container {
       padding: 0 5rem;
     }
@@ -295,7 +271,6 @@
       font-size: 18px;
     }
     .CS-text-font{
-      margin: 1rem;
       font-size: 13px;
     }
     .CS-text-title1{
@@ -308,6 +283,13 @@
       width: 19rem;
       height: 10rem;
     }
+    .CS-carousel-group{
+      margin: 1rem 0rem;
+    }
+    .CS-carousel{
+      width: 100%;
+      height: 15rem;
+    }
     .CS-carousel-label-font {
       font-size: 1rem;
     }
@@ -315,17 +297,19 @@
     .CS-carousel-text-font {
       font-size: 0.8rem;
     }
+    .CS-button{
+      margin: 0 !important;
+      padding: 0.3rem 0.9rem !important;
+      font-size: 0.8rem !important;
+    }
   }
   
   @media only screen and (max-width: 360px) {
-    .CS-bannerContent-res{
-            font-size: 16px; 
-            color: white; 
-            width: 80%; 
-            margin-top: 10px;
-        }
     .CS-container {
       padding: 3rem 2rem;
+    }
+    .CS-text-col{
+      max-width: 100% !important;
     }
     .CS-text-hd{
       margin: 0 0.5rem;
@@ -337,7 +321,7 @@
     }
     .CS-Section-1-Content {
       font-weight: 500;
-      padding: 1rem;
+      margin: 1rem;
     }
     .CS-text-title1{
         font-size: 18px;
@@ -349,6 +333,10 @@
       width: 17rem;
       height: 9rem;
     }
+    .CS-carousel{
+      width: 100%;
+      height: 10rem;
+    }
     .CS-carousel-label-font {
       font-size: 0.9rem;
     }
@@ -359,23 +347,22 @@
     .CS-Section-1-Header{
       margin-top: 0rem;
     }
+    .CS-button{
+      margin: 0rem 1rem !important;
+      padding: 0.3rem 0.9rem !important;
+      font-size: 0.75rem !important;
+    }
   }
   
   @media only screen and (max-width: 320px) {
-    .CS-bannerContent-res{
-            font-size: 16px; 
-            color: white; 
-            width: 100%; 
-            margin-top: 10px;
-        }
     .CS-container {
-      padding: 3rem;
+      padding: 2rem;
     }
     .CS-text-hd{
       font-size: 16px;
     }
     .CS-text-font{
-      margin: 1rem 0.5rem;
+      margin: 1rem 0rem;
       font-size: 12px;
     }
     .CS-text-title1{
@@ -395,17 +382,16 @@
     .CS-carousel-text-font {
       font-size: 0.6rem;
     }
+    .CS-button{
+      margin: 0 !important;
+      padding: 0.3rem 0.9rem !important;
+      font-size: 0.7rem !important;
+    }
   }
   
   @media only screen and (max-width: 280px) {
-    .CS-bannerContent-res{
-            font-size: 16px; 
-            color: white; 
-            width: 100%; 
-            margin-top: 10px;
-        }
     .CS-container {
-      padding: 1rem;
+      padding: 1.5rem;
     }
     .CS-image2 {
       width: 290px;
@@ -418,11 +404,9 @@
       margin: 0.5rem;
     }
     .CS-text-hd{
-      margin: 1rem 0.5rem 0 1rem;
       font-size: 14px;
     }
     .CS-text-font{
-      margin: 0 0 1rem 1rem;
       font-size: 10px;
     }
     .CS-Section-1-img {
