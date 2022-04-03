@@ -48,25 +48,6 @@ const Search_Page = () => {
       Campus: "KL"
     },
   ];
-  // const Campus = ProgramArr.map((program)=>{
-  //   return program.Campus
-  // }  
-  // )
-  // console.log(Campus)
-  {/* <div style={{ display: 'flex', flexDirection: 'row' }}>
-    <div style = {{backgroundColor:(data.Campus == "KL")?:}}>
-      <p>
-        {Program.Campus[1]}
-      </p>
-    </div>
-
-
-  </div> */}
-
-  // const campus = SegiProgram.Campus.map((campus)=> {
-  //   return campus.Campus.length;
-
-  // })
 
   const [SearchText, setSearchText] = useState('');
   const SegiProgram = ProgramArr.filter((Program) => {
@@ -78,14 +59,13 @@ const Search_Page = () => {
     }
   }).map((Program, index) =>
 
-
     <>
       <div className="Search-Page-Content-Container">
-        <div class="card">
-          <div class="card-body Search-Page-Cardbody-adjust">
+        <div className="card">
+          <div className="card-body Search-Page-Cardbody-adjust">
             <div className="Search-Page-Card-Container">
               <div className="Search-Page-Card-Title">
-                <h5 class="card-title Search-Page-Title">{Program.Title}</h5>
+                <h5 className="card-title Search-Page-Title">{Program.Title}</h5>
               </div>
               <div style={{ display: 'flex', flex: 1.5 }}>
                 <p className="Search-Page-Value-Code">{Program.Title_code}</p>
@@ -95,7 +75,7 @@ const Search_Page = () => {
               <div className="Search-Page-Attribute-LeftContent">
                 <div className="Search-Page-Content-Text-Cover">
                   <div style={{ display: 'flex', flex: 1 }}>
-                    <p class="card-text Search-Page-Attribute" >Field of Interest:</p>
+                    <p className="card-text Search-Page-Attribute" >Field of Interest:</p>
                   </div>
                   <div style={{ display: 'flex', flex: 1 }}>
                     <p className="Search-Page-Value">{Program.Field_of_Interest}</p>
@@ -104,7 +84,7 @@ const Search_Page = () => {
 
                 <div className="Search-Page-Content-Text-Cover">
                   <div style={{ display: 'flex', flex: 1 }}>
-                    <p class="card-text Search-Page-Attribute" >Level of Study:</p>
+                    <p className="card-text Search-Page-Attribute" >Level of Study:</p>
                   </div>
                   <div style={{ display: 'flex', flex: 1 }}>
                     <p className="Search-Page-Value">{Program.Level_of_Study}</p>
@@ -114,7 +94,7 @@ const Search_Page = () => {
 
                 <div className="Search-Page-Content-Text-Cover">
                   <div style={{ display: 'flex', flex: 1 }}>
-                    <p class="card-text Search-Page-Attribute">Awarding:</p>
+                    <p className="card-text Search-Page-Attribute">Awarding:</p>
                   </div>
                   <div style={{ display: 'flex', flex: 1 }}>
                     <p className="Search-Page-Value">{Program.Awarding}</p>
@@ -124,7 +104,7 @@ const Search_Page = () => {
 
                 <div className="Search-Page-Content-Text-Cover">
                   <div style={{ display: 'flex', flex: 1 }}>
-                    <p class="card-text Search-Page-Attribute" >Campus:</p>
+                    <p className="card-text Search-Page-Attribute" >Campus:</p>
                   </div>
                   <div style={{ display: 'flex', flex: 1 }}>
                   <div style={{
@@ -137,12 +117,6 @@ const Search_Page = () => {
                         , backgroundColor: '#A71337',
                         color: 'white'
                       }}>{Program.Campus}</div>
-                    {/* {Program.Campus.map((campus) =>
-
-                      
-
-                    )} */}
-
                   </div>
 
                 </div>
@@ -150,10 +124,7 @@ const Search_Page = () => {
               {/* {Campus} */}
 
               <div className="Search-Page-Attribute-ButtonSide">
-                {/* <div class="Search-Page-Cotent-Button2" >
-                  <button>Visit</button>
-                </div> */}
-                <div class="Search-Page-Cotent-Button" >
+                <div className="Search-Page-Cotent-Button" >
                   <button>Details</button>
                 </div>
               </div>
@@ -175,7 +146,7 @@ const Search_Page = () => {
     <div>
       <div className="Search-Page-Banner" style={{ position: 'relative' }}>
         <img style={{ display: 'block', width: '100%', maxHeight: 'auto' }} src={require("../assets/images/Search_Page/Search_banner2.png")} alt="" />
-        <div class="Search-Page-Searchbar">
+        <div className="Search-Page-Searchbar">
 
           <FaSearch style={{ color: '#000000', position: 'absolute', bottom: '0.7rem', left: '2.8rem' }} />
           <input className="effect-7" onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Search" />
