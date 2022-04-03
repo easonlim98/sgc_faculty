@@ -53,14 +53,30 @@ const OSHintro = () => {
                     </div>
                 </div>
             </div>
-
+<br></br>
+<br></br>
             <div className="OSH-card-deck">
 
-                <img className="OSH-card-img-top1" src={require("../assets/images/oshCapture3.png")} alt="Card image cap"></img>
-
-                <img className="OSH-card-img-top1" src={require("../assets/images/oshCapture2.png")} alt="Card image cap"></img>
-
-                <img className="OSH-card-img-top1" src={require("../assets/images/oshCapture1.png")} alt="Card image cap"></img>
+            <div className="container OSH-Container2">
+        
+            <div className="row OSH-picturegrp">
+                <div className="col-lg-4 OSH-picture-x">
+                    <div className="OSH-picture">
+                        <img className="OSH-image" src={require("../assets/images/oshCapture3.png")}  alt=""/>
+                    </div>
+                </div>
+                <div className="col-lg-4 OSH-picture-x">
+                    <div className="OSH-picture">
+                        <img className="OSH-image" src={require("../assets/images/oshCapture2.png")}  alt=""/>
+                    </div>
+                </div>
+                <div className="col-lg-4 OSH-picture-x">
+                    <div className="OSH-picture">
+                        <img className="OSH-image" src={require("../assets/images/oshCapture1.png")}  alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
             </div>
