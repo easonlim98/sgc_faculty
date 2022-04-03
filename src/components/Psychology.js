@@ -121,12 +121,12 @@ const Psychology = () => {
                             <div className="PSYintro-wordContainer5number1">
                                 <p style={{ fontWeight: "700", fontStyle: "italic" }}>Why Covid-19 getting so serious recently</p>
                                 <p className="PSYintro-Content" style={{fontWeight: "500"}}>
-                                    So far during the pandemic, several factors have had an impact on whether new
-                                    Covid-19 cases are increasing or declining in particular locations. These factors
-                                    include the effectiveness of vaccines over time, human behavior, infection
-                                    prevention policies, changes to the coronavirus itself, and the number of people
-                                    who are vulnerable because they have not developed some immunity, whether
-                                    from natural infection of though vaccination.
+                                    The COVID-19 pandemic and the new norms that have come about have affected
+                                    all aspects of our day to day lives. Change can be difficult and these changes
+                                    have disrupted our lives literally overnight. As metnal health matters, especially
+                                    in a crisis, the lecturers of the SEGI College Subang Jaya School of Psychology
+                                    reached out virtually to our students and members of the public with positive messages
+                                    promoting mental health awareness.
                                 </p>
                                 <p style={{fontWeight:"bold"}}>Hosted by: Segi College Kuala Lumpur</p>
                                 <div style ={{display:'flex',flexDirection:'row',justifyContent:'space-between'}}>
