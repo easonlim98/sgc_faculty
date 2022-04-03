@@ -17,7 +17,7 @@ const Search_Page = () => {
       Field_of_Interest: "Information Technology",
       Level_of_Study: "Diploma",
       Awarding: "SEGi",
-      Campus: ["KL", "SJ", "PE"]
+      Campus: "KL"
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ const Search_Page = () => {
       Field_of_Interest: "Information Technology",
       Level_of_Study: "Certificate",
       Awarding: "SEGi",
-      Campus: ["KL", "SJ", "PE"]
+      Campus: "KL"
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ const Search_Page = () => {
       Field_of_Interest: "Information Technology",
       Level_of_Study: "Diploma",
       Awarding: "SEGi",
-      Campus: ["KL", "PE"]
+      Campus: "KL"
     },
 
     {
@@ -45,7 +45,7 @@ const Search_Page = () => {
       Field_of_Interest: "Information Technology",
       Level_of_Study: "Bachelor Degree",
       Awarding: "SEGi",
-      Campus: ["KL", "SJ"]
+      Campus: "KL"
     },
   ];
   // const Campus = ProgramArr.map((program)=>{
@@ -82,14 +82,14 @@ const Search_Page = () => {
     <>
       <div className="Search-Page-Content-Container">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body Search-Page-Cardbody-adjust">
             <div className="Search-Page-Card-Container">
               <div className="Search-Page-Card-Title">
                 <h5 class="card-title Search-Page-Title">{Program.Title}</h5>
               </div>
-              {/* <div style={{ display: 'flex', flex: 1 }}>
-                <p className="Search-Page-Value">{Program.Title_code}</p>
-              </div> */}
+              <div style={{ display: 'flex', flex: 1.5 }}>
+                <p className="Search-Page-Value-Code">{Program.Title_code}</p>
+              </div>
             </div>
             <div className="Search-Page-Attribute-Container">
               <div className="Search-Page-Attribute-LeftContent">
@@ -127,22 +127,21 @@ const Search_Page = () => {
                     <p class="card-text Search-Page-Attribute" >Campus:</p>
                   </div>
                   <div style={{ display: 'flex', flex: 1 }}>
-                    {Program.Campus.map((campus) =>
-
-                      <div style={{
+                  <div style={{
                         height: '2.5rem',
                         width: '2.5rem',
                         borderRadius: '2.5rem',
                         fontSize: '1.4rem',
                         textAlign: 'center',
                         marginRight: '0.5rem'
-                        , backgroundColor: (campus == "KL") ? ('#A71337') :
-                          (campus == "SJ") ? ('#ACACAC') :
-                            ('#ACACAC'),
+                        , backgroundColor: '#A71337',
                         color: 'white'
-                      }}>{campus}</div>
+                      }}>{Program.Campus}</div>
+                    {/* {Program.Campus.map((campus) =>
 
-                    )}
+                      
+
+                    )} */}
 
                   </div>
 
@@ -151,9 +150,9 @@ const Search_Page = () => {
               {/* {Campus} */}
 
               <div className="Search-Page-Attribute-ButtonSide">
-                <div class="Search-Page-Cotent-Button2" >
+                {/* <div class="Search-Page-Cotent-Button2" >
                   <button>Visit</button>
-                </div>
+                </div> */}
                 <div class="Search-Page-Cotent-Button" >
                   <button>Details</button>
                 </div>
@@ -178,8 +177,8 @@ const Search_Page = () => {
         <img style={{ display: 'block', width: '100%', maxHeight: 'auto' }} src={require("../assets/images/Search_Page/Search_banner2.png")} alt="" />
         <div class="Search-Page-Searchbar">
 
-          <FaSearch style={{ color: '#000000', position: 'absolute', bottom: '0.5rem', left: '0.5rem' }} />
-          <input onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Type to search" />
+          <FaSearch style={{ color: '#000000', position: 'absolute', bottom: '0.7rem', left: '2.8rem' }} />
+          <input className="effect-7" onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Search" />
         </div>
       </div>
 
