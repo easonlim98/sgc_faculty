@@ -23,6 +23,7 @@ import Communication_Studies from './components/Communication_Studies';
 import Business_And_Accounting from './components/Business_And_Accounting';
 import CourseDetail from './components/CourseDetail';
 import NewCourse from './components/NewCourse';
+import Institution from './components/Institution';
 
 const App = () => {
 
@@ -51,6 +52,7 @@ const App = () => {
           <Route exact path="/AmericanDegree" element={<AmericanDegree />} />
           <Route exact path="/Foundation" element={<Foundation />} />
           <Route exact path="/MusicIntro" element={<MusicIntro />} />
+          <Route exact path="/Institution" element={<Institution />} />
           <Route exact path="/Psychology" element={<Psychology />} />
           <Route exact path="/Lawintro" element={<Lawintro />} />
           <Route exact path="/ASHintro" element={<ASHintro />} />
