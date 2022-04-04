@@ -16,7 +16,7 @@ const EarlyChildhoodEducation = () => {
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
-                    bannercontent={"If you are interested and want to know more about Early Childhood & Education."} />
+                    coursename={"Early Childhood & Education"} />
             </div>
 
             <div className="container ECE-Section-1">

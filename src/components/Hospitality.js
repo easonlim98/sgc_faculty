@@ -16,7 +16,7 @@ const Hospitality = () => {
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
-                    bannercontent={"If you are interested and want to know more about Hospitality."} />
+                    coursename={"Hospitality"} />
             </div>
 
             {/* <div className="Hsp-banner1">

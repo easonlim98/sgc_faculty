@@ -8,7 +8,7 @@ const LandingScreen = () => {
 
     useEffect(() => {
         getDataEvent();
-      }, []);
+    }, []);
 
     const navigate = useNavigate();
 
@@ -170,7 +170,9 @@ const LandingScreen = () => {
 
                 <div className="row">
 
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
+                    <button onClick={() => {
+                        navigate('/Nursing');
+                    }} className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
                         <div style={{ border: 'none' }}>
                             <div>
                                 <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Nursing_and_Caring.png")} alt="" />
@@ -179,7 +181,9 @@ const LandingScreen = () => {
                         </div>
                     </button>
 
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
+                    <button onClick={() => {
+                        navigate('/OSHintro');
+                    }} className="col-sm-3" style={{ border: 'none', background: 'transparent' }}>
                         <div style={{ border: 'none' }}>
                             <div>
                                 <img className="Imglayout" src={require("../assets/images/Landing_Page/Programme/Occupational_Health_and_Safety.png")} alt="" />
