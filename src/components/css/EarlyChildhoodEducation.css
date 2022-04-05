@@ -1,4 +1,4 @@
-.backgroundBanner { 
+.backgroundBanner {
     background: rgba(54, 54, 54, 0.3) url('../../assets/images/Early_Childhood_Education/ECE_Banner.jpeg');
     background-position: center;
     background-repeat: no-repeat;
@@ -7,42 +7,42 @@
     top: 0;
 }
 
-
-
-.bannerContent-res{
-font-size: 16px; 
-color: white; 
-width: 30%; 
-margin-top: 10px;
+.bannerContent-res {
+    font-size: 16px;
+    color: white;
+    width: 30%;
+    margin-top: 10px;
 }
-.ECE-Section-1-Content{
-width: 90%;
+
+.ECE-Section-1-Content {
+    width: 90%;
 }
-    
 
 @media only screen and (max-width: 800px) {
-        .bannerContent-res{
-                font-size: 16px; 
-                color: white; 
-                width: 60%; 
-                margin-top: 10px;
-            }
-        .ECE-Section-1-Content{
-            width: 95%;
-        }
+    .bannerContent-res {
+        font-size: 16px;
+        color: white;
+        width: 60%;
+        margin-top: 10px;
     }
 
-@media only screen and (max-width: 600px) {
-        .bannerContent-res{
-                font-size: 16px; 
-                color: white; 
-                width: 100%; 
-                margin-top: 10px;
-            }
-        .ECE-Section-1-Content{
-            width: 100%;
-        }
+    .ECE-Section-1-Content {
+        width: 95%;
     }
+}
+
+@media only screen and (max-width: 600px) {
+    .bannerContent-res {
+        font-size: 16px;
+        color: white;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .ECE-Section-1-Content {
+        width: 100%;
+    }
+}
 
 .ECE-Section-1 {
     display: flex;
@@ -65,7 +65,7 @@ width: 90%;
 }
 
 .ECE-Section-1-gif {
-    width: 100%; 
+    width: 80%;
     height: 100%;
 }
 
@@ -78,8 +78,9 @@ width: 90%;
 
 .ECE-Section-2-left {
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
+    max-width: 80%;
+    justify-content: center;
 }
 
 .ECE-Section-2-right {
@@ -176,6 +177,33 @@ width: 90%;
     width: 100%;
 }
 
+@media only screen and (max-width: 570px) {
+    .ECE-Section-1-left {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
 
+    .ECE-Section-1-right {
+        padding: 0 2rem;
+    }
 
+    .ECE-Section-2-right {
+        justify-content: center;
+        padding-top: 2rem
+    }
 
+    .ECE-Section-3-left {
+        justify-content: center;
+        padding-bottom: 2rem
+    }
+
+    .ECE-Section-3-right {
+        align-items: center;
+        width: 90%
+    }
+
+    .ECE-Section-5-right {
+        padding-top: 2rem
+    }
+}

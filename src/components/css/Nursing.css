@@ -1,0 +1,127 @@
+.backgroundNursingBanner { 
+    background: rgba(54, 54, 54, 0.3) url('../../assets/images/nursing_banner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    height: 600px;
+}
+
+.bannerNursingContent-res{
+font-size: 16px; 
+color: white; 
+width: 30%; 
+margin-top: 10px;
+}
+.Nursing-WhySegi{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+
+}
+.Nursing-Heading{
+    font-weight: 800;
+    
+}
+.nursing-container-fluid{
+    position: absolute;
+    top: 650px;
+    background-color:#C4D5ED;
+    height:400px;
+    
+}
+.Nursing-WhySegiParagraph{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-align: justify;
+    
+}
+
+.Nursing-first-content-word{
+    font-weight: 700;
+    font-size: 1.0rem;
+    text-align: justify;
+}
+
+.Nursing-FirstPart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:2rem;
+    background: #B4D0F1;
+}
+
+.Nursing-FirstPart-left {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Nursing-FirstPart-right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+.Nursing-FirstPart-img {
+    width: 100%;
+}
+/* slide-show*/
+.nursing-carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main-nursingslide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px;
+    width: 70%;
+}
+
+.carousel .slider-wrapper{
+    width: 50%;
+
+}
+.carousel .thumb{
+    width: 5%;
+    height: 50px;
+}
+.carousel{
+    text-align: center;
+}
+.nursinggalleryname{
+
+    font-size: 3.3rem;
+    font-family: Poppins;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 2%;
+}
+
+.galleryimagenursing{
+    height: 400px;
+    width: 500px;
+}
+.col-sm-5 lastpartnursing{
+    display: flex;
+    justify-content: center;
+}
+.Nursing-Heading{
+    font-weight: 500;
+}
+ 

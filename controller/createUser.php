@@ -18,6 +18,7 @@ if(isset($postdata) && !empty($postdata)){
     }
     else{
          http_response_code(422); 
+         echo "Failed";
     }
          
 }

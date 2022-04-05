@@ -1,0 +1,58 @@
+#institution-banner {
+    max-width: 80%;
+    display: flex;
+    margin: auto;
+}
+
+@media only screen and (max-width: 1264px) {
+    #institution-img-container {
+        justify-content: center !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 1.5rem;
+        margin: 0 !important;
+    }
+
+    #institution-banner {
+        max-width: 100%;
+
+    }
+
+    #institution-img {
+        width: 90%;
+        height: auto;
+    }
+
+    #institution-container {
+        padding: 0;
+    }
+
+    #institution-row-container {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin: 0 !important;
+    }
+
+    #institution-banner-image {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 1061px) {
+    #institution-banner {
+        padding-left: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    #institution-banner {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #institution-banner-content {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+}

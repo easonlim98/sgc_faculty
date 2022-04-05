@@ -23,18 +23,23 @@
 
 .founbannerwordsh1 {
     text-transform: uppercase;
+    font-size: 48px;
 }
 
 .founbannerwordsh2 {
     text-transform: uppercase;
 }
 
-.buttonforprogramme {
+.founbannerwordsh3 {
+    font-size: 20px;
+}
+
+.Fou-buttonforprogramme {
     background-color: #A41F36;
     border: 2px solid #A41F36
 }
 
-.buttonforprogramme:hover {
+.Fou-buttonforprogramme:hover {
     background-color: #A41F36;
     border: 2px solid red
 }
@@ -60,6 +65,7 @@
 
 .Fou-Content{
     text-align: justify;
+    font-size: 18px;
 }
 
 .Fou-img-2-3 {
@@ -72,7 +78,7 @@
     height: 100%;
 }
 
-.orange{
+.foun-orange{
     height: auto;
     width: auto;
     background-color: #F3EBDF;
@@ -97,13 +103,14 @@
 .Fou-word3 {
     text-align: center;
     padding-top: 20px;
+    font-size: 20px;
 }
 
 .foun-picsection4 {
     width: 100%;
 }
 
-.buttonreadmore {
+.Fou-buttonreadmore {
     background-color: #E7E0D5;
     border-color: #E7E0D5;
     color: black;
@@ -133,7 +140,7 @@
       padding-bottom: 15px;
   }
 
-  .blacklineforfoun-tabcontent {
+  .Fou-blacklineforfoun-tabcontent {
     border: 1px solid black;
   }
 
@@ -207,18 +214,22 @@
     font-weight: 500;
 }
 
-.buttonFacility{
+.Fou-buttonFacility{
     text-align: right;
 }
 
-.btn-faci {
+.Fou-btn-faci {
     border-radius: 0px;
     padding-right: 40px;
     padding-left: 40px;
     font-weight: bold;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 599px) {
+.foun-whatwelearn-words-p {
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 280px) and (max-width: 599px) {
 
     .founbannerwords {
         top: 40%;
@@ -229,10 +240,14 @@
     .Fou-Content{
         width: 100%;
     }
+
+    .founbannerwordsh1 {
+        font-size: 40px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 300px) and (max-width: 768px) {
+@media only screen and (min-width: 280px) and (max-width: 768px) {
 
     .founbannerpicture-pic {
         height: 630px;
@@ -251,6 +266,10 @@
         top: 40%;
         padding-left: 0;
         text-align: center;
+    }
+
+    .founbannerwordsh3 {
+        font-size: 18px;
     }
 
     .Fou-Container {
@@ -282,7 +301,7 @@
         display: none;
     }
 
-    .orange {
+    .foun-orange {
         margin-top: 0%; 
         margin-bottom: 10%; 
     }
@@ -295,21 +314,81 @@
         display: none;
     }
 
+    .Fou-picture-x {
+        max-width: 80%;
+    }
+
+}
+
+@media only screen and (min-width: 280px) and (max-width: 991px) {
+
+    .Fou-picturegrp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 769px) and (max-width: 991px) {
 
-    .founbannerwordsh2 {
+    .founbannerpicture-pic {
+        height: 630px;
+        width: auto;
+        object-fit: cover;
+    }
+
+    .founbannerwords {
+        top: 40%;
+        padding-left: 0;
+        text-align: center;
         font-size: 20px;
     }
 
-    .founbannerwordsh1 {
+    .founbannerwordsh2 {
         font-size: 30px;
+    }
+
+    .founbannerwordsh1 {
+        font-size: 40px;
     }
 
     .Fou-Content{
         width: 95%;
+    }
+
+    .foun-whatwelearn-words {
+        font-size: 35px;
+    }
+
+    .Fou-picture{
+        text-align: center;
+    }
+
+    .Fou-image {
+        width: 82%;
+    }
+
+    .Fou-word3 {
+        padding: 30px 0;
+        font-size: 25px;
+    }
+    
+    .foun-picsection4 {
+        padding-top: 3rem;
+    }
+
+    .foun-bannerimg02 {
+        display: none;
+    }
+
+    .Fou-picture-x {
+        max-width: 85%;
+    }
+
+    .foun-whatwelearn-words-p {
+        font-size: 18px;
     }
 }
 
@@ -331,7 +410,7 @@
     }
 
     .foun-bannerimg01 {
-        width: 500px;
+        width: 480px;
         padding-top: 100px;
     }
 

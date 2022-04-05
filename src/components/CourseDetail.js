@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/js/bootstrap.bundle'
-import './css/standard.css'
+import './css/Standard.css'
 import './css/CourseDetail.css'
 
 const CourseDetail = () => {
