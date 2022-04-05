@@ -30,7 +30,13 @@ const CourseDetail = () => {
         [DymP13, setDymP13] = useState('If you are studying full-time, you should expect the workload to be similar to a full-time job. For part-time students, this will reduce in proportion with the number of courses you are studying.'),
         [DymP14, setDymP14] = useState('Each module you study towards this degree is worth 15 or 30 credits. These represent around 150 or 300 study hours respectively. If you receive 72 contact hours for a 30-credit module, you should expect to commit 228 hours to independent study to complete it successfully.'),
 
-        Accordion_LIST = { Accordion_1: 'Accordion_1', Accordion_2: 'Accordion_2', Accordion_3: 'Accordion_3', Accordion_4: 'Accordion_4' }, [showSection, setShowSection] = useState(Accordion_LIST.Accordion_1),
+        Accordion_LIST = {
+            Accordion_1: 'Accordion_1',
+            Accordion_2: 'Accordion_2',
+            Accordion_3: 'Accordion_3',
+            Accordion_4: 'Accordion_4'
+        },
+        [showSection, setShowSection] = useState(Accordion_LIST.Accordion_1),
 
         [Accordion_TableA1, setAccordion_TableA1] = useState('· SPM / O-Level or equivalent with 3 credits'),
         [Accordion_TableA2, setAccordion_TableA2] = useState('· UEC with 3 credits'),
