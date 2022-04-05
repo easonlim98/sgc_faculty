@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-// import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/Standard.css';
 import { FaFilter, FaSearch, FaBookmark, FaWindowClose } from "react-icons/fa";
-import { createRoutesFromChildren } from 'react-router-dom';
 import './css/Test.css'
 
 
@@ -66,10 +64,6 @@ const Search_Page = () => {
     if (SearchText === "" && Aplliedfilter === false) {
       return Program
     }
-    // else if (Aplliedfilter === true) {
-    //   (Program.Level_of_Study.toLocaleLowerCase().includes(lvlstudyText.toLocaleLowerCase()))
-    //   return Program
-    // } 
     else if (Aplliedfilter === true && Program.Level_of_Study.toLocaleLowerCase().includes(lvlstudyText.toLocaleLowerCase())) {
       return Program
     }
@@ -254,9 +248,7 @@ const Search_Page = () => {
         </div>
       </div>
       {/* <!-- Modal end --> */}
-
     </>
   )
 }
-
 export default Search_Page
