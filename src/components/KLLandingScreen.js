@@ -39,7 +39,7 @@ const KLLandingScreen = () => {
 
             <div className="row">
 
-            {facultyList.map((item) => {
+            {facultyList ? facultyList.map((item) => {
 
                 return (
                     <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}
@@ -65,7 +65,7 @@ const KLLandingScreen = () => {
                     </button>
 
                     )
-                })}
+                }): null}
                 </div>
 
                 <div className="University">
