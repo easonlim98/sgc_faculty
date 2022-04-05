@@ -10,16 +10,24 @@ import API from '../constant/API';
 const KLLandingScreen = () => {
 
     useEffect(() => {
+
         ApiClient.GET(API.getKLFaculty).then(response => {
             setFacultyList(response)
             console.log(response)
         })
+
+        ApiClient.GET(API.getKLCourse).then(response => {
+            setCourseList(response)
+            console.log(response)
+        })
+
     }, []);
 
 
     const navigate = useNavigate();
 
     const [facultyList, setFacultyList] = useState([]);
+    const [courseList, setCourseList] = useState([]);
 
     return (
         <div>
@@ -32,11 +40,20 @@ const KLLandingScreen = () => {
             <div className="row">
 
             {facultyList.map((item) => {
+
                 return (
-                
                     <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}
                         onClick={() => {
-                            navigate(item.IntroNavLink);
+
+                            var tempCourseList = [];
+                            for(var x = 0; x < courseList.length; x++){
+                                if(courseList[x].FacultyID === item.FacultyID){
+                                    const record = courseList[x];
+                                    tempCourseList.push(record);
+                                    commonStore.update(s => {s.selectedCourseList = tempCourseList})
+                                    navigate(item.IntroNavLink);
+                                }
+                            };
                         }}
                     >
                         <div style={{ border: 'none' }} >
