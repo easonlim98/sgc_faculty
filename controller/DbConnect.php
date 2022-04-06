@@ -15,8 +15,5 @@ $dbname="sgc_faculty";
 // Create connection
 $db = mysqli_connect($hostname, $username, $password, $dbname);
  
-// Check connection
-if ($db->connect_error) {
-  die("Connection failed: " . $db->connect_error);
-}
-?>
+
+

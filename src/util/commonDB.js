@@ -2,15 +2,22 @@ import { userStore } from '../store/userStore';
 import ApiClient from './ApiClient';
 import API from '../constant/API';
 import axios from 'axios';
+import { commonStore } from '../store/commonStore';
 
 export const getDataEvent = async () => {
+        
+        await ApiClient.GET(API.getKLCourse).then(response => {
 
-        ApiClient.GET(API.getFaculty).then(response => {
-
-            userStore.update(s => {
-                s.userDetails = response;
+            commonStore.update(s => {
+                s.KlCourseDetails = response;
             });
-            console.log(response)
+        })
+
+        await ApiClient.GET(API.getKLFaculty).then(response => {
+
+            commonStore.update(s => {
+                s.KlFaculty = response;
+            });
         })
     
 };

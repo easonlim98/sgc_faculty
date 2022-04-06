@@ -1,14 +1,22 @@
-import React, { useState } from 'react'
-// import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/Standard.css';
-import { FaFilter } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
-import { createRoutesFromChildren } from 'react-router-dom';
+import { FaFilter, FaSearch, FaBookmark, FaWindowClose } from "react-icons/fa";
 import './css/Search_Page.css'
+import { commonStore } from '../store/commonStore';
+import { useNavigate } from 'react-router-dom';
 
 
 const Search_Page = () => {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log(CourseList)
+  },[]);
+
+  const CourseList = commonStore.useState(s => s.selectedCourseList)
+
   const ProgramArr = [
     {
       id: 1,
@@ -17,7 +25,7 @@ const Search_Page = () => {
       Field_of_Interest: "Information Technology",
       Level_of_Study: "Diploma",
       Awarding: "SEGi",
-      Campus: ["KL", "SJ", "PE"]
+      Campus: "Segi College Kuala Lumpur"
     },
     {
       id: 2,
@@ -26,7 +34,7 @@ const Search_Page = () => {
       Field_of_Interest: "Information Technology",
       Level_of_Study: "Certificate",
       Awarding: "SEGi",
-      Campus: ["KL", "SJ", "PE"]
+      Campus: "Segi College Kuala Lumpur"
     },
     {
       id: 3,
@@ -35,7 +43,7 @@ const Search_Page = () => {
       Field_of_Interest: "Information Technology",
       Level_of_Study: "Diploma",
       Awarding: "SEGi",
-      Campus: ["KL", "PE"]
+      Campus: "Segi College Kuala Lumpur"
     },
 
     {
@@ -45,160 +53,218 @@ const Search_Page = () => {
       Field_of_Interest: "Information Technology",
       Level_of_Study: "Bachelor Degree",
       Awarding: "SEGi",
-      Campus: ["KL", "SJ"]
+      Campus: "Segi College Kuala Lumpur"
     },
   ];
-  // const Campus = ProgramArr.map((program)=>{
-  //   return program.Campus
-  // }  
-  // )
-  // console.log(Campus)
-  {/* <div style={{ display: 'flex', flexDirection: 'row' }}>
-    <div style = {{backgroundColor:(data.Campus == "KL")?:}}>
-      <p>
-        {Program.Campus[1]}
-      </p>
-    </div>
 
-
-  </div> */}
-
-  // const campus = SegiProgram.Campus.map((campus)=> {
-  //   return campus.Campus.length;
-
-  // })
-
+  const Category = ['Creative Art & Design', "Business & Accounting", "Early Childhood", "Information Technology"]
+  const lvlstudy = ['Certificate', "Foundation", "Diploma", "Bachelor Degree", "Executive Diploma", "Postgraduate"]
   const [SearchText, setSearchText] = useState('');
-  const SegiProgram = ProgramArr.filter((Program) => {
+  const [CategoryText, setCategoryText] = useState('');
+  const [lvlstudyText, setlvlstudyText] = useState('');
+  const [Aplliedfilter, setAplliedfilter] = useState(false);
 
-    if (SearchText === "") {
-      return Program
-    } else if (Program.Title.toLocaleLowerCase().includes(SearchText.toLocaleLowerCase())) {
-      return Program
+  const clear_filter = () => {
+    setlvlstudyText('Level Of Study')
+    setCategoryText('Category')
+    setAplliedfilter(false)
+  }
+
+  const SegiProgram = CourseList.filter((item) => {
+
+    if (SearchText === "" && Aplliedfilter === false) {
+      return item
     }
-  }).map((Program, index) =>
-
+    else if (Aplliedfilter === true && item.CourseLevelOfStudy.toLocaleLowerCase().includes(lvlstudyText.toLocaleLowerCase())) {
+      return item
+    }
+    else if (item.CourseTitle.toLocaleLowerCase().includes(SearchText.toLocaleLowerCase()) && Aplliedfilter === false) {
+      return item
+    }
+  }).map((item, index) =>
 
     <>
-      <div className="Search-Page-Content-Container">
-        <div class="card">
-          <div class="card-body">
-            <div className="Search-Page-Card-Container">
-              <div className="Search-Page-Card-Title">
-                <h5 class="card-title Search-Page-Title">{Program.Title}</h5>
-              </div>
-              {/* <div style={{ display: 'flex', flex: 1 }}>
-                <p className="Search-Page-Value">{Program.Title_code}</p>
-              </div> */}
-            </div>
-            <div className="Search-Page-Attribute-Container">
-              <div className="Search-Page-Attribute-LeftContent">
-                <div className="Search-Page-Content-Text-Cover">
-                  <div style={{ display: 'flex', flex: 1 }}>
-                    <p class="card-text Search-Page-Attribute" >Field of Interest:</p>
-                  </div>
-                  <div style={{ display: 'flex', flex: 1 }}>
-                    <p className="Search-Page-Value">{Program.Field_of_Interest}</p>
-                  </div>
-                </div>
+      {console.log(item.CourseLevelOfStudy.toLocaleLowerCase().includes(lvlstudyText.toLocaleLowerCase()))}
 
-                <div className="Search-Page-Content-Text-Cover">
-                  <div style={{ display: 'flex', flex: 1 }}>
-                    <p class="card-text Search-Page-Attribute" >Level of Study:</p>
-                  </div>
-                  <div style={{ display: 'flex', flex: 1 }}>
-                    <p className="Search-Page-Value">{Program.Level_of_Study}</p>
-                  </div>
-
-                </div>
-
-                <div className="Search-Page-Content-Text-Cover">
-                  <div style={{ display: 'flex', flex: 1 }}>
-                    <p class="card-text Search-Page-Attribute">Awarding:</p>
-                  </div>
-                  <div style={{ display: 'flex', flex: 1 }}>
-                    <p className="Search-Page-Value">{Program.Awarding}</p>
-                  </div>
-
-                </div>
-
-                <div className="Search-Page-Content-Text-Cover">
-                  <div style={{ display: 'flex', flex: 1 }}>
-                    <p class="card-text Search-Page-Attribute" >Campus:</p>
-                  </div>
-                  <div style={{ display: 'flex', flex: 1 }}>
-                    {Program.Campus.map((campus) =>
-
-                      <div style={{
-                        height: '2.5rem',
-                        width: '2.5rem',
-                        borderRadius: '2.5rem',
-                        fontSize: '1.4rem',
-                        textAlign: 'center',
-                        marginRight: '0.5rem'
-                        , backgroundColor: (campus == "KL") ? ('#A71337') :
-                          (campus == "SJ") ? ('#ACACAC') :
-                            ('#ACACAC'),
-                        color: 'white'
-                      }}>{campus}</div>
-
-                    )}
-
-                  </div>
-
-                </div>
-              </div>
-              {/* {Campus} */}
-
-              <div className="Search-Page-Attribute-ButtonSide">
-                <div class="Search-Page-Cotent-Button2" >
-                  <button>Visit</button>
-                </div>
-                <div class="Search-Page-Cotent-Button" >
-                  <button>Details</button>
-                </div>
-              </div>
-            </div>
+      <div className="container card px-5 py-4 mw-100 mb-5" id="search-card-container">
+        <div className="row pb-3">
+          <div className="col d-flex align-items-center" id="search-content-container">
+            <p className='font-weight-bold m-0'>{item.CourseTitle}</p>
           </div>
-
+          <div className="col d-flex align-items-center" id="search-content-container">
+            <p className='font-weight-bold text-danger m-0'>{item.CourseCode}</p>
+          </div>
         </div>
-
+        <div className="row pb-3">
+          <div className="col d-flex align-items-center" id="search-content-container">
+            <p className='font-weight-bold m-0'>Field of Interest:</p>
+          </div>
+          <div className="col d-flex align-items-center" id="search-content-container">
+            <p className='font-weight-normal text-muted m-0'>{item.FacultyName}</p>
+          </div>
+        </div>
+        <div className="row pb-3">
+          <div className="col d-flex align-items-center" id="search-content-container">
+            <p className='font-weight-bold m-0'>Level of Study:</p>
+          </div>
+          <div className="col d-flex align-items-center" id="search-content-container">
+            <p className='font-weight-normal text-muted m-0'>{item.CourseLevelOfStudy}</p>
+          </div>
+        </div>
+        <div className="row pb-3">
+          <div className="col d-flex align-items-center" id="search-content-container">
+            <p className='font-weight-bold m-0'>Awarding:</p>
+          </div>
+          <div className="col d-flex align-items-center" id="search-content-container">
+            <p className='font-weight-normal text-muted m-0'>{'temporary null'}</p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col d-flex align-items-center" id="search-content-container">
+            <p className='font-weight-bold m-0'>Campus:</p>
+          </div>
+          <div className="col d-flex align-items-center" id="search-content-container">
+            <p className='font-weight-normal text-muted m-0'>{item.CollegeName}</p>
+          </div>
+        </div>
+        <div className='' id='Searchpage-details-container'>
+          <button className='text-light py-2 px-3' id='Searchpage-details-button'
+            onClick={() => {
+              navigate('/CourseDetail');
+              commonStore.update(s => {s.selectedCourse = item})
+            }}
+          >More Details</button>
+        </div>
       </div>
 
     </>
 
   )
 
+
+
   const result = SegiProgram.length;
 
-
   return (
-    <div>
-      <div className="Search-Page-Banner" style={{ position: 'relative' }}>
-        <img style={{ display: 'block', width: '100%', maxHeight: 'auto' }} src={require("../assets/images/Search_Page/Search_banner2.png")} alt="" />
-        <div class="Search-Page-Searchbar">
+    <>
+      <div className='w-100 px-5 py-5' id="Search-banner-image" style={{
+        backgroundImage: "url(" + require('../assets/images/Search_Page/Search_banner2.png') + ")",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        position: "relative",
+        overflow: "hidden",
+      }}>
+        <div className="input-group mb-3 py-3 px-5 mt-5 justify-content-center" id='searchbar-container'>
+          <div className='d-flex flex-row bg-white rounded mt-5' style={{ overflow: 'hidden' }}>
+            <div className="input-group-prepend align-items-center px-3">
+              <FaSearch className='text-muted' />
+            </div>
+            {
+              (Aplliedfilter === true) ?
+                <input className='py-2' disabled={true} id="searchpage-input" onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Search is disabled" />
+                :
+                <input className='py-2' id="searchpage-input" onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Search" />
 
-          <FaSearch style={{ color: '#000000', position: 'absolute', bottom: '0.5rem', left: '0.5rem' }} />
-          <input onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Type to search" />
+            }
+          </div>
         </div>
       </div>
 
-      <div className="IT_intro_search">
-        <div className="Search-Page-Container">
-          <div className="Search-Page-Top-Content" >
-            <p className="Search-Page-TotalResult" >Total Search Result: {result}</p>
-            <FaFilter />
-
+      <div className='m-3'>
+        <div className="container px-4 py-4" id='Search-result-container'>
+          <div className="row m-0 mt-3 mb-5 px-3">
+            <div className="col" id="search-result-container">
+              <h4 className="col">{"Total Search Result: " + result}</h4>
+            </div>
+            <div className="col d-flex justify-content-end mr-3 align-items-center" id="search-result-container">
+              <FaFilter data-toggle="modal" onClick={() => setAplliedfilter(false)} data-target="#CategoryModal" />
+            </div>
           </div>
-          <div className="Search-Page-Container" style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
-            {SegiProgram}
-          </div>
-
+          {Aplliedfilter === true ?
+            <div className="row mt-3 mb-4" id='filter-row'>
+              <div className='col d-flex align-items-start' id='filter-res-row'>
+                <p className='m-0 px-3 py-1 bg-success rounded text-light'>
+                  {lvlstudyText}
+                </p>
+              </div>
+              <div className='col d-flex justify-content-end align-items-center' id='filter-res-row'>
+                <p className='m-0 px-3 py-1 text-dark font-weight-bold'>
+                  {"Clear Filter"}
+                </p>
+                <FaWindowClose onClick={clear_filter} />
+              </div>
+            </div>
+            : null}
+          {/* <------------Start Search col--------------> */}
+          {SegiProgram}
+          {/* <------------End Search col--------------> */}
         </div>
-
       </div>
-    </div>
+      {/* <!-- Modal Start --> */}
+      <div className="modal fade" id="CategoryModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered" id="Categorysmallcontainer" role="document">
+          <div className="modal-content" id='modal-container' style={{
+            backgroundImage: "url(" + 'https://colleges.segi.edu.my/kualalumpur/wp-content/uploads/sites/7/2018/08/search-bg-2.jpg' + ")"
+          }}>
+            <div className="modal-header">
+              <h5 className="modal-title text-light" id="exampleModalLabel">Search Category</h5>
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                <span className="text-light" aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div>
+              <div className="row py-3" id="modal-res-con">
+                <div className="col-sm align-items-center d-flex justify-content-center" id="modal-res-item">
+                  <p className="text-light m-0  w-75">Area Of Study</p>
+                </div>
+                <div className="col align-items-center d-flex justify-content-center btn-group dropright" id="modal-res-itemselect">
+                  <button type="button"
+                    className="btn btn-secondary dropdown-toggle" id="dropdownarea" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {CategoryText ? CategoryText : "Category"}
+                  </button>
+                  <div className="dropdown-menu" >
+                    {
+                      Category.map((category) =>
+                        <>
+                          <p className="dropdown-item m-0" onClick={() => setCategoryText(category)}>{category}</p>
+                        </>
+                      )
+                    }
+                  </div>
+                </div>
+              </div>
+
+              <div className="row py-3" id="modal-res-con">
+                <div className="col-sm align-items-center d-flex justify-content-center" id="modal-res-item">
+                  <p className="text-light m-0  w-75">Level Of Study</p>
+                </div>
+                <div className="col align-items-center d-flex justify-content-center btn-group dropright" id="modal-res-itemselect">
+                  <button type="button"
+                    className="btn btn-secondary dropdown-toggle" id="dropdownarea" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {lvlstudyText ? lvlstudyText : "Level Of Study"}
+                  </button>
+                  <div className="dropdown-menu" >
+                    {
+                      lvlstudy.map((study) =>
+                        <>
+                          <p className="dropdown-item m-0" onClick={() => setlvlstudyText(study)}>{study}</p>
+                        </>
+                      )
+                    }
+                  </div>
+                </div>
+              </div>
+
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={() => setAplliedfilter(true)}>Apply changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <!-- Modal end --> */}
+    </>
   )
 }
-
 export default Search_Page

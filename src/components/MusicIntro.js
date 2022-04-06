@@ -32,7 +32,7 @@ const MusicIntro = () => {
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
-                    bannercontent={"If you are interested and want to know more about Music."} />
+                    coursename={"Music"} />
             </div>
 
             <div className="container musicintrosection02 d-flex justify-content-center align-items-center">

@@ -16,7 +16,7 @@ const ASHintro = () => {
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
-                    bannercontent={"If you are interested and want to know more about Allied Health Science."} />
+                    coursename={"Allied Health Science"} />
             </div>
 
 

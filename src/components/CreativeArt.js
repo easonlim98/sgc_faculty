@@ -13,8 +13,8 @@ const CreativeArt = () => {
                     backgroundImage: "url(" + require('../assets/gif/Creative Art/CA.gif') + ")"
                 }}>
                 <Banner
-                    navigatepath={"/Search_Page"}
-                    bannercontent={"If you are interested and want to know more about Creative Art & Design."} />
+                    navigatepath={"/Search_Page"} 
+                    coursename={"Creative Art & Design"} />
             </div>
 
             <div className="container CA-Section-1">
