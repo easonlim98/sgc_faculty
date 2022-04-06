@@ -16,7 +16,7 @@ const Business_And_Accounting = () => {
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
-                    bannercontent={"If you are interested and want to know more about Business & Accounting."} />
+                    coursename={"Business & Accounting"} />
             </div>
 
             <div className="BA-container">

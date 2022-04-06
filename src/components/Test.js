@@ -1,19 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/Standard.css';
 import { FaFilter, FaSearch, FaBookmark, FaWindowClose } from "react-icons/fa";
-import './css/Search_Page.css'
-import { commonStore } from '../store/commonStore';
+import './css/Test.css'
 
 
 const Search_Page = () => {
-
-  useEffect(() => {
-    console.log(CourseList)
-  },[]);
-
-  const CourseList = commonStore.useState(s => s.selectedCourseList)
-
   const ProgramArr = [
     {
       id: 1,
@@ -67,29 +59,29 @@ const Search_Page = () => {
     setAplliedfilter(false)
   }
 
-  const SegiProgram = CourseList.filter((item) => {
+  const SegiProgram = ProgramArr.filter((Program) => {
 
     if (SearchText === "" && Aplliedfilter === false) {
-      return item
+      return Program
     }
-    else if (Aplliedfilter === true && item.CourseLevelOfStudy.toLocaleLowerCase().includes(lvlstudyText.toLocaleLowerCase())) {
-      return item
+    else if (Aplliedfilter === true && Program.Level_of_Study.toLocaleLowerCase().includes(lvlstudyText.toLocaleLowerCase())) {
+      return Program
     }
-    else if (item.CourseTitle.toLocaleLowerCase().includes(SearchText.toLocaleLowerCase()) && Aplliedfilter === false) {
-      return item
+    else if (Program.Title.toLocaleLowerCase().includes(SearchText.toLocaleLowerCase()) && Aplliedfilter === false) {
+      return Program
     }
-  }).map((item, index) =>
+  }).map((Program, index) =>
 
     <>
-      {console.log(item.CourseLevelOfStudy.toLocaleLowerCase().includes(lvlstudyText.toLocaleLowerCase()))}
+      {console.log(Program.Level_of_Study.toLocaleLowerCase().includes(lvlstudyText.toLocaleLowerCase()))}
 
       <div className="container card px-5 py-4 mw-100 mb-5" id="search-card-container">
         <div className="row pb-3">
           <div className="col d-flex align-items-center" id="search-content-container">
-            <p className='font-weight-bold m-0'>{item.CourseTitle}</p>
+            <p className='font-weight-bold m-0'>{Program.Title}</p>
           </div>
           <div className="col d-flex align-items-center" id="search-content-container">
-            <p className='font-weight-bold text-danger m-0'>{item.CourseCode}</p>
+            <p className='font-weight-bold text-danger m-0'>{Program.Title_code}</p>
           </div>
         </div>
         <div className="row pb-3">
@@ -97,7 +89,7 @@ const Search_Page = () => {
             <p className='font-weight-bold m-0'>Field of Interest:</p>
           </div>
           <div className="col d-flex align-items-center" id="search-content-container">
-            <p className='font-weight-normal text-muted m-0'>{item.FacultyName}</p>
+            <p className='font-weight-normal text-muted m-0'>{Program.Field_of_Interest}</p>
           </div>
         </div>
         <div className="row pb-3">
@@ -105,7 +97,7 @@ const Search_Page = () => {
             <p className='font-weight-bold m-0'>Level of Study:</p>
           </div>
           <div className="col d-flex align-items-center" id="search-content-container">
-            <p className='font-weight-normal text-muted m-0'>{item.CourseLevelOfStudy}</p>
+            <p className='font-weight-normal text-muted m-0'>{Program.Level_of_Study}</p>
           </div>
         </div>
         <div className="row pb-3">
@@ -113,7 +105,7 @@ const Search_Page = () => {
             <p className='font-weight-bold m-0'>Awarding:</p>
           </div>
           <div className="col d-flex align-items-center" id="search-content-container">
-            <p className='font-weight-normal text-muted m-0'>{'temporary null'}</p>
+            <p className='font-weight-normal text-muted m-0'>{Program.Awarding}</p>
           </div>
         </div>
         <div className="row">
@@ -121,7 +113,7 @@ const Search_Page = () => {
             <p className='font-weight-bold m-0'>Campus:</p>
           </div>
           <div className="col d-flex align-items-center" id="search-content-container">
-            <p className='font-weight-normal text-muted m-0'>{item.CollegeName}</p>
+            <p className='font-weight-normal text-muted m-0'>{Program.Campus}</p>
           </div>
         </div>
         <div className='' id='Searchpage-details-container'>

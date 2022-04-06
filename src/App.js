@@ -3,7 +3,10 @@ import { Route, BrowserRouter as Router, Routes, useLocation } from "react-route
 import Header from './Header';
 import Footer from './Footer';
 import Psychology from './components/Psychology';
-import LandingScreen from './components/LandingScreen';
+import KLLandingScreen from './components/KLLandingScreen';
+import SJLandingScreen from './components/SJLandingScreen';
+import SKLandingScreen from './components/SKLandingScreen';
+import PGLandingScreen from './components/PGLandingScreen';
 import EarlyChildhoodEducation from './components/EarlyChildhoodEducation';
 import CreativeArt from './components/CreativeArt';
 import MusicIntro from './components/MusicIntro';
@@ -23,25 +26,29 @@ import Communication_Studies from './components/Communication_Studies';
 import Business_And_Accounting from './components/Business_And_Accounting';
 import CourseDetail from './components/CourseDetail';
 import NewCourse from './components/NewCourse';
+import Institution from './components/Institution';
+import Test from './components/Test';
+import { commonStore } from './store/commonStore';
 
 const App = () => {
 
+  useEffect(() => {
+    getDataEvent();
+  },[]);
 
-
-
-  
   return (
     <Router>
       {window.location.pathname !== "/AdminLogin" ? <Header /> : <></>}
       <div>
         <Routes>
-          <Route path="/" element={<LandingScreen />} />
+          <Route path="/" element={<Institution />} />
           <Route exact path="/Psychology" element={<Psychology />} />
-          <Route exact path="/" element={<LandingScreen />} />
           <Route exact path="/EarlyChildhoodEducation" element={<EarlyChildhoodEducation />} />
           <Route exact path="/AdminLogin" element={<AdminLogin />} />
           <Route exact path="/IT_Intro" element={<IT_Intro />} />
           <Route exact path="/Search_Page" element={<Search_Page />} />
+          <Route exact path="/CourseDetail" element={<CourseDetail />} />
+          <Route exact path="/NewCourse" element={<NewCourse />} />
           <Route exact path="/Nursing" element={<Nursing />} />
           <Route exact path="/OSHintro" element={<OSHintro />} />
           <Route exact path="/Hospitality" element={<Hospitality />} />
@@ -54,6 +61,12 @@ const App = () => {
           <Route exact path="/Psychology" element={<Psychology />} />
           <Route exact path="/Lawintro" element={<Lawintro />} />
           <Route exact path="/ASHintro" element={<ASHintro />} />
+          <Route exact path="/KLLandingScreen" element={<KLLandingScreen />} />
+          <Route exact path="/SJLandingScreen" element={<SJLandingScreen />} />
+          <Route exact path="/SKLandingScreen" element={<SKLandingScreen />} />
+          <Route exact path="/PGLandingScreen" element={<PGLandingScreen />} />
+          <Route exact path="/Test" element={<Test />} />
+
         </Routes>
       </div>
       {window.location.pathname !== "/AdminLogin" ? <Footer /> : <></>}
