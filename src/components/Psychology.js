@@ -98,19 +98,19 @@ const Psychology = () => {
                 <div className="row PSYrow-Container4">
                     <div className="PSYContainer4colsm1">
                         <div className="PSYintro-picture1container4">
-                            <img className="PSYintro-image1container4" src={require("../assets/images/Psychology/Psychologymain4.png")} />
+                            <img className="PSYintro-image1container4" src={require("../assets/images/Psychology/shutterstock1.jpg")} />
                         </div>
                     </div>
 
                     <div className="col-sm-3 PSYContainer4colsm2">
                         <div className="PSYintro-picture2container4">
-                            <img className="PSYintro-image2container4" src={require("../assets/images/Psychology/Psychologymain5.png")} />
+                            <img className="PSYintro-image2container4" src={require("../assets/images/Psychology/shutterstock2.jpg")} />
                         </div>
                     </div>
 
                     <div className="col-sm-3 PSYContainer4colsm3">
                         <div className="PSYintro-picture3container4">
-                            <img className="PSYintro-image3container4" src={require("../assets/images/Psychology/Psychologymain6.png")} />
+                            <img className="PSYintro-image3container4" src={require("../assets/images/Psychology/shutterstock3.jpg")} />
                         </div>
                     </div>
                 </div>
