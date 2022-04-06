@@ -4,9 +4,12 @@ import './css/Standard.css';
 import { FaFilter, FaSearch, FaBookmark, FaWindowClose } from "react-icons/fa";
 import './css/Search_Page.css'
 import { commonStore } from '../store/commonStore';
+import { useNavigate } from 'react-router-dom';
 
 
 const Search_Page = () => {
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log(CourseList)
@@ -55,7 +58,7 @@ const Search_Page = () => {
   ];
 
   const Category = ['Creative Art & Design', "Business & Accounting", "Early Childhood", "Information Technology"]
-  const lvlstudy = ['Diploma', "Certificate", "Bachelor Degree", "Foundation"]
+  const lvlstudy = ['Certificate', "Foundation", "Diploma", "Bachelor Degree", "Executive Diploma", "Postgraduate"]
   const [SearchText, setSearchText] = useState('');
   const [CategoryText, setCategoryText] = useState('');
   const [lvlstudyText, setlvlstudyText] = useState('');
@@ -125,7 +128,12 @@ const Search_Page = () => {
           </div>
         </div>
         <div className='' id='Searchpage-details-container'>
-          <button className='text-light py-2 px-3' id='Searchpage-details-button'>More Details</button>
+          <button className='text-light py-2 px-3' id='Searchpage-details-button'
+            onClick={() => {
+              navigate('/CourseDetail');
+              commonStore.update(s => {s.selectedCourse = item})
+            }}
+          >More Details</button>
         </div>
       </div>
 

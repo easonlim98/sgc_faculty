@@ -16,13 +16,16 @@ const KLLandingScreen = () => {
             console.log(response)
         })
 
+    }, []);
+
+    useEffect(() => {
+
         ApiClient.GET(API.getKLCourse).then(response => {
             setCourseList(response)
             console.log(response)
         })
 
     }, []);
-
 
     const navigate = useNavigate();
 
@@ -39,9 +42,8 @@ const KLLandingScreen = () => {
 
             <div className="row">
 
-            {facultyList ? facultyList.map((item) => {
+            { facultyList.map((item) => (
 
-                return (
                     <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}
                         onClick={() => {
 
@@ -50,10 +52,10 @@ const KLLandingScreen = () => {
                                 if(courseList[x].FacultyID === item.FacultyID){
                                     const record = courseList[x];
                                     tempCourseList.push(record);
-                                    commonStore.update(s => {s.selectedCourseList = tempCourseList})
-                                    navigate(item.IntroNavLink);
                                 }
                             };
+                            commonStore.update(s => {s.selectedCourseList = tempCourseList})
+                            navigate(item.IntroNavLink);
                         }}
                     >
                         <div style={{ border: 'none' }} >
@@ -63,9 +65,9 @@ const KLLandingScreen = () => {
                             </div>
                         </div>
                     </button>
+                    
+                ))};
 
-                    )
-                }): null}
                 </div>
 
                 <div className="University">

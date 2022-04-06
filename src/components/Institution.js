@@ -35,7 +35,7 @@ const Institution = () => {
                 <div className="row py-5" id="institution-row-container">
                     <div className="col-sm row justify-content-end pr-5" id="institution-img-container">
                         <button style={{ border: 'none', background: 'none' }} onClick={() => { navigate('/SKLandingScreen'); }}>
-                        <img src="https://www.segi.edu.my/wp-content/uploads/2021/06/kota-damansara-1.jpg" id="institution-img" />
+                        <img src="https://www.segi.edu.my/wp-content/uploads/2021/06/sarawak.jpg" id="institution-img" />
                         </button>
                     </div>
                     <div className="col-sm row justify-content-start pl-5" id="institution-img-container">
