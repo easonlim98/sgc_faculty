@@ -213,26 +213,7 @@ const Search_Page = () => {
               </button>
             </div>
             <div>
-              <div className="row py-3" id="modal-res-con">
-                <div className="col-sm align-items-center d-flex justify-content-center" id="modal-res-item">
-                  <p className="text-light m-0  w-75">Area Of Study</p>
-                </div>
-                <div className="col align-items-center d-flex justify-content-center btn-group dropright" id="modal-res-itemselect">
-                  <button type="button"
-                    className="btn btn-secondary dropdown-toggle" id="dropdownarea" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {CategoryText ? CategoryText : "Category"}
-                  </button>
-                  <div className="dropdown-menu" >
-                    {
-                      Category.map((category) =>
-                        <>
-                          <p className="dropdown-item m-0" onClick={() => setCategoryText(category)}>{category}</p>
-                        </>
-                      )
-                    }
-                  </div>
-                </div>
-              </div>
+              
 
               <div className="row py-3" id="modal-res-con">
                 <div className="col-sm align-items-center d-flex justify-content-center" id="modal-res-item">
