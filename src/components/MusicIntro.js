@@ -25,26 +25,6 @@ const MusicIntro = () => {
                 controls
             /> */}
 
-            {/* <div className="musicintro-backgroundBanner">
-                <div className="row">
-                    <div className="col-sm-6">
-                    </div>
-                    <div className="col-sm-6 musicintro">
-                        <div style={{ display: "flex", height: "80vh", alignItems: "center", justifyContent: "center" }}>
-                            <div style={{ background: "none", width: "85%", display: "flex", flexDirection: "column" }}>
-                                <div style={{ background: "none", display: "flex", flexDirection: "column" }}>
-                                    <a style={{ fontSize: "20px", color: "#FFFFFF" }}>KNOW MORE ABOUT</a>
-                                    <a style={{ fontSize: "35px", color: "#FFFFFF", fontWeight: "bold" }}>Our Program</a>
-                                    <p className="musicintro-banner-detail" style={{ color: "#FFFFFF" }}>If you are interested and want to know more about Music Studies.</p>
-                                    <div>
-                                        <button type="button" className="General-Button">Program</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
 
             <div className='MSCintro banner-container'
                 style={{
@@ -92,10 +72,7 @@ const MusicIntro = () => {
             </div>
 
             <div className="row musicintro" style={{ backgroundColor: "black" }}>
-
-                {/* <div classNameName="col-sm-6">
-                    <img classNameName="bannerimg03" src={require("../assets/images/Music/image 220.png")} />
-                </div> */}
+      
 
             </div>
             <TabsComponent
@@ -103,76 +80,14 @@ const MusicIntro = () => {
                 StudentJob={"Student of 2021 Music Studies"}
                 Studentimage={require('../assets/images/Music/image 220.png')}
                 StudentWords={"“Your imagination is your preview of life's coming attractions.”"}
+                achievementcontent={"Rockfest Music Festival 2018 - 1st Runner Up Winner in Drum Level Category 3"}
+                achievementname={"Alex Lee"}
+                achievementjob={"Diploma in Music"}
+                achievementsample={require("../assets/images/Music/Alexlee.png")}
                 navigationpath={""}
                 textcolor={"white"}
                 backgroundcolor={"black"}
             />
-            {/* 
-            <div className="musicintroback04">
-                <div className="musicintro-Container5">
-
-                    <div className="row musicintro">
-                        <div className="col-sm-6 musicintro">
-
-                            <img className="musicintro-bannerimg01" src={require("../assets/images/Music/image 220.png")} />
-                        </div>
-                        <div className="col-sm-6 musicintro">
-
-
-                            <div className="musicintro-navtab">
-                                <a href="javascript:void(0)" onclick="openFounTapp(event, 'Outstanding Student');">
-                                    <div className="musicintro-tabeach musicintro-tabeach-line">Outstanding Student</div><br />
-                                </a>
-                                <a href="javascript:void(0)" onclick="openFounTapp(event, 'Success Story');">
-                                    <div className="musicintro-tabeach">Success Story</div><br />
-                                </a>
-                                <a href="javascript:void(0)" onclick="openFounTapp(event, 'Worklife');">
-                                    <div className="musicintro-tabeach">Worklife</div><br />
-                                </a>
-                            </div>
-                            <div id="Outstanding Student" className="musicintro-tabcontent">
-                                <p className="musicintro-tabcontent-p">"Your imagination is your preview of life's coming attractions."</p>
-                                <h5 style={{ Color: "white" }}>Albert Einstein</h5>
-                                <hr className="blacklineformusicintro-tabcontent" />
-                                <p>Student of 2021 Music Studies</p>
-                                <img className="musicintro-Container5-ico" src={require("../assets/images/Music/founsection5-1.png")} />
-                                <img className="musicintro-Container5-ico" src={require("../assets/images/Music/founsection5-2.png")} />
-                                <img className="musicintro-Container5-ico" src={require("../assets/images/Music/founsection5-3.png")} />
-                                <div className="btnseemore">
-                                    <button type="button" className="btn btn-danger">See More</button>
-                                </div>
-                            </div>
-
-                            <div id="Success Story" className="musicintro-tabcontent" style={{ display: "none" }}>
-                                <p className="musicintro-tabcontent-p">"Content for Success Story."</p>
-                                <button type="button" className="btn btn-danger">See More</button>
-                            </div>
-
-                            <div id="Worklife" className="musicintro-tabcontent" style={{ display: "none" }}>
-                                <p className="musicintro-tabcontent-p">"Content for Worklife."</p>
-                                <button type="button" className="btn btn-danger">See More</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div> */}
-
-            {/* <div className="row" style={{ backgroundColor: "black" }}>
-                <div className="col-sm-5">
-                    <img className="musicintrobannerimg04" src={require("../assets/images/Music/pexels-photo-3760529 1.png")} />
-                </div>
-                <div className="col-sm-7 musicintro">
-                    <div>
-                        <div className="musicintrosection04">
-                            <h3>Want to Know more about our facilities</h3>
-                            <p>If you are interested in our program and want to check out more about our art
-                                and deisgn related facilities, please click on the facilities button.</p>
-                        </div>
-                    </div>
-                    <p className="text-right"><button type="button" className="btn btn-danger">Facilities</button></p>
-                </div>
-            </div> */}
 
             <Facilities
                 facilitiesimage={require('../assets/images/Music/pexels-photo-3760529 1.png')}
