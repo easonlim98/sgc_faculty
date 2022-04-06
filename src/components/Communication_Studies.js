@@ -11,11 +11,11 @@ const Communication_Studies = () => {
         <div>
             <div className='BA banner-container'
                 style={{
-                    backgroundImage: "url(" + require('../assets/gif/Communication_Studies/CS-gif-1.gif') + ")"
+                    backgroundImage: "url(" + require('../assets/images/Communication_Studies/CS-Banner.jpg') + ")"
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
-                    coursename={"Business & Accounting"} />
+                    coursename={"Communication Studies"} />
             </div>
             <div className="CS-container">
                 <div className="CS-Section-1-Header" style={{ textAlign: 'center' }}>
@@ -26,13 +26,13 @@ const Communication_Studies = () => {
                     <div className="row CS-group-content">
                         <div className="col-sm-6 CS-group-img">
                             <div className="CS-Section-2-img">
-                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-1.png")} alt="" />
+                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-1.jpg")} alt="" />
                             </div>
                         </div>
                         <div className="col-sm-6 CS-text-col">
                             <div className='CS-text-area'>
                                 <p className='CS-text-hd' style={{ fontWeight: '700' }}>Significant of Communication Studies</p>
-                                <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>The communications industry in Malaysia and around the world has evolved so much that contemporary professional communicators now have to stand up to face the current challenges with sophistication and respond through the various media channels. Modern communicators have to utilise all media available, from verbal communication to print media, from broadcasting to digital platforms. Effective communication requires communicators to speak clearly to each individual audience.</p>
+                                <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>Modern communicators have to utilise all media available, from verbal communication to print media, from broadcasting to digital platforms. Effective communication requires communicators to speak clearly to each individual audience.</p>
                             </div> 
                             <button className="btn btn-outline-dark CS-button">Read more</button>
                         </div>
@@ -43,14 +43,14 @@ const Communication_Studies = () => {
                         <div className="col-sm-6 CS-text-col">
                             <div className="CS-Section-2-text CS-text-area">
                                 <p className='CS-text-hd' style={{ fontWeight: '700' }}>Communication Studies in SEGi</p>
-                                <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>At SEGi Group of Colleges, we are equipped with sophisticated technology and state-of-art technology, including broadcast studios, radio studios, editing rooms, voice-over studios, photography studios, and modern computer labs with the latest software and equipment. We also have internship placement programmes that will spur our students towards excellence in their careers.</p>
+                                <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>At SEGi Group of Colleges, we are equipped with sophisticated technology and state-of-art technology, including broadcast studios, radio studios, editing rooms, voice-over studios, photography studios, and modern computer labs with the latest software and equipment.</p>
                             </div>
                             <button className="btn btn-outline-dark CS-button">Read more</button>
                         </div>
                         <div className="col-sm-6">
 
                             <div className="CS-Section-2-img">
-                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-2.png")} alt="" />
+                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-2.jpg")} alt="" />
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ const Communication_Studies = () => {
                     <div className="row CS-group-content">
                         <div className="col-sm-6 CS-group-img">
                             <div className="CS-Section-2-img">
-                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-3.png")} alt="" />
+                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-3.jpg")} alt="" />
                             </div>
                         </div>
                         <div className="col-sm-6 CS-text-col">
@@ -71,6 +71,13 @@ const Communication_Studies = () => {
                             <button className="btn btn-outline-dark CS-button">Read more</button>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div className="CS-Industry-Partners">
+                <div className="col-sm-12 d-flex align-items-center flex-column">
+                    <h2 className="CS-industry-title">OUR STRATEGIC INDUSTRY PARTNERS</h2>
+                    <img className="CS-img-4" src={require("../assets/images/Communication_Studies/CS-Industy-Partners.png")} alt="" />
                 </div>
             </div>
 
@@ -90,7 +97,7 @@ const Communication_Studies = () => {
             />
             <Facilities
                 facilitiesimage={require('../assets/images/Communication_Studies/CS-img-8.png')}
-                content={"If you are interested in our programme and want to check out more about our Communication Studies-related facilities, please click on the facilities button."}
+                content={"If you are interested in our programme and want to check out more about our Communication Studies related facilities, please click on the facilities button."}
             />
         </div>
     )

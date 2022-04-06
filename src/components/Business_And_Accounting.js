@@ -12,7 +12,7 @@ const Business_And_Accounting = () => {
 
             <div className='BA banner-container'
                 style={{
-                    backgroundImage: "url(" + require('../assets/images/Business_And_Accounting/BA-Banner.png') + ")"
+                    backgroundImage: "url(" + require('../assets/images/Business_And_Accounting/BA-Banner.jpg') + ")"
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
@@ -49,9 +49,7 @@ const Business_And_Accounting = () => {
                         <div className="col-sm-6 BA-section-group2">
                             <div className="BA-Section-text1">
                                 <h3 className="BA-text-hd">What We Learn</h3>
-                                <p className="BA-text-font">This programme prepares students to become professional accountants. It covers theoretical and
-                                    conceptual accounting matters combined with the basic accounting skills needed to make graduates
-                                    employable.
+                                <p className="BA-text-font"> At SEGi, you will experience a variety of learning methods including lectures, seminars, workshops, presentations and practical sessions on the job, delivered by reputable academicians and industry captains in the community, serving as academic advisors, lecturers, examiners and moderators.
                                 </p>
                             </div>
                             <button className="btn btn-outline-dark BA-button">Read more</button>
