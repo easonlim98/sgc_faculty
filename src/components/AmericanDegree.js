@@ -30,7 +30,7 @@ const AmericanDegree = () => {
             }}>
             <Banner
                 navigatepath={"/Search_Page"}
-                bannercontent={"If you are interested and want to know more about American Degree Program."} />
+                coursename={"American Degree Program"} />
         </div>
         <div className="container amedegre-secondpart">
             <div className="row">
