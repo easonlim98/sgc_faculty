@@ -12,7 +12,7 @@ const Business_And_Accounting = () => {
 
             <div className='BA banner-container'
                 style={{
-                    backgroundImage: "url(" + require('../assets/images/Business_And_Accounting/BA-Banner.png') + ")"
+                    backgroundImage: "url(" + require('../assets/images/Business_And_Accounting/BA-Banner.jpg') + ")"
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}

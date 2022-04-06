@@ -11,7 +11,7 @@ const Communication_Studies = () => {
         <div>
             <div className='BA banner-container'
                 style={{
-                    backgroundImage: "url(" + require('../assets/gif/Communication_Studies/CS-gif-1.gif') + ")"
+                    backgroundImage: "url(" + require('../assets/images/Communication_Studies/CS-Banner.jpg') + ")"
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
@@ -26,7 +26,7 @@ const Communication_Studies = () => {
                     <div className="row CS-group-content">
                         <div className="col-sm-6 CS-group-img">
                             <div className="CS-Section-2-img">
-                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-1.png")} alt="" />
+                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-1.jpg")} alt="" />
                             </div>
                         </div>
                         <div className="col-sm-6 CS-text-col">
@@ -50,7 +50,7 @@ const Communication_Studies = () => {
                         <div className="col-sm-6">
 
                             <div className="CS-Section-2-img">
-                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-2.png")} alt="" />
+                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-2.jpg")} alt="" />
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ const Communication_Studies = () => {
                     <div className="row CS-group-content">
                         <div className="col-sm-6 CS-group-img">
                             <div className="CS-Section-2-img">
-                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-3.png")} alt="" />
+                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-3.jpg")} alt="" />
                             </div>
                         </div>
                         <div className="col-sm-6 CS-text-col">
@@ -97,7 +97,7 @@ const Communication_Studies = () => {
             />
             <Facilities
                 facilitiesimage={require('../assets/images/Communication_Studies/CS-img-8.png')}
-                content={"If you are interested in our programme and want to check out more about our Communication Studies-related facilities, please click on the facilities button."}
+                content={"If you are interested in our programme and want to check out more about our Communication Studies related facilities, please click on the facilities button."}
             />
         </div>
     )
