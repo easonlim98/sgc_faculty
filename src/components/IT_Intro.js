@@ -19,7 +19,7 @@ const IT_Intro = () => {
         }}>
         <Banner
           navigatepath={"/Search_Page"}
-          bannercontent={"If you are interested and want to know more about Information Technology."} />
+          coursename={"Information Technology"} />
       </div>
 
       {/* <div className="IT-Intro-banner">

@@ -12,11 +12,11 @@ const Business_And_Accounting = () => {
 
             <div className='BA banner-container'
                 style={{
-                    backgroundImage: "url(" + require('../assets/images/Business_And_Accounting/BA-Banner.png') + ")"
+                    backgroundImage: "url(" + require('../assets/images/Business_And_Accounting/BA-Banner.jpg') + ")"
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
-                    bannercontent={"If you are interested and want to know more about Business & Accounting."} />
+                    coursename={"Business & Accounting"} />
             </div>
 
             <div className="BA-container">
@@ -49,12 +49,10 @@ const Business_And_Accounting = () => {
                         <div className="col-sm-6 BA-section-group2">
                             <div className="BA-Section-text1">
                                 <h3 className="BA-text-hd">What We Learn</h3>
-                                <p className="BA-text-font">This programme prepares students to become professional accountants. It covers theoretical and
-                                    conceptual accounting matters combined with the basic accounting skills needed to make graduates
-                                    employable.
+                                <p className="BA-text-font"> At SEGi, you will experience a variety of learning methods including lectures, seminars, workshops, presentations and practical sessions on the job, delivered by reputable academicians and industry captains in the community, serving as academic advisors, lecturers, examiners and moderators.
                                 </p>
                             </div>
-                            <button className="btn btn-outline-dark">Read more</button>
+                            <button className="btn btn-outline-dark BA-button">Read more</button>
                         </div>
                         <div className="col-sm-6 BA-image2" >
                             <img className="BA-Section2-img" src={require("../assets/images/Business_And_Accounting/BA-img5.jpg")} alt="" />
@@ -80,9 +78,8 @@ const Business_And_Accounting = () => {
             <TabsComponent
                 StudentName={"Tariana Anak Tara"}
                 StudentJob={"Currently working at Sarawak Energy Berhad"}
-                Studentimage={require('../assets/images/Business_And_Accounting/BA-img8.jpeg')}
-                StudentWords={"“LIFE IS LIKE ACCOUNTING EVERYTHING MUST BE BALANCE.”"}
-                // StudentWords={"“SEGi College Sarawak in Collaboration with University of Sunderland for the programme of Bachelor (Hons) Business and Management (3+0) turned out to be a blessing in disguise. It has been a great experience being a part of such an Institution which not only provided me with quality education but also has helped me to groom my overall personality. The renowned faculty of Business & Accounting combined with the pedagogic learning has moulded me into a smarter professional with the ability to analyse my entrepreneurial ventures, also enhancing my personal psychographic in the process.”"}
+                Studentimage={require('../assets/images/Business_And_Accounting/BA-img8.jpeg')} 
+                StudentWords={"“SEGi College Sarawak in Collaboration with University of Sunderland for the programme of Bachelor (Hons) Business and Management (3+0) turned out to be a blessing in disguise. It has been a great experience being a part of such an Institution which not only provided me with quality education but also has helped me to groom my overall personality. The renowned faculty of Business & Accounting combined with the pedagogic learning has moulded me into a smarter professional with the ability to analyse my entrepreneurial ventures, also enhancing my personal psychographic in the process.”"}
                 navigationpath={""}
                 textcolor={"white"}
                 backgroundcolor={"#949494"}

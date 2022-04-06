@@ -15,7 +15,7 @@ const Psychology = () => {
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
-                    bannercontent={"If you are interested and want to know more about Psychology."} />
+                    coursename={"Psychology"} />
             </div>
 
             <div className="container PSYintro-Container1">

@@ -30,7 +30,7 @@ const OSHintro = () => {
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
-                    bannercontent={"If you are interested and want to know more about Occupational and Safety."} />
+                    coursename={"Occupational and Safety"} />
             </div>
 
             <div className="container OSH-Section-1">
