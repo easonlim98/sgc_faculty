@@ -12,30 +12,12 @@ const Hospitality = () => {
         <div>
             <div className='Hsp banner-container'
                 style={{
-                    backgroundImage: "url(" + require('../assets/images/Hospitality/Introback.png') + ")"
+                    backgroundImage: "url(" + require('../assets/images/Hospitality/HSP-SSIMAGE1.jpg') + ")"
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
                     coursename={"Hospitality"} />
             </div>
-
-            {/* <div className="Hsp-banner1">
-
-                <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
-                    <div style={{ background: 'none', width: '85%', display: 'flex', flexDirection: 'column', }}>
-                        <div style={{ background: 'none', display: 'flex', flexDirection: 'column' }}>
-                            <a style={{ fontSize: '20px', color: '#FFFFFF' }}>Know more about</a>
-                            <a style={{ fontSize: '35px', color: '#FFFFFF', fontWeight: 'bold' }}>Our Program</a>
-                            <p className="Hsp-header">If you are interested and want to know more about <b>Hospitality</b></p>
-                            <div>
-                                <button type="button" className="General-Button">Programme</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div> */}
-
 
             <div className="Hsp-container">
                 <div className="row Hsp-r1">
@@ -107,13 +89,13 @@ const Hospitality = () => {
                     <br />
 
                     <ul>
-                        <li className="Hsp-SEGI-content">The hotel and tourist industry is booming, as businesses and individuals 
-                        spend more money on leisure than ever before, making it one of the industry's largest and fastest-growing 
-                        job producers.</li>
+                        <li className="Hsp-SEGI-content">The hotel and tourist industry is booming, as businesses and individuals
+                            spend more money on leisure than ever before, making it one of the industry's largest and fastest-growing
+                            job producers.</li>
                         <br></br>
 
                         <li className="Hsp-SEGI-content">
-                        There is a demand for well-educated and well-trained personnel who can provide excellent service.
+                            There is a demand for well-educated and well-trained personnel who can provide excellent service.
                         </li>
                     </ul>
 
@@ -174,9 +156,9 @@ const Hospitality = () => {
                         <div className="col-sm-6 Hsp-extraclass">
                             <h2 className="Hsp-content-header">Hotel Style</h2>
 
-                            <p className="Hsp-SEGI-content">The key to fresh ideas, new relationships, and new opportunities is 
-                            hospitality. What we bring into our life has an effect on us. We are trapped inside ourselves without 
-                            fresh people and new ideas.
+                            <p className="Hsp-SEGI-content">The key to fresh ideas, new relationships, and new opportunities is
+                                hospitality. What we bring into our life has an effect on us. We are trapped inside ourselves without
+                                fresh people and new ideas.
                             </p>
 
                             <ul>
@@ -190,42 +172,30 @@ const Hospitality = () => {
 
                         </div>
                         <div className="col-sm-6 Hsp-style-image2">
-                            <img src={require("../assets/images/Hospitality/Hotelstyle1.png")} className="Hsp-backimg" />
-                            <img src={require("../assets/images/Hospitality/Hotelstyle2.png")} className="Hsp-frontimg" />
+                            <img src={require("../assets/images/Hospitality/HSP-SSIMAGE2.jpg")} className="Hsp-backimg" />
+                            <img src={require("../assets/images/Hospitality/HSP-SSIMAGE3.jpg")} className="Hsp-frontimg" />
                         </div>
                     </div>
                 </div>
 
-                <Facilities
-                facilitiesimage={require('../assets/images/Hospitality/btmimg.png')}
+            </div>
+
+            <div className="Hsp-industrypartners">
+
+                <div className="Hsp-container3">
+                    <h1 className='HSP-industrypartnersheader'>OUR STRATEGIC INDUSTRY PARTNERS</h1>
+                </div>
+
+                <div>
+                    <img src={require("../assets/images/Hospitality/HSPIndustrypartner.JPG")} className='HSP-industrypartnerimage'/>
+                </div>
+                
+            </div>
+
+            <Facilities
+                facilitiesimage={require('../assets/images/Hospitality/HSP-SSIMAGE4.jpg')}
                 content={"If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button."} />
 
-
-                {/* <div className="Hsp-faculties">
-                    <div className="row">
-                        <div className="col-sm-5">
-                            <img className="Hsp-faculties-img" src={require("../assets/images/Hospitality/btmimg.png")} alt="" />
-                        </div>
-                        <div className="col-sm-7">
-                            <div className="Hsp-faculties-img-right">
-                                <br />
-                                <br />
-                                <p style={{ fontWeight: '700' }}>Want to Know more about our facilities</p>
-                                <br />
-                                <p style={{ fontWeight: '500' }}>If you are interested in our program and want to check out more about our art and deisgn related facilities, please click on the facilities button.</p>
-                                <br />
-                                <br />
-                                <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem', marginRight: '2rem' }}>
-                                    <button type="button" className="General-Button">Facilities</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
-
-
-
-            </div>
 
         </div >
     )
