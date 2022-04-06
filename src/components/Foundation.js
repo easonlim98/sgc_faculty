@@ -30,7 +30,7 @@ const Foundation = () => {
             }}>
             <Banner
                 navigatepath={"/Search_Page"}
-                bannercontent={"If you are interested and want to know more about Engineering."} />
+                coursename={"Engineering"} />
         </div>
         <div className="container">
             <div className="foun-whatwelearn">

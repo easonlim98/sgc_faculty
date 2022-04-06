@@ -1,0 +1,149 @@
+#searchpage-input {
+    border: 0
+}
+
+#Search-result-container {
+    background-color: rgb(236, 250, 255);
+    min-width: unset;
+}
+
+#Searchpage-details-button {
+    background-color: #A71337;
+    font-size: 1rem;
+    box-shadow: 2px 3px 5px #9e9e9e;
+    border: none;
+    font-weight: 500;
+}
+
+#Searchpage-details-container {
+    position: absolute;
+    top: 5%;
+    right: 0;
+}
+
+#modal-container {
+    background-position: center;
+}
+
+#dropdownarea {
+    background: unset;
+    border: 0;
+    width: 100%;
+}
+
+#search-card-container {
+    width: 90%
+}
+
+#filter-row {
+    max-width: 93%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 923px) {
+    #Searchpage-details-container {
+        margin-top: 1.5rem;
+        border-top: 1px solid;
+        justify-content: center;
+        display: flex;
+        position: unset;
+        top: unset
+    }
+
+    #Searchpage-details-button {
+        margin-top: 1.5rem;
+        color: #A71337 !important;
+        background-color: unset;
+        box-shadow: unset;
+    }
+}
+
+@media only screen and (max-width: 578px) {
+    #search-card-container {
+        width: 100%
+    }
+
+    #filter-row {
+        max-width: unset
+    }
+
+    #dropdownarea {
+        text-align: start;
+    }
+
+    #modal-res-item {
+        max-width: 50%;
+    }
+
+}
+
+@media only screen and (max-width: 511px) {
+    #search-card-container {
+        width: 100%
+    }
+
+    #filter-row {
+        max-width: unset
+    }
+
+}
+
+@media only screen and (max-width: 442px) {
+    #modal-res-item {
+        max-width: unset;
+        min-width: 100%;
+    }
+
+    #modal-res-itemselect {
+        padding-top: 1rem;
+        max-width: 82%;
+        margin: auto;
+    }
+
+    #modal-res-con {
+        padding-bottom: 0 !important;
+    }
+
+    .modal-footer {
+        margin-top: 1rem;
+    }
+
+    .dropdown-menu.show {
+        left: 14% !important
+    }
+}
+
+@media only screen and (max-width: 401px) {
+    #search-card-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    #search-card-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    #search-content-container {
+        min-width: 100%;
+    }
+
+    #search-result-container {
+        min-width: 100%;
+        padding: 0 !important;
+        justify-content: center !important;
+        text-align: center;
+    }
+
+    #searchbar-container {
+        padding: 0 !important
+    }
+}
+
+@media only screen and (max-width: 394px) {
+    #filter-res-row {
+        min-width: 100%;
+        justify-content: center !important;
+
+    }
+}

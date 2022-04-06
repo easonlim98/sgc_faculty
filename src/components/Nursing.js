@@ -19,7 +19,7 @@ const Nursing = () => {
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
-                    bannercontent={"If you are interested and want to know more about Nursing & Caring."} />
+                    coursename={"Nursing & Caring"} />
             </div>
 
         <div className="Nursing-FirstPart">

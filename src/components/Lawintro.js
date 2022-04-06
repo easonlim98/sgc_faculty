@@ -18,7 +18,7 @@ const Lawintro = () => {
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
-                    bannercontent={"If you are interested and want to know more about Law."} />
+                    coursename={"Law"} />
             </div>
 
 

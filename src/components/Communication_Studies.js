@@ -15,7 +15,7 @@ const Communication_Studies = () => {
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
-                    bannercontent={"If you are interested and want to know more about Communication Studies."} />
+                    coursename={"Communication Studies"} />
             </div>
             <div className="CS-container">
                 <div className="CS-Section-1-Header" style={{ textAlign: 'center' }}>
