@@ -16,10 +16,20 @@ const SKLandingScreen = () => {
         })
     }, []);
 
+    useEffect(() => {
+
+        ApiClient.GET(API.getSKCourse).then(response => {
+            setCourseList(response)
+            console.log(response)
+        })
+
+    }, []);
+
 
     const navigate = useNavigate();
 
     const [facultyList, setFacultyList] = useState([]);
+    const [courseList, setCourseList] = useState([]);
 
     return (
         <div>
@@ -31,26 +41,33 @@ const SKLandingScreen = () => {
 
             <div className="row">
 
-            {facultyList.map((item) => {
-                return (
+            {facultyList.map((item) => (
                 
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}
-                        onClick={() => {
+                <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}
+                    onClick={() => {
+                        var tempCourseList = [];
+                        for(var x = 0; x < courseList.length; x++){
+                            if(courseList[x].FacultyID === item.FacultyID){
+                                const record = courseList[x];
+                                tempCourseList.push(record);
+                            }
+                        };
+                        commonStore.update(s => {s.selectedCourseList = tempCourseList})
+                        navigate(item.IntroNavLink);
+                    }}
+                >
+                    <div onClick={() => {
+                        navigate(item.IntroNavLink);
 
-                        }}
-                    >
-                        <div onClick={() => {
-                            navigate(item.IntroNavLink);
-                        }} style={{ border: 'none' }} >
-                            <div>
-                                <img className="Imglayout" src={item.FacultyCoverSource} alt="" />
-                                <p className="Landing_Textstyle">{item.FacultyName}</p>
-                            </div>
+                    }} style={{ border: 'none' }} >
+                        <div>
+                            <img className="Imglayout" src={item.FacultyCoverSource} alt="" />
+                            <p className="Landing_Textstyle">{item.FacultyName}</p>
                         </div>
-                    </button>
+                    </div>
+                </button>
 
-                    )
-                })}
+                ))}
                 </div>
 
                 <div className="University">
