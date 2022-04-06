@@ -83,7 +83,7 @@
     height: 100%;
 }
 
-.CS-bgColor{
+.CS-bgColor {
     background-color: rgb(154, 184, 211, 0.4);
   }
 
@@ -95,51 +95,24 @@
     text-align: center;
 }
 
-.CS-icon{
+.CS-icon {
     width: 40px;
     height: 40px;
     padding-right: 20px;
 }
 
-.CS-carousel-group{
-    margin: 2rem;
+.CS-Industry-Partners {
+  margin: 2rem;
 }
 
-.CS-carousel{
-    width: 100%;
-    height: 50%;
+.CS-industry-title {
+  font-weight: 700;
+  font-size: 2rem;
 }
 
-.CS-carousel-img{
-    width: 100%;
-    height: 50%;
-}
-
-.CS-carousel-label {
-  bottom: 9%;
-  width: 90%;
-  right: 0;
-  left: 0;
-  margin: 0 2rem;
-}
-
-.CS-carousel-label1 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  text-align: left;
-}
-
-.CS-carousel-text {
-  bottom: 20%;
-  left: 0;
-  right: 0;
-  width: 90%;
-  margin: 0 2rem;
-}
-
-.CS-carousel-text1{
-  margin: 0;
-  text-align: left;
+.CS-img-4 {
+  width: 75rem;
+  height: 40rem;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -153,7 +126,10 @@
     .CS-container {
       padding: 0 8rem;
     }
-   
+    .CS-img-4 {
+      width: 60rem;
+      height: 35rem;
+    }
   }
   
   @media only screen and (max-width: 992px) {
@@ -163,6 +139,14 @@
     .CS-Section-1-img {
       width: 23rem;
       height: 15rem;
+    }
+    .CS-industry-title {
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+    .CS-img-4 {
+      width: 50rem;
+      height: 30rem;
     }
   }
   
@@ -216,12 +200,16 @@
     .CS-button{
       margin: 0;
     }
-    .CS-carousel-label-font {
-      font-size: 1.2rem;
+    .CS-Industry-Partners {
+      margin: 1.5rem;
     }
-    
-    .CS-carousel-text-font {
-      font-size: 1rem;
+    .CS-industry-title {
+      font-weight: 700;
+      font-size: 1.6rem;
+    }
+    .CS-img-4 {
+      width: 45rem;
+      height: 25rem;
     }
   }
   
@@ -245,15 +233,12 @@
       width: 21rem;
       height: 12rem;
     }
-    .CS-carousel-group{
-      margin: 1rem;
+    .CS-Industry-Partners {
+      margin: 1.3rem;
     }
-    .CS-carousel-label-font {
-      font-size: 1.1rem;
-    }
-    
-    .CS-carousel-text-font {
-      font-size: 0.9rem;
+    .CS-img-4 {
+      width: 40rem;
+      height: 25rem;
     }
     .CS-button {
       margin: 0 !important;
@@ -283,19 +268,16 @@
       width: 19rem;
       height: 10rem;
     }
-    .CS-carousel-group{
-      margin: 1rem 0rem;
+    .CS-Industry-Partners {
+      margin: 1.1rem;
     }
-    .CS-carousel{
-      width: 100%;
-      height: 15rem;
+    .CS-industry-title {
+      font-weight: 700;
+      font-size: 1.3rem;
     }
-    .CS-carousel-label-font {
-      font-size: 1rem;
-    }
-    
-    .CS-carousel-text-font {
-      font-size: 0.8rem;
+    .CS-img-4 {
+      width: 30rem;
+      height: 18rem;
     }
     .CS-button{
       margin: 0 !important;
@@ -333,16 +315,16 @@
       width: 17rem;
       height: 9rem;
     }
-    .CS-carousel{
-      width: 100%;
-      height: 10rem;
+    .CS-Industry-Partners {
+      margin: 1rem;
     }
-    .CS-carousel-label-font {
-      font-size: 0.9rem;
+    .CS-industry-title {
+      font-weight: 700;
+      font-size: 1rem;
     }
-    
-    .CS-carousel-text-font {
-      font-size: 0.7rem;
+    .CS-img-4 {
+      width: 20rem;
+      height: 14rem;
     }
     .CS-Section-1-Header{
       margin-top: 0rem;
@@ -375,12 +357,16 @@
       width: 16rem;
       height: 8rem;
     }
-    .CS-carousel-label-font {
-      font-size: 0.8rem;
+    .CS-Industry-Partners {
+      margin: 0.8rem;
     }
-    
-    .CS-carousel-text-font {
-      font-size: 0.6rem;
+    .CS-industry-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .CS-img-4 {
+      width: 18rem;
+      height: 12rem;
     }
     .CS-button{
       margin: 0 !important;
@@ -413,12 +399,16 @@
       width: 15rem;
       height: 7rem;
     }
-    .CS-carousel-label-font {
+    .CS-Industry-Partners {
+      margin: 0.5rem;
+    }
+    .CS-industry-title {
+      font-weight: 700;
       font-size: 0.7rem;
     }
-    
-    .CS-carousel-text-font {
-      font-size: 0.5rem;
+    .CS-img-4 {
+      width: 15rem;
+      height: 12rem;
     }
   }
   
