@@ -7,6 +7,21 @@ import Facilities from './general-components/Facilities/Facilities.js'
 import TabsComponent from './general-components/Tabs/TabsComponent'
 
 const Business_And_Accounting = () => {
+    const studentdetails = [{
+        Category: "Student_Testimonials",
+        detailsname: "Tariana Anak Tara ",
+        detailsjob: "Currently working at Sarawak Energy Berhad",
+        detailsimage: require('../assets/images/Business_And_Accounting/BA-img8.jpeg'),
+        detailscontent: "“SEGi College Sarawak in Collaboration with University of Sunderland for the programme of Bachelor (Hons) Business and Management (3+0) turned out to be a blessing in disguise. It has been a great experience being a part of such an Institution which not only provided me with quality education but also has helped me to groom my overall personality. The renowned faculty of Business & Accounting combined with the pedagogic learning has moulded me into a smarter professional with the ability to analyse my entrepreneurial ventures, also enhancing my personal psychographic in the process.”",
+    },
+    ]
+    const achievementdetails = [{
+        Category: "",
+        detailsname: "",
+        detailsjob: "",
+        detailsimage: "",
+        detailscontent: "",
+    },]
     return (
         <div>
 
@@ -76,11 +91,8 @@ const Business_And_Accounting = () => {
             </div>
 
             <TabsComponent
-                StudentName={"Tariana Anak Tara"}
-                StudentJob={"Currently working at Sarawak Energy Berhad"}
-                Studentimage={require('../assets/images/Business_And_Accounting/BA-img8.jpeg')} 
-                StudentWords={"“SEGi College Sarawak in Collaboration with University of Sunderland for the programme of Bachelor (Hons) Business and Management (3+0) turned out to be a blessing in disguise. It has been a great experience being a part of such an Institution which not only provided me with quality education but also has helped me to groom my overall personality. The renowned faculty of Business & Accounting combined with the pedagogic learning has moulded me into a smarter professional with the ability to analyse my entrepreneurial ventures, also enhancing my personal psychographic in the process.”"}
-                navigationpath={""}
+                studentdetails={studentdetails}
+                achievementdetails={achievementdetails}
                 textcolor={"white"}
                 backgroundcolor={"#949494"}
             />

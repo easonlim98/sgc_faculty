@@ -7,136 +7,127 @@ import Facilities from './general-components/Facilities/Facilities.js'
 import TabsComponent from './general-components/Tabs/TabsComponent'
 
 const Lawintro = () => {
+  const studentdetails = [{
+    Category: "Student_Testimonials",
+    detailsname: "Claudine Tang ",
+    detailsjob: "Diploma in Law",
+    detailsimage: require('../assets/images/Law/LawAlumni.PNG'),
+    detailscontent: "“My experiences as a law student at segi has been a great one. Mostly due to the fact, I got to work & learn from the best lecturers and students. The academic challenges of studying law has prepared me for future career path”",
+  },
+  ]
+  const achievementdetails = [{
+    Category: "",
+    detailsname: "",
+    detailsjob: "",
+    detailsimage: "",
+    detailscontent: "",
+  },]
+
   return (
+    <div>
+      <div className='Law banner-container'
+        style={{
+          backgroundImage: "url(" + require('../assets/images/Law/LawBanner.png') + ")"
+        }}>
+        <Banner
+          navigatepath={"/Search_Page"}
+          coursename={"Law"} />
+      </div>
 
-   <div>
-
-
-       <div className='Law banner-container'
-                style={{
-                    backgroundImage: "url(" + require('../assets/images/Law/LawBanner.png') + ")"
-                }}>
-                <Banner
-                    navigatepath={"/Search_Page"}
-                    coursename={"Law"} />
-            </div>
-
-
-
-
-   {/* <div className="LawBanner">
-   <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{background:'none', width: '85%', display: 'flex', flexDirection: 'column'}}>
-            <div style={{background:'none', display: 'flex', flexDirection: 'column'}}>
-                <a style={{fontSize: '20px', color: '#000000'}}>Know more about</a>
-                <a style={{fontSize: '35px', color: '#000000', fontWeight: 'bold'}}>Our Program</a>
-                <p style={{color: '#000000'}} className="bannerContent-res">If you are interested and want to know more
-                    about Communication Studies.</p>
-                <div>
-                    <button type="button" className="General-Button">Programme</button>
-                </div>
-            </div>
+      <div className="col-sm-7">
+        <div className="Law-Section-1">
+          <p style={{ fontWeight: '700', fontSize: '22px', textAlign: 'center' }}>Law In Malaysia</p>
+          <p style={{ fontWeight: '500' }} className="Law-Section-1-Content">As a commonwealth country, Malaysia adopts the common law system as practised in the United Kingdom. As such, SEGi collaborates with the University of London (UK) to offer the Bachelor of Laws (LLB) programme, as well as offering the SEGi homegrown Diploma in Law.</p>
         </div>
-    </div>
-   </div> */}
+      </div>
 
-   <div className="col-sm-7">
-            <div className="Law-Section-1">
-                <p style={{fontWeight: '700',fontSize: '22px', textAlign: 'center'}}>Law In Malaysia</p>
-                <p style={{fontWeight: '500'}} className="Law-Section-1-Content">As a commonwealth country, Malaysia adopts the common law system as practised in the United Kingdom. As such, SEGi collaborates with the University of London (UK) to offer the Bachelor of Laws (LLB) programme, as well as offering the SEGi homegrown Diploma in Law.</p>
-            </div>
-    </div>
 
-  
-    <div className="containers Law-Section-2">
+      <div className="containers Law-Section-2">
         <div className="row">
-        <div className="col-sm-8">
+          <div className="col-sm-8">
             <div className="Law-Section-2-left">
-                <p style={{fontWeight: '700', fontSize: '18px'}}>What SEGi Offer to you</p>
-                
-                <p style={{fontWeight: '500', fontSize: '14px'}}>The Law programmes available at SEGi are ideal for students who wish to obtain a qualification of international standing en route to a successful career as a practising lawyer.</p>
-              </div>
-                    <button type="button" className="btn btn-outline-dark">Read more</button>
-        </div>
-        <div className="col-sm-4">
-            <div className="Law-Section-2-right">
-                <img className="Law-Section-2-img" src={require("../assets/images/Law/TextImage1.png")}/>
+              <p style={{ fontWeight: '700', fontSize: '18px' }}>What SEGi Offer to you</p>
+
+              <p style={{ fontWeight: '500', fontSize: '14px' }}>The Law programmes available at SEGi are ideal for students who wish to obtain a qualification of international standing en route to a successful career as a practising lawyer.</p>
             </div>
+            <button type="button" className="btn btn-outline-dark">Read more</button>
+          </div>
+          <div className="col-sm-4">
+            <div className="Law-Section-2-right">
+              <img className="Law-Section-2-img" src={require("../assets/images/Law/TextImage1.png")} />
+            </div>
+          </div>
         </div>
-        </div>
-     </div>
-    
-    <div className="LawOfachievement">
-      <h5 style={{fontWeight: '700'}}>What you Will Achieve</h5>
-      <img className="Mapsoflaw" src={require("../assets/images/Law/MapLaw.PNG")}></img>
-    </div>
-    
-    
-    <div className="Law-Section-6">
-      <div className="row">
+      </div>
+
+      <div className="LawOfachievement">
+        <h5 style={{ fontWeight: '700' }}>What you Will Achieve</h5>
+        <img className="Mapsoflaw" src={require("../assets/images/Law/MapLaw.PNG")}></img>
+      </div>
+
+
+      <div className="Law-Section-6">
+        <div className="row">
           <div className="col-sm-5">
-              <img className="Law-Section-6-img"  src={require("../assets/images/Law/LawImage2.png")}/>
+            <img className="Law-Section-6-img" src={require("../assets/images/Law/LawImage2.png")} />
           </div>
           <div className="col-sm-7">
-              <div className="Law-Section-6-right" style={{marginTop: '2rem'}}>
-                  <br/>
-                  <br/>
-                  <p style={{fontWeight: '700'}}>What to Expect From Law</p>
-                  <br/>
-                  <p style={{fontWeight: '500'}}>a world where degree providers are rapidly increasing, the University of London LLB offers the security of an internationally recognised ‘gold standard’ established for over 100 years. The University of London was the first to offer a degree in English Law, in the 1890s. Upon graduation students will join a distinguished group of solicitors, barristers and judges around the world who began their careers by obtaining their law degree through the University of London International Programmes.</p>
-                  <br/>
-                  <br/>
-                  <div style={{display: 'flex' , justifyContent: 'flex-end', marginBottom: '1rem', marginRight: '2rem', borderRadius: '2px'}}>
-                      <button type="button" className="btn btn-outline-dark">Read More</button>
-                  </div>
+            <div className="Law-Section-6-right" style={{ marginTop: '2rem' }}>
+              <br />
+              <br />
+              <p style={{ fontWeight: '700' }}>What to Expect From Law</p>
+              <br />
+              <p style={{ fontWeight: '500' }}>a world where degree providers are rapidly increasing, the University of London LLB offers the security of an internationally recognised ‘gold standard’ established for over 100 years. The University of London was the first to offer a degree in English Law, in the 1890s. Upon graduation students will join a distinguished group of solicitors, barristers and judges around the world who began their careers by obtaining their law degree through the University of London International Programmes.</p>
+              <br />
+              <br />
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem', marginRight: '2rem', borderRadius: '2px' }}>
+                <button type="button" className="btn btn-outline-dark">Read More</button>
               </div>
+            </div>
           </div>
+        </div>
       </div>
-    </div>
-   
 
-    <div className ="LawDecks">
-    <div className="Lawcard-deck">
-        <div className="card1">
-          <img className="card-img-top" src={require("../assets/images/Law/Prestige.png")} alt="Card image cap"/>
-          <div className="card-body">
-            <h5 className="card-title">Status and Prestige</h5>
+
+      <div className="LawDecks">
+        <div className="Lawcard-deck">
+          <div className="card1">
+            <img className="card-img-top" src={require("../assets/images/Law/Prestige.png")} alt="Card image cap" />
+            <div className="card-body">
+              <h5 className="card-title">Status and Prestige</h5>
+            </div>
           </div>
         </div>
-    </div>
 
-    <div className="Lawcard-deck2">
-        <div className="card2">
-          <img className="card-img-top" src={require("../assets/images/Law/Rewarding.png")} alt="Card image cap"/>
-          <div className="card-body">
-            <h5 className="card-title">Rewarding Profession</h5>
+        <div className="Lawcard-deck2">
+          <div className="card2">
+            <img className="card-img-top" src={require("../assets/images/Law/Rewarding.png")} alt="Card image cap" />
+            <div className="card-body">
+              <h5 className="card-title">Rewarding Profession</h5>
+            </div>
           </div>
         </div>
-    </div>
 
 
-    <div className="Lawcard-deck3">
-        <div className="card3">
-          <img className="card-img-top" src={require("../assets/images/Law/Intelectual.png")} alt="Card image cap"/>
-          <div className="card-body">
-            <h5 className="card-title">Intelectually Challenging</h5>
+        <div className="Lawcard-deck3">
+          <div className="card3">
+            <img className="card-img-top" src={require("../assets/images/Law/Intelectual.png")} alt="Card image cap" />
+            <div className="card-body">
+              <h5 className="card-title">Intelectually Challenging</h5>
+            </div>
           </div>
         </div>
-    </div>
 
-  </div>
+      </div>
 
-  <TabsComponent
-                StudentName={"Claudine Tang"}
-                StudentJob={"Diploma in Law"}
-                Studentimage={require('../assets/images/Law/LawAlumni.PNG')}
-                StudentWords={"“My experiences as a law student at segi has been a great one. Mostly due to the fact, I got to work & learn from the best lecturers and students. The academic challenges of studying law has prepared me for future career path”"}
-                navigationpath={""}
-                textcolor={"black"}
-                backgroundcolor={"#C4C4C4"}
-            />
+      <TabsComponent
+        studentdetails={studentdetails}
+        achievementdetails={achievementdetails}
+        textcolor={"black"}
+        backgroundcolor={"#C4C4C4"}
+      />
 
-  {/* <div className="LawCarousel">
+      {/* <div className="LawCarousel">
     <div className="container Law-Container5">    
         <div className="row">
           <div className="col-6">
@@ -179,13 +170,13 @@ const Lawintro = () => {
         </div>
     </div>
 </div> */}
-            
 
-  <Facilities
-  facilitiesimage={require('../assets/images/Law/LastLawPic.png')}
-  content={"If you are interested in our programme and want to check out more about our Law related facilities, please click on the facilities button."} />
 
-    {/* <div className="Law-Section-6">
+      <Facilities
+        facilitiesimage={require('../assets/images/Law/LastLawPic.png')}
+        content={"If you are interested in our programme and want to check out more about our Law related facilities, please click on the facilities button."} />
+
+      {/* <div className="Law-Section-6">
       <div className="row">
           <div className="col-sm-5">
               <img className="Law-Section-6-img" src={require("../assets/images/Law/LastLawPic.png")}/>
@@ -206,12 +197,12 @@ const Lawintro = () => {
           </div>
       </div>
   </div> */}
-  
-</div>
 
-    
+    </div>
+
+
   )
-  
+
 }
 
 

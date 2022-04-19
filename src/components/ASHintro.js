@@ -144,7 +144,7 @@ const ASHintro = () => {
        
 </div>
 
-<TabsComponent
+{/* <TabsComponent
 StudentName={"Chew Shi Ling"}
 StudentJob={"Dean List and High Achiever Graduation Award in 2016"}
 Studentimage={require('../assets/images/AHS/Outstanding_student.PNG')}
@@ -152,7 +152,7 @@ StudentWords={"“Thanks to the SEGi College for giving me the support, I eventu
 navigationpath={""}
 textcolor={"#A71337"}
 backgroundcolor={"#4780a45e"}
-            />
+            /> */}
 
     {/* <div className="con4">
       <img  src={require("../assets/images/AHS/container4.png")}/>
