@@ -22,6 +22,13 @@ const Communication_Studies = () => {
         detailsimage: require("../assets/images/Communication_Studies/CS-student1.png"),
         detailscontent: "Young PR Professional of the Year Award, Malaysia Public Relations Award Night",
     },]
+    const facilieitesdetails = [{
+        Category: "facilites",
+        detailsname: "Communication Studies",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Communication_Studies/CS-img-8.png'),
+        detailscontent: "“If you are interested in our programme and want to check out more about our Communication Studies related facilities, please click on the facilities button.”",
+    },]
 
     return (
         <div>
@@ -104,9 +111,8 @@ const Communication_Studies = () => {
                 backgroundcolor={"#9AB8D366"}
 
             />
-            <Facilities
-                facilitiesimage={require('../assets/images/Communication_Studies/CS-img-8.png')}
-                content={"If you are interested in our programme and want to check out more about our Communication Studies related facilities, please click on the facilities button."}
+             <Facilities
+                facilitiesdetails={facilieitesdetails}
             />
         </div>
     )

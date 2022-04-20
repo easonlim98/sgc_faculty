@@ -25,6 +25,14 @@ const Nursing = () => {
         detailsimage: "",
         detailscontent: "",
     },]
+    const facilieitesdetails = [{
+        Category: "facilites",
+        detailsname: "Nursing",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/nursingfacility.jpg'),
+        detailscontent: "“If you are interested in our programme and want to check out more about our Nursing and Caring-related facilities, please click on the facilities button.”",
+    },]
+
     return (
         <div>
             <div className='CA banner-container'
@@ -105,11 +113,11 @@ const Nursing = () => {
                 textcolor={"#A71337"}
                 backgroundcolor={"#B4D0F1"}
             />
+
+
             <Facilities
-                facilitiesimage={require('../assets/images/nursingfacility.jpg')}
-                content={"If you are interested in our programme and want to check out more about our Nursing and Caring-related facilities, please click on the facilities button."} />
-
-
+                facilitiesdetails={facilieitesdetails}
+            />
 
 
         </div>

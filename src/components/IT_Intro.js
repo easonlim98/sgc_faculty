@@ -10,6 +10,14 @@ import Image from '../assets/images/IT_Intro/IT_banner.jpg'
 import { useNavigate } from "react-router-dom";
 
 const IT_Intro = () => {
+  const facilieitesdetails = [{
+    Category: "facilites",
+    detailsname: "Information Technology",
+    detailsjob: "Facilities",
+    detailsimage: require('../assets/images/IT_Intro/IT_Intro_Con6.png'),
+    detailscontent: "“If you are interested in our programme and want to check out more about our Information Technology-related facilities, please click on the facilities button.”",
+  },]
+
   return (
 
     <div>
@@ -148,8 +156,9 @@ const IT_Intro = () => {
           </div>
         </div> */}
         <Facilities
-          facilitiesimage={require('../assets/images/IT_Intro/IT_Intro_Con6.png')}
-          content={"If you are interested in our programme and want to check out more about our Information Technology-related facilities, please click on the facilities button."} />
+          facilitiesdetails={facilieitesdetails}
+        />
+      
       </div>
     </div>
   )

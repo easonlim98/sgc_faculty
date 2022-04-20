@@ -7,20 +7,28 @@ import Facilities from './general-components/Facilities/Facilities.js'
 import TabsComponent from './general-components/Tabs/TabsComponent'
 
 const ASHintro = () => {
+
+  const facilieitesdetails = [{
+    Category: "facilites",
+    detailsname: "Allied Health Science",
+    detailsjob: "Facilities",
+    detailsimage: require('../assets/images/AHS/LastPic.png'),
+    detailscontent: "“If you are interested in our programme and want to check out more about our Allied Health Science related facilities, please click on the facilities button.”",
+  },]
   return (
-  <div>
+    <div>
 
-<div className='Law banner-container'
-                style={{
-                    backgroundImage: "url(" + require('../assets/images/AHS/AHSBanner.PNG') + ")"
-                }}>
-                <Banner
-                    navigatepath={"/Search_Page"}
-                    coursename={"Allied Health Science"} />
-            </div>
+      <div className='Law banner-container'
+        style={{
+          backgroundImage: "url(" + require('../assets/images/AHS/AHSBanner.PNG') + ")"
+        }}>
+        <Banner
+          navigatepath={"/Search_Page"}
+          coursename={"Allied Health Science"} />
+      </div>
 
 
- {/* <div className="BannerAHS">
+      {/* <div className="BannerAHS">
  <div style={{ display: 'flex', height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{background:'none', width: '85%', display: 'flex', flexDirection: 'column'}}>
             <div style={{background:'none', display: 'flex', flexDirection: 'column'}}>
@@ -36,115 +44,115 @@ const ASHintro = () => {
     </div>
  </div> */}
 
- <div className="AHScardtitle">
-  <p>Our Professions</p>
-  
-  <img src={require("../assets/images/AHS/Professions2.png")}/>
+      <div className="AHScardtitle">
+        <p>Our Professions</p>
 
- </div>
+        <img src={require("../assets/images/AHS/Professions2.png")} />
 
-    <div className="AHSsection1">
-    <div className="AHScontent1">
-        <h4>What is Allied Health Science</h4>
-        <p className="AHStext1">Allied health’s duties may include but not limited to the identication, evaluation
+      </div>
+
+      <div className="AHSsection1">
+        <div className="AHScontent1">
+          <h4>What is Allied Health Science</h4>
+          <p className="AHStext1">Allied health’s duties may include but not limited to the identication, evaluation
             and prevention of injuries, disease and disorders.</p>
-          </div>
-          <div className="image1">
-              <img src={require("../assets/images/AHS/health1.png")} className="floatingship"/>
-            </div>
-         
-    </div>
-    
-    
-    <div className="AHScontent2">
+        </div>
+        <div className="image1">
+          <img src={require("../assets/images/AHS/health1.png")} className="floatingship" />
+        </div>
+
+      </div>
+
+
+      <div className="AHScontent2">
         <h5>Why Choose Us</h5>
         <p className="AHStext2">Our learning modules are intensive and places a strong emphasis on procedural skills.
-            The curriculum will guide students to evaluate patients’ responses, evaluate work
-            environment safety, ensure environmental health, perform medical laboratory tests make
-            appropriate decisions about treatment and plans safety and health control measures.
-            </p>
-    </div>
-
-  <div className="AHSsection2">
-    <div className="AHSContent3">
-        <div className="imagecontent3">
-        <img src={require("../assets/images/AHS/Doctor.png")}  alt=""/>
-        <span style={{fontSize: '160%' }}>&nbsp;&nbsp;Patients Response</span> 
+          The curriculum will guide students to evaluate patients’ responses, evaluate work
+          environment safety, ensure environmental health, perform medical laboratory tests make
+          appropriate decisions about treatment and plans safety and health control measures.
+        </p>
       </div>
-      
-        <p className="AHSdescription1">
-           Qualified Doctors person who holds a degree recognised by the 
-           Medical Council of India and is registered by the Medical Council of any State.
-         </p>
-    </div>
 
-    <div className="AHSContent4">
-      <div className="imagecontent4">
-      <img src={require("../assets/images/AHS/Emergancy.png")}  alt=""/>
-      <span style={{fontSize: '150%'}}>&nbsp;&nbsp;Work Environment Safety</span> 
-    </div>
-  
-      <p className="AHSdescription2">
-        Emergency Care is an essential part of the health system and 
-        serves as the first point of contact for many around the world. 
-       </p>
-  </div>
-</div>
+      <div className="AHSsection2">
+        <div className="AHSContent3">
+          <div className="imagecontent3">
+            <img src={require("../assets/images/AHS/Doctor.png")} alt="" />
+            <span style={{ fontSize: '160%' }}>&nbsp;&nbsp;Patients Response</span>
+          </div>
 
-<div className="AHSsection3">
-  <div className="AHSContent5">
-    <div className="imagecontent5">
-    <img src={require("../assets/images/AHS/24h.png")}  alt=""/>
-    <span style={{fontSize: '160%'}}>&nbsp;&nbsp;Ensure Environmental Health</span> 
-  </div>
-  
-    <p className="AHSdescription3">
-      If you need medical care which is an emergency but cannot wait 
-      until we re-open, you can call our out-of-hours service
-     </p>
-  </div>
+          <p className="AHSdescription1">
+            Qualified Doctors person who holds a degree recognised by the
+            Medical Council of India and is registered by the Medical Council of any State.
+          </p>
+        </div>
 
-  <div className="AHSContent6">
-    <div className="imagecontent6">
-    <img src={require("../assets/images/AHS/operation.png")}  alt=""/>
-    <span style={{fontSize: '150%'}}>Perform Medical Laboratory Tests</span> 
-  </div>
-  
-    <p className="AHSdescription4">
-      OPERATING THEATRES as an operating room (OR), operating suite, or operation suite) 
-      is a facility within a hospital where surgical operations.
-     </p>
-  </div>
-</div>
+        <div className="AHSContent4">
+          <div className="imagecontent4">
+            <img src={require("../assets/images/AHS/Emergancy.png")} alt="" />
+            <span style={{ fontSize: '150%' }}>&nbsp;&nbsp;Work Environment Safety</span>
+          </div>
 
-<div className="AHSsection4">
-  <div className="AHSContent7">
-    <div className="imagecontent7">
-    <img src={require("../assets/images/AHS/24h.png")}  alt=""/>
-    <span style={{fontSize: '160%'}}>&nbsp;&nbsp;Plans Safety</span> 
-  </div>
-  
-    <p className="AHSdescription5">
-     Identifying the physical and health hazards that could harm people,
-     procedures to prevent accidents, and steps to take when accidents occur
-     </p>
-  </div>
+          <p className="AHSdescription2">
+            Emergency Care is an essential part of the health system and
+            serves as the first point of contact for many around the world.
+          </p>
+        </div>
+      </div>
 
-  <div className="AHSContent8">
-    <div className="imagecontent8">
-    <img src={require("../assets/images/AHS/operation.png")}  alt=""/>
-    <span style={{fontSize: '160%' }}>Health Control Measures</span> 
-  </div>
-  
-    <p className="AHSdescription6">
-    The practices, procedures and resources for developing and implementing, 
-    reviewing and maintaining the occupational safety and health policy.
-     </p>
-  </div>
-       
-</div>
+      <div className="AHSsection3">
+        <div className="AHSContent5">
+          <div className="imagecontent5">
+            <img src={require("../assets/images/AHS/24h.png")} alt="" />
+            <span style={{ fontSize: '160%' }}>&nbsp;&nbsp;Ensure Environmental Health</span>
+          </div>
 
-{/* <TabsComponent
+          <p className="AHSdescription3">
+            If you need medical care which is an emergency but cannot wait
+            until we re-open, you can call our out-of-hours service
+          </p>
+        </div>
+
+        <div className="AHSContent6">
+          <div className="imagecontent6">
+            <img src={require("../assets/images/AHS/operation.png")} alt="" />
+            <span style={{ fontSize: '150%' }}>Perform Medical Laboratory Tests</span>
+          </div>
+
+          <p className="AHSdescription4">
+            OPERATING THEATRES as an operating room (OR), operating suite, or operation suite)
+            is a facility within a hospital where surgical operations.
+          </p>
+        </div>
+      </div>
+
+      <div className="AHSsection4">
+        <div className="AHSContent7">
+          <div className="imagecontent7">
+            <img src={require("../assets/images/AHS/24h.png")} alt="" />
+            <span style={{ fontSize: '160%' }}>&nbsp;&nbsp;Plans Safety</span>
+          </div>
+
+          <p className="AHSdescription5">
+            Identifying the physical and health hazards that could harm people,
+            procedures to prevent accidents, and steps to take when accidents occur
+          </p>
+        </div>
+
+        <div className="AHSContent8">
+          <div className="imagecontent8">
+            <img src={require("../assets/images/AHS/operation.png")} alt="" />
+            <span style={{ fontSize: '160%' }}>Health Control Measures</span>
+          </div>
+
+          <p className="AHSdescription6">
+            The practices, procedures and resources for developing and implementing,
+            reviewing and maintaining the occupational safety and health policy.
+          </p>
+        </div>
+
+      </div>
+
+      {/* <TabsComponent
 StudentName={"Chew Shi Ling"}
 StudentJob={"Dean List and High Achiever Graduation Award in 2016"}
 Studentimage={require('../assets/images/AHS/Outstanding_student.PNG')}
@@ -154,62 +162,59 @@ textcolor={"#A71337"}
 backgroundcolor={"#4780a45e"}
             /> */}
 
-    {/* <div className="con4">
+      {/* <div className="con4">
       <img  src={require("../assets/images/AHS/container4.png")}/>
     </div> */}
 
-        <div className="carouselAHS">
-          <h4 style={{marginTop: '2%', textAlign: 'center' }}>Previous Events</h4>
-            <div id="carouselCaptions" className="carousel slide" data-ride="carousel">
-                <ol className="carousel-indicators">
-                    <li data-target="#carouselCaptions" data-slide-to="0" className="active"></li>
-                    <li data-target="#carouselCaptions" data-slide-to="1"></li>
-                    <li data-target="#carouselCaptions" data-slide-to="2"></li>
-                </ol>
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src={require("../assets/images/AHS/APEX_Award _Ceremony_2021.jpeg")}
-                            className="d-block w-100 carousel-image" alt=""/>
-                        <div className="carousel-caption ">
-                            <h5>Award Ceremony</h5>
-                            <p>Apex Awards Ceremony 2021</p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <img src={require("../assets/images/AHS/Health_Screening.jpeg")}
-                            className="d-block w-100 carousel-image" alt=""/>
-                        <div className="carousel-caption ">
-                            <h5>Health Screening</h5>
-                            <p>Students of Allied Health Science are conducting health screening</p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <img src={require("../assets/images/AHS/Cytology_Assignment.jpeg")}
-                            className="d-block w-100 carousel-image" alt=""/>
-                        <div className="carousel-caption ">
-                            <h5>Cytology Assignment</h5>
-                            <p>Students are presenting their research findings in a public booth</p>
-                        </div>
-                    </div>
-                </div>
-                <a className="carousel-control-prev" href="#carouselCaptions" role="button" data-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Previous</span>
-                </a>
-                <a className="carousel-control-next" href="#carouselCaptions" role="button" data-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Next</span>
-                </a>
+      <div className="carouselAHS">
+        <h4 style={{ marginTop: '2%', textAlign: 'center' }}>Previous Events</h4>
+        <div id="carouselCaptions" className="carousel slide" data-ride="carousel">
+          <ol className="carousel-indicators">
+            <li data-target="#carouselCaptions" data-slide-to="0" className="active"></li>
+            <li data-target="#carouselCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselCaptions" data-slide-to="2"></li>
+          </ol>
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img src={require("../assets/images/AHS/APEX_Award _Ceremony_2021.jpeg")}
+                className="d-block w-100 carousel-image" alt="" />
+              <div className="carousel-caption ">
+                <h5>Award Ceremony</h5>
+                <p>Apex Awards Ceremony 2021</p>
+              </div>
             </div>
+            <div className="carousel-item">
+              <img src={require("../assets/images/AHS/Health_Screening.jpeg")}
+                className="d-block w-100 carousel-image" alt="" />
+              <div className="carousel-caption ">
+                <h5>Health Screening</h5>
+                <p>Students of Allied Health Science are conducting health screening</p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img src={require("../assets/images/AHS/Cytology_Assignment.jpeg")}
+                className="d-block w-100 carousel-image" alt="" />
+              <div className="carousel-caption ">
+                <h5>Cytology Assignment</h5>
+                <p>Students are presenting their research findings in a public booth</p>
+              </div>
+            </div>
+          </div>
+          <a className="carousel-control-prev" href="#carouselCaptions" role="button" data-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
+          </a>
+          <a className="carousel-control-next" href="#carouselCaptions" role="button" data-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
+          </a>
         </div>
-<br/>
-
-<Facilities
- facilitiesimage={require('../assets/images/AHS/LastPic.png')}
- content={"If you are interested in our programme and want to check out more about our Allied Health Science related facilities, please click on the facilities button."} />
-
-
-        {/* <div className="AHS-Section-6">
+      </div>
+      <br />
+      <Facilities
+        facilitiesdetails={facilieitesdetails}
+      />
+      {/* <div className="AHS-Section-6">
           <div className="row">
               <div className="col-sm-5">
                   <img className="AHS-Section-6-img" src={require("../assets/images/AHS/LastPic.png")}/>
@@ -230,10 +235,10 @@ backgroundcolor={"#4780a45e"}
               </div>
           </div>
       </div> */}
-        
-      </div>
-    
- 
+
+    </div>
+
+
   )
 }
 

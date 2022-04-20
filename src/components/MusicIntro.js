@@ -22,6 +22,13 @@ const MusicIntro = () => {
         detailsimage: require("../assets/images/Music/Alexlee.png"),
         detailscontent: "Rockfest Music Festival 2018 - 1st Runner Up Winner in Drum Level Category 3",
     },]
+    const facilieitesdetails = [{
+        Category: "facilites",
+        detailsname: "Music",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Music/pexels-photo-3760529 1.png'),
+        detailscontent: "“If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button.”",
+    },]
     
     return (
         <div>
@@ -82,9 +89,8 @@ const MusicIntro = () => {
             />
 
             <Facilities
-                facilitiesimage={require('../assets/images/Music/pexels-photo-3760529 1.png')}
-                content={"If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button."} />
-
+                facilitiesdetails={facilieitesdetails}
+            />
 
             <div className="fab-container">
                 <div className="button iconbutton">

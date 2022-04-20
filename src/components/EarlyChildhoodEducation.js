@@ -6,7 +6,13 @@ import Banner from './general-components/Banner/Banner.js'
 import Facilities from './general-components/Facilities/Facilities.js'
 
 const EarlyChildhoodEducation = () => {
-
+    const facilieitesdetails = [{
+        Category: "facilites",
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/facilities.jpg'),
+        detailscontent: "“If you are interested in our programme and want to check out more about our Early Childhood & Education-related facilities, please click on the facilities button.”",
+    },]
 
     return (
         <div>
@@ -77,7 +83,7 @@ const EarlyChildhoodEducation = () => {
             <div className="container ECE-Section-4">
                 <div className="col-sm-12 d-flex align-items-center flex-column">
                     <p style={{ display: 'flex', justifyContent: 'center', fontWeight: '700', fontSize: 'large' }}>OUR STRATEGIC INDUSTRY PARTNERS</p>
-                    <img style={{  marginTop: '2rem' }} src={require("../assets/images/Early_Childhood_Education/industries.png")} alt="" />
+                    <img style={{ marginTop: '2rem' }} src={require("../assets/images/Early_Childhood_Education/industries.png")} alt="" />
                 </div>
             </div>
 
@@ -109,11 +115,8 @@ const EarlyChildhoodEducation = () => {
                     </div>
                 </div>
             </div>
-
             <Facilities
-                facilitiesimage={require('../assets/images/Early_Childhood_Education/facilities.jpg')}
-                content={"If you are interested in our programme and want to check out more about our Early Childhood & Education-related facilities, please click on the facilities button."}
-                navigationpath={""}
+                facilitiesdetails={facilieitesdetails}
             />
         </div>
     )

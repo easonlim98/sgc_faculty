@@ -21,7 +21,14 @@ const OSHintro = () => {
         detailsimage: "",
         detailscontent: "",
     },]
-    
+    const facilieitesdetails = [{
+        Category: "facilites",
+        detailsname: "Occupational and Safety",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/image2.jpg'),
+        detailscontent: "“If you are interested in our programme and want to check out more about our Occupational and Safety related facilities, please click on the facilities button.”",
+    },]
+
     return (
         <div>
 
@@ -125,8 +132,8 @@ const OSHintro = () => {
                 backgroundcolor={"#FCB600"}
             />
             <Facilities
-                facilitiesimage={require('../assets/images/image2.jpg')}
-                content={"If you are interested in our programme and want to check out more about our OSH-related facilities, please click on the facilities button."} />
+                facilitiesdetails={facilieitesdetails}
+            />
         </div>
     )
 }

@@ -23,6 +23,13 @@ const Foundation = () => {
         detailscontent: "",
     },]
 
+    const facilieitesdetails = [{
+        Category: "facilites",
+        detailsname: "Foundation",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Foundation/founsection6.png'),
+        detailscontent: "“If you are interested in our programme and want to check out more about our Engeneering related facilities, please click on the facilities button.”",
+    },]
     return (
         <div>
             <div className='FF banner-container'
@@ -193,8 +200,8 @@ const Foundation = () => {
         </div>
     </div> */}
             <Facilities
-                facilitiesimage={require('../assets/images/Foundation/founsection6.png')}
-                content={"If you are interested in our programme and want to check out more about our Engeneering related facilities, please click on the facilities button."} />
+                facilitiesdetails={facilieitesdetails}
+            />
         </div>
     )
 }

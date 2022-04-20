@@ -22,6 +22,13 @@ const AmericanDegree = () => {
         detailsimage: "",
         detailscontent: "",
     },]
+    const facilieitesdetails = [{
+        Category: "facilites",
+        detailsname: "American Degree Programme",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/American_Degree/Facilities.png'),
+        detailscontent: "“If you are interested in our programme and want to check out more about our American Degree related facilities, please click on the facilities button.”",
+    },]
 
     return (
         <div>
@@ -156,8 +163,8 @@ const AmericanDegree = () => {
             </div>
         </div> */}
             <Facilities
-                facilitiesimage={require('../assets/images/American_Degree/Facilities.png')}
-                content={"If you are interested in our programme and want to check out more about our American Degree related facilities, please click on the facilities button."} />
+                facilitiesdetails={facilieitesdetails}
+            />
         </div>
     )
 }

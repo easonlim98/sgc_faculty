@@ -14,7 +14,7 @@ const CreativeArt = () => {
         detailsimage: require('../assets/images/Creative_Art/student1.jpg'),
         detailscontent: "“I came in as an intern. Right off the bat, the boss liked my logo and web design so much, they used it for their big new launch! Now I’m a full-timer! The pay? Not bad at all, not bad at all!”",
     },
-]
+    ]
 
     const achievementdetails = [{
         Category: "Student_Achievement",
@@ -30,6 +30,15 @@ const CreativeArt = () => {
         detailsimage: require("../assets/images/Creative_Art/Picture1.jpg"),
         detailscontent: "1st Prize Winner - Raya Packet e-design competition organised by Setia City Mall in March 2021"
     }]
+
+    const facilieitesdetails = [{
+        Category: "facilites",
+        detailsname: "Creative Art",
+        detailsjob: "PC Room",
+        detailsimage: require('../assets/images/Creative_Art/5_Animation Room_1.jpg'),
+        detailscontent: "“If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button.”",
+    },]
+
     return (
         <>
             <div className='CA banner-container'
@@ -110,9 +119,7 @@ const CreativeArt = () => {
                 backgroundcolor={"#E3E4E3"}
             />
             <Facilities
-                facilitiesimage={require('../assets/images/Creative_Art/5_Animation Room_1.jpg')}
-                content={"If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button."}
-                navigationpath={""}
+                facilitiesdetails={facilieitesdetails}
             />
 
         </>

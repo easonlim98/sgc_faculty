@@ -23,6 +23,13 @@ const Lawintro = () => {
     detailscontent: "",
   },]
 
+  const facilieitesdetails = [{
+    Category: "facilites",
+    detailsname: "Law",
+    detailsjob: "Facilities",
+    detailsimage: require('../assets/images/Law/LastLawPic.png'),
+    detailscontent: "“If you are interested in our programme and want to check out more about our Law related facilities, please click on the facilities button.”",
+  },]
   return (
     <div>
       <div className='Law banner-container'
@@ -171,10 +178,9 @@ const Lawintro = () => {
     </div>
 </div> */}
 
-
       <Facilities
-        facilitiesimage={require('../assets/images/Law/LastLawPic.png')}
-        content={"If you are interested in our programme and want to check out more about our Law related facilities, please click on the facilities button."} />
+        facilitiesdetails={facilieitesdetails}
+      />
 
       {/* <div className="Law-Section-6">
       <div className="row">

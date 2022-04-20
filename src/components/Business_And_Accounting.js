@@ -22,6 +22,14 @@ const Business_And_Accounting = () => {
         detailsimage: "",
         detailscontent: "",
     },]
+    const facilieitesdetails = [{
+        Category: "facilites",
+        detailsname: "Business and Accounting",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Business_And_Accounting/BA-Facilities1-Computer-Lab.jpg'),
+        detailscontent: "“Here at SEGi, the Faculty of Business and Accounting provides facilities to benefits students for their studies and student life. Our computer lab, library and student lounge facilities are readily available for students to facilitate their whole journey at SEGi.”",
+    },]
+
     return (
         <div>
 
@@ -97,8 +105,9 @@ const Business_And_Accounting = () => {
                 backgroundcolor={"#949494"}
             />
             <Facilities
-                facilitiesimage={require('../assets/images/Business_And_Accounting/BA-Facilities1-Computer-Lab.jpg')}
-                content={"Here at SEGi, the Faculty of Business and Accounting provides facilities to benefits students for their studies and student life. Our computer lab, library and student lounge facilities are readily available for students to facilitate their whole journey at SEGi."} />
+                facilitiesdetails={facilieitesdetails}
+            />
+
         </div>
     )
 }

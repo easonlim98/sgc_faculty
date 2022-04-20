@@ -25,10 +25,10 @@ const Header = () => {
 
     const MenuItems = ({ items }) => {
         return (
-            <li className="menu-items">
+            <li className="menu-items" id="hovermenu">
                 {items.submenu ? (
                 <>
-                    <button className="colorWhite dropdownButtonTitle" type="button" 
+                    <button className="colorWhite dropdownButtonTitle" id="menuhoverbutton" type="button" 
                             aria-haspopup="menu"
                             aria-expanded={dropdown ? "true" : "false"}
                         onClick={() => setDropdown((prev) => !prev)}
@@ -49,7 +49,7 @@ const Header = () => {
             <ul className={`dropdown ${dropdown ? "show" : ""}`}>
                 {submenus.map((submenu, index) => (
                     <li key={index} className="dropdown-menu-items">
-                        <a className="colorWhite dropdownTitle" 
+                        <a className="colorWhite dropdownTitle" id='submenuhover'
                             href={submenu.title === "FACULTIES" ? "/#" : "/#"}
                             >{submenu.title}</a>
                     </li>
