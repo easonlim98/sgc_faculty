@@ -8,6 +8,7 @@ const getKLFaculty='getKLFaculty.php'
 const getSJFaculty='getSJFaculty.php'
 const getSKFaculty='getSKFaculty.php'
 const getPGFaculty='getPGFaculty.php'
+const getCourseDetails='getCourseDetails.php'
 
 const API = {
     createUser,
@@ -19,7 +20,8 @@ const API = {
     getKLFaculty,
     getSJFaculty,
     getSKFaculty,
-    getPGFaculty
+    getPGFaculty,
+    getCourseDetails
 };
 
 export default API;

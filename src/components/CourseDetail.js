@@ -1,11 +1,52 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/js/bootstrap.bundle'
 import './css/Standard.css'
 import './css/CourseDetail.css'
+import ApiClient from '../util/ApiClient';
+import API from '../constant/API';
+import { commonStore } from '../store/commonStore'
 
 const CourseDetail = () => {
+
+    const courseDetails = commonStore.useState(s => s.courseDetails)
+
+    const courseDetailsDummy = {
+        CourseTitle: 'BSC (HONS) COMPUTING (3+0)',
+        CourseCode: '(R2/481/6/0500) (05/24) (A10000)',
+        CourseLevelOfStudy: 'Degree',
+        CollegeName: 'SEGi College Kuala Lumpur',
+        CourseIntroText: 'The BSc (Hons) Computing programme is structured to prepare graduates for the challenges of the study of computing field. We aim to produce students with good practical skills and oriented with good understanding in programming aspects, problem solving skills and critical thinking skills. Further to introducing students to new technology for them to understand computer networking and communication protocols, and to acquire sufficient knowledge to write, debug, compile and execute business application or programmes using the latest programming terminology and technology. \n Upon graduation, students will be able to provide solution for business problems effectively as well as manage computing projects.',
+        Requirement: [
+            'SPM / O-Level or equivalent with 3 credits', 
+            'UEC with 3 credits',
+            'SKM Level 3',
+            'Related Certificate or equivalent',
+            'MQA-APEL T4',
+        ],
+        PSType: [
+            'Year 1',
+            'Year 2',
+        ],
+        ModuleName: [
+            'System Development',
+            'Computer Programming',
+            'Introduction to Internet Programming',
+            'Professional Project Management',
+            'Principles of Security',
+            'Application Development for Mobile Devices',
+            'Network Technology'
+        ],
+        AidAndFunding: [
+            'PTPTN',
+            'EPF',
+            'SEGi Monthly insallment',
+            'Low Initial Payment'
+        ],
+        CareerOpportunity: 'Start off a career in any of the chosen field: IT support and consultancy, System analyst, Computer programmer, E-commerce application, Software developer, Web designer, Independent Consultants for public and private sector / organisation.'
+    }
+
     const [DymBackgroundImg1, setDymBackgroundImg1] = useState(require('../assets/images/CoursePage/IT1.png')),
         [DymTitle1, setDymTitle1] = useState('BSC (HONS) COMPUTING'),
         [DymYear1, setDymYear1] = useState('(3+0)'),
@@ -291,7 +332,7 @@ const CourseDetail = () => {
                     {/* Title */}
                     <div className="Course_Detail_Course_Name_Font_Color_1 Course_Detail_Course_Name_Background_Image_1"
                         style={{
-                            backgroundImage: "url(" + DymBackgroundImg1 + ")"
+                            backgroundImage: require("../assets/images/CoursePage/IT1.png")
                         }}
                     >
                         <br />
@@ -874,22 +915,15 @@ const CourseDetail = () => {
                         <br />
                         <div className="Course_Detail_Course_Name_Div_2 my-5 p-5 z-depth-1 page1">
                             {/*Section: Content*/}
-                            <section className="text-center dark-grey-text" style={{ width: "100%" }}>
+                            <section className="text-center dark-grey-text" style={{ width: "100%"}}>
                                 {/* Section heading */}
-                                {(Course_Detail_Content_Editable_2) ?
                                     <h2
-                                        className="font-weight-bold mb-4 pb-2 "
-                                        style={{ fontSize: "5vw" }}
-                                    >{DymTitle1}
-                                    </h2> :
-                                    <h2 className="font-weight-bold mb-4 pb-2 "
-                                        style={{ fontSize: "5vw" }}
-                                    >{DymTitle1}
-                                    </h2>}
-                                {(Course_Detail_Content_Editable_2) ?
-                                    <h2 className="font-weight-bold mb-4 pb-2 " style={{ fontSize: "5vw" }}>{DymYear1}</h2>
-                                    :
-                                    <h2 className="font-weight-bold mb-4 pb-2 " style={{ fontSize: "5vw" }} >{DymYear1}</h2>}
+                                        className="font-weight-bold mb-4 pb-2 pl-5 pr-5 "
+                                        style={{ fontSize: 30 }}
+                                    >{courseDetails[0].CourseTitle}
+                                    </h2>
+                                    <br />
+                                    <br />
                                 {/* Grid row */}
                                 <div className="Course_Detail_Course_Name_Font_Size_1 row">
                                     {/* Grid column */}
@@ -899,10 +933,7 @@ const CourseDetail = () => {
                                             Course ID
                                         </h5>
                                         <p className="grey-text mb-md-0 " style={{ color: "#fff" }}>
-                                            {DymCourseID2}
-                                        </p>
-                                        <p className="grey-text mb-md-0 " style={{ color: "#fff" }}>
-                                            {DymCourseID3}
+                                            {courseDetails[0].CourseCode}
                                         </p>
                                     </div>
                                     {/* Grid column */}
@@ -913,7 +944,7 @@ const CourseDetail = () => {
                                             Level Of Study
                                         </h5>
                                         <p className="grey-text mb-md-0 " style={{ color: "#fff" }}>
-                                            {DymLevelOfStudy2}
+                                            {courseDetails[0].CourseLevelOfStudy}
                                         </p>
                                     </div>
                                     {/* Grid column */}
@@ -924,10 +955,7 @@ const CourseDetail = () => {
                                             Campus
                                         </h5>
                                         <p className="grey-text mb-0 " style={{ color: "#fff" }}>
-                                            {DymCampus2}
-                                        </p>
-                                        <p className="grey-text mb-0 " style={{ color: "#fff" }}>
-                                            {DymCampus3}
+                                            {courseDetailsDummy.CollegeName}
                                         </p>
                                     </div>
                                     {/* Grid column */}
@@ -954,26 +982,9 @@ const CourseDetail = () => {
                                     {/*Grid column*/}
                                     {/*Grid column*/}
                                     <div className="Course_Detail_Course_Name_Font_Color_1 col-lg-5 mt-4 mb-4 mb-lg-0">
-                                        <p>
-                                            <b>
-                                                {DymP1}
-                                            </b>
-                                        </p>
-                                        <p>
-                                            {DymP2}
-                                        </p>
-                                        <br />
+                                       
                                         <div className="Course_Detail_Course_Name_Font_Color_2">
-                                            <p>
-                                                <b>{DymP3}</b>
-                                            </p>
-                                            <p>{DymP4}</p>
-                                            <p>
-                                                {DymP5}
-                                            </p>
-                                            <p>
-                                                {DymP6}
-                                            </p>
+                                            <p>{courseDetailsDummy.CourseIntroText}</p>
                                         </div>
                                     </div>
                                     {/*Grid column*/}
@@ -982,113 +993,6 @@ const CourseDetail = () => {
                             </section>
                             {/*Section: Content*/}
                         </div>
-                    </div>
-                    {/* What We Should Know about this course */}
-                    <div className="Course_Detail_Course_Name_Div_2 my-5 p-5 z-depth-1 page1">
-                        {/*Section: Content*/}
-                        <section className="dark-grey-text">
-                            {/* Grid row */}
-                            <div className="row mb-3">
-                                {/* Grid column */}
-                                <div className="col-1">
-                                    <i className="fas fa-share fa-lg indigo-text" />
-                                </div>
-                                {/* Grid column */}
-                                {/* Grid column */}
-                                <div className="col-xl-10 col-md-11 col-10">
-                                    <h4 className="font-weight-bold mb-3 ">
-                                        {DymP7}
-                                    </h4>
-                                    <p className="grey-text"></p>
-                                    <li>
-                                        {DymP8}
-                                    </li>
-                                    <p />
-                                </div>
-                                {/* Grid column */}
-                            </div>
-                            {/* Grid row */}
-                            {/* Grid row */}
-                            <div className="row mb-3">
-                                {/* Grid column */}
-                                <div className="col-1">
-                                    <i className="fas fa-share fa-lg indigo-text" />
-                                </div>
-                                {/* Grid column */}
-                                {/* Grid column */}
-                                <div className="col-xl-10 col-md-11 col-10">
-                                    <p className="grey-text"></p>
-                                    <li>
-                                        {DymP9}
-                                    </li>
-                                    <p />
-                                </div>
-                                {/* Grid column */}
-                            </div>
-                            {/* Grid row */}
-                            {/* Grid row */}
-                            <div className="row mb-3">
-                                {/* Grid column */}
-                                <div className="col-1">
-                                    <i className="fas fa-share fa-lg indigo-text" />
-                                </div>
-                                {/* Grid column */}
-                                {/* Grid column */}
-                                <div className="col-xl-10 col-md-11 col-10">
-                                    <p className="grey-text"></p>
-                                    <li>
-                                        {DymP10}
-                                    </li>
-                                    <p />
-                                </div>
-                                {/* Grid column */}
-                            </div>
-                            {/* Grid row */}
-                            {/* Grid row */}
-                            <div className="row mb-3">
-                                {/* Grid column */}
-                                <div className="col-1">
-                                    <i className="fas fa-share fa-lg indigo-text" />
-                                </div>
-                                {/* Grid column */}
-                                {/* Grid column */}
-                                <div className="col-xl-10 col-md-11 col-10">
-                                    <p className="grey-text"></p>
-                                    <li>
-                                        {DymP11}
-                                    </li>
-                                    <p />
-                                </div>
-                                {/* Grid column */}
-                            </div>
-                            {/* Grid row */}
-                            {/*Grid row*/}
-                            <div className="row">
-                                {/* Grid column */}
-                                <div className="col-1">
-                                    <i className="fas fa-share fa-lg indigo-text" />
-                                </div>
-                                {/* Grid column */}
-                                {/* Grid column */}
-                                <div className="col-xl-10 col-md-11 col-10">
-                                    <br />
-                                    <h4 className="font-weight-bold mb-3 ">
-                                        {DymP12}
-                                    </h4>
-                                    <br />
-                                    <p className="grey-text mb-0 ">
-                                        {DymP13}
-                                    </p>
-                                    <br />
-                                    <p className="grey-text mb-0 ">
-                                        {DymP14}
-                                    </p>
-                                </div>
-                                {/* Grid column */}
-                            </div>
-                            {/*Grid row*/}
-                        </section>
-                        {/*Section: Content*/}
                     </div>
                     {/* Entry Requirement */}
                     <div className="Course_Detail_Course_Name_Div_2 my-5 py-5 z-depth-1 page1">
@@ -1134,12 +1038,10 @@ const CourseDetail = () => {
                                     <div className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0">
                                         <br />
                                         <p className=" Course_Detail_Entry_Requirement_P_1"> <b>Entry Requirement</b> </p>
-                                        <p>{Accordion_TableA1}</p>
-                                        <p>{Accordion_TableA2}</p>
-                                        <p>{Accordion_TableA3}</p>
-                                        <p>{Accordion_TableA4}</p>
-                                        <p>{Accordion_TableA5}</p>
-                                        <p>{Accordion_TableA6}</p>
+                                        { courseDetailsDummy.Requirement.map(item => (
+                                            <p>{item}</p>
+                                        ))
+                                        }
                                     </div>
                                     : null}
 
@@ -1290,11 +1192,10 @@ const CourseDetail = () => {
                                         <p className=" Course_Detail_Entry_Requirement_P_1">
                                             <b>Financial Aid / Funding</b>
                                         </p>
-                                        <p>{Accordion_TableC1}</p>
-                                        <p>{Accordion_TableC2}</p>
-                                        <p>{Accordion_TableC3}</p>
-                                        <p>{Accordion_TableC4}</p>
-                                        <p>{Accordion_TableC5}</p>
+                                        { courseDetailsDummy.AidAndFunding.map(item => (
+                                            <p>{item}</p>
+                                        ))
+                                        }
 
                                     </div>
                                     : null}
@@ -1307,11 +1208,7 @@ const CourseDetail = () => {
                                         <p className=" Course_Detail_Entry_Requirement_P_1">
                                             <b>Career Opportunities</b>
                                         </p>
-                                        <p>{Accordion_TableD1}</p>
-                                        <p>{Accordion_TableD2}</p>
-                                        <p>{Accordion_TableD3}</p>
-                                        <p>{Accordion_TableD4}</p>
-                                        <p>{Accordion_TableD5}</p>
+                                        <p>{courseDetails[0].CareerOpportunity}</p>
 
                                     </div>
                                     : null}

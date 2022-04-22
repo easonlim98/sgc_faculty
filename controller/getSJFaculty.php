@@ -17,4 +17,5 @@ header("Access-Control-Allow-Headers: *");
             $rows[] = $r;
         }
     echo json_encode($rows);
+
 ?>
