@@ -9,19 +9,49 @@ import TabsComponent from './general-components/Tabs/TabsComponent'
 const MusicIntro = () => {
     const studentdetails = [{
         Category: "Student_Testimonials",
-        detailsname: "Albert Einstein",
-        detailsjob: "Student of 2021 Music Studies",
-        detailsimage: require('../assets/images/Music/image 220.png'),
-        detailscontent: "“Your imagination is your preview of life's coming attractions.”",
+        detailsname: "Ng Jin Keat",
+        detailsjob: "Co-founder & Director of The Singaholics",
+        detailsimage: require('../assets/images/Music/RJ.png'),
+        detailscontent: "“The Singaholics is more than just a choral singing group, it is a platform where everyone learns to share and lead.”",
     },
     ]
-    const achievementdetails = [{
+    const achievementdetails = [
+    {
         Category: "Student_Achievement",
-        detailsname: "Alex Lee",
-        detailsjob: "Diploma in Music",
-        detailsimage: require("../assets/images/Music/Alexlee.png"),
-        detailscontent: "Rockfest Music Festival 2018 - 1st Runner Up Winner in Drum Level Category 3",
-    },]
+        detailsname: "Florence Chong",
+        detailsjob: "Recital Artist",
+        detailsimage: require('../assets/images/Music/Florence Chong pic 1.jpg'),
+        detailscontent: "Stichting M. L. G. K. Netherlands 2019",
+    },
+    {
+        Category: "Student_Achievement",
+        detailsname: "Hong-Da Chin ",
+        detailsjob: "Doctor of Musical Arts",
+        detailsimage: require('../assets/images/Music/Hong Da profile pic.jpg'),
+        detailscontent: "Birmingham Conservatoire Piano Prize (First Prize - 2016) ",
+    },
+    {
+        Category: "Student_Achievement",
+        detailsname: "Kenneth Lim Min Chyh",
+        detailsjob: "Pianist",
+        detailsimage: require('../assets/images/Music/Lim Min Chyh profile pic 3.jpeg'),
+        detailscontent: "Birmingham Conservatoire Piano Prize (First Prize - 2016)",
+    },
+    {
+        Category: "Student_Achievement",
+        detailsname: "Vianz & Shan",
+        detailsjob: "Music Artist",
+        detailsimage: require('../assets/images/Music/IMG_1842.JPG'),
+        detailscontent: "Taiwan SuperStar Top20",
+    },
+    {
+        Category: "Student_Achievement",
+        detailsname: "LEE CHIE TSANG ISAIAH",
+        detailsjob: "Full time Senior Music Lecture",
+        detailsimage: require('../assets/images/Music/Lee ChieTsang profile pic 2.jpg'),
+        detailscontent: "Birmingham Conservatoire Piano Prize (First Prize - 2016)",
+    },
+]
     const facilieitesdetails = [{
         Category: "facilites",
         detailsname: "Music",
@@ -29,7 +59,7 @@ const MusicIntro = () => {
         detailsimage: require('../assets/images/Music/pexels-photo-3760529 1.png'),
         detailscontent: "“If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button.”",
     },]
-    
+
     return (
         <div>
             <div className='MSCintro banner-container'

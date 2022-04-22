@@ -13,6 +13,66 @@ const Psychology = () => {
         detailsjob: "Facilities",
         detailsimage: require('../assets/images/Psychology/PSY-new5.jpg'),
         detailscontent: "“If you are interested in our programme and want to check out more about our Psychology related facilities, please click on the facilities button.”",
+    },
+    {
+        detailsname: "Counselling Room",
+        detailsjob: "Individual Room",
+        detailsimage: require('../assets/images/Psychology/individual.PNG'),
+    },
+    {
+        detailsname: "Counselling Room",
+        detailsjob: "Sofa",
+        detailsimage: require('../assets/images/Psychology/group.PNG'),
+    },
+    {
+        detailsname: "Counselling Room",
+        detailsjob: "CCTV",
+        detailsimage: require('../assets/images/Psychology/cctv.PNG'),
+    },
+    {
+        detailsname: "Counselling Room",
+        detailsjob: "One Side Mirror",
+        detailsimage: require('../assets/images/Psychology/one way mirror.PNG'),
+    },
+    {
+        detailsname: "Psychology laboratory",
+        detailsjob: "Brain Anatomy Model",
+        detailsimage: require('../assets/images/Psychology/brain.PNG'),
+    },
+    {
+        detailsname: "Psychology laboratory",
+        detailsjob: "Three Mountain Task Model",
+        detailsimage: require('../assets/images/Psychology/three mountain.PNG'),
+    },
+    {
+        detailsname: "Psychology laboratory",
+        detailsjob: "Nervous System Poster",
+        detailsimage: require('../assets/images/Psychology/nervous.PNG'),
+    },
+    {
+        detailsname: "Psychology laboratory",
+        detailsjob: "Human Ear Poster",
+        detailsimage: require('../assets/images/Psychology/human ear.PNG'),
+    },
+    {
+        detailsname: "Psychology laboratory",
+        detailsjob: "Human Ear Poster",
+        detailsimage: require('../assets/images/Psychology/human eye poster.PNG'),
+    },
+    {
+        detailsname: "Psychology laboratory",
+        detailsjob: "Human Ear Poster",
+        detailsimage: require('../assets/images/Psychology/humanear.PNG'),
+    },
+    {
+        detailsname: "IT laboratory",
+        detailsjob: "SPSS",
+        detailsimage: require('../assets/images/Psychology/SPSS.PNG'),
+    },
+    {
+        detailsname: "IT laboratory",
+        detailsjob: "SPSS-AMOS",
+        detailsimage: require('../assets/images/Psychology/SPSS-AMOS.PNG'),
     },]
     
     return (

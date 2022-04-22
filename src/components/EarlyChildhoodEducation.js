@@ -12,7 +12,89 @@ const EarlyChildhoodEducation = () => {
         detailsjob: "Facilities",
         detailsimage: require('../assets/images/Early_Childhood_Education/facilities.jpg'),
         detailscontent: "“If you are interested in our programme and want to check out more about our Early Childhood & Education-related facilities, please click on the facilities button.”",
-    },]
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 18.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 19.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 20.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 21.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 22.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 23.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 24.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 25.jpg'),
+        
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 26.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 27.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 28.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 29.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 30.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 31.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 32.jpg'),
+    },
+    {
+        detailsname: "Early Child Hood",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Early_Childhood_Education/ECCE Stock Photo 33.jpg'),
+    },
+    ]
 
     return (
         <div>

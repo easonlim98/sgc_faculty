@@ -13,7 +13,7 @@ const Search_Page = () => {
 
   useEffect(() => {
     console.log(CourseList)
-  },[]);
+  }, []);
 
   const CourseList = commonStore.useState(s => s.selectedCourseList)
 
@@ -131,7 +131,7 @@ const Search_Page = () => {
           <button className='text-light py-2 px-3' id='Searchpage-details-button'
             onClick={() => {
               navigate('/CourseDetail');
-              commonStore.update(s => {s.selectedCourse = item})
+              commonStore.update(s => { s.selectedCourse = item })
             }}
           >More Details</button>
         </div>
@@ -163,7 +163,7 @@ const Search_Page = () => {
               (Aplliedfilter === true) ?
                 <input className='py-2' disabled={true} id="searchpage-input" onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Search is disabled" />
                 :
-                <input className='py-2' id="searchpage-input" onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Search" />
+                <input className='py-2' autoComplete='off' id="searchpage-input" onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Search" />
 
             }
           </div>
@@ -206,59 +206,36 @@ const Search_Page = () => {
           <div className="modal-content" id='modal-container' style={{
             backgroundImage: "url(" + 'https://colleges.segi.edu.my/kualalumpur/wp-content/uploads/sites/7/2018/08/search-bg-2.jpg' + ")"
           }}>
-            <div className="modal-header">
+            <div className="modal-header" style={{ border: 0 }}>
               <h5 className="modal-title text-light" id="exampleModalLabel">Search Category</h5>
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span className="text-light" aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div>
-              <div className="row py-3" id="modal-res-con">
-                <div className="col-sm align-items-center d-flex justify-content-center" id="modal-res-item">
-                  <p className="text-light m-0  w-75">Area Of Study</p>
-                </div>
-                <div className="col align-items-center d-flex justify-content-center btn-group dropright" id="modal-res-itemselect">
-                  <button type="button"
-                    className="btn btn-secondary dropdown-toggle" id="dropdownarea" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {CategoryText ? CategoryText : "Category"}
-                  </button>
-                  <div className="dropdown-menu" >
-                    {
-                      Category.map((category) =>
-                        <>
-                          <p className="dropdown-item m-0" onClick={() => setCategoryText(category)}>{category}</p>
-                        </>
-                      )
-                    }
-                  </div>
+            <div className="row py-3" id="modal-res-con">
+              <div className="col-sm align-items-center d-flex justify-content-center" id="modal-res-item">
+                <p className="text-light m-0  w-75">Level Of Study</p>
+              </div>
+              <div className="col align-items-center d-flex justify-content-center btn-group dropright" id="modal-res-itemselect">
+                <button type="button"
+                  className="btn btn-secondary dropdown-toggle" id="dropdownarea" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {lvlstudyText ? lvlstudyText : "Level Of Study"}
+                </button>
+                <div className="dropdown-menu" >
+                  {
+                    lvlstudy.map((study) =>
+                      <>
+                        <p className="dropdown-item m-0" onClick={() => setlvlstudyText(study)}>{study}</p>
+                      </>
+                    )
+                  }
                 </div>
               </div>
+            </div>
 
-              <div className="row py-3" id="modal-res-con">
-                <div className="col-sm align-items-center d-flex justify-content-center" id="modal-res-item">
-                  <p className="text-light m-0  w-75">Level Of Study</p>
-                </div>
-                <div className="col align-items-center d-flex justify-content-center btn-group dropright" id="modal-res-itemselect">
-                  <button type="button"
-                    className="btn btn-secondary dropdown-toggle" id="dropdownarea" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {lvlstudyText ? lvlstudyText : "Level Of Study"}
-                  </button>
-                  <div className="dropdown-menu" >
-                    {
-                      lvlstudy.map((study) =>
-                        <>
-                          <p className="dropdown-item m-0" onClick={() => setlvlstudyText(study)}>{study}</p>
-                        </>
-                      )
-                    }
-                  </div>
-                </div>
-              </div>
-
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={() => setAplliedfilter(true)}>Apply changes</button>
-              </div>
+            <div className="modal-footer" style={{ border: 0 }}>
+              <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={() => setAplliedfilter(true)}>Apply changes</button>
             </div>
           </div>
         </div>

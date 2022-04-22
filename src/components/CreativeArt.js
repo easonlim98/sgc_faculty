@@ -116,7 +116,7 @@ const CreativeArt = () => {
                 studentdetails={studentdetails}
                 achievementdetails={achievementdetails}
                 textcolor={"#A71337"}
-                backgroundcolor={"#E3E4E3"}
+                backgroundcolor={"#F9F8F7"}
             />
             <Facilities
                 facilitiesdetails={facilieitesdetails}

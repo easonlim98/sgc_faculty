@@ -26,6 +26,7 @@
     left: 0;
     top: 0;
     bottom: 0;
+    border: 0
 }
 
 #title_place {
@@ -67,9 +68,11 @@
     border: 0;
     transition: opacity .15s ease;
 }
-#iconhoveropacity{
+
+#iconhoveropacity {
     opacity: .5;
 }
+
 #iconhoveropacity:hover {
     opacity: 1;
 }
