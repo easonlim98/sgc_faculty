@@ -7,6 +7,29 @@ import Facilities from './general-components/Facilities/Facilities.js'
 import TabsComponent from './general-components/Tabs/TabsComponent'
 
 const Communication_Studies = () => {
+    const studentdetails = [{
+        Category: "Student_Testimonials",
+        detailsname: "Munirah Binti Haji Mashod",
+        detailsjob: "Research, Development and International Affairs Officer, Ministry of Culture, Youth and Sports in Brunei Darussalam.",
+        detailsimage: require('../assets/images/Communication_Studies/CS-img-7.png'),
+        detailscontent: "“Hailing from Brunei Darussalam, I had dreams and eagerness to pursue my studies in Communication when I joined SEGi College Subang Jaya. I have not just trained with communication, writing and broadcasting skills, the 3 years has taught me to think critically and creatively, should the situation require me to do so.”",
+    },
+    ]
+    const achievementdetails = [{
+        Category: "Student_Achievement",
+        detailsname: "Siti Azlyana Binti Azmi",
+        detailsjob: "Diploma in Mass Communication (Alumni)",
+        detailsimage: require("../assets/images/Communication_Studies/CS-student1.png"),
+        detailscontent: "Young PR Professional of the Year Award, Malaysia Public Relations Award Night",
+    },]
+    const facilieitesdetails = [{
+        Category: "facilites",
+        detailsname: "Communication Studies",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Communication_Studies/CS-img-8.png'),
+        detailscontent: "“If you are interested in our programme and want to check out more about our Communication Studies related facilities, please click on the facilities button.”",
+    },]
+
     return (
         <div>
             <div className='BA banner-container'
@@ -33,7 +56,7 @@ const Communication_Studies = () => {
                             <div className='CS-text-area'>
                                 <p className='CS-text-hd' style={{ fontWeight: '700' }}>Significant of Communication Studies</p>
                                 <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>Modern communicators have to utilise all media available, from verbal communication to print media, from broadcasting to digital platforms. Effective communication requires communicators to speak clearly to each individual audience.</p>
-                            </div> 
+                            </div>
                             <button className="btn btn-outline-dark CS-button">Read more</button>
                         </div>
                     </div>
@@ -82,22 +105,14 @@ const Communication_Studies = () => {
             </div>
 
             <TabsComponent
-                StudentName={"Munirah Binti Haji Mashod"}
-                StudentJob={"Research, Development and International Affairs Officer, Ministry of Culture, Youth and Sports in Brunei Darussalam."}
-                Studentimage={require('../assets/images/Communication_Studies/CS-img-7.png')}
-                StudentWords={"“Hailing from Brunei Darussalam, I had dreams and eagerness to pursue my studies in Communication when I joined SEGi College Subang Jaya. I have not just trained with communication, writing and broadcasting skills, the 3 years has taught me to think critically and creatively, should the situation require me to do so.”"}
-                achievementcontent={"Young PR Professional of the Year Award, Malaysia Public Relations Award Night"}
-                achievementname={"Siti Azlyana Binti Azmi"} 
-                achievementjob={"Diploma in Mass Communication (Alumni)"}
-                achievementsample={require("../assets/images/Communication_Studies/CS-student1.png")}
-                navigationpath={""}
+                studentdetails={studentdetails}
+                achievementdetails={achievementdetails}
                 textcolor={"#215082"}
                 backgroundcolor={"#9AB8D366"}
-                
+
             />
-            <Facilities
-                facilitiesimage={require('../assets/images/Communication_Studies/CS-img-8.png')}
-                content={"If you are interested in our programme and want to check out more about our Communication Studies related facilities, please click on the facilities button."}
+             <Facilities
+                facilitiesdetails={facilieitesdetails}
             />
         </div>
     )

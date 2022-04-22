@@ -6,26 +6,32 @@ import Banner from './general-components/Banner/Banner.js'
 import Facilities from './general-components/Facilities/Facilities.js'
 import TabsComponent from './general-components/Tabs/TabsComponent'
 
-// import ReactAudioPlayer from 'react-audio-player';
-
-
 const MusicIntro = () => {
+    const studentdetails = [{
+        Category: "Student_Testimonials",
+        detailsname: "Albert Einstein",
+        detailsjob: "Student of 2021 Music Studies",
+        detailsimage: require('../assets/images/Music/image 220.png'),
+        detailscontent: "“Your imagination is your preview of life's coming attractions.”",
+    },
+    ]
+    const achievementdetails = [{
+        Category: "Student_Achievement",
+        detailsname: "Alex Lee",
+        detailsjob: "Diploma in Music",
+        detailsimage: require("../assets/images/Music/Alexlee.png"),
+        detailscontent: "Rockfest Music Festival 2018 - 1st Runner Up Winner in Drum Level Category 3",
+    },]
+    const facilieitesdetails = [{
+        Category: "facilites",
+        detailsname: "Music",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Music/pexels-photo-3760529 1.png'),
+        detailscontent: "“If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button.”",
+    },]
+    
     return (
         <div>
-
-            {/* <audio controls autoPlay>
-                    <source style={{ display: 'flex' }} src={require("../assets/musicmp3/Study_Music_01.mp3")}type="audio/mpeg"></source>
-                    <source style={{ display: 'flex' }} src={require("../assets/musicmp3/Study_Music_01.ogg")}type="audio/mpeg"></source>
-                </audio> */}
-
-            {/* <ReactAudioPlayer
-                src="../assets/musicmp3/Study_Music_01.mp3"
-                src="../assets/musicmp3/Study_Music_01.ogg"
-                autoPlay
-                controls
-            /> */}
-
-
             <div className='MSCintro banner-container'
                 style={{
                     backgroundImage: "url(" + require('../assets/images/Music/Musicbnr01.jpg') + ")"
@@ -72,27 +78,19 @@ const MusicIntro = () => {
             </div>
 
             <div className="row musicintro" style={{ backgroundColor: "black" }}>
-      
+
 
             </div>
             <TabsComponent
-                StudentName={"Albert Einstein"}
-                StudentJob={"Student of 2021 Music Studies"}
-                Studentimage={require('../assets/images/Music/image 220.png')}
-                StudentWords={"“Your imagination is your preview of life's coming attractions.”"}
-                achievementcontent={"Rockfest Music Festival 2018 - 1st Runner Up Winner in Drum Level Category 3"}
-                achievementname={"Alex Lee"}
-                achievementjob={"Diploma in Music"}
-                achievementsample={require("../assets/images/Music/Alexlee.png")}
-                navigationpath={""}
+                studentdetails={studentdetails}
+                achievementdetails={achievementdetails}
                 textcolor={"white"}
                 backgroundcolor={"black"}
             />
 
             <Facilities
-                facilitiesimage={require('../assets/images/Music/pexels-photo-3760529 1.png')}
-                content={"If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button."} />
-
+                facilitiesdetails={facilieitesdetails}
+            />
 
             <div className="fab-container">
                 <div className="button iconbutton">

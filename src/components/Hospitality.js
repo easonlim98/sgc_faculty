@@ -8,6 +8,14 @@ import TabsComponent from './general-components/Tabs/TabsComponent'
 
 
 const Hospitality = () => {
+    const facilieitesdetails = [{
+        Category: "facilites",
+        detailsname: "Hospitality",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Hospitality/HSP-SSIMAGE4.jpg'),
+        detailscontent: "“If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button.”",
+    },]
+
     return (
         <div>
             <div className='Hsp banner-container'
@@ -187,16 +195,14 @@ const Hospitality = () => {
                 </div>
 
                 <div>
-                    <img src={require("../assets/images/Hospitality/HSPIndustrypartner.JPG")} className='HSP-industrypartnerimage'/>
+                    <img src={require("../assets/images/Hospitality/HSPIndustrypartner.JPG")} className='HSP-industrypartnerimage' />
                 </div>
-                
+
             </div>
 
             <Facilities
-                facilitiesimage={require('../assets/images/Hospitality/HSP-SSIMAGE4.jpg')}
-                content={"If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button."} />
-
-
+                facilitiesdetails={facilieitesdetails}
+            />
         </div >
     )
 }
