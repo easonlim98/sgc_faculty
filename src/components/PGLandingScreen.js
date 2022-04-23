@@ -8,7 +8,7 @@ import ApiClient from '../util/ApiClient';
 import API from '../constant/API';
 
 const PGLandingScreen = () => {
-
+    
     useEffect(() => {
         ApiClient.GET(API.getPGFaculty).then(response => {
             setFacultyList(response)

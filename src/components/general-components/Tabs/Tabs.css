@@ -108,21 +108,6 @@ body {
 }
 
 /* Presentational Styles */
-body {
-    display: grid;
-    font-family: 'Poppins', sans-serif;
-    font-size: 27px;
-    line-height: 1.5;
-    height: 100vh;
-    place-items: center;
-}
-
-a {
-    text-decoration: none;
-    color: #18272F;
-    font-weight: 700;
-    vertical-align: top;
-}
 
 #tabscomp {
     height: 5rem;

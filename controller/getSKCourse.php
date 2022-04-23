@@ -5,7 +5,7 @@ header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header("Access-Control-Allow-Headers: *");
 
 	$skCourses = mysqli_query($db,
-        "SELECT F.FacultyID, C.CourseTitle, F.FacultyName, C.CourseLevelOfStudy, CL.CollegeName, C.CourseCode
+        "SELECT F.FacultyID, C.CourseID, C.CourseTitle, F.FacultyName, C.CourseLevelOfStudy, CL.CollegeName, C.CourseCode
          FROM available_subject A_S
          JOIN college CL
          ON A_S.CollegeID = CL.CollegeID

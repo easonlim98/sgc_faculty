@@ -6,5 +6,7 @@ export const commonStore = new Store({
 
     selectedCourseList: [],
     selectedCourse: {},
+
+    courseDetails: [],
     
 });  

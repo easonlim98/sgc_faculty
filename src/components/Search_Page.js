@@ -5,6 +5,8 @@ import { FaFilter, FaSearch, FaBookmark, FaWindowClose } from "react-icons/fa";
 import './css/Search_Page.css'
 import { commonStore } from '../store/commonStore';
 import { useNavigate } from 'react-router-dom';
+import ApiClient from '../util/ApiClient';
+import API from '../constant/API';
 
 
 const Search_Page = () => {
@@ -14,6 +16,17 @@ const Search_Page = () => {
   useEffect(() => {
     console.log(CourseList)
   }, []);
+
+  useEffect(() => {
+
+    ApiClient.GET(API.getCourseDetails).then(response => {
+        setCourseDetails(response)
+        console.log(response)
+    })
+
+  }, []);
+
+  const [courseDetails, setCourseDetails] = useState([]);
 
   const CourseList = commonStore.useState(s => s.selectedCourseList)
 
@@ -130,8 +143,17 @@ const Search_Page = () => {
         <div className='' id='Searchpage-details-container'>
           <button className='text-light py-2 px-3' id='Searchpage-details-button'
             onClick={() => {
+
+              var tempCourseDetails = [];
+              for(var x = 0; x < courseDetails.length; x++){
+                  if(courseDetails[x].CourseID === item.CourseID){
+                      const record = courseDetails[x];
+                      tempCourseDetails.push(record);
+                  }
+              };
+              commonStore.update(s => {s.courseDetails = tempCourseDetails})
               navigate('/CourseDetail');
-              commonStore.update(s => { s.selectedCourse = item })
+                  
             }}
           >More Details</button>
         </div>
