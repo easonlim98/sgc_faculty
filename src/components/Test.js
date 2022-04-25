@@ -241,7 +241,7 @@ const Search_Page = () => {
 
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={() => setAplliedfilter(true)}>Apply changes</button>
+                <button type="button" className="btn btn-primary" data-dismiss="modal" >Apply changes</button>
               </div>
             </div>
           </div>

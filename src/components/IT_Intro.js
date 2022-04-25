@@ -37,20 +37,20 @@ const IT_Intro = () => {
         <div className="IT-Intro-successproject">
           <div className="row IT-Intro-Img-container" style={{ flex: 1, padding: '2rem' }}>
             <div className="column IT-Intro-Img" style={{ display: 'flex', justifyContent: 'center' }}>
-              <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/alibaba.png")} />
-              <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/lazada.png")} />
+              <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/IT_Intro_Con9.png")} />
+              <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/IT_Intro_Con10.png")} />
             </div>
             <div className="column IT-Intro-Img" style={{ display: 'flex', justifyContent: 'center' }}>
-              <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/shopee.png")} />
-              <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/taobao.png")} />
+              <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/IT_Intro_Con11.png")} />
+              <img className="IT-Intro-projectimg" src={require("../assets/images/IT_Intro/IT_Intro_Con12.png")} />
             </div>
           </div>
           <div className="IT-Intro-Projecttext">
-            <p className="IT-Intro-Projecttext-p" >Previous successful Project</p>
-            <p2 className="IT-Intro-Projecttext-p2" >We dont make the better website, we only make the best website</p2>
-            <p3 className="IT-Intro-Projecttext-p3" >Inspiration is the most important part of our digital strategy. Innovation needs
-              to be part of your culture. Success is a journey, not a destination. The doing
-              is often more important than the outcome.
+            <p className="IT-Intro-Projecttext-p" >STUDENT-CENTRIC</p>
+            <p2 className="IT-Intro-Projecttext-p2" >INDUSTRY DRIVEN LEARNING</p2>
+            <p3 className="IT-Intro-Projecttext-p3" >We aim to produce students with good 
+            practical skills and oriented with good understanding in programming aspects,
+             problem solving skills and critical thinking skills.
             </p3>
             <button>View more project</button>
           </div>
@@ -67,7 +67,7 @@ const IT_Intro = () => {
                 and computer sciences could provide you with the background needed to achieve your goals.</p2>
             </div>
             <div className="IT-Intro-DivWhyITimg">
-              <img className="IT-Intro-WhyITimg" src={require("../assets/gif/Early_Childhood_Education/IT_Intro/IT_content2.gif")} alt="" />
+              <img className="IT-Intro-WhyITimg" src={require("../assets/images/IT_Intro/IT_Intro_Con7.png")} alt="" />
             </div>
           </div>
 
@@ -148,7 +148,7 @@ const IT_Intro = () => {
           </div>
         </div> */}
         <Facilities
-          facilitiesimage={require('../assets/images/IT_Intro/IT_Intro_Con6.png')}
+          facilitiesimage={require('../assets/images/IT_Intro/IT_Intro_Con8.png')}
           content={"If you are interested in our programme and want to check out more about our Information Technology-related facilities, please click on the facilities button."} />
       </div>
     </div>
