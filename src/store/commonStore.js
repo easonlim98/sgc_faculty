@@ -8,5 +8,10 @@ export const commonStore = new Store({
     selectedCourse: {},
 
     courseDetails: [],
+    subjectTitle: [],
+    subjectList: [],
+
+    facultyDetails: {},
+    institutionLink: [],
     
 });  

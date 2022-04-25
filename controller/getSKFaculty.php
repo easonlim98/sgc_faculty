@@ -5,11 +5,11 @@ header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header("Access-Control-Allow-Headers: *");
 
     $skFaculty = mysqli_query($db,
-        "SELECT F.FacultyName, F.FacultyCoverSource, F.IntroNavLink
+        "SELECT F.FacultyName, F.FacultyCoverSource, F.IntroNavLink, F.FacultyID, F.BrochureLink
         FROM available_subject A_S
         JOIN faculty F
         ON A_S.FacultyID = F.FacultyID
-        WHERE CollegeID = 'scsk'
+        WHERE A_S.CollegeID = 'scsk'
         GROUP BY F.FacultyName"
         );
         $rows = array();
