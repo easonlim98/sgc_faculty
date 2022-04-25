@@ -7,15 +7,38 @@ import Facilities from './general-components/Facilities/Facilities.js'
 import TabsComponent from './general-components/Tabs/TabsComponent'
 
 const Communication_Studies = () => {
+    const studentdetails = [{
+        Category: "Student_Testimonials",
+        detailsname: "Munirah Binti Haji Mashod",
+        detailsjob: "Research, Development and International Affairs Officer, Ministry of Culture, Youth and Sports in Brunei Darussalam.",
+        detailsimage: require('../assets/images/Communication_Studies/CS-img-7.png'),
+        detailscontent: "“Hailing from Brunei Darussalam, I had dreams and eagerness to pursue my studies in Communication when I joined SEGi College Subang Jaya. I have not just trained with communication, writing and broadcasting skills, the 3 years has taught me to think critically and creatively, should the situation require me to do so.”",
+    },
+    ]
+    const achievementdetails = [{
+        Category: "Student_Achievement",
+        detailsname: "Siti Azlyana Binti Azmi",
+        detailsjob: "Diploma in Mass Communication (Alumni)",
+        detailsimage: require("../assets/images/Communication_Studies/CS-student1.png"),
+        detailscontent: "Young PR Professional of the Year Award, Malaysia Public Relations Award Night",
+    },]
+    const facilieitesdetails = [{
+        Category: "facilites",
+        detailsname: "Communication Studies",
+        detailsjob: "Facilities",
+        detailsimage: require('../assets/images/Communication_Studies/CS-img-8.png'),
+        detailscontent: "“If you are interested in our programme and want to check out more about our Communication Studies related facilities, please click on the facilities button.”",
+    },]
+
     return (
         <div>
             <div className='BA banner-container'
                 style={{
-                    backgroundImage: "url(" + require('../assets/gif/Communication_Studies/CS-gif-1.gif') + ")"
+                    backgroundImage: "url(" + require('../assets/images/Communication_Studies/CS-Banner.jpg') + ")"
                 }}>
                 <Banner
                     navigatepath={"/Search_Page"}
-                    coursename={"Business & Accounting"} />
+                    coursename={"Communication Studies"} />
             </div>
             <div className="CS-container">
                 <div className="CS-Section-1-Header" style={{ textAlign: 'center' }}>
@@ -26,14 +49,14 @@ const Communication_Studies = () => {
                     <div className="row CS-group-content">
                         <div className="col-sm-6 CS-group-img">
                             <div className="CS-Section-2-img">
-                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-1.png")} alt="" />
+                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-1.jpg")} alt="" />
                             </div>
                         </div>
                         <div className="col-sm-6 CS-text-col">
                             <div className='CS-text-area'>
                                 <p className='CS-text-hd' style={{ fontWeight: '700' }}>Significant of Communication Studies</p>
-                                <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>The communications industry in Malaysia and around the world has evolved so much that contemporary professional communicators now have to stand up to face the current challenges with sophistication and respond through the various media channels. Modern communicators have to utilise all media available, from verbal communication to print media, from broadcasting to digital platforms. Effective communication requires communicators to speak clearly to each individual audience.</p>
-                            </div> 
+                                <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>Modern communicators have to utilise all media available, from verbal communication to print media, from broadcasting to digital platforms. Effective communication requires communicators to speak clearly to each individual audience.</p>
+                            </div>
                             <button className="btn btn-outline-dark CS-button">Read more</button>
                         </div>
                     </div>
@@ -43,14 +66,14 @@ const Communication_Studies = () => {
                         <div className="col-sm-6 CS-text-col">
                             <div className="CS-Section-2-text CS-text-area">
                                 <p className='CS-text-hd' style={{ fontWeight: '700' }}>Communication Studies in SEGi</p>
-                                <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>At SEGi Group of Colleges, we are equipped with sophisticated technology and state-of-art technology, including broadcast studios, radio studios, editing rooms, voice-over studios, photography studios, and modern computer labs with the latest software and equipment. We also have internship placement programmes that will spur our students towards excellence in their careers.</p>
+                                <p className='CS-Section-1-Content CS-text-font' style={{ fontWeight: '500' }}>At SEGi Group of Colleges, we are equipped with sophisticated technology and state-of-art technology, including broadcast studios, radio studios, editing rooms, voice-over studios, photography studios, and modern computer labs with the latest software and equipment.</p>
                             </div>
                             <button className="btn btn-outline-dark CS-button">Read more</button>
                         </div>
                         <div className="col-sm-6">
 
                             <div className="CS-Section-2-img">
-                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-2.png")} alt="" />
+                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-2.jpg")} alt="" />
                             </div>
                         </div>
                     </div>
@@ -60,7 +83,7 @@ const Communication_Studies = () => {
                     <div className="row CS-group-content">
                         <div className="col-sm-6 CS-group-img">
                             <div className="CS-Section-2-img">
-                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-3.png")} alt="" />
+                                <img className="CS-Section-1-img" src={require("../assets/images/Communication_Studies/CS-img-3.jpg")} alt="" />
                             </div>
                         </div>
                         <div className="col-sm-6 CS-text-col">
@@ -74,23 +97,22 @@ const Communication_Studies = () => {
                 </div>
             </div>
 
+            <div className="CS-Industry-Partners">
+                <div className="col-sm-12 d-flex align-items-center flex-column">
+                    <h2 className="CS-industry-title">OUR STRATEGIC INDUSTRY PARTNERS</h2>
+                    <img className="CS-img-4" src={require("../assets/images/Communication_Studies/CS-Industy-Partners.png")} alt="" />
+                </div>
+            </div>
+
             <TabsComponent
-                StudentName={"Munirah Binti Haji Mashod"}
-                StudentJob={"Research, Development and International Affairs Officer, Ministry of Culture, Youth and Sports in Brunei Darussalam."}
-                Studentimage={require('../assets/images/Communication_Studies/CS-img-7.png')}
-                StudentWords={"“Hailing from Brunei Darussalam, I had dreams and eagerness to pursue my studies in Communication when I joined SEGi College Subang Jaya. I have not just trained with communication, writing and broadcasting skills, the 3 years has taught me to think critically and creatively, should the situation require me to do so.”"}
-                achievementcontent={"Young PR Professional of the Year Award, Malaysia Public Relations Award Night"}
-                achievementname={"Siti Azlyana Binti Azmi"} 
-                achievementjob={"Diploma in Mass Communication (Alumni)"}
-                achievementsample={require("../assets/images/Communication_Studies/CS-student1.png")}
-                navigationpath={""}
+                studentdetails={studentdetails}
+                achievementdetails={achievementdetails}
                 textcolor={"#215082"}
                 backgroundcolor={"#9AB8D366"}
-                
+
             />
-            <Facilities
-                facilitiesimage={require('../assets/images/Communication_Studies/CS-img-8.png')}
-                content={"If you are interested in our programme and want to check out more about our Communication Studies-related facilities, please click on the facilities button."}
+             <Facilities
+                facilitiesdetails={facilieitesdetails}
             />
         </div>
     )

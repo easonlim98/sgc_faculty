@@ -10,6 +10,14 @@ import Image from '../assets/images/IT_Intro/IT_banner.jpg'
 import { useNavigate } from "react-router-dom";
 
 const IT_Intro = () => {
+  const facilieitesdetails = [{
+    Category: "facilites",
+    detailsname: "Facilities",
+    detailsjob: "Segi PC Room",
+    detailsimage: require('../assets/images/IT_Intro/IT_Intro_Con8.png'),
+    detailscontent: "“If you are interested in our programme and want to check out more about our Information Technology-related facilities, please click on the facilities button.”",
+  },]
+
   return (
 
     <div>
@@ -48,9 +56,9 @@ const IT_Intro = () => {
           <div className="IT-Intro-Projecttext">
             <p className="IT-Intro-Projecttext-p" >STUDENT-CENTRIC</p>
             <p2 className="IT-Intro-Projecttext-p2" >INDUSTRY DRIVEN LEARNING</p2>
-            <p3 className="IT-Intro-Projecttext-p3" >We aim to produce students with good 
-            practical skills and oriented with good understanding in programming aspects,
-             problem solving skills and critical thinking skills.
+            <p3 className="IT-Intro-Projecttext-p3" >We aim to produce students with good
+              practical skills and oriented with good understanding in programming aspects,
+              problem solving skills and critical thinking skills.
             </p3>
             <button>View more project</button>
           </div>
@@ -148,8 +156,9 @@ const IT_Intro = () => {
           </div>
         </div> */}
         <Facilities
-          facilitiesimage={require('../assets/images/IT_Intro/IT_Intro_Con8.png')}
-          content={"If you are interested in our programme and want to check out more about our Information Technology-related facilities, please click on the facilities button."} />
+          facilitiesdetails={facilieitesdetails}
+        />
+
       </div>
     </div>
   )

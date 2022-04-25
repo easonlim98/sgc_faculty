@@ -5,10 +5,10 @@ header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header("Access-Control-Allow-Headers: *");
 
 	$allUsers = mysqli_query($db,
-        "SELECT *
+        "SELECT F.FacultyName, U.UserName
          FROM faculty F
-         INNER JOIN users U
-         ON F.User_ID = U.User_ID"
+         INNER JOIN user U
+         ON F.UserID = U.UserID"
         );
 		$rows = array();
 		while ($r = mysqli_fetch_assoc($allUsers)) {

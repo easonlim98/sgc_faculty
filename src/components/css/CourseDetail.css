@@ -146,7 +146,8 @@
 }
 
 .Course_Detail_Content_Editable_1 {
-    border: ""
+    border-style: inset;
+    
 }
 
 #Course_Detail_Page_Editor_1 {

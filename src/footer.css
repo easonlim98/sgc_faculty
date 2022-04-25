@@ -31,6 +31,10 @@
     text-decoration: underline;
 }
 
+.container.text-center.text-md-left {
+    padding: 0
+}
+
 .pb-3,
 .py-3 {
     padding-bottom: 0;
