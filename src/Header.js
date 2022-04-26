@@ -31,7 +31,8 @@ const Header = () => {
                         <button className="colorWhite dropdownButtonTitle" id="menuhoverbutton" type="button"
                             aria-haspopup="menu"
                             aria-expanded={dropdown ? "true" : "false"}
-                            onClick={() => setDropdown((prev) => !prev)}
+                            onClick={() => navigate('./')
+                            }
                         >
                             {items.title}{" "}
                         </button>
@@ -133,6 +134,9 @@ const Header = () => {
                     justifyContent: 'space-between'
                 }}>
                     <button className="nav-item active"
+                        onClick={() => {
+                            navigate('/')
+                        }}
                         style={{
                             border: 'none',
                             backgroundColor: 'transparent',
@@ -148,7 +152,7 @@ const Header = () => {
                     </button>
                     <button className="nav-item"
                         onClick={() => {
-                            setSidebarDropdown((prev) => !prev)
+                            navigate('/')
                         }}
                         style={{
                             border: 'none',
