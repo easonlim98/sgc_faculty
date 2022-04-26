@@ -52,7 +52,10 @@ const SJLandingScreen = () => {
                                 tempCourseList.push(record);
                             }
                         };
-                        commonStore.update(s => {s.selectedCourseList = tempCourseList})
+                        commonStore.update(s => {
+                            s.selectedCourseList = tempCourseList
+                            s.facultyDetails = item
+                        })
                         navigate(item.IntroNavLink);
                     }}
                 >

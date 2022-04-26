@@ -24,9 +24,27 @@ const Search_Page = () => {
         console.log(response)
     })
 
+    ApiClient.GET(API.getSubjectlist).then(response => {
+      setSubjectList(response)
+      console.log(response)
+    })
+
+    ApiClient.GET(API.getSubjectTitle).then(response => {
+      setSubjectTitle(response)
+      console.log(response)
+    })
+
+    ApiClient.GET(API.getAwardingInstitution).then(response => {
+      setAwardingInstitution(response)
+      console.log(response)
+    })
+
   }, []);
 
   const [courseDetails, setCourseDetails] = useState([]);
+  const [subjectList, setSubjectList] = useState([]);
+  const [subjectTitle, setSubjectTitle] = useState([]);
+  const [awardingInstitution, setAwardingInstitution] = useState([]);
 
   const CourseList = commonStore.useState(s => s.selectedCourseList)
 
@@ -128,9 +146,16 @@ const Search_Page = () => {
           <div className="col d-flex align-items-center" id="search-content-container">
             <p className='font-weight-bold m-0'>Awarding:</p>
           </div>
-          <div className="col d-flex align-items-center" id="search-content-container">
-            <p className='font-weight-normal text-muted m-0'>{'temporary null'}</p>
-          </div>
+          
+            <div className="col d-flex align-items-center" id="search-content-container">
+            {awardingInstitution.map(award => {
+            if(item.CourseID === award.CourseID){
+            return (
+              <p className='font-weight-normal text-muted m-0 pr-4'>{award.InstitutionName}</p>
+                )
+              }
+            })}
+            </div>
         </div>
         <div className="row">
           <div className="col d-flex align-items-center" id="search-content-container">
@@ -151,7 +176,34 @@ const Search_Page = () => {
                       tempCourseDetails.push(record);
                   }
               };
-              commonStore.update(s => {s.courseDetails = tempCourseDetails})
+              var tempSubjectList = [];
+              for(var i = 0; i < subjectList.length; i++){
+                  if(subjectList[i].CourseID === item.CourseID){
+                      const record = subjectList[i];
+                      tempSubjectList.push(record);
+                  }
+              };
+              var tempSubjectTitle = [];
+              for(var j = 0; j < subjectTitle.length; j++){
+                  if(subjectTitle[j].CourseID === item.CourseID){
+                      const record = subjectTitle[j];
+                      tempSubjectTitle.push(record);
+                  }
+              };
+              var tempInstitutionLink = [];
+              for(var k = 0; k < awardingInstitution.length; k++){
+                  if(awardingInstitution[k].CourseID === item.CourseID){
+                      const record = awardingInstitution[k];
+                      tempInstitutionLink.push(record);
+                  }
+              };
+
+              commonStore.update(s => {
+                s.courseDetails = tempCourseDetails;
+                s.subjectList = tempSubjectList;
+                s.subjectTitle = tempSubjectTitle;
+                s.institutionLink = tempInstitutionLink;
+              })
               navigate('/CourseDetail');
                   
             }}

@@ -227,5 +227,12 @@ export const commonStore = new Store({
         Total_Dislike: "4",
         Total_Ideas: "1",
         Total_Like: "6"
-    }]
+    }],
+    
+    subjectTitle: [],
+    subjectList: [],
+
+    facultyDetails: {},
+    institutionLink: [],
+    
 });  

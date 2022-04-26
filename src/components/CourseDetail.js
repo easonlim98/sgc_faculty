@@ -11,6 +11,10 @@ import { commonStore } from '../store/commonStore'
 const CourseDetail = () => {
 
     const courseDetails = commonStore.useState(s => s.courseDetails)
+    const subjectlist = commonStore.useState(s => s.subjectList)
+    const subjectTitle = commonStore.useState(s => s.subjectTitle)
+    const facultyDetails = commonStore.useState(s => s.facultyDetails)
+    const institutionLink = commonStore.useState(s => s.institutionLink)
 
     const courseDetailsDummy = {
         CourseTitle: 'BSC (HONS) COMPUTING (3+0)',
@@ -279,7 +283,7 @@ const CourseDetail = () => {
                             </div>
                         </div>
                     </a>
-                    {Course_Detail_Course_Name_Slide_Pop_Menu_3 ?
+                    {/* {Course_Detail_Course_Name_Slide_Pop_Menu_3 ?
                         <div
                             onMouseEnter={() => { setCourse_Detail_Course_Name_Slide_Pop_Menu_3(true); setCourse_Detail_Course_Name_Slide_Pop_Menu_5(true) }}
 
@@ -311,7 +315,7 @@ const CourseDetail = () => {
                                 </p>
                             </div>
                         </div>
-                        : null}
+                        : null} */}
                 </div>
                 {
                     Course_Detail_Course_Name_Slide_Pop_Menu_5 ?
@@ -359,7 +363,7 @@ const CourseDetail = () => {
                                     <div className="col-md-4 mb-4">
                                         <i className="fas fa-chart-area fa-3x red-text" />
                                         <h5 className="font-weight-bold my-4 " style={{ color: "#fff" }}>
-                                            Course ID
+                                            Course Code
                                         </h5>
                                         <p contentEditable className="grey-text mb-md-0 Course_Detail_Content_Editable_1" style={{ color: "#fff" }}>
                                             {DymCourseID2}
@@ -797,7 +801,7 @@ const CourseDetail = () => {
                     </div>
                     : null}
                 <div className="Course_Detail_Course_Name_Slide_Pop_Menu_1">
-                    <a href="https://click.segi.edu.my/onlineregistration/">
+                    <a href="https://click.segi.edu.my/onlineregistration/" target="_blank">
                         <div
                             onMouseEnter={() => { setCourse_Detail_Course_Name_Slide_Pop_Menu_3(true); setCourse_Detail_Course_Name_Slide_Pop_Menu_5(true) }}
                             style={{
@@ -815,7 +819,7 @@ const CourseDetail = () => {
                             </div>
                         </div>
                     </a>
-                    <a href="https://www.google.com/">
+                    <a href={institutionLink[0].InstitutionWebLink} target="_blank">
                         <div
                             onMouseEnter={() => { setCourse_Detail_Course_Name_Slide_Pop_Menu_3(true); setCourse_Detail_Course_Name_Slide_Pop_Menu_5(true) }}
                             style={{
@@ -833,7 +837,7 @@ const CourseDetail = () => {
                             </div>
                         </div>
                     </a>
-                    <a href="https://www.google.com/">
+                    <a href={facultyDetails.BrochureLink} target="_blank">
                         <div
                             onMouseEnter={() => { setCourse_Detail_Course_Name_Slide_Pop_Menu_3(true); setCourse_Detail_Course_Name_Slide_Pop_Menu_5(true) }}
                             style={{
@@ -851,7 +855,7 @@ const CourseDetail = () => {
                             </div>
                         </div>
                     </a>
-                    {Course_Detail_Course_Name_Slide_Pop_Menu_3 ?
+                    {/* {Course_Detail_Course_Name_Slide_Pop_Menu_3 ?
                         <div
                             onMouseEnter={() => { setCourse_Detail_Course_Name_Slide_Pop_Menu_3(true); setCourse_Detail_Course_Name_Slide_Pop_Menu_5(true) }}
 
@@ -883,7 +887,7 @@ const CourseDetail = () => {
                                 </p>
                             </div>
                         </div>
-                        : null}
+                        : null} */}
                 </div>
                 {
                     Course_Detail_Course_Name_Slide_Pop_Menu_5 ?
@@ -904,7 +908,7 @@ const CourseDetail = () => {
                     {/* Title */}
                     <div className="Course_Detail_Course_Name_Font_Color_1 Course_Detail_Course_Name_Background_Image_1"
                         style={{
-                            backgroundImage: "url(" + DymBackgroundImg1 + ")"
+                            backgroundImage: `url("http://www.iowa.gov/sites/default/files/2018-07/Education_0.jpg")`
                         }}
                     >
                         <br />
@@ -913,7 +917,9 @@ const CourseDetail = () => {
                         <br />
                         <br />
                         <br />
-                        <div className="Course_Detail_Course_Name_Div_2 my-5 p-5 z-depth-1 page1">
+                        <div className="Course_Detail_Course_Name_Div_2 my-5 p-5 z-depth-1 page1"
+                            style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)', }}
+                        >
                             {/*Section: Content*/}
                             <section className="text-center dark-grey-text" style={{ width: "100%"}}>
                                 {/* Section heading */}
@@ -930,7 +936,7 @@ const CourseDetail = () => {
                                     <div className="col-md-4 mb-4">
                                         <i className="fas fa-chart-area fa-3x red-text" />
                                         <h5 className="font-weight-bold my-4 " style={{ color: "#fff" }}>
-                                            Course ID
+                                            Course Code
                                         </h5>
                                         <p className="grey-text mb-md-0 " style={{ color: "#fff" }}>
                                             {courseDetails[0].CourseCode}
@@ -975,7 +981,7 @@ const CourseDetail = () => {
                                     {/*Grid column*/}
                                     <div className="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
                                         <img
-                                            src={DymImg1}
+                                            src={'https://i.makeagif.com/media/10-22-2020/Pms24f.gif'}
                                             className=" img-fluid"
                                         />
                                     </div>
@@ -1038,10 +1044,22 @@ const CourseDetail = () => {
                                     <div className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0">
                                         <br />
                                         <p className=" Course_Detail_Entry_Requirement_P_1"> <b>Entry Requirement</b> </p>
-                                        { courseDetailsDummy.Requirement.map(item => (
-                                            <p>{item}</p>
-                                        ))
-                                        }
+                                            { courseDetails.map(item => {
+
+                                                var array = item.Requirement
+                                                var requirement = array.split('?')
+                                                return (
+                                                <>
+                                                {requirement.map(text => {
+                                                    return ( 
+                                                        <p>{text}</p> 
+                                                    )})
+                                                }
+                                                
+                                                </>
+                                                )
+                                            })
+                                            }
                                     </div>
                                     : null}
 
@@ -1062,20 +1080,14 @@ const CourseDetail = () => {
                                             {/* Accordion card */}
                                             <div className="card">
                                                 {/* Card header */}
+                                                { subjectTitle.map(title => {
+                                                return (
+                                                <>
                                                 <div className="card-header" role="tab" id="headingOne1">
-                                                    <a
-                                                        data-toggle="collapse"
-                                                        data-parent="#accordionEx"
-                                                        href="#collapseOne1"
-                                                        aria-expanded="true"
-                                                        aria-controls="collapseOne1"
-                                                    >
                                                         <h5 className="mb-0">
-                                                            Year 1 <i className="fas fa-angle-down rotate-icon" />
+                                                            {title.ModuleType} <i className="fas fa-angle-down rotate-icon" />
                                                         </h5>
-                                                    </a>
                                                 </div>
-                                                {/* Card body */}
                                                 <div
                                                     id="collapseOne1"
                                                     className="collapse show"
@@ -1083,99 +1095,19 @@ const CourseDetail = () => {
                                                     aria-labelledby="headingOne1"
                                                     data-parent="#accordionEx"
                                                 >
+                                                { subjectlist.map(subject => { 
+                                                    if(subject.ModuleType === title.ModuleType){
+                                                    return (
                                                     <div className="card-body">
-                                                        <li>{Accordion_TableB1}</li>
-                                                        <li>{Accordion_TableB2}</li>
-                                                        <li>{Accordion_TableB3}</li>
-                                                        <li>{Accordion_TableB4}</li>
-                                                        <li>{Accordion_TableB5}</li>
-                                                        <li>{Accordion_TableB6}</li>
-                                                        <li>{Accordion_TableB7}</li>
-                                                        <li>{Accordion_TableB8}</li>
-                                                        <li>{Accordion_TableB9}</li>
-                                                        <li>{Accordion_TableB10}</li>
+                                                        <li>{subject.ModuleName}</li>
                                                     </div>
+                                                    )
+                                                    }
+                                                })
+                                                }
                                                 </div>
-                                            </div>
-                                            {/* Accordion card */}
-                                            {/* Accordion card */}
-                                            <div className="card">
-                                                {/* Card header */}
-                                                <div className="card-header" role="tab" id="headingTwo2">
-                                                    <a
-                                                        className="collapsed"
-                                                        data-toggle="collapse"
-                                                        data-parent="#accordionEx"
-                                                        href="#collapseTwo2"
-                                                        aria-expanded="false"
-                                                        aria-controls="collapseTwo2"
-                                                    >
-                                                        <h5 className="mb-0">
-                                                            Year 2 <i className="fas fa-angle-down rotate-icon" />
-                                                        </h5>
-                                                    </a>
-                                                </div>
-                                                {/* Card body */}
-                                                <div
-                                                    id="collapseTwo2"
-                                                    className="collapse"
-                                                    role="tabpanel"
-                                                    aria-labelledby="headingTwo2"
-                                                    data-parent="#accordionEx"
-                                                >
-                                                    <div className="card-body">
-                                                        <li>{Accordion_TableB11}</li>
-                                                        <li>{Accordion_TableB12}</li>
-                                                        <li>{Accordion_TableB13}</li>
-                                                        <li>{Accordion_TableB14}</li>
-                                                        <li>{Accordion_TableB15}</li>
-                                                        <li>{Accordion_TableB16}</li>
-                                                        <li>{Accordion_TableB17}</li>
-                                                        <li>{Accordion_TableB18}</li>
-                                                        <li>{Accordion_TableB19}</li>
-                                                        <li>{Accordion_TableB20}</li>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {/* Accordion card */}
-                                            {/* Accordion card */}
-                                            <div className="card">
-                                                {/* Card header */}
-                                                <div className="card-header" role="tab" id="headingThree3">
-                                                    <a
-                                                        className="collapsed"
-                                                        data-toggle="collapse"
-                                                        data-parent="#accordionEx"
-                                                        href="#collapseThree3"
-                                                        aria-expanded="false"
-                                                        aria-controls="collapseThree3"
-                                                    >
-                                                        <h5 className="mb-0">
-                                                            Year 3 <i className="fas fa-angle-down rotate-icon" />
-                                                        </h5>
-                                                    </a>
-                                                </div>
-                                                {/* Card body */}
-                                                <div
-                                                    id="collapseThree3"
-                                                    className="collapse"
-                                                    role="tabpanel"
-                                                    aria-labelledby="headingThree3"
-                                                    data-parent="#accordionEx"
-                                                >
-                                                    <div className="card-body">
-                                                        <li>{Accordion_TableB21}</li>
-                                                        <li>{Accordion_TableB22}</li>
-                                                        <li>{Accordion_TableB23}</li>
-                                                        <li>{Accordion_TableB24}</li>
-                                                        <li>{Accordion_TableB25}</li>
-                                                        <li>{Accordion_TableB26}</li>
-                                                        <li>{Accordion_TableB27}</li>
-                                                        <li>{Accordion_TableB28}</li>
-                                                        <li>{Accordion_TableB29}</li>
-                                                        <li>{Accordion_TableB30}</li>
-                                                    </div>
-                                                </div>
+                                                </>
+                                                )})}
                                             </div>
                                             {/* Accordion card */}
                                             <br />
@@ -1192,11 +1124,22 @@ const CourseDetail = () => {
                                         <p className=" Course_Detail_Entry_Requirement_P_1">
                                             <b>Financial Aid / Funding</b>
                                         </p>
-                                        { courseDetailsDummy.AidAndFunding.map(item => (
-                                            <p>{item}</p>
-                                        ))
-                                        }
+                                        { courseDetails.map(item => {
 
+                                            var array = item.AidAndFunding
+                                            var requirement = array.split('?')
+                                            return (
+                                            <>
+                                            {requirement.map(text => {
+                                                return ( 
+                                                    <p>{text}</p> 
+                                                )})
+                                            }
+
+                                            </>
+                                            )
+                                            })
+                                            }
                                     </div>
                                     : null}
 

@@ -9,6 +9,9 @@ const getSJFaculty='getSJFaculty.php'
 const getSKFaculty='getSKFaculty.php'
 const getPGFaculty='getPGFaculty.php'
 const getCourseDetails='getCourseDetails.php'
+const getSubjectlist='getSubjectlist.php'
+const getSubjectTitle='getSubjectTitle.php'
+const getAwardingInstitution='getAwardingInstitution.php'
 
 const API = {
     createUser,
@@ -21,7 +24,10 @@ const API = {
     getSJFaculty,
     getSKFaculty,
     getPGFaculty,
-    getCourseDetails
+    getCourseDetails,
+    getSubjectlist,
+    getSubjectTitle,
+    getAwardingInstitution
 };
 
 export default API;
