@@ -220,53 +220,6 @@
     box-shadow: 10px 10px 5px #aaaaaa;
 }
 
-/* list-style-type: none;
-position:absolute;
-bottom:70px; */
-
-/* .nav-tabs .nav-item .nav-link {
-    margin-top: 90px;
-    margin-bottom: 40px;
-    background-color: black;
-    color: #FFF;
-  }
-  
-  .nav-tabs .nav-item .nav-link.active {
-    color: #0080FF;
-  }
-  
-  .tabcontent {
-    display: none;
-    border: 1px solid white;
-    border-top: transparent;
-    padding: 15px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    color: white;
-  }
-  
-  .tabcontent  {
-    background-color: black;
-    color: white;
-    min-height: 200px;
-    height: auto;
-  }
-
-  .navtab{
-    overflow: hidden;
-    margin-top: 90px;
-    margin-bottom: 40px;
-    background-color: black;
-    color: #FFF;
-     }
-
- .tab button.active{
-     background-color: #0080FF;
- } */
-
-/* .musicintrosection04{
-    color: white;
-} */
 
 .musicgroup01 {
     text-align: center;
@@ -279,6 +232,12 @@ bottom:70px; */
 
 .musicintrocontainer01 {
     text-align: center;
+}
+
+.musicvideointro{
+    text-align: center;
+    padding-bottom: 5%;
+    width: 60;
 }
 
 @media only screen and (max-width: 600px) {
@@ -296,16 +255,9 @@ bottom:70px; */
     }
 }
 
-/* @media only screen and (max-width: 560px) {
-    .musicintro-tabeach{
-        font-size: 17px;
-        padding-right: 40px;
-        
- }
- }
-
- @media only screen and (max-width: 280px) {
-    .musicintro-tabeach{
-        font-size: 17px;    
- }
- } */
+@media only screen and (max-width: 395px) {
+    .musicvideointro {
+        width: 24rem;
+        display: none;
+    }
+}

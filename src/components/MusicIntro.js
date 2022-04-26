@@ -14,8 +14,8 @@ const MusicIntro = () => {
         <div>
 
             {/* <audio controls autoPlay>
-                    <source style={{ display: 'flex' }} src={require("../assets/musicmp3/Study_Music_01.mp3")}type="audio/mpeg"></source>
-                    <source style={{ display: 'flex' }} src={require("../assets/musicmp3/Study_Music_01.ogg")}type="audio/mpeg"></source>
+                    <source src={require("../assets/musicmp3/Study_Music_01.mp3")}type="audio/mpeg"></source>
+                    <source src={require("../assets/musicmp3/Study_Music_01.ogg")}type="audio/mpeg"></source>
                 </audio> */}
 
             {/* <ReactAudioPlayer
@@ -53,6 +53,12 @@ const MusicIntro = () => {
                 </div>
             </div>
 
+            <div className="musicvideointro">
+                <video width="500" controls>
+                    <source src={require("../assets/musicmp3/musicvideo.mp4")}type="video/mp4"></source>
+                </video>
+            </div>
+
             <div>
                 <img className="musicintrobannerimg02" src={require("../assets/images/Music/provide.PNG")} />
             </div>
@@ -72,7 +78,7 @@ const MusicIntro = () => {
             </div>
 
             <div className="row musicintro" style={{ backgroundColor: "black" }}>
-      
+
 
             </div>
             <TabsComponent
@@ -94,12 +100,12 @@ const MusicIntro = () => {
                 content={"If you are interested in our programme and want to check out more about our Art and Design-related facilities, please click on the facilities button."} />
 
 
-            <div className="fab-container">
+            {/* <div className="fab-container">
                 <div className="button iconbutton">
-                    {/* <i>+</i> */}
+                    <i>+</i>
                     <i className="fa fa-music" aria-hidden="true"></i>
-                    {/* <i className="AiOutlinePlus"></i> */}
-                    {/* <ul className="options">
+                    <i className="AiOutlinePlus"></i>
+                    <ul className="options">
                         <li>
                             <span className="btn-label">telegram</span>
                             <div className="iconbutton">
@@ -124,9 +130,9 @@ const MusicIntro = () => {
                                 <i className="fab fa-facebook"></i>
                             </div>
                         </li>
-                    </ul>      */}
+                    </ul>     
                 </div>
-            </div>
+            </div> */}
         </div>
 
     )
