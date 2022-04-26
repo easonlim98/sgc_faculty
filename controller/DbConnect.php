@@ -2,9 +2,9 @@
 
 // Production
 $hostname="Localhost";
-$username="todonex8_user";
+$username="sgcproto_student";
 $password="teamalpha2022";
-$dbname="todonex8_sgc_faculty";
+$dbname="sgcproto_faculty";
 
 // Development
 /* $hostname="Localhost";

@@ -1047,7 +1047,7 @@ const CourseDetail = () => {
                                             { courseDetails.map(item => {
 
                                                 var array = item.Requirement
-                                                var requirement = array.split('║')
+                                                var requirement = array.split('?')
                                                 return (
                                                 <>
                                                 {requirement.map(text => {
@@ -1127,7 +1127,7 @@ const CourseDetail = () => {
                                         { courseDetails.map(item => {
 
                                             var array = item.AidAndFunding
-                                            var requirement = array.split('║')
+                                            var requirement = array.split('?')
                                             return (
                                             <>
                                             {requirement.map(text => {
