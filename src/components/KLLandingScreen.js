@@ -40,33 +40,36 @@ const KLLandingScreen = () => {
 
             <div className="LandingBackgroud">
 
-            <div className="row">
+                <div className="row">
 
-            { facultyList.map((item) => (
+                    {facultyList.map((item) => (
 
-                    <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}
-                        onClick={() => {
+                        <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}
+                            onClick={() => {
 
-                            var tempCourseList = [];
-                            for(var x = 0; x < courseList.length; x++){
-                                if(courseList[x].FacultyID === item.FacultyID){
-                                    const record = courseList[x];
-                                    tempCourseList.push(record);
-                                }
-                            };
-                            commonStore.update(s => {s.selectedCourseList = tempCourseList})
-                            navigate(item.IntroNavLink);
-                        }}
-                    >
-                        <div style={{ border: 'none' }} >
-                            <div>
-                                <img className="Imglayout" src={item.FacultyCoverSource} alt="" />
-                                <p className="Landing_Textstyle">{item.FacultyName}</p>
+                                var tempCourseList = [];
+                                for (var x = 0; x < courseList.length; x++) {
+                                    if (courseList[x].FacultyID === item.FacultyID) {
+                                        const record = courseList[x];
+                                        tempCourseList.push(record);
+                                    }
+                                };
+                                commonStore.update(s => { 
+                                    s.selectedCourseList = tempCourseList 
+                                    s.facultyDetails = item
+                                })
+                                navigate(item.IntroNavLink);
+                            }}
+                        >
+                            <div id='test-landing' style={{ border: 'none' }} >
+                                <div>
+                                    <img className="Imglayout" src={item.FacultyCoverSource} alt="" />
+                                    <p className="Landing_Textstyle">{item.FacultyName}</p>
+                                </div>
                             </div>
-                        </div>
-                    </button>
-                    
-                ))};
+                        </button>
+
+                    ))};
 
                 </div>
 
@@ -109,7 +112,7 @@ const KLLandingScreen = () => {
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
 
                     <div className="Uni_Description">

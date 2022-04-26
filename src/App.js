@@ -15,7 +15,6 @@ import Foundation from './components/Foundation';
 import 'bootstrap/dist/css/bootstrap.css';
 import IT_Intro from './components/IT_Intro';
 import Search_Page from './components/Search_Page';
-import AdminLogin from './components/AdminLogin';
 import { getDataEvent } from './util/commonDB';
 import Lawintro from './components/Lawintro';
 import Hospitality from './components/Hospitality';
@@ -28,23 +27,36 @@ import CourseDetail from './components/CourseDetail';
 import NewCourse from './components/NewCourse';
 import Institution from './components/Institution';
 import Test from './components/Test';
-import { commonStore } from './store/commonStore';
+
+import AdminLogin from './components/Admin_Panel/AdminLogin/AdminLogin';
+import Profile from './components/Admin_Panel/AdminProfile/Profile';
+import CategoryList from './components/Admin_Panel/AdminCategory/CategoryList';
+import UserList from './components/Admin_Panel/AdminUser/UserList';
+import HomeScreen from './components/Admin_Panel/AdminPost/HomeScreen';
+import Dashboard from './components/Admin_Panel/AdminDashboard/Dashboard';
 
 const App = () => {
 
   useEffect(() => {
     getDataEvent();
-  },[]);
+  }, []);
 
   return (
     <Router>
-      {window.location.pathname !== "/AdminLogin" ? <Header /> : <></>}
+      {window.location.pathname !== "/AdminLogin" && window.location.pathname !== "/AdminPanel_Profile" &&
+        window.location.pathname !== "/AdminPanel_CategoryList" && window.location.pathname !== "/AdminPanel_UserList" &&
+        window.location.pathname !== "/AdminPanel_HomePost" && window.location.pathname !== "/AdminPanel_Dashboard" ? <Header /> : <></>}
       <div>
         <Routes>
+          <Route exact path="/AdminLogin" element={<AdminLogin />} />
+          <Route exact path="/AdminPanel_Profile" element={<Profile />} />
+          <Route exact path="/AdminPanel_CategoryList" element={<CategoryList />} />
+          <Route exact path="/AdminPanel_UserList" element={<UserList />} />
+          <Route exact path="/AdminPanel_HomePost" element={<HomeScreen />} />
+          <Route exact path="/AdminPanel_Dashboard" element={<Dashboard />} />
           <Route path="/" element={<Institution />} />
           <Route exact path="/Psychology" element={<Psychology />} />
           <Route exact path="/EarlyChildhoodEducation" element={<EarlyChildhoodEducation />} />
-          <Route exact path="/AdminLogin" element={<AdminLogin />} />
           <Route exact path="/IT_Intro" element={<IT_Intro />} />
           <Route exact path="/Search_Page" element={<Search_Page />} />
           <Route exact path="/CourseDetail" element={<CourseDetail />} />
@@ -66,10 +78,11 @@ const App = () => {
           <Route exact path="/SKLandingScreen" element={<SKLandingScreen />} />
           <Route exact path="/PGLandingScreen" element={<PGLandingScreen />} />
           <Route exact path="/Test" element={<Test />} />
-
         </Routes>
       </div>
-      {window.location.pathname !== "/AdminLogin" ? <Footer /> : <></>}
+      {window.location.pathname !== "/AdminLogin" && window.location.pathname !== "/AdminPanel_Profile" &&
+        window.location.pathname !== "/AdminPanel_CategoryList" && window.location.pathname !== "/AdminPanel_UserList" &&
+        window.location.pathname !== "/AdminPanel_HomePost" && window.location.pathname !== "/AdminPanel_Dashboard" ? <Footer /> : <></>}
     </Router>
   );
 }

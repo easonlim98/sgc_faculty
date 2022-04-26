@@ -13,7 +13,7 @@
 }
 
 .navbar {
-background: rgba(35, 32, 34, 0.5);
+  background: rgba(35, 32, 34, 0.5);
 }
 
 .alignBack {
@@ -21,33 +21,33 @@ background: rgba(35, 32, 34, 0.5);
 }
 
 .borderNone {
-border: none !important;
-background: transparent !important;
+  border: none !important;
+  background: transparent !important;
 }
 
 .headerIconSpacing {
-padding-left: 10px;
+  padding-left: 10px;
 }
 
 .headerContainerSpacing {
-width: 650px !important;
-justify-content: space-between !important;
-align-items: center !important;
+  width: 650px !important;
+  justify-content: space-between !important;
+  align-items: center !important;
 }
 
 .containerPaddingTop {
-padding-top: 5px !important;
+  padding-top: 5px !important;
 }
 
 .colorWhite {
-color:white !important;
+  color: white !important;
 }
 
 .burgerButtonColor {
-background-color: rgba(229, 211, 220, 0.64) !important;
+  background-color: rgba(229, 211, 220, 0.64) !important;
 }
 
-.dropdown {
+#hd_tahalo {
   position: absolute;
   box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
     0 4px 6px -2px rgba(71, 63, 79, 0.16);
@@ -55,41 +55,36 @@ background-color: rgba(229, 211, 220, 0.64) !important;
   z-index: 9999;
   padding: 0.5rem;
   list-style: none;
-  background-color:rgba(35, 32, 34, 0.8);
+  background-color: rgba(35, 32, 34, 0.8);
   line-height: 2rem;
   border-radius: 0.5rem;
   display: none;
- }
-
- .dropdown.show {
-  display: block;
 }
 
-.dropdownButtonTitle {
+.dropdown.show {
+  display: block !important;
+}
+
+#menuhoverbutton {
   border: none;
   background: transparent;
 }
 
-.dropdown-menu-items {
+#hd-menu-item {
   list-style: none;
 }
 
-.dropdownTitle {
-  margin-right: 30px;
-  font-size: 14px;
-}
-
 .ModalStyleOpen {
-    position: fixed;
-    background-color: rgba(35, 32, 34, 1);
-    border: none;
-    width: 30%;
-    height: 100vh;
-    right: 0;
-    padding: 12px;
-    z-index: 10;
-    animation-duration: 1s;
-    animation-name: slidein;
+  position: fixed;
+  background-color: rgba(35, 32, 34, 1);
+  border: none;
+  width: 30%;
+  height: 100vh;
+  right: 0;
+  padding: 12px;
+  z-index: 10;
+  animation-duration: 1s;
+  animation-name: slidein;
 }
 
 @keyframes slidein {
@@ -116,5 +111,41 @@ background-color: rgba(229, 211, 220, 0.64) !important;
 } */
 
 .backgroundImageBurger {
- background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2730%27 height=%2730%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%280, 0, 0, 0.5%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e') !important;
+  background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2730%27 height=%2730%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%280, 0, 0, 0.5%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e') !important;
 }
+
+#hovermenu:hover a {
+  text-decoration: unset;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+#hovermenu:hover #menuhoverbutton {
+  text-decoration: unset;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+#submenuhover {
+  font-weight: unset !important;
+  font-size: unset !important;
+  margin-right: 30px;
+  font-size: 14px;
+}
+
+/* .dropdown-menu-items:hover #submenuhover {
+  font-weight: bold !important;
+  font-size: 1rem !important;
+}
+
+.dropdown.show {
+  top: 80%;
+}
+
+.dropdown.show {
+  position: absolute;
+}
+
+.dropdown-menu-items.a {
+  font-weight: unset;
+} */

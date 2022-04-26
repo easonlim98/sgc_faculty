@@ -5,6 +5,8 @@ import { FaFilter, FaSearch, FaBookmark, FaWindowClose } from "react-icons/fa";
 import './css/Search_Page.css'
 import { commonStore } from '../store/commonStore';
 import { useNavigate } from 'react-router-dom';
+import ApiClient from '../util/ApiClient';
+import API from '../constant/API';
 
 
 const Search_Page = () => {
@@ -13,7 +15,36 @@ const Search_Page = () => {
 
   useEffect(() => {
     console.log(CourseList)
-  },[]);
+  }, []);
+
+  useEffect(() => {
+
+    ApiClient.GET(API.getCourseDetails).then(response => {
+        setCourseDetails(response)
+        console.log(response)
+    })
+
+    ApiClient.GET(API.getSubjectlist).then(response => {
+      setSubjectList(response)
+      console.log(response)
+    })
+
+    ApiClient.GET(API.getSubjectTitle).then(response => {
+      setSubjectTitle(response)
+      console.log(response)
+    })
+
+    ApiClient.GET(API.getAwardingInstitution).then(response => {
+      setAwardingInstitution(response)
+      console.log(response)
+    })
+
+  }, []);
+
+  const [courseDetails, setCourseDetails] = useState([]);
+  const [subjectList, setSubjectList] = useState([]);
+  const [subjectTitle, setSubjectTitle] = useState([]);
+  const [awardingInstitution, setAwardingInstitution] = useState([]);
 
   const CourseList = commonStore.useState(s => s.selectedCourseList)
 
@@ -115,9 +146,16 @@ const Search_Page = () => {
           <div className="col d-flex align-items-center" id="search-content-container">
             <p className='font-weight-bold m-0'>Awarding:</p>
           </div>
-          <div className="col d-flex align-items-center" id="search-content-container">
-            <p className='font-weight-normal text-muted m-0'>{'temporary null'}</p>
-          </div>
+          
+            <div className="col d-flex align-items-center" id="search-content-container">
+            {awardingInstitution.map(award => {
+            if(item.CourseID === award.CourseID){
+            return (
+              <p className='font-weight-normal text-muted m-0 pr-4'>{award.InstitutionName}</p>
+                )
+              }
+            })}
+            </div>
         </div>
         <div className="row">
           <div className="col d-flex align-items-center" id="search-content-container">
@@ -130,8 +168,44 @@ const Search_Page = () => {
         <div className='' id='Searchpage-details-container'>
           <button className='text-light py-2 px-3' id='Searchpage-details-button'
             onClick={() => {
+
+              var tempCourseDetails = [];
+              for(var x = 0; x < courseDetails.length; x++){
+                  if(courseDetails[x].CourseID === item.CourseID){
+                      const record = courseDetails[x];
+                      tempCourseDetails.push(record);
+                  }
+              };
+              var tempSubjectList = [];
+              for(var i = 0; i < subjectList.length; i++){
+                  if(subjectList[i].CourseID === item.CourseID){
+                      const record = subjectList[i];
+                      tempSubjectList.push(record);
+                  }
+              };
+              var tempSubjectTitle = [];
+              for(var j = 0; j < subjectTitle.length; j++){
+                  if(subjectTitle[j].CourseID === item.CourseID){
+                      const record = subjectTitle[j];
+                      tempSubjectTitle.push(record);
+                  }
+              };
+              var tempInstitutionLink = [];
+              for(var k = 0; k < awardingInstitution.length; k++){
+                  if(awardingInstitution[k].CourseID === item.CourseID){
+                      const record = awardingInstitution[k];
+                      tempInstitutionLink.push(record);
+                  }
+              };
+
+              commonStore.update(s => {
+                s.courseDetails = tempCourseDetails;
+                s.subjectList = tempSubjectList;
+                s.subjectTitle = tempSubjectTitle;
+                s.institutionLink = tempInstitutionLink;
+              })
               navigate('/CourseDetail');
-              commonStore.update(s => {s.selectedCourse = item})
+                  
             }}
           >More Details</button>
         </div>
@@ -163,7 +237,7 @@ const Search_Page = () => {
               (Aplliedfilter === true) ?
                 <input className='py-2' disabled={true} id="searchpage-input" onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Search is disabled" />
                 :
-                <input className='py-2' id="searchpage-input" onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Search" />
+                <input className='py-2' autoComplete='off' id="searchpage-input" onChange={(event) => { setSearchText(event.target.value); }} type="text" fontSize="3rem" placeholder="Search" />
 
             }
           </div>
@@ -206,59 +280,36 @@ const Search_Page = () => {
           <div className="modal-content" id='modal-container' style={{
             backgroundImage: "url(" + 'https://colleges.segi.edu.my/kualalumpur/wp-content/uploads/sites/7/2018/08/search-bg-2.jpg' + ")"
           }}>
-            <div className="modal-header">
+            <div className="modal-header" style={{ border: 0 }}>
               <h5 className="modal-title text-light" id="exampleModalLabel">Search Category</h5>
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span className="text-light" aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div>
-              <div className="row py-3" id="modal-res-con">
-                <div className="col-sm align-items-center d-flex justify-content-center" id="modal-res-item">
-                  <p className="text-light m-0  w-75">Area Of Study</p>
-                </div>
-                <div className="col align-items-center d-flex justify-content-center btn-group dropright" id="modal-res-itemselect">
-                  <button type="button"
-                    className="btn btn-secondary dropdown-toggle" id="dropdownarea" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {CategoryText ? CategoryText : "Category"}
-                  </button>
-                  <div className="dropdown-menu" >
-                    {
-                      Category.map((category) =>
-                        <>
-                          <p className="dropdown-item m-0" onClick={() => setCategoryText(category)}>{category}</p>
-                        </>
-                      )
-                    }
-                  </div>
+            <div className="row py-3" id="modal-res-con">
+              <div className="col-sm align-items-center d-flex justify-content-center" id="modal-res-item">
+                <p className="text-light m-0  w-75">Level Of Study</p>
+              </div>
+              <div className="col align-items-center d-flex justify-content-center btn-group dropright" id="modal-res-itemselect">
+                <button type="button"
+                  className="btn btn-secondary dropdown-toggle" id="dropdownarea" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {lvlstudyText ? lvlstudyText : "Level Of Study"}
+                </button>
+                <div className="dropdown-menu" >
+                  {
+                    lvlstudy.map((study) =>
+                      <>
+                        <p className="dropdown-item m-0" onClick={() => setlvlstudyText(study)}>{study}</p>
+                      </>
+                    )
+                  }
                 </div>
               </div>
+            </div>
 
-              <div className="row py-3" id="modal-res-con">
-                <div className="col-sm align-items-center d-flex justify-content-center" id="modal-res-item">
-                  <p className="text-light m-0  w-75">Level Of Study</p>
-                </div>
-                <div className="col align-items-center d-flex justify-content-center btn-group dropright" id="modal-res-itemselect">
-                  <button type="button"
-                    className="btn btn-secondary dropdown-toggle" id="dropdownarea" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {lvlstudyText ? lvlstudyText : "Level Of Study"}
-                  </button>
-                  <div className="dropdown-menu" >
-                    {
-                      lvlstudy.map((study) =>
-                        <>
-                          <p className="dropdown-item m-0" onClick={() => setlvlstudyText(study)}>{study}</p>
-                        </>
-                      )
-                    }
-                  </div>
-                </div>
-              </div>
-
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={() => setAplliedfilter(true)}>Apply changes</button>
-              </div>
+            <div className="modal-footer" style={{ border: 0 }}>
+              <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={() => setAplliedfilter(true)}>Apply changes</button>
             </div>
           </div>
         </div>

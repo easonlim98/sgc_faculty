@@ -1,19 +1,17 @@
 <?php
 
 // Production
-/* $hostname="Localhost";
-$username="todonex8_user";
-$password="teamalpha2022";
-$dbname="todonex8_sgc_faculty_db"; */
+// $hostname="Localhost";
+// $username="sgcproto_student";
+// $password="teamalpha2022";
+// $dbname="sgcproto_faculty";
 
 // Development
 $hostname="Localhost";
 $username="root";
 $password="";
-$dbname="sgc_faculty";
+$dbname="todonex8_sgc_faculty"; 
  
 // Create connection
 $db = mysqli_connect($hostname, $username, $password, $dbname);
- 
-
 

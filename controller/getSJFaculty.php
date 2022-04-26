@@ -5,11 +5,11 @@ header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header("Access-Control-Allow-Headers: *");
 
     $sjFaculty = mysqli_query($db,
-        "SELECT F.FacultyName, F.FacultyCoverSource, F.IntroNavLink
+        "SELECT F.FacultyName, F.FacultyCoverSource, F.IntroNavLink, F.FacultyID, F.BrochureLink
         FROM available_subject A_S
         JOIN faculty F
         ON A_S.FacultyID = F.FacultyID
-        WHERE CollegeID = 'scsj'
+        WHERE A_S.CollegeID = 'scsj'
         GROUP BY F.FacultyName"
         );
         $rows = array();
@@ -17,4 +17,5 @@ header("Access-Control-Allow-Headers: *");
             $rows[] = $r;
         }
     echo json_encode($rows);
+
 ?>

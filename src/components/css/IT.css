@@ -110,7 +110,7 @@ body{
   }
 
   .IT-Intro-Projecttext>button{
-    display: block;
+    display: none;
     width: 40%;
     background-color: #9F1D33;
     color: #FFF;
@@ -129,14 +129,15 @@ body{
   .IT-Intro-Projecttext-p{
     font-Weight: bold;
      color: #A71337;
-      font-Size: 1.4rem
+      font-Size: 1.8rem
   }
  .IT-Intro-Projecttext-p2{
   font-Weight: bold;
-   font-Size: 1.2rem
+   font-Size: 1.6rem;
+   padding: 1rem 0;
  }
  .IT-Intro-Projecttext-p3{
-  font-Size: 0.8rem;
+  font-Size: 1.4rem;
    font-Weight: 500
 }
 
@@ -362,7 +363,28 @@ vw
     opacity: 0.5;
     background: #000000;
   }
-  
+  @media only screen and (max-width: 1300px) {
+    .IT-Intro-Projecttext-p{
+      font-size: 1.6rem;
+    }
+    .IT-Intro-Projecttext-p2{
+      font-size: 1.6rem;
+    }
+    .IT-Intro-Projecttext-p3{
+      font-size: 1.2rem;
+    }
+  }
+  @media only screen and (max-width: 1100px) {
+    .IT-Intro-Projecttext-p{
+      font-size: 1.4rem;
+    }
+    .IT-Intro-Projecttext-p2{
+      font-size: 1.4rem;
+    }
+    .IT-Intro-Projecttext-p3{
+      font-size: 1rem;
+    }
+  }
 @media only screen and (max-width: 977px) {
   .IT-Intro-successproject{
     max-width: 85%;
@@ -422,10 +444,10 @@ font-size: 1.8rem;
 .IT-Intro-DivWhyITimg {
   display: flex;
   flex: 1 1;
-   justify-content: unset
+   
 }
 .IT-Intro-WhyITimg{
-  width: 70%;
+  width: 60%;
 }
 .IT-Intro-Container {
   max-width: 85%;
@@ -608,7 +630,7 @@ align-items: center;
     
   }
   .IT-Intro-WhyITimg{
-    width: 100%;
+    width: 90%;
   }
   .IT-Intro-Resource{
     flex-direction: column;

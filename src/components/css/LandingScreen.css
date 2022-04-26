@@ -1,32 +1,43 @@
-.LandingBackgroud{
+.LandingBackgroud {
     padding: 3em;
 }
 
-figcaption{
+figcaption {
     font-size: 0.7rem;
 }
-.Landing_Textstyle{
+
+.Landing_Textstyle {
     font-size: 16;
     color: #9E8D8D;
-    text-align:center; 
+    text-align: center;
     padding-top: 5px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
     -webkit-box-orient: vertical;
 }
 
-.Imglayout{
-    width: 100%;
-    border-radius: 1rem;
+#test-landing :hover .Imglayout {
+    width:90%;
 }
 
-.ListContainer{
+#test-landing :hover .Landing_Textstyle {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.Imglayout {
+    width: 100%;
+    border-radius: 0.3rem;
+}
+
+.ListContainer {
     justify-content: center;
 }
 
-.University{
+.University {
     display: flex;
     height: 50%;
     width: 100%;
@@ -37,7 +48,7 @@ figcaption{
 }
 
 
-.Uni_Description{
+.Uni_Description {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -47,17 +58,17 @@ figcaption{
     box-shadow: 1px 3px 1px #808080;
 }
 
-.Uniimg{
+.Uniimg {
     width: 100%;
     border-radius: 1rem;
 }
 
-.Logosize{
+.Logosize {
     padding-top: 10px;
     width: 80%;
 }
 
-.Logosize2{
+.Logosize2 {
     padding-top: 5px;
     width: 50%;
     background: transparent;

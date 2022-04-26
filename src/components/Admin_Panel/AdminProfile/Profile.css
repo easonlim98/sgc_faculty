@@ -1,0 +1,315 @@
+#background-profile {
+    background-color: #2E3139
+}
+
+#background-profile-ui {
+    background-color: #2E3139;
+    border-left: 1.5px solid #22252D;
+}
+
+#background-profile-card {
+    box-shadow: 0 16px 20px 0 rgb(0 0 0 / 20%), 0 1px 30px 0 rgb(0 0 0 / 10%);
+}
+
+#testingprofilecontainer {
+    padding: 0
+}
+
+#border-bottom-dark {
+    border-bottom: 1.5px solid #22252D;
+}
+
+#password-width-container {
+    max-width: 50%;
+}
+
+#category-create-post-modal {
+    box-shadow: rgb(255 255 255) 0px 0px 10px -7px;
+    border: 0;
+    background-color: #22252D;
+}
+
+#pro-background-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#user-footer {
+    border: 0
+}
+
+#close-icon {
+    background: unset;
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 5%;
+    top: 35%;
+    opacity: 1;
+}
+
+#create-post-modal-header {
+    border: 0
+}
+
+#background-password-background {
+    background-color: #2E3139;
+    box-shadow: 0 16px 20px 0 rgb(0 0 0 / 20%), 0 1px 30px 0 rgb(0 0 0 / 10%);
+}
+
+#profile-user-avatar {
+    object-fit: cover;
+    width: 7rem;
+    height: 7rem;
+}
+
+#profilemodal-user-avatar {
+    object-fit: cover;
+    width: 10rem;
+    height: 10rem;
+}
+
+#shape2 {
+    stroke-width: 6px;
+    fill: transparent;
+    stroke: #009FFD;
+    stroke-dasharray: 80 500;
+    stroke-dashoffset: 120;
+    transition: 1s all ease;
+}
+
+#upload-button {
+    background-color: #22252D
+}
+
+.ps-spot {
+    color: white
+}
+
+.svg-wrapper {
+    margin-top: 0;
+    position: relative;
+    width: 300px;
+    height: 55px;
+    display: inline-block;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 5px
+}
+
+#shape {
+    stroke-width: 6px;
+    fill: transparent;
+    stroke: #009FFD;
+    stroke-dasharray: 80 500;
+    stroke-dashoffset: 110;
+    transition: 1s all ease;
+}
+
+.svg-wrapper:hover #shape2 {
+    stroke-dasharray: 50 0;
+    stroke-width: 3px;
+    stroke-dashoffset: 0;
+    stroke: #06D6A0;
+}
+
+.svg-wrapper:hover #shape {
+    stroke-dasharray: 50 0;
+    stroke-width: 3px;
+    stroke-dashoffset: 0;
+    stroke: #06D6A0;
+}
+
+#Upload-Profile-Button {
+    background: transparent;
+    outline: 0;
+    box-shadow: unset;
+}
+
+#profile-text-input {
+    background: transparent;
+    border: 2.5px solid #2E3139;
+    color: white;
+    box-shadow: 0 10px 10px 0 rgb(0 0 0 / 11%), 0 1px 30px 0 rgb(0 0 0 / 14%)
+}
+
+#button-boxshadow {
+    font-weight: 600;
+}
+
+
+
+#spanalignment {
+    text-align: center;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.btn-two {
+    box-shadow: unset !important;
+    position: relative;
+    color: white;
+    width: 256px;
+    height: 64px;
+    transition: all 0.3s;
+}
+
+#pro-background-container {
+    background-color: #22252D;
+}
+
+.btn-two::before, .btn-two::after {
+    content: '';
+    position: absolute;
+    transition: all 0.3s;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.btn-two::before, .btn-two::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    bottom: 0;
+    left: 10%;
+    z-index: 1;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-two:hover::after {
+    animation-name: rotatecw;
+    animation-duration: 2s;
+}
+
+.btn-two:hover::before {
+    animation-name: rotateccw;
+    animation-duration: 3s;
+
+}
+
+.btn-two:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-two:hover::after, .btn-two:hover::before {
+    left: 96px;
+    width: 64px;
+
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotatecw {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateccw {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@media only screen and (max-width: 1191px) {
+    #background-profile-card {
+        width: 70%;
+    }
+
+    #background-profile {
+        width: 100%;
+    }
+
+    #border-bottom-dark {
+        width: 100%;
+        border: 0;
+        border-top: 1.5px solid #22252D;
+        padding: 1.5rem 0.5rem !important;
+    }
+
+    #background-profile-ui {
+        width: 100%;
+    }
+
+    #profile-title {
+        text-align: center;
+        margin-bottom: 2rem !important;
+    }
+
+    #font-try-center {
+        text-align: center;
+        margin-bottom: 2rem !important;
+    }
+
+    #font-content-text {
+        text-align: center;
+        overflow-wrap: anywhere;
+        padding-bottom: 0.5rem !important;
+    }
+
+    #testingprofilecontainer {
+        width: 70%;
+        max-width: unset !important;
+        padding: 0;
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #background-profile-card {
+        width: 80%;
+    }
+
+    #testingprofilecontainer {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    #background-profile-card {
+        width: 85%;
+    }
+
+    #testingprofilecontainer {
+        width: 100%;
+    }
+
+    #font-content-text {
+        font-size: 0.8rem !important;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    #background-password-background {
+        padding: 1.5rem !important;
+    }
+
+    #reset-profile-title {
+        font-size: 1.3rem !important;
+    }
+
+    #reset-profile-content {
+        font-size: 0.8rem !important;
+    }
+
+    #testingprofilecontainer {
+        margin-top: 2rem !important
+    }
+
+}

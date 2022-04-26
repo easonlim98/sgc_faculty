@@ -1,0 +1,142 @@
+#cat-tablecontent {
+    border: 0;
+}
+
+#collapse_testing {
+    display: none;
+}
+
+#collapse_testing_active {
+    transition: height 0.25s linear;
+    height: 100%;
+}
+
+#Category-new-category-button {
+    background-color: #32519F;
+    box-shadow: rgb(0 0 0 / 11%) 0px 10px 10px 0px, rgb(0 0 0 / 4%) 0px 1px 30px 0px;
+}
+
+#cat-background-container {
+    background-color: #22252D;
+}
+
+#search-category-input-title {
+    background-color: #2E3139;
+    border: 0;
+}
+
+#search-category-input-title:focus {
+    outline: none;
+}
+
+#category-searchicon {
+    right: 5.5%
+}
+
+#categoriesrslt-container {
+    background-color: #333333;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cat-title-o {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cat-title-row {
+    margin: auto;
+    width: 92%;
+}
+
+#category-create-post-modal {
+    background-color: #22252D;
+}
+
+#Modal-done-button {
+    border: 2.5px solid rgb(46, 49, 57);
+    background-color: transparent;
+    box-shadow: rgb(0 0 0 / 11%) 0px 10px 10px 0px, rgb(0 0 0 / 14%) 0px 1px 30px 0px;
+}
+
+#close-icon {
+    background: unset;
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 5%;
+    top: 35%;
+    opacity: 1;
+}
+
+.react-datepicker__close-icon::after {
+    line-height: 0.3;
+    outline: none;
+}
+
+#cat-subtablecontent {
+    border: 0;
+    width: 20%;
+}
+
+#categories-tag-input {
+    background-color: #2E3139;
+    color: white;
+    outline: unset;
+    box-shadow: unset;
+}
+
+#back-icon {
+    background: unset;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 4%;
+    top: 35%;
+    opacity: 1;
+}
+
+#data-tablecontent {
+    background-color: #2E3139;
+    color: white;
+    outline: unset;
+    box-shadow: unset;
+}
+
+#iconhover:hover {
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .1), 0 0 20px rgba(255, 255, 255, .15);
+    animation: infinite-spinning 1s ease-out 0s infinite normal;
+}
+
+@keyframes infinite-spinning {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media only screen and (max-width: 1054px) {
+    #category-backgroundweh {
+        overflow-y: hidden;
+    }
+
+    #cat-background-container {
+        width: 50rem;
+    }
+
+    #cat-maxwidth {
+        max-width: unset;
+    }
+
+    #category-backgroundweh {
+        background-color: #22252D !important;
+    }
+
+    #categoriesrslt-container {
+        width: 48.5rem;
+    }
+}

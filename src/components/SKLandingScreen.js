@@ -52,14 +52,17 @@ const SKLandingScreen = () => {
                                 tempCourseList.push(record);
                             }
                         };
-                        commonStore.update(s => {s.selectedCourseList = tempCourseList})
+                        commonStore.update(s => {
+                            s.selectedCourseList = tempCourseList
+                            s.facultyDetails = item
+                        })
                         navigate(item.IntroNavLink);
                     }}
                 >
                     <div onClick={() => {
                         navigate(item.IntroNavLink);
 
-                    }} style={{ border: 'none' }} >
+                    }} id='test-landing' style={{ border: 'none' }} >
                         <div>
                             <img className="Imglayout" src={item.FacultyCoverSource} alt="" />
                             <p className="Landing_Textstyle">{item.FacultyName}</p>
