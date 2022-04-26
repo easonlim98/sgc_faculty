@@ -48,7 +48,7 @@
 }
 
 .dropdown {
-  position: absolute;
+  /* position: absolute;
   box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
     0 4px 6px -2px rgba(71, 63, 79, 0.16);
   font-size: 14px;
@@ -58,25 +58,25 @@
   background-color: rgba(35, 32, 34, 0.8);
   line-height: 2rem;
   border-radius: 0.5rem;
-  display: none;
+  display: none; */
 }
 
 .dropdown.show {
-  display: block;
+  /* display: block; */
 }
 
 .dropdownButtonTitle {
-  border: none;
-  background: transparent;
+  /* border: none;
+  background: transparent; */
 }
 
 .dropdown-menu-items {
-  list-style: none;
+  /* list-style: none; */
 }
 
 .dropdownTitle {
-  margin-right: 30px;
-  font-size: 14px;
+  /* margin-right: 30px;
+  font-size: 14px; */
 }
 
 .ModalStyleOpen {
@@ -136,7 +136,7 @@
   font-size: unset !important;
 }
 
-.dropdown-menu-items:hover #submenuhover {
+/* .dropdown-menu-items:hover #submenuhover {
   font-weight: bold !important;
   font-size: 1rem !important;
 }
@@ -151,4 +151,4 @@
 
 .dropdown-menu-items.a {
   font-weight: unset;
-}
+} */

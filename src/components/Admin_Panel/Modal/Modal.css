@@ -1,0 +1,9 @@
+#modal-edit-delete {
+    box-shadow: rgb(255 255 255) 0px 0px 10px -7px;
+    border: 0;
+    background-color: #22252D
+}
+
+#modal-general-button {
+    background-color: transparent;
+}

@@ -1,0 +1,78 @@
+#admin-input {
+    outline: unset;
+    box-shadow: unset;
+    border: 3px solid #f5f7fb;
+    background-color: #f6f8fc;
+    padding: 0.6rem 0.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    margin: auto;
+}
+
+#admin-button {
+    background-color: black;
+    color: white;
+    border: 0;
+    outline: 0;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+
+#admin-panel-half {
+    background-color: #ffd1b7;
+}
+
+#segi_logo {
+    min-width: 20rem;
+    right: -5rem;
+    top: -30%;
+}
+
+#key_logo {
+    width: 6rem;
+    object-fit: contain;
+}
+
+#purple-theme {
+    color: #707E8D;
+}
+
+#setminwidth {
+    min-width: 80%;
+}
+
+a {
+    text-decoration: unset !important;
+}
+
+#admin-background {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url('../../../assets/images/Admin_Panel/bg-2.jpg');
+    background-size: cover;
+}
+
+#admin-background::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#custom-card {
+    background-color: #102037;
+    box-shadow: 0px 15px 20px #3586a1;
+    align-items: center;
+    display: flex;
+    min-width: 35%;
+    z-index: 101;
+}
