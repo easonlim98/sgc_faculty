@@ -10,6 +10,30 @@
     text-align: center;
 }
 
+#enquiry-button {
+    right: 6%;
+    color: white;
+}
+
+#enquiry-bg {
+    background-image: url('../../assets/images/Admin_Panel/Londonbg.jpg');
+    background-size: cover;
+}
+
+#enquiry-bg::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#coursedetails-modal {
+    z-index: 101;
+}
+
 .Course_Detail_Entry_Requirement_Img_1 {
     width: 50px;
     height: 50px;
@@ -24,7 +48,7 @@
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
 }
 
 .Course_Detail_Course_Name_Div_2 {
@@ -112,13 +136,13 @@
     z-index: 1;
 }
 
-#Course_Detail_Course_Name_Slide_Pop_Menu_Dim_Background_2{
+#Course_Detail_Course_Name_Slide_Pop_Menu_Dim_Background_2 {
     cursor: pointer;
     background-color: #ffb005;
     background-image: linear-gradient(#ffb005, #ff6f00);
 }
 
-#Course_Detail_Course_Name_Slide_Pop_Menu_Dim_Background_3{
+#Course_Detail_Course_Name_Slide_Pop_Menu_Dim_Background_3 {
     cursor: pointer;
     background-color: #11ff9c;
     background-image: linear-gradient(#11ff9c, #1bb172);
@@ -147,7 +171,7 @@
 
 .Course_Detail_Content_Editable_1 {
     border-style: inset;
-    
+
 }
 
 #Course_Detail_Page_Editor_1 {
