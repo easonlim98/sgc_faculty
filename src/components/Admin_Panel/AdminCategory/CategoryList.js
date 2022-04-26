@@ -132,8 +132,8 @@ const CategoryList = () => {
       <div className='col rounded' id='cat-background-container'>
         <div className='container' id='cat-maxwidth'>
           <div className='d-flex justify-content-between align-items-center mt-5 mb-4' id="cat-title-o">
-            <p className='col fw-bold fs-2 text-white m-0'>Course Settings</p>
-            <div className="input-group col d-flex flex-row justify-content-end align-items-center position-relative">
+            <p className='col fw-bold fs-2 text-white m-0 p-0'>Course Settings</p>
+            <div className="input-group col d-flex flex-row justify-content-end align-items-center position-relative p-0">
               <AiOutlineSearch className='text-white position-absolute top-50 translate-middle-y' id='category-searchicon' />
               <input autoComplete='off' type="text" onChange={(event) => { setSearchText(event.target.value); }} className="ps-3 pe-3 py-2 text-white rounded" placeholder="Search Courses..." aria-label="Title" id="search-category-input-title" />
             </div>

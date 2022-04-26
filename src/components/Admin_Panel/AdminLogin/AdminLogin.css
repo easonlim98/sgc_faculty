@@ -11,13 +11,14 @@
 }
 
 #admin-button {
-    background-color: black;
+    background-color: #35878B;
     color: white;
     border: 0;
     outline: 0;
     padding: 0.5rem 1.5rem;
     font-size: 0.9rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 
