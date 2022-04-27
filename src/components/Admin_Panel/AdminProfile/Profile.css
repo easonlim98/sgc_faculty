@@ -1,32 +1,69 @@
 #background-profile {
-    background-color: #2E3139
+    background-image: url('../../../assets/images/Admin_Panel/road.jpg');
+    background-size: cover;
 }
 
-#background-profile-ui {
-    background-color: #2E3139;
-    border-left: 1.5px solid #22252D;
+#background-profile::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#ambg {
+    z-index: 101;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.our_theme_color {
+    color: #62C6CC
+}
+
+.our_theme_title {
+    color: #41EDEA
+}
+
+#background-profile-clr {
+    background-color: #14213d;
+    padding: 0;
 }
 
 #background-profile-card {
-    box-shadow: 0 16px 20px 0 rgb(0 0 0 / 20%), 0 1px 30px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0px 15px 20px #3586a1;
+    padding: 0;
+    margin: 0;
+    border-radius: 0.25rem;
+    overflow: hidden;
 }
 
 #testingprofilecontainer {
     padding: 0
 }
 
-#border-bottom-dark {
-    border-bottom: 1.5px solid #22252D;
-}
-
 #password-width-container {
     max-width: 50%;
+}
+
+#sayhi {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #category-create-post-modal {
     box-shadow: rgb(255 255 255) 0px 0px 10px -7px;
     border: 0;
     background-color: #22252D;
+}
+
+#width-bg {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #pro-background-container {
@@ -53,20 +90,25 @@
 }
 
 #background-password-background {
-    background-color: #2E3139;
-    box-shadow: 0 16px 20px 0 rgb(0 0 0 / 20%), 0 1px 30px 0 rgb(0 0 0 / 10%);
+    background-color: #14213d;
+    box-shadow: 0px 15px 20px #3586a1
 }
 
 #profile-user-avatar {
     object-fit: cover;
-    width: 7rem;
-    height: 7rem;
+    width: 8rem;
+    height: 8rem;
+    padding: 0;
+}
+
+#profile-font {
+    font-size: 0.8rem;
 }
 
 #profilemodal-user-avatar {
     object-fit: cover;
-    width: 10rem;
-    height: 10rem;
+    width: 9rem;
+    height: 9rem;
 }
 
 #shape2 {
@@ -149,14 +191,15 @@
 .btn-two {
     box-shadow: unset !important;
     position: relative;
-    color: white;
-    width: 256px;
-    height: 64px;
+    color: #41EDEA;
+    width: 120px;
+    height: 50px;
     transition: all 0.3s;
 }
 
 #pro-background-container {
-    background-color: #22252D;
+    background-image: url('../../../assets/images/Admin_Panel/bg-2.jpg');
+    background-size: cover;
 }
 
 .btn-two::before, .btn-two::after {
@@ -165,7 +208,7 @@
     transition: all 0.3s;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
     height: 100%;
     z-index: 1;
 }
@@ -179,7 +222,8 @@
     left: 10%;
     z-index: 1;
     transition: all 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid #41EDEA;
+    border-radius: 0.15rem;
 }
 
 .btn-two:hover::after {
@@ -198,8 +242,8 @@
 }
 
 .btn-two:hover::after, .btn-two:hover::before {
-    left: 96px;
-    width: 64px;
+    left: 35px;
+    width: 50px;
 
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -237,7 +281,6 @@
     #border-bottom-dark {
         width: 100%;
         border: 0;
-        border-top: 1.5px solid #22252D;
         padding: 1.5rem 0.5rem !important;
     }
 
@@ -247,7 +290,6 @@
 
     #profile-title {
         text-align: center;
-        margin-bottom: 2rem !important;
     }
 
     #font-try-center {

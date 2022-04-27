@@ -220,7 +220,10 @@ export const commonStore = new Store({
     subjectTitle: [],
     subjectList: [],
 
-    facultyDetails: {},
+    facultyDetails: [{
+        UserID: "gIPtxHjv5LWXiG5Eg1bB5jqeed23",
+        FacultyName: "Psychology"
+    }],
     institutionLink: [],
 
 });  

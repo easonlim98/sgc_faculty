@@ -27,6 +27,7 @@
     font-size: 0.85em;
 }
 
+
 #sidebar.active ul li a i {
     margin-right: 0;
     display: block;
@@ -50,11 +51,26 @@
     -ms-transform: translateX(50%);
     transform: translateX(50%);
 }
-#sidebar-user-avatar{
+
+.sc-cTAqQK.idCfpL.pro-sidebar.toggled #sidebar-user-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
     object-fit: cover;
-    width: 4rem;
-    height:4rem;
 }
+
+.sc-cTAqQK.idCfpL.pro-sidebar #sidebar-user-avatar {
+    object-fit: cover;
+    width: 6rem;
+    height: 6rem;
+    margin: 1.5rem 0
+}
+
+.sc-cTAqQK.idCfpL.pro-sidebar.toggled .sc-khQegj.hSEHDk {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
 
 @media (max-width: 768px) {
 

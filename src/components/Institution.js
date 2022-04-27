@@ -9,9 +9,13 @@ import { useNavigate } from 'react-router-dom';
 import { getDataEvent } from '../util/commonDB';
 
 const Institution = () => {
-
+    useEffect(() => {
+        if (!window.location.hash) {
+            window.location = window.location + '#loaded';
+            window.location.reload();
+        }
+    })
     const navigate = useNavigate();
-
     return (
         <>
             <div className='w-100 px-5 py-5' id="institution-banner-image" style={{
