@@ -179,8 +179,8 @@ const UserList = () => {
   }
   const tableheader = (item) => {
     return (
-      <th className="col text-center d-flex justify-content-center border-0">
-        <p className='m-0 text-white text-center  py-3'>{item}</p>
+      <th className="col text-center d-flex justify-content-center align-items-center border-0">
+        <p className='m-0 our_theme_title text-center  py-3'>{item}</p>
       </th>
     )
   }
@@ -223,17 +223,16 @@ const UserList = () => {
   };
 
 
-  const Tablecontent = ({ UserID, UserName, UserGender, UserPosition, UserDepartment, UserEmail, UserContact }) => {
+  const Tablecontent = ({ UserID, UserName, UserGender, UserPosition, UserEmail, UserContact }) => {
     return (
       <div className="row m-0 b-0 py-3 align-items-center">
-        <td className="col text-center text-white fw-light" id="cat-tablecontent">{UserName}</td>
-        <td className="col text-center text-white fw-light" id="cat-tablecontent">{UserPosition}</td>
-        <td className="col text-center text-white fw-light" id="cat-tablecontent">{UserDepartment}</td>
-        <td className="col text-center text-white fw-light" id="cat-tablecontent">{UserEmail}</td>
-        <td className="col text-center text-white fw-light" id="cat-tablecontent">{UserContact !== '' ? UserContact : 'N/A'}</td>
+        <td className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">{UserGender + " " + UserName}</td>
+        <td className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">{UserPosition}</td>
+        <td className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">{UserEmail}</td>
+        <td className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">{UserContact !== '' ? UserContact : 'N/A'}</td>
         <td className="col text-center text-white d-flex align-items-center justify-content-center" id="cat-tablecontent">
-          <AiOutlineEdit id="iconhover" data-toggle="modal" data-target="#createCategoryModal" onClick={() => handleeditfunction({ UserID, UserName, UserGender, UserPosition, UserDepartment, UserEmail, UserContact })} size={25} className="me-4" />
-          <MdDeleteForever id="iconhover" data-toggle="modal" data-target={"#Delete-" + UserID} size={25} className="me-4" />
+          <AiOutlineEdit className='our_theme_title me-4' id="iconhover" data-toggle="modal" data-target="#createCategoryModal" onClick={() => handleeditfunction({ UserID, UserName, UserGender, UserPosition, UserEmail, UserContact })} size={25} />
+          <MdDeleteForever id="iconhover" data-toggle="modal" data-target={"#Delete-" + UserID} size={25} className="me-4 our_theme_title" />
         </td>
         <Modal id={"Delete-" + UserID} name={"Delete"} function={handlepropsdeletefunction} currentid={UserID} warning={'you are allowed to delete inactive user'} />
       </div>
@@ -243,7 +242,7 @@ const UserList = () => {
   const Modaltextinput = (item) => {
     return (
       <div>
-        <p className='fw-normal pb-1 text-white  fs-6 total-cat pt-4'>{item.name}</p>
+        <p className='fw-normal pb-1 purple fs-6 total-cat pt-4'>{item.name}</p>
         <input value={item.data} onChange={(e) => item.onchange(e)} autoComplete='off' type="text" className="form-control rounded border-0" placeholder={item.placeholder} aria-label="Title" id="side-bar-search-title" aria-describedby="inputGroup-sizing-default" />
       </div>
     )
@@ -252,9 +251,9 @@ const UserList = () => {
   const Modaldropdowninput = (item) => {
     return (
       <div>
-        <p className='fw-normal pb-2 text-white fs-6 total-cat pt-4'>{item.name}</p>
+        <p className='fw-normal pb-2 purple fs-6 total-cat pt-4'>{item.name}</p>
         <div className="btn-group dropend">
-          <button type="button" className="px-2 py-2 border-0 rounded btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <button type="button" className="px-2 py-2 border-0 rounded btn-secondary dropdown-toggle" style={{ backgroundColor: "rgb(86, 94, 183)" }} data-toggle="dropdown" aria-expanded="false">
             {(item.data === "") ? item.name : item.data}
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -273,22 +272,18 @@ const UserList = () => {
       <div className='d-flex flex-row mt-3'>
         <table className="table m-0">
           <thead>
-            <tr className='row m-0 border-0' style={{ backgroundColor: "#5F5F5F" }}>
+            <tr className='row m-0 border-0' style={{ backgroundColor: "#14213d" }}>
               {tableheader("Name")}
               {tableheader("Position")}
-              {tableheader("Department")}
               {tableheader("Email")}
               {tableheader("Number")}
               {tableheader("")}
             </tr>
           </thead>
           <tbody className='border-0'>
-
+            {console.log(userList)}
             {userList ? userList.filter((item) => {
-              var departmentname = ""
-              departmentList.map((dep) => (
-                item.DepartmentID === dep.DepartmentID ? departmentname = dep.DepartmentName : null
-              ))
+
               if (searchText === "") {
                 return item
               }
@@ -296,9 +291,6 @@ const UserList = () => {
                 return item
               }
               else if (item.UserPosition.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
-                return item
-              }
-              else if (departmentname.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
                 return item
               }
               else if (item.UserEmail.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
@@ -309,22 +301,14 @@ const UserList = () => {
               }
 
             }).map((item, index) => (
-              <>
-                {departmentList.map((dep) => (
-                  <>
-                    {(item.DepartmentID === dep.DepartmentID) ?
-                      Tablecontent({
-                        UserID: item.UserID,
-                        UserName: item.UserName,
-                        UserGender: item.UserGender,
-                        UserEmail: item.UserEmail,
-                        UserPosition: item.UserPosition,
-                        UserDepartment: dep.DepartmentName,
-                        UserContact: item.UserContact,
-                      }) : null}
-                  </>
-                ))}
-              </>
+              Tablecontent({
+                UserID: item.UserID,
+                UserName: item.UserName,
+                UserGender: item.UserTitle,
+                UserEmail: item.UserEmail,
+                UserPosition: item.UserPosition,
+                UserContact: item.UserContact,
+              })
             )) : null}
           </tbody>
         </table>
@@ -351,7 +335,7 @@ const UserList = () => {
   return (
     <div className="d-flex" id="category-backgroundweh" style={{ backgroundColor: '#333' }}>
       <Sidebar />
-      <div className='col rounded' id='cat-background-container'>
+      <div className='col rounded' id='pro-background-container'>
         {isLoading ? <div className='container position-relative d-flex col h-100'>
           <LoadingSpinner /> </div> :
 
@@ -365,8 +349,8 @@ const UserList = () => {
             </div>
             <div className='pt-3 rounded mt-5' id='categoriesrslt-container'>
               <div className='d-flex align-items-center justify-content-between' id='cat-title-row'>
-                <p className=' fw-bold text-white m-0 fs-5'>{"Total Users: " + userList.length}</p>
-                <button onClick={() => seteditfunction(false)} type="button" className="px-2 py-2 border-0 rounded text-white fw-bold d-flex align-items-center px-3" id="Category-new-category-button" data-toggle="modal" data-target="#createCategoryModal">
+                <p className=' fw-bold our_theme_title m-0 fs-5'>{"Total Users: " + userList.length}</p>
+                <button onClick={() => seteditfunction(false)} type="button" className="px-2 py-2 border-0 rounded text-white fw-bold d-flex align-items-center px-3" id="admin-cat-button--active" data-toggle="modal" data-target="#createCategoryModal">
                   NEW USER
                   <IoIosAddCircleOutline className="d-flex align-items-center" size={30} style={{ paddingLeft: '0.5rem' }} />
                 </button>
@@ -379,9 +363,10 @@ const UserList = () => {
               <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content" id="category-create-post-modal">
                   <div className="modal-header d-flex col align-items-center position-relative justify-content-center py-4" id="create-post-modal-header">
-                    <h5 className="modal-title text-center text-white" id="create-post-modal-header-title">{editfunction ? "Edit User Details" : "Add New User"}</h5>
-                    <RiCloseFill className="btn-close position-absolute text-light" onClick={() => emptyedit()} data-dismiss="modal" size={35} id='close-icon' />
+                    <h5 className="modal-title text-center purple" id="create-post-modal-header-title">{editfunction ? "Edit User Details" : "Add New User"}</h5>
+                    <RiCloseFill className="btn-close position-absolute purple" onClick={() => emptyedit()} data-dismiss="modal" size={35} id='close-icon' />
                   </div>
+
                   <div className="modal-body py-0" id="category-modal">
                     {/* All State: userName, userEmail, userPassword, employeeID, userDepartment, userPosition */}
                     {Modaltextinput({ name: "User Name", data: userName, onchange: e => { setUserName(e.target.value) }, placeholder: "e.g User Name" })}
@@ -390,10 +375,9 @@ const UserList = () => {
                     {editfunction ? null : Modaltextinput({ name: "User Email", onchange: e => { setUserEmail(e.target.value) }, placeholder: "e.g example@gmail.com" })}
                     {editfunction ? null : Modaltextinput({ name: "Password", onchange: e => { setUserPassword(e.target.value) }, placeholder: "e.g *******" })}
                     {editfunction ? null : Modaltextinput({ name: "Employee ID", onchange: e => { setEmployeeID(e.target.value) }, placeholder: "e.g QAC101419" })}
-                    {Modaldropdowninput({ name: "Department", data: userDepartment, onchange: handledepartment, datainput: ["Business & Marketing", "Academic", "Support", "Human Resource"] })}
                     {Modaldropdowninput({ name: "User Position", data: userPosition, onchange: handleposition, datainput: ["QA Coordinator", "Staff"] })}
                     <div className="modal-footer p-0 pt-4 pb-3 justify-content-center" id="user-footer">
-                      <button type="button" className="px-3 py-2 rounded text-light" id="Modal-done-button" data-dismiss="modal" onClick={() => { editfunction ? updateUser() : createUser(); }}>{editfunction ? "Save Changes" : "Add User"}</button>
+                      <button type="button" className="px-3 py-2 rounded purple border-0 " id="Modal-done-button" data-dismiss="modal" onClick={() => { editfunction ? updateUser() : createUser(); }}>{editfunction ? "Save Changes" : "Add User"}</button>
                     </div>
                   </div>
                 </div>

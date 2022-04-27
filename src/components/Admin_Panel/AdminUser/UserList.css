@@ -1,32 +1,9 @@
 #cat-background-container {
     background-color: #22252D;
 }
-
-#search-category-input-title {
-    background-color: #2E3139;
-    border: 0;
-}
-
-#search-category-input-title:focus {
-    outline: none;
-}
-
-#categoriesrslt-container {
-    background-color: #333333;
-}
-
-#cat-title-row {
-    margin: auto;
-    width: 92%;
-}
-
 #Category-new-category-button {
     background-color: #32519F;
     box-shadow: rgb(0 0 0 / 11%) 0px 10px 10px 0px, rgb(0 0 0 / 4%) 0px 1px 30px 0px;
-}
-
-#category-create-post-modal {
-    background-color: #22252D;
 }
 
 #create-post-modal-header {
