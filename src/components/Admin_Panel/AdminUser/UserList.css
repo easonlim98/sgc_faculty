@@ -1,12 +1,6 @@
 #cat-background-container {
     background-color: #22252D;
 }
-
-#cat-title-row {
-    margin: auto;
-    width: 92%;
-}
-
 #Category-new-category-button {
     background-color: #32519F;
     box-shadow: rgb(0 0 0 / 11%) 0px 10px 10px 0px, rgb(0 0 0 / 4%) 0px 1px 30px 0px;

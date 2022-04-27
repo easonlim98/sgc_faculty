@@ -53,7 +53,8 @@
 
 #cat-title-row {
     margin: auto;
-    width: 92%;
+    width: 90%;
+    position: relative;
 }
 
 #category-create-post-modal {
@@ -71,6 +72,7 @@
 
 #Modal-done-button {
     background-color: transparent;
+    border: 0;
 }
 
 #admin-cat-button--active {
