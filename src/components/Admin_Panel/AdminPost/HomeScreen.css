@@ -16,7 +16,11 @@
     margin-bottom: 1rem;
     transform: translateY(4px);
 }
-
+#profilehome-user-avatar{
+    object-fit: cover;
+    width: 4rem;
+    height: 4rem;
+}
 #home-modal-container {
     background-color: #333;
 }
@@ -218,7 +222,11 @@
     background-color: #0d6efd;
     text-decoration: none !important;
 }
-
+#homescreen-welcomeuser{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
 @media only screen and (max-width: 1356px) {
     #modal-maxwidth-container {
         max-width: 70%;
