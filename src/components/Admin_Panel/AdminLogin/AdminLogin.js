@@ -13,7 +13,12 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 const AdminLogin = () => {
-
+        useEffect(() => {
+                if (!window.location.hash) {
+                        window.location = window.location + '#loaded';
+                        window.location.reload();
+                }
+        })
         const navigate = useNavigate();
 
         const [userEmail, setUserEmail] = useState('');
