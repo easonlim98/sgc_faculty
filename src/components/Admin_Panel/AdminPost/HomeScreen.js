@@ -267,7 +267,7 @@ const HomeScreen = () => {
       />
       <div className="container-fluid p-4 pt-5" style={{ backgroundColor: '#22252D' }}>
         <div className="col d-flex mb-3">
-        <h1 id="homescreen-welcomeuser" className="text-white px-3">Welcome, !</h1>
+        <h1 id="homescreen-welcomeuser" className="text-white px-3">Welcome, {selectedUser.UserName}!</h1>
         
         </div>
         

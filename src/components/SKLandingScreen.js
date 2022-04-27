@@ -31,6 +31,19 @@ const SKLandingScreen = () => {
     const [facultyList, setFacultyList] = useState([]);
     const [courseList, setCourseList] = useState([]);
 
+    const increaseCount = (FacultyID) => {
+
+        var body = {
+            FacultyID: FacultyID,
+        }
+        console.log(body, "increase Count")
+
+        ApiClient.POST(API.increaseCount, body).then((result) => {
+            console.log(result)
+        });
+
+    }
+
     return (
         <div>
             <div className="landingBanner">
@@ -45,6 +58,7 @@ const SKLandingScreen = () => {
                 
                 <button className="col-sm-3" style={{ border: 'none', background: 'transparent' }}
                     onClick={() => {
+                        increaseCount(item.FacultyID)
                         var tempCourseList = [];
                         for(var x = 0; x < courseList.length; x++){
                             if(courseList[x].FacultyID === item.FacultyID){

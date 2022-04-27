@@ -24,7 +24,27 @@ const CourseDetail = () => {
     const [ApplicantContent, setcontent] = useState('');
     const [AppointmentDate, setdate] = useState('');
     const [AppointmentTime, settime] = useState('');
-    const [currentdate, setcurrentdate] = useState(null)
+    const [currentdate, setcurrentdate] = useState(null);
+
+    const sendenquiryfunction = () => {
+
+        var body = {
+            CourseID: courseDetails[0].CourseID,
+            ApplicantName: ApplicantName,
+            ApplicantNationality: ApplicantNationality,
+            ApplicantIdentityNo: ApplicantIdentityNo,
+            ApplicantEmail: ApplicantEmail,
+            ApplicantContent: ApplicantContent,
+            AppointmentDate: AppointmentDate,
+            AppointmentTime: AppointmentTime,
+            ApplicationStatus: 0,
+        }
+        console.log(body, "enquiryfunction")
+
+        ApiClient.POST(API.createEnquiry, body).then((result) => {
+            console.log(result)
+        });
+    }
 
     useEffect(() => {
         var today = new Date();
@@ -86,19 +106,7 @@ const CourseDetail = () => {
         )
     }
     
-    const sendenquiryfunction = () => {
-        var body = {
-            CourseID: courseDetails[0].CourseID,
-            ApplicantName: ApplicantName,
-            ApplicantNationality: ApplicantNationality,
-            ApplicantIdentityNo: ApplicantIdentityNo,
-            ApplicantEmail: ApplicantEmail,
-            ApplicantContent: ApplicantContent,
-            AppointmentDate: AppointmentDate,
-            AppointmentTime: AppointmentTime
-        }
-        console.log(body, "enquiryfunction")
-    }
+    
     const [DymBackgroundImg1, setDymBackgroundImg1] = useState(require('../assets/images/CoursePage/IT1.png')),
         [DymTitle1, setDymTitle1] = useState('BSC (HONS) COMPUTING'),
         [DymYear1, setDymYear1] = useState('(3+0)'),
@@ -291,7 +299,7 @@ const CourseDetail = () => {
                                 src={require("../assets/images/CoursePage/ApplyNow.png")}
                             />
                             <div className="Course_Detail_Course_Name_P_1">
-                                <p>APPLY NOW</p>
+                                <p>ENQUIRY</p>
                             </div>
                         </div>
                     </a>
@@ -863,7 +871,7 @@ const CourseDetail = () => {
                                 src={require("../assets/images/CoursePage/ApplyNow.png")}
                             />
                             <div className="Course_Detail_Course_Name_P_1">
-                                <p>APPLY NOW</p>
+                                <p>Enquiry</p>
                             </div>
                         </div>
                     </a>

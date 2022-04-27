@@ -44,7 +44,8 @@ export const commonStore = new Store({
     selectedCourseList: [],
     selectedCourse: {},
     enquiryDetails: [],
-
+    facultyReport: [],
+    facultyReportPercent: [],
     courseDetails: [],
     userList: [],
     categoryList: [{
