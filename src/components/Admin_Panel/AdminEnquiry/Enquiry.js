@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import Sidebar from '.././Sidebar'
-import './CategoryList.css'
+import Sidebar from '../Sidebar'
+import './Enquiry.css'
 import API from '../../../constant/API';
 import ApiClient from '../../../util/ApiClient';
 import 'bootstrap';
-import { AiOutlineEdit, AiOutlineSearch, } from "react-icons/ai";
+import { AiOutlineEdit, AiOutlineSearch,AiOutlineMail } from "react-icons/ai";
 import { RiCloseFill } from "react-icons/ri";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { BsJournalPlus } from "react-icons/bs";
@@ -13,23 +13,23 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 import { BsCheck2Circle } from "react-icons/bs";
 import { commonStore } from '../../../store/commonStore';
 import { userStore } from '../../../store/userStore';
-// import listenToData from '../../../util/CommonFunc';
 import ReactPaginate from "react-paginate";
+// import listenToData from '../../../util/CommonFunc';
 import Modal from '../Modal/Modal'
 
-const CategoryList = () => {
+const EnquiryList = () => {
   const userID = userStore.useState(s => s.userID);
   const categoryList = commonStore.useState(s => s.categoryList);
+  const EnquiryList=commonStore.useState(s=>s.EnquiryList)
   const [targetCategoryID, setTargetCategoryID] = useState('');
   const [categoryName, setCategoryName] = useState('');
   const [closureDate, setClosureDate] = useState('');
   const [finalClosure, setFinalClosure] = useState('');
   const [editfunction, seteditfunction] = useState(false);
   const [pageNum, setPageNum] = useState(0);
-  const postPerPage = 15;
+  const postPerPage = 10;
   const pagesVisited = pageNum * postPerPage;
-  const pageCount = Math.ceil(categoryList.length / postPerPage);
-  const [CollegeID, setCollgeID] = useState("sckl")
+  const pageCount = Math.ceil(EnquiryList.length / postPerPage);
 
   const changePage = ({ selected }) => {
     setPageNum(selected)
@@ -80,30 +80,20 @@ const CategoryList = () => {
     });
   }
 
-  const Tablecontent = ({ catID, edit, catname, cdate, fclosure, index }) => {
+  const Tablecontent = ({ id, name, email, appdate, apptime, status,index }) => {
 
     return (
       <div className="row m-0 b-0 py-3 align-items-center" style={{ backgroundColor: index % 2 === 0 ? "unset" : "rgb(95, 95, 95)" }}>
-        <div className="col text-center text-white fw-normal" id="cat-tablecontent">{catname}</div>
-        <div className="col text-center text-white fw-normal" id="cat-tablecontent">{cdate}</div>
-        <div className="col text-center text-white fw-normal" id="cat-tablecontent">{fclosure}</div>
-        <div className="col text-center text-white fw-normal" id="cat-tablecontent">{edit}</div>
+        <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{id}</div>
+        <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{name}</div>
+        <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{email}</div>
+        <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{appdate}</div>
+        <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{apptime}</div>
+        <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{status}</div>
         <div className="col text-center text-white d-flex align-items-center justify-content-center" id="cat-tablecontent">
-          <AiOutlineEdit id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop" onClick={() => handleeditfunction({ catID, catname, cdate, fclosure })} />
+          <AiOutlineMail id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop" />
         </div>
       </div>
-    )
-  }
-  const [currentid, setcurrentid] = useState("1");
-
-  const Buttonactive = (item) => {
-    
-    const active_function = (id) => (
-      item.function(),
-      setcurrentid(id)
-    )
-    return (
-      <button onClick={() => active_function(item.id)} id={(currentid === item.id) ? "admin-cat-button--active" : "admin-cat-button"} className="d-flex col text-white border border-light bg-dark mx-1 align-middle justify-content-center p-2">{item.title}</button>
     )
   }
 
@@ -115,47 +105,51 @@ const CategoryList = () => {
           <thead>
             <tr className='row m-0 border-0' style={{ backgroundColor: "#5F5F5F" }}>
               {tableheader("Course Name")}
-              {tableheader("Closure Date")}
-              {tableheader("Final Closure Date")}
-              {tableheader("Last Edited")}
+              {tableheader("Applicant Name")}
+              {tableheader("Applicant Email")}
+              {tableheader("Appoinment Date")}
+              {tableheader("Appoinment Time")}
+              {tableheader("Application Status")}
               {tableheader("")}
             </tr>
           </thead>
+          
           <tbody className='border-0'>
-            {categoryList ? categoryList.slice().filter((item) => {
-              if (item.CollegeID.includes(CollegeID)) {
-                return item
-              }
-
-            }).filter((item) => {
+            {EnquiryList ? EnquiryList.slice(pagesVisited, pagesVisited + postPerPage).filter((item) => {
               if (searchText === "") {
                 return item
               }
-              else if (item.CategoryName.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
+              else if (item.ApplicantName.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
                 return item
               }
-              else if (item.ClosureDate.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
+              else if (item.ApplicantEmail.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
                 return item
               }
-              else if (item.FinalClosure.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
+              else if (item.AppointmentDate.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
+                return item
+              }
+              else if (item.AppointmentTime.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
+                return item
+              }
+              else if (item.ApplicationStatus.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
                 return item
               }
 
-            }).slice(pagesVisited, pagesVisited + postPerPage).map((item, index) => (
-              Tablecontent({ catID: item.CategoryID, edit: item.EditedAt, catname: item.CategoryName, cdate: item.ClosureDate, fclosure: item.FinalClosure, index })
+            }).map((item, index) => (
+              Tablecontent({ id: item.CourseID, name: item.ApplicantName, email: item.ApplicantEmail, appdate: item.AppointmentDate, apptime: item.AppointmentTime, status:item.ApplicationStatus,index })
             )) : null}
-            <ReactPaginate
-              previousLabel={"Previous"}
-              nextLabel={"Next"}
-              pageCount={pageCount}
-              onPageChange={changePage}
-              containerClassName={"paginationbtn"}
-              previousLinkClassName={"previousbtn"}
-              nextLinkClassName={"nextbtn"}
-              disabledClassName={"paginationdisabled"}
-              activeClassName={"paginationactive"}
-              forcePage={pageNum}
-            />
+             <ReactPaginate
+                    previousLabel={"Previous"}
+                    nextLabel={"Next"}
+                    pageCount={pageCount}
+                    onPageChange={changePage}
+                    containerClassName={"paginationbtn"}
+                    previousLinkClassName={"previousbtn"}
+                    nextLinkClassName={"nextbtn"}
+                    disabledClassName={"paginationdisabled"}
+                    activeClassName={"paginationactive"}
+                    forcePage={pageNum}
+                  />
           </tbody>
         </table>
         < div className='Cat-column' style={{
@@ -171,23 +165,15 @@ const CategoryList = () => {
       <div className='col rounded' id='cat-background-container'>
         <div className='container' id='cat-maxwidth'>
           <div className='d-flex justify-content-between align-items-center mt-5 mb-4' id="cat-title-o">
-
-
-            <p className='col fw-bold fs-2 text-white m-0'>Course Settings</p>
+            <p className='col fw-bold fs-2 text-white m-0'>Enquiry List</p>
             <div className="input-group col d-flex flex-row justify-content-end align-items-center position-relative">
               <AiOutlineSearch className='text-white position-absolute top-50 translate-middle-y' id='category-searchicon' />
               <input autoComplete='off' type="text" onChange={(event) => { setSearchText(event.target.value); }} className="ps-3 pe-3 py-2 text-white rounded" placeholder="Search Courses..." aria-label="Title" id="search-category-input-title" />
             </div>
           </div>
-          <div id="course-collegelist" className="row">
-            {Buttonactive({ id: "1", title: "Kuala Lumpur", function: () => { setCollgeID("sckl") } })}
-            {Buttonactive({ id: "2", title: "Penang", function: () => { setCollgeID("scpg") } })}
-            {Buttonactive({ id: "3", title: "Subang Jaya", function: () => { setCollgeID("scsj") } })}
-            {Buttonactive({ id: "4", title: "Sarawak", function: () => { setCollgeID("scsk") } })}
-          </div>
           <div className='pt-3 rounded mt-5' id='categoriesrslt-container'>
             <div className='d-flex align-items-center justify-content-between' id='cat-title-row'>
-              <p className=' fw-bold text-white m-0 fs-5'>{"Total Courses: " + categoryList.length}</p>
+              <p className=' fw-bold text-white m-0 fs-5'>{"Total Enquires: " + EnquiryList.length}</p>
             </div>
             <CatItemComponent />
           </div>
@@ -202,7 +188,7 @@ const CategoryList = () => {
                 </div>
                 <div className="modal-body" id="category-modal">
                   <div>
-                    <p className='fw- pb-2 text-white fs-6 total-cat'>{"Course Name"}</p>
+                    <p className='fw- pb-2 text-white fs-6 total-cat'>{"Email Content"}</p>
                     <input autoComplete='off' value={categoryName} onChange={e => { setCategoryName(e.target.value) }} type="text" className="form-control rounded border-0" placeholder="e.g Facilities" aria-label="Title" id="side-bar-search-title" aria-describedby="inputGroup-sizing-default" />
                   </div>
                   <div className='mb-3'>
@@ -227,4 +213,4 @@ const CategoryList = () => {
   )
 }
 
-export default CategoryList
+export default EnquiryList

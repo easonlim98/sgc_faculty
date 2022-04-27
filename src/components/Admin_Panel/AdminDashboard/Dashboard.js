@@ -378,6 +378,7 @@ export const Dashboard = () => {
                                         }}
                                         axisTop={null}
                                         axisRight={null}
+                                        axisBottom={null}
                                         axisLeft={{
                                             tickSize: 5,
                                             tickPadding: 5,
@@ -386,9 +387,8 @@ export const Dashboard = () => {
                                             legendPosition: 'middle',
                                             legendOffset: -40,
                                             /* tickValues: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30], */
-                                            tickValues: 2,
+                                            tickValues: 2
                                         }}
-                                        axisBottom={null}
                                         labelSkipWidth={12}
                                         labelSkipHeight={12}
                                         labelTextColor={{
