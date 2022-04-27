@@ -16,25 +16,31 @@ import { userStore } from '../../../store/userStore';
 // import listenToData from '../../../util/CommonFunc';
 import ReactPaginate from "react-paginate";
 import Modal from '../Modal/Modal'
+import { VscPreview } from "react-icons/vsc";
 
 const CategoryList = () => {
   const userID = userStore.useState(s => s.userID);
   const categoryList = commonStore.useState(s => s.categoryList);
+  const courseDetails = commonStore.useState(s => s.courseDetails);
   const [targetCategoryID, setTargetCategoryID] = useState('');
   const [categoryName, setCategoryName] = useState('');
   const [closureDate, setClosureDate] = useState('');
   const [finalClosure, setFinalClosure] = useState('');
   const [editfunction, seteditfunction] = useState(false);
+  const [targetcode, settargetcode] = useState('');
+  const [targetcourse, settargetcourse] = useState('');
+  const [targetlvl, settargetlvl] = useState('');
+  const arraylvl = [
+    { lvlname: 'Certificate' }, { lvlname: 'Foundation' }, { lvlname: 'Diploma' }, { lvlname: 'Bachelor Degree' }, { lvlname: 'Executive Diploma' }, { lvlname: 'Postgraduate' },
+  ];
   const [pageNum, setPageNum] = useState(0);
-  const postPerPage = 15;
+  const postPerPage = 8;
   const pagesVisited = pageNum * postPerPage;
   const pageCount = Math.ceil(categoryList.length / postPerPage);
   const [CollegeID, setCollgeID] = useState("sckl")
-
   const changePage = ({ selected }) => {
     setPageNum(selected)
   }
-
   useEffect(() => {
     if (userID !== '') {
       // listenToData(userID);
@@ -48,20 +54,14 @@ const CategoryList = () => {
   const tableheader = (item) => {
     return (
       <th className="col text-center d-flex justify-content-center align-items-center border-0">
-        <p className='m-0 text-white text-center  py-3'>{item}</p>
+        <p className='m-0 our_theme_title text-center  py-3'>{item}</p>
       </th>
     )
   }
 
-  const handleeditfunction = (item) => {
-    setTargetCategoryID(item.catID)
-    setCategoryName(item.catname)
-    setClosureDate(item.cdate)
-    setFinalClosure(item.fclosure)
-    seteditfunction(true)
-  };
-
   const updateCategory = () => {
+    //must put after return success
+    seteditfunction(false)
     var body = {
       CategoryID: targetCategoryID,
       CategoryName: categoryName,
@@ -79,50 +79,68 @@ const CategoryList = () => {
       console.log('successfully update category')
     });
   }
+  const setidfunction = (item) => {
+    settargetcode(item.corcode)
+    settargetcourse(item.corname)
+    settargetlvl(item.corlvl)
+    {
+      item.id === 1 ?
+        seteditfunction(true)
+        : seteditfunction(false)
+    }
+  }
 
-  const Tablecontent = ({ catID, edit, catname, cdate, fclosure, index }) => {
+  const Tablecontent = ({ corcode, corname, corlvl, index }) => {
 
     return (
-      <div className="row m-0 b-0 py-3 align-items-center" style={{ backgroundColor: index % 2 === 0 ? "unset" : "rgb(95, 95, 95)" }}>
-        <div className="col text-center text-white fw-normal" id="cat-tablecontent">{catname}</div>
-        <div className="col text-center text-white fw-normal" id="cat-tablecontent">{cdate}</div>
-        <div className="col text-center text-white fw-normal" id="cat-tablecontent">{fclosure}</div>
-        <div className="col text-center text-white fw-normal" id="cat-tablecontent">{edit}</div>
-        <div className="col text-center text-white d-flex align-items-center justify-content-center" id="cat-tablecontent">
-          <AiOutlineEdit id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop" onClick={() => handleeditfunction({ catID, catname, cdate, fclosure })} />
+      <div className="row m-0 b-0 py-2 align-items-center" style={{ backgroundColor: "transparent" }}>
+        <div className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">{corcode}</div>
+        <div className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">{corname}</div>
+        <div className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">{corlvl}</div>
+        <div className="col text-center our_theme_title d-flex align-items-center justify-content-center" id="cat-tablecontent">
+          <AiOutlineEdit id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop" onClick={() => setidfunction({ id: 1, corcode: corcode, corname: corname, corlvl: corlvl })} />
+          <VscPreview id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop" onClick={() => setidfunction({ id: 2, corcode: corcode, corname: corname, corlvl: corlvl })} />
         </div>
+      </div>
+    )
+  }
+  const Modaltextinput = (item) => {
+    return (
+      <div className={editfunction ? 'mb-3' : ''}>
+        <p className='fw- mt-3 pb-1 purple fs-6 total-cat'>{item.title}</p>
+        {editfunction ? <textarea className='rounded py-2 px-3 border-0 w-100' style={{ outline: "unset" }} type="text" value={item.data} onChange={item.onchange} /> :
+          <textarea className='rounded border-0 w-100 our_theme_color mb-2' disabled style={{ outline: "unset", background: 'unset', resize: "none" }} type="text" value={item.data} onChange={item.onchange} />}
       </div>
     )
   }
   const [currentid, setcurrentid] = useState("1");
 
   const Buttonactive = (item) => {
-    
+
     const active_function = (id) => (
       item.function(),
       setcurrentid(id)
     )
     return (
-      <button onClick={() => active_function(item.id)} id={(currentid === item.id) ? "admin-cat-button--active" : "admin-cat-button"} className="d-flex col text-white border border-light bg-dark mx-1 align-middle justify-content-center p-2">{item.title}</button>
+      <button onClick={() => active_function(item.id)} id={(currentid === item.id) ? "admin-cat-button--active" : "admin-cat-button"} className="d-flex col text-white rounded bg-dark mx-1 align-middle justify-content-center p-2">{item.title}</button>
     )
   }
 
   const [searchText, setSearchText] = useState('')
   const CatItemComponent = () => {
     return (
-      <div className='d-flex flex-row mt-3'>
+      <div className='d-flex flex-row'>
         <table className="table m-0">
           <thead>
-            <tr className='row m-0 border-0' style={{ backgroundColor: "#5F5F5F" }}>
+            <tr className='row m-0 border-0' style={{ backgroundColor: "#14213d" }}>
+              {tableheader("Course Code")}
               {tableheader("Course Name")}
-              {tableheader("Closure Date")}
-              {tableheader("Final Closure Date")}
-              {tableheader("Last Edited")}
+              {tableheader("Level of Study")}
               {tableheader("")}
             </tr>
           </thead>
           <tbody className='border-0'>
-            {categoryList ? categoryList.slice().filter((item) => {
+            {courseDetails ? courseDetails.slice().filter((item) => {
               if (item.CollegeID.includes(CollegeID)) {
                 return item
               }
@@ -131,18 +149,18 @@ const CategoryList = () => {
               if (searchText === "") {
                 return item
               }
-              else if (item.CategoryName.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
+              else if (item.CourseTitle.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
                 return item
               }
-              else if (item.ClosureDate.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
+              else if (item.CourseTitle.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
                 return item
               }
-              else if (item.FinalClosure.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
+              else if (item.CourseTitle.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
                 return item
               }
 
             }).slice(pagesVisited, pagesVisited + postPerPage).map((item, index) => (
-              Tablecontent({ catID: item.CategoryID, edit: item.EditedAt, catname: item.CategoryName, cdate: item.ClosureDate, fclosure: item.FinalClosure, index })
+              Tablecontent({ facID: item.FacultyID, corcode: item.CourseCode, corID: item.CourseID, corname: item.CourseTitle, corlvl: item.CourseLevelOfStudy, index: index })
             )) : null}
             <ReactPaginate
               previousLabel={"Previous"}
@@ -168,15 +186,14 @@ const CategoryList = () => {
   return (
     <div className="d-flex" id="category-backgroundweh" style={{ backgroundColor: '#333' }}>
       <Sidebar />
-      <div className='col rounded' id='cat-background-container'>
+      <div className='col rounded' id='pro-background-container'>
         <div className='container' id='cat-maxwidth'>
           <div className='d-flex justify-content-between align-items-center mt-5 mb-4' id="cat-title-o">
 
-
-            <p className='col fw-bold fs-2 text-white m-0'>Course Settings</p>
-            <div className="input-group col d-flex flex-row justify-content-end align-items-center position-relative">
-              <AiOutlineSearch className='text-white position-absolute top-50 translate-middle-y' id='category-searchicon' />
-              <input autoComplete='off' type="text" onChange={(event) => { setSearchText(event.target.value); }} className="ps-3 pe-3 py-2 text-white rounded" placeholder="Search Courses..." aria-label="Title" id="search-category-input-title" />
+            <p className='col fw-bold fs-2 p-0 text-white m-0'>Course Settings</p>
+            <div className="input-group col d-flex flex-row p-0 justify-content-end align-items-center position-relative">
+              <AiOutlineSearch className='text-dark position-absolute top-50 translate-middle-y' id='category-searchicon' />
+              <input autoComplete='off' type="text" onChange={(event) => { setSearchText(event.target.value); }} className="ps-3 pe-3 py-2 text-dark rounded" placeholder="Search Courses..." aria-label="Title" id="search-category-input-title" />
             </div>
           </div>
           <div id="course-collegelist" className="row">
@@ -185,10 +202,7 @@ const CategoryList = () => {
             {Buttonactive({ id: "3", title: "Subang Jaya", function: () => { setCollgeID("scsj") } })}
             {Buttonactive({ id: "4", title: "Sarawak", function: () => { setCollgeID("scsk") } })}
           </div>
-          <div className='pt-3 rounded mt-5' id='categoriesrslt-container'>
-            <div className='d-flex align-items-center justify-content-between' id='cat-title-row'>
-              <p className=' fw-bold text-white m-0 fs-5'>{"Total Courses: " + categoryList.length}</p>
-            </div>
+          <div className='rounded mt-5 rounded' id='categoriesrslt-container'>
             <CatItemComponent />
           </div>
 
@@ -197,25 +211,32 @@ const CategoryList = () => {
             <div className="modal-dialog modal-dialog-centered">
               <div className="modal-content" id="category-create-post-modal">
                 <div className="modal-header d-flex col align-items-center position-relative justify-content-center py-4" id="create-post-modal-header">
-                  <h5 className="modal-title text-center text-white" id="create-post-modal-header-title">{"Edit Course"}</h5>
-                  <RiCloseFill className="btn-close position-absolute text-light" data-dismiss="modal" size={35} id='close-icon' />
+                  <h5 className="modal-title text-center purple" id="create-post-modal-header-title">{editfunction ? "Edit Course Details" : "View Courses Details"}</h5>
+                  <RiCloseFill className="btn-close position-absolute purple" onClick={() => seteditfunction(false)} data-dismiss="modal" size={35} id='close-icon' />
                 </div>
                 <div className="modal-body" id="category-modal">
-                  <div>
-                    <p className='fw- pb-2 text-white fs-6 total-cat'>{"Course Name"}</p>
-                    <input autoComplete='off' value={categoryName} onChange={e => { setCategoryName(e.target.value) }} type="text" className="form-control rounded border-0" placeholder="e.g Facilities" aria-label="Title" id="side-bar-search-title" aria-describedby="inputGroup-sizing-default" />
+                  {Modaltextinput({ title: "Course Name", data: targetcourse, onchange: e => { settargetcourse(e.target.value) } })}
+                  {Modaltextinput({ title: "Course Code", data: targetcode, onchange: e => { settargetcode(e.target.value) } })}
+                  <div className='dropright mb-3'>
+                    <p className='fw- mt-3 pb-1 purple fs-6 total-cat' >{"Level Of Study"}</p>
+                    {editfunction ? <>
+                      <button class="btn dropdown-toggle text-light" style={{ backgroundColor: "#565EB7" }} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {targetlvl ? targetlvl : "Select your Level Of Study"}
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {arraylvl.map((item, index) => (
+                          <a class="dropdown-item" onClick={() => settargetlvl(item.lvlname)} id={index}>{item.lvlname}</a>
+                        ))}
+                      </div>
+                    </> :
+                      <input className='rounded border-0 w-100 our_theme_color' disabled={true} style={{ outline: "unset", background: 'unset' }} type="text" value={targetlvl} />}
+
                   </div>
-                  <div className='mb-3'>
-                    <p className='fw- mt-3 pb-2 text-white fs-6 total-cat'>{"Closure Date"}</p>
-                    <input className='rounded py-2 px-3 border-0' style={{ outline: "unset" }} type="date" value={closureDate} onChange={(date) => { setClosureDate(date.target.value) }} />
-                  </div>
-                  <div className='mb-3'>
-                    <p className='fw- mt-3 pb-2 text-white fs-6 total-cat'>{"Final Closure Date"}</p>
-                    <input className='rounded py-2 px-3 border-0' style={{ outline: "unset" }} type="date" value={finalClosure} onChange={(date) => { setFinalClosure(date.target.value) }} />
-                  </div>
-                  <div className="modal-footer border-0 justify-content-center" id="category-footer">
-                    <button type="button" className="px-3 py-2 rounded btn-primary" id="Modal-done-button" data-dismiss="modal" onClick={() => updateCategory()}>{editfunction ? "Save Changes" : "Add Category"}</button>
-                  </div>
+                  {
+                    editfunction ? <div className="modal-footer border-0 justify-content-center" id="category-footer">
+                      <button type="button" className="px-3 py-2 rounded purple border-0 " id="Modal-done-button" data-dismiss="modal" onClick={() => updateCategory()}>{"Edit Course"}</button>
+                    </div> : <></>
+                  }
                 </div>
               </div>
             </div>

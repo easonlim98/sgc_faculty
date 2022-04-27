@@ -49,14 +49,14 @@ const Sidebar = () => {
             <NavLink to="/AdminPanel_UserList">
               <CDBSidebarMenuItem icon="user-edit">User</CDBSidebarMenuItem>
             </NavLink>
+            <NavLink to="/AdminPanel_Enquiry">
+              <CDBSidebarMenuItem icon="envelope">Enquiry</CDBSidebarMenuItem>
+            </NavLink>
             <NavLink to="/AdminPanel_CategoryList">
               <CDBSidebarMenuItem icon="tags">Category</CDBSidebarMenuItem>
             </NavLink>
             <NavLink to="/AdminPanel_Profile">
               <CDBSidebarMenuItem icon="id-card">Profile</CDBSidebarMenuItem>
-            </NavLink>
-            <NavLink to="/AdminPanel_Enquiry">
-              <CDBSidebarMenuItem icon="envelope">Enquiry</CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>
