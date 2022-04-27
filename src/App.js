@@ -27,19 +27,23 @@ import CourseDetail from './components/CourseDetail';
 import NewCourse from './components/NewCourse';
 import Institution from './components/Institution';
 import Test from './components/Test';
-
 import AdminLogin from './components/Admin_Panel/AdminLogin/AdminLogin';
 import Profile from './components/Admin_Panel/AdminProfile/Profile';
 import CategoryList from './components/Admin_Panel/AdminCategory/CategoryList';
 import UserList from './components/Admin_Panel/AdminUser/UserList';
 import HomeScreen from './components/Admin_Panel/AdminPost/HomeScreen';
 import Dashboard from './components/Admin_Panel/AdminDashboard/Dashboard';
+import Preload from './components/Admin_Panel/AdminPost/Preload';
+import Key from './constant/Key';
+import firebase from 'firebase/app';
 
 const App = () => {
 
-  useEffect(() => {
-    getDataEvent();
-  }, []);
+  if (!firebase.apps.length) {
+    firebase.initializeApp(Key);
+  } else {
+    firebase.app();
+  }
 
   return (
     <Router>
@@ -54,6 +58,7 @@ const App = () => {
           <Route exact path="/AdminPanel_UserList" element={<UserList />} />
           <Route exact path="/AdminPanel_HomePost" element={<HomeScreen />} />
           <Route exact path="/AdminPanel_Dashboard" element={<Dashboard />} />
+          <Route exact path="/AdminPanel_Preload" element={<Preload />} />
           <Route path="/" element={<Institution />} />
           <Route exact path="/Psychology" element={<Psychology />} />
           <Route exact path="/EarlyChildhoodEducation" element={<EarlyChildhoodEducation />} />

@@ -17,5 +17,8 @@ export const userStore = new Store({
         UserName: "Munkit",
         UserPosition: "QA Manager",
     }],
+    authStatus: false || window.localStorage.getItem('auth')==='true',
+    userID: '',
+    selectedUser: {}
 
 });  

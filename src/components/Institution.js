@@ -12,11 +12,6 @@ const Institution = () => {
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-        getDataEvent();
-        console.log(window.location.href);
-    });
-
     return (
         <>
             <div className='w-100 px-5 py-5' id="institution-banner-image" style={{

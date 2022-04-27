@@ -9,40 +9,32 @@ import { getDataEvent } from '../../../util/commonDB';
 import { userStore } from '../../../store/userStore';
 import { useNavigate } from "react-router-dom";
 import { Card } from 'react-bootstrap';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 const AdminLogin = () => {
 
         const navigate = useNavigate();
 
         const [userEmail, setUserEmail] = useState('');
-        const [userName, setUserName] = useState('');
+        const [userPassword, setUserPassword] = useState('');
 
         const userDetails = userStore.useState((s) => s.userDetails);
 
-        useEffect(() => {
-
-                console.log(userDetails)
-
-        }, [userDetails]);
-
         const LoginUser = () => {
-                navigate('/AdminPanel_Profile')
-
-                var body = {
-                        id: uuidv4(),
-                        user_email: userEmail,
-                        user_name: userName
-                };
-
-                ApiClient.POST(API.createUser, body).then((result) => {
-
-                        console.log('successfully inserted')
-                        //navigate('./FacultyList')
-
-                }).catch(err => {
-                        console.log(err)
-                })
-        }
+                firebase.auth().signInWithEmailAndPassword(userEmail, userPassword)
+                  .then((credential) => {
+                      navigate('/AdminPanel_Preload');
+                      window.localStorage.setItem('auth', 'true');
+                      userStore.update(s => {
+                        s.authStatus = true;
+                        s.userID = credential.user.uid;
+                      });
+                  })
+                  .catch((error) => {
+                    alert(error);
+                  });
+              }
 
         return (
                 <div id="admin-background">
@@ -70,9 +62,9 @@ const AdminLogin = () => {
                                         </div>
                                         <div className='mt-4' id='input_container'>
                                                 <p className='m-0 pb-2' id='purple-theme'>Password</p>
-                                                <input autoComplete='off' type="text" className='rounded' id='admin-input'
+                                                <input autoComplete='off' type="password" className='rounded' id='admin-input'
                                                         onChange={text =>
-                                                                setUserName(text.target.value)
+                                                                setUserPassword(text.target.value)
                                                         }
                                                 />
                                         </div>

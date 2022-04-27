@@ -4,20 +4,59 @@ import API from '../constant/API';
 import axios from 'axios';
 import { commonStore } from '../store/commonStore';
 
-export const getDataEvent = async () => {
+export const getDataEvent = (userID) => {
         
-        await ApiClient.GET(API.getKLCourse).then(response => {
+    ApiClient.GET(API.getUser).then(response => {
 
-            commonStore.update(s => {
-                s.KlCourseDetails = response;
-            });
-        })
+        var userList = [];
+        var tempUserDetail = {}; 
+    
+        for(var i = 0; i < response.length; i++){
+          userList.push(response[i]);
+        }
+    
+        tempUserDetail = userList.find(user => user.UserID === userID);
+    
+        commonStore.update(s => {
+          s.userList = userList;
+        });
+    
+        userStore.update(s => {
+          s.selectedUser = tempUserDetail;
+        });
+    
+      })
 
-        await ApiClient.GET(API.getKLFaculty).then(response => {
+      ApiClient.GET(API.getAdminCourse).then(response => {
 
-            commonStore.update(s => {
-                s.KlFaculty = response;
-            });
-        })
+        var TempCourseList = [];
+    
+        for(var i = 0; i < response.length; i++){
+            TempCourseList.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.courseDetails = TempCourseList;
+        });
+
+        console.log(TempCourseList)
+    
+      })
+
+      ApiClient.GET(API.getEnquiry).then(response => {
+
+        var tempEnquiry = [];
+    
+        for(var i = 0; i < response.length; i++){
+            tempEnquiry.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.enquiryDetails = tempEnquiry;
+        });
+
+        console.log(tempEnquiry)
+    
+      })
     
 };

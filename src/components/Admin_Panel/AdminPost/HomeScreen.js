@@ -17,9 +17,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import Post from './Post';
 import LoadingSpinner from "../../general-components/LoadingSpinner";
 import emailjs from 'emailjs-com';
+import { getDataEvent } from '../../../util/commonDB';
 
 const HomeScreen = () => {
-  const userListDetails = userStore.useState(s => s.userListDetails[0])
+  const selectedUser = userStore.useState(s => s.selectedUser)
   const userList = commonStore.useState(s => s.userList)
   const categoryList = commonStore.useState(s => s.categoryList)
   const userID = userStore.useState(s => s.userID);
@@ -39,10 +40,9 @@ const HomeScreen = () => {
   const [categoryisDisabled, setCategoryisDisabled] = useState(true)
 
   // const storage = firebase.storage();
-
   useEffect(() => {
     if (userID !== '') {
-      // listenToData(userID);
+      getDataEvent(userID);
       console.log('success mount data')
     }
     else {
@@ -455,10 +455,10 @@ const HomeScreen = () => {
                       {postImage ? <img className="mb-4 w-100" src={URL.createObjectURL(postImage)} alt={postFileName} /> : null}
                     </div>
                     <div className="create-post-modal-content-roww pt-3 d-flex ms-3 mb-4">
-                      <img src={userListDetails.UserImage} className="img-thumbnail me-3" id='createpost-content-image' alt="..." />
+                      <img src={selectedUser.UserImage} className="img-thumbnail me-3" id='createpost-content-image' alt="..." />
                       <div className="create-post-modal-author-column">
-                        <p className="card-text create-post-modal-content-author text-light m-0" id="">{userListDetails.UserName}</p>
-                        <small> <p className="card-text create-post-modal-content-time text-muted" id="">{userListDetails.UserPosition}</p></small>
+                        <p className="card-text create-post-modal-content-author text-light m-0" id="">{selectedUser.UserName}</p>
+                        <small> <p className="card-text create-post-modal-content-time text-muted" id="">{selectedUser.UserPosition}</p></small>
                       </div>
                     </div>
                     <div className="input-group mb-3">
@@ -508,18 +508,6 @@ const HomeScreen = () => {
           </div>
         </div>
         {/*Modal End*/}
-        {/* Email Posted Form */}
-        {userList.map(user => {
-          if (user.DepartmentID === userListDetails.DepartmentID) {
-            if (user.UserPosition === 'QA Coordinator') {
-              <form ref={emailForm} style={{ display: 'none' }}>
-                <input type="email" value={user.UserEmail} name="send_to"></input>
-                <input type="text" value={userListDetails.UserName} name="post_author"></input>
-              </form>
-            }
-          };
-        })}
-        {/* Email Posted Form */}
       </div >
 
     </div>
