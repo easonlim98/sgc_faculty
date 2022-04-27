@@ -16,11 +16,13 @@ import { userStore } from '../../../store/userStore';
 import ReactPaginate from "react-paginate";
 // import listenToData from '../../../util/CommonFunc';
 import Modal from '../Modal/Modal'
+import emailjs from 'emailjs-com';
+import { getDataEvent } from '../../../util/commonDB';
 
 const EnquiryList = () => {
   const userID = userStore.useState(s => s.userID);
   const categoryList = commonStore.useState(s => s.categoryList);
-  const EnquiryList=commonStore.useState(s=>s.EnquiryList)
+  const EnquiryList = commonStore.useState(s=>s.enquiryDetails)
   const [targetCategoryID, setTargetCategoryID] = useState('');
   const [categoryName, setCategoryName] = useState('');
   const [closureDate, setClosureDate] = useState('');
@@ -31,13 +33,16 @@ const EnquiryList = () => {
   const pagesVisited = pageNum * postPerPage;
   const pageCount = Math.ceil(EnquiryList.length / postPerPage);
 
+  const [targetEnquiry, setTargetEnquiry] = useState('');
+  const [replyMessage, setReplyMessage] = useState('Hello')
+
   const changePage = ({ selected }) => {
     setPageNum(selected)
   }
 
   useEffect(() => {
     if (userID !== '') {
-      // listenToData(userID);
+      getDataEvent(userID);
       console.log('success mount data')
     }
     else {
@@ -61,37 +66,58 @@ const EnquiryList = () => {
     seteditfunction(true)
   };
 
-  const updateCategory = () => {
+  const updateEnquiry = () => {
     var body = {
-      CategoryID: targetCategoryID,
-      CategoryName: categoryName,
-      ClosureDate: closureDate,
-      FinalClosure: finalClosure,
+      EnquiryID: targetEnquiry,
     };
-    ApiClient.POST(API.updateCategory, body).then((result) => {
+    ApiClient.POST(API.updateEnquiry, body).then((result) => {
+
+      var selectedEnquiryEmail = '';
+
+      for(var x = 0; x < EnquiryList.length; x++){
+        if(EnquiryList[x].EnquiryID === targetEnquiry){
+          selectedEnquiryEmail = EnquiryList[x].ApplicantEmail
+        }
+      }
+
+      var targetBlock = {
+        send_to: selectedEnquiryEmail,
+        message: replyMessage,
+      }
+
+      emailjs.send('service_t41roh7', 'template_b3e0izi', targetBlock, 'B7FQ2OkOz8Cyu4mvQ')
+
       if (userID !== '') {
-        // listenToData(userID);
+        getDataEvent(userID);
         console.log('success mount data')
       }
       else {
         console.log('no userID')
       }
-      console.log('successfully update category')
+      console.log('successfully update enquiry')
+      
     });
   }
 
-  const Tablecontent = ({ id, name, email, appdate, apptime, status,index }) => {
+  const Tablecontent = ({ enqID, id, name, content, appDate, appTime, status, index }) => {
 
     return (
       <div className="row m-0 b-0 py-3 align-items-center" style={{ backgroundColor: index % 2 === 0 ? "unset" : "rgb(95, 95, 95)" }}>
         <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{id}</div>
         <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{name}</div>
-        <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{email}</div>
-        <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{appdate}</div>
-        <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{apptime}</div>
-        <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{status}</div>
+        <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{content}</div>
+        <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{appDate}{' '}{appTime}</div>
+        <div className="col text-center text-white fw-normal overflow-hidden" id="cat-tablecontent">{status === '0' ? 'PENDING' : 'COMPLETED'}</div>
         <div className="col text-center text-white d-flex align-items-center justify-content-center" id="cat-tablecontent">
-          <AiOutlineMail id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop" />
+          { status === '0' ?
+          <AiOutlineMail id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop" 
+            onClick={() => {
+              setTargetEnquiry(enqID)
+            }}
+          />
+          :
+          <></>
+          }
         </div>
       </div>
     )
@@ -104,11 +130,10 @@ const EnquiryList = () => {
         <table className="table m-0">
           <thead>
             <tr className='row m-0 border-0' style={{ backgroundColor: "#5F5F5F" }}>
-              {tableheader("Course Name")}
+              {tableheader("Course")}
               {tableheader("Applicant Name")}
-              {tableheader("Applicant Email")}
-              {tableheader("Appoinment Date")}
-              {tableheader("Appoinment Time")}
+              {tableheader("Content")}
+              {tableheader("Appointment")}
               {tableheader("Application Status")}
               {tableheader("")}
             </tr>
@@ -136,7 +161,7 @@ const EnquiryList = () => {
               }
 
             }).map((item, index) => (
-              Tablecontent({ id: item.CourseID, name: item.ApplicantName, email: item.ApplicantEmail, appdate: item.AppointmentDate, apptime: item.AppointmentTime, status:item.ApplicationStatus,index })
+              Tablecontent({ enqID:item.EnquiryID ,id: item.CourseID, name: item.ApplicantName, content: item.ApplicantContent, appDate: item.AppointmentDate, appTime: item.AppointmentTime, status:item.ApplicationStatus, index })
             )) : null}
              <ReactPaginate
                     previousLabel={"Previous"}
@@ -168,7 +193,7 @@ const EnquiryList = () => {
             <p className='col fw-bold fs-2 text-white m-0'>Enquiry List</p>
             <div className="input-group col d-flex flex-row justify-content-end align-items-center position-relative">
               <AiOutlineSearch className='text-white position-absolute top-50 translate-middle-y' id='category-searchicon' />
-              <input autoComplete='off' type="text" onChange={(event) => { setSearchText(event.target.value); }} className="ps-3 pe-3 py-2 text-white rounded" placeholder="Search Courses..." aria-label="Title" id="search-category-input-title" />
+              <input autoComplete='off' type="text" onChange={(event) => { setSearchText(event.target.value); }} className="ps-3 pe-3 py-2 text-white rounded" placeholder="Search Enquiries..." aria-label="Title" id="search-category-input-title" />
             </div>
           </div>
           <div className='pt-3 rounded mt-5' id='categoriesrslt-container'>
@@ -183,24 +208,16 @@ const EnquiryList = () => {
             <div className="modal-dialog modal-dialog-centered">
               <div className="modal-content" id="category-create-post-modal">
                 <div className="modal-header d-flex col align-items-center position-relative justify-content-center py-4" id="create-post-modal-header">
-                  <h5 className="modal-title text-center text-white" id="create-post-modal-header-title">{"Edit Course"}</h5>
+                  <h5 className="modal-title text-center text-white" id="create-post-modal-header-title">{"Enquiry"}</h5>
                   <RiCloseFill className="btn-close position-absolute text-light" data-dismiss="modal" size={35} id='close-icon' />
                 </div>
                 <div className="modal-body" id="category-modal">
                   <div>
-                    <p className='fw- pb-2 text-white fs-6 total-cat'>{"Email Content"}</p>
-                    <input autoComplete='off' value={categoryName} onChange={e => { setCategoryName(e.target.value) }} type="text" className="form-control rounded border-0" placeholder="e.g Facilities" aria-label="Title" id="side-bar-search-title" aria-describedby="inputGroup-sizing-default" />
-                  </div>
-                  <div className='mb-3'>
-                    <p className='fw- mt-3 pb-2 text-white fs-6 total-cat'>{"Closure Date"}</p>
-                    <input className='rounded py-2 px-3 border-0' style={{ outline: "unset" }} type="date" value={closureDate} onChange={(date) => { setClosureDate(date.target.value) }} />
-                  </div>
-                  <div className='mb-3'>
-                    <p className='fw- mt-3 pb-2 text-white fs-6 total-cat'>{"Final Closure Date"}</p>
-                    <input className='rounded py-2 px-3 border-0' style={{ outline: "unset" }} type="date" value={finalClosure} onChange={(date) => { setFinalClosure(date.target.value) }} />
+                    <p className='fw- pb-2 text-white fs-6 total-cat'>{"Message"}</p>
+                    <textarea autoComplete='off' value={replyMessage} onChange={e => { setReplyMessage(e.target.value) }} type="text" className="form-control rounded border-0" placeholder="e.g Please attend the consultation appointment" aria-label="Title" id="side-bar-search-title" aria-describedby="inputGroup-sizing-default" />
                   </div>
                   <div className="modal-footer border-0 justify-content-center" id="category-footer">
-                    <button type="button" className="px-3 py-2 rounded btn-primary" id="Modal-done-button" data-dismiss="modal" onClick={() => updateCategory()}>{editfunction ? "Save Changes" : "Add Category"}</button>
+                    <button type="button" className="px-3 py-2 rounded btn-primary" id="Modal-done-button" data-dismiss="modal" onClick={() => updateEnquiry()}>{"Reply"}</button>
                   </div>
                 </div>
               </div>

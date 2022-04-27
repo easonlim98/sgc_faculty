@@ -22,7 +22,7 @@ const Sidebar = () => {
     console.log("signed out")
   }
 
-  const userListDetails = userStore.useState(s => s.userListDetails[0]);
+  const userListDetails = userStore.useState(s => s.selectedUser);
   const [userImage, setuserImage] = useState(userListDetails.UserImage);
 
 
@@ -38,7 +38,7 @@ const Sidebar = () => {
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
             <div className='d-flex justify-content-center'>
-              <img className='rounded-circle mb-4' src={userImage === userListDetails.UserImage ? userImage : URL.createObjectURL(userImage)} id='sidebar-user-avatar' />
+              <img className='rounded-circle mb-4' src={userListDetails.UserImage} id='sidebar-user-avatar' />
             </div>
             <NavLink to="/AdminPanel_Dashboard">
               <CDBSidebarMenuItem icon="chart-line" iconType="solid">Dashboard</CDBSidebarMenuItem>

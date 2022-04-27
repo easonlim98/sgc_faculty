@@ -13,12 +13,14 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from 'emailjs-com';
 import './Post.css'
+import { getDataEvent } from '../../../util/commonDB';
 
 const Post = (props) => {
     const userListDetails = userStore.useState(s => s.userListDetails[0])
     const categoryList = commonStore.useState(s => s.categoryList)
     const userID = userStore.useState(s => s.userID);
     const likeList = commonStore.useState(s => s.likeList)
+    const voteList = commonStore.useState(s => s.voteList)
     const dislikeList = commonStore.useState(s => s.dislikeList)
     const commentList = commonStore.useState(s => s.commentList)
     const userList = commonStore.useState(s => s.userList)
@@ -83,182 +85,56 @@ const Post = (props) => {
         }
     };
 
-    const userLike = (PostID) => {
-        for (var x = 0; x < likeList.length; x++) {
-            if (likeList[x].UserID === userID
-                && likeList[x].PostID === PostID) {
+    const userVote = (PostID) => {
+        for (var x = 0; x < voteList.length; x++) {
+            if (voteList[x].UserID === userID
+                && voteList[x].PostID === PostID) {
 
-                if (likeList[x].LikeStatus === '0') {
+                if (voteList[x].VoteStatus === '0') {
 
-                    for (var i = 0; i < dislikeList.length; i++) {
-                        if (dislikeList[i].UserID === userID
-                            && dislikeList[i].PostID === PostID) {
+                    var body = {
+                        PostVoteID: voteList[x].PostVoteID,
+                        VoteStatus: '1',
+                    };
 
-                            if (dislikeList[x].DislikeStatus === '1') {
+                    console.log("BODY",  body)
 
-                                var dislike_body = {
-                                    PostDislikeID: dislikeList[x].PostDislikeID,
-                                    DislikeStatus: '0',
-                                };
+                    ApiClient.POST(API.updateUserVote, body).then((result) => {
+                        setlike(true)
 
-                                console.log("BODY", dislike_body)
-
-                                ApiClient.POST(API.updateUserDislike, dislike_body).then((result) => {
-
-                                    console.log("update userDislike", dislike_body)
-                                    setlike(true)
-                                });
-
-                                var like_body = {
-                                    PostLikeID: likeList[x].PostLikeID,
-                                    LikeStatus: '1',
-                                };
-
-                                console.log("BODY", like_body)
-
-                                ApiClient.POST(API.updateUserLike, like_body).then((result) => {
-                                    setlike(true)
-
-                                    console.log("update userLike", like_body)
-                                    if (userID !== '') {
-                                        // listenToData(userID);
-                                        console.log('success mount data')
-                                    }
-                                    else {
-                                        console.log('no userID')
-                                    }
-
-                                });
-
-                            }
-                            else {
-                                var like_body = {
-                                    PostLikeID: likeList[x].PostLikeID,
-                                    LikeStatus: '1',
-                                };
-
-                                console.log("BODY", like_body)
-
-                                ApiClient.POST(API.updateUserLike, like_body).then((result) => {
-                                    setlike(true)
-
-                                    console.log("update userLike", like_body)
-
-                                });
-                            }
+                        console.log("update userLike", body)
+                        if (userID !== '') {
+                            getDataEvent(userID);
+                            console.log('success mount data')
                         }
-                    }
+                        else {
+                            console.log('no userID')
+                        }
+
+                    });
 
                 }
                 else {
 
                     var body = {
-                        PostLikeID: likeList[x].PostLikeID,
-                        LikeStatus: '0',
+                        PostVoteID: voteList[x].PostVoteID,
+                        VoteStatus: '0',
                     };
 
                     console.log("BODY", body)
 
-                    ApiClient.POST(API.updateUserLike, body).then((result) => {
+                    ApiClient.POST(API.updateUserVote, body).then((result) => {
                         setlike(false)
 
                         console.log("update userLike", body)
-
-                    });
-
-                }
-            }
-        }
-
-        if (userID !== '') {
-            // listenToData(userID);
-            console.log('success mount data')
-        }
-        else {
-            console.log('no userID')
-        }
-
-    }
-
-    const userDislike = (PostID) => {
-
-        for (var x = 0; x < dislikeList.length; x++) {
-            if (dislikeList[x].UserID === userID
-                && dislikeList[x].PostID === PostID) {
-
-                if (dislikeList[x].DislikeStatus === '0') {
-
-                    for (var i = 0; i < likeList.length; i++) {
-                        if (likeList[i].UserID === userID
-                            && likeList[i].PostID === PostID) {
-
-                            if (likeList[x].LikeStatus === '1') {
-
-                                var like_body = {
-                                    PostLikeID: likeList[x].PostLikeID,
-                                    LikeStatus: '0',
-                                };
-
-                                console.log("BODY", like_body)
-
-                                ApiClient.POST(API.updateUserLike, like_body).then((result) => {
-                                    setlike(false)
-
-                                    console.log("update userLike", like_body)
-
-                                });
-
-                                var dislike_body = {
-                                    PostDislikeID: dislikeList[x].PostDislikeID,
-                                    DislikeStatus: '1',
-                                };
-
-                                console.log("BODY", dislike_body)
-
-                                ApiClient.POST(API.updateUserDislike, dislike_body).then((result) => {
-                                    setlike(false)
-                                    console.log("update userDislike", dislike_body)
-                                    if (userID !== '') {
-                                        // listenToData(userID);
-                                        console.log('success mount data')
-                                    }
-                                    else {
-                                        console.log('no userID')
-                                    }
-
-                                });
-
-                            }
-                            else {
-                                var dislike_body = {
-                                    PostDislikeID: dislikeList[x].PostDislikeID,
-                                    DislikeStatus: '1',
-                                };
-
-                                console.log("BODY", dislike_body)
-
-                                ApiClient.POST(API.updateUserDislike, dislike_body).then((result) => {
-
-                                    console.log("update userDislike", dislike_body)
-
-                                });
-                            }
+                        console.log("update userLike", body)
+                        if (userID !== '') {
+                            getDataEvent(userID);
+                            console.log('success mount data')
                         }
-                    }
-
-                }
-                else {
-
-                    var body = {
-                        PostDislikeID: dislikeList[x].PostDislikeID,
-                        DislikeStatus: '0',
-                    };
-
-                    console.log("BODY", body)
-
-                    ApiClient.POST(API.updateUserDislike, body).then((result) => {
-
-                        console.log("update userDislike", body)
+                        else {
+                            console.log('no userID')
+                        }
 
                     });
 
@@ -267,7 +143,7 @@ const Post = (props) => {
         }
 
         if (userID !== '') {
-            // listenToData(userID);
+            getDataEvent(userID);
             console.log('success mount data')
         }
         else {
@@ -275,6 +151,8 @@ const Post = (props) => {
         }
 
     }
+
+    
     const notificationalert = (item) => {
         return (toast.info(item, { theme: "colored" }))
     }
@@ -305,10 +183,10 @@ const Post = (props) => {
                         <>
                             {user.UserID === item.UserID ?
                                 <>
-                                    <img src={item.Annonymous !== '1' ? user.UserImage : 'https://i1.sndcdn.com/avatars-000329967534-94o5n9-t500x500.jpg'} id="post-author-avatar" className="rounded-circle p-0" alt="Image" />
+                                    <img src={user.UserImage} id="post-author-avatar" className="rounded-circle p-0" alt="Image" />
                                     <div className="col d-flex flex-column justify-content-center mx-3">
-                                        <p className="card-text text-light m-0 fw-bold">{item.Annonymous !== '1' ? user.UserName : 'Annonymous'}</p>
-                                        <p className="card-text text-muted m-0 pt-1 fw-light" style={{ fontSize: '0.8rem' }}>{item.Annonymous !== '1' ? user.UserPosition : 'Random Secret Person'}</p>
+                                        <p className="card-text text-light m-0 fw-bold">{user.UserName}</p>
+                                        <p className="card-text text-muted m-0 pt-1 fw-light" style={{ fontSize: '0.8rem' }}>{user.UserPosition}</p>
                                     </div>
                                 </>
                                 :
@@ -318,30 +196,20 @@ const Post = (props) => {
                     ))};
                 </div>
                 <h5 className="card-title text-light py-3 mb-0 px-4">{item.PostTitle}</h5>
-                {item.PostFileName !== '' ?
+                {item.PostDoc !== '' ?
                     <div className='justify-content-center align-items-center d-flex mb-4 mt-1 bg-dark'>
-                        <img className="w-50" src={item.PostFileName} alt="Image" />
+                        <img className="w-50" src={item.PostDoc} alt="Image" />
                     </div>
                     :
                     null
                 }
 
-                <p className="card-text text-light px-4">{item.PostIdea}</p>
+                <p className="card-text text-light px-4">{item.PostContent}</p>
                 <div className="row px-4 align-items-center">
-
-                    <div className='col-8 d-flex flex-row align-items-center' id="post-like-row">
-                        {(item.PostLike !== '0' && like) ? <AiFillLike className='text-light' size={20} onClick={() => { userLike(item.PostID) }} /> :
-                            <AiOutlineLike className='text-light' size={20} onClick={() => { userLike(item.PostID) }} />}
-                        <p className="ms-2 m-0 text-center text-light">{item.PostLike}{item.PostLike !== '0' ? ' Likes' : ' Like'}</p>
-                        {(item.PostDislike !== '0' && like === false) ? <AiFillDislike className='text-light ms-3' size={20} onClick={() => { userDislike(item.PostID) }} /> :
-                            <AiOutlineDislike className='text-light ms-3' size={20} onClick={() => { userDislike(item.PostID) }} />}
-                        {/* <AiOutlineDislike className="text-light ms-4" size={20} onClick={() => { userDislike(item.PostID) }} /> */}
-                        <p className="text-light ms-2 m-0 text-center">{item.PostDislike}{item.PostDislike !== '0' ? ' Dislikes' : ' Dislike'}</p>
-                    </div>
 
                     <div className="col align-items-center d-flex justify-content-end">
                         <button className="btn px-3 py-2 text-light border-0 rounded" style={{ backgroundColor: "#32519F" }} type="button" data-toggle="collapse" data-target={"#Post-Comment-section" + item.PostID} aria-expanded="false" aria-controls="Post-Comment-section" id='post-comment-section'>
-                            {item.CommentLength}{item.CommentLength !== '0' ? ' Comments' : ' Comment'}
+                            {/* {item.CommentLength}{item.CommentLength !== '0' ? ' Comments' : ' Comment'} */}
                         </button>
                     </div>
                 </div>

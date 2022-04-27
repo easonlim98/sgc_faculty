@@ -11,19 +11,24 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingSpinner from "../../general-components/LoadingSpinner";
 
-// import 'firebase/storage'
-// import firebase from 'firebase/app';
-// import ReactDOM from 'react-dom';
-// import API from '../constant/API';
-// import ApiClient from '../util/ApiClient';
+import 'firebase/storage'
+import firebase from 'firebase/app';
+import API from '../../../constant/API';
+import ApiClient from '../../../util/ApiClient';
+import { getDataEvent } from '../../../util/commonDB';
 
 const Profile = () => {
+
+    const storage = firebase.storage();
+
     const userID = userStore.useState(s => s.userID);
 
     //Static UserList [0]
     const userListDetails = userStore.useState(s => s.selectedUser)
     const facultyDetails = commonStore.useState(s => s.facultyDetails)
+    const allFaculty = commonStore.useState(s => s.allFaculty)
     const [userContact, setuserContact] = useState('');
+    const [userName, setuserName] = useState('');
     const [userAddress, setuserAddress] = useState('');
     const [userImage, setuserImage] = useState(userListDetails.UserImage);
     const [facultyname, setfacultyname] = useState([]);
@@ -127,80 +132,79 @@ const Profile = () => {
     const editprofile = () => {
         setIsLoading(true);
         setediting(true)
-        console.log(userContact, userAddress, userImage, editing)
         setediting(false)
         setIsLoading(false)
-        // if (userImage !== userListDetails.UserImage) {
-        //     const ref = storage.ref(`/images/${userImage !== null ? userImage.name : ''}`);
-        //     const uploadTask = ref.put(userImage);
-        //     uploadTask.on("state_changed", console.log, console.error, () => {
-        //         ref
-        //             .getDownloadURL()
-        //             .then((url) => {
-        //                 var body = {
-        //                     UserID: userListDetails.UserID,
-        //                     UserImage: url,
-        //                     UserContact: userContact,
-        //                     UserAddress: userAddress
-        //                 }
+        if (userImage !== userListDetails.UserImage) {
+            const ref = storage.ref(`/admin/${userImage !== null ? userImage.name : ''}`);
+            const uploadTask = ref.put(userImage);
+            uploadTask.on("state_changed", console.log, console.error, () => {
+                ref
+                    .getDownloadURL()
+                    .then((url) => {
+                        var body = {
+                            UserID: userListDetails.UserID,
+                            UserImage: url,
+                            UserContact: userContact,
+                            UserName: userName
+                        }
 
-        //                 ApiClient.POST(API.updateProfile, body).then((result) => {
-        //                     console.log("Update Successful", body)
-        //                     if (userID !== '') {
-        //                         listenToData(userID);
-        //                         console.log('success mount data')
-        //                         setediting(false)
-        //                         setIsLoading(false)
-        //                         toast.info("Profile succesfully updated.", { theme: "colored" })
-        //                     }
-        //                     else {
-        //                         console.log('no userID')
-        //                         setediting(false)
-        //                     }
-        //                 })
-        //             });
-        //     });
-        // }
-        // else if (userImage === userListDetails.UserImage) {
-        //     var body = {
-        //         UserID: userListDetails.UserID,
-        //         UserImage: userListDetails.UserImage,
-        //         UserContact: userContact,
-        //         UserAddress: userAddress
-        //     }
+                        ApiClient.POST(API.updateProfile, body).then((result) => {
+                            console.log("Update Successful", body)
+                            if (userID !== '') {
+                                getDataEvent(userID);
+                                console.log('success mount data')
+                                setediting(false)
+                                setIsLoading(false)
+                                toast.info("Profile succesfully updated.", { theme: "colored" })
+                            }
+                            else {
+                                console.log('no userID')
+                                setediting(false)
+                            }
+                        })
+                    });
+            });
+        }
+        else if (userImage === userListDetails.UserImage) {
+            var body = {
+                UserID: userListDetails.UserID,
+                UserImage: userListDetails.UserImage,
+                UserContact: userContact,
+                UserName: userName
+            }
 
-        //     ApiClient.POST(API.updateProfile, body).then((result) => {
-        //         console.log("Update Successful lel", body)
-        //         setediting(false)
-        //         setIsLoading(false)
+            ApiClient.POST(API.updateProfile, body).then((result) => {
+                console.log("Update Successful lel", body)
+                setediting(false)
+                setIsLoading(false)
 
-        //         if (userID !== '') {
-        //             listenToData(userID);
-        //             console.log('success mount data')
-        //         }
-        //         else {
-        //             console.log('no userID')
-        //         }
-        //     })
-        // }
-
+                if (userID !== '') {
+                    getDataEvent(userID);
+                    console.log('success mount data')
+                }
+                else {
+                    console.log('no userID')
+                }
+            })
+        }
 
     }
 
     const resetPassword = () => {
-        // firebase.auth().sendPasswordResetEmail(userListDetails.UserEmail)
-        //     .then(function () {
-        //         onClickReset();
-        //         console.log('sent reset password email')
-        //     }).catch(err => {
-        //         console.log(err)
-        //     });
+        firebase.auth().sendPasswordResetEmail(userListDetails.UserEmail)
+            .then(function () {
+                onClickReset();
+                console.log('sent reset password email')
+            }).catch(err => {
+                console.log(err)
+            });
     }
 
     const setdata = () => {
 
         setuserImage(userListDetails.UserImage)
         setuserContact(userListDetails.UserContact)
+        setuserName(userListDetails.UserName)
         setediting(true)
 
     }
@@ -251,7 +255,13 @@ const Profile = () => {
                                                     {datatext({ name: "Employee ID: ", data: userListDetails.EmployeeID })}
                                                     <div className='col-6 px-3'>
                                                         <p className='fw-bold m-0 mb-2 our_theme_color'>{"Faculty involved: "}</p>
-                                                        <p className='fw-light m-0 our_theme_color' style={{ fontSize: '0.9rem' }}>{facultyname.map((item) => item.FacultyName)}</p>
+                                                        { allFaculty.map(item => {
+                                                            if(item.UserID === userListDetails.UserID){
+                                                            return (
+                                                            <p className='fw-light m-0 our_theme_color' 
+                                                                style={{ fontSize: '0.9rem' }}>{item.FacultyName}</p>
+                                                            )}
+                                                        })}
                                                     </div>
                                                 </div>
                                             </div>
@@ -314,8 +324,8 @@ const Profile = () => {
                                                 </button>
                                             </div>
                                             <div className='mt-4'>
-                                                {Modaltextinput({ name: "Contact Number", data: userContact, onchange: e => { setuserContact(e.target.value) }, placeholder: "e.g 0123456789" })}
-                                                {Modaltextinput({ name: "Address", data: userAddress, onchange: e => { setuserAddress(e.target.value) }, placeholder: "e.g *******" })}
+                                                {Modaltextinput({ name: "Name", data: userName, onchange: e => { setuserName(e.target.value) }, placeholder: "e.g Abu Bakar" })}
+                                                {Modaltextinput({ name: "Contact Number", data: userContact, onchange: e => { setuserContact(e.target.value) }, placeholder: "e.g 0129182737" })}
                                             </div>
                                         </div>
                                         <div className="modal-footer p-0 pt-4 pb-5 justify-content-center" id="user-footer">

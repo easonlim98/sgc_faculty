@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, } from 'react'
 import Sidebar from '../Sidebar'
-// import { listenToData } from '../../../util/CommonFunc';
 import ApiClient from '../../../util/ApiClient';
 import API from '../../../constant/API';
 import { userStore } from '../../../store/userStore';
@@ -18,20 +17,26 @@ import Post from './Post';
 import LoadingSpinner from "../../general-components/LoadingSpinner";
 import emailjs from 'emailjs-com';
 import { getDataEvent } from '../../../util/commonDB';
+import 'firebase/storage'
+import firebase from 'firebase/app';
 
 const HomeScreen = () => {
+
+  const storage = firebase.storage();
+
   const selectedUser = userStore.useState(s => s.selectedUser)
   const userList = commonStore.useState(s => s.userList)
   const categoryList = commonStore.useState(s => s.categoryList)
-  const userID = userStore.useState(s => s.userID);
-  const postList = commonStore.useState(s => s.postList);
+  const userID = userStore.useState(s => s.userID)
+  const postList = commonStore.useState(s => s.postList)
+  const allFaculty = commonStore.useState(s => s.allFaculty)
 
   const [isLoading, setIsLoading] = useState(false);
   const [Annonymous, setAnnonymous] = useState(false);
-  const [selectedCat, setSelectedCat] = useState('');
+  const [selectedFal, setSelectedFal] = useState('');
   const [checkTac, setCheckTac] = useState(false);
   const [postTitle, setPostTitle] = useState('');
-  const [postIdea, setPostIdea] = useState('');
+  const [postContent, setPostContent] = useState('');
   const [postFileName, setPostFileName] = useState('');
   const [selectedImage, setSelectedImage] = useState("");
   const [postImage, setPostImage] = useState(null);
@@ -65,127 +70,90 @@ const HomeScreen = () => {
 
   const createPost = () => {
     setIsLoading(false);
-    // if (selectedTag !== '' && postTitle !== '' && postIdea !== '') {
-    //   if (checkTac !== false) {
+    if (selectedFal !== '' && postTitle !== '' && postContent !== '') {
+      if (checkTac !== false) {
 
-    //     var UserList = [];
+        var UserList = [];
 
-    //     for (var i = 0; i < userList.length; i++) {
-    //       const record = userList[i].UserID
-    //       UserList.push(record);
-    //     }
-    //     if (selectedImage !== '') {
-    //       const ref = storage.ref(`/document/${postImage !== null ? postImage.name : ''}`);
-    //       const uploadTask = ref.put(postImage);
-    //       uploadTask.on("state_changed", console.log, console.error, () => {
-    //         ref
-    //           .getDownloadURL()
-    //           .then((url) => {
+        for (var i = 0; i < userList.length; i++) {
+          const record = userList[i].UserID
+          UserList.push(record);
+        }
+        if (selectedImage !== '') {
+          const ref = storage.ref(`/announcementDoc/${postImage !== null ? postImage.name : ''}`);
+          const uploadTask = ref.put(postImage);
+          uploadTask.on("state_changed", console.log, console.error, () => {
+            ref
+              .getDownloadURL()
+              .then((url) => {
 
-    //             var body = {
-    //               UserID: userID,
-    //               TagID: selectedTag,
-    //               PostTitle: postTitle,
-    //               PostIdea: postIdea,
-    //               image: selectedImage,
-    //               PostFileName: url,
-    //               Annonymous: Annonymous === true ? 1 : 0,
-    //               UserList: UserList,
-    //             };
-    //             setIsLoading(false);
-    //             ApiClient.POST(API.createPost, body).then((result) => {
-    //               setappear(false)
-    //               clearfunction()
-    //               var userEmail = '';
+                var body = {
+                  UserID: userID,
+                  FacultyID: selectedFal,
+                  PostTitle: postTitle,
+                  PostContent: postContent,
+                  PostDoc: url,
+                  UserList: UserList
+                };
+                setIsLoading(false);
+                ApiClient.POST(API.createPost, body).then((result) => {
+                  setappear(false)
+                  clearfunction()
 
-    //               for (var x = 0; x < userList.length; x++) {
-    //                 if (userList[x].DepartmentID === userListDetails.DepartmentID) {
-    //                   if (userList[x].UserPosition === "QA Coordinator") {
-    //                     userEmail = userList[x].UserEmail
-    //                   }
-    //                 }
-    //               }
+                  if (userID !== '') {
+                    getDataEvent(userID);
+                    console.log('success mount data')
+                  }
+                  else {
+                    console.log('no userID')
+                  }
+                });
+              })
+          });
+        }
+        else {
+          var body = {
+            UserID: userID,
+            FacultyID: selectedFal,
+            PostTitle: postTitle,
+            PostContent: postContent,
+            PostDoc: '',
+            UserList: UserList
+          };
 
-    //               var targetBlock = {
-    //                 send_to: userEmail,
-    //                 type: 'post',
-    //                 post_author: userListDetails.UserName,
-    //               }
+          ApiClient.POST(API.createPost, body).then((result) => {
+            setappear(false)
+            clearfunction()
+            setIsLoading(false);
 
-    //               emailjs.send('service_t41roh7', 'template_b3e0izi', targetBlock, 'B7FQ2OkOz8Cyu4mvQ')
+            if (userID !== '') {
+              getDataEvent(userID);
+              console.log('success mount data')
+            }
+            else {
+              console.log('no userID')
+            }
+          });
+        }
+      }
+      else {
+        alert('You must agree with the terms & conditions')
+        setIsLoading(false);
 
-    //               if (userID !== '') {
-    //                 // listenToData(userID);
-    //                 console.log('success mount data')
-    //               }
-    //               else {
-    //                 console.log('no userID')
-    //               }
-    //             });
-    //           })
-    //       });
-    //     }
-    //     else {
-    //       var body = {
-    //         UserID: userID,
-    //         TagID: selectedTag,
-    //         PostTitle: postTitle,
-    //         PostIdea: postIdea,
-    //         PostFileName: postFileName,
-    //         Annonymous: Annonymous === true ? 1 : 0,
-    //         UserList: UserList,
-    //       };
+      }
+    }
+    else {
+      alert('Please fill in all the field')
+      setIsLoading(false);
 
-    //       ApiClient.POST(API.createPostPlain, body).then((result) => {
-    //         setappear(false)
-    //         clearfunction()
-    //         setIsLoading(false);
-    //         var userEmail = '';
-
-    //         for (var x = 0; x < userList.length; x++) {
-    //           if (userList[x].DepartmentID === userListDetails.DepartmentID) {
-    //             if (userList[x].UserPosition === "QA Coordinator") {
-    //               userEmail = userList[x].UserEmail
-    //             }
-    //           }
-    //         }
-
-    //         var targetBlock = {
-    //           send_to: userEmail,
-    //           post_author: userListDetails.UserName,
-    //         }
-
-    //         emailjs.send('service_t41roh7', 'template_b3e0izi', targetBlock, 'B7FQ2OkOz8Cyu4mvQ')
-
-    //         if (userID !== '') {
-    //           // listenToData(userID);
-    //           console.log('success mount data')
-    //         }
-    //         else {
-    //           console.log('no userID')
-    //         }
-    //       });
-    //     }
-    //   }
-    //   else {
-    //     alert('You must agree with the terms & conditions')
-    //     setIsLoading(false);
-
-    //   }
-    // }
-    // else {
-    //   alert('Please fill in all the field')
-    //   setIsLoading(false);
-
-    // }
+    }
   };
 
   const ref = React.useRef();
   const clearfunction = () => {
     ref.current.value = ""
     setPostTitle("")
-    setPostIdea("")
-    setAnnonymous(false)
+    setPostContent("")
     setCheckTac(false)
     setCheckedSelectCat(false)
     setPostFileName("")
@@ -415,19 +383,19 @@ const HomeScreen = () => {
                 <div className=" col-3 col-lg-3 search-category" id="create-post-modal-search-category">
                   <div id="create-post-modal-category-container">
                     <div className="d-flex flex-row justify-content-between align-items-center">
-                      <p className="m-0 text-light">Category</p>
+                      <p className="m-0 text-light">Faculty</p>
                     </div>
-                    {categoryList.map((item, index) => (
+                    {allFaculty.map((item, index) => (
                       <div key={index} >
                         <div className=" flex-row justify-content-between align-items-center mt-4" style={{ display: item.ClosureDate <= todaydate ? "none" : "flex" }}>
-                          <p className="text-light m-0" id="">{item.CategoryName}</p>
+                          <p className="text-light m-0" id="">{item.FacultyID}</p>
                           <input
                             className="form-check-input"
                             type="radio"
                             name="RadioButton"
                             id="radio-title"
-                            value={item.CategoryName}
-                            onChange={(select) => { setSelectedCat(select.target.value); console.log(select.target.value) }}
+                            value={item.FacultyID}
+                            onChange={(select) => { setSelectedFal(select.target.value); console.log(select.target.value) }}
                             checked={checkedSelectCat}
                             onClick={() => setCheckedSelectCat(true)}
 
@@ -469,7 +437,7 @@ const HomeScreen = () => {
                     </div>
                     <div className="input-group mb-3">
                       <textarea className="form-control" id="create-post-modal-input-title" placeholder="What to you want to write? (Maximum word 300)" aria-label="Title" aria-describedby="inputGroup-sizing-default"
-                        value={postIdea} onChange={(e) => { setPostIdea(e.target.value); console.log(postIdea) }}
+                        value={postContent} onChange={(e) => { setPostContent(e.target.value); console.log(postContent) }}
                       />
                     </div>
                     <small className='pb-3' style={{ padding: "0 1rem", fontSize: "0.7rem" }}>

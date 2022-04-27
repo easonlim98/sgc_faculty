@@ -226,4 +226,8 @@ export const commonStore = new Store({
     }],
     institutionLink: [],
 
+    allFaculty: [],
+    allPost: [],
+    voteList: [],
+
 });  

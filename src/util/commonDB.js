@@ -82,8 +82,54 @@ export const getDataEvent = (userID) => {
         commonStore.update(s => {
           s.facultyReportPercent = tempFacultyReport;
         });
+    
+      })
 
-        console.log(tempFacultyReport)
+      ApiClient.GET(API.getAdminFaculty).then(response => {
+
+        var tempFaculty = [];
+    
+        for(var i = 0; i < response.length; i++){
+            tempFaculty.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.allFaculty = tempFaculty;
+        });
+
+        console.log(tempFaculty)
+    
+      })
+
+      ApiClient.GET(API.getAdminPost).then(response => {
+
+        var tempPost = [];
+    
+        for(var i = 0; i < response.length; i++){
+            tempPost.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.allPost = tempPost;
+        });
+
+        console.log(tempPost)
+    
+      })
+
+      ApiClient.GET(API.getAdminVote).then(response => {
+
+        var tempVoteList = [];
+    
+        for(var i = 0; i < response.length; i++){
+            tempVoteList.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.voteList = tempVoteList;
+        });
+
+        console.log(tempVoteList)
     
       })
     
