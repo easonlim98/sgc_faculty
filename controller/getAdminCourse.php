@@ -6,7 +6,7 @@ header("Access-Control-Allow-Headers: *");
 
 	$allCourse = mysqli_query($db,
         "SELECT C.CourseID, C.CollegeID, C.FacultyID, C.CourseTitle,
-                C.CourseLevelOfStudy
+                C.CourseLevelOfStudy, C.CourseCode
          FROM course C"
         );
 		$rows = array();

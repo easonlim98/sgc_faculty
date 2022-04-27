@@ -54,12 +54,6 @@
     margin-right: auto;
 }
 
-#category-create-post-modal {
-    box-shadow: rgb(255 255 255) 0px 0px 10px -7px;
-    border: 0;
-    background-color: #22252D;
-}
-
 #width-bg {
     width: 70%;
     margin-left: auto;
@@ -202,6 +196,16 @@
     background-size: cover;
 }
 
+#pro-background-container::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
 .btn-two::before, .btn-two::after {
     content: '';
     position: absolute;
@@ -211,6 +215,10 @@
     width: 80%;
     height: 100%;
     z-index: 1;
+}
+
+.paginationbtn {
+    position: relative;
 }
 
 .btn-two::before, .btn-two::after {
