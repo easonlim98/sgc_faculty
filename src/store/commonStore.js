@@ -1,6 +1,43 @@
 import { Store } from 'pullstate';
 
 export const commonStore = new Store({
+    EnquiryList: [{
+        EnquiryID: "1",
+        CourseID: "sckl-adp-biba",
+        ApplicantName: "Gan Seng Dog",
+        ApplicantNationality: "Indonesia",
+        ApplicantIdentityNo: "883736-232-434",
+        ApplicantEmail: "gsd@gmail.com",
+        ApplicantContent: "Im gan seng dog",
+        AppointmentDate: "2022-4-20",
+        AppointmentTime: "10:24",
+        ApplicationStatus: "Pending"
+    },
+    {
+        EnquiryID: "2",
+        CourseID: "sckl-adp-bip",
+        ApplicantName: "Seng Dog Gan",
+        ApplicantNationality: "Bangla",
+        ApplicantIdentityNo: "2243424255",
+        ApplicantEmail: "sdg@hotmail.com",
+        ApplicantContent: "Im Seng Dog Gan",
+        AppointmentDate: "2022-6-7",
+        AppointmentTime: "20:00",
+        ApplicationStatus: "Completed"
+    },
+    {
+        EnquiryID: "3",
+        CourseID: "sckl-ba-bbm",
+        ApplicantName: "Dog Gan",
+        ApplicantNationality: "India",
+        ApplicantIdentityNo: "43242421412",
+        ApplicantEmail: "doggan223@hotmail.com",
+        ApplicantContent: "Wa Mun kit so leng zai",
+        AppointmentDate: "2022-9-2",
+        AppointmentTime: "17:25",
+        ApplicationStatus: "Completed"
+    }
+    ],
 
     KlFaculty: [],
 
@@ -12,6 +49,7 @@ export const commonStore = new Store({
     userList: [],
     categoryList: [{
         CategoryID: "625acfdca1680",
+        CollegeID: "sckl",
         CategoryName: "Hall",
         ClosureDate: "2022-04-04",
         CreatedAt: "2022-04-16",
@@ -20,6 +58,7 @@ export const commonStore = new Store({
     },
     {
         CategoryID: "625b00d93c53b",
+        CollegeID: "scpg",
         CategoryName: "Facilities",
         ClosureDate: "2022-04-29",
         CreatedAt: "2022-04-16",
@@ -27,6 +66,7 @@ export const commonStore = new Store({
         FinalClosure: "2022-04-30",
     }, {
         CategoryID: "625c14f3a098a",
+        CollegeID: "scsj",
         CategoryName: "Building",
         ClosureDate: "2022-04-14",
         CreatedAt: "2022-04-17",
@@ -34,6 +74,7 @@ export const commonStore = new Store({
         FinalClosure: "2022-04-17",
     }, {
         CategoryID: "default-category-001",
+        CollegeID: "scsk",
         CategoryName: "Service",
         ClosureDate: "2022-04-20",
         CreatedAt: "2022-04-07",
@@ -174,11 +215,11 @@ export const commonStore = new Store({
         Total_Ideas: "1",
         Total_Like: "6"
     }],
-    
+
     subjectTitle: [],
     subjectList: [],
 
     facultyDetails: {},
     institutionLink: [],
-    
+
 });  

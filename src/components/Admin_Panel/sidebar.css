@@ -50,6 +50,11 @@
     -ms-transform: translateX(50%);
     transform: translateX(50%);
 }
+#sidebar-user-avatar{
+    object-fit: cover;
+    width: 4rem;
+    height:4rem;
+}
 
 @media (max-width: 768px) {
 

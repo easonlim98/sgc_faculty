@@ -39,6 +39,7 @@ const HomeScreen = () => {
   const [appear, setappear] = useState(false)
   const [categoryisDisabled, setCategoryisDisabled] = useState(true)
 
+
   // const storage = firebase.storage();
   useEffect(() => {
     if (userID !== '') {
@@ -264,9 +265,14 @@ const HomeScreen = () => {
         closeOnClick
         rtl={false}
       />
-      <div className="container-fluid p-4 " style={{ backgroundColor: '#22252D' }}>
+      <div className="container-fluid p-4 pt-5" style={{ backgroundColor: '#22252D' }}>
+        <div className="col d-flex mb-3">
+        <h1 id="homescreen-welcomeuser" className="text-white px-3">Welcome, {userListDetails.UserName}!</h1>
+        
+        </div>
+        
 
-        {isLoading ? <div className='container position-relative d-flex col h-100'>
+        {isLoading ? <div className='container position-relative d-flex col h-100 pt-5'>
           <LoadingSpinner /> </div> :
 
           <div className="container" id="post-middle-container">

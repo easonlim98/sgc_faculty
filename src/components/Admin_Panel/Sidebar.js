@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react'
 import {
   CDBSidebar,
   CDBSidebarContent,
@@ -9,6 +9,8 @@ import {
 } from 'cdbreact';
 import { BrowserRouter as Router, NavLink, Link, Route, Routes, useNavigate } from 'react-router-dom';
 import './sidebar.css'
+import { userStore } from '../../store/userStore';
+
 ///////////
 
 const Sidebar = () => {
@@ -19,6 +21,10 @@ const Sidebar = () => {
       navigate('/AdminLogin')
       console.log("signed out")
   }
+  
+  const userListDetails = userStore.useState(s => s.userListDetails[0]);
+  const [userImage, setuserImage] = useState(userListDetails.UserImage);
+
 
   return (
 
@@ -46,14 +52,19 @@ const Sidebar = () => {
             <NavLink to="/AdminPanel_Profile">
               <CDBSidebarMenuItem icon="id-card">Profile</CDBSidebarMenuItem>
             </NavLink>
+            <NavLink to="/AdminPanel_Enquiry">
+              <CDBSidebarMenuItem icon="envelope">Enquiry</CDBSidebarMenuItem>
+            </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>
         <CDBSidebarFooter style={{ textAlign: 'center' }}>
+        <img className='rounded-circle mb-4' src={userImage === userListDetails.UserImage ? userImage : URL.createObjectURL(userImage)} id='sidebar-user-avatar' />
           <div
             style={{
               padding: '20px 5px',
             }}
           >
+            
             <button style={{ borderWidth: 0, borderRadius: 10, backgroundColor: 'transparent' }}
               onClick={() => {
                 SignOutFunc();
