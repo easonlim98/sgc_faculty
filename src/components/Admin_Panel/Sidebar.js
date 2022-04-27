@@ -18,10 +18,10 @@ const Sidebar = () => {
   let navigate = useNavigate();
 
   const SignOutFunc = () => {
-      navigate('/AdminLogin')
-      console.log("signed out")
+    navigate('/AdminLogin')
+    console.log("signed out")
   }
-  
+
   const userListDetails = userStore.useState(s => s.userListDetails[0]);
   const [userImage, setuserImage] = useState(userListDetails.UserImage);
 
@@ -37,6 +37,9 @@ const Sidebar = () => {
         </CDBSidebarHeader>
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
+            <div className='d-flex justify-content-center'>
+              <img className='rounded-circle mb-4' src={userImage === userListDetails.UserImage ? userImage : URL.createObjectURL(userImage)} id='sidebar-user-avatar' />
+            </div>
             <NavLink to="/AdminPanel_Dashboard">
               <CDBSidebarMenuItem icon="chart-line" iconType="solid">Dashboard</CDBSidebarMenuItem>
             </NavLink>
@@ -58,13 +61,13 @@ const Sidebar = () => {
           </CDBSidebarMenu>
         </CDBSidebarContent>
         <CDBSidebarFooter style={{ textAlign: 'center' }}>
-        <img className='rounded-circle mb-4' src={userImage === userListDetails.UserImage ? userImage : URL.createObjectURL(userImage)} id='sidebar-user-avatar' />
+
           <div
             style={{
               padding: '20px 5px',
             }}
           >
-            
+
             <button style={{ borderWidth: 0, borderRadius: 10, backgroundColor: 'transparent' }}
               onClick={() => {
                 SignOutFunc();

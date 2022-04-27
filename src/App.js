@@ -33,13 +33,10 @@ import CategoryList from './components/Admin_Panel/AdminCategory/CategoryList';
 import UserList from './components/Admin_Panel/AdminUser/UserList';
 import HomeScreen from './components/Admin_Panel/AdminPost/HomeScreen';
 import Dashboard from './components/Admin_Panel/AdminDashboard/Dashboard';
-<<<<<<< HEAD
+import EnquiryList from './components/Admin_Panel/AdminEnquiry/Enquiry';
 import Preload from './components/Admin_Panel/AdminPost/Preload';
 import Key from './constant/Key';
 import firebase from 'firebase/app';
-=======
-import EnquiryList from './components/Admin_Panel/AdminEnquiry/Enquiry';
->>>>>>> main
 
 const App = () => {
 
@@ -63,11 +60,9 @@ const App = () => {
           <Route exact path="/AdminPanel_UserList" element={<UserList />} />
           <Route exact path="/AdminPanel_HomePost" element={<HomeScreen />} />
           <Route exact path="/AdminPanel_Dashboard" element={<Dashboard />} />
-<<<<<<< HEAD
-          <Route exact path="/AdminPanel_Preload" element={<Preload />} />
-=======
           <Route exact path="/AdminPanel_Enquiry" element={<EnquiryList />} />
->>>>>>> main
+          <Route exact path="/AdminPanel_Preload" element={<Preload />} />
+
           <Route path="/" element={<Institution />} />
           <Route exact path="/Psychology" element={<Psychology />} />
           <Route exact path="/EarlyChildhoodEducation" element={<EarlyChildhoodEducation />} />
