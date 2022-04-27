@@ -16,6 +16,30 @@ const CourseDetail = () => {
     const facultyDetails = commonStore.useState(s => s.facultyDetails)
     const institutionLink = commonStore.useState(s => s.institutionLink)
 
+    const [CourseID, setcourseid] = useState('');
+    const [ApplicantName, setname] = useState('');
+    const [ApplicantNationality, setnation] = useState('');
+    const [ApplicantIdentityNo, setidentity] = useState('');
+    const [ApplicantEmail, setemail] = useState('');
+    const [ApplicantContent, setcontent] = useState('');
+    const [AppointmentDate, setdate] = useState('');
+    const [AppointmentTime, settime] = useState('');
+    const [currentdate, setcurrentdate] = useState(null)
+
+    useEffect(() => {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0 so need to add 1 to make it 1!
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+        setcurrentdate(yyyy + '-' + mm + '-' + dd)
+    })
+
     const courseDetailsDummy = {
         CourseTitle: 'BSC (HONS) COMPUTING (3+0)',
         CourseCode: '(R2/481/6/0500) (05/24) (A10000)',
@@ -23,7 +47,7 @@ const CourseDetail = () => {
         CollegeName: 'SEGi College Kuala Lumpur',
         CourseIntroText: 'The BSc (Hons) Computing programme is structured to prepare graduates for the challenges of the study of computing field. We aim to produce students with good practical skills and oriented with good understanding in programming aspects, problem solving skills and critical thinking skills. Further to introducing students to new technology for them to understand computer networking and communication protocols, and to acquire sufficient knowledge to write, debug, compile and execute business application or programmes using the latest programming terminology and technology. \n Upon graduation, students will be able to provide solution for business problems effectively as well as manage computing projects.',
         Requirement: [
-            'SPM / O-Level or equivalent with 3 credits', 
+            'SPM / O-Level or equivalent with 3 credits',
             'UEC with 3 credits',
             'SKM Level 3',
             'Related Certificate or equivalent',
@@ -51,6 +75,30 @@ const CourseDetail = () => {
         CareerOpportunity: 'Start off a career in any of the chosen field: IT support and consultancy, System analyst, Computer programmer, E-commerce application, Software developer, Web designer, Independent Consultants for public and private sector / organisation.'
     }
 
+    const Modaltextinput = (item) => {
+        return (
+            <div className='mb-4'>
+                <p className='text-start text-light'>{item.name}</p>
+                <input autoComplete='off' type="text" value={item.data}
+                    className='rounded' id='admin-input' placeholder={item.placeholder}
+                    onChange={item.onchange} />
+            </div>
+        )
+    }
+    
+    const sendenquiryfunction = () => {
+        var body = {
+            CourseID: courseDetails[0].CourseID,
+            ApplicantName: ApplicantName,
+            ApplicantNationality: ApplicantNationality,
+            ApplicantIdentityNo: ApplicantIdentityNo,
+            ApplicantEmail: ApplicantEmail,
+            ApplicantContent: ApplicantContent,
+            AppointmentDate: AppointmentDate,
+            AppointmentTime: AppointmentTime
+        }
+        console.log(body, "enquiryfunction")
+    }
     const [DymBackgroundImg1, setDymBackgroundImg1] = useState(require('../assets/images/CoursePage/IT1.png')),
         [DymTitle1, setDymTitle1] = useState('BSC (HONS) COMPUTING'),
         [DymYear1, setDymYear1] = useState('(3+0)'),
@@ -229,7 +277,7 @@ const CourseDetail = () => {
                     </div>
                     : null}
                 <div className="Course_Detail_Course_Name_Slide_Pop_Menu_1">
-                    <a href="https://click.segi.edu.my/onlineregistration/">
+                    <a data-toggle="modal" data-target="#applynowcontainer">
                         <div
                             onMouseEnter={() => { setCourse_Detail_Course_Name_Slide_Pop_Menu_3(true); setCourse_Detail_Course_Name_Slide_Pop_Menu_5(true) }}
                             style={{
@@ -801,7 +849,7 @@ const CourseDetail = () => {
                     </div>
                     : null}
                 <div className="Course_Detail_Course_Name_Slide_Pop_Menu_1">
-                    <a href="https://click.segi.edu.my/onlineregistration/" target="_blank">
+                    <a data-toggle="modal" data-target="#applynowcontainer">
                         <div
                             onMouseEnter={() => { setCourse_Detail_Course_Name_Slide_Pop_Menu_3(true); setCourse_Detail_Course_Name_Slide_Pop_Menu_5(true) }}
                             style={{
@@ -836,6 +884,7 @@ const CourseDetail = () => {
                                 <p>VISIT US</p>
                             </div>
                         </div>
+
                     </a>
                     <a href={facultyDetails.BrochureLink} target="_blank">
                         <div
@@ -921,15 +970,15 @@ const CourseDetail = () => {
                             style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)', }}
                         >
                             {/*Section: Content*/}
-                            <section className="text-center dark-grey-text" style={{ width: "100%"}}>
+                            <section className="text-center dark-grey-text" style={{ width: "100%" }}>
                                 {/* Section heading */}
-                                    <h2
-                                        className="font-weight-bold mb-4 pb-2 pl-5 pr-5 "
-                                        style={{ fontSize: 30 }}
-                                    >{courseDetails[0].CourseTitle}
-                                    </h2>
-                                    <br />
-                                    <br />
+                                <h2
+                                    className="font-weight-bold mb-4 pb-2 pl-5 pr-5 "
+                                    style={{ fontSize: 30 }}
+                                >{courseDetails[0].CourseTitle}
+                                </h2>
+                                <br />
+                                <br />
                                 {/* Grid row */}
                                 <div className="Course_Detail_Course_Name_Font_Size_1 row">
                                     {/* Grid column */}
@@ -988,7 +1037,7 @@ const CourseDetail = () => {
                                     {/*Grid column*/}
                                     {/*Grid column*/}
                                     <div className="Course_Detail_Course_Name_Font_Color_1 col-lg-5 mt-4 mb-4 mb-lg-0">
-                                       
+
                                         <div className="Course_Detail_Course_Name_Font_Color_2">
                                             <p>{courseDetailsDummy.CourseIntroText}</p>
                                         </div>
@@ -1044,22 +1093,23 @@ const CourseDetail = () => {
                                     <div className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0">
                                         <br />
                                         <p className=" Course_Detail_Entry_Requirement_P_1"> <b>Entry Requirement</b> </p>
-                                            { courseDetails.map(item => {
+                                        {courseDetails.map(item => {
 
-                                                var array = item.Requirement
-                                                var requirement = array.split('?')
-                                                return (
+                                            var array = item.Requirement
+                                            var requirement = array.split('?')
+                                            return (
                                                 <>
-                                                {requirement.map(text => {
-                                                    return ( 
-                                                        <p>{text}</p> 
-                                                    )})
-                                                }
-                                                
+                                                    {requirement.map(text => {
+                                                        return (
+                                                            <p>{text}</p>
+                                                        )
+                                                    })
+                                                    }
+
                                                 </>
-                                                )
-                                            })
-                                            }
+                                            )
+                                        })
+                                        }
                                     </div>
                                     : null}
 
@@ -1080,34 +1130,35 @@ const CourseDetail = () => {
                                             {/* Accordion card */}
                                             <div className="card">
                                                 {/* Card header */}
-                                                { subjectTitle.map(title => {
-                                                return (
-                                                <>
-                                                <div className="card-header" role="tab" id="headingOne1">
-                                                        <h5 className="mb-0">
-                                                            {title.ModuleType} <i className="fas fa-angle-down rotate-icon" />
-                                                        </h5>
-                                                </div>
-                                                <div
-                                                    id="collapseOne1"
-                                                    className="collapse show"
-                                                    role="tabpanel"
-                                                    aria-labelledby="headingOne1"
-                                                    data-parent="#accordionEx"
-                                                >
-                                                { subjectlist.map(subject => { 
-                                                    if(subject.ModuleType === title.ModuleType){
+                                                {subjectTitle.map(title => {
                                                     return (
-                                                    <div className="card-body">
-                                                        <li>{subject.ModuleName}</li>
-                                                    </div>
+                                                        <>
+                                                            <div className="card-header" role="tab" id="headingOne1">
+                                                                <h5 className="mb-0">
+                                                                    {title.ModuleType} <i className="fas fa-angle-down rotate-icon" />
+                                                                </h5>
+                                                            </div>
+                                                            <div
+                                                                id="collapseOne1"
+                                                                className="collapse show"
+                                                                role="tabpanel"
+                                                                aria-labelledby="headingOne1"
+                                                                data-parent="#accordionEx"
+                                                            >
+                                                                {subjectlist.map(subject => {
+                                                                    if (subject.ModuleType === title.ModuleType) {
+                                                                        return (
+                                                                            <div className="card-body">
+                                                                                <li>{subject.ModuleName}</li>
+                                                                            </div>
+                                                                        )
+                                                                    }
+                                                                })
+                                                                }
+                                                            </div>
+                                                        </>
                                                     )
-                                                    }
-                                                })
-                                                }
-                                                </div>
-                                                </>
-                                                )})}
+                                                })}
                                             </div>
                                             {/* Accordion card */}
                                             <br />
@@ -1124,38 +1175,84 @@ const CourseDetail = () => {
                                         <p className=" Course_Detail_Entry_Requirement_P_1">
                                             <b>Financial Aid / Funding</b>
                                         </p>
-                                        { courseDetails.map(item => {
+                                        {courseDetails.map(item => {
 
                                             var array = item.AidAndFunding
                                             var requirement = array.split('?')
                                             return (
-                                            <>
-                                            {requirement.map(text => {
-                                                return ( 
-                                                    <p>{text}</p> 
-                                                )})
-                                            }
+                                                <>
+                                                    {requirement.map(text => {
+                                                        return (
+                                                            <p>{text}</p>
+                                                        )
+                                                    })
+                                                    }
 
-                                            </>
+                                                </>
                                             )
-                                            })
-                                            }
+                                        })
+                                        }
                                     </div>
                                     : null}
 
                                 {showSection === Accordion_LIST.Accordion_4 ?
-                                    <div
-                                        className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0 "
-                                    >
+                                    <div className="Course_Detail_Entry_Requirement_Div_1 col-lg-11 mb-4 mb-lg-0 ">
                                         <br />
                                         <p className=" Course_Detail_Entry_Requirement_P_1">
                                             <b>Career Opportunities</b>
                                         </p>
                                         <p>{courseDetails[0].CareerOpportunity}</p>
-
                                     </div>
                                     : null}
+                                <div className="modal fade" id="applynowcontainer" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div className="modal-dialog modal-dialog-centered" role="document">
+                                        <div className="modal-content" id="enquiry-bg">
+                                            <div className="modal-header position-relative  border-0">
+                                                <h5 className="modal-title text-center w-100 text-light font-weight-bold" id="exampleModalLongTitle">Enquiry Form</h5>
+                                                <button className='position-absolute close' id='enquiry-button' type="button" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div className="modal-body text-start text-light">
+                                                <p className=' font-weight-bold text-center fy-3'>{courseDetails[0].CourseTitle}</p>
+                                                {Modaltextinput({ name: "Name: ", data: ApplicantName, onchange: text => setname(text.target.value), placeholder: "e.g Your Name" })}
+                                                <div className='mb-4'>
+                                                    <p className='text-start text-light   '>{"Nationality: "}</p>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-secondary dropdown-toggle" style={{ outline: "none", boxShadow: "none" }} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            {ApplicantNationality ? ApplicantNationality : "Select your nationality"}
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item" onClick={() => setnation("Malaysian")} >{"Malaysian"}</a>
+                                                            <a class="dropdown-item" onClick={() => setnation("Non-Malaysian")} >{"Non-Malaysian"}</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {Modaltextinput({ name: "Identity No: ", data: ApplicantIdentityNo, onchange: text => setidentity(text.target.value), placeholder: "e.g 770305021234" })}
+                                                {Modaltextinput({ name: "Email Address: ", data: ApplicantEmail, onchange: text => setemail(text.target.value), placeholder: "e.g JohnSmith@example.com" })}
+                                                <div className='mb-4'>
+                                                    <p className='text-start text-light '>{"Appointment Date: "}</p>
+                                                    <input autoComplete='off' style={{ outline: "unset" }} type="date"
+                                                        className='rounded' id='admin-input' min={currentdate}
+                                                        onChange={text => setdate(text.target.value)
+                                                        } />
+                                                </div>
+                                                <div className='mb-4'>
+                                                    <p className='text-start text-light   '>{"Appointment Time: "}</p>
+                                                    <input autoComplete='off' style={{ outline: "unset" }} type="time"
+                                                        className='rounded' id='admin-input' min={currentdate}
+                                                        onChange={text => settime(text.target.value)
+                                                        } />
+                                                </div>
+                                                {Modaltextinput({ name: "Reason to request: ", data: ApplicantContent, onchange: text => setcontent(text.target.value), placeholder: "eg. I want to know more about the details for this course." })}
 
+                                            </div>
+                                            <div className="modal-footer border-0 d-flex justify-content-center mb-4" id='coursedetails-modal'>
+                                                <button onClick={() => sendenquiryfunction()} type="button" className="btn px-3 py-2 text-light font-weight-light" style={{ backgroundColor: "rgb(233, 24, 75)" }}>Send Enquiry</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 {/*Grid column*/}
                             </div>
                             {/*Grid row*/}

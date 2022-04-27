@@ -356,9 +356,9 @@ const UserList = () => {
           <LoadingSpinner /> </div> :
 
           <div className='container' id='cat-maxwidth'>
-            <div className='d-flex justify-content-between align-items-center mt-5 mb-4'>
-              <p className='col fw-bold fs-2 text-white m-0'>User Settings</p>
-              <div className="input-group col d-flex flex-row justify-content-end align-items-center position-relative">
+            <div className='d-flex justify-content-between align-items-center mt-5 mb-4' id="cat-title-o">
+              <p className='col fw-bold fs-2 text-white m-0 p-0'>User Settings</p>
+              <div className="input-group col d-flex flex-row justify-content-end align-items-center position-relative p-0">
                 < AiOutlineSearch className='text-white position-absolute top-50 translate-middle-y' id='category-searchicon' />
                 <input autoComplete='off' onChange={(event) => { setSearchText(event.target.value); }} type="text" className="ps-3 pe-3 py-2 text-white rounded" placeholder="Search Users..." aria-label="Title" id="search-category-input-title" />
               </div>
