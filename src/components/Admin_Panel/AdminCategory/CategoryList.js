@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useMemo } from 'react'
 import Sidebar from '.././Sidebar'
 import './CategoryList.css'
 import API from '../../../constant/API';
@@ -33,11 +33,18 @@ const CategoryList = () => {
   const arraylvl = [
     { lvlname: 'Certificate' }, { lvlname: 'Foundation' }, { lvlname: 'Diploma' }, { lvlname: 'Bachelor Degree' }, { lvlname: 'Executive Diploma' }, { lvlname: 'Postgraduate' },
   ];
+  const [CollegeID, setCollgeID] = useState("sckl")
+  const filteredcourse = useMemo(() => {
+    return courseDetails.filter((course) => {
+      if (course.CollegeID.includes(CollegeID)) {
+        return true
+      }
+    })});
   const [pageNum, setPageNum] = useState(0);
   const postPerPage = 8;
   const pagesVisited = pageNum * postPerPage;
-  const pageCount = Math.ceil(categoryList.length / postPerPage);
-  const [CollegeID, setCollgeID] = useState("sckl")
+  const pageCount = Math.ceil(filteredcourse.length / postPerPage);
+ 
   const changePage = ({ selected }) => {
     setPageNum(selected)
   }
@@ -127,6 +134,8 @@ const CategoryList = () => {
   }
 
   const [searchText, setSearchText] = useState('')
+  
+   
   const CatItemComponent = () => {
     return (
       <div className='d-flex flex-row'>
