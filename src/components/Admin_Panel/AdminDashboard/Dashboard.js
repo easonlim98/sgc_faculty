@@ -82,34 +82,53 @@ export const Dashboard = () => {
     )));
 
     const [emptyData, setEmptyData] = useState([]);
-    var posttitle = ""
-    var posttime = ""
-    var finalclose = ""
-    var today = new Date()
-    const todaydate = today.getFullYear() + '-' + ("0" + (today.getMonth() + 1)).slice(-2) + '-' + today.getDate();
-    postList.map((item) => (
+   
+   
+        
+    
 
-        posttitle = item.PostTitle,
-        posttime = item.CreatedAt
+   
+    var Mostvisitor = ""
+    var Leastvisitor = ""
+    const total = facultyReport.reduce((prev, visitor) => {
+        return prev + parseInt(visitor.VisitorCount)
+    }, 0)
+    
+    var Totalvisitor = total
+    facultyReport.slice().sort((a,b)=>{
+        return parseInt(a.VisitorCount)-parseInt(b.VisitorCount)
+    }).map((item)=>(
+        Mostvisitor=item.FacultyName
     ))
-    var posttitle2 = ""
-    var posttime2 = ""
-    postList.slice().sort(function (a, b) {
-        return (parseInt(a.CommentLength) + parseInt(a.PostLike) + parseInt(a.PostDislike)) > (parseInt(b.CommentLength) + parseInt(b.PostLike) + parseInt(b.PostDislike)) ? 1 : -1
-    }).map((item) => (
-        posttitle2 = item.PostTitle,
-        posttime2 = item.CreatedAt
+    facultyReport.slice().sort((a,b)=>{
+        return parseInt(b.VisitorCount)-parseInt(a.VisitorCount)
+    }).map((item)=>(
+        Leastvisitor=item.FacultyName
     ))
+    // console.log(Totalvisitor)
+    // const todaydate = today.getFullYear() + '-' + ("0" + (today.getMonth() + 1)).slice(-2) + '-' + today.getDate();
+    // postList.map((item) => (
 
-    var posttitle3 = ""
-    var posttime3 = ""
+    //   item.Annonymous
+    // ))
+    // var posttitle2 = ""
+    // var posttime2 = ""
+    // postList.slice().sort(function (a, b) {
+    //     return (parseInt(a.CommentLength) + parseInt(a.PostLike) + parseInt(a.PostDislike)) > (parseInt(b.CommentLength) + parseInt(b.PostLike) + parseInt(b.PostDislike)) ? 1 : -1
+    // }).map((item) => (
+    //     posttitle2 = item.PostTitle,
+    //     posttime2 = item.CreatedAt
+    // ))
 
-    postList.slice().sort(function (a, b) {
-        return (parseInt(b.PostLike) - parseInt(b.PostDislike)) - (parseInt(a.PostLike) - parseInt(a.PostDislike))
-    }).map((item) => (
-        posttitle3 = item.PostTitle,
-        posttime3 = item.LatestComment
-    ))
+    // var posttitle3 = ""
+    // var posttime3 = ""
+
+    // postList.slice().sort(function (a, b) {
+    //     return (parseInt(b.PostLike) - parseInt(b.PostDislike)) - (parseInt(a.PostLike) - parseInt(a.PostDislike))
+    // }).map((item) => (
+    //     posttitle3 = item.PostTitle,
+    //     posttime3 = item.LatestComment
+    // ))
 
     function downloadFile() {
         FileSaver.saveAs()
@@ -167,8 +186,8 @@ export const Dashboard = () => {
         });
 
     }
-    const charttype = ["Ideas By Department", "Ideas By Department(%)", "Contributors By Department"];
-    const [charttypetext, setcharttypetext] = useState('Ideas By Department');
+    const charttype = ["Faculty By Visitor", "Faculty By Visitor(%)"];
+    const [charttypetext, setcharttypetext] = useState('Faculty By Visitor');
     const [input, setInput] = useState(false);
     const tableheader = (item) => {
         return (
@@ -186,87 +205,65 @@ export const Dashboard = () => {
         notificationalert(notificationtitle)
     }
 
-    const Tablecontent = ({ categoryID, category, tpost, tcomment, tview, }) => {
+    // const Tablecontent = ({ categoryID, category, tpost, tcomment, tview, }) => {
 
-        const data = [];
+    //     const data = [];
 
-        for (var x = 0; x < csv.length; x++) {
-            if (csv[x].CategoryID === categoryID) {
-                data.push({
-                    Department: csv[x].Department,
-                    Author: csv[x].Author,
-                    Title: csv[x].Title,
-                    Idea: csv[x].Idea,
-                })
-            }
-        }
+    //     for (var x = 0; x < csv.length; x++) {
+    //         if (csv[x].CategoryID === categoryID) {
+    //             data.push({
+    //                 Department: csv[x].Department,
+    //                 Author: csv[x].Author,
+    //                 Title: csv[x].Title,
+    //                 Idea: csv[x].Idea,
+    //             })
+    //         }
+    //     }
 
-        console.log(data)
+    //     console.log(data)
 
+    //     return (
+    //         <tr className="row m-0 my-3 align-items-center border-0" style={{ display: finalclose >= todaydate ? "none" : "flex" }}>
+    //             <td className="col text-center text-white fw-light" id="cat-tablecontent">{category}</td>
+    //             <td className="col text-center text-white fw-light" id="cat-tablecontent">{tpost}</td>
+    //             <td className="col text-center text-white fw-light" id="cat-tablecontent">{tcomment}</td>
+    //             <td className="col text-center text-white fw-light" id="cat-tablecontent">{tview}</td>
+    //             <td className="col text-center text-white d-flex align-items-center justify-content-center" id="cat-tablecontent">
+    //                 <CSVLink
+    //                     data={data}
+    //                     filename={"CategoryData.csv"}
+    //                     className="text-light"
+    //                     target="_blank"
+    //                 >
+    //                     <FiDownload size={23} className="" data-toggle="collapse"
+    //                         onClick={() => {
+    //                             diuleifunction({ notificationtitle: "Category " + category + " contents (.csv) had been downloaded " });
+    //                             downloadZIP(categoryID);
+    //                         }}
+    //                         data-target="#subcatcollapse" />
+    //                 </CSVLink>
+    //                 <ToastContainer
+    //                     position="top-center"
+    //                     autoClose={2000}
+    //                     hideProgressBar={false}
+    //                     newestOnTop={false}
+    //                     closeOnClick
+    //                     rtl={false}
+    //                     draggable
+    //                     pauseOnHover
+    //                 />
+    //             </td>
+    //         </tr>
+    //     )
+    // }
+
+   
+    const tagcomponent = ({ Title, PostTitle}) => {
         return (
-            <tr className="row m-0 my-3 align-items-center border-0" style={{ display: finalclose >= todaydate ? "none" : "flex" }}>
-                <td className="col text-center text-white fw-light" id="cat-tablecontent">{category}</td>
-                <td className="col text-center text-white fw-light" id="cat-tablecontent">{tpost}</td>
-                <td className="col text-center text-white fw-light" id="cat-tablecontent">{tcomment}</td>
-                <td className="col text-center text-white fw-light" id="cat-tablecontent">{tview}</td>
-                <td className="col text-center text-white d-flex align-items-center justify-content-center" id="cat-tablecontent">
-                    <CSVLink
-                        data={data}
-                        filename={"CategoryData.csv"}
-                        className="text-light"
-                        target="_blank"
-                    >
-                        <FiDownload size={23} className="" data-toggle="collapse"
-                            onClick={() => {
-                                diuleifunction({ notificationtitle: "Category " + category + " contents (.csv) had been downloaded " });
-                                downloadZIP(categoryID);
-                            }}
-                            data-target="#subcatcollapse" />
-                    </CSVLink>
-                    <ToastContainer
-                        position="top-center"
-                        autoClose={2000}
-                        hideProgressBar={false}
-                        newestOnTop={false}
-                        closeOnClick
-                        rtl={false}
-                        draggable
-                        pauseOnHover
-                    />
-                </td>
-            </tr>
-        )
-    }
-
-    const Contri_Details_Component = ({
-        ID = "",
-        Department = "",
-        Total_Staff = "",
-        Total_Staff_Uploaded = "",
-        Total_Ideas_Thumbs_up = "",
-        Last_Upload = ""
-    }) => {
-        return (
-            <div className="Dashboard-Contribution-Column" style={{
-                backgroundColor: (ID % 2 === 0 || ID === 'id') ? '#5F5F5F' : 'unset'
-            }}>
-                <p className="Dashboard-Contribution-Details-Text" style={{ display: 'none' }}>{ID}</p>
-                <p className="Dashboard-Contribution-Details-Text">{Department}</p>
-                <p className="Dashboard-Contribution-Details-Text">{Total_Staff}</p>
-                <p className="Dashboard-Contribution-Details-Text">{Total_Staff_Uploaded}</p>
-                <p className="Dashboard-Contribution-Details-Text">{Total_Ideas_Thumbs_up}</p>
-                <p className="Dashboard-Contribution-Details-Text">{Last_Upload}</p>
-
-            </div >
-        );
-    };
-    const tagcomponent = ({ Title, PostTitle, DateTitle, Date }) => {
-        return (
-            <div id='dashbord-tag' className="col-3 d-flex p-3 Dashboard-Column rounded-3" style={{ margin: (Title === "Most View Ideas") ? "0 2rem" : "0", }}>
+            <div id='dashbord-tag' className="col-3 d-flex p-3 Dashboard-Column rounded-3" style={{ margin: (Title === "Most Visitors") ? "0 2rem" : "0",backgroundColor:(Title==="Total Visitors")?"#4169E1":(Title==="Most Visitors")?"#2E8B57":"#FF0000" }}>
                 <div className="m-auto px-3 py-3 d-flex flex-column justify-content-center align-items-center" style={{ maxWidth: "90%" }}>
                     <strong><p className="text-center text-light fs-5 m-0 fw-bold">{Title}</p></strong>
-                    <p className="text-light  text-center  fs-6 m-0 py-4">{PostTitle}</p>
-                    <small><p className="text-center text-light m-0">{DateTitle + " at: " + Date}</p></small>
+                    <p className="text-light  text-center m-0 py-4" style={{ fontSize: (Title === "Total Visitors") ? "2rem" : "1.2rem" }}>{PostTitle}</p>
                 </div>
             </div>
         )
@@ -280,11 +277,11 @@ export const Dashboard = () => {
                         <p>Welcome to Dashboard</p>
                     </div>
                     <p>Overview</p>
-                    <p>Here is an overview of your ideas performance</p>
-                    <div className="Container d-flex my-4 row" id='dashboard-tag-component'>
-                        {tagcomponent({ Title: "Recent Ideas", PostTitle: posttitle, DateTitle: "Created", Date: posttime })}
-                        {tagcomponent({ Title: "Most View Ideas", PostTitle: posttitle2, DateTitle: "Created", Date: posttime2 })}
-                        {tagcomponent({ Title: "Most Popular Ideas", PostTitle: posttitle3, DateTitle: "Created", Date: posttime3 })}
+                    <p>Here is an overview of the SEGi Website's performance</p>
+                    <div className="Container d-flex my-4 row mx-3" id='dashboard-tag-component'>
+                        {tagcomponent({ Title: "Total Visitors", PostTitle: Totalvisitor})}
+                        {tagcomponent({ Title: "Most Visitors", PostTitle: Mostvisitor})}
+                        {tagcomponent({ Title: "Least Visitors", PostTitle: Leastvisitor})}
                     </div>
                     <div className="Dashboard-Barchart mt-5 pb-5" style={{ marginBottom: "2rem" }}>
                         <div className="d-flex justify-content-end align-items-center">
@@ -325,12 +322,12 @@ export const Dashboard = () => {
                         </div>
                         {
 
-                            (charttypetext === "Ideas By Department") ?
+                            (charttypetext === "Faculty By Visitor") ?
                                 <div style={{
                                     width: "100%",
                                     height: "100%"
                                 }}>
-                                    <p className='text-light' style={{ fontSize: 18, fontWeight: '800', width: '100%', justifyContent: 'center', display: 'flex' }}>{'Faculty\'s Visitor'}</p>
+                                    <p className='text-light' style={{ fontSize: 18, fontWeight: '800', width: '100%', justifyContent: 'center', display: 'flex' }}>{charttypetext}</p>
                                     <ResponsiveBar
                                         data={data}
                                         groupMode="grouped"
@@ -430,100 +427,12 @@ export const Dashboard = () => {
                                     />
                                 </div>
                                 :
-                                (charttypetext === "Contributors By Department") ?
-                                    <div style={{
-                                        width: "100%",
-                                        height: "90%"
-                                    }}>
-                                        <p className='text-light' style={{ fontSize: 18, fontWeight: '800', width: '100%', justifyContent: 'center', display: 'flex' }}>{'Contributors By Department'}</p>
-                                        <ResponsiveBar
-                                            data={data}
-                                            groupMode="grouped"
-                                            theme={{ textColor: '#FFF' }}
-                                            keys={[
-                                                'Total_Visitor',
-                                            ]}
-                                            animate={false}
-                                            colorBy='indexValue'
-                                            indexBy="Faculty"
-                                            margin={{ top: 50, right: 60, bottom: 50, left: 60 }}
-                                            padding={0.3}
-                                            valueScale={{ type: 'linear' }}
-                                            indexScale={{ type: 'band', round: true }}
-                                            defs={[
-                                                {
-                                                    id: 'dots',
-                                                    type: 'patternDots',
-                                                    background: 'inherit',
-                                                    color: '#38bcb2',
-                                                    size: 4,
-                                                    padding: 1,
-                                                    stagger: true
-                                                },
-                                                {
-                                                    id: 'lines',
-                                                    type: 'patternLines',
-                                                    background: 'inherit',
-                                                    color: '#eed312',
-                                                    rotation: -45,
-                                                    lineWidth: 6,
-                                                    spacing: 10
-                                                },
-                                            ]}
-                                            fill={[
-                                            ]}
-                                            borderColor={{
-                                                from: 'color',
-                                                modifiers: [
-                                                    [
-                                                        'darker',
-                                                        1.6
-                                                    ]
-                                                ]
-                                            }}
-                                            axisTop={null}
-                                            axisRight={null}
-                                            axisBottom={{
-                                                tickSize: 5,
-                                                tickPadding: 5,
-                                                tickRotation: 0,
-                                                legend: 'Faculty',
-                                                legendPosition: 'middle',
-                                                legendOffset: 32,
-                                            }}
-                                            axisLeft={{
-                                                tickSize: 5,
-                                                tickPadding: 5,
-                                                tickRotation: 0,
-                                                legend: 'Total Visitor',
-                                                legendPosition: 'middle',
-                                                legendOffset: -40,
-                                                /* tickValues: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30], */
-                                                tickValues: 2,
-                                            }}
-                                            labelSkipWidth={12}
-                                            labelSkipHeight={12}
-                                            labelTextColor={{
-                                                from: 'color',
-                                                modifiers: [
-                                                    [
-                                                        'darker',
-                                                        1.6
-                                                    ]
-                                                ]
-                                            }}
-                                            role="application"
-                                            ariaLabel="Nivo bar chart demo"
-                                            barAriaLabel={function (e) { return e.id + ": " + e.formattedValue + " in country: " + e.indexValue }}
-                                        />
-                                    </div>
-                                    :
-                                    (charttypetext === "Ideas By Department(%)") ?
+                                    (charttypetext === "Faculty By Visitor(%)") ?
                                         <div style={{
                                             width: "100%",
                                             height: "90%"
                                         }}>
-                                            <p className='text-light' style={{ fontSize: 18, fontWeight: '800', width: '100%', justifyContent: 'center', display: 'flex' }}>{'Ideas By Department(%)'}</p>
+                                            <p className='text-light' style={{ fontSize: 18, fontWeight: '800', width: '100%', justifyContent: 'center', display: 'flex' }}>{charttypetext}</p>
                                             <ResponsivePie
                                                 data={percentData}
                                                 theme={{ textColor: '#FFF' }}
@@ -609,48 +518,7 @@ export const Dashboard = () => {
                                         : null
                         }
                     </div>
-                    <div className="Dashboard-Bottom-Content mt-5 rounded">
-                        <div className="Dashboard-Contribution-Text justify-content-between py-4 m-auto" style={{ width: "92%" }}>
-                            <p className='col-5 m-0 fs-4 fw-bold '>Expired Category</p>
-
-                        </div>
-                        <div className='d-flex flex-row'>
-                            <table className="table">
-                                <thead>
-                                    <tr className='row m-0' style={{ backgroundColor: "#5F5F5F", display: finalclose >= todaydate ? "none" : null }}>
-                                        {tableheader("Category")}
-                                        {tableheader("Total Ideas")}
-                                        {tableheader("Total Comment")}
-                                        {tableheader("Total View")}
-                                        {tableheader("")}
-                                    </tr>
-                                </thead>
-                                <tbody className='border-0'>
-                                    {expiredCategory.map((item) => {
-
-                                        finalclose = item.FinalClosure
-                                        var count = parseInt(item.Total_Comment);
-                                        var count1 = count += parseInt(item.Total_Like);
-                                        var total_view = count1 += parseInt(item.Total_Dislike);
-                                        return (
-                                            Tablecontent({
-                                                categoryID: item.CategoryID,
-                                                category: item.Category_Name,
-                                                tpost: item.Total_Ideas,
-                                                tcomment: item.Total_Comment,
-                                                tview: total_view,
-
-                                            })
-                                        )
-                                    })}
-                                </tbody>
-                            </table>
-                            < div className='Cat-column' style={{
-                                backgroundColor: '#5F5F5F'
-                            }}>
-                            </div>
-                        </div >
-                    </div>
+                   
                 </div>
             </div>
         </div >
