@@ -131,7 +131,7 @@
 .Dashboard-Barchart {
     display: block;
     flex: 1;
-    max-height: 30%;
+    max-height: 50%;
 }
 #gaymodal{
     max-width: 650px;
