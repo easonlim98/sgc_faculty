@@ -21,7 +21,7 @@ const Profile = () => {
     const userID = userStore.useState(s => s.userID);
 
     //Static UserList [0]
-    const userListDetails = userStore.useState(s => s.userListDetails[0])
+    const userListDetails = userStore.useState(s => s.selectedUser)
     const facultyDetails = commonStore.useState(s => s.facultyDetails)
     const [userContact, setuserContact] = useState('');
     const [userAddress, setuserAddress] = useState('');
@@ -52,9 +52,8 @@ const Profile = () => {
             console.log('no userID')
         }
     }, [userID]);
-    const Ref = useRef(null);
 
-    console.log(facultyname, 'name')
+    const Ref = useRef(null);
 
     // The state for our timer
     const [timer, setTimer] = useState('00:00:00');
@@ -202,7 +201,6 @@ const Profile = () => {
 
         setuserImage(userListDetails.UserImage)
         setuserContact(userListDetails.UserContact)
-        setuserAddress(userListDetails.UserAddress)
         setediting(true)
 
     }
@@ -241,7 +239,7 @@ const Profile = () => {
                                         <p className='fw-normal m-0 our_theme_color' >{userListDetails.UserName + " -  " + userListDetails.UserPosition}</p>
                                         <img className='rounded-circle my-5 align-self-center' src={userListDetails.UserImage} id='profile-user-avatar' />
                                         <p id='profile-font' className='our_theme_color fw-light text-center m-0 px-3'>{"This is the admin panel's profile page, where you can change any details you want. All of the information is considered private. Only the Administrator has access to all data."}</p>
-                                        <small><p className='our_theme_color fw-normal my-4 text-center m-0'>{"Joined Since - " + moment(userListDetails.CreatedAt).format('MM-DD-YYYY')}</p></small>
+                                        <small><p className='our_theme_color fw-normal my-4 text-center m-0'>{""}</p></small>
                                     </div>
                                 </div>
                                 <div className="d-flex flex-column col-7" id="background-profile-clr">
