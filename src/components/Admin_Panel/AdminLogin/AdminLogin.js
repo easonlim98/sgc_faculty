@@ -23,18 +23,18 @@ const AdminLogin = () => {
 
         const LoginUser = () => {
                 firebase.auth().signInWithEmailAndPassword(userEmail, userPassword)
-                  .then((credential) => {
-                      navigate('/AdminPanel_Preload');
-                      window.localStorage.setItem('auth', 'true');
-                      userStore.update(s => {
-                        s.authStatus = true;
-                        s.userID = credential.user.uid;
-                      });
-                  })
-                  .catch((error) => {
-                    alert(error);
-                  });
-              }
+                        .then((credential) => {
+                                navigate('/AdminPanel_Preload');
+                                window.localStorage.setItem('auth', 'true');
+                                userStore.update(s => {
+                                        s.authStatus = true;
+                                        s.userID = credential.user.uid;
+                                });
+                        })
+                        .catch((error) => {
+                                alert(error);
+                        });
+        }
 
         return (
                 <div id="admin-background">
@@ -68,7 +68,13 @@ const AdminLogin = () => {
                                                         }
                                                 />
                                         </div>
+
                                         <div className='d-flex justify-content-end'>
+                                                <button className='rounded bg-danger mr-4' type="submit" id='admin-button'
+                                                        onClick={() => {
+                                                                navigate('/');
+                                                        }}
+                                                >Back To Institution Page</button>
                                                 <button className='rounded' type="submit" id='admin-button'
                                                         onClick={() => {
                                                                 LoginUser();
