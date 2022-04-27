@@ -44,6 +44,7 @@
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+    padding: 0
 }
 
 #cat-title-row {
@@ -63,10 +64,15 @@
 
 #admin-cat-button--active {
     background-color: #32519F !important;
+    outline: none;
+    border: 0;
 }
 
 #admin-cat-button {
     background-color: unset !important;
+    outline: none;
+    border: 0;
+
 }
 
 #close-icon {
@@ -118,7 +124,7 @@
 }
 
 #course-collegelist {
-    width: 80%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
 }

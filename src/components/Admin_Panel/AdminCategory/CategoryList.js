@@ -20,6 +20,7 @@ import Modal from '../Modal/Modal'
 const CategoryList = () => {
   const userID = userStore.useState(s => s.userID);
   const categoryList = commonStore.useState(s => s.categoryList);
+  const courseDetails = commonStore.useState(s => s.courseDetails);
   const [targetCategoryID, setTargetCategoryID] = useState('');
   const [categoryName, setCategoryName] = useState('');
   const [closureDate, setClosureDate] = useState('');
@@ -30,7 +31,6 @@ const CategoryList = () => {
   const pagesVisited = pageNum * postPerPage;
   const pageCount = Math.ceil(categoryList.length / postPerPage);
   const [CollegeID, setCollgeID] = useState("sckl")
-
   const changePage = ({ selected }) => {
     setPageNum(selected)
   }
@@ -97,13 +97,13 @@ const CategoryList = () => {
   const [currentid, setcurrentid] = useState("1");
 
   const Buttonactive = (item) => {
-    
+
     const active_function = (id) => (
       item.function(),
       setcurrentid(id)
     )
     return (
-      <button onClick={() => active_function(item.id)} id={(currentid === item.id) ? "admin-cat-button--active" : "admin-cat-button"} className="d-flex col text-white border border-light bg-dark mx-1 align-middle justify-content-center p-2">{item.title}</button>
+      <button onClick={() => active_function(item.id)} id={(currentid === item.id) ? "admin-cat-button--active" : "admin-cat-button"} className="d-flex col text-white bg-dark mx-1 align-middle justify-content-center p-2">{item.title}</button>
     )
   }
 
@@ -168,13 +168,12 @@ const CategoryList = () => {
   return (
     <div className="d-flex" id="category-backgroundweh" style={{ backgroundColor: '#333' }}>
       <Sidebar />
-      <div className='col rounded' id='cat-background-container'>
+      <div className='col rounded' id='pro-background-container'>
         <div className='container' id='cat-maxwidth'>
           <div className='d-flex justify-content-between align-items-center mt-5 mb-4' id="cat-title-o">
 
-
-            <p className='col fw-bold fs-2 text-white m-0'>Course Settings</p>
-            <div className="input-group col d-flex flex-row justify-content-end align-items-center position-relative">
+            <p className='col fw-bold fs-2 p-0 text-white m-0'>Course Settings</p>
+            <div className="input-group col d-flex flex-row p-0 justify-content-end align-items-center position-relative">
               <AiOutlineSearch className='text-white position-absolute top-50 translate-middle-y' id='category-searchicon' />
               <input autoComplete='off' type="text" onChange={(event) => { setSearchText(event.target.value); }} className="ps-3 pe-3 py-2 text-white rounded" placeholder="Search Courses..." aria-label="Title" id="search-category-input-title" />
             </div>
