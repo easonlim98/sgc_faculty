@@ -174,11 +174,14 @@ export const commonStore = new Store({
         Total_Ideas: "1",
         Total_Like: "6"
     }],
-    
+
     subjectTitle: [],
     subjectList: [],
 
-    facultyDetails: {},
+    facultyDetails: [{
+        UserID: "gIPtxHjv5LWXiG5Eg1bB5jqeed23",
+        FacultyName: "Psychology"
+    }],
     institutionLink: [],
-    
+
 });  

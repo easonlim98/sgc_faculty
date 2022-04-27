@@ -5,6 +5,7 @@ import './Profile.css'
 import 'bootstrap';
 import { RiCloseFill } from "react-icons/ri";
 import { userStore } from '../../../store/userStore';
+import { commonStore } from '../../../store/commonStore';
 import moment from 'moment';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,9 +22,11 @@ const Profile = () => {
 
     //Static UserList [0]
     const userListDetails = userStore.useState(s => s.userListDetails[0])
+    const facultyDetails = commonStore.useState(s => s.facultyDetails)
     const [userContact, setuserContact] = useState('');
     const [userAddress, setuserAddress] = useState('');
     const [userImage, setuserImage] = useState(userListDetails.UserImage);
+    const [facultyname, setfacultyname] = useState([]);
     const [editing, setediting] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     // const storage = firebase.storage();
@@ -32,12 +35,26 @@ const Profile = () => {
         if (userID !== '') {
             // listenToData(userID);
             console.log('success mount data')
+            for (var x = 0; x < facultyDetails.length; x++) {
+                if (facultyDetails[x].UserID === userID) {
+                    if (facultyname.length !== 0) {
+                        for (var y = 0; y < facultyname.length; y++) {
+                            if (facultyname[y].FacultyName !== facultyDetails[x].FacultyName) {
+                                setfacultyname([...facultyname, facultyDetails[x]])
+                            }
+                        }
+                    }
+                    else setfacultyname([...facultyname, facultyDetails[x]])
+                }
+            }
         }
         else {
             console.log('no userID')
         }
     }, [userID]);
     const Ref = useRef(null);
+
+    console.log(facultyname, 'name')
 
     // The state for our timer
     const [timer, setTimer] = useState('00:00:00');
@@ -102,8 +119,8 @@ const Profile = () => {
     const datatext = (item) => {
         return (
             <div className='col-6 px-3'>
-                <p id='font-content-text' className='text-light fw-bold m-0'>{item.name}</p>
-                <p id='font-content-text' className='fw-normal m-0' style={{ color: "#D3D3D3" }}>{item.data}</p>
+                <p className='fw-bold m-0 mb-2 our_theme_color'>{item.name}</p>
+                <p className='fw-light m-0 our_theme_color' style={{ fontSize: '0.9rem' }}>{item.data}</p>
             </div>
         )
     }
@@ -213,55 +230,62 @@ const Profile = () => {
                 {isLoading ? <div className='container position-relative d-flex col h-100'>
                     <LoadingSpinner /> </div> :
 
-                    <div className='col rounded' id='pro-background-container'>
+                    <div className='col rounded' id="width-bg">
                         <div className='container my-5'>
-                            <div className='d-flex justify-content-between align-items-center mb-4'>
-                                <p id='profile-title' className='col fw-bold fs-2 text-white m-0 p-0'>Profile Page</p>
+                            <div className='d-flex col justify-content-between align-items-center p-0 m-0 mb-4'>
+                                <p id='profile-title' className='col text-start fw-bold fs-2 text-white m-0 p-0'>Profile Page</p>
                             </div>
-                            <div className="container" id="background-profile-card">
-                                <div className="row">
-                                    {console.log(userListDetails)}
-                                    <div className="col-sm-5 py-4 d-flex flex-column align-items-center justify-content-center" id="background-profile">
-                                        <img className='rounded-circle mb-4' src={userListDetails.UserImage} id='profile-user-avatar' />
-                                        <p className='text-light fw-bold pb-3 m-0'>{userListDetails.UserName}</p>
-                                        <p className='text-light fw-normal pb-2 m-0'>{"Position: " + userListDetails.UserPosition}</p>
-                                        <small><p className='text-light fw-light m-0'>{"Joined Since - " + moment(userListDetails.CreatedAt).format('MM-DD-YYYY')}</p></small>
-                                        <div className="container-2 mt-4">
-                                            <button onClick={setdata} className="btn btn-two" data-toggle="modal" data-target="#createCategoryModal">
-                                                <span id="spanalignment">Edit</span>
-                                            </button>
-                                        </div>
+                            <div className="container row" id="background-profile-card">
+                                <div className=" py-5 col align-items-center justify-content-center m-0" id="background-profile">
+                                    <div className='position-relative d-flex flex-column' id='ambg'>
+                                        <p className='fw-normal m-0 our_theme_color' >{userListDetails.UserName + " -  " + userListDetails.UserPosition}</p>
+                                        <img className='rounded-circle my-5 align-self-center' src={userListDetails.UserImage} id='profile-user-avatar' />
+                                        <p id='profile-font' className='our_theme_color fw-light text-center m-0 px-3'>{"This is the admin panel's profile page, where you can change any details you want. All of the information is considered private. Only the Administrator has access to all data."}</p>
+                                        <small><p className='our_theme_color fw-normal my-4 text-center m-0'>{"Joined Since - " + moment(userListDetails.CreatedAt).format('MM-DD-YYYY')}</p></small>
                                     </div>
-                                    <div className="col-sm-7 p-0 d-flex flex-column" id="background-profile-ui">
-                                        <div className='px-5 pt-4 pb-4' id='border-bottom-dark'>
+                                </div>
+                                <div className="d-flex flex-column col-7" id="background-profile-clr">
+                                    <div className='col'>
+                                        <div className='px-5 py-5' id='border-bottom-dark'>
                                             <div className='' style={{ margin: "auto", maxWidth: "90%" }}>
-                                                <p id='font-try-center' className='text-light fw-normal m-0'>{"Official Information"}</p>
-                                                <div className='row pt-3'>
-                                                    {datatext({ name: "Employee ID", data: userListDetails.EmployeeID })}
-                                                    {datatext({ name: "Department", data: userListDetails.DepartmentID })}
+                                                <p id='font-try-center' className='our_theme_title fw-bold fs-5 m-0'>{"Staff Information"}</p>
+                                                <div className='row pt-4'>
+                                                    {datatext({ name: "Employee ID: ", data: userListDetails.EmployeeID })}
+                                                    <div className='col-6 px-3'>
+                                                        <p className='fw-bold m-0 mb-2 our_theme_color'>{"Faculty involved: "}</p>
+                                                        <p className='fw-light m-0 our_theme_color' style={{ fontSize: '0.9rem' }}>{facultyname.map((item) => item.FacultyName)}</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='px-5 pt-4 pb-4' id='border-bottom-dark'>
+                                        <div className='px-5' id='border-bottom-dark'>
                                             <div className='' style={{ margin: "auto", maxWidth: "90%" }}>
-                                                <p id='font-try-center' className='text-light fw-normal m-0'>{"Contact Information"}</p>
-                                                <div className='row pt-3'>
+                                                <p id='font-try-center' className='fw-bold fs-5 m-0 our_theme_title'>{"Contact Information"}</p>
+                                                <div className='row pt-4'>
                                                     {datatext({ name: "Email", data: userListDetails.UserEmail })}
                                                     {datatext({ name: "Contact Number", data: userListDetails.UserContact })}
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='px-5 pt-4 pb-4' id='border-bottom-dark'>
-                                            <div className='' style={{ margin: "auto", maxWidth: "90%" }}>
-                                                <p id='font-try-center' className='text-light fw-normal m-0'>{"Personal Information"}</p>
-                                                <div className='row pt-3'>
-                                                    {datatext({ name: "Gender", data: userListDetails.UserGender })}
-                                                    {datatext({ name: "Address", data: userListDetails.UserAddress })}
-                                                </div>
+                                    </div>
+                                    <div className="container-2 mb-5 d-flex justify-content-center">
+                                        <button onClick={setdata} className="btn btn-two" data-toggle="modal" data-target="#createCategoryModal">
+                                            <span id="spanalignment">Edit</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {/* <div className="col p-0 d-flex flex-column" id="background-profile">
+                                    <div className='px-5 pt-4 pb-4' id='border-bottom-dark'>
+                                        <div className='' style={{ margin: "auto", maxWidth: "90%" }}>
+                                            <p id='font-try-center' className='text-light fw-normal m-0'>{"Contact Information"}</p>
+                                            <div className='row pt-3'>
+                                                {datatext({ name: "Email", data: userListDetails.UserEmail })}
+                                                {datatext({ name: "Contact Number", data: userListDetails.UserContact })}
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                             {/* <-- Modal Start --> */}
                             <div className="modal fade" id="createCategoryModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -308,11 +332,11 @@ const Profile = () => {
                             </div>
                             <div id='testingprofilecontainer' className='mt-5 d-flex justify-content-start rounded col-5' >
                                 <div className='rounded px-5 py-4' id='background-password-background'>
-                                    <p id='reset-profile-title' className='text-light fw-normal m-0 fw-bold fs-3'>{"Reset Password"}</p>
-                                    <p id='reset-profile-content' className='text-light text-align-justify fw-normal m-0 py-3'>{"If you want to reset your password, simply enter your email address, and the reset password link will be emailed to you instantly."}</p>
+                                    <p id='reset-profile-title' className='our_theme_title fw-normal m-0 fw-bold fs-3'>{"Reset Password"}</p>
+                                    <p id='reset-profile-content' className='our_theme_color text-align-justify fw-normal m-0 py-3'>{"If you want to reset your password, simply enter your email address, and the reset password link will be emailed to you instantly."}</p>
                                     <div className='d-flex justify-content-end align-items-center pt-4'>
                                         {(timer === '00:00:00' || timer === '00:00:01') ? null : <small><p className='text-muted m-0 me-3'>{timer}</p></small>}
-                                        <button className='bg-transparent border-0' style={{ color: (timer === '00:00:00' || timer === '00:00:01') ? "white" : "grey" }} disabled={timer === '00:00:00' ? false : true} onClick={() => { resetPassword() }}>Send Email</button>
+                                        <button className='bg-transparent border-0' style={{ color: (timer === '00:00:00' || timer === '00:00:01') ? "#62C6CC" : "grey" }} disabled={timer === '00:00:00' ? false : true} onClick={() => { resetPassword() }}>Send Email</button>
                                     </div>
 
                                 </div>

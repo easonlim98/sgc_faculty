@@ -25,7 +25,7 @@ const Sidebar = () => {
     <div style={{ display: 'flex', overflow: 'scroll initial', height: '100vh', position: 'sticky', top: '0' }}>
       <CDBSidebar backgroundColor="#333">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
-          <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
+          <a href="/AdminPanel_HomePost" className="text-decoration-none" style={{ color: 'inherit' }}>
             Ideas .Co
           </a>
         </CDBSidebarHeader>
