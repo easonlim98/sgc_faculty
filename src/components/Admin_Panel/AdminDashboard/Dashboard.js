@@ -376,14 +376,8 @@ export const Dashboard = () => {
                                         }}
                                         axisTop={null}
                                         axisRight={null}
-                                        axisBottom={{
-                                            tickSize: 5,
-                                            tickPadding: 5,
-                                            tickRotation: 0,
-                                            legend: 'Department',
-                                            legendPosition: 'middle',
-                                            legendOffset: 32,
-                                        }}
+                                        axisBottom={null
+                                        }
                                         axisLeft={{
                                             tickSize: 5,
                                             tickPadding: 5,
