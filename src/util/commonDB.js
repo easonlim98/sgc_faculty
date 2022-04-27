@@ -54,8 +54,36 @@ export const getDataEvent = (userID) => {
         commonStore.update(s => {
           s.enquiryDetails = tempEnquiry;
         });
+    
+      })
 
-        console.log(tempEnquiry)
+      ApiClient.GET(API.getFacultyReport).then(response => {
+
+        var tempFacultyReport = [];
+    
+        for(var i = 0; i < response.length; i++){
+            tempFacultyReport.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.facultyReport = tempFacultyReport;
+        });
+    
+      })
+
+      ApiClient.GET(API.getFacultyReportPercent).then(response => {
+
+        var tempFacultyReport = [];
+    
+        for(var i = 0; i < response.length; i++){
+            tempFacultyReport.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.facultyReportPercent = tempFacultyReport;
+        });
+
+        console.log(tempFacultyReport)
     
       })
     

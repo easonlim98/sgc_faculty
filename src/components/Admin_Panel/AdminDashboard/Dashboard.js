@@ -32,6 +32,8 @@ export const Dashboard = () => {
     const pieChartData = commonStore.useState(s => s.pieChartData)
     const zipDocument = commonStore.useState(s => s.zipDocument)
     const csvData = commonStore.useState(s => s.csvData)
+    const facultyReport = commonStore.useState(s => s.facultyReport)
+    const facultyReportPercent = commonStore.useState(s => s.facultyReportPercent)
     const expiredCategory = commonStore.useState(s => s.expiredCategory)
 
     useEffect(() => {
@@ -46,10 +48,10 @@ export const Dashboard = () => {
 
     }, [userID]);
 
-    const [data, setData] = useState(barChartData.map(item => (
+    const [data, setData] = useState(facultyReport.map(item => (
         {
-            "Department": item.DepartmentName,
-            "Total_Ideas": Number(item.Total_Ideas),
+            "Faculty": item.FacultyName,
+            "Total_Visitor": item.VisitorCount,
         }
     )));
 
@@ -60,11 +62,11 @@ export const Dashboard = () => {
         }
     )));
 
-    const [percentData, setPercentData] = useState(pieChartData.map(item => (
+    const [percentData, setPercentData] = useState(facultyReportPercent.map(item => (
         {
-            "id": item.DepartmentName,
-            "label": item.DepartmentName,
-            "value": ((Number(item.Total_Ideas) / Number(item.Total_Post)) * 100).toFixed(0),
+            "id": item.FacultyName,
+            "label": item.FacultyName,
+            "value": ((item.VisitorCount / item.SUM_COUNT) * 100).toFixed(0),
             "color": randomColor(),
         }
     )));
@@ -326,23 +328,23 @@ export const Dashboard = () => {
                             (charttypetext === "Ideas By Department") ?
                                 <div style={{
                                     width: "100%",
-                                    height: "90%"
+                                    height: "100%"
                                 }}>
-                                    <p className='text-light' style={{ fontSize: 18, fontWeight: '800', width: '100%', justifyContent: 'center', display: 'flex' }}>{'Ideas By Department'}</p>
+                                    <p className='text-light' style={{ fontSize: 18, fontWeight: '800', width: '100%', justifyContent: 'center', display: 'flex' }}>{'Faculty\'s Visitor'}</p>
                                     <ResponsiveBar
                                         data={data}
                                         groupMode="grouped"
                                         theme={{ textColor: '#FFF' }}
                                         keys={[
-                                            'Total_Ideas',
+                                            'Total_Visitor',
                                         ]}
                                         animate={false}
                                         colorBy='indexValue'
-                                        indexBy="Department"
-                                        margin={{ top: 50, right: 60, bottom: 50, left: 60 }}
+                                        indexBy="Faculty"
+                                        margin={{ top: 20, right: 220, bottom: 20, left: 60 }}
                                         padding={0.3}
-                                        valueScale={{ type: 'linear' }}
-                                        indexScale={{ type: 'band', round: true }}
+                                        //valueScale={{ type: 'linear' }}
+                                        //indexScale={{ type: 'band', round: true }}
                                         defs={[
                                             {
                                                 id: 'dots',
@@ -376,24 +378,17 @@ export const Dashboard = () => {
                                         }}
                                         axisTop={null}
                                         axisRight={null}
-                                        axisBottom={{
-                                            tickSize: 5,
-                                            tickPadding: 5,
-                                            tickRotation: 0,
-                                            legend: 'Department',
-                                            legendPosition: 'middle',
-                                            legendOffset: 32,
-                                        }}
                                         axisLeft={{
                                             tickSize: 5,
                                             tickPadding: 5,
                                             tickRotation: 0,
-                                            legend: 'Total Ideas',
+                                            legend: 'Total Visitor',
                                             legendPosition: 'middle',
                                             legendOffset: -40,
                                             /* tickValues: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30], */
                                             tickValues: 2,
                                         }}
+                                        axisBottom={null}
                                         labelSkipWidth={12}
                                         labelSkipHeight={12}
                                         labelTextColor={{
@@ -407,7 +402,31 @@ export const Dashboard = () => {
                                         }}
                                         role="application"
                                         ariaLabel="Nivo bar chart demo"
-                                        barAriaLabel={function (e) { return e.id + ": " + e.formattedValue + " in country: " + e.indexValue }}
+                                        //barAriaLabel={function (e) { return e.id + ": " + e.formattedValue + " in country: " + e.indexValue }}
+                                        legends={[
+                                            {
+                                                dataFrom: 'indexes',
+                                                anchor: 'bottom-right',
+                                                direction: 'column',
+                                                justify: false,
+                                                translateX: 120,
+                                                translateY: 46,
+                                                itemsSpacing: 2,
+                                                itemWidth: 100,
+                                                itemHeight: 20,
+                                                itemDirection: 'left-to-right',
+                                                itemOpacity: 0.85,
+                                                symbolSize: 20,
+                                                effects: [
+                                                    {
+                                                        on: 'hover',
+                                                        style: {
+                                                            itemOpacity: 1
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]}
                                     />
                                 </div>
                                 :
@@ -418,15 +437,15 @@ export const Dashboard = () => {
                                     }}>
                                         <p className='text-light' style={{ fontSize: 18, fontWeight: '800', width: '100%', justifyContent: 'center', display: 'flex' }}>{'Contributors By Department'}</p>
                                         <ResponsiveBar
-                                            data={secondData}
+                                            data={data}
                                             groupMode="grouped"
                                             theme={{ textColor: '#FFF' }}
                                             keys={[
-                                                'Contributor',
+                                                'Total_Visitor',
                                             ]}
                                             animate={false}
                                             colorBy='indexValue'
-                                            indexBy="Department"
+                                            indexBy="Faculty"
                                             margin={{ top: 50, right: 60, bottom: 50, left: 60 }}
                                             padding={0.3}
                                             valueScale={{ type: 'linear' }}
@@ -468,7 +487,7 @@ export const Dashboard = () => {
                                                 tickSize: 5,
                                                 tickPadding: 5,
                                                 tickRotation: 0,
-                                                legend: 'Department',
+                                                legend: 'Faculty',
                                                 legendPosition: 'middle',
                                                 legendOffset: 32,
                                             }}
@@ -476,7 +495,7 @@ export const Dashboard = () => {
                                                 tickSize: 5,
                                                 tickPadding: 5,
                                                 tickRotation: 0,
-                                                legend: 'Total Ideas',
+                                                legend: 'Total Visitor',
                                                 legendPosition: 'middle',
                                                 legendOffset: -40,
                                                 /* tickValues: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30], */

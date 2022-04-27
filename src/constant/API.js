@@ -15,6 +15,10 @@ const getAwardingInstitution='getAwardingInstitution.php'
 const getUser='getUser.php'
 const getAdminCourse='getAdminCourse.php'
 const getEnquiry='getEnquiry.php'
+const createEnquiry='createEnquiry.php'
+const increaseCount='increaseCount.php'
+const getFacultyReport='getFacultyReport.php'
+const getFacultyReportPercent='getFacultyReportPercent.php'
 
 const API = {
     createUser,
@@ -33,7 +37,11 @@ const API = {
     getAwardingInstitution,
     getUser,
     getAdminCourse,
-    getEnquiry
+    getEnquiry,
+    createEnquiry,
+    increaseCount,
+    getFacultyReport,
+    getFacultyReportPercent
 };
 
 export default API;
