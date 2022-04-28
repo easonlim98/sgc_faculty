@@ -1,15 +1,29 @@
 #admin_panel_post {
-    width: 70%;
+    padding-right: var(--bs-gutter-x, .75rem);
+    padding-left: var(--bs-gutter-x, .75rem);
+    background-color: #14213d !important;
+    color: #41EDEA !important;
+    font-weight: 500;
+    outline: none;
+    border: 0;
+    box-shadow: 0px 1px 10px #3586a1;
+    max-width: 45rem;
+    padding: 0;
+}
+
+#post-faculty {
+    margin-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: calc(var(--bs-gutter-x) * .5);
 }
 
 #nav-tab {
-    width: 70%;
+    max-width: 45rem;
     margin-left: auto;
     margin-right: auto;
 }
 
 #admin-panel-add {
-    width: 70%;
+    max-width: 45rem;
     margin-left: auto;
     margin-right: auto;
 }

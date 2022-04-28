@@ -43,7 +43,6 @@ const HomeScreen = () => {
   const [appear, setappear] = useState(false)
   const [categoryisDisabled, setCategoryisDisabled] = useState(true)
 
-  console.log(allPost, "allPost")
   // const storage = firebase.storage();
   useEffect(() => {
     if (userID !== '') {
@@ -187,7 +186,6 @@ const HomeScreen = () => {
     setAplliedfilter(false)
   }
 
-
   const displayPost = allPost.slice().sort(function (a, b) {
     if (pagetype === 1) {
       return new Date(b.CreatedAt).getTime() - new Date(a.CreatedAt).getTime()
@@ -197,7 +195,10 @@ const HomeScreen = () => {
     }
 
   }).filter((item) => {
-    if (Aplliedfilter === false) {
+    console.log(item, 'ffff')
+    if (Aplliedfilter === true && item.FacultyID === catid) {
+      return item
+    } else if (Aplliedfilter === false) {
       return item
     }
   }).slice(pagesVisited, pagesVisited + postPerPage).map((item) => (
@@ -240,23 +241,23 @@ const HomeScreen = () => {
             </div>
             <nav>
               <div className="nav nav-tabs position-relative" id="nav-tab" role="tablist">
-                <div className='d-flex col flex-row align-items-center'>
+                <div className='d-flex col flex-row align-items-center p-0'>
                   <div className='col d-flex p-0'>
                     <button className={currenttab === "Latest Announcement" ? "nav-link active rounded" : "nav-link rounded"} onClick={() => handlechangepage()} id="nav-recent-tab" data-toggle="tab" data-target="#nav-recent" type="button" role="tab" aria-controls="nav-recent" aria-selected="true">Latest Announcement</button>
                     <button className={currenttab === "Most Upvoted Announcement" ? "nav-link active rounded" : "nav-link rounded"} onClick={() => handlechangepage4()} id="nav-popular-tab" data-toggle="tab" data-target="#nav-popular" type="button" role="tab" aria-controls="nav-popular" aria-selected="false">Most Upvoted Announcement</button>
                   </div>
                   <div className='' id='home-filter'>
                     {categorytext ? <FaWindowClose className='me-3' color='white' onClick={clear_filter} /> : null}
-                    <RiFilterLine className='text-light' data-toggle="modal" data-target="#staticBackdrop" />
+                    <RiFilterLine id='iconhover' className='text-light' data-toggle="modal" data-target="#staticBackdrop" />
                   </div>
                 </div>
                 {/* <!--Start Filter Modal--> */}
                 <div className="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                  <div className="modal-dialog modal-dialog-centered">
+                  <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: '35%' }}>
                     <div className="modal-content" id="category-create-post-modal">
                       <div className="modal-header d-flex col align-items-center position-relative justify-content-center py-4" id="create-post-modal-header">
-                        <h5 className="modal-title text-center text-white" id="create-post-modal-header-title">{"Categories"}</h5>
-                        <RiCloseFill className="btn-close position-absolute text-light" onClick={() => setcategorytext("")} data-dismiss="modal" size={35} id='close-icon' />
+                        <h5 className="modal-title text-center text-white" id="create-post-modal-header-title">{"Courses"}</h5>
+                        <RiCloseFill id="close-icon" className="btn-close position-absolute text-light" onClick={() => setcategorytext("")} data-dismiss="modal" size={35} />
                       </div>
                       <div className="modal-body row align-items-center" id="category-modal">
                         <div className='col text-light m-0'>
@@ -264,14 +265,14 @@ const HomeScreen = () => {
                           <small> <p className='text-light fw-light m-0 mt-2'> {categorytext ? "You have selected <" + categorytext.toUpperCase() + ">" : ""} </p></small>
                         </div>
 
-                        <div className="col-3 dropdown">
+                        <div className="col dropdown d-flex justify-content-end">
                           <button className="px-2 py-2 border-0 rounded btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
                             {categorytext ? categorytext : "Courses"}
                           </button>
                           <ul className="dropdown-menu bg-dark rounded" aria-labelledby="dropdownMenuButton1">
                             {
-                              categoryList.map((category) =>
-                                <p className="" style={{ color: "white", paddingLeft: '1.5rem', margin: 0, paddingTop: "0.5rem", paddingBottom: "0.5rem" }} onClick={() => setcatid(category.CategoryID) & setcategorytext(category.CategoryName)}>{category.CategoryName}</p>
+                              allFaculty.map((faculty) =>
+                                <p className="" style={{ color: "white", paddingLeft: '1.5rem', margin: 0, paddingTop: "0.5rem", paddingBottom: "0.5rem" }} onClick={() => setcatid(faculty.FacultyID) & setcategorytext(faculty.FacultyName)}>{faculty.FacultyName}</p>
                               )
                             }
                           </ul>
@@ -279,7 +280,7 @@ const HomeScreen = () => {
                       </div>
                       <div className="modal-footer border-0 justify-content-end">
                         <button type="button" className='px-4 py-1 border-0 rounded text-light' id="modal-general-button" onClick={() => setcategorytext("")}>Clear</button>
-                        <button type="button" className='px-4 py-1 border-0 rounded text-light' id="modal-general-button" data-dismiss="modal" onClick={() => setAplliedfilter(true) & setcategoryid(catid)}>Apply</button>
+                        <button type="button" className='px-4 py-1 border-0 rounded text-light' id="modal-general-button" data-dismiss="modal" onClick={() => setAplliedfilter(true)}>Apply</button>
                       </div>
                     </div>
                   </div>
@@ -444,7 +445,7 @@ const HomeScreen = () => {
                         />
                         <label htmlFor="imagenfile" className='d-flex align-items-center m-0' style={{ width: "unset" }}>
                           <AiOutlineFileProtect type="file" aria-label="Upload" className="our_theme_color col" size={30} />
-                          <p className='m-0 our_theme_color'>Only Image are allow to upload</p>
+                          <p className='m-0 our_theme_color'>Click here to upload your image</p>
                         </label>
                       </div>
                       <button type="button" data-dismiss={"modal"} className="px-3 py-2 rounded purple border-0" style={{ width: 'unset' }} id="Modal-done-button" onClick={() => { createPost() }} >Create Post</button>

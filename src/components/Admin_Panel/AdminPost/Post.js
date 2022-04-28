@@ -8,7 +8,7 @@ import './HomeScreen.css'
 // import 'firebase/storage'
 import { AiOutlineLike, AiFillDislike, AiFillLike, AiOutlineSend, AiOutlineDislike } from "react-icons/ai";
 import { FiCheck, } from "react-icons/fi";
-import { FaSmileWink, FaUserNinja, } from "react-icons/fa";
+import { BiUpvote, BiDownvote, } from "react-icons/bi";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from 'emailjs-com';
@@ -17,7 +17,7 @@ import { getDataEvent } from '../../../util/commonDB';
 
 const Post = (props) => {
     const userListDetails = userStore.useState(s => s.userListDetails[0])
-    const categoryList = commonStore.useState(s => s.categoryList)
+    const allFaculty = commonStore.useState(s => s.allFaculty)
     const userID = userStore.useState(s => s.userID);
     const likeList = commonStore.useState(s => s.likeList)
     const voteList = commonStore.useState(s => s.voteList)
@@ -26,6 +26,7 @@ const Post = (props) => {
     const userList = commonStore.useState(s => s.userList)
     const postList = commonStore.useState(s => s.postList)
     const [commentText, setCommentText] = useState("");
+    const [currentfacultyname, setcurrentfacultyname] = useState("");
     const [like, setlike] = useState(false);
     var disabledset = ""
     var today = new Date()
@@ -33,6 +34,11 @@ const Post = (props) => {
     useEffect(() => {
         if (userID !== '') {
             // listenToData(userID);
+            for (var x = 0; x < allFaculty.length; x++) {
+                if (allFaculty[x].FacultyID === item.FacultyID) {
+                    setcurrentfacultyname(allFaculty[x].FacultyName)
+                }
+            }
         }
         else {
         }
@@ -159,26 +165,27 @@ const Post = (props) => {
     const userdata = props.userdetails
     console.log(item, "item")
     console.log(userdata, "userdata")
+    console.log(allFaculty, "allFaculty")
 
     return (
-        <div className="container-sm card p-0 py-4 m-auto mt-4" id="admin_panel_post" style={{ backgroundColor: '#2E3139' }} >
+        <div className="container-sm card py-4 m-auto mt-4" id="admin_panel_post" style={{ backgroundColor: '#2E3139' }} >
             <div className="card-body p-0">
                 <div className="row align-items-center px-4">
                     {userdata.map((user) => (
                         <>
                             {user.UserID === item.UserID ?
-                                <>
+                                <div className='d-flex align-items-center p-0'>
                                     <img src={user.UserImage} id="post-author-avatar" className="rounded-circle p-0" alt="Image" />
                                     <div className="col d-flex flex-column justify-content-center mx-3">
-                                        <p className="card-text text-light m-0 fw-bold">{user.UserName}</p>
-                                        <p className="card-text text-muted m-0 pt-1 fw-light" style={{ fontSize: '0.8rem' }}>{user.UserPosition}</p>
+                                        <p className="card-text purple m-0 fw-normal">{user.UserName + " | " + user.UserPosition}</p>
+                                        <p className="card-text text-muted m-0 pt-1 fw-light" style={{ fontSize: '0.8rem' }}>{"#" + currentfacultyname}</p>
                                     </div>
-                                </>
+                                </div>
                                 :
                                 null
                             }
                         </>
-                    ))};
+                    ))}
                 </div>
                 <h5 className="card-title text-light py-3 mb-0 px-4">{item.PostTitle}</h5>
                 {item.PostDoc !== '' ?
@@ -190,9 +197,12 @@ const Post = (props) => {
                 }
 
                 <p className="card-text text-light px-4">{item.PostContent}</p>
-                <div className="row px-4 align-items-center">
-
-                    <div className="col align-items-center d-flex justify-content-end">
+                <div className="d-flex px-4 justify-content-between align-items-center">
+                    <div className='d-flex flex-row'>
+                        <p className='m-0 pr-3'>{"0"}</p>
+                        <BiUpvote size={25} />
+                    </div>
+                    <div className="p-0 col align-items-center d-flex justify-content-end">
                         <button className="btn px-3 py-2 text-light border-0 rounded" style={{ backgroundColor: "#32519F" }} type="button" data-toggle="collapse" data-target={"#Post-Comment-section" + item.PostID} aria-expanded="false" aria-controls="Post-Comment-section" id='post-comment-section'>
                             {"0" + " Comments"}
                         </button>
@@ -213,8 +223,8 @@ const Post = (props) => {
                                                 key={index}
                                                 autoComplete='off'
                                             />
-                                            <div id="comment-column" className="position-absolute top-50 translate-middle-y d-flex align-items-center">
-                                                <AiOutlineSend id="iconhover" onClick={() => { createComment(item.PostID); }} size={20} color={'#FFFFFF'} />
+                                            <div id="comment-column" className="position-absolute top-50 translate-middle-y d-flex align-items-center text-light">
+                                                <AiOutlineSend id="iconhover" onClick={() => { createComment(item.PostID); }} size={20}  />
                                             </div>
                                         </div>
                                     </div>
