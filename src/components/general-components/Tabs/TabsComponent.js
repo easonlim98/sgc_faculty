@@ -111,10 +111,10 @@ const TabsComponent = (props) => {
                     </div>
                     :
                     (active === id && id === 2) ?
-                        (achievement.detailscontent == "" ||
-                            achievement.detailsname == "" ||
-                            achievement.detailsjob == "" ||
-                            achievement.detailsimage == "") ?
+                        (achievement.detailscontent === "" ||
+                            achievement.detailsname === "" ||
+                            achievement.detailsjob === "" ||
+                            achievement.detailsimage === "") ?
                             <></>
                             :
 

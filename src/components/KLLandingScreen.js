@@ -69,7 +69,7 @@ const KLLandingScreen = () => {
                             </div>
                         </button>
 
-                    ))};
+                    ))}
 
                 </div>
 

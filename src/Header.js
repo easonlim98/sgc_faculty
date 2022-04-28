@@ -48,7 +48,7 @@ const Header = () => {
     const Dropdown = ({ submenus }) => {
         return (
             <ul id="hd_tahalo" className={`dropdown ${dropdown ? "show" : ""}`}>
-                <div class="dropdown-menu" aria-labelledby="hd_tahalo">
+                <div className="dropdown-menu" aria-labelledby="hd_tahalo">
                     {submenus.map((submenu, index) => (
                         <li key={index} id='hd-menu-item' className="dropdown-items">
                             <a className="colorWhite dropdownTitle" id=''
