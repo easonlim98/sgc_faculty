@@ -113,7 +113,7 @@ const Profile = () => {
     const Modaltextinput = (item) => {
         return (
             <div className='py-3 col'>
-                <p className='fw-normal text-white fs-6 total-cat'>{item.name}</p>
+                <p className='fw-normal purple fs-6 total-cat'>{item.name}</p>
                 <input value={item.data} onChange={(e) => item.onchange(e)} autoComplete='off' type="text" className="form-control rounded" placeholder={item.placeholder} aria-label="Title" id="profile-text-input" aria-describedby="inputGroup-sizing-default" />
             </div>
         )
@@ -301,8 +301,8 @@ const Profile = () => {
                                 <div className="modal-dialog modal-dialog-centered">
                                     <div className="modal-content" id="category-create-post-modal">
                                         <div className="modal-header d-flex col align-items-center position-relative justify-content-center py-4" id="create-post-modal-header">
-                                            <h5 className="modal-title text-center text-white" id="create-post-modal-header-title">{"Edit Profile"}</h5>
-                                            <RiCloseFill className="btn-close position-absolute text-light" onClick={emptydatafunction} data-dismiss="modal" size={35} id='close-icon' />
+                                            <h5 className="modal-title text-center purple" id="create-post-modal-header-title">{"Edit Profile"}</h5>
+                                            <RiCloseFill className="btn-close position-absolute purple" onClick={emptydatafunction} data-dismiss="modal" size={35} id='close-icon' />
                                         </div>
                                         <div className="modal-body pt-4" id="profile-modal">
                                             {/* All State: userName, userEmail, userPassword, employeeID, userDepartment, userPosition */}
@@ -330,10 +330,8 @@ const Profile = () => {
                                             </div>
                                         </div>
                                         <div className="modal-footer p-0 pt-4 pb-5 justify-content-center" id="user-footer">
-                                            <button type="button" id="button-boxshadow" className="px-3 text-light fw-light py-2 rounded" style={{
-                                                border: "2.5px solid #2E3139",
+                                            <button type="button" id="button-boxshadow" className="px-3 our_theme_title fw-light py-2 rounded border-0" style={{
                                                 backgroundColor: "transparent",
-                                                boxShadow: "0 10px 10px 0 rgb(0 0 0 / 11%), 0 1px 30px 0 rgb(0 0 0 / 14%)"
                                             }} data-dismiss="modal" onClick={() => { editprofile(); }}>{"Save Changes"}</button>
                                         </div>
                                     </div>

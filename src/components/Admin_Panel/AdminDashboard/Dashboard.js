@@ -35,6 +35,7 @@ export const Dashboard = () => {
     const facultyReport = commonStore.useState(s => s.facultyReport)
     const facultyReportPercent = commonStore.useState(s => s.facultyReportPercent)
     const expiredCategory = commonStore.useState(s => s.expiredCategory)
+    const [target, settarget] = useState('Faculty By Visitor');
 
     useEffect(() => {
 
@@ -82,28 +83,28 @@ export const Dashboard = () => {
     )));
 
     const [emptyData, setEmptyData] = useState([]);
-   
-   
-        
-    
 
-   
+
+
+
+
+
     var Mostvisitor = ""
     var Leastvisitor = ""
     const total = facultyReport.reduce((prev, visitor) => {
         return prev + parseInt(visitor.VisitorCount)
     }, 0)
-    
+
     var Totalvisitor = total
-    facultyReport.slice().sort((a,b)=>{
-        return parseInt(a.VisitorCount)-parseInt(b.VisitorCount)
-    }).map((item)=>(
-        Mostvisitor=item.FacultyName
+    facultyReport.slice().sort((a, b) => {
+        return parseInt(a.VisitorCount) - parseInt(b.VisitorCount)
+    }).map((item) => (
+        Mostvisitor = item.FacultyName
     ))
-    facultyReport.slice().sort((a,b)=>{
-        return parseInt(b.VisitorCount)-parseInt(a.VisitorCount)
-    }).map((item)=>(
-        Leastvisitor=item.FacultyName
+    facultyReport.slice().sort((a, b) => {
+        return parseInt(b.VisitorCount) - parseInt(a.VisitorCount)
+    }).map((item) => (
+        Leastvisitor = item.FacultyName
     ))
     // console.log(Totalvisitor)
     // const todaydate = today.getFullYear() + '-' + ("0" + (today.getMonth() + 1)).slice(-2) + '-' + today.getDate();
@@ -257,65 +258,65 @@ export const Dashboard = () => {
     //     )
     // }
 
-   
-    const tagcomponent = ({ Title, PostTitle}) => {
+
+    const tagcomponent = ({ Title, PostTitle }) => {
         return (
-            <div id='dashbord-tag' className="col-3 d-flex p-3 Dashboard-Column rounded-3" style={{ margin: (Title === "Most Visitors") ? "0 2rem" : "0",backgroundColor:(Title==="Total Visitors")?"#4169E1":(Title==="Most Visitors")?"#2E8B57":"#FF0000" }}>
-                <div className="m-auto px-3 py-3 d-flex flex-column justify-content-center align-items-center" style={{ maxWidth: "90%" }}>
-                    <strong><p className="text-center text-light fs-5 m-0 fw-bold">{Title}</p></strong>
-                    <p className="text-light  text-center m-0 py-4" style={{ fontSize: (Title === "Total Visitors") ? "2rem" : "1.2rem" }}>{PostTitle}</p>
+            <div id='dashbord-tag' className="col-3 d-flex p-3 Dashboard-Column rounded-3" style={{ margin: (Title === "Most Visitors") ? "0 2rem" : "0", backgroundColor: (Title === "Total Visitors") ? "#4169E1" : (Title === "Most Visitors") ? "#2E8B57" : "#FF0000" }}>
+                <div className="m-auto d-flex flex-column justify-content-center align-items-center" style={{ maxWidth: "90%" }}>
+                    <strong><p className="text-center purple fs-5 m-0 font-weight-bold">{Title}</p></strong>
+                    <small><p className=" text-center our_theme_title mb-0 font-weight-light" style={{ fontSize: (Title === "Total Visitors") ? "2rem" : "1rem", marginTop: (Title === "Total Visitors") ? "0.5rem" : "0.8rem" }}>{PostTitle}</p></small>
                 </div>
             </div>
         )
     }
     return (
-        <div style={{ display: 'flex', flexDirection: 'row', }}>
+        <div className='' style={{ display: 'flex', flexDirection: 'row', }}>
             <Sidebar />
-            <div className="Dashboard-Container">
-                <div className="Dashboard-Container-Content">
+            <div className="Dashboard-Container position-relative" id="pro-background-container">
+                <div className="Dashboard-Container-Content position-relative">
                     <div className="Dashboard-Top-Content">
                         <p>Welcome to Dashboard</p>
                     </div>
-                    <p>Overview</p>
-                    <p>Here is an overview of the SEGi Website's performance</p>
-                    <div className="Container d-flex my-4 row mx-3" id='dashboard-tag-component'>
-                        {tagcomponent({ Title: "Total Visitors", PostTitle: Totalvisitor})}
-                        {tagcomponent({ Title: "Most Visitors", PostTitle: Mostvisitor})}
-                        {tagcomponent({ Title: "Least Visitors", PostTitle: Leastvisitor})}
+                    <p className='our_theme_title'>Overview</p>
+                    <p className='our_theme_title'>Here is an overview of the SEGi Website's performance</p>
+                    <div className="Container d-flex m-0 my-4 row p-0 " id='dashboard-tag-component'>
+                        {tagcomponent({ Title: "Total Visitors", PostTitle: Totalvisitor })}
+                        {tagcomponent({ Title: "Most Visitors", PostTitle: Mostvisitor })}
+                        {tagcomponent({ Title: "Least Visitors", PostTitle: Leastvisitor })}
                     </div>
-                    <div className="Dashboard-Barchart mt-5 pb-5" style={{ marginBottom: "2rem" }}>
-                        <div className="d-flex justify-content-end align-items-center">
-                            <small> <p className='m-0 text-light pe-3'>Filter Chart</p></small>
-                            <FiFilter className="link-light" data-toggle="modal" data-target="#staticBackdrop" />
+                    <div className="Dashboard-Barchart mt-5 pb-5  position-relative" style={{ marginBottom: "2rem", width: "80%" }}>
+                        <div className="d-flex justify-content-end align-items-center position-absolute end-0">
+                            <small> <p className='m-0 our_theme_title  pe-3'>Filter Chart</p></small>
+                            <FiFilter className="our_theme_title " data-toggle="modal" data-target="#staticBackdrop" />
                         </div>
                         {/* <!-- Modal --> */}
                         <div className="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div className="modal-dialog modal-dialog-centered" id='gaymodal'>
                                 <div className="modal-content" id="category-create-post-modal">
                                     <div className="modal-header d-flex col align-items-center position-relative justify-content-center py-4" id="create-post-modal-header">
-                                        <h5 className="modal-title text-center text-white" id="create-post-modal-header-title">{"Select Chart type"}</h5>
+                                        <h5 className="modal-title text-center purple" id="create-post-modal-header-title">{"Select Chart type"}</h5>
                                         <RiCloseFill className="btn-close position-absolute text-light" data-dismiss="modal" size={35} id='close-icon' />
                                     </div>
                                     <div className="modal-body row align-items-center" id="category-modal">
                                         <div className='col text-light m-0'>
-                                            <p className='text-light m-0'>Select the Chart you want to change to</p>
-                                            <small> <p className='text-light fw-light m-0 mt-2'> {charttypetext ? "You have selected <" + charttypetext.toUpperCase() + ">" : ""} </p></small>
+                                            <p className='our_theme_title m-0'>Select the Chart you want to change to</p>
+                                            <small> <p className='our_theme_color fw-light m-0 mt-2'> {charttypetext ? "You have selected <" + charttypetext.toUpperCase() + ">" : ""} </p></small>
                                         </div>
-                                        <div className="col dropdown d-flex justify-content-center">
-                                            <button className="px-2 py-2 border-0 rounded btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
-                                                {charttypetext ? charttypetext : "Chart Type"}
+                                        <div className="col dropdown d-flex justify-content-end">
+                                            <button className="px-2 py-2 border-0 our_theme_title rounded dropdown-toggle" style={{ background: "transparent" }} type="button" id="" data-toggle="dropdown" aria-expanded="false">
+                                                {target ? target : "Chart Type"}
                                             </button>
                                             <ul className="dropdown-menu bg-dark rounded" aria-labelledby="dropdownMenuButton1">
                                                 {
                                                     charttype.map((chart) =>
-                                                        <p className="" style={{ color: "white", padding: "0.5rem 1.5rem", margin: 0, }} onClick={() => setcharttypetext(chart)}>{chart}</p>
+                                                        <p className="" style={{ color: "white", padding: "0.5rem 1.5rem", margin: 0, }} onClick={() => settarget(chart)}>{chart}</p>
                                                     )
                                                 }
                                             </ul>
                                         </div>
                                     </div>
                                     <div className="modal-footer border-0 justify-content-end">
-                                        <button type="button" className='px-4 py-1 border-0 rounded text-light' id="modal-general-button" data-dismiss="modal" onClick={() => ("hi")}>Apply</button>
+                                        <button type="button" className='px-4 py-1 border-0 rounded text-light' id="modal-general-button" data-dismiss="modal" onClick={() => setcharttypetext(target)}>Apply</button>
                                     </div>
                                 </div>
                             </div>
@@ -325,9 +326,9 @@ export const Dashboard = () => {
                             (charttypetext === "Faculty By Visitor") ?
                                 <div style={{
                                     width: "100%",
-                                    height: "100%"
+                                    height: "100%",
                                 }}>
-                                    <p className='text-light' style={{ fontSize: 18, fontWeight: '800', width: '100%', justifyContent: 'center', display: 'flex' }}>{charttypetext}</p>
+                                    <p className='our_theme_title ' style={{ fontSize: 18, fontWeight: '800', width: '100%', justifyContent: 'center', display: 'flex' }}>{charttypetext}</p>
                                     <ResponsiveBar
                                         data={data}
                                         groupMode="grouped"
@@ -427,98 +428,98 @@ export const Dashboard = () => {
                                     />
                                 </div>
                                 :
-                                    (charttypetext === "Faculty By Visitor(%)") ?
-                                        <div style={{
-                                            width: "100%",
-                                            height: "90%"
-                                        }}>
-                                            <p className='text-light' style={{ fontSize: 18, fontWeight: '800', width: '100%', justifyContent: 'center', display: 'flex' }}>{charttypetext}</p>
-                                            <ResponsivePie
-                                                data={percentData}
-                                                theme={{ textColor: '#FFF' }}
-                                                margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-                                                innerRadius={0.5}
-                                                padAngle={0.7}
-                                                cornerRadius={3}
-                                                activeOuterRadiusOffset={8}
-                                                borderWidth={1}
-                                                borderColor={{
-                                                    from: 'color',
-                                                    modifiers: [
-                                                        [
-                                                            'darker',
-                                                            0.2
-                                                        ]
+                                (charttypetext === "Faculty By Visitor(%)") ?
+                                    <div style={{
+                                        width: "100%",
+                                        height: "90%"
+                                    }}>
+                                        <p className='our_theme_title ' style={{ fontSize: 18, fontWeight: '800', width: '100%', justifyContent: 'center', display: 'flex' }}>{charttypetext}</p>
+                                        <ResponsivePie
+                                            data={percentData}
+                                            theme={{ textColor: '#FFF' }}
+                                            margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+                                            innerRadius={0.5}
+                                            padAngle={0.7}
+                                            cornerRadius={3}
+                                            activeOuterRadiusOffset={8}
+                                            borderWidth={1}
+                                            borderColor={{
+                                                from: 'color',
+                                                modifiers: [
+                                                    [
+                                                        'darker',
+                                                        0.2
                                                     ]
-                                                }}
-                                                animate={false}
-                                                arcLinkLabelsSkipAngle={10}
-                                                arcLinkLabelsTextColor="#FFF"
-                                                arcLinkLabelsThickness={2}
-                                                arcLinkLabelsColor={{ from: 'color' }}
-                                                arcLabelsSkipAngle={10}
-                                                arcLabelsTextColor={{
-                                                    from: 'color',
-                                                    modifiers: [
-                                                        [
-                                                            'darker',
-                                                            2
-                                                        ]
+                                                ]
+                                            }}
+                                            animate={false}
+                                            arcLinkLabelsSkipAngle={10}
+                                            arcLinkLabelsTextColor="#FFF"
+                                            arcLinkLabelsThickness={2}
+                                            arcLinkLabelsColor={{ from: 'color' }}
+                                            arcLabelsSkipAngle={10}
+                                            arcLabelsTextColor={{
+                                                from: 'color',
+                                                modifiers: [
+                                                    [
+                                                        'darker',
+                                                        2
                                                     ]
-                                                }}
-                                                defs={[
-                                                    {
-                                                        id: 'dots',
-                                                        type: 'patternDots',
-                                                        background: 'inherit',
-                                                        color: 'rgba(255, 255, 255, 0.3)',
-                                                        size: 4,
-                                                        padding: 1,
-                                                        stagger: true
-                                                    },
-                                                    {
-                                                        id: 'lines',
-                                                        type: 'patternLines',
-                                                        background: 'inherit',
-                                                        color: 'rgba(255, 255, 255, 0.3)',
-                                                        rotation: -45,
-                                                        lineWidth: 6,
-                                                        spacing: 10
-                                                    }
-                                                ]}
-                                                fill={[
-                                                ]}
-                                                legends={[
-                                                    {
-                                                        anchor: 'bottom',
-                                                        direction: 'row',
-                                                        justify: false,
-                                                        translateX: 0,
-                                                        translateY: 56,
-                                                        itemsSpacing: 0,
-                                                        itemWidth: 150,
-                                                        itemHeight: 18,
-                                                        itemTextColor: '#999',
-                                                        itemDirection: 'left-to-right',
-                                                        itemOpacity: 1,
-                                                        symbolSize: 18,
-                                                        symbolShape: 'circle',
-                                                        effects: [
-                                                            {
-                                                                on: 'hover',
-                                                                style: {
-                                                                    itemTextColor: '#000'
-                                                                }
+                                                ]
+                                            }}
+                                            defs={[
+                                                {
+                                                    id: 'dots',
+                                                    type: 'patternDots',
+                                                    background: 'inherit',
+                                                    color: 'rgba(255, 255, 255, 0.3)',
+                                                    size: 4,
+                                                    padding: 1,
+                                                    stagger: true
+                                                },
+                                                {
+                                                    id: 'lines',
+                                                    type: 'patternLines',
+                                                    background: 'inherit',
+                                                    color: 'rgba(255, 255, 255, 0.3)',
+                                                    rotation: -45,
+                                                    lineWidth: 6,
+                                                    spacing: 10
+                                                }
+                                            ]}
+                                            fill={[
+                                            ]}
+                                            legends={[
+                                                {
+                                                    anchor: 'bottom',
+                                                    direction: 'row',
+                                                    justify: false,
+                                                    translateX: 0,
+                                                    translateY: 56,
+                                                    itemsSpacing: 0,
+                                                    itemWidth: 150,
+                                                    itemHeight: 18,
+                                                    itemTextColor: '#999',
+                                                    itemDirection: 'left-to-right',
+                                                    itemOpacity: 1,
+                                                    symbolSize: 18,
+                                                    symbolShape: 'circle',
+                                                    effects: [
+                                                        {
+                                                            on: 'hover',
+                                                            style: {
+                                                                itemTextColor: '#000'
                                                             }
-                                                        ]
-                                                    }
-                                                ]}
-                                            />
-                                        </div>
-                                        : null
+                                                        }
+                                                    ]
+                                                }
+                                            ]}
+                                        />
+                                    </div>
+                                    : null
                         }
                     </div>
-                   
+
                 </div>
             </div>
         </div >
