@@ -16,15 +16,15 @@ const Preload = () => {
             <p className='our_theme_title fw-normal fs-4 pt-3 pb-5'>A Secure web-enabled system for collecting the improvement from staff from your University.</p>
           </div>
           <div className="box-3 d-flex justify-content-end align-items-center pt-4">
-            <img style={{
-              width: "7%",
-              objectFit: "contain",
-              height: "5%"
-            }} class="active" src="https://lh4.googleusercontent.com/i1RprwcvxhbN2TAMunNxS4RiNVT0DvlD9FNQCvPFuJ0=w140-h165-no"></img>
+
             <button onClick={() => {
               navigate('/AdminPanel_HomePost')
             }}
               className="glow-on-hover px-3 py-2 border-0 our_theme_title" style={{ background: "transparent" }} type="button">Click here to start your journey</button>
+            <img style={{
+              width: "4rem",
+              objectFit: "unset",
+            }} class="active" src={require("../../../assets/images/Admin_Panel/pikachu.gif")}></img>
           </div>
         </div>
       </div>
