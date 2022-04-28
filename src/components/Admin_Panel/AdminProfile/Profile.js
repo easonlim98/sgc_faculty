@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Sidebar from '.././Sidebar'
 import './Profile.css'
-// import Modal from "./Component/Modal.js";
 import 'bootstrap';
 import { RiCloseFill } from "react-icons/ri";
 import { userStore } from '../../../store/userStore';
 import { commonStore } from '../../../store/commonStore';
-import moment from 'moment';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingSpinner from "../../general-components/LoadingSpinner";
@@ -29,12 +27,11 @@ const Profile = () => {
     const allFaculty = commonStore.useState(s => s.allFaculty)
     const [userContact, setuserContact] = useState('');
     const [userName, setuserName] = useState('');
-    const [userAddress, setuserAddress] = useState('');
     const [userImage, setuserImage] = useState(userListDetails.UserImage);
     const [facultyname, setfacultyname] = useState([]);
     const [editing, setediting] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    // const storage = firebase.storage();
+    const [validate, setvalidate] = useState(false);
 
     useEffect(() => {
         if (userID !== '') {
@@ -130,9 +127,7 @@ const Profile = () => {
 
     const editprofile = () => {
         setIsLoading(true);
-        setediting(true)
-        setediting(false)
-        setIsLoading(false)
+        setediting(true);
         if (userImage !== userListDetails.UserImage) {
             const ref = storage.ref(`/admin/${userImage !== null ? userImage.name : ''}`);
             const uploadTask = ref.put(userImage);
@@ -150,8 +145,8 @@ const Profile = () => {
                         ApiClient.POST(API.updateProfile, body).then((result) => {
                             console.log("Update Successful", body)
                             if (userID !== '') {
-                                getDataEvent(userID);
                                 console.log('success mount data')
+                                getDataEvent(userID);
                                 setediting(false)
                                 setIsLoading(false)
                                 toast.info("Profile succesfully updated.", { theme: "colored" })
@@ -159,6 +154,7 @@ const Profile = () => {
                             else {
                                 console.log('no userID')
                                 setediting(false)
+                                setIsLoading(false)
                             }
                         })
                     });
@@ -180,13 +176,16 @@ const Profile = () => {
                 if (userID !== '') {
                     getDataEvent(userID);
                     console.log('success mount data')
+                    setIsLoading(false)
+                    setediting(false)
+                    toast.success("Profile succesfully updated.", { theme: "colored" })
                 }
                 else {
                     console.log('no userID')
+                    setIsLoading(false)
                 }
             })
         }
-
     }
 
     const resetPassword = () => {
@@ -200,12 +199,11 @@ const Profile = () => {
     }
 
     const setdata = () => {
-
         setuserImage(userListDetails.UserImage)
         setuserContact(userListDetails.UserContact)
         setuserName(userListDetails.UserName)
         setediting(true)
-
+        setvalidate(false)
     }
 
     const emptydatafunction = () => {
@@ -214,7 +212,21 @@ const Profile = () => {
         setuserAddress("") */
         setediting(false)
     }
-
+    const checkvalidate = () => {
+        if (userContact === '' && userName === '') {
+            toast.error("Please fill in all the details in order to update your profile", { theme: "colored" })
+            setIsLoading(false)
+        }
+        else if (userContact === '') {
+            toast.error("The User Contact cannot be empty", { theme: "colored" })
+            setIsLoading(false)
+        }
+        else if (userName === '') {
+            toast.error("The User Name cannot be empty", { theme: "colored" })
+            setIsLoading(false)
+        }
+        else setvalidate(true)
+    }
     return (
         <div className="d-flex" style={{ backgroundColor: '#333', minHeight: "100vh" }}>
             <Sidebar />
@@ -329,10 +341,31 @@ const Profile = () => {
                                                 {Modaltextinput({ name: "Contact Number", data: userContact, onchange: e => { setuserContact(e.target.value) }, placeholder: "e.g 0129182737" })}
                                             </div>
                                         </div>
-                                        <div className="modal-footer p-0 pt-4 pb-5 justify-content-center" id="user-footer">
-                                            <button type="button" id="button-boxshadow" className="px-3 our_theme_title fw-light py-2 rounded border-0" style={{
-                                                backgroundColor: "transparent",
-                                            }} data-dismiss="modal" onClick={() => { editprofile(); }}>{"Save Changes"}</button>
+
+                                        <div className="modal-footer p-0 pt-4 pb-5 justify-content-center align-items-center font-weight-light" id="user-footer">
+                                            {
+                                                validate ?
+                                                    <>
+                                                        <svg id='success-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                                                            <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
+                                                            <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+                                                        </svg>
+                                                    </>
+                                                    : <p className='m-0 our_theme_title pr-4' style={{ fontSize: "0.8rem" }}>*User must validate before doing any changes</p>
+                                            }    <div className=''>
+
+                                                {
+                                                    validate ? <button type="button" id="button-boxshadow" className="px-3 our_theme_title fw-light py-2 rounded border-0" style={{
+                                                        backgroundColor: "transparent",
+                                                    }} data-dismiss="modal" onClick={() => { editprofile(); }}>{"Save Changes"}</button> :
+                                                        <button type="button" id="button-boxshadow" className="px-3 our_theme_title fw-light py-2 rounded border-0" style={{
+                                                            backgroundColor: "transparent",
+                                                        }} onClick={() => { checkvalidate(); }}>{"Validate"}</button>
+                                                }
+
+
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -345,7 +378,6 @@ const Profile = () => {
                                         {(timer === '00:00:00' || timer === '00:00:01') ? null : <small><p className='text-muted m-0 me-3'>{timer}</p></small>}
                                         <button className='bg-transparent border-0' style={{ color: (timer === '00:00:00' || timer === '00:00:01') ? "#62C6CC" : "grey" }} disabled={timer === '00:00:00' ? false : true} onClick={() => { resetPassword() }}>Send Email</button>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

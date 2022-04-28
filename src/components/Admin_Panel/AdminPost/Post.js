@@ -91,11 +91,10 @@ const Post = (props) => {
 
                     ApiClient.POST(API.updateUserVote, body).then((result) => {
                         setlike(true)
-                        setupvote(true)
                         console.log(result)
-
                         console.log("update userLike", body)
                         if (userID !== '') {
+                            setupvote(true)
                             getDataEvent(userID);
                             console.log('success mount data')
                         }
@@ -117,10 +116,8 @@ const Post = (props) => {
 
                     ApiClient.POST(API.updateUserVote, body).then((result) => {
                         setlike(false)
-                        setupvote(false)
-                        console.log("update userLike", body)
-                        console.log("update userLike", body)
                         if (userID !== '') {
+                            setupvote(false)
                             getDataEvent(userID);
                             console.log('success mount data')
                         }
@@ -151,9 +148,6 @@ const Post = (props) => {
 
     const item = props.data
     const userdata = props.userdetails
-    console.log(item, "item")
-    console.log(userdata, "userdata")
-    console.log(allFaculty, "allFaculty")
 
     return (
         <div className="container-sm card py-4 m-auto mt-4" id="admin_panel_post" style={{ backgroundColor: '#2E3139' }} >
@@ -189,7 +183,6 @@ const Post = (props) => {
                     <div className='d-flex flex-row'>
                         <p className='m-0 pr-3'>{item.PostVote}</p>
                         <div id='testtest'>
-                            {console.log(voteList, item.postID, "ddd")}
                             {
                                 upvote ? <BiDownvote id="testrun2" size={25} onClick={() => { userVote(item.PostID) }} /> :
                                     <BiUpvote id="testrun" size={25} onClick={() => { userVote(item.PostID) }} />

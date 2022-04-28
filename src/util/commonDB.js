@@ -37,10 +37,7 @@ export const getDataEvent = (userID) => {
     
         commonStore.update(s => {
           s.courseDetails = TempCourseList;
-        });
-
-        console.log(TempCourseList)
-    
+        });    
       })
 
       ApiClient.GET(API.getEnquiry).then(response => {
@@ -95,10 +92,7 @@ export const getDataEvent = (userID) => {
     
         commonStore.update(s => {
           s.allFaculty = tempFaculty;
-        });
-
-        console.log(tempFaculty)
-    
+        });    
       })
 
       ApiClient.GET(API.getAdminPost).then(response => {
@@ -111,10 +105,7 @@ export const getDataEvent = (userID) => {
     
         commonStore.update(s => {
           s.allPost = tempPost;
-        });
-
-        console.log(response)
-    
+        });    
       })
 
       ApiClient.GET(API.getAdminVote).then(response => {
@@ -127,10 +118,7 @@ export const getDataEvent = (userID) => {
     
         commonStore.update(s => {
           s.voteList = tempVoteList;
-        });
-
-        console.log(tempVoteList)
-    
+        });    
       })
 
       ApiClient.GET(API.getAdminComment).then(response => {
@@ -143,10 +131,7 @@ export const getDataEvent = (userID) => {
     
         commonStore.update(s => {
           s.allComment = tempComment;
-        });
-
-        console.log(response)
-    
+        });    
       })
     
 };

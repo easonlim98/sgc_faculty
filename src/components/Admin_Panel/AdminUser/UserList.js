@@ -20,6 +20,7 @@ import LoadingSpinner from "../../general-components/LoadingSpinner";
 import { getDataEvent } from '../../../util/commonDB';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { ToastContainer, toast } from 'react-toastify';
 
 const UserList = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +38,7 @@ const UserList = () => {
   const [userDepartment, setUserDepartment] = useState('');
   const [userPosition, setUserPosition] = useState('');
   const [userContact, setUserContact] = useState('');
-
+  const [validate, setvalidate] = useState(false);
   const [editfunction, seteditfunction] = useState(false);
 
 
@@ -52,7 +53,8 @@ const UserList = () => {
   }, [userID]);
 
   const createUser = () => {
-    setIsLoading(false);
+    setIsLoading(true);
+    setvalidate(false)
     if (userTitle !== '' && userName !== '' &&
       userTitle !== '' && userEmail !== '' &&
       employeeID !== '' && userPosition !== '' && userContact !== '') {
@@ -82,8 +84,7 @@ const UserList = () => {
           ApiClient.POST(API.createUser, body).then((result) => {
             emptydata()
             setIsLoading(false);
-
-            console.log('successfully created user')
+            toast.success("New user succesfully created.", { theme: "colored" })
 
             var targetBlock = {
               receiver: userEmail,
@@ -116,7 +117,7 @@ const UserList = () => {
         }).catch((error) => {
           console.log(error)
           setIsLoading(false);
-
+          toast.error(error.message, { theme: "colored" })
         });;
 
     }
@@ -127,7 +128,25 @@ const UserList = () => {
     }
   }
 
+  const checkvalidate = () => {
+    if (userTitle !== '' && userName !== '' &&
+      userTitle !== '' && userEmail !== '' &&
+      employeeID !== '' && userPosition !== '' && userContact !== '') {
+      setvalidate(true)
+    }
+    else toast.error("In order to modify user, please fill in the all the required fields.", { theme: "colored" })
+  }
+
+  const checkupdatevalidate = () => {
+    if (userTitle !== '' && userName !== '' &&
+      userPosition !== '') {
+      setvalidate(true)
+    }
+    else toast.error("In order to modify user, please fill in the all the required fields.", { theme: "colored" })
+  }
+
   const updateUser = () => {
+    setvalidate(false)
 
     var body = {
       UserID: targetUserID,
@@ -141,6 +160,7 @@ const UserList = () => {
         getDataEvent(userID);
         console.log('success mount data')
         emptyedit()
+        toast.success("User Details succesfully updated.", { theme: "colored" })
       }
       else {
         console.log('no userID')
@@ -165,6 +185,7 @@ const UserList = () => {
     setUserDepartment("")
     setUserPosition("")
     setUserTitle("")
+    setvalidate(false)
   }
   const emptydata = () => {
     setUserName("")
@@ -321,12 +342,19 @@ const UserList = () => {
     setUserDepartment("")
     setUserContact("")
     seteditfunction(false)
-    
   }
 
   return (
     <div className="d-flex" id="category-backgroundweh" style={{ backgroundColor: '#333' }}>
       <Sidebar />
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+      />
       <div className='col rounded' id='pro-background-container'>
         {isLoading ? <div className='container position-relative d-flex col h-100'>
           <LoadingSpinner /> </div> :
@@ -363,13 +391,30 @@ const UserList = () => {
                     {/* All State: userName, userEmail, userPassword, employeeID, userDepartment, userPosition */}
                     {Modaltextinput({ name: "User Title", data: userTitle, onchange: e => { setUserTitle(e.target.value) }, placeholder: "e.g Prof." })}
                     {Modaltextinput({ name: "User Name", data: userName, onchange: e => { setUserName(e.target.value) }, placeholder: "e.g User Name" })}
-                    {editfunction ? null : Modaltextinput({ name: "Contact Number", data: userContact,onchange: e => { setUserContact(e.target.value) }, placeholder: "e.g 012345678" })}
-                    {editfunction ? null : Modaltextinput({ name: "User Email",data: userEmail ,onchange: e => { setUserEmail(e.target.value) }, placeholder: "e.g example@gmail.com" })}
-                    {editfunction ? null : Modaltextinput({ name: "Password", data: userPassword,onchange: e => { setUserPassword(e.target.value) }, placeholder: "e.g *******" })}
-                    {editfunction ? null : Modaltextinput({ name: "Employee ID",data: employeeID ,onchange: e => { setEmployeeID(e.target.value) }, placeholder: "e.g QAC101419" })}
+                    {editfunction ? null : Modaltextinput({ name: "Contact Number", data: userContact, onchange: e => { setUserContact(e.target.value) }, placeholder: "e.g 012345678" })}
+                    {editfunction ? null : Modaltextinput({ name: "User Email", data: userEmail, onchange: e => { setUserEmail(e.target.value) }, placeholder: "e.g example@gmail.com" })}
+                    {editfunction ? null : Modaltextinput({ name: "Password", data: userPassword, onchange: e => { setUserPassword(e.target.value) }, placeholder: "e.g *******" })}
+                    {editfunction ? null : Modaltextinput({ name: "Employee ID", data: employeeID, onchange: e => { setEmployeeID(e.target.value) }, placeholder: "e.g QAC101419" })}
                     {Modaltextinput({ name: "User Position", data: userPosition, onchange: e => { setUserPosition(e.target.value) }, placeholder: "e.g Staff" })}
                     <div className="modal-footer p-0 pt-4 pb-3 justify-content-center" id="user-footer">
-                      <button type="button" className="px-3 py-2 rounded purple border-0 " id="Modal-done-button" data-dismiss="modal" onClick={() => { editfunction ? updateUser() : createUser(); }}>{editfunction ? "Save Changes" : "Add User"}</button>
+                      {
+                        validate ?
+                          <>
+                            <svg id='success-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                              <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
+                              <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+                            </svg>
+                          </>
+                          : <p className='m-0 our_theme_title pr-4' style={{ fontSize: "0.8rem" }}>*User must validate before doing any changes</p>
+                      }
+                      {console.log(editfunction)}
+                      {
+                        validate ?
+                          <button type="button" className="px-3 py-2 rounded purple border-0 " id="Modal-done-button" data-dismiss="modal" onClick={() => { editfunction ? updateUser() : createUser(); }}>{editfunction ? "Save Changes" : "Add User"}</button>
+                          :
+                          <button type="button" className="px-3 py-2 rounded purple border-0 " id="Modal-done-button" onClick={() => { editfunction ? checkupdatevalidate() : checkvalidate() }}>{"Validate"}</button>
+                      }
+
                     </div>
                   </div>
                 </div>

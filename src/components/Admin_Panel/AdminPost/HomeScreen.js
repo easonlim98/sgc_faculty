@@ -8,14 +8,12 @@ import './HomeScreen.css'
 import { RiFilterLine, RiCloseFill } from "react-icons/ri";
 import { BiAddToQueue } from "react-icons/bi";
 import { AiOutlineFileProtect } from "react-icons/ai";
-import { FcInfo } from "react-icons/fc";
-import { FaUserNinja, FaWindowClose } from "react-icons/fa";
+import { FaWindowClose } from "react-icons/fa";
 import ReactPaginate from "react-paginate";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Post from './Post';
 import LoadingSpinner from "../../general-components/LoadingSpinner";
-import emailjs from 'emailjs-com';
 import { getDataEvent } from '../../../util/commonDB';
 import 'firebase/storage'
 import firebase from 'firebase/app';
@@ -27,11 +25,9 @@ const HomeScreen = () => {
   const selectedUser = userStore.useState(s => s.selectedUser)
   const userList = commonStore.useState(s => s.userList)
   const allPost = commonStore.useState(s => s.allPost)
-  const categoryList = commonStore.useState(s => s.categoryList)
   const userID = userStore.useState(s => s.userID)
   const allFaculty = commonStore.useState(s => s.allFaculty)
   const [isLoading, setIsLoading] = useState(false);
-  const [Annonymous, setAnnonymous] = useState(false);
   const [selectedFal, setSelectedFal] = useState('');
   const [checkTac, setCheckTac] = useState(false);
   const [postTitle, setPostTitle] = useState('');
@@ -39,11 +35,10 @@ const HomeScreen = () => {
   const [postFileName, setPostFileName] = useState('');
   const [selectedImage, setSelectedImage] = useState("");
   const [postImage, setPostImage] = useState(null);
-  const [checkedSelectCat, setCheckedSelectCat] = useState(false)
-  const [appear, setappear] = useState(false)
-  const [categoryisDisabled, setCategoryisDisabled] = useState(true)
-
-  // const storage = firebase.storage();
+  const [validate, setvalidate] = useState(false);
+  const [categorytext, setcategorytext] = useState("")
+  const [catid, setcatid] = useState("")
+  const [Aplliedfilter, setAplliedfilter] = useState(false)
   useEffect(() => {
     if (userID !== '') {
       getDataEvent(userID);
@@ -53,8 +48,6 @@ const HomeScreen = () => {
       console.log('no userID')
     }
   }, [userID]);
-
-  const emailForm = useRef();
 
   const onFileChange = (e) => {
     let files = e.target.files;
@@ -95,8 +88,8 @@ const HomeScreen = () => {
                 };
                 setIsLoading(false);
                 ApiClient.POST(API.createPost, body).then((result) => {
-                  setappear(false)
                   clearfunction()
+                  toast.success("A public announcement had been created.", { theme: "colored" })
 
                   if (userID !== '') {
                     getDataEvent(userID);
@@ -120,7 +113,6 @@ const HomeScreen = () => {
           };
 
           ApiClient.POST(API.createPost, body).then((result) => {
-            setappear(false)
             clearfunction()
             setIsLoading(false);
 
@@ -153,9 +145,10 @@ const HomeScreen = () => {
     setPostTitle("")
     setPostContent("")
     setCheckTac(false)
-    setCheckedSelectCat(false)
     setPostFileName("")
     setSelectedImage("")
+    setSelectedFal('')
+    setvalidate(false)
   }
 
   const [currenttab, setcurrenttab] = useState("Latest Announcement");
@@ -171,31 +164,31 @@ const HomeScreen = () => {
   }
   function handlechangepage4() {
     setPageNum(0)
-    setPageType(4)
+    setPageType(2)
     setcurrenttab("Most Upvoted Announcement")
   }
-
-  const [categorytext, setcategorytext] = useState("")
-  const [categoryid, setcategoryid] = useState("")
-
-  const [catid, setcatid] = useState("")
-
-  const [Aplliedfilter, setAplliedfilter] = useState(false)
+  const checkvalidate = () => {
+    if (selectedFal !== '' && postTitle !== '' && postContent !== '' && checkTac !== false) {
+      setvalidate(true)
+    }
+    else {
+      toast.error("Please fill in all the details in order to create an announcement", { theme: "colored" })
+      setIsLoading(false)
+    }
+  }
   const clear_filter = () => {
     setcategorytext('')
     setAplliedfilter(false)
   }
-console.log(allPost)
   const displayPost = allPost.slice().sort(function (a, b) {
     if (pagetype === 1) {
       return new Date(b.CreatedAt).getTime() - new Date(a.CreatedAt).getTime()
     }
-    if (pagetype === 4) {
-      return b.PostVote-a.PostVote
+    if (pagetype === 2) {
+      return b.PostVote - a.PostVote
     }
 
   }).filter((item) => {
-    console.log(item, 'ffff')
     if (Aplliedfilter === true && item.FacultyID === catid) {
       return item
     } else if (Aplliedfilter === false) {
@@ -236,7 +229,7 @@ console.log(allPost)
                 <p className="our_theme_title mb-0">Add new post</p>
               </div>
               <div className="col align-items-center d-flex justify-content-end">
-                <BiAddToQueue onClick={() => setappear(true)} className="our_theme_title" size={20} data-toggle="modal" data-target="#createCategoryModal" />
+                <BiAddToQueue onClick={() => ''} className="our_theme_title" size={20} data-toggle="modal" data-target="#createCategoryModal" />
               </div>
             </div>
             <nav>
@@ -365,7 +358,7 @@ console.log(allPost)
           <div className="modal-dialog modal-dialog-centered" id="modal-maxwidth-container" >
             <div className="modal-content" id="home-modal-container">
               <div className="modal-header position-relative border-bottom-0">
-                <h5 className="modal-title purple col text-center py-2">Create Post</h5>
+                <h5 className="modal-title purple col text-center py-2">Create Announcement</h5>
                 <RiCloseFill className="btn-close position-absolute purple" id='modal-close-button' onClick={() => clearfunction()} data-dismiss="modal" aria-label="Close" />
               </div>
               <div className="modal-body row justify-content-md-center m-2 px-1 py-4" id="create-post-modal-body">
@@ -448,7 +441,24 @@ console.log(allPost)
                           <p className='m-0 our_theme_color'>Click here to upload your image</p>
                         </label>
                       </div>
-                      <button type="button" data-dismiss={"modal"} className="px-3 py-2 rounded purple border-0" style={{ width: 'unset' }} id="Modal-done-button" onClick={() => { createPost() }} >Create Post</button>
+                      <div className='d-flex flex-row '>
+                        {
+                          validate ?
+                            <>
+                              <svg id='success-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                                <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
+                                <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+                              </svg>
+                            </>
+                            : <></>
+                        }
+                        {
+                          validate ?
+                            <button type="button" data-dismiss={"modal"} className="px-3 py-2 rounded purple border-0" style={{ width: 'unset' }} id="Modal-done-button" onClick={() => createPost()} >{'Create'}</button>
+                            :
+                            <button type="button" className="px-3 py-2 rounded purple border-0" style={{ width: 'unset' }} id="Modal-done-button" onClick={() => checkvalidate()} >{'Validation'}</button>
+                        }
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -459,7 +469,7 @@ console.log(allPost)
         {/*Modal End*/}
       </div >
 
-    </div>
+    </div >
   )
 }
 

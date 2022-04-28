@@ -20,6 +20,7 @@ import emailjs from 'emailjs-com';
 import { getDataEvent } from '../../../util/commonDB';
 import { VscPreview } from "react-icons/vsc";
 import moment from 'moment';
+import { ToastContainer, toast } from 'react-toastify';
 
 const EnquiryList = () => {
   const userID = userStore.useState(s => s.userID);
@@ -28,9 +29,11 @@ const EnquiryList = () => {
   const postPerPage = 10;
   const pagesVisited = pageNum * postPerPage;
   const pageCount = Math.ceil(EnquiryList.length / postPerPage);
+  const [validate, setvalidate] = useState(false);
 
   const [targetEnquiry, setTargetEnquiry] = useState('');
   const [replyMessage, setReplyMessage] = useState('');
+  const [edit, setEdit] = useState(false);
 
   const changePage = ({ selected }) => {
     setPageNum(selected)
@@ -53,6 +56,12 @@ const EnquiryList = () => {
       </th>
     )
   }
+  const checkvalidate = () => {
+    if (replyMessage === '') {
+      toast.error("In order to reply the applicant, please fill in the message field.", { theme: "colored" })
+    }
+    else setvalidate(true)
+  }
 
   const updateEnquiry = () => {
     var body = {
@@ -74,7 +83,8 @@ const EnquiryList = () => {
       }
 
       emailjs.send('service_t41roh7', 'template_b3e0izi', targetBlock, 'B7FQ2OkOz8Cyu4mvQ')
-
+      toast.success("An enquiry response had been sent to the applicant's email address.", { theme: "colored" })
+      setvalidate(false)
       if (userID !== '') {
         getDataEvent(userID);
         console.log('success mount data')
@@ -83,7 +93,6 @@ const EnquiryList = () => {
         console.log('no userID')
       }
       console.log('successfully update enquiry')
-
     });
   }
 
@@ -97,17 +106,22 @@ const EnquiryList = () => {
         <div className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">{appDate}{' '}{appTime}</div>
         <div className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">{status === '0' ? 'PENDING' : 'COMPLETED'}</div>
         <div className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">
-          <VscPreview id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop" onClick={() => setTargetEnquiry(enqID)} />
+          <VscPreview id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop"
+            onClick={() => {
+              setTargetEnquiry(enqID)
+              setEdit(false)
+            }} />
           {status === '0' ?
             <AiOutlineMail id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop"
               onClick={() => {
                 setTargetEnquiry(enqID)
+                setEdit(true)
               }}
             />
             :
-            <BiMessageRoundedCheck size={25} className="me-4" 
+            <BiMessageRoundedCheck size={25} className="me-4"
               onClick={() => {
-                setTargetEnquiry(enqID)
+                toast.info("This Enquiry had received a response.", { theme: "colored" })
               }}
             />
           }
@@ -153,7 +167,6 @@ const EnquiryList = () => {
                 return item
               }
 
-
             }).map((item, index) => (
               Tablecontent({ enqID: item.EnquiryID, id: item.CourseID, name: item.ApplicantName, content: item.ApplicantContent, appDate: item.AppointmentDate, appTime: item.AppointmentTime, status: item.ApplicationStatus, index })
             )) : null}
@@ -183,6 +196,14 @@ const EnquiryList = () => {
   return (
     <div className="d-flex" id="category-backgroundweh" style={{ backgroundColor: '#333' }}>
       <Sidebar />
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+      />
       <div className='col rounded' id='pro-background-container'>
         <div className='container' id='cat-maxwidth'>
           <div className='d-flex justify-content-between align-items-center mt-5 mb-4' id="cat-title-o">
@@ -205,7 +226,7 @@ const EnquiryList = () => {
               <div className="modal-content" id="category-create-post-modal">
                 <div className="modal-header d-flex col align-items-center position-relative justify-content-center py-4" id="create-post-modal-header">
                   <h5 className="modal-title purple" id="create-post-modal-header-title">{"Enquiry Details"}</h5>
-                  <RiCloseFill className="btn-close position-absolute purple" data-dismiss="modal" size={35} id='close-icon' />
+                  <RiCloseFill onClick={() => setvalidate(false)} className="btn-close position-absolute purple" data-dismiss="modal" size={35} id='close-icon' />
                 </div>
                 <div className="modal-body" id="category-modal">
                   <div>
@@ -221,12 +242,37 @@ const EnquiryList = () => {
                             </> : <></>
                         )) : null
                     }
+                    <div className="modal-footer p-0 m-0 justify-content-center align-items-center font-weight-light" id="user-footer">
+                      {edit ?
+                        <>
+                          <p className='fw-normal w-100 mt-1 pb-1 mb-3 purple fs-6 total-cat'>{"Message"}</p>
+                          <textarea autoComplete='off' value={replyMessage} onChange={e => { setReplyMessage(e.target.value) }} type="text" className="form-control rounded border-0" placeholder="e.g Please attend the consultation appointment" aria-label="Title" id="side-bar-search-title" aria-describedby="inputGroup-sizing-default" />
+                        </> : <></>}
+                      {edit ?
+                        validate ?
+                          <>
+                            <svg id='success-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                              <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
+                              <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+                            </svg>
+                          </>
+                          : <p className='m-0 our_theme_title pr-4' style={{ fontSize: "0.8rem" }}>*User must validate before doing any changes</p> : <></>
+                      }
 
-                    <p className='fw- mt-1 pb-1 purple fs-6 total-cat'>{"Message"}</p>
-                    <textarea autoComplete='off' value={replyMessage} onChange={e => { setReplyMessage(e.target.value) }} type="text" className="form-control rounded border-0" placeholder="e.g Please attend the consultation appointment" aria-label="Title" id="side-bar-search-title" aria-describedby="inputGroup-sizing-default" />
-                  </div>
-                  <div className="modal-footer border-0 justify-content-center" id="category-footer">
-                    <button type="button" className="px-3 py-2 rounded purple border-0" id="Modal-done-button" data-dismiss="modal" onClick={() => updateEnquiry()}>{"Reply"}</button>
+                      {
+                        edit ?
+                          validate ?
+                            <>
+                              <div className="modal-footer border-0 justify-content-center" id="category-footer">
+                                <button type="button" className="px-3 py-2 rounded purple border-0" id="Modal-done-button" data-dismiss="modal" onClick={() => updateEnquiry()}>{"Reply"}</button>
+                              </div>
+                            </> :
+                            <button type="button" id="button-boxshadow" className="px-3 our_theme_title fw-light py-2 rounded border-0" style={{
+                              backgroundColor: "transparent",
+                            }} onClick={() => { checkvalidate(); }}>{"Validate"}</button>
+                          : <></>
+                      }
+                    </div>
                   </div>
                 </div>
               </div>

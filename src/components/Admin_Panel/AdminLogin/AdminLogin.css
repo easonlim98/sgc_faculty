@@ -49,6 +49,13 @@ a {
     text-decoration: unset !important;
 }
 
+.Toastify__close-button.Toastify__close-button--light {
+    align-self: center;
+    padding-bottom: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
 #admin-background {
     height: 100vh;
     display: flex;

@@ -15,9 +15,10 @@ import { commonStore } from '../../../store/commonStore';
 import { userStore } from '../../../store/userStore';
 // import listenToData from '../../../util/CommonFunc';
 import ReactPaginate from "react-paginate";
-import Modal from '../Modal/Modal'
 import { VscPreview } from "react-icons/vsc";
 import { getDataEvent } from '../../../util/commonDB';
+import { ToastContainer, toast } from 'react-toastify';
+import LoadingSpinner from "../../general-components/LoadingSpinner";
 
 const CategoryList = () => {
   const userID = userStore.useState(s => s.userID);
@@ -32,6 +33,8 @@ const CategoryList = () => {
   const [targetcourse, settargetcourse] = useState('');
   const [targetlvl, settargetlvl] = useState('');
   const [targetCourseID, setTargetCourseID] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [validate, setvalidate] = useState(false);
   const arraylvl = [
     { lvlname: 'Certificate' }, { lvlname: 'Foundation' }, { lvlname: 'Diploma' }, { lvlname: 'Bachelor Degree' }, { lvlname: 'Executive Diploma' }, { lvlname: 'Postgraduate' },
   ];
@@ -88,6 +91,7 @@ const CategoryList = () => {
         console.log('no userID')
       }
       console.log('successfully update category')
+      toast.success("Category Updated.", { theme: "colored" })
     });
   }
   const setidfunction = (item) => {
@@ -95,11 +99,28 @@ const CategoryList = () => {
     settargetcode(item.corcode)
     settargetcourse(item.corname)
     settargetlvl(item.corlvl)
+    setvalidate(false)
     {
       item.id === 1 ?
         seteditfunction(true)
         : seteditfunction(false)
     }
+  }
+
+  const checkvalidate = () => {
+    if (targetcourse === '' && targetcode === '') {
+      toast.error("Please fill in all the details in order to update the course", { theme: "colored" })
+      setIsLoading(false)
+    }
+    else if (targetcourse === '') {
+      toast.error("The Course Name cannot be empty", { theme: "colored" })
+      setIsLoading(false)
+    }
+    else if (targetcode === '') {
+      toast.error("The Course Code cannot be empty", { theme: "colored" })
+      setIsLoading(false)
+    }
+    else setvalidate(true)
   }
 
   const Tablecontent = ({ corID, corcode, corname, corlvl, index }) => {
@@ -120,8 +141,8 @@ const CategoryList = () => {
     return (
       <div className={editfunction ? 'mb-3' : ''}>
         <p className='fw- mt-3 pb-1 purple fs-6 total-cat'>{item.title}</p>
-        {editfunction ? <textarea className='rounded py-2 px-3 border-0 w-100' style={{ outline: "unset"}} type="text" value={item.data} onChange={item.onchange} /> :
-          <textarea className='rounded border-0 w-100 our_theme_color mb-2' disabled style={{ outline: "unset", background: 'unset', resize: "none"  }} type="text" value={item.data} onChange={item.onchange} />}
+        {editfunction ? <textarea className='rounded py-2 px-3 border-0 w-100' style={{ outline: "unset" }} type="text" value={item.data} onChange={item.onchange} /> :
+          <textarea className='rounded border-0 w-100 our_theme_color mb-2' disabled style={{ outline: "unset", background: 'unset', resize: "none" }} type="text" value={item.data} onChange={item.onchange} />}
       </div>
     )
   }
@@ -200,6 +221,14 @@ const CategoryList = () => {
   return (
     <div className="d-flex" id="category-backgroundweh" style={{ backgroundColor: '#333' }}>
       <Sidebar />
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+      />
       <div className='col rounded' id='pro-background-container'>
         <div className='container' id='cat-maxwidth'>
           <div className='d-flex justify-content-between align-items-center mt-5 mb-4' id="cat-title-o">
@@ -246,11 +275,32 @@ const CategoryList = () => {
                       <input className='rounded border-0 w-100 our_theme_color' disabled={true} style={{ outline: "unset", background: 'unset' }} type="text" value={targetlvl} />}
 
                   </div>
-                  {
-                    editfunction ? <div className="modal-footer border-0 justify-content-center" id="category-footer">
-                      <button type="button" className="px-3 py-2 rounded purple border-0 " id="Modal-done-button" data-dismiss="modal" onClick={() => updateCategory()}>{"Edit Course"}</button>
-                    </div> : <></>
-                  }
+                  <div className="modal-footer border-0 justify-content-center" id="category-footer">
+
+                    {
+                      editfunction ?
+                        validate ?
+                          <>
+                            <svg id='success-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                              <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
+                              <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+                            </svg>
+                          </>
+                          : <p className='m-0 our_theme_title pr-4' style={{ fontSize: "0.8rem" }}>*User must validate before doing any changes</p>
+                        : <></>
+                    }
+                    {
+                      editfunction ?
+                        validate ?
+                          <button type="button" className="px-3 py-2 rounded purple border-0 " id="Modal-done-button" data-dismiss="modal" onClick={() => updateCategory()}>{"Edit Course"}</button>
+                          :
+                          <button type="button" id="button-boxshadow" className="px-3 our_theme_title fw-light py-2 rounded border-0" style={{
+                            backgroundColor: "transparent",
+                          }} onClick={() => { checkvalidate(); }}>{"Validate"}</button>
+                        : <></>
+                    }
+                  </div>
+
                 </div>
               </div>
             </div>
