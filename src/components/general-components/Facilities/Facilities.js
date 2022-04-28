@@ -10,7 +10,6 @@ const Facilities = (props) => {
     const facility = props.facilitiesdetails[0]
 
     const navigate = useNavigate();
-    console.log(props, 'hii')
     return (
         <div className="facilieites-container facilitesbanner">
             <img className="facilitesimage" src={facility.detailsimage} />

@@ -30,7 +30,7 @@ const EnquiryList = () => {
   const pageCount = Math.ceil(EnquiryList.length / postPerPage);
 
   const [targetEnquiry, setTargetEnquiry] = useState('');
-  const [replyMessage, setReplyMessage] = useState('Hello');
+  const [replyMessage, setReplyMessage] = useState('');
 
   const changePage = ({ selected }) => {
     setPageNum(selected)
@@ -138,7 +138,6 @@ const EnquiryList = () => {
               {tableheader("")}
             </tr>
           </thead>
-          {console.log(EnquiryList, "EnquiryList")}
           <tbody className='border-0'>
             {EnquiryList ? EnquiryList.slice(pagesVisited, pagesVisited + postPerPage).filter((item) => {
               if (searchText === "") {

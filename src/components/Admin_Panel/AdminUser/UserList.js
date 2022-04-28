@@ -292,7 +292,6 @@ const UserList = () => {
             </tr>
           </thead>
           <tbody className='border-0'>
-            {console.log(userList)}
             {userList ? userList.filter((item) => {
 
               if (searchText === "") {

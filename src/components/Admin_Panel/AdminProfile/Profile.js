@@ -72,7 +72,6 @@ const Profile = () => {
             total, hours, minutes, seconds
         };
     }
-    console.log(userListDetails)
     const startTimer = (e) => {
         let { total, hours, minutes, seconds }
             = getTimeRemaining(e);

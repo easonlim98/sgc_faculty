@@ -11,7 +11,6 @@ const TabsComponent = (props) => {
     }, []);
     const student = props.studentdetails[0]
     const achievement = props.achievementdetails[0]
-    console.log(achievement)
     const tabItems = [
         {
             id: 1,

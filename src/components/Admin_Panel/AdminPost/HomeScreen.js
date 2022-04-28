@@ -160,6 +160,7 @@ const HomeScreen = () => {
     setSelectedImage("")
   }
 
+  const [currenttab, setcurrenttab] = useState("Latest Announcement");
 
   const [pageNum, setPageNum] = useState(0);
   const postPerPage = 5;
@@ -168,18 +169,12 @@ const HomeScreen = () => {
   function handlechangepage() {
     setPageNum(0)
     setPageType(1)
-  }
-  function handlechangepage2() {
-    setPageNum(0)
-    setPageType(2)
-  }
-  function handlechangepage3() {
-    setPageNum(0)
-    setPageType(3)
+    setcurrenttab("Latest Announcement")
   }
   function handlechangepage4() {
     setPageNum(0)
     setPageType(4)
+    setcurrenttab("Most Upvoted Announcement")
   }
 
   const [categorytext, setcategorytext] = useState("")
@@ -223,7 +218,7 @@ const HomeScreen = () => {
   var today = new Date()
   const todaydate = today.getFullYear() + '-' + ("0" + (today.getMonth() + 1)).slice(-2) + '-' + today.getDate();
   return (
-    <div className="d-flex" style={{ backgroundColor: '#333' }}>
+    <div className="d-flex" id="category-backgroundweh" style={{ backgroundColor: '#333' }}>
       <Sidebar />
       <ToastContainer
         position="top-center"
@@ -233,18 +228,17 @@ const HomeScreen = () => {
         closeOnClick
         rtl={false}
       />
-      <div className="container-fluid p-4 pt-5" style={{ backgroundColor: '#22252D' }}>
-        <div className="col d-flex mb-3">
-        <h1 id="homescreen-welcomeuser" className="text-white px-3">Welcome, {selectedUser.UserName}!</h1>
-        
-        </div>
-        
+      <div className="col rounded py-5" id='pro-background-container'>
+        <div className="col d-flex flex-column mb-3">
+          <h2 id="homescreen-welcomeuser" className="text-white ">Welcome {selectedUser.UserName}</h2>
+          <h5 id="homescreen-welcomeuser" className="text-white mt-3">Announcement Page</h5>
 
+        </div>
         {isLoading ? <div className='container position-relative d-flex col h-100 pt-5'>
           <LoadingSpinner /> </div> :
 
           <div className="container" id="post-middle-container">
-            <div className="row px-2 py-3 rounded" id="admin-panel-add" style={{ backgroundColor: 'rgb(46, 49, 57)' }}>
+            <div className="row px-2 py-3 rounded" id="home-add-new">
               <div className="col align-items-center">
                 <p className="text-light mb-0">Add new post</p>
               </div>
@@ -253,14 +247,16 @@ const HomeScreen = () => {
               </div>
             </div>
             <nav>
-              <div className="nav nav-tabs position-relative align-items-center " id="nav-tab" role="tablist">
-                <button className="nav-link active" onClick={() => handlechangepage()} id="nav-recent-tab" data-toggle="tab" data-target="#nav-recent" type="button" role="tab" aria-controls="nav-recent" aria-selected="true">Latest Ideas</button>
-                <button className="nav-link" onClick={() => handlechangepage2()} id="nav-hot-tab" data-toggle="tab" data-target="#nav-hot" type="button" role="tab" aria-controls="nav-hot" aria-selected="false">Most Viewed Ideas</button>
-                <button className="nav-link" onClick={() => handlechangepage3()} id="nav-comments-tab" data-toggle="tab" data-target="#nav-comments" type="button" role="tab" aria-controls="nav-comments" aria-selected="false">Latest Comments</button>
-                <button className="nav-link" onClick={() => handlechangepage4()} id="nav-popular-tab" data-toggle="tab" data-target="#nav-popular" type="button" role="tab" aria-controls="nav-popular" aria-selected="false">Most Popular Ideas</button>
-                <div className='position-absolute col align-items-center d-flex justify-content-end' id='home-filter'>
-                  {categorytext ? <FaWindowClose className='me-3' color='white' onClick={clear_filter} /> : null}
-                  <RiFilterLine className='text-light' data-toggle="modal" data-target="#staticBackdrop" />
+              <div className="nav nav-tabs position-relative" id="nav-tab" role="tablist">
+                <div className='d-flex col flex-row align-items-center'>
+                  <div className='col d-flex p-0'>
+                    <button className={currenttab === "Latest Announcement" ? "nav-link active rounded" : "nav-link rounded"} onClick={() => handlechangepage()} id="nav-recent-tab" data-toggle="tab" data-target="#nav-recent" type="button" role="tab" aria-controls="nav-recent" aria-selected="true">Latest Announcement</button>
+                    <button className={currenttab === "Most Upvoted Announcement" ? "nav-link active rounded" : "nav-link rounded"} onClick={() => handlechangepage4()} id="nav-popular-tab" data-toggle="tab" data-target="#nav-popular" type="button" role="tab" aria-controls="nav-popular" aria-selected="false">Most Upvoted Announcement</button>
+                  </div>
+                  <div className='' id='home-filter'>
+                    {categorytext ? <FaWindowClose className='me-3' color='white' onClick={clear_filter} /> : null}
+                    <RiFilterLine className='text-light' data-toggle="modal" data-target="#staticBackdrop" />
+                  </div>
                 </div>
                 {/* <!--Start Filter Modal--> */}
                 <div className="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -383,23 +379,22 @@ const HomeScreen = () => {
                 <div className=" col-3 col-lg-3 search-category" id="create-post-modal-search-category">
                   <div id="create-post-modal-category-container">
                     <div className="d-flex flex-row justify-content-between align-items-center">
-                      <p className="m-0 text-light">Faculty</p>
+                      <p className="m-0 text-light">Faculties</p>
                     </div>
                     {allFaculty.map((item, index) => (
                       <div key={index} >
                         <div className=" flex-row justify-content-between align-items-center mt-4" style={{ display: item.ClosureDate <= todaydate ? "none" : "flex" }}>
-                          <p className="text-light m-0" id="">{item.FacultyID}</p>
+                          <p className="text-light m-0 one_line_css" id="">{item.FacultyName}</p>
                           <input
                             className="form-check-input"
                             type="radio"
                             name="RadioButton"
                             id="radio-title"
                             value={item.FacultyID}
-                            onChange={(select) => { setSelectedFal(select.target.value); console.log(select.target.value) }}
-                            checked={checkedSelectCat}
-                            onClick={() => setCheckedSelectCat(true)}
-
+                            onChange={(e) => { setSelectedFal(e.currentTarget.value) }}
+                            checked={item.FacultyID === selectedFal}
                           />
+                          {console.log(selectedFal)}
                         </div>
 
                       </div>
