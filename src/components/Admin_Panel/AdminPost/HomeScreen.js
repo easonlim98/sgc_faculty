@@ -26,10 +26,9 @@ const HomeScreen = () => {
 
   const selectedUser = userStore.useState(s => s.selectedUser)
   const userList = commonStore.useState(s => s.userList)
-  const userDetails = userStore.useState(s => s.userDetails)
+  const allPost = commonStore.useState(s => s.allPost)
   const categoryList = commonStore.useState(s => s.categoryList)
   const userID = userStore.useState(s => s.userID)
-  const postList = commonStore.useState(s => s.postList)
   const allFaculty = commonStore.useState(s => s.allFaculty)
   const [isLoading, setIsLoading] = useState(false);
   const [Annonymous, setAnnonymous] = useState(false);
@@ -44,6 +43,7 @@ const HomeScreen = () => {
   const [appear, setappear] = useState(false)
   const [categoryisDisabled, setCategoryisDisabled] = useState(true)
 
+  console.log(allPost, "allPost")
   // const storage = firebase.storage();
   useEffect(() => {
     if (userID !== '') {
@@ -188,7 +188,7 @@ const HomeScreen = () => {
   }
 
 
-  const displayPost = postList.slice().sort(function (a, b) {
+  const displayPost = allPost.slice().sort(function (a, b) {
     if (pagetype === 1) {
       return new Date(b.CreatedAt).getTime() - new Date(a.CreatedAt).getTime()
     }
@@ -203,7 +203,7 @@ const HomeScreen = () => {
   }).slice(pagesVisited, pagesVisited + postPerPage).map((item) => (
     <Post data={item} userdetails={userList} />
   ));
-  const pageCount = Math.ceil(postList.length / postPerPage);
+  const pageCount = Math.ceil(allPost.length / postPerPage);
   const changePage = ({ selected }) => {
     setPageNum(selected)
   }
