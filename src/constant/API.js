@@ -1,4 +1,3 @@
-const createUser = 'createUser.php'
 const getFaculty = 'getFaculty.php'
 const getKLCourse='getKLCourse.php'
 const getSJCourse='getSJCourse.php'
@@ -26,6 +25,10 @@ const createPost='createPost.php'
 const getAdminPost='getAdminPost.php'
 const getAdminVote='getAdminVote.php'
 const updateUserVote='updateUserVote.php'
+const updateUser='updateUser.php'
+const createUser='createUser.php'
+const updateCourse='updateCourse.php'
+const createComment='createComment.php'
 
 const API = {
     createUser,
@@ -55,7 +58,10 @@ const API = {
     createPost,
     getAdminPost,
     getAdminVote,
-    updateUserVote
+    updateUserVote,
+    updateUser,
+    updateCourse,
+    createComment
 };
 
 export default API;

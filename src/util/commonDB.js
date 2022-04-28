@@ -113,7 +113,7 @@ export const getDataEvent = (userID) => {
           s.allPost = tempPost;
         });
 
-        console.log(tempPost)
+        console.log(response)
     
       })
 

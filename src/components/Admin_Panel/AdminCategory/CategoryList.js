@@ -17,6 +17,7 @@ import { userStore } from '../../../store/userStore';
 import ReactPaginate from "react-paginate";
 import Modal from '../Modal/Modal'
 import { VscPreview } from "react-icons/vsc";
+import { getDataEvent } from '../../../util/commonDB';
 
 const CategoryList = () => {
   const userID = userStore.useState(s => s.userID);
@@ -30,6 +31,7 @@ const CategoryList = () => {
   const [targetcode, settargetcode] = useState('');
   const [targetcourse, settargetcourse] = useState('');
   const [targetlvl, settargetlvl] = useState('');
+  const [targetCourseID, setTargetCourseID] = useState('');
   const arraylvl = [
     { lvlname: 'Certificate' }, { lvlname: 'Foundation' }, { lvlname: 'Diploma' }, { lvlname: 'Bachelor Degree' }, { lvlname: 'Executive Diploma' }, { lvlname: 'Postgraduate' },
   ];
@@ -70,14 +72,15 @@ const CategoryList = () => {
     //must put after return success
     seteditfunction(false)
     var body = {
-      CategoryID: targetCategoryID,
-      CategoryName: categoryName,
-      ClosureDate: closureDate,
-      FinalClosure: finalClosure,
+      CourseID: targetCourseID,
+      CourseTitle: targetcourse,
+      CourseCode: targetcode,
+      CourseLevelOfStudy: targetlvl,
     };
-    ApiClient.POST(API.updateCategory, body).then((result) => {
+    ApiClient.POST(API.updateCourse, body).then((result) => {
+      console.log(result)
       if (userID !== '') {
-        // listenToData(userID);
+        getDataEvent(userID);
         console.log('success mount data')
       }
       else {
@@ -87,6 +90,7 @@ const CategoryList = () => {
     });
   }
   const setidfunction = (item) => {
+    setTargetCourseID(item.corID)
     settargetcode(item.corcode)
     settargetcourse(item.corname)
     settargetlvl(item.corlvl)
@@ -97,7 +101,7 @@ const CategoryList = () => {
     }
   }
 
-  const Tablecontent = ({ corcode, corname, corlvl, index }) => {
+  const Tablecontent = ({ corID, corcode, corname, corlvl, index }) => {
 
     return (
       <div className="row m-0 b-0 py-2 align-items-center" style={{ backgroundColor: "transparent" }}>
@@ -105,8 +109,8 @@ const CategoryList = () => {
         <div className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">{corname}</div>
         <div className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">{corlvl}</div>
         <div className="col text-center our_theme_title d-flex align-items-center justify-content-center" id="cat-tablecontent">
-          <AiOutlineEdit id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop" onClick={() => setidfunction({ id: 1, corcode: corcode, corname: corname, corlvl: corlvl })} />
-          <VscPreview id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop" onClick={() => setidfunction({ id: 2, corcode: corcode, corname: corname, corlvl: corlvl })} />
+          <AiOutlineEdit id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop" onClick={() => setidfunction({ id: 1, corID: corID, corcode: corcode, corname: corname, corlvl: corlvl })} />
+          <VscPreview id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop" onClick={() => setidfunction({ id: 2, corID: corID, corcode: corcode, corname: corname, corlvl: corlvl })} />
         </div>
       </div>
     )
