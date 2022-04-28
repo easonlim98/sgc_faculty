@@ -75,6 +75,10 @@
     border: 0;
 }
 
+.h-40 {
+    height: 40px
+}
+
 #admin-cat-button--active {
     background-color: #14213d !important;
     color: #41EDEA !important;

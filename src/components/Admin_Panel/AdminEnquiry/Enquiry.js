@@ -118,7 +118,7 @@ const EnquiryList = () => {
   const Modaltextinput = (item) => {
     return (
       <div className={'mb-1'}>
-        <p className='fw- mt-1 pb-1 purple fs-6 total-cat'>{item.title + " :"}</p>
+        <p className='fw- mt-1 pb-1 purple fs-6 total-cat'>{item.title}</p>
         <textarea className='rounded border-0 w-100 our_theme_color mb-2' disabled style={{ outline: "unset", background: 'unset', resize: "none" }} type="text" value={item.data} />
       </div>
     )
@@ -193,8 +193,8 @@ const EnquiryList = () => {
           <div className='d-flex justify-content-between align-items-center mt-5 mb-4' id="cat-title-o">
             <p className='col fw-bold fs-2 text-white p-0 m-0'>Enquiry List</p>
             <div className="input-group col d-flex flex-row justify-content-end align-items-center position-relative p-0">
-              <AiOutlineSearch className='text-white position-absolute top-50 translate-middle-y' id='category-searchicon' />
-              <input autoComplete='off' type="text" onChange={(event) => { setSearchText(event.target.value); }} className="ps-3 pe-3 py-2 text-white rounded" placeholder="Search Enquiries..." aria-label="Title" id="search-category-input-title" />
+              <AiOutlineSearch className='text-dark position-absolute top-50 translate-middle-y' id='category-searchicon' />
+              <input autoComplete='off' type="text" onChange={(event) => { setSearchText(event.target.value); }} className="ps-3 pe-3 py-2 text-dark rounded" placeholder="Search Enquiries..." aria-label="Title" id="search-category-input-title" />
             </div>
           </div>
           <div className='pt-3 rounded mt-5' id='categoriesrslt-container'>

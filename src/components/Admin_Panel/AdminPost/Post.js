@@ -26,7 +26,6 @@ const Post = (props) => {
     const userList = commonStore.useState(s => s.userList)
     const postList = commonStore.useState(s => s.postList)
     const [commentText, setCommentText] = useState("");
-    const [anonymous, setanonymous] = useState(false);
     const [like, setlike] = useState(false);
     var disabledset = ""
     var today = new Date()
@@ -45,7 +44,6 @@ const Post = (props) => {
                 PostID: PostID,
                 UserID: userID,
                 CommentText: commentText,
-                Annonymous: anonymous === true ? 1 : 0,
             };
 
 
@@ -97,7 +95,7 @@ const Post = (props) => {
                         VoteStatus: '1',
                     };
 
-                    console.log("BODY",  body)
+                    console.log("BODY", body)
 
                     ApiClient.POST(API.updateUserVote, body).then((result) => {
                         setlike(true)
@@ -152,28 +150,15 @@ const Post = (props) => {
 
     }
 
-    
+
     const notificationalert = (item) => {
         return (toast.info(item, { theme: "colored" }))
     }
 
-    const anonymousfunction = ({ userid, postid, }) => {
-        if (anonymous === false) {
-            setanonymous(true)
-            notificationalert("Anonymous had been applied to this post")
-        }
-        else {
-            setanonymous(false)
-            notificationalert("Anonymous had been disabled to this post")
-        }
-    }
-
     const item = props.data
     const userdata = props.userdetails
-    var finalClosure = ""
-    for (var v = 0; v < categoryList.length; v++) {
-        finalClosure = categoryList[v].FinalClosure;
-    }
+    console.log(item, "item")
+    console.log(userdata, "userdata")
 
     return (
         <div className="container-sm card p-0 py-4 m-auto mt-4" id="admin_panel_post" style={{ backgroundColor: '#2E3139' }} >
@@ -209,38 +194,26 @@ const Post = (props) => {
 
                     <div className="col align-items-center d-flex justify-content-end">
                         <button className="btn px-3 py-2 text-light border-0 rounded" style={{ backgroundColor: "#32519F" }} type="button" data-toggle="collapse" data-target={"#Post-Comment-section" + item.PostID} aria-expanded="false" aria-controls="Post-Comment-section" id='post-comment-section'>
-                            {/* {item.CommentLength}{item.CommentLength !== '0' ? ' Comments' : ' Comment'} */}
+                            {"0" + " Comments"}
                         </button>
                     </div>
                 </div>
 
                 {userdata.map((user, index) => (
-
                     <>
                         {user.UserID === item.UserID ?
                             <>
                                 {
-
-
                                     <div className="text-light m-4 mb-2 d-flex flex-row align-items-center">
                                         <img src={userListDetails.UserImage} id="post-comment-avatar" className="rounded-circle p-0" alt="Image" />
-                                        <div className="ms-4 col position-relative">
+                                        <div className="ms-4 col position-relative p-0">
                                             <input className="ps-3 pe-5 py-2 text-light rounded w-100" value={commentText} id="Post-Comment-input"
-                                                placeholder={finalClosure <= todaydate ? "Closure date due, comment section is closed" : "Write a comment... (Maximum 150 words)"}
+                                                placeholder={"Write a comment... (Maximum 150 words)"}
                                                 onChange={e => { setCommentText(e.target.value); }}
                                                 key={index}
-                                                disabled={finalClosure <= todaydate ? true : false}
                                                 autoComplete='off'
                                             />
                                             <div id="comment-column" className="position-absolute top-50 translate-middle-y d-flex align-items-center">
-                                                {(anonymous === true) ?
-                                                    <div className='position-relative'>
-                                                        <FiCheck style={{ top: "60%" }} size={20} onClick={() => anonymousfunction({ userid: user.UserID, postid: item.PostID, ano: item.Annonymous })} className='position-absolute text-danger translate-middle-y' />
-                                                        <FaUserNinja onClick={() => anonymousfunction({ userid: user.UserID, postid: item.PostID, })} id="iconhover" color='#0FFF50' className="text-success me-3" />
-                                                    </div>
-                                                    :
-                                                    <FaUserNinja id="iconhover" onClick={() => anonymousfunction({ userid: user.UserID, postid: item.PostID, alldata: item, })} className="text-light me-3" />
-                                                }
                                                 <AiOutlineSend id="iconhover" onClick={() => { createComment(item.PostID); }} size={20} color={'#FFFFFF'} />
                                             </div>
                                         </div>
