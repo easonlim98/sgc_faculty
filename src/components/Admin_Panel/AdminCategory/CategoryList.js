@@ -166,10 +166,10 @@ const CategoryList = () => {
               else if (item.CourseTitle.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
                 return item
               }
-              else if (item.CourseTitle.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
+              else if (item.CourseCode.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
                 return item
               }
-              else if (item.CourseTitle.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
+              else if (item.CourseLevelOfStudy.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
                 return item
               }
 

@@ -99,13 +99,13 @@ const EnquiryList = () => {
         <div className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">
           <VscPreview id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop" onClick={() => setTargetEnquiry(enqID)} />
           {status === '0' ?
-            <AiOutlineMail id="iconhover" size={25} className="me-4" data-toggle="modal"
+            <AiOutlineMail id="iconhover" size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop"
               onClick={() => {
                 setTargetEnquiry(enqID)
               }}
             />
             :
-            <BiMessageRoundedCheck size={25} className="me-4" data-toggle="modal" data-target="#staticBackdrop"
+            <BiMessageRoundedCheck size={25} className="me-4" 
               onClick={() => {
                 setTargetEnquiry(enqID)
               }}
@@ -146,18 +146,13 @@ const EnquiryList = () => {
               else if (item.ApplicantName.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
                 return item
               }
-              else if (item.ApplicantEmail.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
+              else if (item.CourseID.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
                 return item
               }
               else if (item.AppointmentDate.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
                 return item
               }
-              else if (item.AppointmentTime.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
-                return item
-              }
-              else if (item.ApplicationStatus.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())) {
-                return item
-              }
+
 
             }).map((item, index) => (
               Tablecontent({ enqID: item.EnquiryID, id: item.CourseID, name: item.ApplicantName, content: item.ApplicantContent, appDate: item.AppointmentDate, appTime: item.AppointmentTime, status: item.ApplicationStatus, index })

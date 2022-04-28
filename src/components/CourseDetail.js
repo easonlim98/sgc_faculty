@@ -59,7 +59,15 @@ const CourseDetail = () => {
         }
         setcurrentdate(yyyy + '-' + mm + '-' + dd)
     })
-
+    const clearfunc =()=>{
+        setname("")
+       setnation("")
+       setidentity("")
+       setemail("")
+       setcontent("")
+       setdate("")
+       settime("")
+    }
     const courseDetailsDummy = {
         CourseTitle: 'BSC (HONS) COMPUTING (3+0)',
         CourseCode: '(R2/481/6/0500) (05/24) (A10000)',
@@ -98,7 +106,7 @@ const CourseDetail = () => {
     const Modaltextinput = (item) => {
         return (
             <div className='mb-4'>
-                <p className='text-start text-light'>{item.name}</p>
+                <p value={item.data} className='text-start text-light'>{item.name}</p>
                 <input autoComplete='off' type="text" value={item.data}
                     className='rounded' id='admin-input' placeholder={item.placeholder}
                     onChange={item.onchange} />
@@ -285,13 +293,15 @@ const CourseDetail = () => {
                     </div>
                     : null}
                 <div className="Course_Detail_Course_Name_Slide_Pop_Menu_1">
-                    <a data-toggle="modal" data-target="#applynowcontainer">
+                    <a data-toggle="modal" data-target="#applynowcontainer" >
+                        
                         <div
                             onMouseEnter={() => { setCourse_Detail_Course_Name_Slide_Pop_Menu_3(true); setCourse_Detail_Course_Name_Slide_Pop_Menu_5(true) }}
                             style={{
                                 backgroundColor: "#E9184B",
                                 backgroundImage: "linear-gradient(#E9184B, #B7123A)"
                             }}
+                            
                             className="Course_Detail_Course_Name_Slide_Pop_Menu_2"
                         >
                             <img
@@ -864,6 +874,7 @@ const CourseDetail = () => {
                                 backgroundColor: "#E9184B",
                                 backgroundImage: "linear-gradient(#E9184B, #B7123A)"
                             }}
+                            onClick={clearfunc}
                             className="Course_Detail_Course_Name_Slide_Pop_Menu_2"
                         >
                             <img
@@ -1240,14 +1251,14 @@ const CourseDetail = () => {
                                                 {Modaltextinput({ name: "Email Address: ", data: ApplicantEmail, onchange: text => setemail(text.target.value), placeholder: "e.g JohnSmith@example.com" })}
                                                 <div className='mb-4'>
                                                     <p className='text-start text-light '>{"Appointment Date: "}</p>
-                                                    <input autoComplete='off' style={{ outline: "unset" }} type="date"
+                                                    <input autoComplete='off' style={{ outline: "unset" }} value={AppointmentDate} type="date"
                                                         className='rounded' id='admin-input' min={currentdate}
-                                                        onChange={text => setdate(text.target.value)
+                                                        onChange={text => setdate(text.target.value) 
                                                         } />
                                                 </div>
                                                 <div className='mb-4'>
                                                     <p className='text-start text-light   '>{"Appointment Time: "}</p>
-                                                    <input autoComplete='off' style={{ outline: "unset" }} type="time"
+                                                    <input autoComplete='off' style={{ outline: "unset" }} value={AppointmentTime} type="time"
                                                         className='rounded' id='admin-input' min={currentdate}
                                                         onChange={text => settime(text.target.value)
                                                         } />
@@ -1256,7 +1267,7 @@ const CourseDetail = () => {
 
                                             </div>
                                             <div className="modal-footer border-0 d-flex justify-content-center mb-4" id='coursedetails-modal'>
-                                                <button onClick={() => sendenquiryfunction()} type="button" className="btn px-3 py-2 text-light font-weight-light" style={{ backgroundColor: "rgb(233, 24, 75)" }}>Send Enquiry</button>
+                                                <button onClick={() => sendenquiryfunction()}  data-dismiss="modal" type="button" className="btn px-3 py-2 text-light font-weight-light" style={{ backgroundColor: "rgb(233, 24, 75)" }}>Send Enquiry</button>
                                             </div>
                                         </div>
                                     </div>

@@ -185,13 +185,13 @@ const HomeScreen = () => {
     setcategorytext('')
     setAplliedfilter(false)
   }
-
+console.log(allPost)
   const displayPost = allPost.slice().sort(function (a, b) {
     if (pagetype === 1) {
       return new Date(b.CreatedAt).getTime() - new Date(a.CreatedAt).getTime()
     }
     if (pagetype === 4) {
-      return (parseInt(b.PostLike) - parseInt(b.PostDislike)) - (parseInt(a.PostLike) - parseInt(a.PostDislike))
+      return b.PostVote-a.PostVote
     }
 
   }).filter((item) => {
