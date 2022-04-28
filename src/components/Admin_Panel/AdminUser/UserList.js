@@ -50,7 +50,16 @@ const UserList = () => {
 
   const createUser = () => {
     setIsLoading(false);
-
+    var body = {
+      UserID: userID,
+      UserName: userName,
+      UserTitle: userGender,
+      UserContact: userContact,
+      UserEmail: userEmail,
+      EmployeeID: employeeID,
+      UserPosition: userPosition,
+    }
+    console.log(body)
     // if (userDepartment !== '' && userName !== '' &&
     //   userGender !== '' && userEmail !== '' &&
     //   employeeID !== '' && userPosition !== '') {
@@ -343,8 +352,8 @@ const UserList = () => {
             <div className='d-flex justify-content-between align-items-center mt-5 mb-4' id="cat-title-o">
               <p className='col fw-bold fs-2 text-white m-0 p-0'>User Settings</p>
               <div className="input-group col d-flex flex-row justify-content-end align-items-center position-relative p-0">
-                < AiOutlineSearch className='text-white position-absolute top-50 translate-middle-y' id='category-searchicon' />
-                <input autoComplete='off' onChange={(event) => { setSearchText(event.target.value); }} type="text" className="ps-3 pe-3 py-2 text-white rounded" placeholder="Search Users..." aria-label="Title" id="search-category-input-title" />
+                < AiOutlineSearch className='text-dark position-absolute top-50 translate-middle-y' id='category-searchicon' />
+                <input autoComplete='off' onChange={(event) => { setSearchText(event.target.value); }} type="text" className="ps-3 pe-3 py-2 text-dark rounded" placeholder="Search Users..." aria-label="Title" id="search-category-input-title" />
               </div>
             </div>
             <div className='pt-3 rounded mt-5' id='categoriesrslt-container'>
@@ -363,19 +372,19 @@ const UserList = () => {
               <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content" id="category-create-post-modal">
                   <div className="modal-header d-flex col align-items-center position-relative justify-content-center py-4" id="create-post-modal-header">
-                    <h5 className="modal-title text-center purple" id="create-post-modal-header-title">{editfunction ? "Edit User Details" : "Add New User"}</h5>
+                    <h5 className="modal-title text-center purple" id="create-post-modal-header-title">{editfunction ? "Edit Username" : "Add New User"}</h5>
                     <RiCloseFill className="btn-close position-absolute purple" onClick={() => emptyedit()} data-dismiss="modal" size={35} id='close-icon' />
                   </div>
 
                   <div className="modal-body py-0" id="category-modal">
                     {/* All State: userName, userEmail, userPassword, employeeID, userDepartment, userPosition */}
                     {Modaltextinput({ name: "User Name", data: userName, onchange: e => { setUserName(e.target.value) }, placeholder: "e.g User Name" })}
-                    {editfunction ? null : Modaldropdowninput({ name: "Gender", data: userGender, onchange: handlegender, datainput: ["Male", "Female"] })}
+                    {editfunction ? null : Modaltextinput({ name: "User Title", onchange: e => { setUserGender(e.target.value) }, placeholder: "e.g Prof." })}
                     {editfunction ? null : Modaltextinput({ name: "Contact Number", onchange: e => { setUserContact(e.target.value) }, placeholder: "e.g 012345678" })}
                     {editfunction ? null : Modaltextinput({ name: "User Email", onchange: e => { setUserEmail(e.target.value) }, placeholder: "e.g example@gmail.com" })}
                     {editfunction ? null : Modaltextinput({ name: "Password", onchange: e => { setUserPassword(e.target.value) }, placeholder: "e.g *******" })}
                     {editfunction ? null : Modaltextinput({ name: "Employee ID", onchange: e => { setEmployeeID(e.target.value) }, placeholder: "e.g QAC101419" })}
-                    {Modaldropdowninput({ name: "User Position", data: userPosition, onchange: handleposition, datainput: ["QA Coordinator", "Staff"] })}
+                    {editfunction ? null : Modaltextinput({ name: "User Position", onchange: e => { setUserPosition(e.target.value) }, placeholder: "e.g Staff" })}
                     <div className="modal-footer p-0 pt-4 pb-3 justify-content-center" id="user-footer">
                       <button type="button" className="px-3 py-2 rounded purple border-0 " id="Modal-done-button" data-dismiss="modal" onClick={() => { editfunction ? updateUser() : createUser(); }}>{editfunction ? "Save Changes" : "Add User"}</button>
                     </div>

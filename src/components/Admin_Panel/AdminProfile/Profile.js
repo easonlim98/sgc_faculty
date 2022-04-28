@@ -240,10 +240,11 @@ const Profile = () => {
                             <div className="container row" id="background-profile-card">
                                 <div className=" py-5 col align-items-center justify-content-center m-0" id="background-profile">
                                     <div className='position-relative d-flex flex-column' id='ambg'>
-                                        <p className='fw-normal m-0 our_theme_color' >{userListDetails.UserName + " -  " + userListDetails.UserPosition}</p>
                                         <img className='rounded-circle my-5 align-self-center' src={userListDetails.UserImage} id='profile-user-avatar' />
                                         <p id='profile-font' className='our_theme_color fw-light text-center m-0 px-3'>{"This is the admin panel's profile page, where you can change any details you want. All of the information is considered private. Only the Administrator has access to all data."}</p>
-                                        <small><p className='our_theme_color fw-normal my-4 text-center m-0'>{""}</p></small>
+                                        <small>
+                                            <p className='fw-normal m-0 text-center my-4 our_theme_color' >{userListDetails.UserTitle + " " + userListDetails.UserName + " -  " + userListDetails.UserPosition}</p>
+                                        </small>
                                     </div>
                                 </div>
                                 <div className="d-flex flex-column col-7" id="background-profile-clr">
@@ -255,18 +256,19 @@ const Profile = () => {
                                                     {datatext({ name: "Employee ID: ", data: userListDetails.EmployeeID })}
                                                     <div className='col-6 px-3'>
                                                         <p className='fw-bold m-0 mb-2 our_theme_color'>{"Faculty involved: "}</p>
-                                                        { allFaculty.map(item => {
-                                                            if(item.UserID === userListDetails.UserID){
-                                                            return (
-                                                            <p className='fw-light m-0 our_theme_color' 
-                                                                style={{ fontSize: '0.9rem' }}>{item.FacultyName}</p>
-                                                            )}
+                                                        {allFaculty.map(item => {
+                                                            if (item.UserID === userListDetails.UserID) {
+                                                                return (
+                                                                    <p className='fw-light m-0 our_theme_color'
+                                                                        style={{ fontSize: '0.9rem' }}>{item.FacultyName}</p>
+                                                                )
+                                                            }
                                                         })}
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='px-5' id='border-bottom-dark'>
+                                        <div className='px-5 ' id='border-bottom-dark'>
                                             <div className='' style={{ margin: "auto", maxWidth: "90%" }}>
                                                 <p id='font-try-center' className='fw-bold fs-5 m-0 our_theme_title'>{"Contact Information"}</p>
                                                 <div className='row pt-4'>
@@ -276,7 +278,7 @@ const Profile = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="container-2 mb-5 d-flex justify-content-center">
+                                    <div className="container-2 my-5  d-flex justify-content-center">
                                         <button onClick={setdata} className="btn btn-two" data-toggle="modal" data-target="#createCategoryModal">
                                             <span id="spanalignment">Edit</span>
                                         </button>
