@@ -25,7 +25,7 @@ const Sidebar = () => {
   const userListDetails = userStore.useState(s => s.selectedUser);
   const [userImage, setuserImage] = useState(userListDetails.UserImage);
 
-
+  { console.log(userListDetails.UserPosition) }
   return (
 
     <div style={{ display: 'flex', overflow: 'scroll initial', height: '100vh', position: 'sticky', top: '0' }}>
@@ -46,9 +46,14 @@ const Sidebar = () => {
             <NavLink to="/AdminPanel_HomePost">
               <CDBSidebarMenuItem icon="home">Home</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink to="/AdminPanel_UserList">
-              <CDBSidebarMenuItem icon="user-edit">User</CDBSidebarMenuItem>
-            </NavLink>
+            {
+              userListDetails.UserPosition === "Admin" ?
+                <NavLink to="/AdminPanel_UserList">
+                  <CDBSidebarMenuItem icon="user-edit">User</CDBSidebarMenuItem>
+                </NavLink>
+                : <></>
+            }
+
             <NavLink to="/AdminPanel_Enquiry">
               <CDBSidebarMenuItem icon="envelope">Enquiry</CDBSidebarMenuItem>
             </NavLink>
