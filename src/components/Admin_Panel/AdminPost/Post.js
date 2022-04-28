@@ -24,7 +24,7 @@ const Post = (props) => {
     const dislikeList = commonStore.useState(s => s.dislikeList)
     const commentList = commonStore.useState(s => s.allComment)
     const userList = commonStore.useState(s => s.userList)
-    const postList = commonStore.useState(s => s.postList)
+    const [upvote, setupvote] = useState(false);
     const [commentText, setCommentText] = useState("");
     const [currentfacultyname, setcurrentfacultyname] = useState("");
     const [like, setlike] = useState(false);
@@ -39,8 +39,14 @@ const Post = (props) => {
                     setcurrentfacultyname(allFaculty[x].FacultyName)
                 }
             }
-        }
-        else {
+            for (var x = 0; x < voteList.length; x++) {
+                if (voteList[x].UserID === userID
+                    && voteList[x].PostID === props.data.PostID) {
+                    if (voteList[x].voteStatus !== '0') {
+                        setupvote(true)
+                    }
+                }
+            }
         }
     }, [userID]);
 
@@ -85,6 +91,7 @@ const Post = (props) => {
 
                     ApiClient.POST(API.updateUserVote, body).then((result) => {
                         setlike(true)
+                        setupvote(true)
                         console.log(result)
 
                         console.log("update userLike", body)
@@ -110,7 +117,7 @@ const Post = (props) => {
 
                     ApiClient.POST(API.updateUserVote, body).then((result) => {
                         setlike(false)
-
+                        setupvote(false)
                         console.log("update userLike", body)
                         console.log("update userLike", body)
                         if (userID !== '') {
@@ -181,7 +188,14 @@ const Post = (props) => {
                 <div className="d-flex px-4 justify-content-between align-items-center">
                     <div className='d-flex flex-row'>
                         <p className='m-0 pr-3'>{item.PostVote}</p>
-                        <BiUpvote size={25} onClick={() => { userVote(item.PostID) }}/>
+                        <div id='testtest'>
+                            {console.log(voteList, item.postID, "ddd")}
+                            {
+                                upvote ? <BiDownvote id="testrun2" size={25} onClick={() => { userVote(item.PostID) }} /> :
+                                    <BiUpvote id="testrun" size={25} onClick={() => { userVote(item.PostID) }} />
+                            }
+
+                        </div>
                     </div>
                     <div className="p-0 col align-items-center d-flex justify-content-end">
                         <button className="btn px-3 py-2 text-light border-0 rounded" style={{ backgroundColor: "#32519F" }} type="button" data-toggle="collapse" data-target={"#Post-Comment-section" + item.PostID} aria-expanded="false" aria-controls="Post-Comment-section" id='post-comment-section'>
@@ -205,7 +219,7 @@ const Post = (props) => {
                                                 autoComplete='off'
                                             />
                                             <div id="comment-column" className="position-absolute top-50 translate-middle-y d-flex align-items-center text-light">
-                                                <AiOutlineSend id="iconhover" onClick={() => { createComment(item.PostID); }} size={20}  />
+                                                <AiOutlineSend id="iconhover" onClick={() => { createComment(item.PostID); }} size={20} />
                                             </div>
                                         </div>
                                     </div>

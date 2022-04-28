@@ -16,6 +16,76 @@
     margin-right: calc(var(--bs-gutter-x) * .5);
 }
 
+.testimonidal-title {
+    left: 0;
+    right: 0;
+}
+
+.testimonidal-title--inactive {
+    right: 3%;
+    top: 0;
+    bottom: 0;
+    z-index: 101;
+}
+
+#testrun::before,
+#testrun::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 20px;
+    left: 0;
+}
+
+#testrun2::before,
+#testrun2::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 25px;
+    left: 0;
+}
+
+#testtest {
+    height: 24.5px;
+    overflow: hidden;
+}
+
+#testrun:hover {
+    animation: move 1s linear infinite;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#testrun2:hover {
+    animation: downmove 1s linear infinite;
+    overflow: hidden;
+    display: inline-block;
+}
+
+
+@keyframes move {
+    0% {
+        transform: 0;
+    }
+
+    100% {
+        transform: translateY(-66.6666%);
+    }
+}
+
+@keyframes downmove {
+    0% {
+        transform: 0;
+    }
+
+    100% {
+        transform: translateY(66.6666%);
+    }
+}
+
 #nav-tab {
     max-width: 45rem;
     margin-left: auto;
