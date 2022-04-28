@@ -148,7 +148,18 @@ const UserList = () => {
     })
 
   }
-
+  const clearfunc = () => {
+    setUserName("")
+    setUserDepartment("")
+    setUserPosition("")
+    setUserTitle("")
+    setUserContact("")
+    setUserEmail("")
+    setUserContact("")
+    setUserPassword("")
+    setEmployeeID("")
+    seteditfunction(false)
+  }
   const emptyedit = () => {
     setUserName("")
     setUserDepartment("")
@@ -160,8 +171,7 @@ const UserList = () => {
     setUserDepartment("")
     setUserPosition("")
     setUserTitle("")
-    setUserContact("")
-    setUserEmail("")
+
   }
   const tableheader = (item) => {
     return (
@@ -229,7 +239,7 @@ const UserList = () => {
   const Modaltextinput = (item) => {
     return (
       <div>
-        <p className='fw-normal pb-1 purple fs-6 total-cat pt-4'>{item.name}</p>
+        <p value={item.data} className='fw-normal pb-1 purple fs-6 total-cat pt-4'>{item.name}</p>
         <input value={item.data} onChange={(e) => item.onchange(e)} autoComplete='off' type="text" className="form-control rounded border-0" placeholder={item.placeholder} aria-label="Title" id="side-bar-search-title" aria-describedby="inputGroup-sizing-default" />
       </div>
     )
@@ -311,6 +321,7 @@ const UserList = () => {
     setUserDepartment("")
     setUserContact("")
     seteditfunction(false)
+    
   }
 
   return (
@@ -331,7 +342,7 @@ const UserList = () => {
             <div className='pt-3 rounded mt-5' id='categoriesrslt-container'>
               <div className='d-flex align-items-center justify-content-between' id='cat-title-row'>
                 <p className=' fw-bold our_theme_title m-0 fs-5'>{"Total Users: " + userList.length}</p>
-                <button onClick={() => seteditfunction(false)} type="button" className="px-2 py-2 border-0 rounded text-white fw-bold d-flex align-items-center px-3" id="admin-cat-button--active" data-toggle="modal" data-target="#createCategoryModal">
+                <button onClick={clearfunc} type="button" className="px-2 py-2 border-0 rounded text-white fw-bold d-flex align-items-center px-3" id="admin-cat-button--active" data-toggle="modal" data-target="#createCategoryModal">
                   NEW USER
                   <IoIosAddCircleOutline className="d-flex align-items-center" size={30} style={{ paddingLeft: '0.5rem' }} />
                 </button>
@@ -352,11 +363,11 @@ const UserList = () => {
                     {/* All State: userName, userEmail, userPassword, employeeID, userDepartment, userPosition */}
                     {Modaltextinput({ name: "User Title", data: userTitle, onchange: e => { setUserTitle(e.target.value) }, placeholder: "e.g Prof." })}
                     {Modaltextinput({ name: "User Name", data: userName, onchange: e => { setUserName(e.target.value) }, placeholder: "e.g User Name" })}
-                    {editfunction ? null : Modaltextinput({ name: "Contact Number", onchange: e => { setUserContact(e.target.value) }, placeholder: "e.g 012345678" })}
-                    {editfunction ? null : Modaltextinput({ name: "User Email", onchange: e => { setUserEmail(e.target.value) }, placeholder: "e.g example@gmail.com" })}
-                    {editfunction ? null : Modaltextinput({ name: "Password", onchange: e => { setUserPassword(e.target.value) }, placeholder: "e.g *******" })}
-                    {editfunction ? null : Modaltextinput({ name: "Employee ID", onchange: e => { setEmployeeID(e.target.value) }, placeholder: "e.g QAC101419" })}
-                    {Modaltextinput({ name: "User Position", data: userPosition,onchange: e => { setUserPosition(e.target.value) }, placeholder: "e.g Staff" })}
+                    {editfunction ? null : Modaltextinput({ name: "Contact Number", data: userContact,onchange: e => { setUserContact(e.target.value) }, placeholder: "e.g 012345678" })}
+                    {editfunction ? null : Modaltextinput({ name: "User Email",data: userEmail ,onchange: e => { setUserEmail(e.target.value) }, placeholder: "e.g example@gmail.com" })}
+                    {editfunction ? null : Modaltextinput({ name: "Password", data: userPassword,onchange: e => { setUserPassword(e.target.value) }, placeholder: "e.g *******" })}
+                    {editfunction ? null : Modaltextinput({ name: "Employee ID",data: employeeID ,onchange: e => { setEmployeeID(e.target.value) }, placeholder: "e.g QAC101419" })}
+                    {Modaltextinput({ name: "User Position", data: userPosition, onchange: e => { setUserPosition(e.target.value) }, placeholder: "e.g Staff" })}
                     <div className="modal-footer p-0 pt-4 pb-3 justify-content-center" id="user-footer">
                       <button type="button" className="px-3 py-2 rounded purple border-0 " id="Modal-done-button" data-dismiss="modal" onClick={() => { editfunction ? updateUser() : createUser(); }}>{editfunction ? "Save Changes" : "Add User"}</button>
                     </div>
