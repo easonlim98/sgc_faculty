@@ -29,6 +29,7 @@ const updateUser='updateUser.php'
 const createUser='createUser.php'
 const updateCourse='updateCourse.php'
 const createComment='createComment.php'
+const getAdminComment='getAdminComment.php'
 
 const API = {
     createUser,
@@ -61,7 +62,8 @@ const API = {
     updateUserVote,
     updateUser,
     updateCourse,
-    createComment
+    createComment,
+    getAdminComment
 };
 
 export default API;

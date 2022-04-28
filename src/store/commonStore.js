@@ -222,5 +222,6 @@ export const commonStore = new Store({
     allFaculty: [],
     allPost: [],
     voteList: [],
+    allComment: [],
 
 });  

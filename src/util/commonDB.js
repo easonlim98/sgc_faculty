@@ -132,5 +132,21 @@ export const getDataEvent = (userID) => {
         console.log(tempVoteList)
     
       })
+
+      ApiClient.GET(API.getAdminComment).then(response => {
+
+        var tempComment = [];
+    
+        for(var i = 0; i < response.length; i++){
+          tempComment.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.allComment = tempComment;
+        });
+
+        console.log(response)
+    
+      })
     
 };
