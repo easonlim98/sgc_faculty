@@ -22,7 +22,7 @@ const Post = (props) => {
     const likeList = commonStore.useState(s => s.likeList)
     const voteList = commonStore.useState(s => s.voteList)
     const dislikeList = commonStore.useState(s => s.dislikeList)
-    const commentList = commonStore.useState(s => s.commentList)
+    const commentList = commonStore.useState(s => s.allComment)
     const userList = commonStore.useState(s => s.userList)
     const postList = commonStore.useState(s => s.postList)
     const [commentText, setCommentText] = useState("");
@@ -49,35 +49,15 @@ const Post = (props) => {
             var body = {
                 PostID: PostID,
                 UserID: userID,
-                CommentText: commentText,
+                CommentContent: commentText,
             };
 
 
             ApiClient.POST(API.createComment, body).then((result) => {
                 console.log("nice BODY", body, result)
 
-                var userEmail = '';
-
-                for (var x = 0; x < postList.length; x++) {
-                    if (postList[x].PostID === PostID) {
-                        for (var k = 0; k < userList.length; k++) {
-                            if (userList[k].UserID === postList[x].UserID) {
-                                userEmail = userList[k].UserEmail
-                            }
-                        }
-                    }
-                }
-
-                var targetBlock = {
-                    send_to: userEmail,
-                    type: 'comment',
-                    post_author: userListDetails.UserName,
-                }
-
-                emailjs.send('service_t41roh7', 'template_b3e0izi', targetBlock, 'B7FQ2OkOz8Cyu4mvQ')
-
                 if (userID !== '') {
-                    // listenToData(userID);
+                    getDataEvent(userID);
                     console.log('success mount data')
                 }
                 else {
@@ -94,7 +74,7 @@ const Post = (props) => {
             if (voteList[x].UserID === userID
                 && voteList[x].PostID === PostID) {
 
-                if (voteList[x].VoteStatus === '0') {
+                if (voteList[x].voteStatus == '0') {
 
                     var body = {
                         PostVoteID: voteList[x].PostVoteID,
@@ -105,6 +85,7 @@ const Post = (props) => {
 
                     ApiClient.POST(API.updateUserVote, body).then((result) => {
                         setlike(true)
+                        console.log(result)
 
                         console.log("update userLike", body)
                         if (userID !== '') {
@@ -199,12 +180,12 @@ const Post = (props) => {
                 <p className="card-text text-light px-4">{item.PostContent}</p>
                 <div className="d-flex px-4 justify-content-between align-items-center">
                     <div className='d-flex flex-row'>
-                        <p className='m-0 pr-3'>{"0"}</p>
-                        <BiUpvote size={25} />
+                        <p className='m-0 pr-3'>{item.PostVote}</p>
+                        <BiUpvote size={25} onClick={() => { userVote(item.PostID) }}/>
                     </div>
                     <div className="p-0 col align-items-center d-flex justify-content-end">
                         <button className="btn px-3 py-2 text-light border-0 rounded" style={{ backgroundColor: "#32519F" }} type="button" data-toggle="collapse" data-target={"#Post-Comment-section" + item.PostID} aria-expanded="false" aria-controls="Post-Comment-section" id='post-comment-section'>
-                            {"0" + " Comments"}
+                            {item.CommentLength + " Comments"}
                         </button>
                     </div>
                 </div>
@@ -215,7 +196,7 @@ const Post = (props) => {
                             <>
                                 {
                                     <div className="text-light m-4 mb-2 d-flex flex-row align-items-center">
-                                        <img src={userListDetails.UserImage} id="post-comment-avatar" className="rounded-circle p-0" alt="Image" />
+                                        <img src={user.UserImage} id="post-comment-avatar" className="rounded-circle p-0" alt="Image" />
                                         <div className="ms-4 col position-relative p-0">
                                             <input className="ps-3 pe-5 py-2 text-light rounded w-100" value={commentText} id="Post-Comment-input"
                                                 placeholder={"Write a comment... (Maximum 150 words)"}
@@ -245,11 +226,11 @@ const Post = (props) => {
                                         <>
                                             {user.UserID === comment.UserID ?
                                                 <div className="text-light m-4 my-4 mb-0 d-flex flex-row align-items-start">
-                                                    <img src={comment.Annonymous === "1" ? 'https://i1.sndcdn.com/avatars-000329967534-94o5n9-t500x500.jpg' : user.UserImage} id="post-comment-avatar" className="rounded-circle p-0" alt="Image" />
+                                                    <img src={user.UserImage} id="post-comment-avatar" className="rounded-circle p-0" alt="Image" />
                                                     <div className="ms-4 ">
                                                         <div className="px-3 py-2 rounded " id="Post-Comment-text-input">
-                                                            <p className="m-0 fw-light" style={{ color: "#C3BDBD" }}>{comment.Annonymous === "1" ? 'Random Secret Person' : user.UserName}</p>
-                                                            <p className="m-0" id="Post-Comment-text-input">{comment.CommentText}</p>
+                                                            <p className="m-0 fw-light" style={{ color: "#C3BDBD" }}>{user.UserName}</p>
+                                                            <p className="m-0" id="Post-Comment-text-input">{comment.CommentContent}</p>
                                                         </div>
                                                         <small className="">
                                                             <p className='text-muted px-3 pt-1 m-0'>{comment.CreatedAt}</p>

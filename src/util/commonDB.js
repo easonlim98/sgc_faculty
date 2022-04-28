@@ -5,131 +5,148 @@ import axios from 'axios';
 import { commonStore } from '../store/commonStore';
 
 export const getDataEvent = (userID) => {
+        
+    ApiClient.GET(API.getUser).then(response => {
 
-  ApiClient.GET(API.getUser).then(response => {
+        var userList = [];
+        var tempUserDetail = {}; 
+    
+        for(var i = 0; i < response.length; i++){
+          userList.push(response[i]);
+        }
+    
+        tempUserDetail = userList.find(user => user.UserID === userID);
+    
+        commonStore.update(s => {
+          s.userList = userList;
+        });
+    
+        userStore.update(s => {
+          s.selectedUser = tempUserDetail;
+        });
+    
+      })
 
-    var userList = [];
-    var tempUserDetail = {};
+      ApiClient.GET(API.getAdminCourse).then(response => {
 
-    for (var i = 0; i < response.length; i++) {
-      userList.push(response[i]);
-    }
+        var TempCourseList = [];
+    
+        for(var i = 0; i < response.length; i++){
+            TempCourseList.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.courseDetails = TempCourseList;
+        });
 
-    tempUserDetail = userList.find(user => user.UserID === userID);
+        console.log(TempCourseList)
+    
+      })
 
-    commonStore.update(s => {
-      s.userList = userList;
-    });
+      ApiClient.GET(API.getEnquiry).then(response => {
 
-    userStore.update(s => {
-      s.selectedUser = tempUserDetail;
-    });
+        var tempEnquiry = [];
+    
+        for(var i = 0; i < response.length; i++){
+            tempEnquiry.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.enquiryDetails = tempEnquiry;
+        });
+    
+      })
 
-  })
+      ApiClient.GET(API.getFacultyReport).then(response => {
 
-  ApiClient.GET(API.getAdminCourse).then(response => {
+        var tempFacultyReport = [];
+    
+        for(var i = 0; i < response.length; i++){
+            tempFacultyReport.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.facultyReport = tempFacultyReport;
+        });
+    
+      })
 
-    var TempCourseList = [];
+      ApiClient.GET(API.getFacultyReportPercent).then(response => {
 
-    for (var i = 0; i < response.length; i++) {
-      TempCourseList.push(response[i]);
-    }
+        var tempFacultyReport = [];
+    
+        for(var i = 0; i < response.length; i++){
+            tempFacultyReport.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.facultyReportPercent = tempFacultyReport;
+        });
+    
+      })
 
-    commonStore.update(s => {
-      s.courseDetails = TempCourseList;
-    });
+      ApiClient.GET(API.getAdminFaculty).then(response => {
 
-    console.log(TempCourseList)
+        var tempFaculty = [];
+    
+        for(var i = 0; i < response.length; i++){
+            tempFaculty.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.allFaculty = tempFaculty;
+        });
 
-  })
+        console.log(tempFaculty)
+    
+      })
 
-  ApiClient.GET(API.getEnquiry).then(response => {
+      ApiClient.GET(API.getAdminPost).then(response => {
 
-    var tempEnquiry = [];
+        var tempPost = [];
+    
+        for(var i = 0; i < response.length; i++){
+            tempPost.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.allPost = tempPost;
+        });
 
-    for (var i = 0; i < response.length; i++) {
-      tempEnquiry.push(response[i]);
-    }
+        console.log(response)
+    
+      })
 
-    commonStore.update(s => {
-      s.enquiryDetails = tempEnquiry;
-    });
+      ApiClient.GET(API.getAdminVote).then(response => {
 
-  })
+        var tempVoteList = [];
+    
+        for(var i = 0; i < response.length; i++){
+            tempVoteList.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.voteList = tempVoteList;
+        });
 
-  ApiClient.GET(API.getFacultyReport).then(response => {
+        console.log(tempVoteList)
+    
+      })
 
-    var tempFacultyReport = [];
+      ApiClient.GET(API.getAdminComment).then(response => {
 
-    for (var i = 0; i < response.length; i++) {
-      tempFacultyReport.push(response[i]);
-    }
+        var tempComment = [];
+    
+        for(var i = 0; i < response.length; i++){
+          tempComment.push(response[i]);
+        }
+    
+        commonStore.update(s => {
+          s.allComment = tempComment;
+        });
 
-    commonStore.update(s => {
-      s.facultyReport = tempFacultyReport;
-    });
-
-  })
-
-  ApiClient.GET(API.getFacultyReportPercent).then(response => {
-
-    var tempFacultyReport = [];
-
-    for (var i = 0; i < response.length; i++) {
-      tempFacultyReport.push(response[i]);
-    }
-
-    commonStore.update(s => {
-      s.facultyReportPercent = tempFacultyReport;
-    });
-
-  })
-
-  ApiClient.GET(API.getAdminFaculty).then(response => {
-
-    var tempFaculty = [];
-
-    for (var i = 0; i < response.length; i++) {
-      tempFaculty.push(response[i]);
-    }
-
-    commonStore.update(s => {
-      s.allFaculty = tempFaculty;
-    });
-
-    console.log(tempFaculty)
-
-  })
-
-  ApiClient.GET(API.getAdminPost).then(response => {
-    var tempPost = [];
-
-    for (var i = 0; i < response.length; i++) {
-      tempPost.push(response[i]);
-    }
-
-    commonStore.update(s => {
-      s.allPost = tempPost;
-    });
-
-    // console.log(tempPost)
-
-  })
-
-  ApiClient.GET(API.getAdminVote).then(response => {
-
-    var tempVoteList = [];
-
-    for (var i = 0; i < response.length; i++) {
-      tempVoteList.push(response[i]);
-    }
-
-    commonStore.update(s => {
-      s.voteList = tempVoteList;
-    });
-
-    console.log(tempVoteList)
-
-  })
-
+        console.log(response)
+    
+      })
+    
 };

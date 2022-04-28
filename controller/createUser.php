@@ -4,21 +4,41 @@ header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header("Access-Control-Allow-Headers: *");
  
-$postdata = file_get_contents("php://input");
-if(isset($postdata) && !empty($postdata)){
-    $request = json_decode($postdata);
+$postUserData = file_get_contents("php://input");
+
+if(isset($postUserData) && !empty($postUserData)){
+
+    $request = json_decode($postUserData);
+
+    $date = date("Y-m-d g:i A");
      
-    $id = $request->id;
-    $user_email = $request->user_email;
-    $user_name = $request->user_name;
-    $sql = "INSERT INTO users (id,user_email,user_name) VALUES ('$id','$user_email', '$user_name')";
+    $UserID = $request->UserID;
+    $UserImage = 'https://firebasestorage.googleapis.com/v0/b/sgc-faculty-source.appspot.com/o/admin%2Fsegilogo.png?alt=media&token=eeb52015-65e4-473e-acb6-016971d24a07';
+    $UserTitle = $request->UserTitle;
+    $UserName = $request->UserName;
+    $UserEmail = $request->UserEmail;
+    $UserContact = $request->UserContact;
+    $EmployeeID = $request->EmployeeID;
+    $UserPosition = $request->UserPosition;
+
+    $sql = "INSERT INTO user (UserID,UserImage,UserTitle,UserName,UserEmail,UserContact,EmployeeID,UserPosition) 
+            VALUES ('$UserID','$UserImage','$UserTitle','$UserName','$UserEmail','$UserContact','$EmployeeID','$UserPosition')";
+    
     if(mysqli_query($db,$sql)){
-        http_response_code(201);
-        echo "Insert Successfully";
+
+    $PostID = $request->PostID;
+
+      for($i = 0; $i < count($PostID); $i++){
+
+            $sqlVote = "INSERT INTO post_vote (UserID,PostID,VoteStatus)
+                    VALUES ('$UserID','".$PostID[$i]."','0');";
+
+            mysqli_query($db, $sqlVote);
+
+        };  
     }
     else{
          http_response_code(422); 
-         echo "Failed";
     }
          
 }

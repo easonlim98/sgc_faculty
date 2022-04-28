@@ -17,17 +17,20 @@ import emailjs from 'emailjs-com';
 import Modal from '../Modal/Modal';
 /* import { getAuth } from 'firebase-admin/auth' */
 import LoadingSpinner from "../../general-components/LoadingSpinner";
+import { getDataEvent } from '../../../util/commonDB';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 const UserList = () => {
   const [isLoading, setIsLoading] = useState(false);
   const userList = commonStore.useState(s => s.userList);
-  const postList = commonStore.useState(s => s.postList);
+  const postList = commonStore.useState(s => s.allPost);
   const departmentList = commonStore.useState(s => s.departmentList);
   const userID = userStore.useState(s => s.userID);
 
   const [targetUserID, setTargetUserID] = useState('');
   const [userName, setUserName] = useState('');
-  const [userGender, setUserGender] = useState('');
+  const [userTitle, setUserTitle] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [employeeID, setEmployeeID] = useState('');
@@ -50,120 +53,92 @@ const UserList = () => {
 
   const createUser = () => {
     setIsLoading(false);
-    var body = {
-      UserID: userID,
-      UserName: userName,
-      UserTitle: userGender,
-      UserContact: userContact,
-      UserEmail: userEmail,
-      EmployeeID: employeeID,
-      UserPosition: userPosition,
+    if (userTitle !== '' && userName !== '' &&
+      userTitle !== '' && userEmail !== '' &&
+      employeeID !== '' && userPosition !== '' && userContact !== '') {
+
+      firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
+        .then((userCredential) => {
+
+          var allPostID = [];
+
+          for (var x = 0; x < postList.length; x++) {
+            allPostID.push(postList[x].PostID)
+          }
+
+          var body = {
+            UserID: userCredential.user.uid,
+            UserName: userName,
+            UserTitle: userTitle,
+            UserContact: userContact,
+            UserEmail: userEmail,
+            EmployeeID: employeeID,
+            UserPosition: userPosition,
+            PostID: allPostID
+          };
+
+          console.log("BODY", body)
+
+          ApiClient.POST(API.createUser, body).then((result) => {
+            emptydata()
+            setIsLoading(false);
+
+            console.log('successfully created user')
+
+            var targetBlock = {
+              receiver: userEmail,
+              userName: userName,
+              userPassword: userPassword
+            }
+
+            emailjs.send('service_t41roh7', 'template_z9cu5dq', targetBlock, 'B7FQ2OkOz8Cyu4mvQ')
+
+              .then(function (response) {
+
+                if (userID !== '') {
+                  getDataEvent(userID);
+                  console.log('success mount data')
+                }
+                else {
+                  console.log('no userID')
+                }
+
+                console.log('SUCCESS!', response.status, response.text);
+                cleardatafunction()
+
+              }, function (error) {
+
+                console.log('FAILED...', error);
+
+              });
+          })
+
+        }).catch((error) => {
+          console.log(error)
+          setIsLoading(false);
+
+        });;
+
     }
-    console.log(body)
-    // if (userDepartment !== '' && userName !== '' &&
-    //   userGender !== '' && userEmail !== '' &&
-    //   employeeID !== '' && userPosition !== '') {
+    else {
+      alert('ALl field are required to enter')
+      setIsLoading(false);
 
-    //   firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
-    //     .then((userCredential) => {
-
-    //       var departmentID = '';
-
-    //       for (var i = 0; i < departmentList.length; i++) {
-    //         if (userDepartment === departmentList[i].DepartmentName) {
-    //           departmentID = departmentList[i].DepartmentID
-    //         }
-    //       }
-
-    //       var allPostID = [];
-
-    //       for (var x = 0; x < postList.length; x++) {
-    //         allPostID.push(postList[x].PostID)
-    //       }
-
-    //       var body = {
-    //         UserID: userCredential.user.uid,
-    //         DepartmentID: departmentID,
-    //         UserName: userName,
-    //         UserGender: userGender,
-    //         UserContact: userContact,
-    //         UserEmail: userEmail,
-    //         EmployeeID: employeeID,
-    //         UserPosition: userPosition,
-    //         PostID: allPostID,
-    //       };
-
-    //       console.log("BODY", body)
-
-    //       ApiClient.POST(API.createUser, body).then((result) => {
-    //         console.log(result)
-    //         emptydata()
-    //         setIsLoading(false);
-
-    //         console.log('successfully created user')
-
-    //         var targetBlock = {
-    //           receiver: userEmail,
-    //           userName: userName,
-    //           userPassword: userPassword
-    //         }
-
-    //         emailjs.send('service_t41roh7', 'template_z9cu5dq', targetBlock, 'B7FQ2OkOz8Cyu4mvQ')
-
-    //           .then(function (response) {
-
-    //             if (userID !== '') {
-    //               // listenToData(userID);
-    //               console.log('success mount data')
-    //             }
-    //             else {
-    //               console.log('no userID')
-    //             }
-
-    //             console.log('SUCCESS!', response.status, response.text);
-    //             cleardatafunction()
-
-    //           }, function (error) {
-
-    //             console.log('FAILED...', error);
-
-    //           });
-    //       })
-
-    //     }).catch((error) => {
-    //       console.log(error)
-    //       setIsLoading(false);
-
-    //     });;
-
-    // }
-    // else {
-    //   alert('ALl field are required to enter')
-    //   setIsLoading(false);
-
-    // }
+    }
   }
 
   const updateUser = () => {
 
-    var departmentID = '';
-
-    for (var i = 0; i < departmentList.length; i++) {
-      if (userDepartment === departmentList[i].DepartmentName) {
-        departmentID = departmentList[i].DepartmentID
-      }
-    }
-
     var body = {
       UserID: targetUserID,
+      UserTitle: userTitle,
       UserName: userName,
-      DepartmentID: departmentID,
       UserPosition: userPosition,
     };
 
     ApiClient.POST(API.updateUser, body).then((result) => {
       if (userID !== '') {
-        // listenToData(userID);
+        getDataEvent(userID);
         console.log('success mount data')
         emptyedit()
       }
@@ -173,17 +148,18 @@ const UserList = () => {
     })
 
   }
+
   const emptyedit = () => {
     setUserName("")
     setUserDepartment("")
     setUserPosition("")
-    setUserGender("")
+    setUserTitle("")
   }
   const emptydata = () => {
     setUserName("")
     setUserDepartment("")
     setUserPosition("")
-    setUserGender("")
+    setUserTitle("")
     setUserContact("")
     setUserEmail("")
   }
@@ -198,7 +174,7 @@ const UserList = () => {
     setTargetUserID(item.UserID)
     setUserName(item.UserName)
     setUserPosition(item.UserPosition)
-    setUserGender(item.UserGender)
+    setUserTitle(item.UserGender)
     setUserPosition(item.UserPosition)
 
     console.log(item, "Insert Edit Data")
@@ -243,7 +219,7 @@ const UserList = () => {
         <td className="col text-center our_theme_title fw-normal one_line_css" id="cat-tablecontent">{UserContact !== '' ? UserContact : 'N/A'}</td>
         <td className="col text-center text-white d-flex align-items-center justify-content-center" id="cat-tablecontent">
           <AiOutlineEdit className='our_theme_title me-4' id="iconhover" data-toggle="modal" data-target="#createCategoryModal" onClick={() => handleeditfunction({ UserID, UserName, UserGender, UserPosition, UserEmail, UserContact })} size={25} />
-          <MdDeleteForever id="iconhover" data-toggle="modal" data-target={"#Delete-" + UserID} size={25} className="me-4 our_theme_title" />
+          {/* <MdDeleteForever id="iconhover" data-toggle="modal" data-target={"#Delete-" + UserID} size={25} className="me-4 our_theme_title" /> */}
         </td>
         <Modal id={"Delete-" + UserID} name={"Delete"} function={handlepropsdeletefunction} currentid={UserID} warning={'you are allowed to delete inactive user'} />
       </div>
@@ -374,7 +350,7 @@ const UserList = () => {
 
                   <div className="modal-body py-0" id="category-modal">
                     {/* All State: userName, userEmail, userPassword, employeeID, userDepartment, userPosition */}
-                    {Modaltextinput({ name: "User Title", data: userGender, onchange: e => { setUserGender(e.target.value) }, placeholder: "e.g Prof." })}
+                    {Modaltextinput({ name: "User Title", data: userTitle, onchange: e => { setUserTitle(e.target.value) }, placeholder: "e.g Prof." })}
                     {Modaltextinput({ name: "User Name", data: userName, onchange: e => { setUserName(e.target.value) }, placeholder: "e.g User Name" })}
                     {editfunction ? null : Modaltextinput({ name: "Contact Number", onchange: e => { setUserContact(e.target.value) }, placeholder: "e.g 012345678" })}
                     {editfunction ? null : Modaltextinput({ name: "User Email", onchange: e => { setUserEmail(e.target.value) }, placeholder: "e.g example@gmail.com" })}
