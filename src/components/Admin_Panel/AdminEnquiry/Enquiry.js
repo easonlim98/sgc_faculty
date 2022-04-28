@@ -118,7 +118,7 @@ const EnquiryList = () => {
   const Modaltextinput = (item) => {
     return (
       <div className={'mb-1'}>
-        <p className='fw- mt-1 pb-1 purple fs-6 total-cat'>{item.title}</p>
+        <p className='fw- mt-1 pb-1 purple fs-6 total-cat'>{item.title + " :"}</p>
         <textarea className='rounded border-0 w-100 our_theme_color mb-2' disabled style={{ outline: "unset", background: 'unset', resize: "none" }} type="text" value={item.data} />
       </div>
     )

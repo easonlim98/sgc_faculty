@@ -177,6 +177,7 @@ const UserList = () => {
     setUserName("")
     setUserDepartment("")
     setUserPosition("")
+    setUserGender("")
   }
   const emptydata = () => {
     setUserName("")
@@ -197,8 +198,9 @@ const UserList = () => {
     setTargetUserID(item.UserID)
     setUserName(item.UserName)
     setUserPosition(item.UserPosition)
-    setUserDepartment(item.UserDepartment)
-    setUserContact("")
+    setUserGender(item.UserGender)
+    setUserPosition(item.UserPosition)
+
     console.log(item, "Insert Edit Data")
     seteditfunction(true)
   };
@@ -336,11 +338,6 @@ const UserList = () => {
     seteditfunction(false)
   }
 
-  const handlegender = (data) => { setUserGender(data) }
-  const handledepartment = (data) => { setUserDepartment(data) }
-  const handleposition = (data) => { setUserPosition(data) }
-
-
   return (
     <div className="d-flex" id="category-backgroundweh" style={{ backgroundColor: '#333' }}>
       <Sidebar />
@@ -378,13 +375,13 @@ const UserList = () => {
 
                   <div className="modal-body py-0" id="category-modal">
                     {/* All State: userName, userEmail, userPassword, employeeID, userDepartment, userPosition */}
+                    {Modaltextinput({ name: "User Title", data: userGender, onchange: e => { setUserGender(e.target.value) }, placeholder: "e.g Prof." })}
                     {Modaltextinput({ name: "User Name", data: userName, onchange: e => { setUserName(e.target.value) }, placeholder: "e.g User Name" })}
-                    {editfunction ? null : Modaltextinput({ name: "User Title", onchange: e => { setUserGender(e.target.value) }, placeholder: "e.g Prof." })}
                     {editfunction ? null : Modaltextinput({ name: "Contact Number", onchange: e => { setUserContact(e.target.value) }, placeholder: "e.g 012345678" })}
                     {editfunction ? null : Modaltextinput({ name: "User Email", onchange: e => { setUserEmail(e.target.value) }, placeholder: "e.g example@gmail.com" })}
                     {editfunction ? null : Modaltextinput({ name: "Password", onchange: e => { setUserPassword(e.target.value) }, placeholder: "e.g *******" })}
                     {editfunction ? null : Modaltextinput({ name: "Employee ID", onchange: e => { setEmployeeID(e.target.value) }, placeholder: "e.g QAC101419" })}
-                    {editfunction ? null : Modaltextinput({ name: "User Position", onchange: e => { setUserPosition(e.target.value) }, placeholder: "e.g Staff" })}
+                    {Modaltextinput({ name: "User Position", data: userPosition,onchange: e => { setUserPosition(e.target.value) }, placeholder: "e.g Staff" })}
                     <div className="modal-footer p-0 pt-4 pb-3 justify-content-center" id="user-footer">
                       <button type="button" className="px-3 py-2 rounded purple border-0 " id="Modal-done-button" data-dismiss="modal" onClick={() => { editfunction ? updateUser() : createUser(); }}>{editfunction ? "Save Changes" : "Add User"}</button>
                     </div>
