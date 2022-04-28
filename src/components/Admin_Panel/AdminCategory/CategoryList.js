@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import Sidebar from '.././Sidebar'
 import './CategoryList.css'
 import API from '../../../constant/API';
@@ -41,12 +41,13 @@ const CategoryList = () => {
       if (course.CollegeID.includes(CollegeID)) {
         return true
       }
-    })});
+    })
+  });
   const [pageNum, setPageNum] = useState(0);
   const postPerPage = 8;
   const pagesVisited = pageNum * postPerPage;
   const pageCount = Math.ceil(filteredcourse.length / postPerPage);
- 
+
   const changePage = ({ selected }) => {
     setPageNum(selected)
   }
@@ -119,8 +120,8 @@ const CategoryList = () => {
     return (
       <div className={editfunction ? 'mb-3' : ''}>
         <p className='fw- mt-3 pb-1 purple fs-6 total-cat'>{item.title}</p>
-        {editfunction ? <textarea className='rounded py-2 px-3 border-0 w-100' style={{ outline: "unset" }} type="text" value={item.data} onChange={item.onchange} /> :
-          <textarea className='rounded border-0 w-100 our_theme_color mb-2' disabled style={{ outline: "unset", background: 'unset', resize: "none" }} type="text" value={item.data} onChange={item.onchange} />}
+        {editfunction ? <textarea className='rounded py-2 px-3 border-0 w-100' style={{ outline: "unset"}} type="text" value={item.data} onChange={item.onchange} /> :
+          <textarea className='rounded border-0 w-100 our_theme_color mb-2' disabled style={{ outline: "unset", background: 'unset', resize: "none"  }} type="text" value={item.data} onChange={item.onchange} />}
       </div>
     )
   }
@@ -138,8 +139,8 @@ const CategoryList = () => {
   }
 
   const [searchText, setSearchText] = useState('')
-  
-   
+
+
   const CatItemComponent = () => {
     return (
       <div className='d-flex flex-row'>

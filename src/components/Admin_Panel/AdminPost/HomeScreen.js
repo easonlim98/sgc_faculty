@@ -8,7 +8,7 @@ import './HomeScreen.css'
 import { RiFilterLine, RiCloseFill } from "react-icons/ri";
 import { BiAddToQueue } from "react-icons/bi";
 import { AiOutlineFileProtect } from "react-icons/ai";
-import { FiFilter } from "react-icons/fi";
+import { FcInfo } from "react-icons/fc";
 import { FaUserNinja, FaWindowClose } from "react-icons/fa";
 import ReactPaginate from "react-paginate";
 import { ToastContainer, toast } from 'react-toastify';
@@ -26,11 +26,10 @@ const HomeScreen = () => {
 
   const selectedUser = userStore.useState(s => s.selectedUser)
   const userList = commonStore.useState(s => s.userList)
+  const allPost = commonStore.useState(s => s.allPost)
   const categoryList = commonStore.useState(s => s.categoryList)
   const userID = userStore.useState(s => s.userID)
-  const postList = commonStore.useState(s => s.postList)
   const allFaculty = commonStore.useState(s => s.allFaculty)
-
   const [isLoading, setIsLoading] = useState(false);
   const [Annonymous, setAnnonymous] = useState(false);
   const [selectedFal, setSelectedFal] = useState('');
@@ -43,7 +42,6 @@ const HomeScreen = () => {
   const [checkedSelectCat, setCheckedSelectCat] = useState(false)
   const [appear, setappear] = useState(false)
   const [categoryisDisabled, setCategoryisDisabled] = useState(true)
-
 
   // const storage = firebase.storage();
   useEffect(() => {
@@ -188,30 +186,25 @@ const HomeScreen = () => {
     setAplliedfilter(false)
   }
 
-
-  const displayPost = postList.slice().sort(function (a, b) {
+  const displayPost = allPost.slice().sort(function (a, b) {
     if (pagetype === 1) {
       return new Date(b.CreatedAt).getTime() - new Date(a.CreatedAt).getTime()
-    }
-    if (pagetype === 2) {
-      return (parseInt(b.CommentLength) + parseInt(b.PostLike) + parseInt(b.PostDislike)) > (parseInt(a.CommentLength) + parseInt(a.PostLike) + parseInt(a.PostDislike)) ? 1 : -1
-    }
-    if (pagetype === 3) {
-      return new Date(b.LatestComment).getTime() - new Date(a.LatestComment).getTime()
     }
     if (pagetype === 4) {
       return (parseInt(b.PostLike) - parseInt(b.PostDislike)) - (parseInt(a.PostLike) - parseInt(a.PostDislike))
     }
 
   }).filter((item) => {
-    if (Aplliedfilter === false) {
+    console.log(item, 'ffff')
+    if (Aplliedfilter === true && item.FacultyID === catid) {
+      return item
+    } else if (Aplliedfilter === false) {
       return item
     }
   }).slice(pagesVisited, pagesVisited + postPerPage).map((item) => (
     <Post data={item} userdetails={userList} />
   ));
-  const pageCount = Math.ceil(postList.length / postPerPage);
-
+  const pageCount = Math.ceil(allPost.length / postPerPage);
   const changePage = ({ selected }) => {
     setPageNum(selected)
   }
@@ -230,8 +223,8 @@ const HomeScreen = () => {
       />
       <div className="col rounded py-5" id='pro-background-container'>
         <div className="col d-flex flex-column mb-3">
-          <h2 id="homescreen-welcomeuser" className="text-white ">Welcome {selectedUser.UserName}</h2>
-          <h5 id="homescreen-welcomeuser" className="text-white mt-3">Announcement Page</h5>
+          <h2 id="homescreen-welcomeuser" className="text-light ">Welcome {selectedUser.UserName}</h2>
+          <h5 id="homescreen-welcomeuser" className="our_theme_title mt-3">Announcement Page</h5>
 
         </div>
         {isLoading ? <div className='container position-relative d-flex col h-100 pt-5'>
@@ -240,31 +233,31 @@ const HomeScreen = () => {
           <div className="container" id="post-middle-container">
             <div className="row px-2 py-3 rounded" id="home-add-new">
               <div className="col align-items-center">
-                <p className="text-light mb-0">Add new post</p>
+                <p className="our_theme_title mb-0">Add new post</p>
               </div>
               <div className="col align-items-center d-flex justify-content-end">
-                <BiAddToQueue onClick={() => setappear(true)} className="text-light" size={20} data-toggle="modal" data-target="#createCategoryModal" />
+                <BiAddToQueue onClick={() => setappear(true)} className="our_theme_title" size={20} data-toggle="modal" data-target="#createCategoryModal" />
               </div>
             </div>
             <nav>
               <div className="nav nav-tabs position-relative" id="nav-tab" role="tablist">
-                <div className='d-flex col flex-row align-items-center'>
+                <div className='d-flex col flex-row align-items-center p-0'>
                   <div className='col d-flex p-0'>
                     <button className={currenttab === "Latest Announcement" ? "nav-link active rounded" : "nav-link rounded"} onClick={() => handlechangepage()} id="nav-recent-tab" data-toggle="tab" data-target="#nav-recent" type="button" role="tab" aria-controls="nav-recent" aria-selected="true">Latest Announcement</button>
                     <button className={currenttab === "Most Upvoted Announcement" ? "nav-link active rounded" : "nav-link rounded"} onClick={() => handlechangepage4()} id="nav-popular-tab" data-toggle="tab" data-target="#nav-popular" type="button" role="tab" aria-controls="nav-popular" aria-selected="false">Most Upvoted Announcement</button>
                   </div>
                   <div className='' id='home-filter'>
                     {categorytext ? <FaWindowClose className='me-3' color='white' onClick={clear_filter} /> : null}
-                    <RiFilterLine className='text-light' data-toggle="modal" data-target="#staticBackdrop" />
+                    <RiFilterLine id='iconhover' className='text-light' data-toggle="modal" data-target="#staticBackdrop" />
                   </div>
                 </div>
                 {/* <!--Start Filter Modal--> */}
                 <div className="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                  <div className="modal-dialog modal-dialog-centered">
+                  <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: '35%' }}>
                     <div className="modal-content" id="category-create-post-modal">
                       <div className="modal-header d-flex col align-items-center position-relative justify-content-center py-4" id="create-post-modal-header">
-                        <h5 className="modal-title text-center text-white" id="create-post-modal-header-title">{"Categories"}</h5>
-                        <RiCloseFill className="btn-close position-absolute text-light" onClick={() => setcategorytext("")} data-dismiss="modal" size={35} id='close-icon' />
+                        <h5 className="modal-title text-center text-white" id="create-post-modal-header-title">{"Courses"}</h5>
+                        <RiCloseFill id="close-icon" className="btn-close position-absolute text-light" onClick={() => setcategorytext("")} data-dismiss="modal" size={35} />
                       </div>
                       <div className="modal-body row align-items-center" id="category-modal">
                         <div className='col text-light m-0'>
@@ -272,14 +265,14 @@ const HomeScreen = () => {
                           <small> <p className='text-light fw-light m-0 mt-2'> {categorytext ? "You have selected <" + categorytext.toUpperCase() + ">" : ""} </p></small>
                         </div>
 
-                        <div className="col-3 dropdown">
+                        <div className="col dropdown d-flex justify-content-end">
                           <button className="px-2 py-2 border-0 rounded btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
                             {categorytext ? categorytext : "Courses"}
                           </button>
                           <ul className="dropdown-menu bg-dark rounded" aria-labelledby="dropdownMenuButton1">
                             {
-                              categoryList.map((category) =>
-                                <p className="" style={{ color: "white", paddingLeft: '1.5rem', margin: 0, paddingTop: "0.5rem", paddingBottom: "0.5rem" }} onClick={() => setcatid(category.CategoryID) & setcategorytext(category.CategoryName)}>{category.CategoryName}</p>
+                              allFaculty.map((faculty) =>
+                                <p className="" style={{ color: "white", paddingLeft: '1.5rem', margin: 0, paddingTop: "0.5rem", paddingBottom: "0.5rem" }} onClick={() => setcatid(faculty.FacultyID) & setcategorytext(faculty.FacultyName)}>{faculty.FacultyName}</p>
                               )
                             }
                           </ul>
@@ -287,7 +280,7 @@ const HomeScreen = () => {
                       </div>
                       <div className="modal-footer border-0 justify-content-end">
                         <button type="button" className='px-4 py-1 border-0 rounded text-light' id="modal-general-button" onClick={() => setcategorytext("")}>Clear</button>
-                        <button type="button" className='px-4 py-1 border-0 rounded text-light' id="modal-general-button" data-dismiss="modal" onClick={() => setAplliedfilter(true) & setcategoryid(catid)}>Apply</button>
+                        <button type="button" className='px-4 py-1 border-0 rounded text-light' id="modal-general-button" data-dismiss="modal" onClick={() => setAplliedfilter(true)}>Apply</button>
                       </div>
                     </div>
                   </div>
@@ -372,19 +365,20 @@ const HomeScreen = () => {
           <div className="modal-dialog modal-dialog-centered" id="modal-maxwidth-container" >
             <div className="modal-content" id="home-modal-container">
               <div className="modal-header position-relative border-bottom-0">
-                <h5 className="modal-title text-light col text-center py-2">Create Post</h5>
-                <RiCloseFill className="btn-close position-absolute" id='modal-close-button' onClick={() => clearfunction()} color='white' data-dismiss="modal" aria-label="Close" />
+                <h5 className="modal-title purple col text-center py-2">Create Post</h5>
+                <RiCloseFill className="btn-close position-absolute purple" id='modal-close-button' onClick={() => clearfunction()} data-dismiss="modal" aria-label="Close" />
               </div>
               <div className="modal-body row justify-content-md-center m-2 px-1 py-4" id="create-post-modal-body">
                 <div className=" col-3 col-lg-3 search-category" id="create-post-modal-search-category">
+                  <div className="d-flex flex-row justify-content-between align-items-center">
+                    <p className="m-0 purple">Faculties</p>
+                  </div>
                   <div id="create-post-modal-category-container">
-                    <div className="d-flex flex-row justify-content-between align-items-center">
-                      <p className="m-0 text-light">Faculties</p>
-                    </div>
+
                     {allFaculty.map((item, index) => (
                       <div key={index} >
-                        <div className=" flex-row justify-content-between align-items-center mt-4" style={{ display: item.ClosureDate <= todaydate ? "none" : "flex" }}>
-                          <p className="text-light m-0 one_line_css" id="">{item.FacultyName}</p>
+                        <div className=" flex-row justify-content-between align-items-center mt-3" style={{ display: item.ClosureDate <= todaydate ? "none" : "flex" }}>
+                          <p className="our_theme_color m-0 one_line_css" id="longtitle">{item.FacultyName}</p>
                           <input
                             className="form-check-input"
                             type="radio"
@@ -394,7 +388,6 @@ const HomeScreen = () => {
                             onChange={(e) => { setSelectedFal(e.currentTarget.value) }}
                             checked={item.FacultyID === selectedFal}
                           />
-                          {console.log(selectedFal)}
                         </div>
 
                       </div>
@@ -402,20 +395,8 @@ const HomeScreen = () => {
                   </div>
                 </div>
                 <div className='col-9 col-lg-9' id="create-post-modal-small-container">
-                  <div className="input-group py-3 mb-3 row pt-2 pb-1 m-auto rounded justify-content-between" style={{ border: "1px solid #363A43" }}>
-                    <div className=' col-8'>
-                      <p className="text-light m-0">{"Click the icon to add your files"}</p>
-                      <small> <p className="fw-light m-0" style={{ color: "#D3D3D3", fontSize: '0.7rem' }}>{"*Only image files are accepted"}</p></small>
-                    </div>
-                    <input type="file" id="imagenfile" style={{ display: 'none' }} ref={ref}
-                      accept="image/*" onChange={e => { onFileChange(e); setPostImage(e.target.files[0]) }}
-                    />
-                    <label htmlFor="imagenfile" className='d-flex align-items-center' style={{ width: "unset" }}>
-                      <AiOutlineFileProtect type="file" aria-label="Upload" className="text-light" size={30} />
-                    </label>
-                  </div>
-                  <div className="input-group">
-                    <div className="input-group mb-3">
+                  <div className="h-100 d-flex flex-column">
+                    <div className="mb-3">
                       <input autoComplete='off' type="text" className="form-control" placeholder="Title (Maximum word 100)" aria-label="Title" id="create-post-modal-input-title" aria-describedby="inputGroup-sizing-default"
                         value={postTitle} onChange={(e) => { setPostTitle(e.target.value); console.log(postTitle) }}
                       />
@@ -435,7 +416,7 @@ const HomeScreen = () => {
                         value={postContent} onChange={(e) => { setPostContent(e.target.value); console.log(postContent) }}
                       />
                     </div>
-                    <small className='pb-3' style={{ padding: "0 1rem", fontSize: "0.7rem" }}>
+                    <small className='pb-3 w-100' style={{ padding: "0 1rem", fontSize: "0.7rem" }}>
                       <div className="form-check ps-4">
                         <input className="form-check-input" type="checkbox" checked={checkTac} id="flexCheckDefault"
                           onChange={(select) => { setCheckTac(select.target.checked); console.log(checkTac) }}
@@ -448,27 +429,26 @@ const HomeScreen = () => {
                       </div>
                       <div className="collapse" id="opentermscollapse">
                         <div className="px-2 mt-2">
-                          <p className='text-light m-0'> Welcome to our Idea.Co Company. We want people to use this website to express themselves and post ideas that are important to them but not at the expense of the safety and well-being of others or the integrity of our community. You, therefore, agree not to engage in the conduct described below (or to facilitate or support others in doing so):</p>
-
-                          <p className='text-light fw-light m-0 pt-2'>  1. You must be an employee of the company.</p>
-                          <p className='text-light fw-light  m-0'>  2. You must not be prohibited from receiving any aspect of our Service under applicable laws.</p>
-                          <p className='text-light fw-light  m-0'>  3. You must not have previously disabled your account for violation of law or any of our policies.</p>
-                          <p className='text-light fw-light  m-0'>  4. You may not upload viruses or do anything that could disable, overburden or impair the proper working for the appearance of the post.</p>
-
                           <p className='text-light m-0 pt-4'> USER-SUBMITTED CONTENT</p>
                           <p className='text-light m-0 pt-1 fw-light '>Our Site may have publicly accessible areas" such as message boards, ideas, member profiles, yellow posts, Job folders, or other features that allow users to post content that will generally be accessible by the public or the user population. Concerning any message, data, image, text, photos, graphic, audio, video, or other material you elect to post to such publicity accessible areas of our Site. </p>
                         </div>
                       </div>
                     </small>
-                    <div className="form-check m-0 p-0 form-switch d-flex w-100 align-items-center row">
-                      <div className="d-flex align-items-center col">
-                        <p className="text-light m-0">Anonymous</p>
-                        <FaUserNinja className="text-light ms-3" />
-                        <input className="form-check-input ms-3" checked={Annonymous} onChange={() => { setAnnonymous(!Annonymous); console.log(Annonymous) }} type="checkbox" id="Createpost-toggleswitch" />
+                    {/* <div className=' col-8'>
+                          <p className="purple m-0">{"Click the icon to add your files"}</p>
+                          <small> <p className="fw-light our_theme_color  m-0" style={{ fontSize: '0.7rem' }}>{"*Only image files are accepted"}</p></small>
+                        </div> */}
+                    <div className="m-0 p-0 w-100 align-items-end justify-content-between d-flex flex-row col ">
+                      <div className="py-2 rounded align-items-center d-flex flex-row">
+                        <input type="file" id="imagenfile" style={{ display: 'none' }} ref={ref}
+                          accept="image/*" onChange={e => { onFileChange(e); setPostImage(e.target.files[0]) }}
+                        />
+                        <label htmlFor="imagenfile" className='d-flex align-items-center m-0' style={{ width: "unset" }}>
+                          <AiOutlineFileProtect type="file" aria-label="Upload" className="our_theme_color col" size={30} />
+                          <p className='m-0 our_theme_color'>Click here to upload your image</p>
+                        </label>
                       </div>
-                      <div className='d-flex col justify-content-end'>
-                        <button type="button" data-dismiss={"modal"} className="btn bg-danger text-light" onClick={() => { createPost() }} >Create Post</button>
-                      </div>
+                      <button type="button" data-dismiss={"modal"} className="px-3 py-2 rounded purple border-0" style={{ width: 'unset' }} id="Modal-done-button" onClick={() => { createPost() }} >Create Post</button>
                     </div>
                   </div>
                 </div>
