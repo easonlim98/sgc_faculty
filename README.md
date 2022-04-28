@@ -1,64 +1,68 @@
-# Getting Started with Create React App
+# Getting Started with our SGC_Faculty Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Software need to be installed
+<Visual Studio Code>
+<XAMPP>
 
-## Available Scripts
+##Extension to install in Visual Studio Code
+> Shortcut Key to open extension page in visual studio code "Ctrl+Shift+X"
+Search PHP Server and install it
 
-In the project directory, you can run:
+Steps to get ready the project
+## Download XAMPP from internet
 
-### `npm start`
+//This is very important, this is to run the database
+Remember to setup the environment variable XAMPP/php
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Step 1: Open your environment variable,
+Step 2: Select PATH in the user variables for USER
+Step 3: Add new and put in your xampp file "eg.C:\xampp\php"
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Import project database to XAMPP Server
+eg. http://localhost/phpmyadmin/
 
-### `npm test`
+Step 1: After you setup your path, open you XAMPP Control Panel,
+Step 2: Select the "Start" Action for Module <Apache> and <MYSQL> ONLY,
+Step 3: After the server runs, click on the "Admin" for <MYSQL>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+From the steps above, will lead you to open localhost php my admin and this is the example for the path, now we will import the database to the server
+Step 1: Click on the New to navigate to home page for database
+Step 2: Create your database with this name "todonex8_sgc_faculty" and beside that select "utf8mb4_general_ci
+Step 3: Click Create
 
-### `npm run build`
+You will now see your database is created
+Step 4: Find import tab on current database
+Step 5: Choose file and select the database you downloaded (Will be included in the zip file, and the name will be "todonex8_sgc_faculty")
+Step 6: Click go, wait till "Import has successfully finished, queries executed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+//Congratulations your database is created 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Download Visual Studio Code from internet
+After you clone the project, go to the project directory and open your cmd
+eg. C:\Users\User\Desktop\sgc_faculty 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+//Please make sure to have Visual Studio Code installed
+In the cmd, open "code ."
+(Open with Visual Studio Code)
 
-### `npm run eject`
+//This is to install the plugins we used in the project || Must run this command
+Step 1: After the visual studio code is opened, type "npm install" in the previous cmd 
+Step 2: Shortcut Key to open extension page in visual studio code "Ctrl+Shift+X"
+Step 3: Search PHP Server and install it
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Let's get started on the project
+## Open your visual studio code and search for a file DbConnect.php in the controller folder
+Step1: Click on it and in the page right click, you will find an option "PHP Server: Serve project"
+Step2: Click on it, it will navigate you to a new page, if it is white color page with nothing, congratulations, the db working fine, 
+if there is error about php, you might need to double check these few things
+1. Your environment path for your xampp is set
+2. You had import the database file and name the database "todonex8_sgc_faculty"//very important as to your phpmyadmin 
+3. Make sure you downloaded PHP Server extension for Visual Studio Code 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
+After you got a white page from serving the project
+Step1: Go to the project directory and open your cmd, cmd will displayeg. your path\sgc_faculty 
+run npm install
+run npm start
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
